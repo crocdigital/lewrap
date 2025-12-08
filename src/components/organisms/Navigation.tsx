@@ -113,11 +113,17 @@ export default function Navigation() {
                         opacity: isReady ? 1 : 0
                     }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                    className="bg-white text-black rounded-full px-8 py-6 flex items-center shadow-lg pointer-events-auto max-w-screen-2xl md:justify-start justify-between"
+                    className="relative bg-white text-black rounded-full px-8 py-6 flex items-center shadow-lg pointer-events-auto max-w-screen-2xl md:justify-start justify-between"
                 >
                     {/* Logo */}
                     <Link href="/" className="shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
-                        <Image src="/brand/lewrap.svg" alt="LeWrap" width={102} height={30} />
+                        <Image
+                            src="/brand/lewrap.svg"
+                            alt="LeWrap"
+                            width={102}
+                            height={30}
+                            className="w-[82px] md:w-[102px] h-auto"
+                        />
                     </Link>
 
                     {/* Social Icons - Desktop: next to logo, Mobile: centered with equal spacing */}
@@ -127,8 +133,8 @@ export default function Navigation() {
                         <Link href="#" className="hover:opacity-70 transition-opacity"><Facebook className="w-5 h-5" /></Link>
                     </div>
 
-                    {/* Social Icons - Mobile: with equal spacing */}
-                    <div className="md:hidden flex items-center gap-3 shrink-0">
+                    {/* Social Icons - Mobile: centered absolutely */}
+                    <div className="md:hidden absolute left-1/2 -translate-x-1/2 flex items-center gap-3">
                         <Link href="#" className="hover:opacity-70 transition-opacity"><Instagram className="w-5 h-5" /></Link>
                         <Link href="#" className="hover:opacity-70 transition-opacity"><TikTok className="w-5 h-5" /></Link>
                         <Link href="#" className="hover:opacity-70 transition-opacity"><Facebook className="w-5 h-5" /></Link>
