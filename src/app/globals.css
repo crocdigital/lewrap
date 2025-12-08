@@ -32,3 +32,13 @@ button,
 [role="button"] {
   cursor: none;
 }
+
+/* Restore default cursor on touch devices */
+@media (pointer: coarse) {
+  body,
+  a,
+  button,
+  [role="button"] {
+    cursor: auto;
+  }
+}

@@ -7,8 +7,20 @@ export default function CustomCursor() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isVisible, setIsVisible] = useState(false);
     const [isHovering, setIsHovering] = useState(false);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
 
     useEffect(() => {
+        // Check if device supports touch
+        const checkTouchDevice = () => {
+            return (
+                'ontouchstart' in window ||
+                navigator.maxTouchPoints > 0 ||
+                window.matchMedia('(pointer: coarse)').matches
+            );
+        };
+
+        setIsTouchDevice(checkTouchDevice());
+
         const updateMousePosition = (e: MouseEvent) => {
             setMousePosition({ x: e.clientX, y: e.clientY });
             if (!isVisible) setIsVisible(true);
@@ -51,7 +63,8 @@ export default function CustomCursor() {
         };
     }, [isVisible]);
 
-    if (!isVisible) return null;
+    // Don't render custom cursor on touch devices
+    if (!isVisible || isTouchDevice) return null;
 
     return (
         <motion.div
