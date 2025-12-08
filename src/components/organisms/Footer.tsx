@@ -21,22 +21,22 @@ export default function Footer() {
 
                 <div className="col-span-1 flex flex-col gap-y-2">
                     <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Order now</Link>
-                    <Link href="#">Our food</Link>
-                    <Link href="#">Nutrition</Link>
-                    <Link href="#">Locations</Link>
-                    <Link href="#">Catering</Link>
-                    <Link href="#">FAQs</Link>
-                    <Link href="#">LeWrap story</Link>
+                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="/locations">Locations</Link>
+                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="/our-food">Our food</Link>
+                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="/nutrition">Nutrition</Link>
+                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Catering</Link>
+                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">FAQs</Link>
+                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">LeWrap story</Link>
                 </div>
 
                 <div className="col-span-1 flex flex-col gap-y-2">
-                    <Link href="#">Own a store</Link>
-                    <Link href="#">Community</Link>
-                    <Link href="#">Newsroom</Link>
-                    <Link href="#">Work with us</Link>
-                    <Link href="#">Contact LeWrap</Link>
-                    <Link href="#">Terms &amp; conditions</Link>
-                    <Link href="#">Policies</Link>
+                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Own a store</Link>
+                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Community</Link>
+                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Newsroom</Link>
+                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Work with us</Link>
+                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Contact LeWrap</Link>
+                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Terms &amp; conditions</Link>
+                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Policies</Link>
                 </div>
             </div>
         </footer>

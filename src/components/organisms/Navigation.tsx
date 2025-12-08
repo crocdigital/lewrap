@@ -43,14 +43,20 @@ export default function Navigation() {
     const { scrollY } = useScroll();
     const pathname = usePathname();
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const navRef = useRef<HTMLDivElement>(null);
     const [contentWidth, setContentWidth] = useState(0);
     const [expandedWidth, setExpandedWidth] = useState(0);
     const [isReady, setIsReady] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const updateWidths = () => {
             if (navRef.current) {
+                // Check if mobile (768px is the md breakpoint in Tailwind)
+                const mobile = window.innerWidth < 768;
+                setIsMobile(mobile);
+
                 // Calculate the natural content width by measuring the children
                 // Get all direct children except the spacer
                 const children = Array.from(navRef.current.children).filter(
@@ -97,70 +103,167 @@ export default function Navigation() {
     });
 
     return (
-        <div className="fixed top-4 left-0 right-0 flex justify-center z-50 pointer-events-none">
-            <motion.nav
-                ref={navRef}
-                initial={false}
-                animate={{
-                    width: isScrolled ? contentWidth : expandedWidth,
-                    opacity: isReady ? 1 : 0
-                }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="bg-white text-black rounded-full px-8 py-6 flex items-center shadow-lg pointer-events-auto max-w-screen-2xl"
-            >
-                <div className="flex items-center gap-5 shrink-0">
-                    <Link href="/">
+        <>
+            <div className="fixed top-4 left-0 right-0 flex justify-center z-50 pointer-events-none">
+                <motion.nav
+                    ref={navRef}
+                    initial={false}
+                    animate={{
+                        width: isMobile ? expandedWidth : (isScrolled ? contentWidth : expandedWidth),
+                        opacity: isReady ? 1 : 0
+                    }}
+                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    className="bg-white text-black rounded-full px-8 py-6 flex items-center shadow-lg pointer-events-auto max-w-screen-2xl md:justify-start justify-between"
+                >
+                    {/* Logo */}
+                    <Link href="/" className="shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
                         <Image src="/brand/lewrap.svg" alt="LeWrap" width={102} height={30} />
                     </Link>
-                    <div className="flex items-center gap-3">
+
+                    {/* Social Icons - Desktop: next to logo, Mobile: centered with equal spacing */}
+                    <div className="hidden md:flex items-center gap-3 shrink-0 ml-5">
                         <Link href="#" className="hover:opacity-70 transition-opacity"><Instagram className="w-5 h-5" /></Link>
                         <Link href="#" className="hover:opacity-70 transition-opacity"><TikTok className="w-5 h-5" /></Link>
                         <Link href="#" className="hover:opacity-70 transition-opacity"><Facebook className="w-5 h-5" /></Link>
                     </div>
-                </div>
 
-                {/* Spacer */}
-                <div className="flex-grow" />
+                    {/* Social Icons - Mobile: with equal spacing */}
+                    <div className="md:hidden flex items-center gap-3 shrink-0">
+                        <Link href="#" className="hover:opacity-70 transition-opacity"><Instagram className="w-5 h-5" /></Link>
+                        <Link href="#" className="hover:opacity-70 transition-opacity"><TikTok className="w-5 h-5" /></Link>
+                        <Link href="#" className="hover:opacity-70 transition-opacity"><Facebook className="w-5 h-5" /></Link>
+                    </div>
 
-                <div className="flex items-center gap-5 shrink-0 whitespace-nowrap">
+                    {/* Spacer - Desktop only */}
+                    <div className="hidden md:flex flex-grow" />
+
+                    {/* Desktop Menu */}
+                    <div className="hidden md:flex items-center gap-5 shrink-0 whitespace-nowrap">
+                        <Link
+                            href="/locations"
+                            className={`${pathname === "/locations" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
+                        >
+                            Locations
+                        </Link>
+                        <Link
+                            href="/our-food"
+                            className={`${pathname === "/our-food" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
+                        >
+                            Our food
+                        </Link>
+                        <Link
+                            href="/nutrition"
+                            className={`${pathname === "/nutrition" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
+                        >
+                            Nutrition
+                        </Link>
+                        <Link
+                            href="#"
+                            className={`${pathname === "#" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
+                        >
+                            Catering
+                        </Link>
+                        <Link
+                            href="#"
+                            className={`${pathname === "#" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} font-bold duration-200`}
+                        >
+                            Own a store
+                        </Link>
+                        <Link
+                            href="#"
+                            className={`${pathname === "#" ? "text-[#789F3F] pointer-events-none" : "hover:text-white hover:bg-[#789F3F]"} px-6 py-3 bg-black rounded-full text-white font-black uppercase duration-200`}
+                        >
+                            Order now
+                        </Link>
+                    </div>
+
+                    {/* Mobile Hamburger Button */}
+                    <button
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        className="md:hidden flex flex-col gap-1.5 w-6 h-6 justify-center items-center shrink-0"
+                        aria-label="Toggle menu"
+                    >
+                        <motion.span
+                            animate={{
+                                rotate: isMobileMenuOpen ? 45 : 0,
+                                y: isMobileMenuOpen ? 8 : 0,
+                            }}
+                            className="w-full h-0.5 bg-black block"
+                        />
+                        <motion.span
+                            animate={{
+                                opacity: isMobileMenuOpen ? 0 : 1,
+                            }}
+                            className="w-full h-0.5 bg-black block"
+                        />
+                        <motion.span
+                            animate={{
+                                rotate: isMobileMenuOpen ? -45 : 0,
+                                y: isMobileMenuOpen ? -8 : 0,
+                            }}
+                            className="w-full h-0.5 bg-black block"
+                        />
+                    </button>
+                </motion.nav>
+            </div>
+
+            {/* Mobile Menu Dropdown - Full Screen */}
+            <motion.div
+                initial={false}
+                animate={{
+                    opacity: isMobileMenuOpen ? 1 : 0,
+                    pointerEvents: isMobileMenuOpen ? "auto" : "none",
+                }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="md:hidden fixed inset-0 z-40 bg-white"
+            >
+                <div className="flex flex-col items-center justify-center h-full px-8 gap-6 pt-24">
                     <Link
                         href="/locations"
-                        className={`${pathname === "/locations" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`${pathname === "/locations" ? "text-[#789F3F]" : "text-black hover:text-[#789F3F]"} duration-200 text-2xl font-medium`}
                     >
                         Locations
                     </Link>
                     <Link
                         href="/our-food"
-                        className={`${pathname === "/our-food" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`${pathname === "/our-food" ? "text-[#789F3F]" : "text-black hover:text-[#789F3F]"} duration-200 text-2xl font-medium`}
                     >
                         Our food
                     </Link>
                     <Link
                         href="/nutrition"
-                        className={`${pathname === "/nutrition" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`${pathname === "/nutrition" ? "text-[#789F3F]" : "text-black hover:text-[#789F3F]"} duration-200 text-2xl font-medium`}
                     >
                         Nutrition
                     </Link>
                     <Link
                         href="#"
-                        className={`${pathname === "#" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="text-black hover:text-[#789F3F] duration-200 text-2xl font-medium"
                     >
                         Catering
                     </Link>
                     <Link
                         href="#"
-                        className={`${pathname === "#" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} font-bold duration-200`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="text-black hover:text-[#789F3F] duration-200 text-2xl font-bold"
                     >
                         Own a store
                     </Link>
+
+                    {/* Order Now Button */}
                     <Link
                         href="#"
-                        className={`${pathname === "#" ? "text-[#789F3F] pointer-events-none" : "hover:text-white hover:bg-[#789F3F]"} px-6 py-3 bg-black rounded-full text-white font-black uppercase duration-200`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="px-8 py-4 bg-black rounded-full text-white font-black uppercase duration-200 hover:bg-[#789F3F] text-center mt-4"
                     >
                         Order now
                     </Link>
                 </div>
-            </motion.nav>
-        </div>
+            </motion.div>
+        </>
     );
 }

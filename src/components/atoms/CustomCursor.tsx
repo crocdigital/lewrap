@@ -11,12 +11,9 @@ export default function CustomCursor() {
 
     useEffect(() => {
         // Check if device supports touch
+        // Check if device is primarily touch (like a phone/tablet without mouse)
         const checkTouchDevice = () => {
-            return (
-                'ontouchstart' in window ||
-                navigator.maxTouchPoints > 0 ||
-                window.matchMedia('(pointer: coarse)').matches
-            );
+            return window.matchMedia('(pointer: coarse)').matches;
         };
 
         setIsTouchDevice(checkTouchDevice());

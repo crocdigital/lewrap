@@ -35,10 +35,21 @@ button,
 
 /* Restore default cursor on touch devices */
 @media (pointer: coarse) {
+
   body,
   a,
   button,
   [role="button"] {
-    cursor: auto;
+    cursor: auto !important;
+  }
+}
+
+/* Force hide cursor on desktop when custom cursor is active */
+@media (pointer: fine) {
+
+  a,
+  button,
+  [role="button"] {
+    cursor: none !important;
   }
 }
