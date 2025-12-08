@@ -1,7 +1,11 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
+    const pathname = usePathname();
     return (
         <footer className="px-10 bg-black text-white">
             <div className="max-w-screen-2xl grid grid-cols-2 md:grid-cols-6 gap-y-8 md:gap-x-4 py-20 mx-auto">
@@ -20,23 +24,100 @@ export default function Footer() {
                 </div>
 
                 <div className="col-span-1 flex flex-col gap-y-2">
-                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Order now</Link>
-                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="/locations">Locations</Link>
-                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="/our-food">Our food</Link>
-                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="/nutrition">Nutrition</Link>
-                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Catering</Link>
-                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">FAQs</Link>
-                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">LeWrap story</Link>
+                    <Link
+                        href="#"
+                        className={`${pathname === "#" ? "text-white pointer-events-none" : "font-bold opacity-70 hover:opacity-100"} duration-200`}
+                    >
+                        Order now
+                    </Link>
+                    <Link
+                        href="/locations"
+                        className={`${pathname === "/locations" ? "text-white pointer-events-none" : "opacity-70 hover:opacity-100"} duration-200`}
+                    >
+                        Locations
+                    </Link>
+                    <Link
+                        href="/our-food"
+                        className={`${pathname === "/our-food" ? "text-white pointer-events-none" : "opacity-70 hover:opacity-100"} duration-200`}
+                    >
+                        Our food
+                    </Link>
+                    <Link
+                        href="/nutrition"
+                        className={`${pathname === "/nutrition" ? "text-white pointer-events-none" : "opacity-70 hover:opacity-100"} duration-200`}
+                    >
+                        Nutrition
+                    </Link>
+                    <Link
+                        href="#"
+                        className={`${pathname === "#" ? "text-white pointer-events-none" : "opacity-70 hover:opacity-100"} duration-200`}
+                    >
+                        Catering
+                    </Link>
+                    <Link
+                        href="#"
+                        className={`${pathname === "#" ? "text-white pointer-events-none" : "opacity-70 hover:opacity-100"} duration-200`}
+                    >
+                        FAQs
+                    </Link>
+                    <Link
+                        href="#"
+                        className={`${pathname === "#" ? "text-white pointer-events-none" : "opacity-70 hover:opacity-100"} duration-200`}
+                    >
+                        LeWrap story
+                    </Link>
                 </div>
 
                 <div className="col-span-1 flex flex-col gap-y-2">
-                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Own a store</Link>
+                    <Link
+                        href="#"
+                        className={`${pathname === "#" ? "text-white pointer-events-none" : "font-bold opacity-70 hover:opacity-100"} duration-200`}
+                    >
+                        Own a store
+                    </Link>
+                    <Link
+                        href="#"
+                        className={`${pathname === "#" ? "text-white pointer-events-none" : "opacity-70 hover:opacity-100"} duration-200`}
+                    >
+                        Community
+                    </Link>
+                    <Link
+                        href="#"
+                        className={`${pathname === "#" ? "text-white pointer-events-none" : "opacity-70 hover:opacity-100"} duration-200`}
+                    >
+                        Newsroom
+                    </Link>
+                    <Link
+                        href="#"
+                        className={`${pathname === "#" ? "text-white pointer-events-none" : "opacity-70 hover:opacity-100"} duration-200`}
+                    >
+                        Work with us
+                    </Link>
+                    <Link
+                        href="#"
+                        className={`${pathname === "#" ? "text-white pointer-events-none" : "opacity-70 hover:opacity-100"} duration-200`}
+                    >
+                        Contact LeWrap
+                    </Link>
+                    <Link
+                        href="#"
+                        className={`${pathname === "#" ? "text-white pointer-events-none" : "opacity-70 hover:opacity-100"} duration-200`}
+                    >
+                        Terms &amp; conditions
+                    </Link>
+                    <Link
+                        href="#"
+                        className={`${pathname === "#" ? "text-white pointer-events-none" : "opacity-70 hover:opacity-100"} duration-200`}
+                    >
+                        Policies
+                    </Link>
+                    {/* <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Own a store</Link>
                     <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Community</Link>
                     <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Newsroom</Link>
                     <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Work with us</Link>
                     <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Contact LeWrap</Link>
                     <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Terms &amp; conditions</Link>
-                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Policies</Link>
+                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Policies</Link> */}
                 </div>
             </div>
         </footer>
