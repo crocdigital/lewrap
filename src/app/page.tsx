@@ -44,7 +44,7 @@ export default function Home() {
               disableOnInteraction: false,
             }}
             loop={true}
-            className="w-[95vw] mx-auto h-[75vh] rounded-2xl overflow-hidden"
+            className="w-[95vw] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden"
           />
         </section>
 
