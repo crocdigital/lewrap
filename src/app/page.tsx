@@ -44,7 +44,7 @@ export default function Home() {
               disableOnInteraction: false,
             }}
             loop={true}
-            className="max-w-screen-xl mx-auto h-[75vh] rounded-2xl overflow-hidden"
+            className="w-[95vw] mx-auto h-[75vh] rounded-2xl overflow-hidden"
           />
         </section>
 
