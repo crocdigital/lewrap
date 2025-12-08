@@ -111,13 +111,6 @@ export default function Footer() {
                     >
                         Policies
                     </Link>
-                    {/* <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Own a store</Link>
-                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Community</Link>
-                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Newsroom</Link>
-                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Work with us</Link>
-                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Contact LeWrap</Link>
-                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Terms &amp; conditions</Link>
-                    <Link className="opacity-70 hover:opacity-100 transition duration-200" href="#">Policies</Link> */}
                 </div>
             </div>
         </footer>
