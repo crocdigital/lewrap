@@ -33,8 +33,8 @@ export default function Home() {
 
 
       <div className="min-h-screen flex flex-col items-center justify-center gap-8">
-        {/* Example 2: Autoplay with No Navigation. THIS ONE LOOKS LIKE THE WINNER BRA! */}
-        <section className="mt-15">
+        {/* Hero slider */}
+        <section className="mt-10 md:mt-15">
           <Carousel
             slides={imageSlides}
             showPagination={true}
