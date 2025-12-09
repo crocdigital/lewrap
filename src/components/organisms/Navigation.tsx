@@ -264,7 +264,7 @@ export default function Navigation() {
                     <Link
                         href="#"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="px-8 py-4 bg-black rounded-full text-white font-black uppercase duration-200 hover:bg-[#789F3F] text-center mt-4"
+                        className="px-8 py-4 bg-black rounded-full w-full text-white font-black uppercase duration-200 hover:bg-[#789F3F] text-center mt-4"
                     >
                         Order now
                     </Link>
