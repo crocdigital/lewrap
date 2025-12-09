@@ -32,7 +32,7 @@ export default function Home() {
     <div className="bg-gray-900 text-white">
 
 
-      <div className="min-h-screen flex flex-col items-center justify-center gap-8">
+      <div className="min-h-screen flex flex-col items-center justify-center gap-8 mx-10">
         {/* Hero slider */}
         <section className="mt-10 md:mt-15">
           <Carousel
@@ -63,6 +63,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
+
       <div className="h-[150vh] w-full flex items-center justify-center mt-20">
         <p className="text-gray-500">Keep scrolling to see the nav shrink...</p>
       </div>
