@@ -134,7 +134,7 @@ export default function Navigation() {
                     </div>
 
                     {/* Social Icons - Mobile: centered absolutely */}
-                    <div className="md:hidden absolute left-1/2 -translate-x-1/2 flex items-center gap-3">
+                    <div className="md:hidden absolute left-1/2 -translate-x-1/2 flex items-center gap-5">
                         <Link href="#" className="hover:opacity-70 transition-opacity"><Instagram className="w-5 h-5" /></Link>
                         <Link href="#" className="hover:opacity-70 transition-opacity"><TikTok className="w-5 h-5" /></Link>
                         <Link href="#" className="hover:opacity-70 transition-opacity"><Facebook className="w-5 h-5" /></Link>
