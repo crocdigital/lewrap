@@ -38,7 +38,7 @@ export default function Home() {
           <Carousel
             slides={imageSlides}
             showPagination={true}
-            showNavigation={false}
+            showNavigation={true}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
