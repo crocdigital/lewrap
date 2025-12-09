@@ -7,8 +7,8 @@ import Link from "next/link";
 export default function Footer() {
     const pathname = usePathname();
     return (
-        <footer className="px-10 bg-black text-white">
-            <div className="max-w-screen-2xl grid grid-cols-2 md:grid-cols-6 gap-y-8 md:gap-x-4 py-20 mx-auto">
+        <footer className="px-10 py-20 flex flex-col gap-y-10 bg-black text-white">
+            <div className="max-w-screen-2xl grid grid-cols-2 md:grid-cols-6 gap-y-8 md:gap-x-4 mx-auto">
                 <div className="col-span-1">
                     <Link href="/">
                         <Image src="/brand/lewrap.svg" alt="LeWrap" width={157} height={46} />
@@ -112,6 +112,11 @@ export default function Footer() {
                         Policies
                     </Link>
                 </div>
+            </div>
+
+            <div className="flex md:flex-row flex-col justify-between text-center md:text-left text-xs text-gray-500">
+                <p>&copy; 2025 Retail Systems Group Ltd. All rights reserved.</p>
+                <p>Made with luv by Croc Digital</p>
             </div>
         </footer>
     );
