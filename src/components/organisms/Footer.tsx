@@ -9,15 +9,21 @@ export default function Footer() {
     return (
         <footer className="px-10 py-20 flex flex-col gap-y-10 bg-black text-white">
             <div className="max-w-screen-2xl grid grid-cols-2 md:grid-cols-6 gap-y-8 md:gap-x-4 mx-auto">
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                     <Link href="/">
-                        <Image src="/brand/lewrap.svg" alt="LeWrap" width={157} height={46} />
+                        <Image
+                            src="/brand/lewrap.svg"
+                            alt="LeWrap"
+                            className="mx-auto md:mx-0"
+                            width={157}
+                            height={46}
+                        />
                     </Link>
-                    <h2 className="text-2xl font-bold">I am Footer.</h2>
+                    <h2 className="text-2xl font-bold text-center md:text-left">I am Footer.</h2>
                 </div>
 
                 <div className="col-span-2">
-                    <h3 className="text-5xl opacity-30 -mt-1">Fresh, high quality, delicious meals without the wait.</h3>
+                    <h3 className="text-4xl md:text-5xl opacity-30 text-center md:text-left md:-mt-1">Fresh, high quality, delicious meals without the wait.</h3>
                 </div>
 
                 <div className="col-span-1 hidden md:block">
