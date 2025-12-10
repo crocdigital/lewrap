@@ -2,6 +2,7 @@
 
 import Carousel from '@/components/molecules/Carousel';
 import type { SlideContent } from '@/components/molecules/Carousel';
+import ScrollReveal from '@/components/molecules/ScrollReveal';
 
 import Link from "next/link";
 
@@ -51,7 +52,7 @@ export default function Home() {
         <h1 className="text-4xl font-bold">Home Page</h1>
         <p className="text-xl">Check out these cool page transitions. Website on another level.</p>
         <p className="text-xl">Plus our customised cursor for added bougieness.</p>
-        <div className="flex gap-4 flex-wrap justify-center autoShow">
+        <ScrollReveal className="flex gap-4 flex-wrap justify-center">
           <Link href="/locations" className="px-6 py-3 bg-blue-500 text-white rounded-full font-semibold hover:bg-opacity-90 transition">
             Go to Locations
           </Link>
@@ -61,7 +62,7 @@ export default function Home() {
           <Link href="/nutrition" className="px-6 py-3 bg-emerald-600 text-white rounded-full font-semibold hover:bg-opacity-90 transition">
             Go to Nutrition
           </Link>
-        </div>
+        </ScrollReveal>
       </div>
 
       <div className="h-[150vh] w-full flex items-center justify-center mt-20">
