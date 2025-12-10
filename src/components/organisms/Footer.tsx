@@ -120,7 +120,7 @@ export default function Footer() {
                 </div>
             </div>
 
-            <div className="flex md:flex-row flex-col justify-between text-center md:text-left text-xs text-neutral-400">
+            <div className="flex flex-col md:flex-row justify-between text-center gap-y-1 md:text-left text-xs text-neutral-400">
                 <p>&copy; {new Date().getFullYear()} Retail Systems Group Ltd. All rights reserved.</p>
                 <p className="flex items-center gap-x-1 mx-auto md:mx-0">
                     Made with{" "}
