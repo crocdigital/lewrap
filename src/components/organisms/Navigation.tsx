@@ -135,9 +135,9 @@ export default function Navigation() {
 
                     {/* Social Icons - Mobile: centered absolutely */}
                     <div className="md:hidden absolute left-1/2 -translate-x-1/2 flex items-center gap-5">
-                        <Link href="https://www.instagram.com/lewrap_official" className="hover:opacity-70 transition-opacity"><Instagram className="w-5 h-5" /></Link>
-                        <Link href="https://www.tiktok.com/@lewrap" className="hover:opacity-70 transition-opacity"><TikTok className="w-5 h-5" /></Link>
-                        <Link href="https://www.facebook.com/lewrapaus" className="hover:opacity-70 transition-opacity"><Facebook className="w-5 h-5" /></Link>
+                        <Link href="https://www.instagram.com/lewrap_official" target="_blank" className="hover:opacity-70 transition-opacity"><Instagram className="w-5 h-5" /></Link>
+                        <Link href="https://www.tiktok.com/@lewrap" target="_blank" className="hover:opacity-70 transition-opacity"><TikTok className="w-5 h-5" /></Link>
+                        <Link href="https://www.facebook.com/lewrapaus" target="_blank" className="hover:opacity-70 transition-opacity"><Facebook className="w-5 h-5" /></Link>
                     </div>
 
                     {/* Spacer - Desktop only */}
