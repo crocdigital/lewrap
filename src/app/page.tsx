@@ -52,7 +52,7 @@ export default function Home() {
         <h1 className="text-4xl font-bold">Home Page</h1>
         <p className="text-xl">Check out these cool page transitions. Website on another level.</p>
         <p className="text-xl">Plus our customised cursor for added bougieness.</p>
-        <ScrollReveal className="flex gap-4 flex-wrap justify-center">
+        <ScrollReveal className="flex gap-4 flex-wrap justify-center"> {/* Potenitally only apply this to major CTA buttons? */}
           <Link href="/locations" className="px-6 py-3 bg-blue-500 text-white rounded-full font-semibold hover:bg-opacity-90 transition">
             Go to Locations
           </Link>
