@@ -1,4 +1,5 @@
 import Link from "next/link";
+import RightScrollReveal from '@/components/molecules/RightScrollReveal';
 
 export default function Locations() {
     return (
@@ -15,7 +16,9 @@ export default function Locations() {
                 </div>
             </div>
             <div className="h-[150vh] w-full flex items-center justify-center mt-20">
-                <p className="text-blue-200">Keep scrolling to see the nav shrink...</p>
+                <RightScrollReveal>
+                    <p className="text-blue-200">Keep scrolling to see the nav shrink...</p>
+                </RightScrollReveal>
             </div>
         </div>
     );

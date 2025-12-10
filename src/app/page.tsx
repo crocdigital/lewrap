@@ -4,7 +4,7 @@ import Carousel from '@/components/molecules/Carousel';
 import type { SlideContent } from '@/components/molecules/Carousel';
 import ScrollReveal from '@/components/molecules/ScrollReveal';
 import LeftScrollReveal from '@/components/molecules/LeftScrollReveal';
-import RightScrollReveal from '@/components/molecules/RightScrollReveal';
+// import RightScrollReveal from '@/components/molecules/RightScrollReveal';
 
 import Link from "next/link";
 
