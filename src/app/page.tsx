@@ -54,17 +54,23 @@ export default function Home() {
         <h1 className="text-4xl font-bold">Home Page</h1>
         <p className="text-xl">Check out these cool page transitions. Website on another level.</p>
         <p className="text-xl">Plus our customised cursor for added bougieness.</p>
-        <ScrollReveal className="flex gap-4 flex-wrap justify-center"> {/* Potentially only apply this to major CTA buttons? */}
-          <Link href="/locations" className="px-6 py-3 bg-blue-500 text-white rounded-full font-semibold hover:bg-opacity-90 transition">
-            Go to Locations
-          </Link>
-          <Link href="/our-food" className="px-6 py-3 bg-purple-600 text-white rounded-full font-semibold hover:bg-opacity-90 transition">
-            Go to Our Food
-          </Link>
-          <Link href="/nutrition" className="px-6 py-3 bg-emerald-600 text-white rounded-full font-semibold hover:bg-opacity-90 transition">
-            Go to Nutrition
-          </Link>
-        </ScrollReveal>
+        <div className="flex gap-10 flex-wrap justify-center">
+          <ScrollReveal delay={0}> {/* Scroll reveal with delay so 3 buttons appear in sequence */}
+            <Link href="/locations" className="px-6 py-3 bg-blue-500 text-white rounded-full font-semibold hover:bg-opacity-90 transition">
+              Go to Locations
+            </Link>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}> {/* Scroll reveal with delay so 3 buttons appear in sequence */}
+            <Link href="/our-food" className="px-6 py-3 bg-purple-600 text-white rounded-full font-semibold hover:bg-opacity-90 transition">
+              Go to Our Food
+            </Link>
+          </ScrollReveal>
+          <ScrollReveal delay={0.4}> {/* Scroll reveal with delay so 3 buttons appear in sequence */}
+            <Link href="/nutrition" className="px-6 py-3 bg-emerald-600 text-white rounded-full font-semibold hover:bg-opacity-90 transition">
+              Go to Nutrition
+            </Link>
+          </ScrollReveal>
+        </div>
       </div>
 
       <div className="h-[150vh] w-full flex items-center justify-center mt-20">
