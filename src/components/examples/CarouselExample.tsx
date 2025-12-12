@@ -210,14 +210,15 @@ export default function CarouselExample() {
                         </p>
                         <pre className="mt-4 text-left bg-gray-800 text-white p-4 rounded overflow-x-auto">
                             {`const videoSlides: SlideContent[] = [
-  {
-    type: 'video',
-    src: '/videos/your-video.mp4',
-    controls: true,
-    muted: true,
-    loop: true,
-  },
-];`}
+                                {
+                                    type: 'video',
+                                    src: '/videos/your-video.mp4',
+                                    controls: true,
+                                    muted: true,
+                                    loop: true,
+                                },
+                            ];`
+                            }
                         </pre>
                     </div>
                 </section>

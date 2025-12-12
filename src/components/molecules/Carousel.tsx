@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, A11y } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
@@ -39,6 +40,12 @@ export interface CarouselProps {
     grabCursor?: boolean;
     onSlideChange?: (index: number) => void;
     onSwiper?: (swiper: any) => void;
+    cta?: {
+        text: string;
+        href: string;
+        newTab?: boolean;
+        className?: string;
+    };
 }
 
 export default function Carousel({
@@ -61,6 +68,7 @@ export default function Carousel({
     grabCursor = true,
     onSlideChange,
     onSwiper,
+    cta,
 }: CarouselProps) {
     const modules = [A11y];
 
@@ -163,6 +171,18 @@ export default function Carousel({
                     </SwiperSlide>
                 ))}
             </Swiper>
+
+            {cta && (
+                <div className="absolute inset-0 z-10 flex items-end pb-15 justify-center pointer-events-none">
+                    <Link
+                        href={cta.href}
+                        target={cta.newTab ? '_blank' : undefined}
+                        className={`pointer-events-auto px-8 py-4 bg-[#789F3F] text-white rounded-full font-bold text-lg uppercase hover:bg-orange-600 transition-transform hover:scale-105 shadow-lg ${cta.className || ''}`}
+                    >
+                        {cta.text}
+                    </Link>
+                </div>
+            )}
 
             <style jsx global>{`
         .carousel-container {

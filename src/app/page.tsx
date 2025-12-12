@@ -9,8 +9,18 @@ import LeftScrollReveal from '@/components/molecules/LeftScrollReveal';
 import Link from "next/link";
 
 export default function Home() {
-  // Homepage carousel (above the fold)
-  const imageSlides: SlideContent[] = [
+  // Hero slides (above the fold)
+  const heroSlides: SlideContent[] = [
+    // Testing video slide inclusion in main slider
+    {
+      type: 'video',
+      src: '/path/to/video.mp4',
+      controls: false,
+      autoPlay: true,
+      muted: true,
+      loop: true,
+    },
+    // END // Testing video slide inclusion in main slider
     {
       type: 'image',
       src: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c',
@@ -39,12 +49,16 @@ export default function Home() {
         {/* Hero slider */}
         <section className="mt-10 md:mt-15">
           <Carousel
-            slides={imageSlides}
+            slides={heroSlides}
             showPagination={true}
             showNavigation={true}
             autoplay={{
-              delay: 3000,
+              delay: 5000,
               disableOnInteraction: false,
+            }}
+            cta={{
+              text: "Eshay braaa",
+              href: "/order"
             }}
             loop={true}
             className="w-[95vw] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden"

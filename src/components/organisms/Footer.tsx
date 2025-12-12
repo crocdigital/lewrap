@@ -109,12 +109,6 @@ export default function Footer() {
                         href="#"
                         className={`${pathname === "#" ? "text-white pointer-events-none" : "text-neutral-400 hover:text-white"} duration-200`}
                     >
-                        Terms &amp; conditions
-                    </Link>
-                    <Link
-                        href="#"
-                        className={`${pathname === "#" ? "text-white pointer-events-none" : "text-neutral-400 hover:text-white"} duration-200`}
-                    >
                         Policies
                     </Link>
                 </div>
