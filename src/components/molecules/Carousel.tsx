@@ -173,7 +173,7 @@ export default function Carousel({
             </Swiper>
 
             {cta && (
-                <div className="absolute inset-0 z-10 flex items-end pb-15 justify-center pointer-events-none">
+                <div className="absolute inset-0 z-10 flex items-end pb-14 justify-center pointer-events-none">
                     <Link
                         href={cta.href}
                         target={cta.newTab ? '_blank' : undefined}

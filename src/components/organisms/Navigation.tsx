@@ -87,7 +87,7 @@ export default function Navigation() {
 
         window.addEventListener('resize', updateWidths);
         return () => window.removeEventListener('resize', updateWidths);
-    }, []);
+    }, [pathname]);
 
     // Reset scroll state when pathname changes
     useEffect(() => {
@@ -145,6 +145,12 @@ export default function Navigation() {
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center gap-5 shrink-0 whitespace-nowrap">
+                        <Link
+                            href="/our-story"
+                            className={`${pathname === "/our-story" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
+                        >
+                            Our story
+                        </Link>
                         <Link
                             href="/locations"
                             className={`${pathname === "/locations" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
@@ -224,6 +230,13 @@ export default function Navigation() {
                 className="md:hidden fixed inset-0 z-40 bg-white"
             >
                 <div className="flex flex-col items-center justify-center h-full px-8 gap-6 pt-24">
+                    <Link
+                        href="/our-story"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`${pathname === "/our-story" ? "text-[#789F3F]" : "text-black hover:text-[#789F3F]"} duration-200 text-2xl font-medium`}
+                    >
+                        Our story
+                    </Link>
                     <Link
                         href="/locations"
                         onClick={() => setIsMobileMenuOpen(false)}

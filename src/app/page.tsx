@@ -12,14 +12,14 @@ export default function Home() {
   // Hero slides (above the fold)
   const heroSlides: SlideContent[] = [
     // Testing video slide inclusion in main slider
-    {
-      type: 'video',
-      src: '/path/to/video.mp4',
-      controls: false,
-      autoPlay: true,
-      muted: true,
-      loop: true,
-    },
+    // {
+    //   type: 'video',
+    //   src: '/path/to/video.mp4',
+    //   controls: false,
+    //   autoPlay: true,
+    //   muted: true,
+    //   loop: true,
+    // },
     // END // Testing video slide inclusion in main slider
     {
       type: 'image',
