@@ -44,6 +44,12 @@ export interface CarouselProps {
         text: string;
         href: string;
         newTab?: boolean;
+        className?: string; // Additional classes for the button itself
+    };
+    cta2?: {
+        text: string;
+        href: string;
+        newTab?: boolean;
         className?: string;
     };
 }
@@ -69,6 +75,7 @@ export default function Carousel({
     onSlideChange,
     onSwiper,
     cta,
+    cta2,
 }: CarouselProps) {
     const modules = [A11y];
 
@@ -172,15 +179,28 @@ export default function Carousel({
                 ))}
             </Swiper>
 
-            {cta && (
+            {(cta || cta2) && (
                 <div className="absolute inset-0 z-10 flex items-end pb-14 justify-center pointer-events-none">
-                    <Link
-                        href={cta.href}
-                        target={cta.newTab ? '_blank' : undefined}
-                        className={`pointer-events-auto px-8 py-4 bg-[#789F3F] text-white rounded-full font-bold text-lg uppercase hover:bg-orange-600 transition-transform hover:scale-105 shadow-lg ${cta.className || ''}`}
-                    >
-                        {cta.text}
-                    </Link>
+                    <div className="flex flex-col md:flex-row gap-4 items-center pointer-events-auto">
+                        {cta && (
+                            <Link
+                                href={cta.href}
+                                target={cta.newTab ? '_blank' : undefined}
+                                className={`px-8 py-4 bg-[#789F3F] text-white rounded-full font-bold text-lg uppercase hover:bg-orange-600 transition-transform hover:scale-105 shadow-lg ${cta.className || ''}`}
+                            >
+                                {cta.text}
+                            </Link>
+                        )}
+                        {cta2 && (
+                            <Link
+                                href={cta2.href}
+                                target={cta2.newTab ? '_blank' : undefined}
+                                className={`px-8 py-4 bg-[#789F3F] text-white rounded-full font-bold text-lg uppercase hover:bg-orange-600 transition-transform hover:scale-105 shadow-lg ${cta2.className || ''}`}
+                            >
+                                {cta2.text}
+                            </Link>
+                        )}
+                    </div>
                 </div>
             )}
 

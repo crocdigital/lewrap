@@ -57,8 +57,13 @@ export default function Home() {
               disableOnInteraction: false,
             }}
             cta={{
-              text: "Eshay braaa",
-              href: "/order"
+              text: "Our food",
+              href: "/menu"
+            }}
+            cta2={{
+              text: "Order now",
+              href: "/order",
+              className: "text-[#789F3F]"
             }}
             loop={true}
             className="w-[95vw] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden"
