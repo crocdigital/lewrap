@@ -58,7 +58,7 @@ export default function Home() {
             }}
             cta={{
               text: "Our food",
-              href: "/menu"
+              href: "/our-food"
             }}
             cta2={{
               text: "Order now",

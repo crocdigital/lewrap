@@ -69,7 +69,7 @@ export default function Navigation() {
                 }, 0);
 
                 // Add padding (for e.g. px-8 = 2rem on each side = 4rem total = 64px)
-                const padding = 140;
+                const padding = 150;
                 setContentWidth(childrenWidth + padding);
 
                 // Calculate 95% of viewport width
@@ -177,6 +177,12 @@ export default function Navigation() {
                         </Link>
                         <Link
                             href="#"
+                            className={`${pathname === "#" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
+                        >
+                            Newsroom
+                        </Link>
+                        <Link
+                            href="#"
                             className={`${pathname === "#" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} font-bold duration-200`}
                         >
                             Own a store
@@ -264,6 +270,13 @@ export default function Navigation() {
                         className="text-black hover:text-[#789F3F] duration-200 text-2xl font-medium"
                     >
                         Catering
+                    </Link>
+                    <Link
+                        href="#"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="text-black hover:text-[#789F3F] duration-200 text-2xl font-medium"
+                    >
+                        Newsroom
                     </Link>
                     <Link
                         href="#"
