@@ -163,7 +163,7 @@ export default function Carousel({
 
     return (
         <div
-            className={`carousel-container ${className}`}
+            className={`carousel-container relative ${className}`}
             style={inlineStyles}
         >
             <Swiper
@@ -205,10 +205,6 @@ export default function Carousel({
             )}
 
             <style jsx global>{`
-        .carousel-container {
-          position: relative;
-        }
-
         .carousel-container .swiper {
           width: 100%;
           height: 100%;
