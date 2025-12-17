@@ -37,12 +37,6 @@ export default function Footer() {
                         Order now
                     </Link>
                     <Link
-                        href="#"
-                        className={`${pathname === "#" ? "text-white pointer-events-none" : "text-neutral-400 hover:text-white"} duration-200`}
-                    >
-                        Our story
-                    </Link>
-                    <Link
                         href="/locations"
                         className={`${pathname === "/locations" ? "text-white pointer-events-none" : "text-neutral-400 hover:text-white"} duration-200`}
                     >
@@ -71,6 +65,12 @@ export default function Footer() {
                         className={`${pathname === "#" ? "text-white pointer-events-none" : "text-neutral-400 hover:text-white"} duration-200`}
                     >
                         FAQs
+                    </Link>
+                    <Link
+                        href="#"
+                        className={`${pathname === "#" ? "text-white pointer-events-none" : "text-neutral-400 hover:text-white"} duration-200`}
+                    >
+                        Our story
                     </Link>
                 </div>
 
