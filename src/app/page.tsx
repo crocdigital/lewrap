@@ -42,7 +42,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="bg-[#FAFAFA] text-black">
 
 
       <div className="min-h-screen flex flex-col items-center justify-center gap-8 mx-10">

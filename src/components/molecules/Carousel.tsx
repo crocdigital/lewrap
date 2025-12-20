@@ -225,6 +225,7 @@ export default function Carousel({
           width: 44px;
           height: 44px;
           padding: 12px;
+          margin: 0 8px;
           border-radius: 50%;
           transition: all 0.3s ease;
         }
