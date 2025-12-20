@@ -52,6 +52,7 @@ export interface CarouselProps {
         newTab?: boolean;
         className?: string;
     };
+    hasGradient?: boolean;
 }
 
 export default function Carousel({
@@ -72,6 +73,7 @@ export default function Carousel({
     paginationClassName = '',
     centeredSlides = false,
     grabCursor = true,
+    hasGradient = false,
     onSlideChange,
     onSwiper,
     cta,
@@ -173,8 +175,11 @@ export default function Carousel({
                 onSwiper={handleSwiper}
             >
                 {slides.map((slide, index) => (
-                    <SwiperSlide key={index} className={slideClassName}>
+                    <SwiperSlide key={index} className={`relative ${slideClassName}`}>
                         {renderSlide(slide, index)}
+                        {hasGradient && (
+                            <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/40 pointer-events-none z-[1]" />
+                        )}
                     </SwiperSlide>
                 ))}
             </Swiper>

@@ -66,6 +66,7 @@ export default function Home() {
               className: "text-[#789F3F]"
             }}
             loop={true}
+            hasGradient={true}
             className="w-[95vw] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden"
           />
         </section>
