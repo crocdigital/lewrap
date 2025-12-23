@@ -42,10 +42,10 @@ export default function Home() {
   ];
 
   return (
-    <main className="text-lewrap-off-black w-full flex flex-col items-center">
-      <div className="max-w-screen-2xl w-full mx-auto flex flex-col items-center justify-center gap-8">
+    <main className="text-lewrap-off-black">
+      <div className="max-w-screen-2xl w-full mx-auto flex flex-col gap-16">
         {/* Hero slider */}
-        <section className="mt-10 md:mt-15 w-full flex justify-center">
+        <section className="mt-10 md:mt-15">
           <Carousel
             slides={heroSlides}
             showPagination={true}
@@ -93,12 +93,12 @@ export default function Home() {
             </Link>
           </ScrollReveal>
         </div>
-      </div>
 
-      <div className="h-[150vh] w-full flex items-center justify-center mt-20 bg-gray-50">
-        <LeftScrollReveal>
-          <p className="text-gray-500">Keep scrolling to see the nav shrink...</p>
-        </LeftScrollReveal>
+        <div className="h-[150vh] w-full flex items-center justify-center mt-20 bg-gray-50">
+          <LeftScrollReveal>
+            <p className="text-gray-500">Keep scrolling to see the nav shrink...</p>
+          </LeftScrollReveal>
+        </div>
       </div>
     </main>
   );

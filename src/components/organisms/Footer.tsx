@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Footer() {
     const pathname = usePathname();
     return (
-        <footer className="px-10 py-20 flex flex-col gap-y-10 bg-black text-white">
+        <footer className="px-10 py-20 flex flex-col gap-y-10 bg-lewrap-off-black text-white">
             <div className="max-w-screen-2xl grid grid-cols-2 md:grid-cols-6 gap-y-8 md:gap-x-4 mx-auto">
                 <div className="col-span-2 md:col-span-1">
                     <Link href="/">
@@ -32,9 +32,9 @@ export default function Footer() {
                 <div className="col-span-1 flex flex-col gap-y-2">
                     <Link
                         href="#"
-                        className={`${pathname === "#" ? "text-white pointer-events-none" : "font-bold text-neutral-400 hover:text-white"} duration-200`}
+                        className={`${pathname === "#" ? "text-white pointer-events-none" : "font-helvetica-condensed font-black text-neutral-400 hover:text-white"} duration-200`}
                     >
-                        Order now
+                        Order Now
                     </Link>
                     <Link
                         href="/locations"
@@ -77,7 +77,7 @@ export default function Footer() {
                 <div className="col-span-1 flex flex-col gap-y-2">
                     <Link
                         href="#"
-                        className={`${pathname === "#" ? "text-white pointer-events-none" : "font-bold text-neutral-400 hover:text-white"} duration-200`}
+                        className={`${pathname === "#" ? "text-white pointer-events-none" : "font-helvetica-condensed font-black text-neutral-400 hover:text-white"} duration-200`}
                     >
                         Own a store
                     </Link>

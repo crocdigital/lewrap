@@ -198,7 +198,7 @@ export default function Navigation() {
                     {/* Mobile Hamburger Button */}
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="md:hidden flex flex-col gap-1.5 w-6 h-6 justify-center items-center shrink-0"
+                        className="md:hidden flex flex-col gap-1.5 w-6 h-6 justify-center items-end shrink-0"
                         aria-label="Toggle menu"
                     >
                         <motion.span
@@ -218,8 +218,9 @@ export default function Navigation() {
                             animate={{
                                 rotate: isMobileMenuOpen ? -45 : 0,
                                 y: isMobileMenuOpen ? -8 : 0,
+                                width: isMobileMenuOpen ? "100%" : "80%",
                             }}
-                            className="w-full h-0.5 bg-lewrap-off-black block"
+                            className="h-0.5 bg-lewrap-off-black block"
                         />
                     </button>
                 </motion.nav>
