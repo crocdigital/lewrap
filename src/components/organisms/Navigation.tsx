@@ -113,7 +113,7 @@ export default function Navigation() {
                         opacity: isReady ? 1 : 0
                     }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                    className="relative bg-white text-black rounded-full px-8 py-6 flex items-center shadow-lg pointer-events-auto max-w-screen-2xl md:justify-start justify-between"
+                    className="relative bg-white text-lewrap-off-black rounded-full px-8 py-6 flex items-center shadow-lg pointer-events-auto max-w-screen-2xl md:justify-start justify-between"
                 >
                     {/* Logo */}
                     <Link href="/" className="shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
@@ -147,49 +147,49 @@ export default function Navigation() {
                     <div className="hidden md:flex items-center gap-5 shrink-0 whitespace-nowrap">
                         <Link
                             href="/our-story"
-                            className={`${pathname === "/our-story" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
+                            className={`${pathname === "/our-story" ? "text-lewrap-green pointer-events-none" : "hover:text-lewrap-green"} duration-200`}
                         >
                             Our story
                         </Link>
                         <Link
                             href="/locations"
-                            className={`${pathname === "/locations" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
+                            className={`${pathname === "/locations" ? "text-lewrap-green pointer-events-none" : "hover:text-lewrap-green"} duration-200`}
                         >
                             Locations
                         </Link>
                         <Link
                             href="/our-food"
-                            className={`${pathname === "/our-food" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
+                            className={`${pathname === "/our-food" ? "text-lewrap-green pointer-events-none" : "hover:text-lewrap-green"} duration-200`}
                         >
                             Our food
                         </Link>
                         <Link
                             href="/nutrition"
-                            className={`${pathname === "/nutrition" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
+                            className={`${pathname === "/nutrition" ? "text-lewrap-green pointer-events-none" : "hover:text-lewrap-green"} duration-200`}
                         >
                             Nutrition
                         </Link>
                         <Link
                             href="#"
-                            className={`${pathname === "#" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
+                            className={`${pathname === "#" ? "text-lewrap-green pointer-events-none" : "hover:text-lewrap-green"} duration-200`}
                         >
                             Catering
                         </Link>
                         <Link
                             href="#"
-                            className={`${pathname === "#" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} duration-200`}
+                            className={`${pathname === "#" ? "text-lewrap-green pointer-events-none" : "hover:text-lewrap-green"} font-helvetica-condensed font-bold duration-200`}
                         >
                             Newsroom
                         </Link>
                         <Link
                             href="#"
-                            className={`${pathname === "#" ? "text-[#789F3F] pointer-events-none" : "hover:text-[#789F3F]"} font-bold duration-200`}
+                            className={`${pathname === "#" ? "text-lewrap-green pointer-events-none" : "hover:text-lewrap-green"} font-helvetica-condensed font-black duration-200`}
                         >
                             Own a store
                         </Link>
                         <Link
                             href="#"
-                            className={`${pathname === "#" ? "text-[#789F3F] pointer-events-none" : "hover:text-white hover:bg-[#789F3F]"} px-6 py-3 bg-black rounded-full text-white font-black uppercase duration-200`}
+                            className={`${pathname === "#" ? "text-lewrap-green pointer-events-none" : "hover:text-white hover:bg-lewrap-green"} px-6 py-3 bg-lewrap-off-black rounded-full text-white font-cocogoose uppercase duration-200`}
                         >
                             Order now
                         </Link>
@@ -206,20 +206,20 @@ export default function Navigation() {
                                 rotate: isMobileMenuOpen ? 45 : 0,
                                 y: isMobileMenuOpen ? 8 : 0,
                             }}
-                            className="w-full h-0.5 bg-black block"
+                            className="w-full h-0.5 bg-lewrap-off-black block"
                         />
                         <motion.span
                             animate={{
                                 opacity: isMobileMenuOpen ? 0 : 1,
                             }}
-                            className="w-full h-0.5 bg-black block"
+                            className="w-full h-0.5 bg-lewrap-off-black block"
                         />
                         <motion.span
                             animate={{
                                 rotate: isMobileMenuOpen ? -45 : 0,
                                 y: isMobileMenuOpen ? -8 : 0,
                             }}
-                            className="w-full h-0.5 bg-black block"
+                            className="w-full h-0.5 bg-lewrap-off-black block"
                         />
                     </button>
                 </motion.nav>
@@ -239,49 +239,49 @@ export default function Navigation() {
                     <Link
                         href="/our-story"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`${pathname === "/our-story" ? "text-[#789F3F]" : "text-black hover:text-[#789F3F]"} duration-200 text-2xl font-medium`}
+                        className={`${pathname === "/our-story" ? "text-lewrap-green" : "text-lewrap-off-black hover:text-lewrap-green"} duration-200 text-xl font-medium`}
                     >
                         Our story
                     </Link>
                     <Link
                         href="/locations"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`${pathname === "/locations" ? "text-[#789F3F]" : "text-black hover:text-[#789F3F]"} duration-200 text-2xl font-medium`}
+                        className={`${pathname === "/locations" ? "text-lewrap-green" : "text-lewrap-off-black hover:text-lewrap-green"} duration-200 text-xl font-medium`}
                     >
                         Locations
                     </Link>
                     <Link
                         href="/our-food"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`${pathname === "/our-food" ? "text-[#789F3F]" : "text-black hover:text-[#789F3F]"} duration-200 text-2xl font-medium`}
+                        className={`${pathname === "/our-food" ? "text-lewrap-green" : "text-lewrap-off-black hover:text-lewrap-green"} duration-200 text-xl font-medium`}
                     >
                         Our food
                     </Link>
                     <Link
                         href="/nutrition"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`${pathname === "/nutrition" ? "text-[#789F3F]" : "text-black hover:text-[#789F3F]"} duration-200 text-2xl font-medium`}
+                        className={`${pathname === "/nutrition" ? "text-lewrap-green" : "text-lewrap-off-black hover:text-lewrap-green"} duration-200 text-xl font-medium`}
                     >
                         Nutrition
                     </Link>
                     <Link
                         href="#"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="text-black hover:text-[#789F3F] duration-200 text-2xl font-medium"
+                        className="text-lewrap-off-black hover:text-lewrap-green duration-200 text-xl font-medium"
                     >
                         Catering
                     </Link>
                     <Link
                         href="#"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="text-black hover:text-[#789F3F] duration-200 text-2xl font-medium"
+                        className="text-lewrap-off-black hover:text-lewrap-green duration-200 text-xl font-medium"
                     >
                         Newsroom
                     </Link>
                     <Link
                         href="#"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="text-black hover:text-[#789F3F] duration-200 text-2xl font-bold"
+                        className="text-lewrap-off-black hover:text-lewrap-green duration-200 text-xl font-helvetica-condensed font-black"
                     >
                         Own a store
                     </Link>
@@ -290,7 +290,7 @@ export default function Navigation() {
                     <Link
                         href="#"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="px-8 py-4 bg-black rounded-full w-full text-white font-black uppercase duration-200 hover:bg-[#789F3F] text-center mt-4"
+                        className="px-8 py-4 bg-lewrap-off-black rounded-full w-full text-white font-cocogoose uppercase duration-200 text-xl hover:bg-lewrap-green text-center mt-4"
                     >
                         Order now
                     </Link>

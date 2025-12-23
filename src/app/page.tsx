@@ -42,9 +42,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-[#FAFAFA] text-black">
-
-
+    <div className="bg-[#FAFAFA] text-lewrap-off-black">
       <div className="min-h-screen flex flex-col items-center justify-center gap-8 mx-10">
         {/* Hero slider */}
         <section className="mt-10 md:mt-15">
@@ -63,9 +61,10 @@ export default function Home() {
             cta2={{
               text: "Order now",
               href: "/order",
-              className: "text-[#789F3F]"
+              className: "text-lewrap-green"
             }}
             loop={true}
+            // Show / hide gradient overlay
             hasGradient={true}
             className="w-[95vw] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden"
           />

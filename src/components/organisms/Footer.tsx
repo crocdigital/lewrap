@@ -23,7 +23,7 @@ export default function Footer() {
                 </div>
 
                 <div className="col-span-2">
-                    <h3 className="text-4xl md:text-5xl opacity-30 text-center md:text-left -mt-1">Fresh, high quality, delicious meals without the wait.</h3>
+                    <h3 className="font-cocogoose text-4xl md:text-5xl opacity-30 text-center md:text-left -mt-1">Fresh, high quality, delicious meals without the wait.</h3>
                 </div>
 
                 <div className="col-span-1 hidden md:block">

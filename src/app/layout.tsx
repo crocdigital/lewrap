@@ -1,20 +1,37 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+
 import "./globals.css";
 import TransitionProvider from "@/components/templates/TransitionProvider";
 import CustomCursor from "@/components/atoms/CustomCursor";
 import Navigation from "@/components/organisms/Navigation";
 import Footer from "@/components/organisms/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
+import localFont from 'next/font/local'
+
+const cocogoose = localFont({
+  src: './fonts/Cocogoose.otf',
+  variable: '--font-cocogoose',
+})
+
+const helveticaCondensed = localFont({
+  src: [
+    {
+      path: './fonts/HelveticaNeueCondensedBold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: './fonts/HelveticaNeueCondensedBlack.ttf',
+      weight: '900',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-helvetica-condensed',
+})
+
+
 
 export const metadata: Metadata = {
   title: "LeWrap",
@@ -29,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
+        className={`${cocogoose.variable} ${helveticaCondensed.variable} antialiased overflow-x-hidden`}
       >
         <CustomCursor />
         <Navigation />
