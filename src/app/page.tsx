@@ -42,10 +42,10 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-[#FAFAFA] text-lewrap-off-black">
-      <div className="min-h-screen flex flex-col items-center justify-center gap-8 mx-10">
+    <main className="text-lewrap-off-black w-full flex flex-col items-center">
+      <div className="max-w-screen-2xl w-full mx-auto flex flex-col items-center justify-center gap-8">
         {/* Hero slider */}
-        <section className="mt-10 md:mt-15">
+        <section className="mt-10 md:mt-15 w-full flex justify-center">
           <Carousel
             slides={heroSlides}
             showPagination={true}
@@ -66,14 +66,17 @@ export default function Home() {
             loop={true}
             // Show / hide gradient overlay
             hasGradient={true}
-            className="w-[95vw] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden"
+            className="w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden"
           />
         </section>
 
-        <h1 className="text-4xl font-bold">Home Page</h1>
-        <p className="text-xl">Check out these cool page transitions. Website on another level.</p>
-        <p className="text-xl">Plus our customised cursor for added bougieness.</p>
-        <div className="flex flex-col md:flex-row gap-10 justify-center">
+        <div className="flex flex-col items-center gap-4 px-4 text-center max-w-4xl mx-auto">
+          <h1 className="text-4xl font-bold">Home Page</h1>
+          <p className="text-xl">Check out these cool page transitions. Website on another level.</p>
+          <p className="text-xl">Plus our customised cursor for added bougieness.</p>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-10 justify-center pb-20">
           <ScrollReveal delay={0}> {/* Scroll reveal with delay so 3 buttons appear in sequence */}
             <Link href="/locations" className="px-6 py-3 bg-blue-500 text-white rounded-full font-semibold hover:bg-opacity-90 transition">
               Go to Locations
@@ -92,11 +95,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="h-[150vh] w-full flex items-center justify-center mt-20">
+      <div className="h-[150vh] w-full flex items-center justify-center mt-20 bg-gray-50">
         <LeftScrollReveal>
           <p className="text-gray-500">Keep scrolling to see the nav shrink...</p>
         </LeftScrollReveal>
       </div>
-    </div>
+    </main>
   );
 }

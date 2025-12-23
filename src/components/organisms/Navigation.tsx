@@ -189,7 +189,7 @@ export default function Navigation() {
                         </Link>
                         <Link
                             href="#"
-                            className={`${pathname === "#" ? "text-lewrap-green pointer-events-none" : "hover:text-white hover:bg-lewrap-green"} px-6 py-3 bg-lewrap-off-black rounded-full text-white font-cocogoose uppercase duration-200`}
+                            className={`${pathname === "#" ? "text-lewrap-green pointer-events-none" : "hover:text-white hover:bg-lewrap-green"} px-6 py-3 bg-lewrap-green-dark rounded-full text-white font-cocogoose uppercase duration-200`}
                         >
                             Order now
                         </Link>
@@ -290,7 +290,7 @@ export default function Navigation() {
                     <Link
                         href="#"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="px-8 py-4 bg-lewrap-off-black rounded-full w-full text-white font-cocogoose uppercase duration-200 text-xl hover:bg-lewrap-green text-center mt-4"
+                        className="px-8 py-4 bg-lewrap-green-dark rounded-full w-full text-white font-cocogoose uppercase duration-200 text-xl hover:bg-lewrap-green text-center mt-4"
                     >
                         Order now
                     </Link>

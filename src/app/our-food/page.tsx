@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function OurFood() {
     return (
-        <div className="bg-purple-600 text-white">
+        <main className="bg-purple-600 text-white">
             <div className="min-h-screen flex flex-col items-center justify-center gap-8">
                 <h1 className="text-4xl font-bold">Our Food</h1>
                 <p className="text-xl">This is the Our Food dummy page.</p>
@@ -18,6 +18,6 @@ export default function OurFood() {
             <div className="h-[150vh] w-full flex items-center justify-center mt-20">
                 <p className="text-purple-200">Keep scrolling to see the nav shrink...</p>
             </div>
-        </div>
+        </main>
     );
 }

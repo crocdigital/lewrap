@@ -3,7 +3,7 @@ import RightScrollReveal from '@/components/molecules/RightScrollReveal';
 
 export default function Locations() {
     return (
-        <div className="bg-blue-500 text-white">
+        <main className="bg-blue-500 text-white">
             <div className="min-h-screen flex flex-col items-center justify-center gap-8">
                 <h1 className="text-4xl font-bold">Locations Page</h1>
                 <div className="flex gap-4">
@@ -20,6 +20,6 @@ export default function Locations() {
                     <p className="text-blue-200">Keep scrolling to see the nav shrink...</p>
                 </RightScrollReveal>
             </div>
-        </div>
+        </main>
     );
 }
