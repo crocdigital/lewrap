@@ -25,12 +25,6 @@
   --color-lewrap-off-black: var(--lewrap-off-black);
 }
 
-@media {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 html,
 body {
