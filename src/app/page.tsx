@@ -23,19 +23,19 @@ export default function Home() {
     // END // Testing video slide inclusion in main slider
     {
       type: 'image',
-      src: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c',
+      src: 'home/home-slider-01.webp',
       alt: 'Food image 1',
       objectFit: 'cover',
     },
     {
       type: 'image',
-      src: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38',
+      src: 'home/home-slider-01.webp',
       alt: 'Food image 2',
       objectFit: 'cover',
     },
     {
       type: 'image',
-      src: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445',
+      src: 'home/home-slider-01.webp',
       alt: 'Food image 3',
       objectFit: 'cover',
     },
