@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import RightScrollReveal from "../components/molecules/RightScrollReveal";
+import RightScrollReveal from "../components/molecules/RightScrollReveal.astro";
 ---
 
 <Layout title="Locations">
@@ -25,7 +25,7 @@ import RightScrollReveal from "../components/molecules/RightScrollReveal";
             </div>
         </div>
         <div class="h-[150vh] w-full flex items-center justify-center mt-20">
-            <RightScrollReveal client:load>
+            <RightScrollReveal>
                 <p class="text-blue-200">
                     Keep scrolling to see the nav shrink...
                 </p>
