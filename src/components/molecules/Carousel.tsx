@@ -200,7 +200,7 @@ export default function Carousel({
                             <a
                                 href={cta.href}
                                 target={cta.newTab ? '_blank' : undefined}
-                                className={`px-8 py-4 bg-lewrap-green text-white rounded-full font-bold font-cocogoose md:text-2xl capitalize hover:bg-lewrap-green-dark duration-200 hover:scale-105 shadow-lg ${cta.className || ''}`}
+                                className={`px-8 py-4 bg-lewrap-green text-white rounded-full font-bold font-cocogoose md:text-2xl capitalize hover:bg-lewrap-green-dark hover:text-lewrap-green duration-200 hover:scale-105 shadow-lg ${cta.className || ''}`}
                             >
                                 {cta.text}
                             </a>
@@ -209,7 +209,7 @@ export default function Carousel({
                             <a
                                 href={cta2.href}
                                 target={cta2.newTab ? '_blank' : undefined}
-                                className={`px-8 py-4 bg-lewrap-green text-white rounded-full font-bold font-cocogoose md:text-2xl uppercase hover:bg-lewrap-green-dark duration-200 hover:scale-105 shadow-lg ${cta2.className || ''}`}
+                                className={`px-8 py-4 bg-lewrap-green-dark border-4 border-lewrap-green text-white rounded-full font-bold font-cocogoose md:text-2xl hover:text-lewrap-green uppercase duration-200 hover:scale-105 shadow-lg ${cta2.className || ''}`}
                             >
                                 {cta2.text}
                             </a>
