@@ -21,6 +21,32 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Preload Critical Fonts -->
+    <link
+      rel="preload"
+      href="/fonts/Cocogoose.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/HelveticaNeueCondensedBold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/HelveticaNeueCondensedBlack.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+
+    <!-- Preload Hero Image (LCP) -->
+    <link rel="preload" as="image" href="/home/home-slider-01.webp" />
     <meta name="generator" content={Astro.generator} />
     <title>{displayTitle}</title>
     <ClientRouter />
@@ -28,7 +54,7 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
   <body
     class="antialiased overflow-x-hidden font-sans font-helvetica-condensed"
   >
-    <CustomCursor client:load transition:persist />
+    <CustomCursor client:media="(pointer: fine)" transition:persist />
     <Navigation />
     <slot />
     <Footer />

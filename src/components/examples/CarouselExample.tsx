@@ -1,5 +1,7 @@
 'use client';
 
+import React from 'react';
+
 import Carousel from '../molecules/Carousel';
 import type { SlideContent } from '../molecules/Carousel';
 
