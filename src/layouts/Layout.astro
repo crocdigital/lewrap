@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { title = "LeWrap" } = Astro.props;
+const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
 ---
 
 <!doctype html>
@@ -21,7 +22,7 @@ const { title = "LeWrap" } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{displayTitle}</title>
     <ClientRouter />
   </head>
   <body
