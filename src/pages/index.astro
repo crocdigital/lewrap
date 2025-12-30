@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Carousel from "../components/molecules/Carousel";
 import ScrollReveal from "../components/molecules/ScrollReveal";
 import LeftScrollReveal from "../components/molecules/LeftScrollReveal";
+import leWrapLogo from "../assets/lewrap-w.svg";
 
 const heroSlides = [
     {
@@ -52,7 +53,24 @@ const heroSlides = [
                     loop={true}
                     hasGradient={true}
                     className="w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden"
-                />
+                >
+                    <!-- Content overlay -->
+                    <div
+                        class="max-w-6xl flex flex-col items-center gap-4 text-center z-30 pointer-events-none select-none"
+                    >
+                        <img
+                            src={leWrapLogo.src}
+                            alt="LeWrap"
+                            class="md:w-[266px] md:h-[78px]"
+                        />
+                        <h2
+                            class="font-cocogoose text-white md:text-[80px] font-bold leading-tight"
+                        >
+                            We believe in all things good and fresh
+                        </h2>
+                    </div>
+                    <!-- // Content overlay -->
+                </Carousel>
             </section>
 
             <div

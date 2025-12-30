@@ -54,6 +54,7 @@ export interface CarouselProps {
         className?: string;
     };
     hasGradient?: boolean;
+    children?: React.ReactNode;
 }
 
 export default function Carousel({
@@ -79,6 +80,7 @@ export default function Carousel({
     onSwiper,
     cta,
     cta2,
+    children,
 }: CarouselProps) {
     const modules = [A11y];
 
@@ -185,6 +187,12 @@ export default function Carousel({
                 ))}
             </Swiper>
 
+            {children && (
+                <div className="absolute inset-0 z-20 pointer-events-none flex items-center justify-center">
+                    {children}
+                </div>
+            )}
+
             {(cta || cta2) && (
                 <div className="absolute inset-0 z-10 flex items-end pb-14 justify-center pointer-events-none">
                     <div className="flex flex-col md:flex-row gap-4 items-center pointer-events-auto">
@@ -209,7 +217,6 @@ export default function Carousel({
                     </div>
                 </div>
             )}
-
         </div>
     );
 }
