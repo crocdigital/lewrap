@@ -195,12 +195,12 @@ export default function Carousel({
 
             {(cta || cta2) && (
                 <div className="absolute inset-0 z-10 flex items-end pb-14 justify-center pointer-events-none">
-                    <div className="flex flex-col md:flex-row gap-4 items-center pointer-events-auto">
+                    <div className="flex flex-row gap-4 items-center pointer-events-auto">
                         {cta && (
                             <a
                                 href={cta.href}
                                 target={cta.newTab ? '_blank' : undefined}
-                                className={`px-8 py-4 bg-lewrap-green text-white rounded-full font-bold font-cocogoose text-2xl capitalize hover:bg-lewrap-green-dark duration-200 hover:scale-105 shadow-lg ${cta.className || ''}`}
+                                className={`px-8 py-4 bg-lewrap-green text-white rounded-full font-bold font-cocogoose md:text-2xl capitalize hover:bg-lewrap-green-dark duration-200 hover:scale-105 shadow-lg ${cta.className || ''}`}
                             >
                                 {cta.text}
                             </a>
@@ -209,7 +209,7 @@ export default function Carousel({
                             <a
                                 href={cta2.href}
                                 target={cta2.newTab ? '_blank' : undefined}
-                                className={`px-8 py-4 bg-lewrap-green text-white rounded-full font-bold font-cocogoose text-2xl uppercase hover:bg-lewrap-green-dark duration-200 hover:scale-105 shadow-lg ${cta2.className || ''}`}
+                                className={`px-8 py-4 bg-lewrap-green text-white rounded-full font-bold font-cocogoose md:text-2xl uppercase hover:bg-lewrap-green-dark duration-200 hover:scale-105 shadow-lg ${cta2.className || ''}`}
                             >
                                 {cta2.text}
                             </a>
