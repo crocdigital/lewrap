@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+// import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, A11y } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
@@ -10,6 +10,7 @@ import type { SwiperOptions } from 'swiper/types';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import '../../styles/carousel.css';
 
 export type SlideContent =
     | { type: 'image'; src: string; alt: string; objectFit?: 'cover' | 'contain' | 'fill' }
@@ -188,95 +189,27 @@ export default function Carousel({
                 <div className="absolute inset-0 z-10 flex items-end pb-14 justify-center pointer-events-none">
                     <div className="flex flex-col md:flex-row gap-4 items-center pointer-events-auto">
                         {cta && (
-                            <Link
+                            <a
                                 href={cta.href}
                                 target={cta.newTab ? '_blank' : undefined}
                                 className={`px-8 py-4 bg-lewrap-green text-white rounded-full font-bold font-cocogoose text-2xl capitalize hover:bg-lewrap-green-dark duration-200 hover:scale-105 shadow-lg ${cta.className || ''}`}
                             >
                                 {cta.text}
-                            </Link>
+                            </a>
                         )}
                         {cta2 && (
-                            <Link
+                            <a
                                 href={cta2.href}
                                 target={cta2.newTab ? '_blank' : undefined}
                                 className={`px-8 py-4 bg-lewrap-green text-white rounded-full font-bold font-cocogoose text-2xl uppercase hover:bg-lewrap-green-dark duration-200 hover:scale-105 shadow-lg ${cta2.className || ''}`}
                             >
                                 {cta2.text}
-                            </Link>
+                            </a>
                         )}
                     </div>
                 </div>
             )}
 
-            <style jsx global>{`
-        .carousel-container .swiper {
-          width: 100%;
-          height: 100%;
-        }
-
-        .carousel-container .swiper-slide {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: #000;
-        }
-
-        /* Navigation arrows styling */
-        .carousel-container .swiper-button-next,
-        .carousel-container .swiper-button-prev {
-          color: white;
-          background: rgba(0, 0, 0, 0.5);
-          width: 44px;
-          height: 44px;
-          padding: 12px;
-          margin: 0 8px;
-          border-radius: 50%;
-          transition: all 0.3s ease;
-        }
-
-        .carousel-container .swiper-button-next:hover,
-        .carousel-container .swiper-button-prev:hover {
-          background: rgba(0, 0, 0, 0.8);
-          transform: scale(1.1);
-        }
-
-        .carousel-container .swiper-button-next::after,
-        .carousel-container .swiper-button-prev::after {
-          font-size: 20px;
-        }
-
-        /* Pagination styling */
-        .carousel-container .swiper-pagination-bullet {
-          width: 10px;
-          height: 10px;
-          background: white;
-          opacity: 0.5;
-          border-radius: 5px;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .carousel-container .swiper-pagination-bullet-active {
-          opacity: 1;
-          background: white;
-          width: 32px;
-          border-radius: 5px;
-        }
-
-        /* Mobile optimizations */
-        @media (max-width: 768px) {
-          .carousel-container .swiper-button-next,
-          .carousel-container .swiper-button-prev {
-            width: 36px;
-            height: 36px;
-          }
-
-          .carousel-container .swiper-button-next::after,
-          .carousel-container .swiper-button-prev::after {
-            font-size: 16px;
-          }
-        }
-      `}</style>
         </div>
     );
 }

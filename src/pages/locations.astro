@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import RightScrollReveal from "../components/molecules/RightScrollReveal";
+---
+
+<Layout title="LeWrap - Locations">
+    <main class="bg-blue-500 text-white">
+        <div
+            class="min-h-screen flex flex-col items-center justify-center gap-8"
+        >
+            <h1 class="text-4xl font-bold">Locations Page</h1>
+            <div class="flex gap-4">
+                <a
+                    href="/"
+                    class="px-6 py-3 bg-white text-blue-500 rounded-full font-semibold hover:bg-opacity-90 transition"
+                >
+                    Go Home
+                </a>
+                <a
+                    href="/nutrition"
+                    class="px-6 py-3 bg-blue-700 text-white rounded-full font-semibold hover:bg-opacity-90 transition"
+                >
+                    Go to Nutrition
+                </a>
+            </div>
+        </div>
+        <div class="h-[150vh] w-full flex items-center justify-center mt-20">
+            <RightScrollReveal client:load>
+                <p class="text-blue-200">
+                    Keep scrolling to see the nav shrink...
+                </p>
+            </RightScrollReveal>
+        </div>
+    </main>
+</Layout>

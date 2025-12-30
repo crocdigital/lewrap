@@ -8,6 +8,34 @@
   --lewrap-green-dark: #31411D;
   --lewrap-red: #D3172B;
   --lewrap-off-black: #2E2E2E;
+
+  /* Fonts */
+  --font-cocogoose: 'Cocogoose', sans-serif;
+  --font-helvetica-condensed: 'HelveticaNeueCondensed', sans-serif;
+}
+
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('/fonts/Cocogoose.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueCondensed';
+  src: url('/fonts/HelveticaNeueCondensedBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueCondensed';
+  src: url('/fonts/HelveticaNeueCondensedBlack.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* stylelint-disable-next-line at-rule-no-unknown */

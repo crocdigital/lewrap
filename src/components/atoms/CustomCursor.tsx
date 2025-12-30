@@ -1,26 +1,66 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 export default function CustomCursor() {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const cursorRef = useRef<HTMLDivElement>(null);
     const [isVisible, setIsVisible] = useState(false);
-    const [isHovering, setIsHovering] = useState(false);
-    const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+    // Physics state
+    const mouse = useRef({ x: 0, y: 0 });
+    const cursor = useRef({ x: 0, y: 0 });
+    // Add separate ref for current animated scale
+    const cursorScale = useRef(1);
+    const requestRef = useRef<number>(0);
+    const isHoveringRef = useRef(false);
 
     useEffect(() => {
         // Check if device supports touch
-        // Check if device is primarily touch (like a phone/tablet without mouse)
-        const checkTouchDevice = () => {
-            return window.matchMedia('(pointer: coarse)').matches;
+        const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+        if (isTouchDevice) return;
+
+        // Initialize cursor position to avoid jump if persisted
+        if (cursor.current.x === 0 && cursor.current.y === 0) {
+            // We can't know mouse pos until event, but if persisted it keeps old pos.
+            // If completely new load, it starts at 0,0.
+            // We'll let the first mousemove set the initial pos to jump current there.
+        }
+
+        const animate = () => {
+            // Spring physics for Position
+            const distX = mouse.current.x - cursor.current.x;
+            const distY = mouse.current.y - cursor.current.y;
+
+            // Ease factors (higher = faster/stiffer)
+            // 0.4 for very snappy tracking
+            cursor.current.x = cursor.current.x + distX * 0.4;
+            cursor.current.y = cursor.current.y + distY * 0.4;
+
+            // Physics for Scale (Lerp)
+            const targetScale = isHoveringRef.current ? 2.25 : 1;
+            // Lower factor for scale makes it feel smoother/elastic compared to position
+            cursorScale.current = cursorScale.current + (targetScale - cursorScale.current) * 0.15;
+
+            if (cursorRef.current) {
+                const x = cursor.current.x - 8; // Center offset
+                const y = cursor.current.y - 8;
+                // Use interpolated scale
+                cursorRef.current.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${cursorScale.current})`;
+            }
+
+            requestRef.current = requestAnimationFrame(animate);
         };
 
-        setIsTouchDevice(checkTouchDevice());
-
         const updateMousePosition = (e: MouseEvent) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
-            if (!isVisible) setIsVisible(true);
+            mouse.current.x = e.clientX;
+            mouse.current.y = e.clientY;
+
+            // If this is the very first move and cursor is at 0,0, snap it immediately
+            if (!isVisible) {
+                setIsVisible(true);
+                cursor.current.x = e.clientX;
+                cursor.current.y = e.clientY;
+            }
         };
 
         const handleMouseOver = (e: MouseEvent) => {
@@ -32,7 +72,7 @@ export default function CustomCursor() {
                 target.closest("button") ||
                 target.getAttribute("role") === "button"
             ) {
-                setIsHovering(true);
+                isHoveringRef.current = true;
             }
         };
 
@@ -45,7 +85,7 @@ export default function CustomCursor() {
                 target.closest("button") ||
                 target.getAttribute("role") === "button"
             ) {
-                setIsHovering(false);
+                isHoveringRef.current = false;
             }
         };
 
@@ -53,29 +93,25 @@ export default function CustomCursor() {
         document.addEventListener("mouseover", handleMouseOver);
         document.addEventListener("mouseout", handleMouseOut);
 
+        requestRef.current = requestAnimationFrame(animate);
+
         return () => {
             window.removeEventListener("mousemove", updateMousePosition);
             document.removeEventListener("mouseover", handleMouseOver);
             document.removeEventListener("mouseout", handleMouseOut);
+            cancelAnimationFrame(requestRef.current);
         };
-    }, [isVisible]);
+    }, []); // Run once on mount
 
-    // Don't render custom cursor on touch devices
-    if (!isVisible || isTouchDevice) return null;
+    if (!isVisible) return null;
 
     return (
-        <motion.div
-            className="fixed top-0 left-0 w-4 h-4 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference"
-            animate={{
-                x: mousePosition.x - 8,
-                y: mousePosition.y - 8,
-                scale: isHovering ? 2.25 : 1,
-            }}
-            transition={{
-                type: "spring",
-                stiffness: 500,
-                damping: 28,
-                mass: 0.5,
+        <div
+            ref={cursorRef}
+            className={`fixed top-0 left-0 w-4 h-4 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference`}
+            style={{
+                // Using transform for performance, opacity avoids flash
+                willChange: "transform"
             }}
         />
     );
