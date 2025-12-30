@@ -1,7 +1,7 @@
 ---
 import { ClientRouter } from "astro:transitions";
-import Navigation from "../components/organisms/Navigation";
-import Footer from "../components/organisms/Footer";
+import Navigation from "../components/organisms/Navigation.astro";
+import Footer from "../components/organisms/Footer.astro";
 import CustomCursor from "../components/atoms/CustomCursor";
 import "../styles/globals.css";
 
@@ -29,8 +29,8 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
     class="antialiased overflow-x-hidden font-sans font-helvetica-condensed"
   >
     <CustomCursor client:load transition:persist />
-    <Navigation client:load />
+    <Navigation />
     <slot />
-    <Footer client:visible />
+    <Footer />
   </body>
 </html>
