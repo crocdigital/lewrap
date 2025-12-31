@@ -176,12 +176,12 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 
         {/* Desktop Menu */}
         <div
-            class="hidden md:flex items-center gap-5 shrink-0 whitespace-nowrap nav-menu"
+            class="hidden md:flex items-center gap-5 shrink-0 whitespace-nowrap text-lg text-lewrap-green-dark capitalize"
         >
             <a
                 href="/our-story"
                 class:list={[
-                    "duration-200",
+                    "font-helvetica-condensed font-bold duration-200",
                     pathname === "/our-story"
                         ? "text-lewrap-green pointer-events-none"
                         : "hover:text-lewrap-green",
@@ -192,7 +192,7 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
             <a
                 href="/locations"
                 class:list={[
-                    "duration-200",
+                    "font-helvetica-condensed font-bold duration-200",
                     pathname === "/locations"
                         ? "text-lewrap-green pointer-events-none"
                         : "hover:text-lewrap-green",
@@ -203,7 +203,7 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
             <a
                 href="/our-food"
                 class:list={[
-                    "duration-200",
+                    "font-helvetica-condensed font-bold duration-200",
                     pathname === "/our-food"
                         ? "text-lewrap-green pointer-events-none"
                         : "hover:text-lewrap-green",
@@ -214,7 +214,7 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
             <a
                 href="/nutrition"
                 class:list={[
-                    "duration-200",
+                    "font-helvetica-condensed font-bold duration-200",
                     pathname === "/nutrition"
                         ? "text-lewrap-green pointer-events-none"
                         : "hover:text-lewrap-green",
@@ -225,7 +225,7 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
             <a
                 href="#"
                 class:list={[
-                    "duration-200",
+                    "font-helvetica-condensed font-bold duration-200",
                     pathname === "#"
                         ? "text-lewrap-green pointer-events-none"
                         : "hover:text-lewrap-green",
@@ -293,15 +293,15 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
     class="md:hidden fixed inset-0 z-40 bg-white transition-opacity duration-300 opacity-0 pointer-events-none"
 >
     <div
-        class="flex flex-col items-center justify-center h-full px-8 gap-6 pt-24"
+        class="flex flex-col items-center justify-center h-full px-8 gap-5 pt-24 capitalize"
     >
         <a
             href="/our-story"
             class:list={[
-                "duration-200 text-xl font-medium mobile-link",
+                "duration-200 text-2xl font-helvetica-condensed font-bold mobile-link",
                 pathname === "/our-story"
                     ? "text-lewrap-green"
-                    : "text-lewrap-off-black hover:text-lewrap-green",
+                    : "text-lewrap-green-dark hover:text-lewrap-green",
             ]}
         >
             Our story
@@ -309,10 +309,10 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
         <a
             href="/locations"
             class:list={[
-                "duration-200 text-xl font-medium mobile-link",
+                "duration-200 text-2xl font-helvetica-condensed font-bold mobile-link",
                 pathname === "/locations"
                     ? "text-lewrap-green"
-                    : "text-lewrap-off-black hover:text-lewrap-green",
+                    : "text-lewrap-green-dark hover:text-lewrap-green",
             ]}
         >
             Locations
@@ -320,10 +320,10 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
         <a
             href="/our-food"
             class:list={[
-                "duration-200 text-xl font-medium mobile-link",
+                "duration-200 text-2xl font-helvetica-condensed font-bold mobile-link",
                 pathname === "/our-food"
                     ? "text-lewrap-green"
-                    : "text-lewrap-off-black hover:text-lewrap-green",
+                    : "text-lewrap-green-dark hover:text-lewrap-green",
             ]}
         >
             Our food
@@ -331,29 +331,29 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
         <a
             href="/nutrition"
             class:list={[
-                "duration-200 text-xl font-medium mobile-link",
+                "duration-200 text-2xl font-helvetica-condensed font-bold mobile-link",
                 pathname === "/nutrition"
                     ? "text-lewrap-green"
-                    : "text-lewrap-off-black hover:text-lewrap-green",
+                    : "text-lewrap-green-dark hover:text-lewrap-green",
             ]}
         >
             Nutrition
         </a>
         <a
             href="#"
-            class="text-lewrap-off-black hover:text-lewrap-green duration-200 text-xl font-medium mobile-link"
+            class="text-lewrap-green-dark hover:text-lewrap-green duration-200 text-2xl font-helvetica-condensed font-bold mobile-link"
         >
             Catering
         </a>
         <a
             href="#"
-            class="text-lewrap-off-black hover:text-lewrap-green duration-200 text-xl font-medium mobile-link"
+            class="text-lewrap-green-dark hover:text-lewrap-green duration-200 text-2xl font-helvetica-condensed font-bold mobile-link"
         >
             Newsroom
         </a>
         <a
             href="#"
-            class="text-lewrap-off-black hover:text-lewrap-green duration-200 text-xl font-helvetica-condensed font-black mobile-link"
+            class="text-lewrap-green-dark hover:text-lewrap-green duration-200 text-2xl font-helvetica-condensed font-black mobile-link"
         >
             Own a store
         </a>
@@ -361,7 +361,7 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
         {/* Order Now Button */}
         <a
             href="#"
-            class="px-8 py-4 bg-lewrap-green-dark rounded-full w-full border-4 border-lewrap-green text-white font-cocogoose uppercase duration-200 text-xl hover:bg-lewrap-green text-center mt-4 mobile-link"
+            class="px-8 py-4 bg-lewrap-green-dark rounded-full w-full border-4 border-lewrap-green text-white font-cocogoose uppercase duration-200 text-2xl hover:bg-lewrap-green text-center mt-4 mobile-link"
         >
             Order now
         </a>
