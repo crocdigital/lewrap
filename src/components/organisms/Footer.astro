@@ -106,10 +106,12 @@ import leWrapLogo from "../../assets/lewrap-w.svg";
 
                 <div class="col-span-1 hidden md:block"></div>
 
-                <div class="col-span-1 flex flex-col gap-y-2">
+                <div
+                    class="col-span-1 flex flex-col gap-y-2 font-helvetica-condensed"
+                >
                     <a
                         href="#"
-                        class={`${pathname === "#" ? "text-white pointer-events-none" : "font-helvetica-condensed font-black text-white/70 hover:text-white"} duration-200`}
+                        class={`${pathname === "#" ? "text-white pointer-events-none" : "font-black text-white/70 text-lg hover:text-white"} duration-200`}
                     >
                         Order Now
                     </a>
@@ -151,10 +153,12 @@ import leWrapLogo from "../../assets/lewrap-w.svg";
                     </a>
                 </div>
 
-                <div class="col-span-1 flex flex-col gap-y-2">
+                <div
+                    class="col-span-1 flex flex-col gap-y-2 font-helvetica-condensed"
+                >
                     <a
                         href="#"
-                        class={`${pathname === "#" ? "text-white pointer-events-none" : "font-helvetica-condensed font-black text-white/70 hover:text-white"} duration-200`}
+                        class={`${pathname === "#" ? "text-white pointer-events-none" : "font-black text-white/70 text-lg hover:text-white"} duration-200`}
                     >
                         Own a store
                     </a>
@@ -192,7 +196,7 @@ import leWrapLogo from "../../assets/lewrap-w.svg";
             </div>
 
             <div
-                class="flex flex-col md:flex-row mx-auto mt-20 justify-center text-center gap-2 text-white"
+                class="flex flex-col md:flex-row mx-auto mt-20 justify-between text-center gap-2 text-white"
             >
                 <p class="text-white/70">
                     &copy; {new Date().getFullYear()} Retail Systems Group Ltd. All
@@ -201,7 +205,7 @@ import leWrapLogo from "../../assets/lewrap-w.svg";
                 <p
                     class="flex items-center gap-x-1 text-white/70 mx-auto md:mx-0"
                 >
-                    Made with{" "}
+                    Designed &amp; coded with{" "}
                     <svg
                         width="12"
                         height="10"
