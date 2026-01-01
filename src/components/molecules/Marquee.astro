@@ -1,0 +1,150 @@
+---
+interface Props {
+    /** Animation speed in pixels per second (default: 50) */
+    speed?: number;
+    /** Custom class name for the container */
+    className?: string;
+    /** SVG separator to display between items */
+    separator?: string;
+    /** Gradient color (default: white) */
+    gradientColor?: string;
+    /** Gradient width in pixels (default: 100) */
+    gradientWidth?: number;
+    /** Items to display in the marquee */
+    items: string[];
+}
+
+const {
+    speed = 50,
+    className = "",
+    separator = `<svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="3"/></svg>`,
+    gradientColor = "#D1E7C1",
+    gradientWidth = 100,
+    items = [],
+} = Astro.props;
+
+const uniqueId = `marquee-${Math.random().toString(36).substr(2, 9)}`;
+
+// Build the content with separators
+const buildContent = () => {
+    const parts: string[] = [];
+    items.forEach((item) => {
+        parts.push(item);
+        parts.push(`<span class="marquee-separator">${separator}</span>`);
+    });
+    return parts.join("");
+};
+
+const content = buildContent();
+---
+
+<div
+    class={`marquee-wrapper ${className}`}
+    data-unique-id={uniqueId}
+    data-speed={speed}
+>
+    <div class="marquee-track">
+        <div class="marquee-content" set:html={content} />
+        <div class="marquee-content" set:html={content} aria-hidden="true" />
+        <div class="marquee-content" set:html={content} aria-hidden="true" />
+    </div>
+
+    <!-- Left gradient overlay -->
+    <div
+        class="marquee-gradient marquee-gradient-left"
+        style={`background: linear-gradient(to right, ${gradientColor}, transparent); width: ${gradientWidth}px;`}
+    >
+    </div>
+
+    <!-- Right gradient overlay -->
+    <div
+        class="marquee-gradient marquee-gradient-right"
+        style={`background: linear-gradient(to left, ${gradientColor}, transparent); width: ${gradientWidth}px;`}
+    >
+    </div>
+</div>
+
+<style>
+    .marquee-wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .marquee-track {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        white-space: nowrap;
+        width: fit-content;
+        animation: scroll linear infinite;
+    }
+
+    .marquee-content {
+        display: inline-flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .marquee-content :global(*) {
+        display: inline-block;
+    }
+
+    .marquee-content :global(.marquee-separator) {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .marquee-gradient {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        pointer-events: none;
+        z-index: 10;
+    }
+
+    .marquee-gradient-left {
+        left: 0;
+    }
+
+    .marquee-gradient-right {
+        right: 0;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-33.333%);
+        }
+    }
+</style>
+
+<script define:vars={{ uniqueId }}>
+    function initMarquee() {
+        const wrapper = document.querySelector(
+            `[data-unique-id="${uniqueId}"]`,
+        );
+        if (!wrapper) return;
+
+        const track = wrapper.querySelector(".marquee-track");
+        if (!track) return;
+
+        const speed = parseFloat(wrapper.dataset.speed || "50");
+
+        // Calculate animation duration based on content width and speed
+        const contentWidth = track.offsetWidth / 3; // Divide by 3 since we render 3 times
+        const duration = contentWidth / speed;
+        track.style.animationDuration = `${duration}s`;
+    }
+
+    // Run on load
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initMarquee);
+    } else {
+        initMarquee();
+    }
+
+    // Run after view transitions
+    document.addEventListener("astro:page-load", initMarquee);
+</script>

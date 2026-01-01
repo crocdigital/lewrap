@@ -3,7 +3,7 @@ import { ClientRouter } from "astro:transitions";
 import Navigation from "../components/organisms/Navigation.astro";
 import Footer from "../components/organisms/Footer.astro";
 import CustomCursor from "../components/atoms/CustomCursor";
-import BackToTop from "../components/atoms/BackToTop";
+import BackToTop from "../components/atoms/BackToTop.astro";
 import "../styles/globals.css";
 
 interface Props {
@@ -60,7 +60,6 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
     <slot />
     <Footer />
     <BackToTop
-      client:load
       threshold={300}
       className="fixed bottom-12 right-8 z-50 w-12 h-12 rounded-full bg-lewrap-green-dark hover:bg-lewrap-green flex items-center justify-center shadow-lg transition-colors duration-300"
     >
