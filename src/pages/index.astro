@@ -5,6 +5,7 @@ import Marquee from "../components/molecules/Marquee.astro";
 import ScrollReveal from "../components/molecules/ScrollReveal.astro";
 import LeftScrollReveal from "../components/molecules/LeftScrollReveal.astro";
 import leWrapLogo from "../assets/lewrap-w.svg";
+import bgTexture from "../assets/bgrds/bg-texture.webp";
 
 const heroSlides = [
     {
@@ -81,11 +82,11 @@ const leWrapSeparator = `
                             alt="LeWrap"
                             class="w-[157px] h-[46px] md:w-[266px] md:h-[78px]"
                         />
-                        <h2
+                        <h1
                             class="font-cocogoose text-white text-3xl w-3/4 md:w-auto md:text-[80px] font-bold leading-tight"
                         >
                             We believe in all things good and fresh
-                        </h2>
+                        </h1>
                     </div>
                     {/* // Content overlay */}
                 </Carousel>
@@ -110,6 +111,41 @@ const leWrapSeparator = `
                 ]}
             />
             {/* // Marquee */}
+
+            {/* Welcome block */}
+            <section
+                class="w-[95%] mx-auto bg-cover bg-center bg-no-repeat p-7 rounded-2xl grid md:grid-cols-2"
+                style={{
+                    backgroundImage: `radial-gradient(ellipse 93.38% 101.86% at 50% 50%, white 15%, rgba(255, 255, 255, 0) 100%), url(${bgTexture.src})`,
+                }}
+            >
+                <div class="max-w-xl mx-auto flex flex-col gap-y-8 py-16">
+                    <h2
+                        class="font-cocogoose text-lewrap-green-dark text-5xl/14"
+                    >
+                        Nõbody makës ă wrap like us
+                    </h2>
+
+                    <p class="text-2xl/8">
+                        Modernipsum dolor sit amet mannerism lyrical abstraction
+                        structuralism, deformalism post-painterly abstraction
+                        neo-classicism bauhaus.
+                    </p>
+
+                    <p class="text-2xl/8">
+                        Neo-impressionism romanesque renaissance postminimalism
+                        nouveau realisme young british artists, intervention art
+                        primitivism luminism synthetism.
+                    </p>
+
+                    <a
+                        href="/our-food"
+                        class="px-8 py-4 bg-lewrap-green text-white rounded-full font-bold font-cocogoose text-2xl capitalize hover:bg-lewrap-green-dark hover:text-lewrap-green duration-200 hover:scale-105 shadow-lg w-fit"
+                        >Our Food</a
+                    >
+                </div>
+            </section>
+            {/* // Welcome block */}
 
             <div
                 class="flex flex-col items-center gap-4 px-4 text-center max-w-4xl mx-auto"
