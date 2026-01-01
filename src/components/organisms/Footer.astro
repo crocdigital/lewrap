@@ -1,6 +1,7 @@
 ---
+import { Image } from "astro:assets";
 const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
-import leWrapLogo from "../../assets/lewrap-w.svg";
+import leWrapLogo from "../../assets/brand/lewrap-white.svg";
 ---
 
 <div class="max-w-screen-2xl w-full mx-auto">
@@ -11,8 +12,8 @@ import leWrapLogo from "../../assets/lewrap-w.svg";
             <div class="grid grid-cols-2 md:grid-cols-8 gap-10">
                 <div class="col-span-2 md:col-span-1">
                     <a href="/">
-                        <img
-                            src={leWrapLogo.src}
+                        <Image
+                            src={leWrapLogo}
                             alt="LeWrap"
                             class="mx-auto md:mx-0 w-[157px] h-[46px]"
                         />

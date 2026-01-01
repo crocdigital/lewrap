@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import leWrapLogo from "../../assets/brand/lewrap.svg";
 const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 ---
 
@@ -12,8 +14,8 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
     >
         {/* Logo */}
         <a href="/" class="shrink-0 nav-logo">
-            <img
-                src="/brand/lewrap.svg"
+            <Image
+                src={leWrapLogo}
                 alt="LeWrap"
                 class="w-[82px] md:w-[102px] h-auto"
             />

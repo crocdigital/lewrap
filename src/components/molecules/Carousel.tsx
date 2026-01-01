@@ -13,7 +13,7 @@ import 'swiper/css/pagination';
 import '../../styles/carousel.css';
 
 export type SlideContent =
-    | { type: 'image'; src: string; alt: string; objectFit?: 'cover' | 'contain' | 'fill' }
+    | { type: 'image'; src: string | any; alt: string; objectFit?: 'cover' | 'contain' | 'fill' }
     | { type: 'video'; src: string; controls?: boolean; autoPlay?: boolean; muted?: boolean; loop?: boolean }
     | { type: 'html'; content: React.ReactNode };
 
@@ -121,9 +121,10 @@ export default function Carousel({
     const renderSlide = (slide: SlideContent, index: number) => {
         switch (slide.type) {
             case 'image':
+                const imageSrc = typeof slide.src === 'string' ? slide.src : (slide.src.src || slide.src);
                 return (
                     <img
-                        src={slide.src}
+                        src={imageSrc}
                         alt={slide.alt}
                         style={{
                             width: '100%',

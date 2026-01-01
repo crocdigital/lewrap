@@ -1,28 +1,30 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Carousel from "../components/molecules/Carousel";
 import Marquee from "../components/molecules/Marquee.astro";
 import ScrollReveal from "../components/molecules/ScrollReveal.astro";
 import LeftScrollReveal from "../components/molecules/LeftScrollReveal.astro";
-import leWrapLogo from "../assets/lewrap-w.svg";
+import leWrapLogo from "../assets/brand/lewrap-white.svg";
 import bgTexture from "../assets/bgrds/bg-texture.webp";
+import homeSlider01 from "../assets/home/home-slider-01.webp";
 
 const heroSlides = [
     {
         type: "image" as const,
-        src: "/home/home-slider-01.webp",
+        src: homeSlider01,
         alt: "Food image 1",
         objectFit: "cover" as const,
     },
     {
         type: "image" as const,
-        src: "/home/home-slider-01.webp",
+        src: homeSlider01,
         alt: "Food image 2",
         objectFit: "cover" as const,
     },
     {
         type: "image" as const,
-        src: "/home/home-slider-01.webp",
+        src: homeSlider01,
         alt: "Food image 3",
         objectFit: "cover" as const,
     },
@@ -77,8 +79,8 @@ const leWrapSeparator = `
                     <div
                         class="max-w-6xl flex flex-col items-center gap-4 text-center z-30 pointer-events-none select-none"
                     >
-                        <img
-                            src={leWrapLogo.src}
+                        <Image
+                            src={leWrapLogo}
                             alt="LeWrap"
                             class="w-[157px] h-[46px] md:w-[266px] md:h-[78px]"
                         />
