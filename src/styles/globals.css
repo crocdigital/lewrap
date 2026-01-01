@@ -55,11 +55,11 @@
 
 /* Button variants */
 @utility btn-lewrap {
-  @apply px-6 py-3 md:px-8 md:py-4 bg-lewrap-green text-white rounded-full font-bold font-cocogoose text-xl md:text-2xl capitalize hover:bg-lewrap-green-dark hover:text-lewrap-green duration-200 hover:scale-105 shadow-lg w-fit inline-block text-center;
+  @apply px-6 py-3 md:px-8 md:py-4 bg-lewrap-green text-white rounded-full font-bold font-cocogoose text-xl md:text-2xl capitalize hover:bg-lewrap-green-dark hover:text-lewrap-green duration-200 hover:scale-105 w-fit inline-block text-center;
 }
 
 @utility btn-lewrap-secondary {
-  @apply px-6 py-3 md:px-8 md:py-4 bg-lewrap-green-dark border-4 border-lewrap-green text-white rounded-full font-bold font-cocogoose text-xl md:text-2xl hover:bg-lewrap-green hover:text-white uppercase duration-200 hover:scale-105 shadow-lg w-fit inline-block text-center;
+  @apply px-6 py-3 md:px-8 md:py-4 bg-lewrap-green-dark border-4 border-lewrap-green text-white rounded-full font-bold font-cocogoose text-xl md:text-2xl hover:bg-lewrap-green hover:text-white uppercase duration-200 hover:scale-105 w-fit inline-block text-center;
 }
 
 
