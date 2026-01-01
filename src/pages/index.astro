@@ -5,9 +5,11 @@ import Carousel from "../components/molecules/Carousel";
 import Marquee from "../components/molecules/Marquee.astro";
 import ScrollReveal from "../components/molecules/ScrollReveal.astro";
 import LeftScrollReveal from "../components/molecules/LeftScrollReveal.astro";
+// Images
 import leWrapLogo from "../assets/brand/lewrap-white.svg";
 import bgTexture from "../assets/bgrds/bg-texture.webp";
 import homeSlider01 from "../assets/home/home-slider-01.webp";
+import welcomeLewrap from "../assets/home/welcome-lewrap.webp";
 
 const heroSlides = [
     {
@@ -30,7 +32,7 @@ const heroSlides = [
     },
 ];
 
-// Customer marquee separator
+// LeWrap marquee separator
 const leWrapSeparator = `
   <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0_336_2906)">
@@ -116,7 +118,7 @@ const leWrapSeparator = `
 
             {/* Welcome block */}
             <section
-                class="w-[95%] mx-auto bg-cover bg-center bg-no-repeat p-7 rounded-2xl grid md:grid-cols-2"
+                class="w-[95%] mx-auto bg-cover bg-center bg-no-repeat p-7 rounded-2xl grid md:grid-cols-2 relative"
                 style={{
                     backgroundImage: `radial-gradient(ellipse 93.38% 101.86% at 50% 50%, white 15%, rgba(255, 255, 255, 0) 100%), url(${bgTexture.src})`,
                 }}
@@ -146,6 +148,12 @@ const leWrapSeparator = `
                         >Our Food</a
                     >
                 </div>
+
+                <Image
+                    src={welcomeLewrap}
+                    alt="LeWrap"
+                    class="w-[300px] md:w-[629px] h-auto relative md:absolute mx-auto md:bottom-0 md:right-28 md:mx-0 mb-[-28px] md:mb-0"
+                />
             </section>
             {/* // Welcome block */}
 
