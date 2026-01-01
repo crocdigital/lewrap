@@ -261,7 +261,7 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
                     "px-6 py-3 bg-lewrap-green-dark border-4 border-lewrap-green rounded-full text-white font-cocogoose uppercase duration-200",
                     pathname === "#"
                         ? "text-lewrap-green pointer-events-none"
-                        : "hover:text-white hover:bg-lewrap-green",
+                        : "hover:text-white hover:bg-lewrap-green hover:scale-105",
                 ]}
             >
                 Order now
@@ -361,7 +361,7 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
         {/* Order Now Button */}
         <a
             href="#"
-            class="px-8 py-4 bg-lewrap-green-dark rounded-full w-full border-4 border-lewrap-green text-white font-cocogoose uppercase duration-200 text-2xl hover:bg-lewrap-green text-center mt-4 mobile-link"
+            class="px-8 py-4 bg-lewrap-green-dark rounded-full w-full border-4 border-lewrap-green text-white font-cocogoose uppercase duration-200 text-2xl hover:bg-lewrap-green hover:scale-105 text-center mt-4 mobile-link"
         >
             Order now
         </a>
