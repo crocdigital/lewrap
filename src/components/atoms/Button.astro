@@ -1,0 +1,35 @@
+---
+interface Props {
+    href?: string;
+    type?: "button" | "submit" | "reset";
+    class?: string;
+    variant?: "primary" | "secondary"; // Reserved for future use
+}
+
+const {
+    href,
+    type = "button",
+    variant = "primary",
+    class: className,
+    ...rest
+} = Astro.props;
+
+const variants = {
+    primary: "btn-lewrap",
+    secondary: "btn-lewrap-secondary",
+};
+
+const baseStyles = variants[variant] || variants.primary;
+---
+
+{
+    href ? (
+        <a href={href} class:list={[baseStyles, className]} {...rest}>
+            <slot />
+        </a>
+    ) : (
+        <button type={type} class:list={[baseStyles, className]} {...rest}>
+            <slot />
+        </button>
+    )
+}

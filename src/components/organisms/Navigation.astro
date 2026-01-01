@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import Button from "../../components/atoms/Button.astro";
 import leWrapLogo from "../../assets/brand/lewrap.svg";
 const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 ---
@@ -260,7 +261,7 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
             <a
                 href="#"
                 class:list={[
-                    "px-6 py-3 bg-lewrap-green-dark border-4 border-lewrap-green rounded-full text-white font-cocogoose uppercase duration-200",
+                    "btn-lewrap-secondary text-lg",
                     pathname === "#"
                         ? "text-lewrap-green pointer-events-none"
                         : "hover:text-white hover:bg-lewrap-green hover:scale-105",

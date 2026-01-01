@@ -2,7 +2,9 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Carousel from "../components/molecules/Carousel";
+import Button from "../components/atoms/Button.astro";
 import Marquee from "../components/molecules/Marquee.astro";
+
 import ScrollReveal from "../components/molecules/ScrollReveal.astro";
 import LeftScrollReveal from "../components/molecules/LeftScrollReveal.astro";
 // Images
@@ -71,7 +73,6 @@ const leWrapSeparator = `
                     cta2={{
                         text: "Order now",
                         href: "/order",
-                        className: "text-lewrap-green",
                     }}
                     loop={true}
                     hasGradient={true}
@@ -142,11 +143,7 @@ const leWrapSeparator = `
                         primitivism luminism synthetism.
                     </p>
 
-                    <a
-                        href="/our-food"
-                        class="px-8 py-4 bg-lewrap-green text-white rounded-full font-bold font-cocogoose text-2xl capitalize hover:bg-lewrap-green-dark hover:text-lewrap-green duration-200 hover:scale-105 shadow-lg w-fit"
-                        >Our Food</a
-                    >
+                    <Button href="/our-food">Our Food</Button>
                 </div>
 
                 <Image
@@ -182,12 +179,7 @@ const leWrapSeparator = `
                     </a>
                 </ScrollReveal>
                 <ScrollReveal delay={0.2}>
-                    <a
-                        href="/our-food"
-                        class="px-6 py-3 bg-purple-600 text-white rounded-full font-semibold hover:bg-opacity-90 transition block"
-                    >
-                        Go to Our Food
-                    </a>
+                    <Button href="/our-food">Our Food</Button>
                 </ScrollReveal>
                 <ScrollReveal delay={0.4}>
                     <a
