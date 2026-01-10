@@ -73,16 +73,20 @@ const content = buildContent();
     .marquee-track {
         display: flex;
         align-items: center;
-        gap: 2rem;
+        gap: 0;
         white-space: nowrap;
         width: fit-content;
         animation: scroll linear infinite;
+        will-change: transform;
+        backface-visibility: hidden;
+        transform: translateZ(0);
     }
 
     .marquee-content {
         display: inline-flex;
         align-items: center;
         gap: 2rem;
+        padding-right: 2rem;
     }
 
     .marquee-content :global(*) {

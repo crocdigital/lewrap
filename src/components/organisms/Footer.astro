@@ -1,14 +1,61 @@
 ---
 import { Image } from "astro:assets";
-const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 import leWrapLogo from "../../assets/brand/lewrap-white.svg";
+import leWrapApp from "../../assets/lewrap-app.webp";
+
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isHomepage = pathname === "/";
 ---
 
 <div class="max-w-screen-2xl w-full mx-auto">
-    <footer
-        class="w-[95%] mx-auto bg-lewrap-green rounded-b-2xl px-10 py-20 mb-8 flex flex-col gap-y-10 text-white"
-    >
+    <footer class="w-[95%] mx-auto">
         <section>
+            <h3
+                class="text-3xl text-lewrap-green font-helvetica-condensed font-black"
+            >
+                Instagram feed sent via behold.so as a JSON. Send Mon the link
+                to connect the account. We'll schedule a rebuild script in CC
+                for every 24hrs so the static feed is never more than a day old.
+            </h3>
+        </section>
+
+        {
+            !isHomepage && (
+                <section class="bg-lewrap-green-dark bg-gradient-to-b from-lewrap-off-black/0 to-lewrap-off-black/50 border-y-4 p-8 pb-0 text-center md:text-left">
+                    <div class="max-w-screen-lg mx-auto grid md:grid-cols-[1fr_4fr] gap-4 items-center">
+                        <Image
+                            src={leWrapApp}
+                            alt="LeWrap"
+                            class="mx-auto md:mx-0 w-[193px] h-[224px]"
+                        />
+
+                        <div class="flex flex-col gap-y-4">
+                            <h3 class="text-6xl font-helvetica-condensed font-black">
+                                <span class="text-lewrap-green">
+                                    Order now on the
+                                </span>{" "}
+                                LeWrap App
+                            </h3>
+
+                            <div class="grid md:grid-cols-2 items-center gap-14">
+                                <p class="text-lg font-bold">
+                                    Get personalised deals and loyalty rewards,
+                                    order ahead and skip the queue!
+                                </p>
+
+                                <div class="flex gap-x-8">
+                                    <p>Apple App Store</p>
+                                    <p>Google Play Store</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )
+        }
+        <section
+            class="bg-lewrap-green rounded-b-2xl px-10 py-20 mb-8 flex flex-col gap-y-10 text-white"
+        >
             <div class="grid grid-cols-2 md:grid-cols-8 gap-10">
                 <div class="col-span-2 md:col-span-1">
                     <a href="/">
@@ -314,7 +361,7 @@ import leWrapLogo from "../../assets/brand/lewrap-white.svg";
             </div>
 
             <div
-                class="flex flex-col md:flex-row mx-auto mt-20 justify-between text-center gap-2 text-white"
+                class="flex flex-col md:flex-row mt-20 justify-between text-center gap-2 text-white"
             >
                 <span class="text-white/70">
                     &copy; {new Date().getFullYear()} Retail Systems Group Ltd. All
