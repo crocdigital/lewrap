@@ -81,6 +81,10 @@ button,
   cursor: none;
 }
 
+p>a {
+  color: var(--lewrap-green);
+}
+
 /* Restore default cursor on touch devices */
 @media (pointer: coarse) {
 
