@@ -11,6 +11,8 @@ interface Props {
 }
 
 const { title, image, alt, ctaText, ctaHref } = Astro.props;
+
+const hasSlot = Astro.slots.has("default");
 ---
 
 <section
@@ -43,8 +45,12 @@ const { title, image, alt, ctaText, ctaHref } = Astro.props;
                 </a>
             )
         }
-        <div class="mt-6">
-            <slot />
-        </div>
+        {
+            hasSlot && (
+                <div class="mt-6">
+                    <slot />
+                </div>
+            )
+        }
     </div>
 </section>
