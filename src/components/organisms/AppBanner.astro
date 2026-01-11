@@ -3,10 +3,21 @@ import { Image } from "astro:assets";
 import leWrapApp from "../../assets/lewrap-app.webp";
 import AppApple from "../../assets/download-applestore.png";
 import AppGoogle from "../../assets/download-googleplay.png";
+
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isHomepage = pathname === "/";
+
+const appBannerClass = isHomepage
+    ? "w-[95%] mx-auto bg-lewrap-green rounded-lg border-b-0"
+    : "bg-lewrap-green-dark bg-gradient-to-b from-lewrap-off-black/0 to-lewrap-off-black/50 border-b-4 p-8 pb-0 text-center md:text-left"; // Default
+
+const appBannerTextClass = isHomepage
+    ? "text-lewrap-off-black"
+    : "text-lewrap-green"; // Default
 ---
 
 <section
-    class="bg-lewrap-green-dark bg-gradient-to-b from-lewrap-off-black/0 to-lewrap-off-black/50 border-b-4 p-8 pb-0 text-center md:text-left"
+    class={`${appBannerClass} bg-gradient-to-b from-lewrap-off-black/0 to-lewrap-off-black/50 p-8 pb-0 text-center md:text-left`}
 >
     <div
         class="max-w-screen-lg mx-auto grid md:grid-cols-[1fr_4fr] gap-8 md:gap-5 items-center"
@@ -19,14 +30,14 @@ import AppGoogle from "../../assets/download-googleplay.png";
 
         <div class="flex flex-col gap-y-4">
             <h3
-                class="text-4xl md:text-6xl font-helvetica-condensed font-black"
+                class="text-white text-5xl md:text-6xl font-helvetica-condensed font-black"
             >
-                <span class="text-lewrap-green"> Order now on the </span>{" "}
+                <span class={appBannerTextClass}> Order now on the </span>{" "}
                 LeWrap App
             </h3>
 
             <div class="grid md:grid-cols-2 items-center gap-y-8 md:gap-14">
-                <p class="text-lg font-bold">
+                <p class="text-white text-lg font-bold">
                     Get personalised deals and loyalty rewards, order ahead and
                     skip the queue!
                 </p>
