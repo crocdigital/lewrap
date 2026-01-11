@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/organisms/HeroSection.astro";
+import heroImage from "../assets/PLACEMENT-hero-taj.webp";
+---
+
+<BaseLayout title="Our Story">
+    <main class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black">
+        {/* Hero section */}
+        <HeroSection title="The wrap up on LeWrap" image={heroImage} />
+        {/* // Hero section */}
+    </main>
+</BaseLayout>
