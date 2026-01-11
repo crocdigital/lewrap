@@ -25,14 +25,17 @@ const { title, image, alt } = Astro.props;
     </div>
 
     <div
-        class="max-w-[930px] relative z-20 flex flex-col items-center justify-center h-full w-full pointer-events-none"
+        class="max-w-[930px] relative z-20 flex flex-col items-center justify-center h-full w-full gap-y-6"
     >
         <h1
             class="text-white text-4xl md:text-[90px] w-3/4 md:w-auto font-bold leading-[100%] tracking-tight text-center"
         >
             {title}
         </h1>
-        <div class="pointer-events-auto mt-6">
+
+        {/* Hero section button */}
+        <a href="/" class="btn-lewrap md:text-2xl">Testy McTestyPants</a>
+        <div class="mt-6">
             <slot />
         </div>
     </div>
