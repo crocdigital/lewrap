@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import leWrapLogo from "../../assets/brand/lewrap-white.svg";
 import InstagramBanner from "./InstagramBanner.astro";
+import SignupBanner from "./SignupBanner.astro";
 import AppBanner from "./AppBanner.astro";
 
 const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
@@ -11,6 +12,8 @@ const isHomepage = pathname === "/";
 <div class="max-w-screen-2xl w-full mx-auto">
     <footer class="w-[95%] mx-auto">
         <InstagramBanner />
+
+        <SignupBanner />
 
         {!isHomepage && <AppBanner />}
         <section
