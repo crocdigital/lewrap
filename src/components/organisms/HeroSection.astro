@@ -6,9 +6,11 @@ interface Props {
     title: string;
     image: ImageMetadata;
     alt?: string;
+    ctaText?: string;
+    ctaHref?: string;
 }
 
-const { title, image, alt } = Astro.props;
+const { title, image, alt, ctaText, ctaHref } = Astro.props;
 ---
 
 <section
@@ -34,7 +36,13 @@ const { title, image, alt } = Astro.props;
         </h1>
 
         {/* Hero section button */}
-        <a href="/" class="btn-lewrap md:text-2xl">Testy McTestyPants</a>
+        {
+            ctaText && ctaHref && (
+                <a href={ctaHref} class="btn-lewrap md:text-2xl">
+                    {ctaText}
+                </a>
+            )
+        }
         <div class="mt-6">
             <slot />
         </div>
