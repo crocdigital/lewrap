@@ -1,9 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import leWrapLogo from "../../assets/brand/lewrap-white.svg";
-import leWrapApp from "../../assets/lewrap-app.webp";
-import AppApple from "../../assets/download-applestore.png";
-import AppGoogle from "../../assets/download-googleplay.png";
+import InstagramBanner from "./InstagramBanner.astro";
+import AppBanner from "./AppBanner.astro";
 
 const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 const isHomepage = pathname === "/";
@@ -11,59 +10,9 @@ const isHomepage = pathname === "/";
 
 <div class="max-w-screen-2xl w-full mx-auto">
     <footer class="w-[95%] mx-auto">
-        <section>
-            <h3
-                class="text-3xl text-lewrap-green font-helvetica-condensed font-black"
-            >
-                Instagram feed sent via behold.so as a JSON. Send Mon the link
-                to connect the account. We'll schedule a rebuild script in CC
-                for every 24hrs so the static feed is never more than a day old.
-            </h3>
-        </section>
+        <InstagramBanner />
 
-        {
-            !isHomepage && (
-                <section class="bg-lewrap-green-dark bg-gradient-to-b from-lewrap-off-black/0 to-lewrap-off-black/50 border-y-4 p-8 pb-0 text-center md:text-left">
-                    <div class="max-w-screen-lg mx-auto grid md:grid-cols-[1fr_4fr] gap-8 md:gap-5 items-center">
-                        <Image
-                            src={leWrapApp}
-                            alt="LeWrap"
-                            class="mx-auto md:mx-0 w-[150px] h-[174px] md:w-[193px] md:h-[224px] order-last md:order-first"
-                        />
-
-                        <div class="flex flex-col gap-y-4">
-                            <h3 class="text-4xl md:text-6xl font-helvetica-condensed font-black">
-                                <span class="text-lewrap-green">
-                                    Order now on the
-                                </span>{" "}
-                                LeWrap App
-                            </h3>
-
-                            <div class="grid md:grid-cols-2 items-center gap-y-8 md:gap-14">
-                                <p class="text-lg font-bold">
-                                    Get personalised deals and loyalty rewards,
-                                    order ahead and skip the queue!
-                                </p>
-
-                                <div class="flex flex-col md:flex-row gap-y-4 md:gap-x-8">
-                                    <Image
-                                        src={AppApple}
-                                        alt="Download on the Apple App Store"
-                                        class="mx-auto md:mx-0 w-[165px] h-[55px]"
-                                    />
-
-                                    <Image
-                                        src={AppGoogle}
-                                        alt="Download on the Google Play Store"
-                                        class="mx-auto md:mx-0 w-[165px] h-[55px]"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            )
-        }
+        {!isHomepage && <AppBanner />}
         <section
             class="bg-lewrap-green rounded-b-2xl px-10 py-20 mb-8 flex flex-col gap-y-10 text-white"
         >
