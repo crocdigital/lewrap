@@ -33,9 +33,6 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
     <CustomCursor client:media="(pointer: fine)" transition:persist />
     <Navigation />
     <slot />
-    {
-      /* ADD SLIGHTLY DIFFERENT FOOTER COMPONENT FOR HOMEPAGE... MAYBE CAN BE BUILT AS ONE FILE BUT IT'S DETERMINED IN CODE? */
-    }
     <Footer />
     <BackToTop
       threshold={300}
