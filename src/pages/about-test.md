@@ -15,6 +15,6 @@ page_blocks:
     heading: Our Mission
     text: To test this integration before building the whole site.
     image_path: /images/home/home-slider-01.webp
-    reverse: true
+    reverse: false
   - Adding Testy McTestypants
 ---
