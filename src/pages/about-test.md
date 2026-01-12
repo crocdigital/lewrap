@@ -26,6 +26,6 @@ page_blocks:
     text: >-
       Some text to go here. Pretty flash aye bro! Get code to make this field a
       WYSIWYG field.
-    image_path: /uploads/placement-hero-taj.webp
+    image_path: /images/placement-hero-taj.webp
     reverse: true
 ---

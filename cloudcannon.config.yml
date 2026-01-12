@@ -1,3 +1,6 @@
+paths:
+  uploads: public/images    # Store files inside the Astro public folder
+  static: public            # Tell CC that 'public' is the root for URLs
 collections_config:
   pages:
     path: src/pages
