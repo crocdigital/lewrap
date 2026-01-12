@@ -6,7 +6,7 @@ hero_subtitle: This text is controlled by the sidebar inputs
 hero_bg: bg-blue-50
 page_blocks:
   - _template: feature
-    heading: First 2 Column Section
+    heading: Nobody makes a wrap like us
     text: >-
       <p>This is the first section below the hero. I should really upload 1:1
       ratio images as per my instructions below in the Image field
