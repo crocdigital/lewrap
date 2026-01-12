@@ -4,7 +4,7 @@ import Hero from "../components/Hero.astro";
 import Feature from "../components/Feature.astro";
 
 // 2. Destructure props
-// We set default values (= []) to stop crashes if data is missing
+// We set defaults (= []) to prevent crashes if data is missing
 const {
     title,
     hero_title,
@@ -32,9 +32,10 @@ const {
         }
 
         <main>
+            {/* The ': any' fixes the TypeScript error */}
             {
                 page_blocks?.map((block: any) => {
-                    // match the '_template' from your YAML
+                    // Match the '_template' from your YAML
                     if (block._template === "feature") {
                         return <Feature {...block} />;
                     }
