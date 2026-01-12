@@ -27,6 +27,13 @@ const {
             CAN YOU SEE ME?
         </h1>
 
+        <div
+            style="background: #f4f4f4; padding: 20px; border: 2px solid black; margin: 20px;"
+        >
+            <h3>DEBUG DATA:</h3>
+            <pre>{JSON.stringify(Astro.props, null, 2)}</pre>
+        </div>
+
         {
             hero_title && (
                 <Hero
