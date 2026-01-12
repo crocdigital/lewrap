@@ -5,7 +5,7 @@ page_blocks:
   - _template: hero
     title: Welcome to the About Page
     subtitle: Built with Astro, editable in CloudCannon.
-    bg_color: '#000000'
+    bg_color: bg-black
   - _template: feature
     heading: Our Vision
     text: Smooth sailing and no refactoring later.
