@@ -2,7 +2,7 @@ collections_config:
   pages:
     path: src/pages
     icon: notes
-    url: /[relative_bath_path]/[slug]/
+    url: /[slug]/
     disable_url: false
     _enabled_editors:
       - visual
