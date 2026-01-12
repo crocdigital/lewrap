@@ -8,7 +8,7 @@ page_blocks:
   - _template: feature
     heading: First 2 Column Section
     text: <p>This is the first section below the hero.</p>
-    image_path: /images/PLACEMENT-hero-taj.webp
+    image_path: /images/placement-hero.webp
     reverse: false
   - _template: feature
     heading: Second 2 Column Section
