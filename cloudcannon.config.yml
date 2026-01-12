@@ -81,6 +81,7 @@ _inputs:
       image_path:
         type: image
         label: Image
+        comment: "Please upload a square image (1:1 ratio) for best results."
       reverse:
         type: switch
         label: Reverse Layout
