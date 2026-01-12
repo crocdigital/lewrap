@@ -1,11 +1,11 @@
 collections_config:
   pages:
     path: src/pages
-    output: true            # <--- THIS IS THE MISSING KEY!
+    output: true            # <--- THIS LINE IS MISSING & REQUIRED
     icon: wysiwyg
     url: /[relative_base_path]/[slug]/
     disable_url: false
-    _enabled_editors:       # <--- Add this to force the menu option to appear
+    _enabled_editors:       # <--- ADD THIS BLOCK TO FORCE THE VISUAL TAB
       - visual
       - content
       - data
