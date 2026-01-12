@@ -21,11 +21,4 @@ page_blocks:
     text: Description text
     image_path: /images/home/home-slider-01.webp
     reverse: false
-  - _template: feature
-    heading: Testing new content block with Taji Bear
-    text: >-
-      Some text to go here. Pretty flash aye bro! Get code to make this field a
-      WYSIWYG field.
-    image_path: /images/placement-hero-taj.webp
-    reverse: true
 ---
