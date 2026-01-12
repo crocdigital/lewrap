@@ -1,17 +1,20 @@
 ---
-// 1. Imports
 import Hero from "../components/Hero.astro";
 import Feature from "../components/Feature.astro";
 
-// 2. Destructure props
-// We set defaults (= []) to prevent crashes if data is missing
+// 1. EXTRACT FRONTMATTER
+// The JSON dump showed us that your data lives inside 'frontmatter'
+const { frontmatter } = Astro.props;
+
+// 2. DESTRUCTURE DATA
+// We pull the variables out of frontmatter (or fallback to empty object to be safe)
 const {
     title,
     hero_title,
     hero_subtitle,
     hero_bg,
     page_blocks = [],
-} = Astro.props;
+} = frontmatter || {};
 ---
 
 <html lang="en">
@@ -32,10 +35,8 @@ const {
         }
 
         <main>
-            {/* The ': any' fixes the TypeScript error */}
             {
                 page_blocks?.map((block: any) => {
-                    // Match the '_template' from your YAML
                     if (block._template === "feature") {
                         return <Feature {...block} />;
                     }
