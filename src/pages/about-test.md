@@ -15,6 +15,6 @@ page_blocks:
   - _template: hero
     title: Welcome to the About Page
     subtitle: Built with Astro, editable in CloudCannon.
-    bg_color: bg-blue-50
+    bg_color: '#000000'
   - Adding Testy McTestypants
 ---
