@@ -1,20 +1,22 @@
 paths:
-  uploads: public/images    # Store files inside the Astro public folder
-  static: public            # Tell CC that 'public' is the root for URLs
+  uploads: public/images
+  static: public
+
 collections_config:
   pages:
     path: src/pages
-    output: true            # <--- THIS LINE IS MISSING & REQUIRED
+    output: true
     icon: wysiwyg
     url: /[relative_base_path]/[slug]/
     disable_url: false
-    _enabled_editors:       # <--- ADD THIS BLOCK TO FORCE THE VISUAL TAB
+    _enabled_editors:
       - visual
       - content
       - data
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+
 _inputs:
   page_blocks:
     type: array
@@ -62,8 +64,8 @@ _inputs:
         type: text
         label: Feature Heading
       text:
-        type: html              # <--- This will work now!
-        label: Content          # <--- Only one label now
+        type: html
+        label: Content
         options:
           bold: true
           italic: true
@@ -77,52 +79,5 @@ _inputs:
       reverse:
         type: switch
         label: Reverse Layout
-  page_blocks:
-    type: array
-    options:
-      structures:
-        style: select
-        values:
-          - icon: title
-            label: Hero Section
-            value:
-              _template: hero
-              title: New Hero
-              subtitle: Subtitle here
-              bg_color: bg-gray-100
-          - icon: short_text
-            label: Feature Section
-            value:
-              _template: feature
-              heading: New Feature
-              text: Description text
-              image_path: /test-image.jpg
-              reverse: false
-    cascade: true
-    sub_inputs:
-      _template:
-        hidden: true
-      title:
-        type: text
-        label: Hero Title
-      subtitle:
-        type: text
-        label: Subtitle
-      bg_color:
-        type: select
-        label: Background Color
-        options: {}
-      heading:
-        type: text
-        label: Feature Heading
-      text:
-        type: html
-        label: Content
-        options: {}
-      image_path:
-        type: image
-        label: Image
-      reverse:
-        type: switch
-        label: Reverse Layout
+
 timezone: Australia/Sydney
