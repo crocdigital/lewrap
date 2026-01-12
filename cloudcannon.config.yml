@@ -1,45 +1,40 @@
 paths:
   uploads: public/images
   static: public
+
 collections_config:
   pages:
     path: src/pages
-    icon: notes
+    output: true
     url: /[slug]/
-    disable_url: false
+    icon: notes
+    # Force all editors to be available
     _enabled_editors:
       - visual
       - content
       - data
-    disable_add: false
-    disable_add_folder: false
-    disable_file_actions: false
-    schemas:
-      default:
-        path: src/layouts/TestLayout.astro
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
-_inputs:
-  page_blocks:
-    type: array
-    options:
-      structures:
-        _values:
-          - value:
-              _template: hero
-              title: New Hero
-              subtitle: Subtitle here
-              bg_color: bg-gray-100
-            label: Hero Section
-            icon: title
-          - value:
-              _template: feature
-              heading: New Feature
-              text: Description text
-              reverse: false
-            label: Feature Section
-            icon: short_text
-    cascade: true
-timezone: Etc/UTC
+    # Input configuration specific to this collection
+    _inputs:
+      page_blocks:
+        type: array
+        options:
+          structures:
+            _values:
+              - value:
+                  _template: hero
+                  title: New Hero
+                  subtitle: Subtitle here
+                  bg_color: bg-gray-100
+                label: Hero Section
+                icon: title
+              - value:
+                  _template: feature
+                  heading: New Feature
+                  text: Description text
+                  image_path: /test-image.jpg
+                  reverse: false
+                label: Feature Section
+                icon: short_text
+
+# We removed the 'schemas' block because pointing to an .astro file 
+# breaks the input generation unless you are using specific comments.
