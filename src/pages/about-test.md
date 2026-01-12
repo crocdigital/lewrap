@@ -10,7 +10,9 @@ page_blocks:
     text: >-
       <p>This is the second section.</p><p>I'm now adding this new text, and
       will move this row above the first one. If that works it's time for a dart
-      to celebrate :)</p>
+      to celebrate :)</p><p>Update: It worked! Now don't forget to test changing
+      text within this field to different headings and see how the app styles
+      them bro.</p>
     image_path: /images/PLACEMENT-hero-taj.webp
     reverse: true
   - _template: feature
