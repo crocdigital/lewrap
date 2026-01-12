@@ -1,33 +1,61 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/organisms/HeroSection.astro";
+import heroImage from "../assets/PLACEMENT-hero-taj.webp";
 ---
 
 <BaseLayout title="Our Food">
-    <main class="bg-purple-600 text-white">
-        <div
-            class="min-h-screen flex flex-col items-center justify-center gap-8"
-        >
-            <h1 class="text-4xl font-bold">Our Food</h1>
-            <p class="text-xl">This is the Our Food dummy page.</p>
-            <div class="flex gap-4">
+    <main class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black">
+        <HeroSection title="Our Food" image={heroImage}>
+            <div
+                class="max-w-xl flex flex-wrap gap-2 items-center justify-center"
+            >
                 <a
-                    href="/"
-                    class="px-6 py-3 bg-white text-purple-600 rounded-full font-semibold hover:bg-opacity-90 transition"
+                    href="#"
+                    class="btn-lewrap text-sm py-2 px-5 whitespace-nowrap"
+                    >Latest Deals</a
                 >
-                    Go Home
-                </a>
                 <a
-                    href="/nutrition"
-                    class="px-6 py-3 bg-purple-800 text-white rounded-full font-semibold hover:bg-opacity-90 transition"
+                    href="#"
+                    class="btn-lewrap text-sm py-2 px-5 whitespace-nowrap"
+                    >Wraps</a
                 >
-                    Go to Nutrition
-                </a>
+                <a
+                    href="#"
+                    class="btn-lewrap text-sm py-2 px-5 whitespace-nowrap"
+                    >Plates</a
+                >
+                <a
+                    href="#"
+                    class="btn-lewrap text-sm py-2 px-5 whitespace-nowrap"
+                    >Baguettes</a
+                >
+                <a
+                    href="#"
+                    class="btn-lewrap text-sm py-2 px-5 whitespace-nowrap"
+                    >Protein Packs</a
+                >
+                <a
+                    href="#"
+                    class="btn-lewrap text-sm py-2 px-5 whitespace-nowrap"
+                    >Salads</a
+                >
+                <a
+                    href="#"
+                    class="btn-lewrap text-sm py-2 px-5 whitespace-nowrap"
+                    >Kids Meals</a
+                >
+                <a
+                    href="#"
+                    class="btn-lewrap text-sm py-2 px-5 whitespace-nowrap"
+                    >Sides</a
+                >
+                <a
+                    href="#"
+                    class="btn-lewrap text-sm py-2 px-5 whitespace-nowrap"
+                    >Drinks</a
+                >
             </div>
-        </div>
-        <div class="h-[150vh] w-full flex items-center justify-center mt-20">
-            <p class="text-purple-200">
-                Keep scrolling to see the nav shrink...
-            </p>
-        </div>
+        </HeroSection>
     </main>
 </BaseLayout>
