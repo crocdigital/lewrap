@@ -1,0 +1,30 @@
+collections_config:
+  pages:
+    path: src/pages
+    output: true
+    # This tells CC which fields to show for files in this folder
+    schemas:
+      default:
+        path: src/layouts/TestLayout.astro # Just a reference for defaults
+
+_inputs:
+  page_blocks:
+    type: array
+    options:
+      structures:
+        _values:
+          - value:
+              _template: hero
+              title: New Hero
+              subtitle: Subtitle here
+              bg_color: bg-gray-100
+            label: Hero Section
+            icon: title
+            
+          - value:
+              _template: feature
+              heading: New Feature
+              text: Description text
+              reverse: false
+            label: Feature Section
+            icon: short_text

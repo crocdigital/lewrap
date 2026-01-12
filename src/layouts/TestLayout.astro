@@ -1,0 +1,65 @@
+---
+import Hero from "../components/Hero.astro";
+import Feature from "../components/Feature.astro";
+import CustomCursor from "../components/atoms/CustomCursor";
+import "../styles/globals.css";
+
+// 1. Define the shape of a Block
+interface PageBlock {
+    _template: string;
+    [key: string]: any; // This allows any other properties (title, image, etc.)
+}
+
+interface Props {
+    frontmatter?: {
+        title: string;
+        page_blocks?: PageBlock[];
+    };
+    title?: string;
+    page_blocks?: PageBlock[];
+}
+
+// 2. Destructure with a fallback to ensure we get the data whether it comes from Markdown or direct props
+const { frontmatter } = Astro.props;
+const title = frontmatter?.title || Astro.props.title;
+const page_blocks = frontmatter?.page_blocks || Astro.props.page_blocks || [];
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>{title}</title>
+    </head>
+    <body>
+        <CustomCursor client:media="(pointer: fine)" transition:persist />
+        <header class="p-4 bg-white shadow-sm">
+            <nav>
+                <a href="/" class="font-bold text-lewrap-green">← Back Home</a>
+            </nav>
+        </header>
+
+        <main>
+            {
+                /* 3. Add the type to the map callback */
+                page_blocks &&
+                    page_blocks.map((block: PageBlock) => {
+                        switch (block._template) {
+                            case "hero":
+                                return <Hero {...block} />;
+                            case "feature":
+                                return <Feature {...block} />;
+                            default:
+                                return null;
+                        }
+                    })
+            }
+
+            <slot />
+        </main>
+
+        <footer class="p-8 text-center text-gray-500 mt-12 bg-gray-50">
+            <small>Test Layout Footer</small>
+        </footer>
+    </body>
+</html>

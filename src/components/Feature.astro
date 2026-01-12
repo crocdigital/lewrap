@@ -1,0 +1,26 @@
+---
+const { heading, text, image_path, reverse = false } = Astro.props;
+---
+
+<section
+    class="py-12 px-6 max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center"
+>
+    <div class={reverse ? "md:order-2" : ""}>
+        <h2 class="text-2xl font-bold mb-2">{heading}</h2>
+        <div class="prose">
+            <p>{text}</p>
+        </div>
+    </div>
+
+    {
+        image_path && (
+            <div class={reverse ? "md:order-1" : ""}>
+                <img
+                    src={image_path}
+                    alt={heading}
+                    class="rounded-lg shadow-lg w-full"
+                />
+            </div>
+        )
+    }
+</section>

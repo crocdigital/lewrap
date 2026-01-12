@@ -10,7 +10,7 @@ export default function CustomCursor() {
     const mouse = useRef({ x: 0, y: 0 });
     const cursor = useRef({ x: 0, y: 0 });
     // Add separate ref for current animated scale
-    const cursorScale = useRef(1);
+    const cursorScale = useRef(0.444);
     const requestRef = useRef<number>(0);
     const isHoveringRef = useRef(false);
 
@@ -37,13 +37,14 @@ export default function CustomCursor() {
             cursor.current.y = cursor.current.y + distY * 0.4;
 
             // Physics for Scale (Lerp)
-            const targetScale = isHoveringRef.current ? 2.25 : 1;
+            // Scale down from 36px (w-9) to 16px (0.444)
+            const targetScale = isHoveringRef.current ? 1 : 0.444;
             // Lower factor for scale makes it feel smoother/elastic compared to position
             cursorScale.current = cursorScale.current + (targetScale - cursorScale.current) * 0.15;
 
             if (cursorRef.current) {
-                const x = cursor.current.x - 8; // Center offset
-                const y = cursor.current.y - 8;
+                const x = cursor.current.x - 18; // Center offset (half of 36px)
+                const y = cursor.current.y - 18;
                 // Use interpolated scale
                 cursorRef.current.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${cursorScale.current})`;
             }
@@ -108,7 +109,7 @@ export default function CustomCursor() {
     return (
         <div
             ref={cursorRef}
-            className={`fixed top-0 left-0 w-4 h-4 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference`}
+            className={`fixed top-0 left-0 w-9 h-9 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference`}
             style={{
                 // Using transform for performance, opacity avoids flash
                 willChange: "transform"

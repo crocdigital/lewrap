@@ -1,0 +1,8 @@
+---
+const { title, subtitle, bg_color = "bg-gray-100" } = Astro.props;
+---
+
+<section class={`${bg_color} py-20 px-6 text-center`}>
+    <h1 class="text-4xl font-bold mb-4">{title}</h1>
+    {subtitle && <p class="text-xl text-gray-700">{subtitle}</p>}
+</section>
