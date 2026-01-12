@@ -2,7 +2,7 @@ collections_config:
   pages:
     path: src/pages
     icon: wysiwyg
-    url: /[relative_bath_path]/[slug]/
+    url: /[relative_base_path]/[slug]/
     disable_url: false
     disable_add: false
     disable_add_folder: false
