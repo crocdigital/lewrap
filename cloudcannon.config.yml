@@ -116,16 +116,9 @@ _inputs:
         type: text
         label: Feature Heading
       text:
-        type: html # <--- CHANGE THIS (Was 'markdown' or 'text')
+        type: html
         label: Content
-        options:
-          bold: true
-          italic: true
-          link: true
-          bulleted_list: true
-          numbered_list: true
-          format: p h2 h3 h4 # Allows users to pick headers
-        label: Content
+        options: {}
       image_path:
         type: image
         label: Image
