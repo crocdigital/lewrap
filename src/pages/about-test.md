@@ -7,8 +7,13 @@ page_blocks:
     subtitle: Built with Astro, editable in CloudCannon.
     bg_color: bg-black
   - _template: feature
-    heading: Our Vision
-    text: Smooth sailing and no refactoring later.
+    heading: Nobody makes a wrap like us
+    text: >-
+      <p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism,
+      deformalism post-painterly abstraction neo-classicism
+      bauhaus.</p><p>Neo-impressionism romanesque renaissance postminimalism
+      nouveau realisme young british artists, intervention art primitivism
+      luminism synthetism.</p>
     image_path: /images/home/home-slider-01.webp
     reverse: true
   - _template: feature
