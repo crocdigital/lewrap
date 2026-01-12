@@ -1,9 +1,14 @@
 collections_config:
   pages:
     path: src/pages
+    output: true            # <--- THIS IS THE MISSING KEY!
     icon: wysiwyg
     url: /[relative_base_path]/[slug]/
     disable_url: false
+    _enabled_editors:       # <--- Add this to force the menu option to appear
+      - visual
+      - content
+      - data
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
