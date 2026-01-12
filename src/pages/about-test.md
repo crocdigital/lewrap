@@ -15,7 +15,7 @@ page_blocks:
     heading: Our Mission
     text: To test this integration before building the whole site.
     image_path: /images/home/home-slider-01.webp
-    reverse: false
+    reverse: true
   - _template: feature
     heading: New Feature
     text: Description text
@@ -25,5 +25,5 @@ page_blocks:
     heading: Adding new Feature (with new image)
     text: This better work aye brah! Plus we need to turn text into a WYSIWG filed
     image_path: /images/PLACEMENT-hero-taj.webp
-    reverse: false
+    reverse: true
 ---
