@@ -16,4 +16,9 @@ page_blocks:
     text: To test this integration before building the whole site.
     image_path: /public/images/home/home-slider-01.webp
     reverse: false
+  - _template: feature
+    heading: New Feature
+    text: Description text
+    image_path: /public/images/home/home-slider-01.webp
+    reverse: false
 ---
