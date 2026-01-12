@@ -1,13 +1,15 @@
 ---
+// 1. IMPORT YOUR BASE LAYOUT
+// (Make sure this path points to your actual main layout file)
+import BaseLayout from "../layouts/BaseLayout.astro";
+
 import Hero from "../components/Hero.astro";
 import Feature from "../components/Feature.astro";
 
-// 1. EXTRACT FRONTMATTER
-// The JSON dump showed us that your data lives inside 'frontmatter'
+// 2. EXTRACT DATA
 const { frontmatter } = Astro.props;
 
-// 2. DESTRUCTURE DATA
-// We pull the variables out of frontmatter (or fallback to empty object to be safe)
+// 3. DESTRUCTURE VARIABLES
 const {
     title,
     hero_title,
@@ -17,32 +19,25 @@ const {
 } = frontmatter || {};
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>{title}</title>
-    </head>
-    <body>
-        {
-            hero_title && (
-                <Hero
-                    title={hero_title}
-                    subtitle={hero_subtitle}
-                    bg_color={hero_bg}
-                />
-            )
-        }
+<BaseLayout title={title}>
+    {
+        hero_title && (
+            <Hero
+                title={hero_title}
+                subtitle={hero_subtitle}
+                bg_color={hero_bg}
+            />
+        )
+    }
 
-        <main>
-            {
-                page_blocks?.map((block: any) => {
-                    if (block._template === "feature") {
-                        return <Feature {...block} />;
-                    }
-                    return null;
-                })
-            }
-        </main>
-    </body>
-</html>
+    <main>
+        {
+            page_blocks?.map((block: any) => {
+                if (block._template === "feature") {
+                    return <Feature {...block} />;
+                }
+                return null;
+            })
+        }
+    </main>
+</BaseLayout>

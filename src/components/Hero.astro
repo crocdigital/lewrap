@@ -1,27 +1,24 @@
 ---
-// 1. Accept the props sent from the Layout
 const {
     title,
     subtitle,
-    bg_color = "bg-gray-100", // Default if nothing is selected
+    bg_color = "bg-gray-100", // Default color if none selected
 } = Astro.props;
 ---
 
 <section class={`py-20 text-center ${bg_color}`}>
     <div class="max-w-4xl mx-auto px-6">
-        {/* Only show title if it exists */}
         {
             title && (
-                <h1 class="text-5xl font-bold tracking-tight text-gray-900 mb-6">
+                <h1 class="text-5xl md:text-6xl font-black tracking-tight text-lewrap-green-dark mb-6">
                     {title}
                 </h1>
             )
         }
 
-        {/* Only show subtitle if it exists */}
         {
             subtitle && (
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                <p class="text-xl md:text-2xl text-lewrap-off-black max-w-2xl mx-auto">
                     {subtitle}
                 </p>
             )
