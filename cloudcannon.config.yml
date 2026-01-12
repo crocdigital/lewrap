@@ -1,63 +1,57 @@
+collections_config:
+  pages:
+    path: src/pages
+    icon: wysiwyg
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
 _inputs:
-      page_blocks:
-        type: array
-        options:
-          structures:
-            _values:
-              - value:
-                  _template: hero
-                  title: New Hero
-                  subtitle: Subtitle here
-                  bg_color: bg-gray-100
-                label: Hero Section
-                icon: title
-              - value:
-                  _template: feature
-                  heading: New Feature
-                  text: Description text
-                  image_path: /test-image.jpg
-                  reverse: false
-                label: Feature Section
-                icon: short_text
-        
-        # This section tells CloudCannon what controls to show for the fields INSIDE the blocks
-        sub_inputs:
-          _template:
-            hidden: true # Don't let users break the template name
-          
-          # Hero Fields
-          title:
-            type: text
-            label: Hero Title
-          subtitle:
-            type: text
-            label: Subtitle
-          bg_color:
-            type: select
-            label: Background Color
-            options:
-              values:
-                - value: bg-blue-50
-                  label: Light Blue
-                - value: bg-gray-100
-                  label: Light Gray
-                - value: bg-white
-                  label: White
-
-          # Feature Fields
-          heading:
-            type: text
-            label: Feature Heading
-          text:
-            type: markdown # Makes this a rich text editor
-            label: Content
-            options:
-              bold: true
-              italic: true
-              bulleted_list: true
-          image_path:
-            type: image # <--- This gives you the Image Picker/Uploader!
-            label: Image
-          reverse:
-            type: switch
-            label: Reverse Layout (Image Left)
+  page_blocks:
+    type: array
+    options:
+      structures:
+        _values:
+          - value:
+              _template: hero
+              title: New Hero
+              subtitle: Subtitle here
+              bg_color: bg-gray-100
+            label: Hero Section
+            icon: title
+          - value:
+              _template: feature
+              heading: New Feature
+              text: Description text
+              image_path: /test-image.jpg
+              reverse: false
+            label: Feature Section
+            icon: short_text
+    cascade: true
+    sub_inputs:
+      _template:
+        hidden: true
+      title:
+        type: text
+        label: Hero Title
+      subtitle:
+        type: text
+        label: Subtitle
+      bg_color:
+        type: select
+        label: Background Color
+        options: {}
+      heading:
+        type: text
+        label: Feature Heading
+      text:
+        type: markdown
+        label: Content
+        options: {}
+      image_path:
+        type: image
+        label: Image
+      reverse:
+        type: switch
+        label: Reverse Layout (Image Left)
+timezone: Etc/UTC
