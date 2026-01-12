@@ -8,11 +8,12 @@ page_blocks:
   - _template: feature
     heading: First 2 Column Section
     text: >-
-      <p>This is the first section below the hero.</p><p>Now, I'm in full
-      <strong>editing mode</strong> (see what I did there with formatting bra).
-      I'm adding this line of text to see how the paragraph styles out.</p><p>I
-      also need to add a centered block as an option for Monica to add into her
-      page builds.</p>
+      <p>This is the first section below the hero. I should really upload 1:1
+      ratio images as per my instructions below in the Image field
+      aye!</p><p>Now, I'm in full <strong>editing mode</strong> (see what I did
+      there with formatting bra). I'm adding this line of text to see how the
+      paragraph styles out.</p><p>I also need to add a centered block as an
+      option for Monica to add into her page builds.</p>
     image_path: /images/placement-hero.webp
     reverse: false
   - _template: feature
