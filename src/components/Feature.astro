@@ -25,7 +25,7 @@ const { heading, text, image_path, reverse = false } = Astro.props;
                 <img
                     src={image_path}
                     alt={heading}
-                    class="w-[300px] md:w-[629px] h-auto rounded-lg mx-auto"
+                    class="w-full aspect-square object-cover rounded-lg"
                 />
             </div>
         )
