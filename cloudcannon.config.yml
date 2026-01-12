@@ -2,6 +2,7 @@ paths:
   uploads: public/images
   static: public
 
+# 1. Keep the Collection config simple (Just URL and Editors)
 collections_config:
   pages:
     path: src/pages
@@ -10,81 +11,81 @@ collections_config:
     url: /[relative_base_path]/[slug]/
     disable_url: false
     disable_add: false
-    
+    disable_file_actions: false
     _enabled_editors:
       - visual
       - content
       - data
 
-    # INPUTS DEFINITION
-    _inputs:
-      page_blocks:
-        type: array
-        cascade: true  # <--- Added for safety
+# 2. GLOBAL INPUTS (The "Brute Force" way)
+# Placed at the root level, this applies to 'page_blocks' anywhere in the site.
+_inputs:
+  page_blocks:
+    type: array
+    cascade: true
+    options:
+      structures:
+        values:
+          - icon: title
+            label: Hero Section
+            value:
+              _template: hero
+              title: New Hero
+              subtitle: Subtitle here
+              bg_color: bg-gray-100
+          - icon: short_text
+            label: Feature Section
+            value:
+              _template: feature
+              heading: New Feature
+              text: Description text
+              image_path: /test-image.jpg
+              reverse: false
+    
+    # Field definitions for items INSIDE the array
+    sub_inputs:
+      _template:
+        hidden: true
+      title:
+        type: text
+        label: Hero Title
+      subtitle:
+        type: text
+        label: Subtitle
+      bg_color:
+        type: select
+        label: Background Color
         options:
-          structures:
-            values:
-              - icon: title
-                label: Hero Section
-                value:
-                  _template: hero
-                  title: New Hero
-                  subtitle: Subtitle here
-                  bg_color: bg-gray-100
-              - icon: short_text
-                label: Feature Section
-                value:
-                  _template: feature
-                  heading: New Feature
-                  text: Description text
-                  image_path: /test-image.jpg
-                  reverse: false
-        
-        # FIELD DEFINITIONS
-        sub_inputs:
-          _template:
-            hidden: true
-          title:
-            type: text
-            label: Hero Title
-          subtitle:
-            type: text
-            label: Subtitle
-          bg_color:
-            type: select
-            label: Background Color
-            options:
-              values:
-                - value: bg-blue-50
-                  label: Light Blue
-                - value: bg-gray-100
-                  label: Light Gray
-                - value: bg-white
-                  label: White
-                - value: bg-black
-                  label: Black
-          heading:
-            type: text
-            label: Feature Heading
-          
-          # WYSIWYG FIELD
-          text:
-            type: html
-            label: Content
-            cascade: true # <--- Added for safety
-            options:
-              bold: true
-              italic: true
-              link: true
-              bulleted_list: true
-              numbered_list: true
-              format: p h2 h3 h4
-          
-          image_path:
-            type: image
-            label: Image
-          reverse:
-            type: switch
-            label: Reverse Layout
+          values:
+            - value: bg-blue-50
+              label: Light Blue
+            - value: bg-gray-100
+              label: Light Gray
+            - value: bg-white
+              label: White
+            - value: bg-black
+              label: Black
+      heading:
+        type: text
+        label: Feature Heading
+      
+      # THE HTML EDITOR
+      text:
+        type: html
+        label: Content
+        options:
+          bold: true
+          italic: true
+          link: true
+          bulleted_list: true
+          numbered_list: true
+          format: p h2 h3 h4
+      
+      image_path:
+        type: image
+        label: Image
+      reverse:
+        type: switch
+        label: Reverse Layout
 
 timezone: Australia/Sydney
