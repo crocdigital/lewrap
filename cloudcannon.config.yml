@@ -17,10 +17,10 @@ collections_config:
 
 _inputs:
   # -----------------------------------------------------------
-  # GLOBAL INPUT DEFINITIONS (The "Sledgehammer" Section)
-  # Defining these at the root ensures they work everywhere.
+  # GLOBAL INPUT DEFINITIONS
   # -----------------------------------------------------------
   
+  # 1. HTML Text Editor (Sledgehammer)
   text:
     type: html
     label: Content
@@ -32,31 +32,57 @@ _inputs:
       numbered_list: true
       format: p h2 h3 h4
 
+  # 2. Image Uploader with Square Hint
   image_path:
     type: image
     label: Image
     comment: "Please upload a square image (1:1 ratio) for best results."
 
-  # -----------------------------------------------------------
+  # 3. Reverse Switch (Renamed as requested)
+  reverse:
+    type: switch
+    label: Reverse columns
 
+  # -----------------------------------------------------------
+  # FIXED HERO INPUTS (These appear in the Page Data / Sidebar)
+  # -----------------------------------------------------------
+  hero_title:
+    type: text
+    label: Hero Title
+  hero_subtitle:
+    type: text
+    label: Hero Subtitle
+  hero_bg:
+    type: select
+    label: Hero Background
+    options:
+      values:
+        - value: bg-blue-50
+          label: Light Blue
+        - value: bg-gray-100
+          label: Light Gray
+        - value: bg-white
+          label: White
+        - value: bg-black
+          label: Black
+
+  # -----------------------------------------------------------
+  # PAGE BLOCKS (The Drag-and-Drop)
+  # -----------------------------------------------------------
   page_blocks:
     type: array
     cascade: true
     options:
       structures:
         values:
-          - icon: title
-            label: Hero Section
-            value:
-              _template: hero
-              title: New Hero
-              subtitle: Subtitle here
-              bg_color: bg-gray-100
+          # (Hero Removed)
+          
+          # Renamed to "2 Column"
           - icon: short_text
-            label: Feature Section
+            label: 2 Column
             value:
               _template: feature
-              heading: New Feature
+              heading: New 2 Column Section
               text: Description text
               image_path: /test-image.jpg
               reverse: false
@@ -64,30 +90,9 @@ _inputs:
     sub_inputs:
       _template:
         hidden: true
-      title:
-        type: text
-        label: Hero Title
-      subtitle:
-        type: text
-        label: Subtitle
-      bg_color:
-        type: select
-        label: Background Color
-        options:
-          values:
-            - value: bg-blue-50
-              label: Light Blue
-            - value: bg-gray-100
-              label: Light Gray
-            - value: bg-white
-              label: White
-            - value: bg-black
-              label: Black
       heading:
         type: text
         label: Feature Heading
-      reverse:
-        type: switch
-        label: Reverse Layout
+      # Note: text, image_path, and reverse are handled by the Global Inputs above
 
 timezone: Australia/Sydney
