@@ -5,15 +5,15 @@ const { heading, text, image_path, reverse = false } = Astro.props;
 <section
     class="py-12 px-6 max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center"
 >
-    <div class={reverse ? "md:order-2 max-w-xl mx-auto flex flex-col gap-y-8 py-16" : ""}>
+    <div
+        class={`max-w-xl mx-auto flex flex-col gap-y-8 py-16 ${reverse ? "md:order-2" : ""}`}
+    >
         <h2
             class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight"
         >
             {heading}
         </h2>
-        <!-- <div class="prose">
-            <div set:html={text} />
-        </div> -->
+
         <div class="prose text-2xl/8 text-lewrap-off-black">
             <div set:html={text} />
         </div>
