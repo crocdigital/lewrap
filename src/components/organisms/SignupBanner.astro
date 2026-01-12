@@ -17,7 +17,24 @@
         </div>
 
         <div class="mt-4 md:mt-0">
-            <p>Signup form going here.</p>
+            <form
+                class="flex w-full bg-white rounded-full overflow-hidden mx-auto"
+                onsubmit="event.preventDefault();"
+            >
+                <input
+                    type="email"
+                    placeholder="Enter your email"
+                    class="w-full bg-transparent px-6 py-6 text-gray-700 placeholder-gray-500 outline-none"
+                    required
+                />
+
+                <button
+                    type="submit"
+                    class="bg-lewrap-green-dark rounded-full text-white font-cocogoose font-bold px-6 py-4 whitespace-nowrap hover:bg-lewrap-green transition-colors"
+                >
+                    Sign me up!
+                </button>
+            </form>
         </div>
     </div>
 </section>
