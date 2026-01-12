@@ -16,4 +16,5 @@ page_blocks:
     title: Welcome to the About Page
     subtitle: Built with Astro, editable in CloudCannon.
     bg_color: bg-blue-50
+  - Adding Testy McTestypants
 ---
