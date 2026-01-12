@@ -16,9 +16,11 @@ collections_config:
       - data
 
 _inputs:
-  # --- THE SLEDGEHAMMER ---
-  # By placing this here, it applies to ANY field named 'text' anywhere on your site.
-  # This bypasses the nesting/scoping issues completely.
+  # -----------------------------------------------------------
+  # GLOBAL INPUT DEFINITIONS (The "Sledgehammer" Section)
+  # Defining these at the root ensures they work everywhere.
+  # -----------------------------------------------------------
+  
   text:
     type: html
     label: Content
@@ -29,7 +31,13 @@ _inputs:
       bulleted_list: true
       numbered_list: true
       format: p h2 h3 h4
-  # ------------------------
+
+  image_path:
+    type: image
+    label: Image
+    comment: "Please upload a square image (1:1 ratio) for best results."
+
+  # -----------------------------------------------------------
 
   page_blocks:
     type: array
@@ -78,10 +86,6 @@ _inputs:
       heading:
         type: text
         label: Feature Heading
-      image_path:
-        type: image
-        label: Image
-        comment: "Please upload a square image (1:1 ratio) for best results."
       reverse:
         type: switch
         label: Reverse Layout
