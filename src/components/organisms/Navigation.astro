@@ -10,7 +10,7 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 >
     <nav
         id="main-nav"
-        class="relative bg-white text-lewrap-off-black rounded-full px-8 py-6 flex items-center shadow-lg pointer-events-auto max-w-screen-2xl md:justify-start justify-between box-border overflow-hidden opacity-0"
+        class="relative bg-white text-lewrap-off-black rounded-full px-6 py-6 md:py-5 flex items-center shadow-lg pointer-events-auto max-w-screen-2xl md:justify-start justify-between box-border overflow-hidden opacity-0"
         style="width: auto; transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;"
     >
         {/* Logo */}
@@ -18,7 +18,7 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
             <Image
                 src={leWrapLogo}
                 alt="LeWrap"
-                class="w-[82px] md:w-[102px] h-auto"
+                class="w-[90px] md:w-[130px] h-auto"
             />
         </a>
 
