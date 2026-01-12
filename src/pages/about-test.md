@@ -9,11 +9,11 @@ page_blocks:
   - _template: feature
     heading: Our Vision
     text: Smooth sailing and no refactoring later.
-    image_path: /images/home/home-slider-01.webp
+    image_path: /public/images/home/home-slider-01.webp
     reverse: true
   - _template: feature
     heading: Our Mission
     text: To test this integration before building the whole site.
-    image_path: /images/home/home-slider-01.webp
+    image_path: /public/images/home/home-slider-01.webp
     reverse: false
 ---
