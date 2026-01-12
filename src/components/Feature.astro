@@ -8,7 +8,7 @@ const { heading, text, image_path, reverse = false } = Astro.props;
     <div class={reverse ? "md:order-2" : ""}>
         <h2 class="text-2xl font-bold mb-2">{heading}</h2>
         <div class="prose">
-            <p>{text}</p>
+            <div set:html={text} />
         </div>
     </div>
 
