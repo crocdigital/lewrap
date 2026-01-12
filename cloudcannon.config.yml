@@ -1,3 +1,6 @@
+paths:
+  uploads: public/images
+  static: public
 collections_config:
   pages:
     path: src/pages
