@@ -1,12 +1,19 @@
 collections_config:
   pages:
     path: src/pages
-    output: true
-    # This tells CC which fields to show for files in this folder
+    icon: notes
+    url: /[relative_bath_path]/[slug]/
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
     schemas:
       default:
-        path: src/layouts/TestLayout.astro # Just a reference for defaults
-
+        path: src/layouts/TestLayout.astro
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
 _inputs:
   page_blocks:
     type: array
@@ -20,7 +27,6 @@ _inputs:
               bg_color: bg-gray-100
             label: Hero Section
             icon: title
-            
           - value:
               _template: feature
               heading: New Feature
@@ -28,3 +34,5 @@ _inputs:
               reverse: false
             label: Feature Section
             icon: short_text
+    cascade: true
+timezone: Etc/UTC
