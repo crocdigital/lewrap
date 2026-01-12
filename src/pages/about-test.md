@@ -16,6 +16,4 @@ page_blocks:
     text: To test this integration before building the whole site.
     image_path: /images/home/home-slider-01.webp
     reverse: false
-  - Adding Testy McTestypants
-  - asasdasd
 ---
