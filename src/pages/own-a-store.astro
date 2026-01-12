@@ -4,10 +4,15 @@ import HeroSection from "../components/organisms/HeroSection.astro";
 import heroImage from "../assets/PLACEMENT-hero-taj.webp";
 ---
 
-<BaseLayout title="Our Story">
+<BaseLayout title="Own A Store">
     <main class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black">
         {/* Hero section */}
-        <HeroSection title="Our Story" image={heroImage} />
+        <HeroSection
+            title="Be Your Own Boss"
+            image={heroImage}
+            ctaText="Enquire now"
+            ctaHref="/"
+        />
         {/* // Hero section */}
     </main>
 </BaseLayout>

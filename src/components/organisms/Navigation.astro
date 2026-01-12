@@ -226,10 +226,10 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
                 Nutrition
             </a>
             <a
-                href="#"
+                href="/catering"
                 class:list={[
                     "font-helvetica-condensed font-bold duration-200",
-                    pathname === "#"
+                    pathname === "/catering"
                         ? "text-lewrap-green pointer-events-none"
                         : "hover:text-lewrap-green",
                 ]}
@@ -237,10 +237,10 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
                 Catering
             </a>
             <a
-                href="#"
+                href="/newsroom"
                 class:list={[
                     "font-helvetica-condensed font-bold duration-200",
-                    pathname === "#"
+                    pathname === "/newsroom"
                         ? "text-lewrap-green pointer-events-none"
                         : "hover:text-lewrap-green",
                 ]}
@@ -248,10 +248,10 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
                 Newsroom
             </a>
             <a
-                href="#"
+                href="/own-a-store"
                 class:list={[
                     "font-helvetica-condensed font-black duration-200",
-                    pathname === "#"
+                    pathname === "/own-a-store"
                         ? "text-lewrap-green pointer-events-none"
                         : "hover:text-lewrap-green",
                 ]}
@@ -343,20 +343,35 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
             Nutrition
         </a>
         <a
-            href="#"
-            class="text-lewrap-green-dark hover:text-lewrap-green duration-200 text-2xl font-helvetica-condensed font-bold mobile-link"
+            href="/catering"
+            class:list={[
+                "duration-200 text-2xl font-helvetica-condensed font-bold mobile-link",
+                pathname === "/catering"
+                    ? "text-lewrap-green"
+                    : "text-lewrap-green-dark hover:text-lewrap-green",
+            ]}
         >
             Catering
         </a>
         <a
-            href="#"
-            class="text-lewrap-green-dark hover:text-lewrap-green duration-200 text-2xl font-helvetica-condensed font-bold mobile-link"
+            href="/newsroom"
+            class:list={[
+                "dur    ation-200 text-2xl font-helvetica-condensed font-bold mobile-link",
+                pathname === "/newsroom"
+                    ? "text-lewrap-green"
+                    : "text-lewrap-green-dark hover:text-lewrap-green",
+            ]}
         >
             Newsroom
         </a>
         <a
-            href="#"
-            class="text-lewrap-green-dark hover:text-lewrap-green duration-200 text-2xl font-helvetica-condensed font-black mobile-link"
+            href="/own-a-store"
+            class:list={[
+                "duration-200 text-2xl font-helvetica-condensed font-bold mobile-link",
+                pathname === "/own-a-store"
+                    ? "text-lewrap-green"
+                    : "text-lewrap-green-dark hover:text-lewrap-green",
+            ]}
         >
             Own a store
         </a>

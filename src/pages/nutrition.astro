@@ -1,33 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/organisms/HeroSection.astro";
+import heroImage from "../assets/PLACEMENT-hero-taj.webp";
 ---
 
 <BaseLayout title="Nutrition">
-    <main class="bg-emerald-600 text-white">
-        <div
-            class="min-h-screen flex flex-col items-center justify-center gap-8"
-        >
-            <h1 class="text-4xl font-bold">Nutrition</h1>
-            <p class="text-xl">This is the Nutrition dummy page.</p>
-            <div class="flex gap-4">
-                <a
-                    href="/our-food"
-                    class="px-6 py-3 bg-emerald-800 text-white rounded-full font-semibold hover:bg-opacity-90 transition"
-                >
-                    Go to Our Food
-                </a>
-                <a
-                    href="/locations"
-                    class="px-6 py-3 bg-white text-emerald-600 rounded-full font-semibold hover:bg-opacity-90 transition"
-                >
-                    Go to Locations
-                </a>
-            </div>
-        </div>
-        <div class="h-[150vh] w-full flex items-center justify-center mt-20">
-            <p class="text-emerald-200">
-                Keep scrolling to see the nav shrink...
-            </p>
-        </div>
+    <main class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black">
+        {/* Hero section */}
+        <HeroSection
+            title="Nutritional Information"
+            image={heroImage}
+            ctaText="Download nutrition guide"
+            ctaHref="/"
+        />
+        {/* // Hero section */}
     </main>
 </BaseLayout>

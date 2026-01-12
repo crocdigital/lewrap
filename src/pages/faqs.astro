@@ -2,7 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeroSection from "../components/organisms/HeroSection.astro";
 import heroImage from "../assets/PLACEMENT-hero-taj.webp";
-
 import Marquee from "../components/molecules/Marquee.astro";
 
 // LeWrap marquee separator
@@ -23,17 +22,12 @@ const leWrapSeparator = `
 `;
 ---
 
-<BaseLayout title="Locations">
+<BaseLayout title="FAQs">
     <main
         class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-5"
     >
         {/* Hero section */}
-        <HeroSection
-            title="Find a LeWrap location nearest you"
-            image={heroImage}
-            ctaText="View all our locations"
-            ctaHref="/"
-        />
+        <HeroSection title="Frequently Asked Questions" image={heroImage} />
         {/* // Hero section */}
 
         {/* Marquee */}
