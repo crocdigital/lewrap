@@ -41,7 +41,7 @@ _inputs:
   # 3. Reverse Switch (Renamed as requested)
   reverse:
     type: switch
-    label: Reverse columns
+    label: Reverse columns (default is text left, image right)
 
   # -----------------------------------------------------------
   # FIXED HERO INPUTS (These appear in the Page Data / Sidebar)
