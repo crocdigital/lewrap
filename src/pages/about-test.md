@@ -28,7 +28,9 @@ page_blocks:
     reverse: false
   - _template: feature
     heading: Trying a new image (to see path image uploads to)
-    text: This better work aye broseph!
+    text: >-
+      This better work aye broseph!<p>If it doesn't, she's gonna get the PUHA
+      :)</p>
     image_path: /images/placement-hero.webp
     reverse: true
 ---
