@@ -21,4 +21,9 @@ page_blocks:
     text: Description text
     image_path: /images/home/home-slider-01.webp
     reverse: false
+  - _template: feature
+    heading: Adding new Feature (with new image)
+    text: This better work aye brah! Plus we need to turn text into a WYSIWG filed
+    image_path: /images/PLACEMENT-hero-taj.webp
+    reverse: false
 ---
