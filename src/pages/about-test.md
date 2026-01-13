@@ -2,7 +2,9 @@
 layout: ../layouts/TestLayout.astro
 title: About Us
 hero_title: What’s happening at LeWrap
-hero_subtitle:
+hero_subtitle: >-
+  Subtitle doesn't need to be here - you can have something in here (or not), it
+  won't affect anything :)
 hero_bg: bg-lewrap-green
 page_blocks:
   - _template: feature
