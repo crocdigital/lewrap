@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/TestLayout.astro
 title: About Us
-hero_title: 'What’s happening at LeWrap. Ooga Booga :'
+hero_title: What’s happening at LeWrap. Live edits are working!
 hero_subtitle: >-
   Subtitle doesn't need to be here - you can have something in here (or not), it
   won't affect anything :)
