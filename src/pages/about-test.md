@@ -20,7 +20,7 @@ page_blocks:
       baguette we make.</p>
     image_path: /images/placement-hero.webp
     reverse: false
-    background_type:
+    background_type: image
     background_color: ''
     background_image: /images/bg-tile-wood.png
   - _template: feature
