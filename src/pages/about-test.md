@@ -3,7 +3,7 @@ layout: ../layouts/TestLayout.astro
 title: About Us
 hero_title: Welcome
 hero_subtitle: Subtitle here
-hero_bg: bg-white
+hero_bg: bg-lewrap-green
 page_blocks:
   - _template: feature
     heading: Nobody makes a wrap like us
