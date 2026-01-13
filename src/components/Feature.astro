@@ -3,10 +3,12 @@ const { heading, text, image_path, reverse = false, blockIndex } = Astro.props;
 ---
 
 <section
-    class="w-[95%] mx-auto grid md:grid-cols-2 gap-8 items-center"
+    class="w-[95%] md:max-w-[85%] mx-auto grid md:grid-cols-2 gap-8 p-7 md:p-21 items-center rounded-xl bg-red-500"
     data-cms-bind={`page_blocks[${blockIndex}]`}
 >
-    <div class={`flex flex-col gap-y-8 p-7 ${reverse ? "md:order-2" : ""}`}>
+    <div
+        class={`flex flex-col gap-y-8 p-7 md:p-0 ${reverse ? "md:order-2" : ""}`}
+    >
         {
             heading && (
                 <h2 class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight">
