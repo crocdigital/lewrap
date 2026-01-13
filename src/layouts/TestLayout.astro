@@ -33,8 +33,17 @@ const {
             {
                 page_blocks?.map((block: any, index: number) => {
                     if (block._template === "feature") {
-                        // PASS THE INDEX. This is the only way to generate the correct ID.
-                        return <Feature {...block} blockIndex={index} />;
+                        // 1. SET THE SCOPE
+                        // We bind the WRAPPER to the specific block index.
+                        // This creates a "Context" for the component inside.
+                        return (
+                            <div
+                                data-cms-bind={`#page_blocks[${index}]`}
+                                class="relative"
+                            >
+                                <Feature {...block} />
+                            </div>
+                        );
                     }
                     return null;
                 })
