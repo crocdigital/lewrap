@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/TestLayout.astro
 title: About Us
-hero_title: We now have LIVE editing, woot woot!
+hero_title: Hey Monica, check this out
 hero_subtitle: >-
   Live editing here too - and you don't have to have something here if you don't
   want to :)
