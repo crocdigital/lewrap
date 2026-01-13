@@ -7,82 +7,65 @@ collections_config:
     path: src/pages
     output: true
     icon: wysiwyg
-    url: /[relative_base_path]/[slug]/
     _enabled_editors:
       - visual
       - content
       - data
 
-# -----------------------------------------------------------
-# 1. PAGE DATA (Sidebar / Hero)
-# -----------------------------------------------------------
 _inputs:
+  # -----------------------------------------------------------
+  # HERO (Sidebar)
+  # -----------------------------------------------------------
   hero_title:
     type: text
-    label: Hero Title
   hero_subtitle:
     type: text
-    label: Hero Subtitle
   hero_bg:
     type: select
-    label: Hero Background
     options:
       values:
-        - value: bg-blue-50
-          label: Light Blue
-        - value: bg-gray-100
-          label: Light Gray
         - value: bg-white
           label: White
         - value: bg-black
           label: Black
-  
-  # This links the array to the structures defined at the bottom
+
+  # -----------------------------------------------------------
+  # PAGE BLOCKS (The Array)
+  # -----------------------------------------------------------
   page_blocks:
     type: array
     label: Page Blocks
     options:
-      structures: _structures.content_blocks
-
-# -----------------------------------------------------------
-# 2. BLOCK DEFINITIONS (The Fix)
-# -----------------------------------------------------------
-_structures:
-  content_blocks:
-    values:
-      - label: 2 Column
-        icon: short_text
-        value:
-          _template: feature
-          heading: New 2 Column Section
-          text: <p>Description text</p>
-          image_path: /test-image.jpg
-          reverse: false
-        
-        # WE DEFINE THE INPUTS RIGHT HERE.
-        # This forces CloudCannon to use these settings for this block.
-        _inputs:
-          heading:
-            type: text
-            label: Section Heading
-          text:
-            type: html
-            label: Content
-            options:
-              bold: true
-              italic: true
-              link: true
-              bulleted_list: true
-              numbered_list: true
-              format: p h2 h3 h4
-          image_path:
-            type: image
-            label: Image
-            comment: "Square image (1:1) recommended"
-          reverse:
-            type: switch
-            label: Reverse columns
-          _template:
-            hidden: true
+      structures:
+        values:
+          - label: 2 Column Feature
+            icon: short_text
+            value:
+              _template: feature
+              heading: New Section
+              text: <p>Write content here...</p>
+              image_path: /uploads/placeholder.jpg
+              reverse: false
+            
+            # FORCE DEFINITIONS HERE (No Globals)
+            _inputs:
+              heading:
+                type: text
+                label: Feature Heading
+              text:
+                type: html
+                label: Content (WYSIWYG)
+                options:
+                  bold: true
+                  italic: true
+                  format: p h2 h3
+              image_path:
+                type: image
+                label: Image
+              reverse:
+                type: switch
+                label: Reverse Layout
+              _template:
+                hidden: true
 
 timezone: Australia/Sydney
