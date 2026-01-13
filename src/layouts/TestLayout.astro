@@ -15,7 +15,7 @@ const {
 
 <BaseLayout title={title}>
     <main
-        class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-5"
+        class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10"
     >
         {/* FIXED HERO */}
         {
@@ -31,7 +31,7 @@ const {
         }
 
         {/* DYNAMIC BLOCKS */}
-        <div class="flex flex-col gap-5">
+        <div class="flex flex-col gap-10">
             {
                 page_blocks?.map((block: any, index: number) => {
                     if (block._template === "feature") {
