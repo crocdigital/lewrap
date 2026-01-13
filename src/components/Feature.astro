@@ -1,8 +1,10 @@
 ---
 const { heading, text, image_path, reverse = false, blockIndex } = Astro.props;
 
-// Path: page_blocks[0], page_blocks[1]...
-const bindBase = blockIndex !== undefined ? `page_blocks[${blockIndex}]` : null;
+// 1. Build the Bind String WITH the Hash (#)
+// This points to the Sidebar Input ID: #page_blocks[0], #page_blocks[1]
+const bindBase =
+    blockIndex !== undefined ? `#page_blocks[${blockIndex}]` : null;
 ---
 
 <section

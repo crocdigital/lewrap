@@ -33,7 +33,7 @@ const {
             {
                 page_blocks?.map((block: any, index: number) => {
                     if (block._template === "feature") {
-                        // Pass the index so the component knows its address
+                        // Pass the index so the component can build the bind string
                         return <Feature {...block} blockIndex={index} />;
                     }
                     return null;
