@@ -10,13 +10,14 @@ page_blocks:
   - _template: feature
     heading: Nobody makes a wrap like us
     text: >-
-      <h3>Putting in an h3 heading just for kicks</h3><p>This is the first
-      section below the hero. I should really upload 1:1 ratio images as per my
-      instructions below in the Image field aye!</p><p>Now, I'm in full
-      <strong>editing mode</strong> (see what I did there with formatting bra).
-      I'm adding this line of text to see how the paragraph styles out.</p><p>I
-      also need to add a centered block as an option for Monica to add into her
-      page builds.</p>
+      <p>Nobody makes a wrap like us because nobody does freshness like us. Our
+      vegetables are locally sourced and cut fresh daily, then prepared to order
+      so your meal is made exactly how it should be - fresh, fast and full of
+      flavour.</p><p>From 100% Australian chicken breast and strip loin steak to
+      chicken breast schnitzel and authentic lamb kofta, our proteins are
+      grilled fresh to order. It’s simple food done right. We believe in all
+      things good and fresh - and it shows in every wrap, salad, plate and
+      baguette we make.</p>
     image_path: /images/placement-hero.webp
     reverse: false
   - _template: feature
