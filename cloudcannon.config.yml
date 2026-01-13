@@ -98,6 +98,7 @@ _inputs:
                 label: Background Type
                 comment: "Choose a background for this section (optional)"
                 options:
+                  allow_empty: false
                   values:
                     - value: none
                       label: No Background
@@ -107,22 +108,12 @@ _inputs:
                       label: Image (Tiled)
                 cascade: true
               background_color:
-                type: select
-                label: Background colour
-                comment: "Only applies if Background Type is set to 'Colour'"
+                type: color
+                label: Background Colour
+                comment: "Only applies if Background Type is set to 'Colour'. Enter a hex value or use the colour picker."
                 options:
-                  allow_empty: true
-                  values:
-                    - value: bg-lewrap-green
-                      label: LeWrap Green
-                    - value: bg-lewrap-green-dark
-                      label: LeWrap Green Dark
-                    - value: bg-gray-100
-                      label: Light Gray
-                    - value: bg-white
-                      label: White
-                    - value: bg-black
-                      label: Black
+                  format: hex
+                  alpha: false
                 cascade: true
               background_image:
                 type: image
