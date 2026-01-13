@@ -1,11 +1,10 @@
 ---
 layout: ../layouts/TestLayout.astro
 title: About Us
-hero_title: What’s happening at LeWrap. Live edits are working!
-hero_subtitle: >-
-  Subtitle doesn't need to be here - you can have something in here (or not), it
-  won't affect anything :)
-hero_bg: bg-lewrap-green
+hero_block:
+  hero_title: What’s happening at LeWrap. Live edits are working, and now I've grouped Hero block!
+  hero_subtitle: Subtitle here (or not - up to you bra)
+  hero_bg: bg-lewrap-green
 page_blocks:
   - _template: feature
     heading: Nobody makes a wrap like us

@@ -4,13 +4,9 @@ import Hero from "../components/Hero.astro";
 import Feature from "../components/Feature.astro";
 
 const { frontmatter } = Astro.props;
-const {
-    title,
-    hero_title,
-    hero_subtitle,
-    hero_bg,
-    page_blocks = [],
-} = frontmatter || {};
+const { title, hero_block = {}, page_blocks = [] } = frontmatter || {};
+
+const { hero_title, hero_subtitle, hero_bg } = hero_block;
 ---
 
 <BaseLayout title={title}>
@@ -20,7 +16,7 @@ const {
         {/* FIXED HERO */}
         {
             hero_title && (
-                <div data-cms-bind="#hero_title">
+                <div data-cms-bind="hero_block">
                     <Hero
                         title={hero_title}
                         subtitle={hero_subtitle}
