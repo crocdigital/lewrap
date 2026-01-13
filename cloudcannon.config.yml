@@ -80,12 +80,12 @@ _inputs:
               image_path:
                 type: image
                 label: Image
-                comment: "Upload a square image (1:1 ratio). Recommended size: 1000px x 1000px"
+                comment: "Upload a square image (1:1 ratio) for best results. Recommended size: 1000px by 1000px"
                 cascade: true
               reverse:
                 type: switch
                 label: Reverse layout
-                comment: "Default: Text left, Image right. Toggle ON to swap columns. Use square images (1:1 ratio) at 1000px x 1000px for best results."
+                comment: "Default: Text left, Image right. Toggle ON to swap columns."
                 cascade: true
               _template:
                 hidden: true
