@@ -10,11 +10,11 @@ page_blocks:
   - _template: feature
     heading: Second 2 Column Section
     text: >-
-      <p>This is the second section.</p><p>I'm now adding this new text, and
-      will move this row above the first one. If that works it's time for a dart
-      to celebrate :)</p><p>Update: It worked! Now don't forget to test changing
-      text within this field to different headings and see how the app styles
-      them bro.</p>
+      <p>This is the second section. Bro!!!</p><p>I'm now adding this new text,
+      and will move this row above the first one. If that works it's time for a
+      dart to celebrate :)</p><p>Update: It worked! Now don't forget to test
+      changing text within this field to different headings and see how the app
+      styles them bro.</p>
     image_path: /images/PLACEMENT-hero-taj.webp
     reverse: true
   - _template: feature
