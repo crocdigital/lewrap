@@ -17,7 +17,7 @@ const {
     <main
         class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-5"
     >
-        {/* FIXED HERO (Works perfectly as is) */}
+        {/* FIXED HERO */}
         {
             hero_title && (
                 <Hero
@@ -32,17 +32,9 @@ const {
         <div class="flex flex-col gap-5">
             {
                 page_blocks?.map((block: any, index: number) => {
-                    // 1. Define the Parent Scope: #page_blocks[0], #page_blocks[1]...
-                    const blockBind = `#page_blocks[${index}]`;
-
                     if (block._template === "feature") {
-                        return (
-                            // 2. Wrap the component.
-                            // This tells CloudCannon: "Everything inside here belongs to this block index."
-                            <div data-cms-bind={blockBind}>
-                                <Feature {...block} />
-                            </div>
-                        );
+                        // We pass the index so the component can build its own unique ID.
+                        return <Feature {...block} blockIndex={index} />;
                     }
                     return null;
                 })
