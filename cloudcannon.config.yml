@@ -75,9 +75,6 @@ _inputs:
     options:
       structures:
         values:
-          # (Hero Removed)
-          
-          # Renamed to "2 Column"
           - icon: short_text
             label: 2 Column
             value:
@@ -93,6 +90,23 @@ _inputs:
       heading:
         type: text
         label: Feature Heading
-      # Note: text, image_path, and reverse are handled by the Global Inputs above
+      
+      # --- ADD THESE LINES BELOW ---
+      # We must explicitly define these here so the array knows what they are
+      text:
+        type: html
+        options:
+          bold: true
+          italic: true
+          link: true
+          bulleted_list: true
+          numbered_list: true
+          format: p h2 h3 h4
+      image_path:
+        type: image
+        label: Image
+      reverse:
+        type: switch
+        label: Reverse columns
 
 timezone: Australia/Sydney
