@@ -1,51 +1,26 @@
 ---
-const { heading, text, image_path, reverse = false, blockIndex } = Astro.props;
-
-// 1. Build the Path WITH the Hash (#)
-// This links the specific text on screen to the specific input in the sidebar
-const bindBase =
-    blockIndex !== undefined ? `#page_blocks[${blockIndex}]` : null;
+// src/components/feature.astro (or wherever this component lives)
+const { heading, text, image_path, reverse } = Astro.props;
 ---
 
-<section
-    class="py-12 px-6 max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center"
+<div
+    class={`flex flex-col md:flex-row gap-8 py-12 ${reverse ? "md:flex-row-reverse" : ""}`}
 >
-    <div
-        class={`max-w-xl mx-auto flex flex-col gap-y-8 py-16 ${reverse ? "md:order-2" : ""}`}
-    >
+    <div class="w-full md:w-1/2">
         {
-            heading && (
-                <h2
-                    class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight"
-                    data-editable="text"
-                    data-cms-bind={bindBase ? `${bindBase}.heading` : null}
-                >
-                    {heading}
-                </h2>
-            )
-        }
-
-        <div class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8">
-            <div
-                set:html={text}
-                data-editable="text"
-                data-cms-options='{ "format": "html" }'
-                data-cms-bind={bindBase ? `${bindBase}.text` : null}
-            />
-        </div>
-    </div>
-
-    {
-        image_path && (
-            <div class={reverse ? "md:order-1" : ""}>
+            image_path && (
                 <img
                     src={image_path}
-                    alt={heading || "Feature Image"}
-                    class="w-full aspect-square object-cover rounded-lg shadow-sm"
-                    data-editable="image"
-                    data-cms-bind={bindBase ? `${bindBase}.image_path` : null}
+                    alt={heading || "Feature image"}
+                    class="w-full h-auto rounded-lg shadow-md"
                 />
-            </div>
-        )
-    }
-</section>
+            )
+        }
+    </div>
+
+    <div class="w-full md:w-1/2 flex flex-col justify-center">
+        {heading && <h2 class="text-3xl font-bold mb-4">{heading}</h2>}
+
+        {text && <div class="prose max-w-none" set:html={text} />}
+    </div>
+</div>
