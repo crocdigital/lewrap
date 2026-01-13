@@ -4,12 +4,10 @@ const {
     text,
     image_path,
     reverse = false,
-    blockIndex, // We receive the index from the layout
+    blockIndex, // Received from Layout
 } = Astro.props;
 
-// DYNAMIC BINDING GENERATOR
-// If we have an index, we build the path: #page_blocks[0], #page_blocks[1], etc.
-// If no index exists (standalone), we fallback to null to prevent errors.
+// Create the bind path (e.g. #page_blocks[0])
 const bindBase =
     blockIndex !== undefined ? `#page_blocks[${blockIndex}]` : null;
 ---
@@ -24,8 +22,6 @@ const bindBase =
             heading && (
                 <h2
                     class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight"
-                    data-editable="text"
-                    data-prop="heading"
                     data-cms-bind={bindBase ? `${bindBase}.heading` : null}
                 >
                     {heading}
@@ -33,11 +29,12 @@ const bindBase =
             )
         }
 
+        {
+            /* Note: We still use data-cms-options so the editor knows this is HTML/RichText */
+        }
         <div class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8">
             <div
                 set:html={text}
-                data-editable="text"
-                data-prop="text"
                 data-cms-options='{ "format": "html" }'
                 data-cms-bind={bindBase ? `${bindBase}.text` : null}
             />
@@ -51,8 +48,6 @@ const bindBase =
                     src={image_path}
                     alt={heading || "Feature Image"}
                     class="w-full aspect-square object-cover rounded-lg shadow-sm"
-                    data-editable="image"
-                    data-prop="image_path"
                     data-cms-bind={bindBase ? `${bindBase}.image_path` : null}
                 />
             </div>
