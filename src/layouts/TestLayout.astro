@@ -16,13 +16,11 @@ const { hero_title, hero_subtitle, hero_bg } = hero_block;
         {/* FIXED HERO */}
         {
             hero_title && (
-                <div data-cms-bind="hero_block">
-                    <Hero
-                        title={hero_title}
-                        subtitle={hero_subtitle}
-                        bg_color={hero_bg}
-                    />
-                </div>
+                <Hero
+                    title={hero_title}
+                    subtitle={hero_subtitle}
+                    bg_color={hero_bg}
+                />
             )
         }
 
