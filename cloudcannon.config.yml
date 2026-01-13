@@ -55,7 +55,7 @@ _inputs:
         style: select
         values:
           - label: 2 Column
-            icon: short_text
+            icon: view_column
             value:
               _template: feature
               heading: New Section
@@ -92,6 +92,54 @@ _inputs:
                 type: switch
                 label: Reverse layout
                 comment: "Default: Text left, Image right. Toggle ON to swap columns."
+                cascade: true
+              background_type:
+                type: select
+                label: Background Type
+                comment: "Choose a background for this section (optional)"
+                options:
+                  values:
+                    - none
+                    - color
+                    - image
+                cascade: true
+              background_color:
+                type: color
+                label: Background Colour
+                comment: "Only applies if Background Type is set to 'Colour'. Enter a hex value or use the colour picker."
+                options:
+                  format: hex
+                  alpha: false
+                cascade: true
+              background_image:
+                type: image
+                label: Background Image
+                comment: "Only applies if Background Type is set to 'Image'. Image will be tiled across the section."
+                cascade: true
+              _template:
+                hidden: true
+                cascade: true
+          - label: Centered 1 Column
+            icon: format_align_center
+            value:
+              _template: centered_text
+              text: <p>Write your centered content here...</p>
+              background_type: none
+              background_color: ""
+              background_image: ""
+            _inputs:
+              text:
+                type: html
+                options:
+                  allow_resize: true
+                  allow_custom_markup: false
+                  remove_custom_markup: false
+                  initial_height: 320
+                  bold: true
+                  format: p h2 h3
+                  image_size_attributes: true
+                  italic: true
+                label: Content (WYSIWYG)
                 cascade: true
               background_type:
                 type: select

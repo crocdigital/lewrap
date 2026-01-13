@@ -1,0 +1,29 @@
+---
+const {
+    text,
+    blockIndex,
+    background_type = "none",
+    background_color,
+    background_image,
+} = Astro.props;
+
+// Determine inline style for backgrounds
+let backgroundStyle = "";
+if (background_type === "color" && background_color) {
+    backgroundStyle = `background-color: ${background_color};`;
+} else if (background_type === "image" && background_image) {
+    backgroundStyle = `background-image: url('${background_image}'); background-repeat: repeat;`;
+}
+---
+
+<section
+    class="w-[95%] md:max-w-[85%] mx-auto p-7 md:p-21 rounded-xl"
+    style={backgroundStyle}
+    data-cms-bind={`page_blocks[${blockIndex}]`}
+>
+    <div
+        class="prose max-w-4xl mx-auto text-center"
+        data-cms-edit={`page_blocks.${blockIndex}.text`}
+        set:html={text}
+    />
+</section>
