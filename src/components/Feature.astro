@@ -1,7 +1,7 @@
 ---
 const { heading, text, image_path, reverse = false, blockIndex } = Astro.props;
 
-// Build the address: #page_blocks[0], #page_blocks[1]...
+// Build the unique ID: #page_blocks[0], #page_blocks[1]
 const bindBase =
     blockIndex !== undefined ? `#page_blocks[${blockIndex}]` : null;
 ---
