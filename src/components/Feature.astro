@@ -1,6 +1,11 @@
 ---
-// src/components/feature.astro (or wherever this component lives)
-const { heading, text, image_path, reverse } = Astro.props;
+// 1. Accept the blockIndex prop
+const { heading, text, image_path, reverse, blockIndex } = Astro.props;
+
+// 2. Create the binding tag.
+// If blockIndex is 0, this string becomes "#page_blocks.0"
+const parentBind =
+    blockIndex !== undefined ? `#page_blocks.${blockIndex}` : null;
 ---
 
 <div
@@ -11,16 +16,36 @@ const { heading, text, image_path, reverse } = Astro.props;
             image_path && (
                 <img
                     src={image_path}
-                    alt={heading || "Feature image"}
+                    alt={heading}
                     class="w-full h-auto rounded-lg shadow-md"
+                    data-cms-bind={
+                        parentBind ? `${parentBind}.image_path` : null
+                    }
                 />
             )
         }
     </div>
 
     <div class="w-full md:w-1/2 flex flex-col justify-center">
-        {heading && <h2 class="text-3xl font-bold mb-4">{heading}</h2>}
+        {
+            heading && (
+                <h2
+                    class="text-3xl font-bold mb-4"
+                    data-cms-bind={parentBind ? `${parentBind}.heading` : null}
+                >
+                    {heading}
+                </h2>
+            )
+        }
 
-        {text && <div class="prose max-w-none" set:html={text} />}
+        {
+            text && (
+                <div
+                    class="prose max-w-none"
+                    set:html={text}
+                    data-cms-bind={parentBind ? `${parentBind}.text` : null}
+                />
+            )
+        }
     </div>
 </div>

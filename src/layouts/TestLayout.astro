@@ -17,14 +17,21 @@ const {
     <main
         class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-5"
     >
-        {/* FIXED HERO */}
+        {
+            /* FIXED HERO 
+        We add data-cms-bind here so clicking the hero title 
+        opens the Hero Title input 
+    */
+        }
         {
             hero_title && (
-                <Hero
-                    title={hero_title}
-                    subtitle={hero_subtitle}
-                    bg_color={hero_bg}
-                />
+                <div data-cms-bind="#hero_title">
+                    <Hero
+                        title={hero_title}
+                        subtitle={hero_subtitle}
+                        bg_color={hero_bg}
+                    />
+                </div>
             )
         }
 
@@ -33,6 +40,7 @@ const {
             {
                 page_blocks?.map((block: any, index: number) => {
                     if (block._template === "feature") {
+                        // We pass 'blockIndex' so the component knows which number it is
                         return <Feature {...block} blockIndex={index} />;
                     }
                     return null;
