@@ -28,4 +28,16 @@ page_blocks:
       this field to different headings and see how the app styles them bro.</p>
     image_path: /images/PLACEMENT-hero-taj.webp
     reverse: true
+  - _template: feature
+    heading: Adding new sq ratio image
+    text: >-
+      <p>Unfortunately, <strong>true real-time live editing</strong> (where text
+      updates character-by-character as you type in a popup) isn't something
+      CloudCannon's visual editor supports out of the box - at least not without
+      Bookshop.</p><p>What you're currently getting is CloudCannon's standard
+      visual editing behaviour:</p><ul><li><p>Click on an
+      element</p></li><li><p>Edit in the popup/sidebar</p></li><li><p>Changes
+      apply when you save/close the editor</p></li></ul>
+    image_path: /images/placement-sqratio.webp
+    reverse: false
 ---
