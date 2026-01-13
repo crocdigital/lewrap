@@ -1,3 +1,15 @@
+_editables:
+  content:
+    bold: true
+    italic: true
+    link: true
+    format: p h2 h3
+    image: true
+  block:
+    format: p h2 h3
+    bold: true
+    italic: true
+
 paths:
   uploads: public/images
   static: public
