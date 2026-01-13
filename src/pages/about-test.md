@@ -1,10 +1,9 @@
 ---
 layout: ../layouts/TestLayout.astro
 title: About Us
-hero_block:
-  hero_title: What’s happening at LeWrap. Live edits are working, and now I've grouped Hero block!
-  hero_subtitle: Subtitle here (or not - up to you bra)
-  hero_bg: bg-lewrap-green
+hero_title: Welcome
+hero_subtitle: Subtitle here
+hero_bg: bg-white
 page_blocks:
   - _template: feature
     heading: Nobody makes a wrap like us

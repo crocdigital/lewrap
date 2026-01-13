@@ -1,22 +1,16 @@
 ---
-const {
-    title,
-    subtitle,
-    bg_color = "bg-lewrap-green", // Default color if none selected
-    bindPath = "hero_block",
-} = Astro.props;
+const { title, subtitle, bg_color = "bg-lewrap-green" } = Astro.props;
 ---
 
 <section
     class={`relative flex items-center justify-center mt-10 md:mt-15 w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden ${bg_color}`}
-    data-cms-bind={bindPath}
 >
     <div class="max-w-4xl mx-auto px-6 flex flex-col gap-y-2 md:gap-y-6">
         {
             title && (
                 <h1
                     class="md:w-auto mx-auto text-white text-4xl md:text-[90px] font-bold leading-[100%] tracking-tight text-center"
-                    data-cms-edit={`${bindPath}.hero_title`}
+                    data-cms-edit="hero_title"
                 >
                     {title}
                 </h1>
@@ -27,7 +21,7 @@ const {
             subtitle && (
                 <p
                     class="text-xl md:text-2xl leading-tight text-white text-center max-w-2xl mx-auto"
-                    data-cms-edit={`${bindPath}.hero_subtitle`}
+                    data-cms-edit="hero_subtitle"
                 >
                     {subtitle}
                 </p>

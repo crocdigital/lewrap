@@ -4,16 +4,19 @@ import Hero from "../components/Hero.astro";
 import Feature from "../components/Feature.astro";
 
 const { frontmatter } = Astro.props;
-const { title, hero_block = {}, page_blocks = [] } = frontmatter || {};
-
-const { hero_title, hero_subtitle, hero_bg } = hero_block;
+const {
+    title,
+    hero_title,
+    hero_subtitle,
+    hero_bg,
+    page_blocks = [],
+} = frontmatter || {};
 ---
 
 <BaseLayout title={title}>
     <main
         class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10"
     >
-        {/* FIXED HERO */}
         {
             hero_title && (
                 <Hero
@@ -24,7 +27,6 @@ const { hero_title, hero_subtitle, hero_bg } = hero_block;
             )
         }
 
-        {/* DYNAMIC BLOCKS */}
         <div class="flex flex-col gap-10">
             {
                 page_blocks?.map((block: any, index: number) => {

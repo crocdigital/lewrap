@@ -29,31 +29,25 @@ collections_config:
     disable_file_actions: false
 
 _inputs:
-  hero_block:
-    type: object
-    label: Hero Block
-    comment: "Configure the hero section at the top of the page"
+  hero_title:
+    type: text
+    label: Hero Title
     cascade: true
-    _inputs:
-      hero_title:
-        type: text
-        label: Title
-        cascade: true
-      hero_subtitle:
-        type: text
-        label: Subtitle
-        cascade: true
-      hero_bg:
-        type: select
-        label: Background Color
-        options:
-          allow_empty: true
-          values:
-            - value: bg-white
-              label: White
-            - value: bg-black
-              label: Black
-        cascade: true
+  hero_subtitle:
+    type: text
+    label: Hero Subtitle
+    cascade: true
+  hero_bg:
+    type: select
+    label: Hero Background
+    options:
+      allow_empty: true
+      values:
+        - value: bg-white
+          label: White
+        - value: bg-black
+          label: Black
+    cascade: true
   page_blocks:
     type: array
     options:
