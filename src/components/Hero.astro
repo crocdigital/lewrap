@@ -2,15 +2,17 @@
 const {
     title,
     subtitle,
-    bg_color = "bg-gray-100", // Default color if none selected
+    bg_color = "bg-lewrap-green", // Default color if none selected
 } = Astro.props;
 ---
 
-<section class={`py-20 text-center ${bg_color}`}>
-    <div class="max-w-4xl mx-auto px-6">
+<section
+    class={`relative flex items-center justify-center mt-10 md:mt-15 w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden ${bg_color}`}
+>
+    <div class="max-w-4xl mx-auto px-6 flex flex-col gap-y-2 md:gap-y-6">
         {
             title && (
-                <h1 class="text-5xl md:text-6xl font-black tracking-tight text-lewrap-green-dark mb-6">
+                <h1 class="md:w-auto mx-auto text-white text-4xl md:text-[90px] font-bold leading-[100%] tracking-tight text-center">
                     {title}
                 </h1>
             )
@@ -18,7 +20,7 @@ const {
 
         {
             subtitle && (
-                <p class="text-xl md:text-2xl text-lewrap-off-black max-w-2xl mx-auto">
+                <p class="text-xl md:text-2xl leading-tight text-white text-center max-w-2xl mx-auto">
                     {subtitle}
                 </p>
             )

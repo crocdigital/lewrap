@@ -20,17 +20,20 @@ const {
 ---
 
 <BaseLayout title={title}>
-    {
-        hero_title && (
-            <Hero
-                title={hero_title}
-                subtitle={hero_subtitle}
-                bg_color={hero_bg}
-            />
-        )
-    }
+    <main
+        class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-5"
+    >
+        {
+            hero_title && (
+                <Hero
+                    title={hero_title}
+                    subtitle={hero_subtitle}
+                    bg_color={hero_bg}
+                />
+            )
+        }
 
-    <main class="max-w-screen-2xl mx-auto">
+        <!-- <main class="max-w-screen-2xl mx-auto"> -->
         {
             page_blocks?.map((block: any) => {
                 if (block._template === "feature") {
