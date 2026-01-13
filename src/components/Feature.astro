@@ -26,10 +26,8 @@ const bind = blockIndex !== undefined ? `#page_blocks.${blockIndex}` : null;
         {
             heading && (
                 <h2
-                    class="text-3xl font-bold mb-4"
+                    class={`text-3xl font-bold mb-4 ${bind ? "editable" : ""}`}
                     data-cms-bind={bind ? `${bind}.heading` : null}
-                    data-editable="true"
-                    data-prop="heading"
                 >
                     {heading}
                 </h2>
