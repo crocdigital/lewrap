@@ -3,7 +3,7 @@ layout: ../layouts/TestLayout.astro
 title: About Us
 hero_title: The New Fixed Hero
 hero_subtitle: This text is controlled by the sidebar inputs
-hero_bg: bg-blue-50
+hero_bg: bg-lewrap-green
 page_blocks:
   - _template: feature
     heading: Second 2 Column Section
