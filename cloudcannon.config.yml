@@ -8,52 +8,15 @@ collections_config:
     output: true
     icon: wysiwyg
     url: /[relative_base_path]/[slug]/
-    disable_url: false
-    disable_add: false
     _enabled_editors:
       - visual
       - content
       - data
 
+# -----------------------------------------------------------
+# 1. PAGE DATA (Sidebar / Hero)
+# -----------------------------------------------------------
 _inputs:
-  # -----------------------------------------------------------
-  # GLOBAL INPUT DEFINITIONS
-  # -----------------------------------------------------------
-  
-  # 1. Standard Text/HTML
-  text:
-    type: html
-    label: Content
-    options:
-      bold: true
-      italic: true
-      link: true
-      bulleted_list: true
-      numbered_list: true
-      format: p h2 h3 h4
-
-  # 2. Images
-  image_path:
-    type: image
-    label: Image
-    comment: "Please upload a square image (1:1 ratio) for best results."
-
-  # 3. Utilities
-  reverse:
-    type: switch
-    label: Reverse columns (default is text left, image right)
-  
-  # 4. New Global Definitions (Moved from sub_inputs)
-  heading:
-    type: text
-    label: Feature Heading
-  
-  _template:
-    hidden: true
-
-  # -----------------------------------------------------------
-  # HERO INPUTS
-  # -----------------------------------------------------------
   hero_title:
     type: text
     label: Hero Title
@@ -73,24 +36,53 @@ _inputs:
           label: White
         - value: bg-black
           label: Black
-
-  # -----------------------------------------------------------
-  # PAGE BLOCKS (The Drag-and-Drop)
-  # -----------------------------------------------------------
+  
+  # This links the array to the structures defined at the bottom
   page_blocks:
     type: array
     label: Page Blocks
     options:
-      structures:
-        values:
-          # The keys below automatically map to the Global Inputs defined above
-          - label: 2 Column
-            icon: short_text
-            value:
-              _template: feature
-              heading: New 2 Column Section
-              text: Description text
-              image_path: /test-image.jpg
-              reverse: false
+      structures: _structures.content_blocks
+
+# -----------------------------------------------------------
+# 2. BLOCK DEFINITIONS (The Fix)
+# -----------------------------------------------------------
+_structures:
+  content_blocks:
+    values:
+      - label: 2 Column
+        icon: short_text
+        value:
+          _template: feature
+          heading: New 2 Column Section
+          text: <p>Description text</p>
+          image_path: /test-image.jpg
+          reverse: false
+        
+        # WE DEFINE THE INPUTS RIGHT HERE.
+        # This forces CloudCannon to use these settings for this block.
+        _inputs:
+          heading:
+            type: text
+            label: Section Heading
+          text:
+            type: html
+            label: Content
+            options:
+              bold: true
+              italic: true
+              link: true
+              bulleted_list: true
+              numbered_list: true
+              format: p h2 h3 h4
+          image_path:
+            type: image
+            label: Image
+            comment: "Square image (1:1) recommended"
+          reverse:
+            type: switch
+            label: Reverse columns
+          _template:
+            hidden: true
 
 timezone: Australia/Sydney
