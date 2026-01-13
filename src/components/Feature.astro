@@ -9,11 +9,10 @@ const { heading, text, image_path, reverse = false, blockIndex } = Astro.props;
     <div class={`flex flex-col gap-y-8 p-7 ${reverse ? "md:order-2" : ""}`}>
         {
             heading && (
-                <h2
-                    class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight"
-                    data-cms-bind={`#page_blocks[${blockIndex}].heading`}
-                >
-                    {heading}
+                <h2 class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight">
+                    <span data-cms-edit={`page_blocks[${blockIndex}].heading`}>
+                        {heading}
+                    </span>
                 </h2>
             )
         }
@@ -21,10 +20,9 @@ const { heading, text, image_path, reverse = false, blockIndex } = Astro.props;
         {/* Copy */}
         <div
             class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8"
-            data-cms-bind={`#page_blocks[${blockIndex}].text`}
-        >
-            <div set:html={text} />
-        </div>
+            data-cms-edit={`page_blocks[${blockIndex}].text`}
+            set:html={text}
+        />
     </div>
 
     {
@@ -34,7 +32,7 @@ const { heading, text, image_path, reverse = false, blockIndex } = Astro.props;
                     src={image_path}
                     alt={heading || "Feature Image"}
                     class="w-full aspect-square object-cover rounded-xl"
-                    data-cms-bind={`#page_blocks[${blockIndex}].image_path`}
+                    data-cms-edit={`page_blocks[${blockIndex}].image_path`}
                 />
             </div>
         )

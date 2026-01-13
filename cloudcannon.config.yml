@@ -1,18 +1,19 @@
 _editables:
+  text:
+    bold: true
+    italic: true
+    link: true
   content:
     bold: true
     italic: true
     link: true
     format: p h2 h3
     image: true
-  block:
-    format: p h2 h3
-    bold: true
-    italic: true
 
 paths:
   uploads: public/images
   static: public
+
 collections_config:
   pages:
     path: src/pages
@@ -26,6 +27,7 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+
 _inputs:
   hero_title:
     type: text
@@ -88,4 +90,5 @@ _inputs:
                 cascade: true
     label: Page Blocks
     cascade: true
+
 timezone: Australia/Sydney
