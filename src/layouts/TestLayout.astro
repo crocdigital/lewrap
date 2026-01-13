@@ -1,14 +1,10 @@
 ---
-// 1. IMPORT YOUR BASE LAYOUT
 import BaseLayout from "../layouts/BaseLayout.astro";
-
 import Hero from "../components/Hero.astro";
 import Feature from "../components/Feature.astro";
 
-// 2. EXTRACT DATA
 const { frontmatter } = Astro.props;
 
-// 3. DESTRUCTURE VARIABLES
 const {
     title,
     hero_title,
@@ -23,7 +19,6 @@ const {
         class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-5"
     >
         {/* FIXED HERO */}
-        {/* Note: The live-editing attributes for this are inside Hero.astro */}
         {
             hero_title && (
                 <Hero
@@ -34,23 +29,14 @@ const {
             )
         }
 
-        {/* DYNAMIC BLOCKS LOOP */}
+        {/* DYNAMIC BLOCKS */}
         <div class="flex flex-col gap-5">
             {
                 page_blocks?.map((block: any, index: number) => {
-                    // Create the unique binding path for this specific block
-                    // e.g. #page_blocks[0], #page_blocks[1]
-                    const bindPath = `#page_blocks[${index}]`;
-
                     if (block._template === "feature") {
-                        // WRAPPER DIV:
-                        // This 'data-cms-bind' makes the block clickable in the editor.
-                        // We do NOT use 'data-editable' here because this is a container, not a text field.
-                        return (
-                            <div data-cms-bind={bindPath} class="relative">
-                                <Feature {...block} />
-                            </div>
-                        );
+                        // PASS THE INDEX!
+                        // We pass 'blockIndex={index}' so the component knows its address in the array.
+                        return <Feature {...block} blockIndex={index} />;
                     }
                     return null;
                 })
