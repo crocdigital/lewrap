@@ -20,7 +20,7 @@ _inputs:
   # GLOBAL INPUT DEFINITIONS
   # -----------------------------------------------------------
   
-  # 1. HTML Text Editor (Sledgehammer)
+  # 1. Standard Text/HTML
   text:
     type: html
     label: Content
@@ -32,19 +32,27 @@ _inputs:
       numbered_list: true
       format: p h2 h3 h4
 
-  # 2. Image Uploader with Square Hint
+  # 2. Images
   image_path:
     type: image
     label: Image
     comment: "Please upload a square image (1:1 ratio) for best results."
 
-  # 3. Reverse Switch (Renamed as requested)
+  # 3. Utilities
   reverse:
     type: switch
     label: Reverse columns (default is text left, image right)
+  
+  # 4. New Global Definitions (Moved from sub_inputs)
+  heading:
+    type: text
+    label: Feature Heading
+  
+  _template:
+    hidden: true
 
   # -----------------------------------------------------------
-  # FIXED HERO INPUTS (These appear in the Page Data / Sidebar)
+  # HERO INPUTS
   # -----------------------------------------------------------
   hero_title:
     type: text
@@ -71,42 +79,18 @@ _inputs:
   # -----------------------------------------------------------
   page_blocks:
     type: array
-    cascade: true
+    label: Page Blocks
     options:
       structures:
         values:
-          - icon: short_text
-            label: 2 Column
+          # The keys below automatically map to the Global Inputs defined above
+          - label: 2 Column
+            icon: short_text
             value:
               _template: feature
               heading: New 2 Column Section
               text: Description text
               image_path: /test-image.jpg
               reverse: false
-    
-    sub_inputs:
-      _template:
-        hidden: true
-      heading:
-        type: text
-        label: Feature Heading
-      
-      # --- ADD THESE LINES BELOW ---
-      # We must explicitly define these here so the array knows what they are
-      text:
-        type: html
-        options:
-          bold: true
-          italic: true
-          link: true
-          bulleted_list: true
-          numbered_list: true
-          format: p h2 h3 h4
-      image_path:
-        type: image
-        label: Image
-      reverse:
-        type: switch
-        label: Reverse columns
 
 timezone: Australia/Sydney
