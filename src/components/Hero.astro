@@ -1,7 +1,7 @@
 ---
 const {
-    title,
-    subtitle,
+    hero_title,
+    hero_subtitle,
     bg_color = "bg-lewrap-green", // Default color if none selected
 } = Astro.props;
 ---
@@ -11,17 +11,17 @@ const {
 >
     <div class="max-w-4xl mx-auto px-6 flex flex-col gap-y-2 md:gap-y-6">
         {
-            title && (
+            hero_title && (
                 <h1 class="md:w-auto mx-auto text-white text-4xl md:text-[90px] font-bold leading-[100%] tracking-tight text-center">
-                    {title}
+                    {hero_title}
                 </h1>
             )
         }
 
         {
-            subtitle && (
+            hero_subtitle && (
                 <p class="text-xl md:text-2xl leading-tight text-white text-center max-w-2xl mx-auto">
-                    {subtitle}
+                    {hero_subtitle}
                 </p>
             )
         }
