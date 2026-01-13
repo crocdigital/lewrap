@@ -1,8 +1,10 @@
 ---
 layout: ../layouts/TestLayout.astro
 title: About Us
-hero_title: Welcome
-hero_subtitle: Subtitle here
+hero_title: We now have LIVE editing, woot woot!
+hero_subtitle: >-
+  Live editing here too - and you don't have to have something here if you don't
+  want to :)
 hero_bg: bg-lewrap-green
 page_blocks:
   - _template: feature
