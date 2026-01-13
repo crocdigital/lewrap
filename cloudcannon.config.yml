@@ -51,7 +51,7 @@ _inputs:
       structures:
         style: select
         values:
-          - label: 2 Column Feature
+          - label: 2 Column
             icon: short_text
             value:
               _template: feature
@@ -62,7 +62,7 @@ _inputs:
             _inputs:
               heading:
                 type: text
-                label: Feature Heading
+                label: Heading
                 cascade: true
               text:
                 type: html
@@ -80,10 +80,12 @@ _inputs:
               image_path:
                 type: image
                 label: Image
+                comment: "Upload a square image (1:1 ratio). Recommended size: 1000px x 1000px"
                 cascade: true
               reverse:
                 type: switch
-                label: Reverse Layout
+                label: Reverse layout
+                comment: "Default: Text left, Image right. Toggle ON to swap columns. Use square images (1:1 ratio) at 1000px x 1000px for best results."
                 cascade: true
               _template:
                 hidden: true
