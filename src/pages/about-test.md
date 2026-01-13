@@ -2,7 +2,7 @@
 layout: ../layouts/TestLayout.astro
 title: About Us
 hero_title: What’s happening at LeWrap
-hero_subtitle: This text is controlled by the sidebar inputs
+hero_subtitle:
 hero_bg: bg-lewrap-green
 page_blocks:
   - _template: feature
