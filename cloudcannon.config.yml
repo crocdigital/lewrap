@@ -1,42 +1,41 @@
 paths:
   uploads: public/images
   static: public
-
 collections_config:
   pages:
     path: src/pages
-    output: true
     icon: wysiwyg
+    url: /[slug]/
+    disable_url: false
     _enabled_editors:
       - visual
       - content
       - data
-
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
 _inputs:
-  # -----------------------------------------------------------
-  # HERO (Sidebar)
-  # -----------------------------------------------------------
   hero_title:
     type: text
+    cascade: true
   hero_subtitle:
     type: text
+    cascade: true
   hero_bg:
     type: select
     options:
+      allow_empty: true
       values:
         - value: bg-white
           label: White
         - value: bg-black
           label: Black
-
-  # -----------------------------------------------------------
-  # PAGE BLOCKS (The Array)
-  # -----------------------------------------------------------
+    cascade: true
   page_blocks:
     type: array
-    label: Page Blocks
     options:
       structures:
+        style: select
         values:
           - label: 2 Column Feature
             icon: short_text
@@ -46,26 +45,35 @@ _inputs:
               text: <p>Write content here...</p>
               image_path: /uploads/placeholder.jpg
               reverse: false
-            
-            # FORCE DEFINITIONS HERE (No Globals)
             _inputs:
               heading:
                 type: text
                 label: Feature Heading
+                cascade: true
               text:
                 type: html
-                label: Content (WYSIWYG)
                 options:
+                  allow_resize: true
+                  allow_custom_markup: false
+                  remove_custom_markup: false
+                  initial_height: 320
                   bold: true
-                  italic: true
                   format: p h2 h3
+                  image_size_attributes: true
+                  italic: true
+                label: Content (WYSIWYG)
+                cascade: true
               image_path:
                 type: image
                 label: Image
+                cascade: true
               reverse:
                 type: switch
                 label: Reverse Layout
+                cascade: true
               _template:
                 hidden: true
-
+                cascade: true
+    label: Page Blocks
+    cascade: true
 timezone: Australia/Sydney
