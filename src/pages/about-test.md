@@ -44,7 +44,7 @@ page_blocks:
       bite — proving you can eat well, eat fast, and enjoy every mouthful.</p>
     image_path: /images/placement-sqratio.webp
     reverse: false
-    background_type: none
-    background_color: ''
-    background_image: ''
+    background_type: image
+    background_color:
+    background_image: /images/bg-tile-wood.png
 ---
