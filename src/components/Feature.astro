@@ -3,6 +3,18 @@ const { heading, text, image_path, reverse = false } = Astro.props;
 ---
 
 <section class="w-[95%] mx-auto grid md:grid-cols-2 gap-8 items-center">
+    {
+        image_path && (
+            <div class={reverse ? "md:order-1" : ""}>
+                <img
+                    src={image_path}
+                    alt={heading || "Feature Image"}
+                    class="w-full aspect-square object-cover rounded-xl"
+                />
+            </div>
+        )
+    }
+
     <div class={`flex flex-col gap-y-8 p-7 ${reverse ? "md:order-2" : ""}`}>
         {
             heading && (
@@ -17,16 +29,4 @@ const { heading, text, image_path, reverse = false } = Astro.props;
             <div set:html={text} />
         </div>
     </div>
-
-    {
-        image_path && (
-            <div class={reverse ? "md:order-1" : ""}>
-                <img
-                    src={image_path}
-                    alt={heading || "Feature Image"}
-                    class="w-full aspect-square object-cover rounded-xl"
-                />
-            </div>
-        )
-    }
 </section>
