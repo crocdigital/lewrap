@@ -31,7 +31,7 @@ page_blocks:
       this field to different headings and see how the app styles them bro.</p>
     image_path: /images/PLACEMENT-hero-taj.webp
     reverse: true
-    background_type: color
+    background_type: none
     background_color: '#23ac0f'
     background_image: ''
   - _template: feature
