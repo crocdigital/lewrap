@@ -10,17 +10,22 @@ const {
     background_image,
 } = Astro.props;
 
-// Determine background style
-let backgroundStyle = "";
+// Determine background class for colors
+let backgroundClass = "";
 if (background_type === "color" && background_color) {
-    backgroundStyle = background_color;
-} else if (background_type === "image" && background_image) {
-    backgroundStyle = `bg-[url('${background_image}')] bg-repeat`;
+    backgroundClass = background_color;
+}
+
+// Determine inline style for background image
+let backgroundStyle = "";
+if (background_type === "image" && background_image) {
+    backgroundStyle = `background-image: url('${background_image}'); background-repeat: repeat;`;
 }
 ---
 
 <section
-    class={`w-[95%] md:max-w-[85%] mx-auto grid md:grid-cols-2 gap-8 p-7 md:p-21 items-center rounded-xl ${backgroundStyle}`}
+    class={`w-[95%] md:max-w-[85%] mx-auto grid md:grid-cols-2 gap-8 p-7 md:p-21 items-center rounded-xl ${backgroundClass}`}
+    style={backgroundStyle}
     data-cms-bind={`page_blocks[${blockIndex}]`}
 >
     <div
