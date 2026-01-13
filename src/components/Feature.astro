@@ -24,7 +24,7 @@ const bind = blockIndex !== undefined ? `#page_blocks.${blockIndex}` : null;
         {
             heading && (
                 <h2
-                    class="text-3xl font-bold mb-4"
+                    class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight"
                     data-cms-bind={bind ? `${bind}.heading` : null}
                 >
                     {heading}
@@ -35,7 +35,7 @@ const bind = blockIndex !== undefined ? `#page_blocks.${blockIndex}` : null;
         {
             text && (
                 <div
-                    class="prose max-w-none"
+                    class="prose prose-p:text-2xl/8"
                     set:html={text}
                     data-cms-bind={bind ? `${bind}.text` : null}
                 />
