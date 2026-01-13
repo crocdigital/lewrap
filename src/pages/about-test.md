@@ -20,6 +20,9 @@ page_blocks:
       baguette we make.</p>
     image_path: /images/placement-hero.webp
     reverse: false
+    background_type:
+    background_color: ''
+    background_image: /images/bg-tile-wood.png
   - _template: feature
     heading: I also need to add a centered block as an option
     text: >-
@@ -28,6 +31,9 @@ page_blocks:
       this field to different headings and see how the app styles them bro.</p>
     image_path: /images/PLACEMENT-hero-taj.webp
     reverse: true
+    background_type: none
+    background_color: ''
+    background_image: ''
   - _template: feature
     heading:
     text: >-
@@ -38,4 +44,7 @@ page_blocks:
       bite — proving you can eat well, eat fast, and enjoy every mouthful.</p>
     image_path: /images/placement-sqratio.webp
     reverse: false
+    background_type: none
+    background_color: ''
+    background_image: ''
 ---
