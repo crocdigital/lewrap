@@ -1,9 +1,26 @@
 ---
-const { heading, text, image_path, reverse = false, blockIndex } = Astro.props;
+const {
+    heading,
+    text,
+    image_path,
+    reverse = false,
+    blockIndex,
+    background_type = "none",
+    background_color,
+    background_image,
+} = Astro.props;
+
+// Determine background style
+let backgroundStyle = "";
+if (background_type === "color" && background_color) {
+    backgroundStyle = background_color;
+} else if (background_type === "image" && background_image) {
+    backgroundStyle = `bg-[url('${background_image}')] bg-repeat`;
+}
 ---
 
 <section
-    class="w-[95%] md:max-w-[85%] mx-auto grid md:grid-cols-2 gap-8 p-7 md:p-21 items-center rounded-xl bg-red-500"
+    class={`w-[95%] md:max-w-[85%] mx-auto grid md:grid-cols-2 gap-8 p-7 md:p-21 items-center rounded-xl ${backgroundStyle}`}
     data-cms-bind={`page_blocks[${blockIndex}]`}
 >
     <div

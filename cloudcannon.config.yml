@@ -62,6 +62,9 @@ _inputs:
               text: <p>Write content here...</p>
               image_path: /uploads/placeholder.jpg
               reverse: false
+              background_type: none
+              background_color: ""
+              background_image: ""
             _inputs:
               heading:
                 type: text
@@ -89,6 +92,42 @@ _inputs:
                 type: switch
                 label: Reverse layout
                 comment: "Default: Text left, Image right. Toggle ON to swap columns."
+                cascade: true
+              background_type:
+                type: select
+                label: Background Type
+                comment: "Choose a background for this section (optional)"
+                options:
+                  values:
+                    - value: none
+                      label: No Background
+                    - value: color
+                      label: Colour
+                    - value: image
+                      label: Image (Tiled)
+                cascade: true
+              background_color:
+                type: select
+                label: Background colour
+                comment: "Only applies if Background Type is set to 'Colour'"
+                options:
+                  allow_empty: true
+                  values:
+                    - value: bg-lewrap-green
+                      label: LeWrap Green
+                    - value: bg-lewrap-green-dark
+                      label: LeWrap Green Dark
+                    - value: bg-gray-100
+                      label: Light Gray
+                    - value: bg-white
+                      label: White
+                    - value: bg-black
+                      label: Black
+                cascade: true
+              background_image:
+                type: image
+                label: Background Image
+                comment: "Only applies if Background Type is set to 'Image'. Image will be tiled across the section."
                 cascade: true
               _template:
                 hidden: true
