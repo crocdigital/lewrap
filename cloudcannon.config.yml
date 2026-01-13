@@ -98,14 +98,10 @@ _inputs:
                 label: Background Type
                 comment: "Choose a background for this section (optional)"
                 options:
-                  allow_empty: false
                   values:
-                    - value: none
-                      label: No Background
-                    - value: color
-                      label: Colour
-                    - value: image
-                      label: Image (Tiled)
+                    - none
+                    - color
+                    - image
                 cascade: true
               background_color:
                 type: color
