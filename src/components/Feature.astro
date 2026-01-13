@@ -25,11 +25,7 @@ const bind = blockIndex !== undefined ? `#page_blocks.${blockIndex}` : null;
     <div class="w-full md:w-1/2 flex flex-col justify-center">
         {
             heading && (
-                <h2
-                    class="text-3xl font-bold mb-4"
-                    data-editable="text"
-                    data-cms-bind="#heading"
-                >
+                <h2 class="text-3xl font-bold mb-4" data-cms-bind="#heading">
                     {heading}
                 </h2>
             )
