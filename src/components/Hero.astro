@@ -23,7 +23,9 @@ const { title, subtitle, bg_color = "bg-lewrap-green" } = Astro.props;
             subtitle && (
                 <p
                     class="text-xl md:text-2xl leading-tight text-white text-center max-w-2xl mx-auto"
-                    data-cms-edit="hero_subtitle"
+                    data-editable="text"
+                    data-prop="hero_subtitle"
+                    data-cms-bind="#hero_subtitle"
                 >
                     {subtitle}
                 </p>
