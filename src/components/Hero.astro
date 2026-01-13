@@ -20,7 +20,12 @@ const {
 
         {
             subtitle && (
-                <p class="text-xl md:text-2xl leading-tight text-white text-center max-w-2xl mx-auto">
+                <p
+                    class="text-xl md:text-2xl leading-tight text-white text-center max-w-2xl mx-auto"
+                    data-editable="text"
+                    data-prop="subtitle"
+                    data-cms-bind="#subtitle"
+                >
                     {subtitle}
                 </p>
             )
