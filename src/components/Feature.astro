@@ -1,14 +1,7 @@
 ---
-const {
-    heading,
-    text,
-    image_path,
-    reverse = false,
-    blockIndex, // Received from Layout
-} = Astro.props;
+const { heading, text, image_path, reverse = false, blockIndex } = Astro.props;
 
-// 1. Build the unique path for this specific block
-// Result: "#page_blocks[0]", "#page_blocks[1]", etc.
+// Build the address: #page_blocks[0], #page_blocks[1]...
 const bindBase =
     blockIndex !== undefined ? `#page_blocks[${blockIndex}]` : null;
 ---
