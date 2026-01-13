@@ -4,42 +4,46 @@ const { heading, text, image_path, reverse, blockIndex } = Astro.props;
 const bind = blockIndex !== undefined ? `#page_blocks.${blockIndex}` : null;
 ---
 
-<div
-    class={`flex flex-col md:flex-row gap-8 py-12 ${reverse ? "md:flex-row-reverse" : ""}`}
+<section
+    class="py-12 px-6 max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center"
 >
-    <div class="w-full md:w-1/2">
-        {
-            image_path && (
-                <img
-                    src={image_path}
-                    alt={heading || "Feature"}
-                    class="w-full h-auto rounded-lg shadow-md"
-                    data-cms-bind={bind ? `${bind}.image_path` : null}
-                />
-            )
-        }
-    </div>
+    <div
+        class={`flex flex-col md:flex-row gap-8 py-12 ${reverse ? "md:flex-row-reverse" : ""}`}
+    >
+        <div class="w-full md:w-1/2">
+            {
+                image_path && (
+                    <img
+                        src={image_path}
+                        alt={heading || "Feature"}
+                        class="w-full h-auto rounded-lg shadow-md"
+                        data-cms-bind={bind ? `${bind}.image_path` : null}
+                    />
+                )
+            }
+        </div>
 
-    <div class="w-full md:w-1/2 flex flex-col justify-center">
-        {
-            heading && (
-                <h2
-                    class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight"
-                    data-cms-bind={bind ? `${bind}.heading` : null}
-                >
-                    {heading}
-                </h2>
-            )
-        }
+        <div class="w-full md:w-1/2 flex flex-col justify-center">
+            {
+                heading && (
+                    <h2
+                        class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight"
+                        data-cms-bind={bind ? `${bind}.heading` : null}
+                    >
+                        {heading}
+                    </h2>
+                )
+            }
 
-        {
-            text && (
-                <div
-                    class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8"
-                    set:html={text}
-                    data-cms-bind={bind ? `${bind}.text` : null}
-                />
-            )
-        }
+            {
+                text && (
+                    <div
+                        class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8"
+                        set:html={text}
+                        data-cms-bind={bind ? `${bind}.text` : null}
+                    />
+                )
+            }
+        </div>
     </div>
-</div>
+</section>
