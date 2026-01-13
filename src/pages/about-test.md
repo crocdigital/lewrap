@@ -17,7 +17,7 @@ page_blocks:
       paragraph styles out.</p><p>I also need to add a centered block as an
       option for Monica to add into her page builds.</p>
     image_path: /images/placement-hero.webp
-    reverse: false
+    reverse: true
   - _template: feature
     heading: Second 2 Column Section - trying to fix live editing
     text: >-
