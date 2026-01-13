@@ -1,8 +1,6 @@
 ---
 const { heading, text, image_path, reverse, blockIndex } = Astro.props;
 
-// This string points CloudCannon to the exact data in the array
-// e.g., "#page_blocks.0"
 const bind = blockIndex !== undefined ? `#page_blocks.${blockIndex}` : null;
 ---
 
