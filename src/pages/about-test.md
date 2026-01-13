@@ -10,12 +10,13 @@ page_blocks:
   - _template: feature
     heading: Nobody makes a wrap like us
     text: >-
-      <p>This is the first section below the hero. I should really upload 1:1
-      ratio images as per my instructions below in the Image field
-      aye!</p><p>Now, I'm in full <strong>editing mode</strong> (see what I did
-      there with formatting bra). I'm adding this line of text to see how the
-      paragraph styles out.</p><p>I also need to add a centered block as an
-      option for Monica to add into her page builds.</p>
+      <h3>Putting in an h3 heading just for kicks</h3><p>This is the first
+      section below the hero. I should really upload 1:1 ratio images as per my
+      instructions below in the Image field aye!</p><p>Now, I'm in full
+      <strong>editing mode</strong> (see what I did there with formatting bra).
+      I'm adding this line of text to see how the paragraph styles out.</p><p>I
+      also need to add a centered block as an option for Monica to add into her
+      page builds.</p>
     image_path: /images/placement-hero.webp
     reverse: false
   - _template: feature
@@ -29,12 +30,13 @@ page_blocks:
     image_path: /images/PLACEMENT-hero-taj.webp
     reverse: true
   - _template: feature
-    heading: Adding new sq ratio image
+    heading:
     text: >-
-      <h3>Putting in an h3 heading for  kicks</h3><p>Unfortunately, <strong>true
-      real-time live editing</strong> (where text updates character-by-character
-      as you type in a popup) isn't something CloudCannon's visual editor
-      supports out of the box - at least not without Bookshop.</p>
+      <p>2005 was a pretty great year - YouTube launched, Harry Potter hit the
+      big screen, and the very first LeWrap opened at Westfield Parramatta.
+      Coincidence? We think not.</p><p>Since then, we’ve been serving up fresh,
+      flavour-packed food that makes people smile and say “mmm” on the first
+      bite — proving you can eat well, eat fast, and enjoy every mouthful.</p>
     image_path: /images/placement-sqratio.webp
     reverse: false
 ---
