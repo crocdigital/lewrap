@@ -119,7 +119,7 @@ _inputs:
               _template:
                 hidden: true
                 cascade: true
-          - label: Centered 1 Column
+          - label: 1 Column
             icon: format_align_center
             value:
               _template: centered_text
