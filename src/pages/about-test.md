@@ -21,7 +21,7 @@ page_blocks:
     image_path: /images/placement-hero.webp
     reverse: false
   - _template: feature
-    heading: Second 2 Column Section - trying to fix live editing
+    heading: I also need to add a centered block as an option
     text: >-
       <p>This is the second section. Bro!!! Trying to add live editing
       :(</p><p>I'm now adding this new text, and will move this row above the
