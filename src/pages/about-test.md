@@ -32,9 +32,9 @@ page_blocks:
       on all img blocks if fed via JSON?</p>
     image_path: /images/placement-sqratio.webp
     reverse: false
-    background_type: color
-    background_colour: '#d69fff'
-    background_image: ''
+    background_type: image
+    background_colour:
+    background_image: /images/bg-tile-wood.webp
   - _template: centered_text
     text: >-
       <p>2005 was a pretty great year - YouTube launched, Harry Potter hit the
