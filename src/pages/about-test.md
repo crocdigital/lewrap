@@ -60,4 +60,9 @@ page_blocks:
     background_type: image
     background_color:
     background_image: /images/bg-tile-wood.png
+  - _template: one_col
+    text: <p>Write your centered content here...</p>
+    background_type: none
+    background_color:
+    background_image: ''
 ---
