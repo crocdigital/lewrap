@@ -52,7 +52,7 @@ page_blocks:
     background_type: color
     background_colour: '#29ed61'
     background_image: ''
-    button_text: Here's a secondary button
+    button_text: Here's secondary button
     button_link: /our-food
     button_variant: secondary
 ---
