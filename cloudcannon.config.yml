@@ -43,15 +43,13 @@ _inputs:
     comment: "Choose between a solid colour or background image"
     options:
       values:
-        - value: color
-          label: Colour
-        - value: image
-          label: Image
+        - color
+        - image
     cascade: true
   hero_bg_colour:
     type: color
     label: Hero Background Colour
-    comment: "Only applies if Background Type is 'Colour'"
+    comment: "Only applies if Background Type is 'color'"
     options:
       format: hex
       alpha: false
@@ -59,7 +57,7 @@ _inputs:
   hero_bg_image:
     type: image
     label: Hero Background Image
-    comment: "Only applies if Background Type is 'Image'. Image will cover the hero section."
+    comment: "Only applies if Background Type is 'image'. Image will cover the hero section."
     cascade: true
   page_blocks:
     type: array
@@ -112,17 +110,14 @@ _inputs:
                 comment: "Choose a background for this section (optional)"
                 options:
                   values:
-                    - value: none
-                      label: No Background
-                    - value: color
-                      label: Colour
-                    - value: image
-                      label: Image (Tiled)
+                    - none
+                    - color
+                    - image
                 cascade: true
               background_colour:
                 type: color
                 label: Background Colour
-                comment: "Only applies if Background Type is set to 'Colour'. Enter a hex value or use the colour picker."
+                comment: "Only applies if Background Type is set to 'color'. Enter a hex value or use the colour picker."
                 options:
                   format: hex
                   alpha: false
@@ -130,7 +125,7 @@ _inputs:
               background_image:
                 type: image
                 label: Background Image
-                comment: "Only applies if Background Type is set to 'Image'. Image will be tiled across the section."
+                comment: "Only applies if Background Type is set to 'image'. Image will be tiled across the section."
                 cascade: true
               _template:
                 hidden: true
@@ -163,17 +158,14 @@ _inputs:
                 comment: "Choose a background for this section (optional)"
                 options:
                   values:
-                    - value: none
-                      label: No Background
-                    - value: color
-                      label: Colour
-                    - value: image
-                      label: Image (Tiled)
+                    - none
+                    - color
+                    - image
                 cascade: true
               background_colour:
                 type: color
                 label: Background Colour
-                comment: "Only applies if Background Type is set to 'Colour'. Enter a hex value or use the colour picker."
+                comment: "Only applies if Background Type is set to 'color'. Enter a hex value or use the colour picker."
                 options:
                   format: hex
                   alpha: false
@@ -181,7 +173,7 @@ _inputs:
               background_image:
                 type: image
                 label: Background Image
-                comment: "Only applies if Background Type is set to 'Image'. Image will be tiled across the section."
+                comment: "Only applies if Background Type is set to 'image'. Image will be tiled across the section."
                 cascade: true
               _template:
                 hidden: true
