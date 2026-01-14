@@ -43,13 +43,13 @@ _inputs:
     comment: "Choose between a solid colour or background image"
     options:
       values:
-        - color
+        - colour
         - image
     cascade: true
   hero_bg_colour:
-    type: color
+    type: colour
     label: Hero Background Colour
-    comment: "Only applies if Background Type is 'color'"
+    comment: "Only applies if Background Type is 'colour'"
     options:
       format: hex
       alpha: false
@@ -111,13 +111,13 @@ _inputs:
                 options:
                   values:
                     - none
-                    - color
+                    - colour
                     - image
                 cascade: true
               background_colour:
-                type: color
+                type: colour
                 label: Background Colour
-                comment: "Only applies if Background Type is set to 'color'. Enter a hex value or use the colour picker."
+                comment: "Only applies if Background Type is set to 'colour'. Enter a hex value or use the colour picker."
                 options:
                   format: hex
                   alpha: false
@@ -159,13 +159,13 @@ _inputs:
                 options:
                   values:
                     - none
-                    - color
+                    - colour
                     - image
                 cascade: true
               background_colour:
-                type: color
+                type: colour
                 label: Background Colour
-                comment: "Only applies if Background Type is set to 'color'. Enter a hex value or use the colour picker."
+                comment: "Only applies if Background Type is set to 'colour'. Enter a hex value or use the colour picker."
                 options:
                   format: hex
                   alpha: false
