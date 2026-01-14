@@ -8,7 +8,7 @@ hero_bg_color: '#960000'
 hero_bg_image:
 page_blocks:
   - _template: feature
-    heading: This is a 2 column row
+    heading: Nobody makes a wrap like us
     text: >-
       <p>Nobody makes a wrap like us because nobody does freshness like us. Our
       vegetables are locally sourced and cut fresh daily, then prepared to order
