@@ -43,13 +43,15 @@ _inputs:
     comment: "Choose between a solid colour or background image"
     options:
       values:
-        - colour
-        - image
+        - value: color
+          label: Colour
+        - value: image
+          label: Image
     cascade: true
   hero_bg_colour:
-    type: colour
+    type: color
     label: Hero Background Colour
-    comment: "Only applies if Background Type is 'colour'"
+    comment: "Only applies if Background Type is 'Colour'"
     options:
       format: hex
       alpha: false
@@ -57,7 +59,7 @@ _inputs:
   hero_bg_image:
     type: image
     label: Hero Background Image
-    comment: "Only applies if Background Type is 'image'. Image will cover the hero section."
+    comment: "Only applies if Background Type is 'Image'. Image will cover the hero section."
     cascade: true
   page_blocks:
     type: array
@@ -118,9 +120,9 @@ _inputs:
                       label: Image (Tiled)
                 cascade: true
               background_colour:
-                type: colour
+                type: color
                 label: Background Colour
-                comment: "Only applies if Background Type is set to 'colour'. Enter a hex value or use the colour picker."
+                comment: "Only applies if Background Type is set to 'Colour'. Enter a hex value or use the colour picker."
                 options:
                   format: hex
                   alpha: false
@@ -139,7 +141,7 @@ _inputs:
               _template: centered_text
               text: <p>Write your content here...</p>
               background_type: none
-              background_color: ""
+              background_colour: ""
               background_image: ""
             _inputs:
               text:
@@ -168,10 +170,10 @@ _inputs:
                     - value: image
                       label: Image (Tiled)
                 cascade: true
-              background_color:
-                type: colour
+              background_colour:
+                type: color
                 label: Background Colour
-                comment: "Only applies if Background Type is set to 'colour'. Enter a hex value or use the colour picker."
+                comment: "Only applies if Background Type is set to 'Colour'. Enter a hex value or use the colour picker."
                 options:
                   format: hex
                   alpha: false
