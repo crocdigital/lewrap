@@ -18,7 +18,7 @@ page_blocks:
       grilled fresh to order. It’s simple food done right. We believe in all
       things good and fresh - and it shows in every wrap, salad, plate and
       baguette we make.</p>
-    image_path:
+    image_path: /images/bg-tile-wood.webp
     reverse: false
     background_type: image
     background_color:
@@ -45,7 +45,7 @@ page_blocks:
     image_path: /images/PLACEMENT-hero-taj.webp
     reverse: true
     background_type: none
-    background_color: '#23ac0f'
+    background_color:
     background_image: ''
   - _template: feature
     heading:
@@ -59,7 +59,7 @@ page_blocks:
     reverse: false
     background_type: image
     background_color:
-    background_image: /images/bg-tile-wood.png
+    background_image: /images/bg-tile-wood.webp
   - _template: one_col
     text: <p>Write your centered content here...</p>
     background_type: none
@@ -71,7 +71,7 @@ page_blocks:
       <p>I changed the name from Feature to TwoCol.</p><p>And updated references
       everywhere within the web app.</p><p>I think it might be working? If this
       row is added then great success *high five</p>
-    image_path: /images/bg-tile-wood.png
+    image_path: /images/bg-tile-wood.webp
     reverse: true
     background_type: color
     background_color: '#46ea37'
