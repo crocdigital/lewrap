@@ -59,6 +59,29 @@ _inputs:
     label: Hero Background Image
     comment: "Only applies if Background Type is 'image'. Image will cover the hero section."
     cascade: true
+  background_type:
+    type: select
+    label: Background Type
+    comment: "Choose a background for this section (optional)"
+    options:
+      values:
+        - none
+        - color
+        - image
+    cascade: true
+  background_colour:
+    type: color
+    label: Background Colour
+    comment: "Only applies if Background Type is set to 'color'. Enter a hex value or use the colour picker."
+    options:
+      format: hex
+      alpha: false
+    cascade: true
+  background_image:
+    type: image
+    label: Background Image
+    comment: "Only applies if Background Type is set to 'image'. Image will be tiled across the section."
+    cascade: true
   page_blocks:
     type: array
     options:
@@ -104,29 +127,6 @@ _inputs:
                 label: Reverse layout
                 comment: "Default: Text left, Image right. Toggle ON to swap columns."
                 cascade: true
-              background_type:
-                type: select
-                label: Background Type
-                comment: "Choose a background for this section (optional)"
-                options:
-                  values:
-                    - none
-                    - color
-                    - image
-                cascade: true
-              background_colour:
-                type: color
-                label: Background Colour
-                comment: "Only applies if Background Type is set to 'color'. Enter a hex value or use the colour picker."
-                options:
-                  format: hex
-                  alpha: false
-                cascade: true
-              background_image:
-                type: image
-                label: Background Image
-                comment: "Only applies if Background Type is set to 'image'. Image will be tiled across the section."
-                cascade: true
               _template:
                 hidden: true
                 cascade: true
@@ -151,29 +151,6 @@ _inputs:
                   image_size_attributes: true
                   italic: true
                 label: Content (WYSIWYG)
-                cascade: true
-              background_type:
-                type: select
-                label: Background Type
-                comment: "Choose a background for this section (optional)"
-                options:
-                  values:
-                    - none
-                    - color
-                    - image
-                cascade: true
-              background_colour:
-                type: color
-                label: Background Colour
-                comment: "Only applies if Background Type is set to 'color'. Enter a hex value or use the colour picker."
-                options:
-                  format: hex
-                  alpha: false
-                cascade: true
-              background_image:
-                type: image
-                label: Background Image
-                comment: "Only applies if Background Type is set to 'image'. Image will be tiled across the section."
                 cascade: true
               _template:
                 hidden: true
