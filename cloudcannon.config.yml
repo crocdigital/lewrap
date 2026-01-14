@@ -125,7 +125,7 @@ _inputs:
                 comment: "Default: Text left, Image right. Toggle ON to swap columns."
               _template:
                 hidden: true
-          - label: Centered 1 Column
+          - label: 1 Column
             icon: format_align_center
             value:
               _template: centered_text
