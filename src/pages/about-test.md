@@ -25,19 +25,21 @@ page_blocks:
     background_image: /images/bg-tile-wood.webp
   - _template: one_col
     text: >-
-      <p>LeWrap was brought to life by Kaan Celik, who over 20 years ago set out
-      with a vision to create fresh, nutritious fast food without compromising
-      on flavour or speed. Born in Ankara, Turkey, Kaan’s experience in the QSR
-      industry shaped his passion for quality recipes and efficient
-      service.</p><p>In 2005, he opened the first LeWrap store in Parramatta,
-      followed by expansion into Bankstown as the brand grew. Today, alongside
-      his wife and six children, Kaan continues to lead LeWrap while enjoying
-      travel and the occasional game of soccer.</p>
+      <h2>Heres the 1-col option (I selected h2 as this heading for shits and
+      giggles - style accordingly</h2><p>LeWrap was brought to life by Kaan
+      Celik, who over 20 years ago set out with a vision to create fresh,
+      nutritious fast food without compromising on flavour or speed. Born in
+      Ankara, Turkey, Kaan’s experience in the QSR industry shaped his passion
+      for quality recipes and efficient service.</p><p>In 2005, he opened the
+      first LeWrap store in Parramatta, followed by expansion into Bankstown as
+      the brand grew. Today, alongside his wife and six children, Kaan continues
+      to lead LeWrap while enjoying travel and the occasional game of
+      soccer.</p>
     background_type: color
     background_color: '#5fffe7'
     background_image: ''
   - _template: feature
-    heading: I also need to add a centered block as an option
+    heading: I also added a 1-col option
     text: >-
       <p>Also need to add styling so when client adds a heading in this tet it
       styles accordingly.</p><p>Now don't forget to test changing text within
