@@ -17,12 +17,12 @@ if (background_type === "color" && background_color) {
 ---
 
 <section
-    class="w-[95%] md:max-w-[85%] mx-auto p-7 md:p-21 md:px-50 rounded-xl"
+    class="w-[95%] md:max-w-[85%] mx-auto p-7 md:p-21 md:px-72 rounded-xl"
     style={backgroundStyle}
     data-cms-bind={`page_blocks[${blockIndex}]`}
 >
     <div
-        class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8"
+        class="prose text-2xl/8 text-lewrap-off-black p-7 md:p-0 [&_p]:mb-8"
         data-cms-edit={`page_blocks.${blockIndex}.text`}
         set:html={text}
     />
