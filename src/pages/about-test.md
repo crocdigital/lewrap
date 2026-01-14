@@ -3,9 +3,9 @@ layout: ../layouts/TestLayout.astro
 title: About Us
 hero_title: Type something in to show Monica
 hero_subtitle: Delete this subtitle and watch what happens
-hero_bg_type: image
-hero_bg_color:
-hero_bg_image: /images/PLACEMENT-hero-taj.webp
+hero_bg_type: color
+hero_bg_color: '#960000'
+hero_bg_image:
 page_blocks:
   - _template: feature
     heading: This is a 2 column row
@@ -20,7 +20,7 @@ page_blocks:
       baguette we make.</p>
     image_path: /images/placement-sqratio-wrap.webp
     reverse: false
-    background_type: image
+    background_type: none
     background_colour:
     background_image: /images/bg-tile-wood.webp
   - _template: feature
