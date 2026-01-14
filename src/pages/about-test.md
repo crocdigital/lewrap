@@ -62,4 +62,9 @@ page_blocks:
     background_type: image
     background_color:
     background_image: /images/bg-tile-wood.webp
+  - _template: centered_text
+    text: <p>Write your content here...</p>
+    background_type: color
+    background_colour: '#65d3fa'
+    background_image: ''
 ---
