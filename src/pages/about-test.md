@@ -25,7 +25,7 @@ page_blocks:
     background_image: /images/bg-tile-wood.webp
     button_text: Check out my button component brah!
     button_link: /our-food
-    button_variant: secondary
+    button_variant: primary
   - _template: feature
     heading: This is a reversed 2-col row
     text: >-
