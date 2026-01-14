@@ -61,7 +61,15 @@ page_blocks:
     background_color:
     background_image: /images/bg-tile-wood.webp
   - _template: one_col
-    text: <p>Write your centered content here...</p>
+    text: >-
+      <p>Nobody makes a wrap like us because nobody does freshness like us. Our
+      vegetables are locally sourced and cut fresh daily, then prepared to order
+      so your meal is made exactly how it should be - fresh, fast and full of
+      flavour.</p><p>From 100% Australian chicken breast and strip loin steak to
+      chicken breast schnitzel and authentic lamb kofta, our proteins are
+      grilled fresh to order. It’s simple food done right. We believe in all
+      things good and fresh - and it shows in every wrap, salad, plate and
+      baguette we make.</p>
     background_type: color
     background_color: '#e1fa45'
     background_image: ''
