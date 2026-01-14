@@ -65,4 +65,15 @@ page_blocks:
     background_type: none
     background_color:
     background_image: ''
+  - _template: feature
+    heading: Renamed 2-col component
+    text: >-
+      <p>I changed the name from Feature to TwoCol.</p><p>And updated references
+      everywhere within the web app.</p><p>I think it might be working? If this
+      row is added then great success *high five</p>
+    image_path: /uploads/placeholder.jpg
+    reverse: true
+    background_type: color
+    background_color: '#6c8df1'
+    background_image: ''
 ---
