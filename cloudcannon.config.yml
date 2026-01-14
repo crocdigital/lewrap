@@ -103,7 +103,6 @@ _inputs:
               heading:
                 type: text
                 label: Heading
-                cascade: true
               text:
                 type: html
                 options:
@@ -116,20 +115,16 @@ _inputs:
                   image_size_attributes: true
                   italic: true
                 label: Content (WYSIWYG)
-                cascade: true
               image_path:
                 type: image
                 label: Image
                 comment: "Upload a square image (1:1 ratio) for best results. Recommended size: 1000px by 1000px"
-                cascade: true
               reverse:
                 type: switch
                 label: Reverse layout
                 comment: "Default: Text left, Image right. Toggle ON to swap columns."
-                cascade: true
               _template:
                 hidden: true
-                cascade: true
           - label: Centered 1 Column
             icon: format_align_center
             value:
@@ -151,10 +146,8 @@ _inputs:
                   image_size_attributes: true
                   italic: true
                 label: Content (WYSIWYG)
-                cascade: true
               _template:
                 hidden: true
-                cascade: true
     label: Page Blocks
     cascade: true
 
