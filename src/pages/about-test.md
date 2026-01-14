@@ -18,11 +18,11 @@ page_blocks:
       grilled fresh to order. It’s simple food done right. We believe in all
       things good and fresh - and it shows in every wrap, salad, plate and
       baguette we make.</p>
-    image_path: /images/bg-tile-wood.webp
+    image_path: /images/placement-hero.webp
     reverse: false
     background_type: image
     background_color:
-    background_image: /images/bg-tile-wood.png
+    background_image: /images/bg-tile-wood.webp
   - _template: one_col
     text: >-
       <p>Nobody makes a wrap like us because nobody does freshness like us. Our
