@@ -23,6 +23,9 @@ page_blocks:
     background_type: none
     background_colour:
     background_image: /images/bg-tile-wood.webp
+    button_text: Check out my button component brah!
+    button_link: /our-food
+    button_variant: secondary
   - _template: feature
     heading: This is a reversed 2-col row
     text: >-
@@ -35,6 +38,9 @@ page_blocks:
     background_type: image
     background_colour:
     background_image: /images/bg-tile-wood.webp
+    button_text: ''
+    button_link: ''
+    button_variant: primary
   - _template: centered_text
     text: >-
       <p>2005 was a pretty great year - YouTube launched, Harry Potter hit the
@@ -46,4 +52,7 @@ page_blocks:
     background_type: color
     background_colour: '#29ed61'
     background_image: ''
+    button_text: ''
+    button_link: ''
+    button_variant: primary
 ---
