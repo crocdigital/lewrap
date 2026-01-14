@@ -23,21 +23,15 @@ page_blocks:
     background_type: image
     background_color:
     background_image: /images/bg-tile-wood.webp
-  - _template: one_col
+  - _template: centered_text
     text: >-
-      <h2>Heres the 1-col option (I selected h2 as this heading for shits and
-      giggles - style accordingly</h2><p>LeWrap was brought to life by Kaan
-      Celik, who over 20 years ago set out with a vision to create fresh,
-      nutritious fast food without compromising on flavour or speed. Born in
-      Ankara, Turkey, Kaan’s experience in the QSR industry shaped his passion
-      for quality recipes and efficient service.</p><h3>And here's an h3 heading
-      to compare</h3><p>In 2005, he opened the first LeWrap store in Parramatta,
-      followed by expansion into Bankstown as the brand grew. Today, alongside
-      his wife and six children, Kaan continues to lead LeWrap while enjoying
-      travel and the occasional game of soccer.</p>
-    background_type: colour
-    background_color: '#5fffe7'
-    background_image: ''
+      <p>Turns out YML is a complex little SOB</p><p>This should now be showing
+      my centered block of text, and can be placed anywhere in the
+      hierachy.</p><p>I've also made the background a tiled image, just to make
+      sure that functionality works. It was blue.</p>
+    background_type: image
+    background_colour:
+    background_image: /images/placement-sqratio-wrap.webp
   - _template: feature
     heading: I also added a 1-col option
     text: >-
@@ -62,9 +56,4 @@ page_blocks:
     background_type: image
     background_color:
     background_image: /images/bg-tile-wood.webp
-  - _template: centered_text
-    text: <p>Write your content here...</p>
-    background_type: color
-    background_colour: '#65d3fa'
-    background_image: ''
 ---
