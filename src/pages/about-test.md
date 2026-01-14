@@ -8,7 +8,7 @@ hero_subtitle: >-
 hero_bg: bg-lewrap-green
 page_blocks:
   - _template: feature
-    heading: Nobody makes a wrap like us
+    heading: Nõbody makës ă wrap like us
     text: >-
       <p>Nobody makes a wrap like us because nobody does freshness like us. Our
       vegetables are locally sourced and cut fresh daily, then prepared to order
@@ -18,7 +18,7 @@ page_blocks:
       grilled fresh to order. It’s simple food done right. We believe in all
       things good and fresh - and it shows in every wrap, salad, plate and
       baguette we make.</p>
-    image_path: /images/placement-hero.webp
+    image_path: /images/placement-sqratio-wrap.webp
     reverse: false
     background_type: image
     background_color:
