@@ -22,7 +22,7 @@ if (background_type === "color" && background_color) {
     data-cms-bind={`page_blocks[${blockIndex}]`}
 >
     <div
-        class="prose text-2xl/8 text-lewrap-off-black p-7 md:p-0 [&_p]:mb-8"
+        class="prose text-2xl/8 text-lewrap-off-black p-7 md:p-0 [&_p]:mb-8 [&_p:last-of-type]:mb-0"
         data-cms-edit={`page_blocks.${blockIndex}.text`}
         set:html={text}
     />
