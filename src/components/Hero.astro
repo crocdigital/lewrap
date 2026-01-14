@@ -3,7 +3,7 @@ const {
     title,
     subtitle,
     hero_bg_type = "color",
-    hero_bg_color = "#your-lewrap-green-hex", // Replace with your actual hex value
+    hero_bg_colour = "#your-lewrap-green-hex", // Replace with your actual hex value
     hero_bg_image,
 } = Astro.props;
 
@@ -11,8 +11,8 @@ const {
 let backgroundStyle = "";
 let showColorBackground = false;
 
-if (hero_bg_type === "color" && hero_bg_color) {
-    backgroundStyle = `background-color: ${hero_bg_color};`;
+if (hero_bg_type === "color" && hero_bg_colour) {
+    backgroundStyle = `background-color: ${hero_bg_colour};`;
     showColorBackground = true;
 } else if (hero_bg_type === "image" && hero_bg_image) {
     // Image will be rendered as <img> tag instead

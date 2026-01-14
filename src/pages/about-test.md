@@ -4,7 +4,7 @@ title: About Us
 hero_title: Type something in to show Monica
 hero_subtitle: Delete this subtitle and watch what happens
 hero_bg_type: image
-hero_bg_color:
+hero_bg_colour:
 hero_bg_image: /images/PLACEMENT-hero-taj.webp
 page_blocks:
   - _template: feature
@@ -21,7 +21,7 @@ page_blocks:
     image_path: /images/placement-sqratio-wrap.webp
     reverse: false
     background_type: image
-    background_color:
+    background_colour:
     background_image: /images/bg-tile-wood.webp
   - _template: one_col
     text: >-
@@ -36,7 +36,7 @@ page_blocks:
       his wife and six children, Kaan continues to lead LeWrap while enjoying
       travel and the occasional game of soccer.</p>
     background_type: color
-    background_color: '#5fffe7'
+    background_colour: '#5fffe7'
     background_image: ''
   - _template: feature
     heading: I also added a 1-col option
@@ -47,7 +47,7 @@ page_blocks:
     image_path: /images/PLACEMENT-hero-taj.webp
     reverse: true
     background_type: none
-    background_color:
+    background_colour:
     background_image: ''
   - _template: feature
     heading:
@@ -60,7 +60,7 @@ page_blocks:
     image_path: /images/placement-sqratio.webp
     reverse: false
     background_type: image
-    background_color:
+    background_colour:
     background_image: /images/bg-tile-wood.webp
   - _template: one_col
     text: >-
@@ -73,7 +73,7 @@ page_blocks:
       things good and fresh - and it shows in every wrap, salad, plate and
       baguette we make.</p>
     background_type: color
-    background_color: '#e1fa45'
+    background_colour: '#e1fa45'
     background_image: ''
   - _template: feature
     heading: Renamed 2-col component
@@ -84,6 +84,6 @@ page_blocks:
     image_path: /images/bg-tile-wood.webp
     reverse: true
     background_type: color
-    background_color: '#46ea37'
+    background_colour: '#46ea37'
     background_image: ''
 ---
