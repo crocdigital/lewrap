@@ -43,13 +43,13 @@ _inputs:
     comment: "Choose between a solid colour or background image"
     options:
       values:
-        - color
+        - colour
         - image
     cascade: true
-  hero_bg_color:
-    type: color
+  hero_bg_colour:
+    type: colour
     label: Hero Background Colour
-    comment: "Only applies if Background Type is 'color'"
+    comment: "Only applies if Background Type is 'colour'"
     options:
       format: hex
       alpha: false
@@ -74,7 +74,7 @@ _inputs:
               image_path: /uploads/placeholder.jpg
               reverse: false
               background_type: none
-              background_color: ""
+              background_colour: ""
               background_image: ""
             _inputs:
               heading:
@@ -111,11 +111,11 @@ _inputs:
                 options:
                   values:
                     - none
-                    - color
+                    - colour
                     - image
                 cascade: true
-              background_color:
-                type: color
+              background_colour:
+                type: colour
                 label: Background Colour
                 comment: "Only applies if Background Type is set to 'Colour'. Enter a hex value or use the colour picker."
                 options:
@@ -136,7 +136,7 @@ _inputs:
               _template: one_col
               text: <p>Write your centered content here...</p>
               background_type: none
-              background_color: ""
+              background_colour: ""
               background_image: ""
             _inputs:
               text:
@@ -159,11 +159,11 @@ _inputs:
                 options:
                   values:
                     - none
-                    - color
+                    - colour
                     - image
                 cascade: true
-              background_color:
-                type: color
+              background_colour:
+                type: colour
                 label: Background Colour
                 comment: "Only applies if Background Type is set to 'Colour'. Enter a hex value or use the colour picker."
                 options:
