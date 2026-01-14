@@ -23,7 +23,7 @@ page_blocks:
     background_type: image
     background_color: ''
     background_image: /images/bg-tile-wood.png
-  - _template: centered_text
+  - _template: one_col
     text: >-
       <p>Nobody makes a wrap like us because nobody does freshness like us. Our
       vegetables are locally sourced and cut fresh daily, then prepared to order

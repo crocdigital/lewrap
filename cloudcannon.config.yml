@@ -122,7 +122,7 @@ _inputs:
           - label: 1 Column
             icon: format_align_center
             value:
-              _template: centered_text
+              _template: one_col
               text: <p>Write your centered content here...</p>
               background_type: none
               background_color: ""
