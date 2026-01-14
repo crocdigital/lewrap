@@ -111,7 +111,7 @@ _inputs:
                   remove_custom_markup: false
                   initial_height: 320
                   bold: true
-                  format: p h2 h3
+                  format: p h2 h3 h4
                   image_size_attributes: true
                   italic: true
                 label: Content (WYSIWYG)
@@ -142,7 +142,7 @@ _inputs:
                   remove_custom_markup: false
                   initial_height: 320
                   bold: true
-                  format: p h2 h3
+                  format: p h2 h3 h4
                   image_size_attributes: true
                   italic: true
                 label: Content (WYSIWYG)
