@@ -71,9 +71,9 @@ page_blocks:
       <p>I changed the name from Feature to TwoCol.</p><p>And updated references
       everywhere within the web app.</p><p>I think it might be working? If this
       row is added then great success *high five</p>
-    image_path:
+    image_path: /images/bg-tile-wood.png
     reverse: true
     background_type: color
-    background_color: '#6c8df1'
+    background_color: '#46ea37'
     background_image: ''
 ---
