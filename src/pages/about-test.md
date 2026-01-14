@@ -43,6 +43,6 @@ page_blocks:
       flavour-packed food that makes people smile and say “mmm” on the first
       bite — proving you can eat well, eat fast, and enjoy every mouthful.</p>
     background_type: color
-    background_colour: '#ed2929'
+    background_colour: '#29ed61'
     background_image: ''
 ---
