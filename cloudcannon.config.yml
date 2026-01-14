@@ -82,6 +82,24 @@ _inputs:
     label: Background Image
     comment: "Only applies if Background Type is set to 'image'. Image will be tiled across the section."
     cascade: true
+  button_text:
+    type: text
+    label: Button Text
+    comment: "Leave empty if you don't want to add a button"
+    cascade: true
+  button_link:
+    type: text
+    label: Button Link
+    comment: "Enter the URL or page path (e.g., /our-food)"
+    cascade: true
+  button_variant:
+    type: select
+    label: Button Style
+    options:
+      values:
+        - primary
+        - secondary
+    cascade: true
   page_blocks:
     type: array
     options:
@@ -99,6 +117,9 @@ _inputs:
               background_type: none
               background_colour: ""
               background_image: ""
+              button_text: ""
+              button_link: ""
+              button_variant: primary
             _inputs:
               heading:
                 type: text
@@ -133,6 +154,9 @@ _inputs:
               background_type: none
               background_colour: ""
               background_image: ""
+              button_text: ""
+              button_link: ""
+              button_variant: primary
             _inputs:
               text:
                 type: html

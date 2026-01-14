@@ -1,4 +1,6 @@
 ---
+import Button from "../components/atoms/Button.astro";
+
 const {
     heading,
     text,
@@ -8,6 +10,9 @@ const {
     background_type = "none",
     background_colour,
     background_image,
+    button_text,
+    button_link,
+    button_variant = "primary",
 } = Astro.props;
 
 // Determine inline style for backgrounds
@@ -37,12 +42,23 @@ if (background_type === "color" && background_colour) {
             )
         }
 
-        {/* Copy block */}
+        {/* Copy */}
         <div
-            class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8 [&_p:last-of-type]:mb-0"
+            class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8 [&_p:last-child]:mb-0"
             data-cms-edit={`page_blocks.${blockIndex}.text`}
             set:html={text}
         />
+
+        {/* Button */}
+        {
+            button_text && button_link && (
+                <div>
+                    <Button href={button_link} variant={button_variant}>
+                        {button_text}
+                    </Button>
+                </div>
+            )
+        }
     </div>
 
     {

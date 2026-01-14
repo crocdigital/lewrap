@@ -1,10 +1,15 @@
 ---
+import Button from "../components/atoms/Button.astro";
+
 const {
     text,
     blockIndex,
     background_type = "none",
     background_colour,
     background_image,
+    button_text,
+    button_link,
+    button_variant = "primary",
 } = Astro.props;
 
 // Determine inline style for backgrounds
@@ -17,13 +22,24 @@ if (background_type === "color" && background_colour) {
 ---
 
 <section
-    class="w-[95%] md:max-w-[85%] mx-auto p-7 md:p-21 md:px-72 rounded-xl"
+    class="w-[95%] md:max-w-[85%] mx-auto p-7 md:p-21 rounded-xl"
     style={backgroundStyle}
     data-cms-bind={`page_blocks[${blockIndex}]`}
 >
     <div
-        class="prose text-2xl/8 text-lewrap-off-black p-7 md:p-0 [&_p]:mb-8 [&_p:last-of-type]:mb-0"
+        class="prose max-w-4xl mx-auto text-center [&_p]:mb-8 [&_p:last-child]:mb-0"
         data-cms-edit={`page_blocks.${blockIndex}.text`}
         set:html={text}
     />
+
+    {/* Button */}
+    {
+        button_text && button_link && (
+            <div class="flex justify-center mt-8">
+                <Button href={button_link} variant={button_variant}>
+                    {button_text}
+                </Button>
+            </div>
+        )
+    }
 </section>
