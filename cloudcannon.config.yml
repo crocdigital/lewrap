@@ -89,7 +89,7 @@ _inputs:
         style: select
         values:
           - label: 2 Column
-            icon: compare
+            icon: book
             value:
               _template: feature
               heading: New Section
