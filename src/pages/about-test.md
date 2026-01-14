@@ -25,14 +25,14 @@ page_blocks:
     background_image: /images/bg-tile-wood.webp
   - _template: one_col
     text: >-
-      <p>Nobody makes a wrap like us because nobody does freshness like us. Our
-      vegetables are locally sourced and cut fresh daily, then prepared to order
-      so your meal is made exactly how it should be - fresh, fast and full of
-      flavour.</p><p>From 100% Australian chicken breast and strip loin steak to
-      chicken breast schnitzel and authentic lamb kofta, our proteins are
-      grilled fresh to order. It’s simple food done right. We believe in all
-      things good and fresh - and it shows in every wrap, salad, plate and
-      baguette we make.</p>
+      <p>LeWrap was brought to life by Kaan Celik, who over 20 years ago set out
+      with a vision to create fresh, nutritious fast food without compromising
+      on flavour or speed. Born in Ankara, Turkey, Kaan’s experience in the QSR
+      industry shaped his passion for quality recipes and efficient
+      service.</p><p>In 2005, he opened the first LeWrap store in Parramatta,
+      followed by expansion into Bankstown as the brand grew. Today, alongside
+      his wife and six children, Kaan continues to lead LeWrap while enjoying
+      travel and the occasional game of soccer.</p>
     background_type: color
     background_color: '#5fffe7'
     background_image: ''
