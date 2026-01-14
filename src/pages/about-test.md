@@ -23,6 +23,18 @@ page_blocks:
     background_type: image
     background_colour:
     background_image: /images/bg-tile-wood.webp
+  - _template: feature
+    heading: This is a reversed 2-col row
+    text: >-
+      <p>Instagram feed sent via behold.so as a JSON. Send Mon the link to
+      connect the account. We'll schedule a rebuild script in CC for every 24hrs
+      so the static feed is never more than a day old. NOTE: ScrollReveal delay
+      on all img blocks if fed via JSON?</p>
+    image_path: /images/placement-sqratio.webp
+    reverse: false
+    background_type: color
+    background_colour: '#d69fff'
+    background_image: ''
   - _template: centered_text
     text: >-
       <p>2005 was a pretty great year - YouTube launched, Harry Potter hit the
