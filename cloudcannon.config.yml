@@ -89,7 +89,7 @@ _inputs:
         style: select
         values:
           - label: 2 Column
-            icon: vertical_split
+            icon: splitscreen
             value:
               _template: feature
               heading: New Section
