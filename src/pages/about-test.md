@@ -35,7 +35,7 @@ page_blocks:
       followed by expansion into Bankstown as the brand grew. Today, alongside
       his wife and six children, Kaan continues to lead LeWrap while enjoying
       travel and the occasional game of soccer.</p>
-    background_type: color
+    background_type: colour
     background_colour: '#5fffe7'
     background_image: ''
   - _template: feature
@@ -72,7 +72,7 @@ page_blocks:
       grilled fresh to order. It’s simple food done right. We believe in all
       things good and fresh - and it shows in every wrap, salad, plate and
       baguette we make.</p>
-    background_type: color
+    background_type: colour
     background_colour: '#e1fa45'
     background_image: ''
   - _template: feature
@@ -83,7 +83,7 @@ page_blocks:
       row is added then great success *high five</p>
     image_path: /images/bg-tile-wood.webp
     reverse: true
-    background_type: color
+    background_type: colour
     background_colour: '#46ea37'
     background_image: ''
 ---
