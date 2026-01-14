@@ -39,9 +39,10 @@ page_blocks:
     text: >-
       <p>2005 was a pretty great year - YouTube launched, Harry Potter hit the
       big screen, and the very first LeWrap opened at Westfield Parramatta.
-      Coincidence? We think not.</p><p>Since then, we’ve been serving up fresh,
-      flavour-packed food that makes people smile and say “mmm” on the first
-      bite — proving you can eat well, eat fast, and enjoy every mouthful.</p>
+      Coincidence? We think not.</p><h4>Here's another h4 heading to
+      test</h4><p>Since then, we’ve been serving up fresh, flavour-packed food
+      that makes people smile and say “mmm” on the first bite — proving you can
+      eat well, eat fast, and enjoy every mouthful.</p>
     background_type: color
     background_colour: '#29ed61'
     background_image: ''
