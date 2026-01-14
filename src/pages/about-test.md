@@ -1,17 +1,11 @@
 ---
 layout: ../layouts/TestLayout.astro
-# title: About Us
-# hero_title: Hey Monica, check this out
-# hero_subtitle: >-
-#   Live editing here too - and you don't have to have something here if you don't
-#   want to :)
-# hero_bg: bg-lewrap-green
 title: About Us
 hero_title: Welcome
 hero_subtitle: Subtitle here
-hero_bg_type: color
-hero_bg_color: "#5fffe7"
-hero_bg_image: ""
+hero_bg_type: image
+hero_bg_color:
+hero_bg_image: /images/PLACEMENT-hero-taj.webp
 page_blocks:
   - _template: feature
     heading: Nõbody makës ă wrap like us
