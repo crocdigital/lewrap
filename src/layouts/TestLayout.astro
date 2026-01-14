@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
-import Feature from "../components/Feature.astro";
+import TwoCol from "../components/TwoCol.astro";
 import OneCol from "../components/OneCol.astro";
 
 const { frontmatter } = Astro.props;
@@ -32,7 +32,7 @@ const {
             {
                 page_blocks?.map((block: any, index: number) => {
                     if (block._template === "feature") {
-                        return <Feature {...block} blockIndex={index} />;
+                        return <TwoCol {...block} blockIndex={index} />;
                     }
                     if (block._template === "one_col") {
                         return <OneCol {...block} blockIndex={index} />;
