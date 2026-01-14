@@ -31,7 +31,7 @@ page_blocks:
       so the static feed is never more than a day old. NOTE: ScrollReveal delay
       on all img blocks if fed via JSON?</p>
     image_path: /images/placement-sqratio.webp
-    reverse: false
+    reverse: true
     background_type: image
     background_colour:
     background_image: /images/bg-tile-wood.webp
