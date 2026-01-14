@@ -71,6 +71,10 @@
   @apply text-3xl font-semibold text-lewrap-green-dark tracking-tight mb-4 mt-6;
 }
 
+.prose h4 {
+  @apply text-2xl font-semibold text-lewrap-green-dark tracking-tight mb-4 mt-6;
+}
+
 
 html,
 body {
