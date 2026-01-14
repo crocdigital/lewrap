@@ -62,6 +62,15 @@
   @apply px-5 py-3 md:px-8 md:py-4 bg-lewrap-green-dark border-4 border-lewrap-green text-white rounded-full font-bold font-cocogoose text-xl md:text-2xl hover:bg-lewrap-green hover:text-white uppercase duration-200 hover:scale-105 w-fit inline-block text-center;
 }
 
+/* WYSIWYG Content Styles */
+.prose h2 {
+  @apply text-4xl font-bold text-lewrap-green-dark mb-6 mt-8;
+}
+
+.prose h3 {
+  @apply text-3xl font-semibold text-lewrap-green-dark mb-4 mt-6;
+}
+
 
 html,
 body {
