@@ -42,7 +42,7 @@ page_blocks:
       Coincidence? We think not.</p><p>Since then, we’ve been serving up fresh,
       flavour-packed food that makes people smile and say “mmm” on the first
       bite — proving you can eat well, eat fast, and enjoy every mouthful.</p>
-    background_type: none
-    background_colour:
+    background_type: color
+    background_colour: '#ed2929'
     background_image: ''
 ---
