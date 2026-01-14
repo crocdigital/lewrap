@@ -9,7 +9,9 @@ const {
     title,
     hero_title,
     hero_subtitle,
-    hero_bg,
+    hero_bg_type,
+    hero_bg_color,
+    hero_bg_image,
     page_blocks = [],
 } = frontmatter || {};
 ---
@@ -23,7 +25,9 @@ const {
                 <Hero
                     title={hero_title}
                     subtitle={hero_subtitle}
-                    bg_color={hero_bg}
+                    hero_bg_type={hero_bg_type}
+                    hero_bg_color={hero_bg_color}
+                    hero_bg_image={hero_bg_image}
                 />
             )
         }
@@ -34,7 +38,7 @@ const {
                     if (block._template === "feature") {
                         return <TwoCol {...block} blockIndex={index} />;
                     }
-                    if (block._template === "one_col") {
+                    if (block._template === "centered_text") {
                         return <OneCol {...block} blockIndex={index} />;
                     }
                     return null;

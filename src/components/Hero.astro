@@ -1,14 +1,47 @@
 ---
-const { title, subtitle, bg_color = "bg-lewrap-green" } = Astro.props;
+const {
+    title,
+    subtitle,
+    hero_bg_type = "color",
+    hero_bg_color = "#your-lewrap-green-hex", // Replace with your actual hex value
+    hero_bg_image,
+} = Astro.props;
+
+// Determine background style
+let backgroundStyle = "";
+let showColorBackground = false;
+
+if (hero_bg_type === "color" && hero_bg_color) {
+    backgroundStyle = `background-color: ${hero_bg_color};`;
+    showColorBackground = true;
+} else if (hero_bg_type === "image" && hero_bg_image) {
+    // Image will be rendered as <img> tag instead
+    showColorBackground = false;
+}
 ---
 
 <section
-    class={`relative flex items-center justify-center mt-10 md:mt-15 w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden ${bg_color}`}
+    class="relative flex items-center justify-center mt-10 md:mt-15 w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden"
+    style={showColorBackground ? backgroundStyle : ""}
 >
+    {/* Background Image (if selected) */}
+    {
+        hero_bg_type === "image" && hero_bg_image && (
+            <img
+                src={hero_bg_image}
+                alt={title || "Hero background"}
+                class="absolute inset-0 w-full h-full object-cover z-0"
+            />
+        )
+    }
+
+    {/* Gradient Overlay */}
     <div
         class="absolute inset-0 w-full h-full bg-gradient-to-b from-black/0 to-black/40 z-10"
     >
     </div>
+
+    {/* Content */}
     <div
         class="max-w-[930px] relative z-20 flex flex-col items-center justify-center h-full w-full gap-y-6"
     >

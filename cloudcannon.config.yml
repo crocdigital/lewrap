@@ -37,16 +37,27 @@ _inputs:
     type: text
     label: Hero Subtitle
     cascade: true
-  hero_bg:
+  hero_bg_type:
     type: select
-    label: Hero Background
+    label: Hero Background Type
+    comment: "Choose between a solid colour or background image"
     options:
-      allow_empty: true
       values:
-        - value: bg-white
-          label: White
-        - value: bg-black
-          label: Black
+        - color
+        - image
+    cascade: true
+  hero_bg_color:
+    type: color
+    label: Hero Background Colour
+    comment: "Only applies if Background Type is 'color'"
+    options:
+      format: hex
+      alpha: false
+    cascade: true
+  hero_bg_image:
+    type: image
+    label: Hero Background Image
+    comment: "Only applies if Background Type is 'image'. Image will cover the hero section."
     cascade: true
   page_blocks:
     type: array
