@@ -13,11 +13,11 @@ page_blocks:
       <p>Nobody makes a wrap like us because nobody does freshness like us. Our
       vegetables are locally sourced and cut fresh daily, then prepared to order
       so your meal is made exactly how it should be - fresh, fast and full of
-      flavour.</p><p>From 100% Australian chicken breast and strip loin steak to
-      chicken breast schnitzel and authentic lamb kofta, our proteins are
-      grilled fresh to order. It’s simple food done right. We believe in all
-      things good and fresh - and it shows in every wrap, salad, plate and
-      baguette we make.</p>
+      flavour.</p><h4>Added h4 heading to edit blocks</h4><p>From 100%
+      Australian chicken breast and strip loin steak to chicken breast schnitzel
+      and authentic lamb kofta, our proteins are grilled fresh to order. It’s
+      simple food done right. We believe in all things good and fresh - and it
+      shows in every wrap, salad, plate and baguette we make.</p>
     image_path: /images/placement-sqratio-wrap.webp
     reverse: false
     background_type: none
