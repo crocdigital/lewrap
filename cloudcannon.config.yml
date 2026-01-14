@@ -110,9 +110,12 @@ _inputs:
                 comment: "Choose a background for this section (optional)"
                 options:
                   values:
-                    - none
-                    - colour
-                    - image
+                    - value: none
+                      label: No Background
+                    - value: color
+                      label: Colour
+                    - value: image
+                      label: Image (Tiled)
                 cascade: true
               background_colour:
                 type: colour
@@ -134,9 +137,9 @@ _inputs:
             icon: format_align_center
             value:
               _template: centered_text
-              text: <p>Write your centered content here...</p>
+              text: <p>Write your content here...</p>
               background_type: none
-              background_colour: ""
+              background_color: ""
               background_image: ""
             _inputs:
               text:
@@ -158,11 +161,14 @@ _inputs:
                 comment: "Choose a background for this section (optional)"
                 options:
                   values:
-                    - none
-                    - colour
-                    - image
+                    - value: none
+                      label: No Background
+                    - value: color
+                      label: Colour
+                    - value: image
+                      label: Image (Tiled)
                 cascade: true
-              background_colour:
+              background_color:
                 type: colour
                 label: Background Colour
                 comment: "Only applies if Background Type is set to 'colour'. Enter a hex value or use the colour picker."

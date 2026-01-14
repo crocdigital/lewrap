@@ -3,14 +3,14 @@ const {
     text,
     blockIndex,
     background_type = "none",
-    background_colour,
+    background_color,
     background_image,
 } = Astro.props;
 
 // Determine inline style for backgrounds
 let backgroundStyle = "";
-if (background_type === "color" && background_colour) {
-    backgroundStyle = `background-color: ${background_colour};`;
+if (background_type === "color" && background_color) {
+    backgroundStyle = `background-color: ${background_color};`;
 } else if (background_type === "image" && background_image) {
     backgroundStyle = `background-image: url('${background_image}'); background-repeat: repeat;`;
 }
