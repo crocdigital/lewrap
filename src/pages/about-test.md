@@ -62,8 +62,8 @@ page_blocks:
     background_image: /images/bg-tile-wood.webp
   - _template: one_col
     text: <p>Write your centered content here...</p>
-    background_type: none
-    background_color:
+    background_type: color
+    background_color: '#e1fa45'
     background_image: ''
   - _template: feature
     heading: Renamed 2-col component
