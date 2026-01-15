@@ -6,8 +6,8 @@ hero_subtitle: Delete this subtitle and watch what happens
 hero_bg_type: color
 hero_bg_colour: '#95ba32'
 hero_bg_image:
-hero_button_text: ''
-hero_button_link: ''
+hero_button_text: Eegen bleegen largen logen
+hero_button_link: /
 hero_button_variant: primary
 page_blocks:
   - _template: feature
