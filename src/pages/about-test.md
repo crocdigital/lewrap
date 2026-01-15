@@ -23,7 +23,7 @@ page_blocks:
     background_type: image
     background_colour:
     background_image: /images/bg-tile-wood.webp
-    button_text: Check out new button
+    button_text: Our food
     button_link: /our-food
     button_variant: primary
   - _template: feature
