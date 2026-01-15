@@ -4,7 +4,7 @@ title: About Us
 hero_title: Type something in to show Monica
 hero_subtitle: Delete this subtitle and watch what happens
 hero_bg_type: color
-hero_bg_colour: '#1c4bd9'
+hero_bg_colour:
 hero_bg_image:
 hero_button_text: Eegen bleegen largen logen
 hero_button_link: /
