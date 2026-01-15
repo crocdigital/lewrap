@@ -32,14 +32,14 @@ page_blocks:
     button_link: /our-food
     button_variant: primary
   - _template: feature
-    heading: This is a reversed 2-col row
+    heading: This is 2-col row, reversed
     text: >-
       <p>Lowkey this paragraph is just vibing in its own lane, like highkey
-      nothing serious but still kinda makes sense if you squin. It’s giving main
-      character energy while absolutely doing the bare minimum, rent free, no
-      thoughts just vibes.</p><p>We’re talking chaotic-neutral syntax, a little
-      delulu, a little slay, throwing around bet, fr fr, and not gonna lie this
-      text is doing the most while pretending it’s doing the least.</p>
+      nothing serious but still kinda makes sense if you squint. It’s giving
+      main character energy while absolutely doing the bare minimum, rent free,
+      no thoughts just vibes.</p><p>We’re talking chaotic-neutral syntax, a
+      little delulu, a little slay, throwing around bet, fr fr, and not gonna
+      lie this text is doing the most while pretending it’s doing the least.</p>
     image_path: /images/kaan-celik.webp
     reverse: true
     background_type: image
