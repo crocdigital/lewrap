@@ -32,10 +32,14 @@ page_blocks:
   - _template: feature
     heading: This is a reversed 2-col row
     text: >-
-      <p>Instagram feed sent via behold.so as a JSON. Send Mon the link to
-      connect the account. We'll schedule a rebuild script in CC for every 24hrs
-      so the static feed is never more than a day old. NOTE: ScrollReveal delay
-      on all img blocks if fed via JSON?</p>
+      <p>Lowkey this paragraph is just vibing in its own lane, like highkey
+      nothing serious but still kinda makes sense if you squint, you know? It’s
+      giving main character energy while absolutely doing the bare minimum, just
+      words ghosting into each other, rent free, no thoughts just
+      vibes.</p><p>We’re talking chaotic-neutral syntax, a little delulu, a
+      little slay, throwing around bet, fr fr, and not gonna lie this text is
+      doing the most while pretending it’s doing the least, which is honestly
+      iconic.</p>
     image_path: /images/kaan-celik.webp
     reverse: true
     background_type: image
