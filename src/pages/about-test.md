@@ -3,14 +3,14 @@ layout: ../layouts/TestLayout.astro
 title: About Us
 hero_title: Type something in to show Monica
 hero_subtitle: >-
-  Show what happens if we delete this sub titl text, and how this hero
+  Show what happens if we delete this subtitle text, and how this hero
   background colour defaults :)
 hero_bg_type: color
 hero_bg_colour:
 hero_bg_image:
-hero_button_text:
-hero_button_link:
-hero_button_variant:
+hero_button_text: I'm a button
+hero_button_link: /our-food
+hero_button_variant: primary
 page_blocks:
   - _template: feature
     heading: Nobody makes a wrap like us
