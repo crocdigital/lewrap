@@ -10,13 +10,15 @@ const {
     hero_title,
     hero_subtitle,
     hero_bg_type,
-    hero_bg_color,
+    hero_bg_colour,
     hero_bg_image,
+    hero_button_text,
+    hero_button_link,
+    hero_button_variant,
     page_blocks = [],
 } = frontmatter || {};
 ---
 
-<!-- NOTE FOR DEV: LOOK AT GEMINI ON PHONE FOR HOW TO TREAT THIS LAYOUT FOR INTERNAL PAGES USING SLOTS (ACTUALLY NOT SURE NOW BASED ON PAGES BEING MD FILES? IT SAYS THEY NEED TO BE MDX. DO A TEST ONE TRIALLING THIS) -->
 <BaseLayout title={title}>
     <main
         class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10"
@@ -27,8 +29,11 @@ const {
                     title={hero_title}
                     subtitle={hero_subtitle}
                     hero_bg_type={hero_bg_type}
-                    hero_bg_color={hero_bg_color}
+                    hero_bg_colour={hero_bg_colour}
                     hero_bg_image={hero_bg_image}
+                    hero_button_text={hero_button_text}
+                    hero_button_link={hero_button_link}
+                    hero_button_variant={hero_button_variant}
                 />
             )
         }

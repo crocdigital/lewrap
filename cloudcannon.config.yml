@@ -59,6 +59,24 @@ _inputs:
     label: Hero Background Image
     comment: "Only applies if Background Type is 'image'. Image will cover the hero section."
     cascade: true
+  hero_button_text:
+    type: text
+    label: Hero Button Text
+    comment: "Leave empty if you don't want to add a button"
+    cascade: true
+  hero_button_link:
+    type: text
+    label: Hero Button Link
+    comment: "Enter the URL or page path (e.g., /our-food)"
+    cascade: true
+  hero_button_variant:
+    type: select
+    label: Hero Button Style
+    options:
+      values:
+        - primary
+        - secondary
+    cascade: true
   background_type:
     type: select
     label: Background Type

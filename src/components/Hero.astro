@@ -1,18 +1,23 @@
 ---
+import Button from "../components/atoms/Button.astro";
+
 const {
     title,
     subtitle,
     hero_bg_type = "color",
-    hero_bg_color = "#95BA32",
+    hero_bg_colour = "#your-lewrap-green-hex", // Replace with your actual hex value
     hero_bg_image,
+    hero_button_text,
+    hero_button_link,
+    hero_button_variant = "primary",
 } = Astro.props;
 
 // Determine background style
 let backgroundStyle = "";
 let showColorBackground = false;
 
-if (hero_bg_type === "color" && hero_bg_color) {
-    backgroundStyle = `background-color: ${hero_bg_color};`;
+if (hero_bg_type === "color" && hero_bg_colour) {
+    backgroundStyle = `background-color: ${hero_bg_colour};`;
     showColorBackground = true;
 } else if (hero_bg_type === "image" && hero_bg_image) {
     // Image will be rendered as <img> tag instead
@@ -68,6 +73,20 @@ if (hero_bg_type === "color" && hero_bg_color) {
                 >
                     {subtitle}
                 </p>
+            )
+        }
+
+        {/* Button */}
+        {
+            hero_button_text && hero_button_link && (
+                <div class="mt-2">
+                    <Button
+                        href={hero_button_link}
+                        variant={hero_button_variant}
+                    >
+                        {hero_button_text}
+                    </Button>
+                </div>
             )
         }
     </div>
