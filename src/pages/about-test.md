@@ -20,7 +20,7 @@ page_blocks:
       shows in every wrap, salad, plate and baguette we make.</p>
     image_path: /images/placement-sqratio-wrap.webp
     reverse: false
-    background_type: none
+    background_type: image
     background_colour:
     background_image: /images/bg-tile-wood.webp
     button_text: Check out new button
