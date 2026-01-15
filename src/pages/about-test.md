@@ -3,8 +3,8 @@ layout: ../layouts/TestLayout.astro
 title: About Us
 hero_title: Type something in to show Monica
 hero_subtitle: >-
-  Show wht happens if we delete this sub titl text, and how this hero background
-  colour defaults :)
+  Show what happens if we delete this sub titl text, and how this hero
+  background colour defaults :)
 hero_bg_type: color
 hero_bg_colour:
 hero_bg_image:
