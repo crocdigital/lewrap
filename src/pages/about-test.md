@@ -6,8 +6,8 @@ hero_subtitle: Delete this subtitle and watch what happens
 hero_bg_type: color
 hero_bg_colour: '#992cd4'
 hero_bg_image:
-hero_button_text: Take me home
-hero_button_link: /
+hero_button_text:
+hero_button_link:
 hero_button_variant:
 page_blocks:
   - _template: feature
