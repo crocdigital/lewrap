@@ -1,13 +1,110 @@
----
-import { Image } from "astro:assets";
----
-
-<section>
-    <h3 class="text-3xl text-lewrap-green font-helvetica-condensed font-black">
-        Potentially connect Instagram feed sent via behold.so as a JSON.
-        Potential issue is free tier only allows one account per domain, and
-        will need to develop a rebuilt script that fires in CC every 24hrs for
-        updating. Leaning toward building app in Meta.<br />NOTE: ScrollReveal
-        delay on all img blocks if fed via JSON?
-    </h3>
+<section class="my-12">
+    <div class="container mx-auto px-4">
+        <div
+            id="insta-feed"
+            class="grid grid-cols-2 md:grid-cols-5 gap-4 min-h-[200px]"
+        >
+        </div>
+    </div>
 </section>
+
+<script>
+    const businessId = "17841404569950384";
+
+    const token =
+        "EAATutGGg9KQBQXQukQhs1nfkYzbAl9uoTZCfJfp9bvINlxyZAOJhlR34VnMjvVHteHVN7tYwcjLmv93xTO0zrSf2fZA5JnIdUEkwPHBstBlzBSZArNtdZABPGJRdeNnSUMXLHZCRCAZAk3H6JRWjQ0yKmZB9XVMPW8ZCv1QMy6y9c7bY9MwjH2NKgkZB4OvomwTgZDZD";
+
+    const fields = "media_type,media_url,thumbnail_url,permalink";
+    const limit = 6;
+
+    async function fetchInsta() {
+        const container = document.getElementById("insta-feed");
+        if (!container) return;
+
+        try {
+            const url = `https://graph.facebook.com/v19.0/${businessId}/media?fields=${fields}&access_token=${token}&limit=${limit}`;
+            const response = await fetch(url);
+
+            if (!response.ok)
+                throw new Error(`API Error: ${response.statusText}`);
+
+            const data = await response.json();
+
+            if (data && data.data) {
+                container.innerHTML = "";
+
+                for (let i = 0; i < data.data.length; i++) {
+                    const post = data.data[i];
+                    const imageUrl =
+                        post.media_type === "VIDEO"
+                            ? post.thumbnail_url
+                            : post.media_url;
+
+                    if (imageUrl) {
+                        const link = document.createElement("a");
+                        link.href = post.permalink;
+                        link.target = "_blank";
+                        link.setAttribute("aria-label", "View on Instagram");
+
+                        // --- ANIMATION SETUP ---
+                        // 1. We start with opacity-0 and translate-y-8 (invisible and pushed down)
+                        // 2. We add 'transition-all duration-700 ease-out' to make the move smooth
+                        let classString =
+                            "block relative aspect-square bg-gray-100 group opacity-0 translate-y-8 transition-all duration-700 ease-out";
+
+                        // Hide 6th item on desktop
+                        if (i === 5) classString += " md:hidden";
+
+                        link.className = classString;
+
+                        // 3. THE MAGIC: Stagger the delay based on the index (i)
+                        // Item 1 waits 0ms, Item 2 waits 100ms, Item 3 waits 200ms, etc.
+                        link.style.transitionDelay = `${i * 100}ms`;
+
+                        const img = document.createElement("img");
+                        img.src = imageUrl;
+                        img.alt = "Instagram Post";
+                        img.loading = "lazy";
+                        img.className =
+                            "w-full h-full object-cover transition-all duration-500 group-hover:scale-110 rounded-xl";
+
+                        link.appendChild(img);
+                        container.appendChild(link);
+                    }
+                }
+
+                // --- TRIGGER THE ANIMATION ---
+                // Use an IntersectionObserver to wait until the user scrolls to the feed
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                // When the container is visible, find all items and remove the "hidden" classes
+                                // This triggers the CSS transition to opacity-100 and translate-y-0
+                                const items = container.querySelectorAll("a");
+                                items.forEach((item) => {
+                                    item.classList.remove(
+                                        "opacity-0",
+                                        "translate-y-8",
+                                    );
+                                });
+
+                                // Stop watching once it's done
+                                observer.unobserve(container);
+                            }
+                        });
+                    },
+                    { threshold: 0.1 },
+                ); // Trigger when 10% of the grid is visible
+
+                observer.observe(container);
+            }
+        } catch (error) {
+            console.error("Instagram Feed Error:", error);
+            if (container.parentElement)
+                container.parentElement.style.display = "none";
+        }
+    }
+
+    fetchInsta();
+</script>
