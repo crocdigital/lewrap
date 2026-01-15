@@ -5,7 +5,7 @@ hero_title: Type something in to show Monica
 hero_subtitle: Delete this subtitle and watch what happens
 hero_bg_type: color
 hero_bg_color: '#95ba32'
-hero_bg_image:
+hero_bg_image: /images/PLACEMENT-hero-taj.webp
 page_blocks:
   - _template: feature
     heading: Nobody makes a wrap like us
