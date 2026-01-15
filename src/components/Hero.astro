@@ -5,7 +5,7 @@ const {
     title,
     subtitle,
     hero_bg_type = "color",
-    hero_bg_colour = "#your-lewrap-green-hex", // Replace with your actual hex value
+    hero_bg_colour,
     hero_bg_image,
     hero_button_text,
     hero_button_link,
@@ -16,8 +16,9 @@ const {
 let backgroundStyle = "";
 let showColorBackground = false;
 
-if (hero_bg_type === "color" && hero_bg_colour) {
-    backgroundStyle = `background-color: ${hero_bg_colour};`;
+if (hero_bg_type === "color") {
+    const colour = hero_bg_colour || "#81b944"; // Fallback to LeWrap green
+    backgroundStyle = `background-color: ${colour};`;
     showColorBackground = true;
 } else if (hero_bg_type === "image" && hero_bg_image) {
     // Image will be rendered as <img> tag instead
