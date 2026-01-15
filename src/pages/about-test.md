@@ -23,9 +23,9 @@ page_blocks:
       shows in every wrap, salad, plate and baguette we make.</p>
     image_path: /images/placement-sqratio-wrap.webp
     reverse: false
-    background_type: image
-    background_colour:
-    background_image: /images/bg-tile-wood.webp
+    background_type: color
+    background_colour: '#ffffff'
+    background_image:
     button_text: Our food
     button_link: /our-food
     button_variant: primary
