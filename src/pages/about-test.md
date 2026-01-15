@@ -56,8 +56,8 @@ page_blocks:
       test</h4><p>Since then, we've been serving up fresh, flavour-packed food
       that makes people smile and say "mmm" on the first bite — proving you can
       eat well, eat fast, and enjoy every mouthful.</p>
-    background_type: color
-    background_colour: '#29ed61'
+    background_type: none
+    background_colour:
     background_image: ''
     button_text: Here's secondary button
     button_link: /our-food
