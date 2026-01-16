@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/InternalPageLayout.astro
 title: Locations
-hero_title: Find location (will need it's own Layout for search functionality)
+hero_title: Location (will need it's own Layout for search function)
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
