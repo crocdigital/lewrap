@@ -5,7 +5,7 @@ hero_title: Type something in to show Monica
 hero_subtitle: >-
   Show what happens if we delete this subtitle text, and how this hero
   background colour defaults :)
-hero_bg_type: color
+hero_bg_type: image
 hero_bg_colour:
 hero_bg_image:
 hero_bg_image_mobile: /images/placement-sqratio.webp
