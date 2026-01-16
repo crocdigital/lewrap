@@ -12,17 +12,14 @@ hero_button_link:
 hero_button_variant:
 page_blocks:
   - _template: feature
-    heading: Nobody makes a wrap like us
+    heading:
     text: >-
-      <p>Nobody makes a wrap like us because nobody does freshness like us. Our
-      vegetables are locally sourced and cut fresh daily, then prepared to order
-      so your meal is made exactly how it should be - fresh, fast and full of
-      flavour.</p><h4>Added h4 heading to edit blocks</h4><p>From 100%
-      Australian chicken breast and strip loin steak to chicken breast schnitzel
-      and authentic lamb kofta, our proteins are grilled fresh to order. It's
-      simple food done right. We believe in all things good and fresh - and it
-      shows in every wrap, salad, plate and baguette we make.</p>
-    image_path: /images/placement-sqratio-wrap.webp
+      <p>2005 was a pretty great year - YouTube launched, Harry Potter hit the
+      big screen, and the very first LeWrap opened at Westfield Parramatta.
+      Coincidence? We think not.</p><p>Since then, we’ve been serving up fresh,
+      flavour-packed food that makes people smile and say “mmm” on the first
+      bite — proving you can eat well, eat fast, and enjoy every mouthful.</p>
+    image_path: /images/smiling-staff.webp
     reverse: false
     background_type: none
     background_colour: '#ffffff'
@@ -32,12 +29,14 @@ page_blocks:
     button_variant: primary
   - _template: centered_text
     text: >-
-      <p>2005 was a pretty great year - YouTube launched, Harry Potter hit the
-      big screen, and the very first LeWrap opened at Westfield Parramatta.
-      Coincidence? We think not.</p><h4>Here's another h4 heading to
-      test</h4><p>Since then, we've been serving up fresh, flavour-packed food
-      that makes people smile and say "mmm" on the first bite — proving you can
-      eat well, eat fast, and enjoy every mouthful.</p>
+      <p>LeWrap was brought to life by Kaan Celik, who over 20 years ago set out
+      with a vision to create fresh, nutritious fast food without compromising
+      on flavour or speed. Born in Ankara, Turkey, Kaan’s experience in the QSR
+      industry shaped his passion for quality recipes and efficient
+      service.</p><p>In 2005, he opened the first LeWrap store in Parramatta,
+      followed by expansion into Bankstown as the brand grew. Today, alongside
+      his wife and six children, Kaan continues to lead LeWrap while enjoying
+      travel and the occasional game of soccer.</p>
     background_type: none
     background_colour:
     background_image: ''
@@ -45,15 +44,16 @@ page_blocks:
     button_link:
     button_variant:
   - _template: feature
-    heading: This is 2-col row, reversed
+    heading:
     text: >-
-      <p>Lowkey this paragraph is just vibing in its own lane, like highkey
-      nothing serious but still kinda makes sense if you squint. It’s giving
-      main character energy while absolutely doing the bare minimum, rent free,
-      no thoughts just vibes.</p><p>We’re talking chaotic-neutral syntax, a
-      little delulu, a little slay, throwing around bet, fr fr, and not gonna
-      lie this text is doing the most while pretending it’s doing the least.</p>
-    image_path: /images/kaan-celik.webp
+      <p>Now, LeWrap is in an exciting phase of rapid expansion, with new stores
+      opening regularly across Australia. Behind every store is a passionate
+      Head Office team working together to support our network and keep the
+      LeWrap experience strong, fresh and consistent — bringing good food to
+      more communities every day.</p><p>Want to be the next local store
+      franchise owner? Learn more here (this will be a link: show Monica how to
+      do).</p>
+    image_path: /images/lewrap-franchise-team.webp
     reverse: true
     background_type: none
     background_colour:
