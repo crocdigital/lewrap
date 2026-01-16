@@ -1,10 +1,8 @@
 ---
 layout: ../layouts/InternalPageLayout.astro
-title: Locations (in MD format!)
-hero_title: Change to locations text from Figma file
-hero_subtitle: >-
-  Show what happens if we delete this subtitle text, and how this hero
-  background colour defaults :)
+title: Locations
+hero_title: Find a LeWrap location nearest you
+hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
 hero_bg_image: /images/hero/PLACEMENT-hero-taj.webp
@@ -13,18 +11,18 @@ hero_button_text: I'm a button
 hero_button_link: /our-food
 hero_button_variant: primary
 marquee_items:
-  - "100% Australian"
-  - "Chicken Wraps"
-  - "Schnitzel Wraps"
-  - "Beef Wraps"
-  - "Lamb Wraps"
-  - "Vegetarian Wraps"
-  - "Plates"
-  - "Baguettes"
-  - "Salads"
-  - "Kids Meals"
-  - "Sides"
-  - "Drinks"
+  - 100% Australian
+  - Chicken Wraps
+  - Schnitzel Wraps
+  - Beef Wraps
+  - Lamb Wraps
+  - Vegetarian Wraps
+  - Plates
+  - Baguettes
+  - Salads
+  - Kids Meals
+  - Sides
+  - Drinks
 page_blocks:
   - _template: feature
     heading: Nobody makes a wrap like us
