@@ -24,9 +24,9 @@ page_blocks:
     background_type: none
     background_colour: '#ffffff'
     background_image:
-    button_text: Our food
-    button_link: /our-food
-    button_variant: primary
+    button_text:
+    button_link:
+    button_variant:
   - _template: centered_text
     text: >-
       <p>LeWrap was brought to life by Kaan Celik, who over 20 years ago set out
