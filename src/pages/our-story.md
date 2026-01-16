@@ -1,17 +1,15 @@
 ---
 layout: ../layouts/InternalPageLayout.astro
 title: Our Story
-hero_title: Type something in to show Monica
-hero_subtitle: >-
-  Show what happens if we delete this subtitle text, and how this hero
-  background colour defaults :)
+hero_title: Our Story
+hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
 hero_bg_image: /images/hero/PLACEMENT-hero-taj.webp
 hero_bg_image_mobile: /images/placement-sqratio.webp
-hero_button_text: I'm a button
-hero_button_link: /our-food
-hero_button_variant: primary
+hero_button_text:
+hero_button_link:
+hero_button_variant:
 page_blocks:
   - _template: feature
     heading: Nobody makes a wrap like us
@@ -26,28 +24,11 @@ page_blocks:
       shows in every wrap, salad, plate and baguette we make.</p>
     image_path: /images/placement-sqratio-wrap.webp
     reverse: false
-    background_type: color
+    background_type: none
     background_colour: '#ffffff'
     background_image:
     button_text: Our food
     button_link: /our-food
-    button_variant: primary
-  - _template: feature
-    heading: This is 2-col row, reversed
-    text: >-
-      <p>Lowkey this paragraph is just vibing in its own lane, like highkey
-      nothing serious but still kinda makes sense if you squint. It’s giving
-      main character energy while absolutely doing the bare minimum, rent free,
-      no thoughts just vibes.</p><p>We’re talking chaotic-neutral syntax, a
-      little delulu, a little slay, throwing around bet, fr fr, and not gonna
-      lie this text is doing the most while pretending it’s doing the least.</p>
-    image_path: /images/kaan-celik.webp
-    reverse: true
-    background_type: image
-    background_colour:
-    background_image: /images/bg-tile-wood.webp
-    button_text: ''
-    button_link: ''
     button_variant: primary
   - _template: centered_text
     text: >-
@@ -60,7 +41,24 @@ page_blocks:
     background_type: none
     background_colour:
     background_image: ''
-    button_text: Here's secondary button
-    button_link: /our-food
-    button_variant: secondary
+    button_text:
+    button_link:
+    button_variant:
+  - _template: feature
+    heading: This is 2-col row, reversed
+    text: >-
+      <p>Lowkey this paragraph is just vibing in its own lane, like highkey
+      nothing serious but still kinda makes sense if you squint. It’s giving
+      main character energy while absolutely doing the bare minimum, rent free,
+      no thoughts just vibes.</p><p>We’re talking chaotic-neutral syntax, a
+      little delulu, a little slay, throwing around bet, fr fr, and not gonna
+      lie this text is doing the most while pretending it’s doing the least.</p>
+    image_path: /images/kaan-celik.webp
+    reverse: true
+    background_type: none
+    background_colour:
+    background_image:
+    button_text: ''
+    button_link: ''
+    button_variant: primary
 ---
