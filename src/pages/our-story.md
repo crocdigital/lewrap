@@ -37,8 +37,8 @@ page_blocks:
       followed by expansion into Bankstown as the brand grew. Today, alongside
       his wife and six children, Kaan continues to lead LeWrap while enjoying
       travel and the occasional game of soccer.</p>
-    background_type: color
-    background_colour: '#13d0b1'
+    background_type: none
+    background_colour:
     background_image: ''
     button_text:
     button_link:
