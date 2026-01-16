@@ -22,6 +22,8 @@ const {
     hero_button_text,
     hero_button_link,
     hero_button_variant,
+    show_arrow_green_regular = false, // ← Add flags for design elements
+    show_arrow_blue = false, // Only added so I can see the pattern
     marquee_items = [],
     page_blocks = [],
 } = frontmatter || {};
@@ -29,7 +31,7 @@ const {
 
 <BaseLayout title={title}>
     <main
-        class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10"
+        class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10 relative"
     >
         {
             hero_title && (
@@ -43,6 +45,17 @@ const {
                     hero_button_text={hero_button_text}
                     hero_button_link={hero_button_link}
                     hero_button_variant={hero_button_variant}
+                />
+            )
+        }
+
+        {/* Conditionally render the arrow */}
+        {
+            show_arrow_green_regular && (
+                <img
+                    src="/images/elements/arrow-green-regular.svg"
+                    alt="More about LeWrap"
+                    class="w-10 h-auto absolute left-1/2 -translate-x-1/2 top-[calc(65vh-2.5rem)] md:top-[calc(79vh-2.5rem)] z-20"
                 />
             )
         }

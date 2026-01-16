@@ -10,6 +10,7 @@ hero_bg_image_mobile: /images/placement-sqratio.webp
 hero_button_text:
 hero_button_link:
 hero_button_variant:
+show_arrow_green_regular: true  # ← Only on pages that need it
 page_blocks:
   - _template: feature
     heading:
