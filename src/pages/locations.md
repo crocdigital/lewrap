@@ -3,8 +3,8 @@ layout: ../layouts/InternalPageLayout.astro
 title: Locations
 hero_title: Location (will need it's own Layout for search function)
 hero_subtitle:
-hero_bg_type: color
-hero_bg_colour: '#10ffed'
+hero_bg_type: image
+hero_bg_colour:
 hero_bg_image: /images/hero/locations-desktop.webp
 hero_bg_image_mobile: /images/hero/locations-mobile.webp
 hero_button_text: I'm a button
