@@ -5,10 +5,10 @@ hero_title: Find a LeWrap location nearest you
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
-hero_bg_image: /images/hero/PLACEMENT-hero-taj.webp
-hero_bg_image_mobile: /images/placement-sqratio.webp
+hero_bg_image: /images/hero/locations-desktop.webp
+hero_bg_image_mobile: /images/hero/locations-mobile.webp
 hero_button_text: I'm a button
-hero_button_link: /our-food
+hero_button_link: '#'
 hero_button_variant: primary
 marquee_items:
   - 100% Australian
