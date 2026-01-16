@@ -7,7 +7,7 @@ hero_subtitle: >-
   background colour defaults :)
 hero_bg_type: image
 hero_bg_colour:
-hero_bg_image: /images/PLACEMENT-hero-taj.webp
+hero_bg_image: /images/hero/PLACEMENT-hero-taj.webp
 hero_bg_image_mobile: /images/placement-sqratio.webp
 hero_button_text: I'm a button
 hero_button_link: /our-food
