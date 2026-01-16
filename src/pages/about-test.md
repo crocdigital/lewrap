@@ -8,6 +8,7 @@ hero_subtitle: >-
 hero_bg_type: color
 hero_bg_colour:
 hero_bg_image:
+hero_bg_image_mobile:
 hero_button_text: I'm a button
 hero_button_link: /our-food
 hero_button_variant: primary
