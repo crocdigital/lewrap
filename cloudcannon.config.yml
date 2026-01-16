@@ -62,7 +62,7 @@ _inputs:
   hero_bg_image_mobile:
     type: image
     label: Hero Background Image (Mobile)
-    comment: "Optional mobile version. Recommended size: 800px × 800px. If not provided, desktop image will be used."
+    comment: "Optional mobile version. Recommended size: 1000px × 1000px. If not provided, desktop image will be used."
     cascade: true
   hero_button_text:
     type: text
