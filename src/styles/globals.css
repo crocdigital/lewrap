@@ -75,6 +75,12 @@
   @apply text-2xl font-semibold text-lewrap-green-dark tracking-tight mb-4 mt-6;
 }
 
+/* Maquee */
+.marquee-content {
+  @apply text-white text-xl font-helvetica-condensed capitalize;
+
+}
+
 
 html,
 body {

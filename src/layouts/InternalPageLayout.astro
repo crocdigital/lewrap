@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Page Builder components
+import Hero from "../components/Hero.astro";
+import TwoCol from "../components/TwoCol.astro";
+import OneCol from "../components/OneCol.astro";
+
+// Marquee component
+import Marquee from "../components/molecules/Marquee.astro";
+import { marqueeSeparator } from "../data/marqueeSeparator";
+
+const { frontmatter } = Astro.props;
+const {
+    title,
+    hero_title,
+    hero_subtitle,
+    hero_bg_type,
+    hero_bg_colour,
+    hero_bg_image,
+    hero_bg_image_mobile,
+    hero_button_text,
+    hero_button_link,
+    hero_button_variant,
+    marquee_items = [],
+    page_blocks = [],
+} = frontmatter || {};
+---
+
+<BaseLayout title={title}>
+    <main
+        class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10"
+    >
+        {
+            hero_title && (
+                <Hero
+                    title={hero_title}
+                    subtitle={hero_subtitle}
+                    hero_bg_type={hero_bg_type}
+                    hero_bg_colour={hero_bg_colour}
+                    hero_bg_image={hero_bg_image}
+                    hero_bg_image_mobile={hero_bg_image_mobile}
+                    hero_button_text={hero_button_text}
+                    hero_button_link={hero_button_link}
+                    hero_button_variant={hero_button_variant}
+                />
+            )
+        }
+
+        {/* Only shows if marquee_items exist */}
+        {
+            marquee_items.length > 0 && (
+                <Marquee
+                    items={marquee_items}
+                    separator={marqueeSeparator}
+                    className="w-[95%] mx-auto bg-lewrap-green py-4 rounded-2xl"
+                    gradientColor="#95BA32"
+                    speed={50}
+                />
+            )
+        }
+
+        <div class="flex flex-col gap-10">
+            {
+                page_blocks?.map((block: any, index: number) => {
+                    if (block._template === "feature") {
+                        return <TwoCol {...block} blockIndex={index} />;
+                    }
+                    if (block._template === "centered_text") {
+                        return <OneCol {...block} blockIndex={index} />;
+                    }
+                    return null;
+                })
+            }
+        </div>
+    </main>
+</BaseLayout>
