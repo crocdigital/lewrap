@@ -11,7 +11,7 @@ hero_button_text: I'm a button
 hero_button_link: '#'
 hero_button_variant: primary
 marquee_items:
-  - 100% Australian bra
+  - 100% Australian
   - Chicken Wraps
   - Schnitzel Wraps
   - Beef Wraps
