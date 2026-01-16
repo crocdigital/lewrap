@@ -7,6 +7,7 @@ const {
     hero_bg_type,
     hero_bg_colour,
     hero_bg_image,
+    hero_bg_image_mobile,
     hero_button_text,
     hero_button_link,
     hero_button_variant = "primary",
@@ -21,7 +22,7 @@ if (hero_bg_type === "color") {
     backgroundStyle = `background-color: ${colour};`;
     showColorBackground = true;
 } else if (hero_bg_type === "image" && hero_bg_image) {
-    // Image will be rendered as <img> tag instead
+    // Image will be rendered as <picture> tag instead
     showColorBackground = false;
 }
 ---
@@ -31,15 +32,25 @@ if (hero_bg_type === "color") {
     style={showColorBackground ? backgroundStyle : ""}
 >
     {/* Background Image (if selected) */}
-    {
-        hero_bg_type === "image" && hero_bg_image && (
+    {hero_bg_type === "image" && hero_bg_image && (
+        <picture>
+            {/* Mobile version (optional) */}
+            {hero_bg_image_mobile && (
+                <source 
+                    media="(max-width: 768px)" 
+                    srcset={hero_bg_image_mobile}
+                />
+            )}
+            {/* Desktop version (fallback) */}
             <img
                 src={hero_bg_image}
                 alt={title || "Hero background"}
                 class="absolute inset-0 w-full h-full object-cover z-0"
+                loading="eager"
+                fetchpriority="high"
             />
-        )
-    }
+        </picture>
+    )}
 
     {/* Gradient Overlay */}
     <div
@@ -67,7 +78,7 @@ if (hero_bg_type === "color") {
         {
             subtitle && (
                 <p
-                    class="text-xl leading-tight text-white text-center max-w-2xl px-8 mx-auto"
+                    class="text-xl md:text-2xl leading-tight text-white text-center max-w-2xl px-8 mx-auto"
                     data-editable="text"
                     data-prop="hero_subtitle"
                     data-cms-bind="#hero_subtitle"

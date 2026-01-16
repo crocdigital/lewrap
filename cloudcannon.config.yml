@@ -56,8 +56,13 @@ _inputs:
     cascade: true
   hero_bg_image:
     type: image
-    label: Hero Background Image
-    comment: "Only applies if Background Type is 'image'. Image will cover the hero section."
+    label: Hero Background Image (Desktop)
+    comment: "Only applies if Background Type is 'image'. Recommended size: 1920px × 1080px or larger."
+    cascade: true
+  hero_bg_image_mobile:
+    type: image
+    label: Hero Background Image (Mobile)
+    comment: "Optional mobile version. Recommended size: 800px × 800px. If not provided, desktop image will be used."
     cascade: true
   hero_button_text:
     type: text
