@@ -41,6 +41,9 @@ collections_config:
     add_options:
       - name: Add Location
         icon: add_location
+    schemas:
+      default:
+        path: src/content/locations/_defaults.md
 
 _inputs:
   name:
