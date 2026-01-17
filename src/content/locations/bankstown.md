@@ -17,7 +17,7 @@ hours:
   friday: 9:00am - 5:00pm
   saturday: 9:00am - 5:00pm
   sunday: 10:00am - 4:00pm
-image: /images/locations/placement-locations-test.webp
+image: /images/locations/placement-bankstown.webp
 order_now_link: '#'
 featured: true
 ---
