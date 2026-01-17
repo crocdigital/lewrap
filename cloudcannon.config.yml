@@ -67,11 +67,11 @@ _inputs:
   latitude:
     type: number
     label: Latitude
-    comment: "Get this from Google Maps. Right-click on location and select coordinates before the 'comma'."
+    comment: "Get this from Google Maps. Right-click on location and type coordinates before the 'comma'."
   longitude:
     type: number
     label: Longitude
-    comment: "Get this from Google Maps. Right-click on location and select coordinates after the 'comma'."
+    comment: "Get this from Google Maps. Right-click on location and type coordinates after the 'comma'."
   phone:
     type: text
     label: Phone Number
