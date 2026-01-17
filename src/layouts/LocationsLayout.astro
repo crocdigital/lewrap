@@ -11,6 +11,9 @@ import LocationCard from "../components/LocationCard.astro";
 import Marquee from "../components/molecules/Marquee.astro";
 import { marqueeSeparator } from "../data/marqueeSeparator";
 
+// Elements
+import Button from "../components/atoms/Button.astro";
+
 // Get all locations
 const allLocations = (await getCollection(
     "locations",
@@ -87,19 +90,22 @@ const {
                 <h2 class="text-2xl font-bold text-lewrap-green-dark mb-4">
                     Find a LeWrap near you
                 </h2>
-                <div class="flex gap-4">
+                <div class="flex flex-col md:flex-row gap-2">
                     <input
                         type="text"
                         id="postcode-search"
                         placeholder="Enter your postcode"
                         class="flex-1 px-6 py-4 border-2 border-gray-300 rounded-full outline-none focus:border-lewrap-green"
                     />
-                    <button
+                    <!-- <button
                         id="search-btn"
                         class="bg-lewrap-green-dark text-white font-bold px-8 py-4 rounded-full hover:bg-lewrap-green transition-colors whitespace-nowrap"
                     >
                         Search
-                    </button>
+                    </button> -->
+                    <Button variant="secondary" class="w-full md:w-auto"
+                        >Search</Button
+                    >
                 </div>
                 <p class="text-sm text-gray-600 mt-2">
                     We'll show you the closest LeWrap locations
