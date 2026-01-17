@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
+import Button from "../../components/atoms/Button.astro";
+
 export async function getStaticPaths() {
     const locations = await getCollection("locations");
     return locations.map((location) => ({
@@ -41,10 +43,10 @@ const dayLabels: Record<string, string> = {
 
 <BaseLayout title={`${location.data.name} | LeWrap Locations`}>
     <main
-        class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10"
+        class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10 relative"
     >
         <section
-            class="grid grid-cols-1 md:grid-cols-2 items-center justify-center mt-10 md:mt-15 w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden bg-white"
+            class="grid grid-cols-1 md:grid-cols-2 items-center justify-center mt-10 md:mt-15 w-[95%] mx-auto min-h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden bg-white"
         >
             {
                 /* Google Map NOTE: THIS MIGHT BREAK WITH LOCATIONS THAT AREN'T INDEXED YET. CHECK BEST WAY TO SOLVE THIS */
@@ -60,7 +62,7 @@ const dayLabels: Record<string, string> = {
             ></iframe>
 
             {/* Location details */}
-            <div class="flex flex-col px-8 items-center justify-center">
+            <div class="flex flex-col p-8 py-10 items-center justify-center">
                 <a
                     href="/locations"
                     class="text-lewrap-green hover:text-lewrap-green-dark font-semibold transition-colors"
@@ -68,18 +70,86 @@ const dayLabels: Record<string, string> = {
                     View all locations
                 </a>
 
+                {/* Location name */}
                 <h1
                     class="text-4xl md:text-6xl font-black text-lewrap-green-dark mb-4"
                 >
                     {location.data.name}
                 </h1>
 
+                {/* Address */}
                 <p class="font-medium">
                     {location.data.address}, {location.data.suburb}, {
                         location.data.state
                     }
                     {location.data.postcode}
                 </p>
+                {/* Phone, email */}
+                {
+                    location.data.phone && (
+                        <a
+                            href={`tel:${location.data.phone}`}
+                            class="text-lewrap-green-dark hover:text-lewrap-green font-semibold"
+                        >
+                            {location.data.phone}
+                        </a>
+                    )
+                }
+                {
+                    location.data.email && (
+                        <a
+                            href={`mailto:${location.data.email}?subject=Enquiry%20from%20website`}
+                            class="text-lewrap-green-dark hover:text-lewrap-green font-semibold"
+                        >
+                            {location.data.email}
+                        </a>
+                    )
+                }
+
+                {/* View larger map */}
+                <Button
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${location.data.latitude},${location.data.longitude}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-5 py-3 text-sm"
+                >
+                    Get Directions
+                </Button>
+
+                {/* Hours */}
+                <div class="w-[80%] md:w-[50%]">
+                    <h2
+                        class="text-2xl font-bold text-lewrap-green-dark text-center mb-4"
+                    >
+                        Hours
+                    </h2>
+                    <div class="space-y-2">
+                        {
+                            daysOfWeek.map((day) => (
+                                <div class="flex justify-between items-center">
+                                    <span class="font-semibold capitalize">
+                                        {dayLabels[day]}
+                                    </span>
+                                    <span
+                                        class={
+                                            location.data.hours[
+                                                day as keyof typeof location.data.hours
+                                            ] === "Closed"
+                                                ? "text-red-600 font-semibold"
+                                                : ""
+                                        }
+                                    >
+                                        {
+                                            location.data.hours[
+                                                day as keyof typeof location.data.hours
+                                            ]
+                                        }
+                                    </span>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -166,10 +236,10 @@ const dayLabels: Record<string, string> = {
                 </a>
             </div>
 
-            {/* Opening Hours */}
+            {/* Hours */}
             <div class="bg-white rounded-xl shadow-md p-6">
                 <h2 class="text-2xl font-bold text-lewrap-green-dark mb-4">
-                    Opening Hours
+                    Hours
                 </h2>
                 <div class="space-y-2">
                     {
