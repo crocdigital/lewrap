@@ -116,10 +116,7 @@ const {
                 All Locations ({sortedLocations.length})
             </h2>
 
-            <div
-                class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-                id="locations-grid"
-            >
+            <div class="flex flex-col gap-6" id="locations-grid">
                 {
                     sortedLocations.map((store) => (
                         <LocationCard

@@ -1,4 +1,6 @@
 ---
+import Button from "./atoms/Button.astro";
+
 interface Props {
     name: string;
     address: string;
@@ -12,35 +14,36 @@ interface Props {
 const { name, address, suburb, state, postcode, slug, distance } = Astro.props;
 ---
 
-<div
-    class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
->
-    <div class="p-6 flex flex-col gap-4">
-        <h3 class="text-2xl font-bold text-lewrap-green-dark">{name}</h3>
-
-        <div class="text-lewrap-off-black">
-            <p class="font-medium">{address}</p>
-            <p>{suburb}, {state} {postcode}</p>
-        </div>
-
-        {
-            distance !== undefined && (
-                <div class="text-lewrap-green font-semibold">
-                    {distance.toFixed(1)} km away
-                </div>
-            )
-        }
-
-        <div class="flex flex-col gap-3 mt-2">
+<div class="border border-[#CBCBCB] bg-white rounded-xl overflow-hidden">
+    <div class="p-6 flex grid md:grid-cols-2 justify-between gap-4">
+        <div>
             <a
                 href={`/locations/${slug}`}
-                class="bg-lewrap-green-dark text-white text-center font-bold py-3 px-6 rounded-full hover:bg-lewrap-green transition-colors"
-                >More Info</a
+                class="text-2xl font-bold text-lewrap-green">{name}</a
             >
-            <a
-                href="#"
-                class="bg-transparent border-2 border-lewrap-green-dark text-lewrap-green-dark text-center font-bold py-3 px-6 rounded-full hover:bg-lewrap-green-dark hover:text-white transition-colors"
-                >Order Now</a
+
+            <div class="text-lewrap-off-black mt-6">
+                <p>{address}</p>
+                <p>{suburb}, {state} {postcode}</p>
+            </div>
+
+            {
+                distance !== undefined && (
+                    <div class="text-lewrap-green font-semibold">
+                        {distance.toFixed(1)} km away
+                    </div>
+                )
+            }
+        </div>
+
+        <div class="flex md:flex-col md:items-end mt-2 md:mt-0 gap-3">
+            <Button
+                href={`/locations/${slug}`}
+                class="px-5 py-3 text-base leading-loose">More Info</Button
+            >
+
+            <Button href="#" class="px-5 py-3 text-base" variant="secondary"
+                >Order now</Button
             >
         </div>
     </div>
