@@ -1,0 +1,47 @@
+---
+interface Props {
+    name: string;
+    address: string;
+    suburb: string;
+    state: string;
+    postcode: string;
+    slug: string;
+    distance?: number;
+}
+
+const { name, address, suburb, state, postcode, slug, distance } = Astro.props;
+---
+
+<div
+    class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+>
+    <div class="p-6 flex flex-col gap-4">
+        <h3 class="text-2xl font-bold text-lewrap-green-dark">{name}</h3>
+
+        <div class="text-lewrap-off-black">
+            <p class="font-medium">{address}</p>
+            <p>{suburb}, {state} {postcode}</p>
+        </div>
+
+        {
+            distance !== undefined && (
+                <div class="text-lewrap-green font-semibold">
+                    {distance.toFixed(1)} km away
+                </div>
+            )
+        }
+
+        <div class="flex flex-col gap-3 mt-2">
+            <a
+                href={`/locations/${slug}`}
+                class="bg-lewrap-green-dark text-white text-center font-bold py-3 px-6 rounded-full hover:bg-lewrap-green transition-colors"
+                >More Info</a
+            >
+            <a
+                href="#"
+                class="bg-transparent border-2 border-lewrap-green-dark text-lewrap-green-dark text-center font-bold py-3 px-6 rounded-full hover:bg-lewrap-green-dark hover:text-white transition-colors"
+                >Order Now</a
+            >
+        </div>
+    </div>
+</div>

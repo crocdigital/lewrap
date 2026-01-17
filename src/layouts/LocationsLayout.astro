@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+// Page Builder components
+import Hero from "../components/Hero.astro";
+import LocationCard from "../components/LocationCard.astro";
+
+// Marquee component
+import Marquee from "../components/molecules/Marquee.astro";
+import { marqueeSeparator } from "../data/marqueeSeparator";
+
+// Get all locations
+const allLocations = (await getCollection(
+    "locations",
+)) as CollectionEntry<"locations">[];
+const sortedLocations = allLocations.sort((a, b) =>
+    a.data.suburb.localeCompare(b.data.suburb),
+);
+
+const { frontmatter } = Astro.props;
+const {
+    title,
+    hero_title,
+    hero_subtitle,
+    hero_bg_type,
+    hero_bg_colour,
+    hero_bg_image,
+    hero_bg_image_mobile,
+    hero_button_text,
+    hero_button_link,
+    hero_button_variant,
+    show_arrow_green_regular = false,
+    show_arrow_blue = false,
+    marquee_items = [],
+} = frontmatter || {};
+---
+
+<BaseLayout title={title}>
+    <main
+        class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10 relative"
+    >
+        {
+            hero_title && (
+                <Hero
+                    title={hero_title}
+                    subtitle={hero_subtitle}
+                    hero_bg_type={hero_bg_type}
+                    hero_bg_colour={hero_bg_colour}
+                    hero_bg_image={hero_bg_image}
+                    hero_bg_image_mobile={hero_bg_image_mobile}
+                    hero_button_text={hero_button_text}
+                    hero_button_link={hero_button_link}
+                    hero_button_variant={hero_button_variant}
+                />
+            )
+        }
+
+        {/* Conditionally render the arrow */}
+        {
+            show_arrow_green_regular && (
+                <img
+                    src="/images/elements/arrow-green-regular.svg"
+                    alt="More about LeWrap"
+                    class="w-10 h-auto absolute left-1/2 -translate-x-1/2 top-[calc(65vh-2.5rem)] md:top-[calc(79vh-2.5rem)] z-20"
+                />
+            )
+        }
+
+        {/* Only shows if marquee_items exist */}
+        {
+            marquee_items.length > 0 && (
+                <Marquee
+                    items={marquee_items}
+                    separator={marqueeSeparator}
+                    className="w-[95%] mx-auto bg-lewrap-green py-4 rounded-2xl"
+                    gradientColor="#95BA32"
+                    speed={50}
+                />
+            )
+        }
+
+        {/* Search Section (we'll add functionality later) */}
+        <div class="w-[95%] md:max-w-screen-xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-md p-6">
+                <h2 class="text-2xl font-bold text-lewrap-green-dark mb-4">
+                    Find a LeWrap near you
+                </h2>
+                <div class="flex gap-4">
+                    <input
+                        type="text"
+                        id="postcode-search"
+                        placeholder="Enter your postcode"
+                        class="flex-1 px-6 py-4 border-2 border-gray-300 rounded-full outline-none focus:border-lewrap-green"
+                    />
+                    <button
+                        id="search-btn"
+                        class="bg-lewrap-green-dark text-white font-bold px-8 py-4 rounded-full hover:bg-lewrap-green transition-colors whitespace-nowrap"
+                    >
+                        Search
+                    </button>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">
+                    We'll show you the closest LeWrap locations
+                </p>
+            </div>
+        </div>
+
+        {/* Locations Grid */}
+        <div
+            id="locations"
+            class="w-[95%] md:max-w-screen-xl mx-auto scroll-mt-32"
+        >
+            <h2 class="text-3xl font-bold text-lewrap-green-dark mb-6">
+                All Locations ({sortedLocations.length})
+            </h2>
+
+            <div
+                class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+                id="locations-grid"
+            >
+                {
+                    sortedLocations.map((store) => (
+                        <LocationCard
+                            name={store.data.name}
+                            address={store.data.address}
+                            suburb={store.data.suburb}
+                            state={store.data.state}
+                            postcode={store.data.postcode}
+                            slug={store.slug}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </main>
+</BaseLayout>
