@@ -11,7 +11,7 @@ _editables:
     image: true
 
 paths:
-  uploads: public/images
+  uploads: public/images/[collection]
   static: public
 
 collections_config:
@@ -32,7 +32,6 @@ collections_config:
     path: src/content/locations
     icon: location_on
     url: /locations/[slug]/
-    uploads: public/images/locations
     _enabled_editors:
       - content
       - data
