@@ -27,8 +27,95 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+  
+  locations:
+    path: src/content/locations
+    icon: location_on
+    url: /locations/[slug]/
+    _enabled_editors:
+      - content
+      - data
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    add_options:
+      - name: Add Location
+        icon: add_location
 
 _inputs:
+  name:
+    type: text
+    label: Store Name
+    comment: "e.g., LeWrap Parramatta"
+  address:
+    type: text
+    label: Street Address
+    comment: "e.g., 159 Church Street"
+  suburb:
+    type: text
+    label: Suburb
+  state:
+    type: text
+    label: State
+    comment: "e.g., NSW"
+  postcode:
+    type: text
+    label: Postcode
+  latitude:
+    type: number
+    label: Latitude
+    comment: "Get this from Google Maps. Right-click on location and select coordinates."
+  longitude:
+    type: number
+    label: Longitude
+    comment: "Get this from Google Maps. Right-click on location and select coordinates."
+  phone:
+    type: text
+    label: Phone Number
+    comment: "Optional. Include area code."
+  email:
+    type: email
+    label: Email Address
+    comment: "Optional"
+  hours:
+    type: object
+    label: Opening Hours
+    _inputs:
+      monday:
+        type: text
+        label: Monday
+        comment: "e.g., 9:00 AM - 5:00 PM or Closed"
+      tuesday:
+        type: text
+        label: Tuesday
+      wednesday:
+        type: text
+        label: Wednesday
+      thursday:
+        type: text
+        label: Thursday
+      friday:
+        type: text
+        label: Friday
+      saturday:
+        type: text
+        label: Saturday
+      sunday:
+        type: text
+        label: Sunday
+  image:
+    type: image
+    label: Store Image
+    comment: "Upload a photo of the store. Recommended: square ratio, 1000px × 1000px"
+  order_now_link:
+    type: url
+    label: Order Now Link
+    comment: "Optional. Link to online ordering for this location"
+  featured:
+    type: switch
+    label: Featured Location
+    comment: "Toggle on to highlight this location"
+  
   hero_title:
     type: text
     label: Hero Title
