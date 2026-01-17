@@ -9,13 +9,13 @@ longitude: 151.2506
 phone: 02 9389 5678
 email: bondi@lewrap.com.au
 hours:
-  monday: 7:00 AM - 9:00 PM
-  tuesday: 7:00 AM - 9:00 PM
-  wednesday: 7:00 AM - 9:00 PM
-  thursday: 7:00 AM - 9:00 PM
-  friday: 7:00 AM - 10:00 PM
-  saturday: 8:00 AM - 10:00 PM
-  sunday: 9:00 AM - 8:00 PM
+  monday: 7:00am - 9:00pm
+  tuesday: 7:00am - 9:00pm
+  wednesday: 7:00am - 9:00pm
+  thursday: 7:00am - 9:00pm
+  friday: 7:00am - 10:00pm
+  saturday: 8:00am - 10:00pm
+  sunday: 9:00am - 8:00pm
 image: /images/placement-bondi-junction.jpg
 order_now_link: '#'
 featured: false
