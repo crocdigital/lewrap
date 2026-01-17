@@ -1,0 +1,196 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+    const locations = await getCollection("locations");
+    return locations.map((location) => ({
+        params: { slug: location.slug },
+        props: { location },
+    }));
+}
+
+interface Props {
+    location: CollectionEntry<"locations">;
+}
+
+const { location } = Astro.props;
+const { Content } = await location.render();
+
+// Format hours for display
+const daysOfWeek = [
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+    "sunday",
+];
+const dayLabels: Record<string, string> = {
+    monday: "Monday",
+    tuesday: "Tuesday",
+    wednesday: "Wednesday",
+    thursday: "Thursday",
+    friday: "Friday",
+    saturday: "Saturday",
+    sunday: "Sunday",
+};
+---
+
+<BaseLayout title={`${location.data.name} | LeWrap Locations`}>
+    <main class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black">
+        {/* Back Button */}
+        <div class="w-[95%] md:max-w-screen-xl mx-auto pt-10">
+            <a
+                href="/locations"
+                class="inline-flex items-center gap-2 text-lewrap-green-dark hover:text-lewrap-green font-semibold transition-colors"
+            >
+                ← Back to all locations
+            </a>
+        </div>
+
+        {/* Location Header */}
+        <div class="w-[95%] md:max-w-screen-xl mx-auto py-10">
+            <h1
+                class="text-4xl md:text-6xl font-black text-lewrap-green-dark mb-4"
+            >
+                {location.data.name}
+            </h1>
+            <div
+                class="flex flex-col md:flex-row md:items-center gap-4 text-xl"
+            >
+                <p class="font-medium">
+                    {location.data.address}, {location.data.suburb}, {
+                        location.data.state
+                    }
+                    {location.data.postcode}
+                </p>
+                {
+                    location.data.phone && (
+                        <a
+                            href={`tel:${location.data.phone}`}
+                            class="text-lewrap-green-dark hover:text-lewrap-green font-semibold"
+                        >
+                            📞 {location.data.phone}
+                        </a>
+                    )
+                }
+            </div>
+        </div>
+
+        {/* Main Content Grid */}
+        <div
+            class="w-[95%] md:max-w-screen-xl mx-auto grid md:grid-cols-2 gap-8 pb-20"
+        >
+            {/* Left Column: Map & Details */}
+            <div class="flex flex-col gap-6">
+                {/* Google Map */}
+                <div
+                    class="bg-gray-200 rounded-xl overflow-hidden aspect-video"
+                >
+                    <!-- <iframe
+                        width="100%"
+                        height="100%"
+                        style="border:0"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src={`https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${location.data.latitude},${location.data.longitude}&zoom=15`}
+                    ></iframe> -->
+                    <iframe
+                        width="100%"
+                        height="100%"
+                        style="border:0"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src={`https://maps.google.com/maps?q=${location.data.latitude},${location.data.longitude}&output=embed`}
+                    ></iframe>
+                </div>
+
+                {/* Get Directions Link */}
+                <a
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${location.data.latitude},${location.data.longitude}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-lewrap-green-dark text-white text-center font-bold py-4 px-6 rounded-full hover:bg-lewrap-green transition-colors"
+                >
+                    Get Directions
+                </a>
+            </div>
+
+            {/* Opening Hours */}
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h2 class="text-2xl font-bold text-lewrap-green-dark mb-4">
+                    Opening Hours
+                </h2>
+                <div class="space-y-2">
+                    {
+                        daysOfWeek.map((day) => (
+                            <div class="flex justify-between items-center py-2 border-b border-gray-200 last:border-0">
+                                <span class="font-semibold capitalize">
+                                    {dayLabels[day]}
+                                </span>
+                                <span
+                                    class={
+                                        location.data.hours[
+                                            day as keyof typeof location.data.hours
+                                        ] === "Closed"
+                                            ? "text-red-600 font-semibold"
+                                            : ""
+                                    }
+                                >
+                                    {
+                                        location.data.hours[
+                                            day as keyof typeof location.data.hours
+                                        ]
+                                    }
+                                </span>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+
+        {/* Right Column: Store Info & Image */}
+        <div class="flex flex-col gap-6">
+            {/* Store Image */}
+            {
+                location.data.image && (
+                    <div class="rounded-xl overflow-hidden aspect-square">
+                        <img
+                            src={location.data.image}
+                            alt={location.data.name}
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                )
+            }
+
+            {/* Store Description (from markdown content) */}
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h2 class="text-2xl font-bold text-lewrap-green-dark mb-4">
+                    About this location
+                </h2>
+                <div class="prose prose-lg max-w-none">
+                    <Content />
+                </div>
+            </div>
+
+            {/* Order Now Button */}
+            {
+                location.data.order_now_link && (
+                    <a
+                        href={location.data.order_now_link}
+                        class="bg-transparent border-2 border-lewrap-green-dark text-lewrap-green-dark text-center font-bold py-4 px-6 rounded-full hover:bg-lewrap-green-dark hover:text-white transition-colors"
+                    >
+                        Order Now
+                    </a>
+                )
+            }
+        </div>
+    </main>
+</BaseLayout>
