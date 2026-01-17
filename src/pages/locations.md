@@ -12,9 +12,16 @@ hero_button_link: ''
 hero_button_variant: primary
 show_arrow_green_regular: false
 marquee_items:
-  - Fresh ingredients
-  - Locally sourced
-  - Made to order
   - 100% Australian
-  - Grilled fresh daily
+  - Chicken Wraps
+  - Schnitzel Wraps
+  - Beef Wraps
+  - Lamb Wraps
+  - Vegetarian Wraps
+  - Plates
+  - Baguettes
+  - Salads
+  - Kids Meals
+  - Sides
+  - Drinks
 ---
