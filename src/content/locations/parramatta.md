@@ -5,8 +5,8 @@ address: 159 Church Street
 suburb: Parramatta
 state: NSW
 postcode: '2150'
-latitude: -33.8181
-longitude: 151.00815
+latitude: -33.81729
+longitude: 151.00165
 phone: 02 9687 1234
 email: parramatta@lewrap.com.au
 hours:
