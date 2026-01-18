@@ -11,6 +11,9 @@ import LocationCard from "../components/LocationCard.astro";
 import Marquee from "../components/molecules/Marquee.astro";
 import { marqueeSeparator } from "../data/marqueeSeparator";
 
+// Import ALL Australian postcodes
+import postcodeData from "../data/postcodes.json";
+
 // Get all locations
 const allLocations = (await getCollection(
     "locations",
@@ -124,15 +127,9 @@ const {
     </main>
 </BaseLayout>
 
-<script define:vars={{ locationsData }}>
-    // Australian postcode to lat/long lookup (simplified version)
-    const postcodeCoords = {
-        "2150": { lat: -33.8152, lng: 151.0016 }, // Parramatta
-        "2022": { lat: -33.8915, lng: 151.2506 }, // Bondi Junction
-        "2000": { lat: -33.8688, lng: 151.2093 }, // Sydney CBD
-        "2067": { lat: -33.7969, lng: 151.1835 }, // Chatswood
-        "2040": { lat: -33.8812, lng: 151.1718 }, // Leichhardt/Lilyfield
-    };
+<script define:vars={{ locationsData, postcodeData }}>
+    // All Australian postcodes
+    const postcodeCoords = postcodeData;
 
     // Calculate distance between two coordinates (Haversine formula)
     function calculateDistance(lat1, lon1, lat2, lon2) {
@@ -149,7 +146,7 @@ const {
         return R * c;
     }
 
-    // Create location card HTML matching LocationCard.astro
+    // Create location card HTML (matches LocationCard component)
     function createLocationCardHTML(loc) {
         return `
             <div class="border border-[#CBCBCB] bg-white rounded-xl overflow-hidden">
@@ -211,7 +208,8 @@ const {
             if (!postcode || postcode.length !== 4) {
                 message.textContent =
                     "⚠️ Please enter a valid 4-digit postcode";
-                message.className = "text-sm text-center text-red-600 mt-4";
+                message.className =
+                    "text-sm md:text-lg text-center text-red-600 mt-4";
                 return;
             }
 
@@ -219,7 +217,8 @@ const {
 
             if (!userCoords) {
                 message.textContent = `⚠️ Postcode ${postcode} not found. Showing all locations.`;
-                message.className = "text-sm text-center text-orange-600 mt-4";
+                message.className =
+                    "text-sm md:text-lg text-center text-orange-600 mt-4";
                 renderLocations(locationsData);
                 return;
             }
@@ -241,7 +240,7 @@ const {
 
             message.textContent = `✅ Showing locations nearest to ${postcode}`;
             message.className =
-                "text-sm text-center text-lewrap-green font-semibold mt-4";
+                "text-sm md:text-lg text-center text-lewrap-green font-semibold mt-4";
 
             heading.textContent = `Locations near ${postcode} (${locationsData.length})`;
 
@@ -253,7 +252,8 @@ const {
             input.value = "";
             renderLocations(locationsData);
             message.textContent = "We'll show you the closest LeWrap locations";
-            message.className = "text-sm text-white/90 mt-4 text-center";
+            message.className =
+                "text-sm md:text-lg text-white/90 mt-4 text-center";
             heading.textContent = `Our locations (${locationsData.length})`;
             clearBtn.classList.add("hidden");
         });
