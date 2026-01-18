@@ -1,8 +1,8 @@
 ---
 layout: ../layouts/LocationsLayout.astro
 title: Our Locations
-hero_title: Find a LeWrap near you
-hero_subtitle: Fresh wraps at over 20 locations across Sydney
+hero_title: Find your nearest LeWrap
+hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
 hero_bg_image: /images/hero/locations-desktop.webp
