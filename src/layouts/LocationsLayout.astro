@@ -218,7 +218,8 @@ const {
             if (!postcode || postcode.length !== 4) {
                 message.textContent =
                     "⚠️ Please enter a valid 4-digit postcode";
-                message.className = "text-sm text-center text-red-600 mt-4";
+                message.className =
+                    "text-sm md:text-lg text-center text-red-600 mt-4";
                 return;
             }
 
@@ -226,7 +227,8 @@ const {
 
             if (!userCoords) {
                 message.textContent = `⚠️ Postcode ${postcode} not found. Try another postcode.`;
-                message.className = "text-sm text-center text-orange-600 mt-4";
+                message.className =
+                    "text-sm md:text-lg text-center text-orange-600 mt-4";
                 return;
             }
 
@@ -246,7 +248,7 @@ const {
 
             message.textContent = `✅ Showing locations nearest to ${postcode}`;
             message.className =
-                "text-sm text-center text-white/90 font-semibold mt-4";
+                "text-sm md:text-lg text-center text-white/90 font-semibold mt-4";
 
             heading.textContent = `Locations near ${postcode} (${locationsData.length})`;
 
@@ -257,7 +259,8 @@ const {
             input.value = "";
             renderLocations(locationsData);
             message.textContent = "We'll show you the closest LeWrap locations";
-            message.className = "text-sm text-white/90 mt-4 text-center";
+            message.className =
+                "text-sm md:text-lg text-white/90 mt-4 text-center";
             heading.textContent = `Our locations (${locationsData.length})`;
             clearBtn.classList.add("hidden");
         });
