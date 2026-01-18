@@ -128,12 +128,10 @@ const {
 </BaseLayout>
 
 <script define:vars={{ locationsData, postcodeData }}>
-    // All Australian postcodes
     const postcodeCoords = postcodeData;
 
-    // Calculate distance between two coordinates (Haversine formula)
     function calculateDistance(lat1, lon1, lat2, lon2) {
-        const R = 6371; // Earth's radius in km
+        const R = 6371;
         const dLat = ((lat2 - lat1) * Math.PI) / 180;
         const dLon = ((lon2 - lon1) * Math.PI) / 180;
         const a =
@@ -146,7 +144,6 @@ const {
         return R * c;
     }
 
-    // Create location card HTML (matches LocationCard component)
     function createLocationCardHTML(loc) {
         return `
             <div class="border border-[#CBCBCB] bg-white rounded-xl overflow-hidden">
@@ -182,17 +179,30 @@ const {
         `;
     }
 
-    // Render location cards
+    // Animated render with fade and slide
     function renderLocations(locations) {
         const grid = document.getElementById("locations-grid");
         if (!grid) return;
 
-        grid.innerHTML = locations
-            .map((loc) => createLocationCardHTML(loc))
-            .join("");
+        // Fade out and slide up
+        grid.style.opacity = "0";
+        grid.style.transform = "translateY(-20px)";
+        grid.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+
+        // Wait for animation, then update content
+        setTimeout(() => {
+            grid.innerHTML = locations
+                .map((loc) => createLocationCardHTML(loc))
+                .join("");
+
+            // Fade in and slide back
+            requestAnimationFrame(() => {
+                grid.style.opacity = "1";
+                grid.style.transform = "translateY(0)";
+            });
+        }, 300);
     }
 
-    // Search functionality
     function searchLocations() {
         const input = document.getElementById("postcode-search");
         const searchBtn = document.getElementById("search-btn");
@@ -208,22 +218,18 @@ const {
             if (!postcode || postcode.length !== 4) {
                 message.textContent =
                     "⚠️ Please enter a valid 4-digit postcode";
-                message.className =
-                    "text-sm md:text-lg text-center text-red-600 mt-4";
+                message.className = "text-sm text-center text-red-600 mt-4";
                 return;
             }
 
             const userCoords = postcodeCoords[postcode];
 
             if (!userCoords) {
-                message.textContent = `⚠️ Postcode ${postcode} not found. Showing all locations.`;
-                message.className =
-                    "text-sm md:text-lg text-center text-orange-600 mt-4";
-                renderLocations(locationsData);
+                message.textContent = `⚠️ Postcode ${postcode} not found. Try another postcode.`;
+                message.className = "text-sm text-center text-orange-600 mt-4";
                 return;
             }
 
-            // Calculate distances and sort
             const locationsWithDistance = locationsData
                 .map((loc) => ({
                     ...loc,
@@ -240,25 +246,22 @@ const {
 
             message.textContent = `✅ Showing locations nearest to ${postcode}`;
             message.className =
-                "text-sm md:text-lg text-center text-lewrap-green font-semibold mt-4";
+                "text-sm text-center text-white/90 font-semibold mt-4";
 
             heading.textContent = `Locations near ${postcode} (${locationsData.length})`;
 
             clearBtn.classList.remove("hidden");
         });
 
-        // Clear search
         clearBtn.addEventListener("click", () => {
             input.value = "";
             renderLocations(locationsData);
             message.textContent = "We'll show you the closest LeWrap locations";
-            message.className =
-                "text-sm md:text-lg text-white/90 mt-4 text-center";
+            message.className = "text-sm text-white/90 mt-4 text-center";
             heading.textContent = `Our locations (${locationsData.length})`;
             clearBtn.classList.add("hidden");
         });
 
-        // Allow Enter key to search
         input.addEventListener("keypress", (e) => {
             if (e.key === "Enter") {
                 searchBtn.click();
@@ -266,13 +269,11 @@ const {
         });
     }
 
-    // Initialize on page load
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", searchLocations);
     } else {
         searchLocations();
     }
 
-    // Also run after view transitions
     document.addEventListener("astro:page-load", searchLocations);
 </script>
