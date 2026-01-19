@@ -332,7 +332,7 @@ _inputs:
   franchise_callout:
     type: object
     label: Franchise Callout
-    comment: "Configure the 'Own a Store' section"
+    comment: "Configure the 'Franchise callout' section"
     cascade: true
 
 timezone: Australia/Sydney
