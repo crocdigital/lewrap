@@ -52,12 +52,7 @@ const {
     show_arrow_green_regular = false,
     show_arrow_blue = false,
     marquee_items = [],
-    show_franchise_callout = false,
-    franchise_heading,
-    franchise_text,
-    franchise_image,
-    franchise_button_text,
-    franchise_button_link,
+    franchise_callout = {},
 } = frontmatter || {};
 ---
 
@@ -134,15 +129,15 @@ const {
             </div>
         </div>
 
-        {/* Franchise Callout */}
+        {/* Franchise Callout block */}
         {
-            show_franchise_callout && (
+            franchise_callout.show && (
                 <FranchiseCallout
-                    heading={franchise_heading}
-                    text={franchise_text}
-                    image={franchise_image}
-                    buttonText={franchise_button_text}
-                    buttonLink={franchise_button_link}
+                    heading={franchise_callout.heading}
+                    text={franchise_callout.text}
+                    image={franchise_callout.image}
+                    buttonText={franchise_callout.button_text}
+                    buttonLink={franchise_callout.button_link}
                 />
             )
         }
