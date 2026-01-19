@@ -149,11 +149,17 @@ _inputs:
     label: Hero Background Image (Desktop)
     comment: "Only applies if Background Type is 'image'. Recommended size: 1920px × 1080px or larger."
     cascade: true
+    options:
+      paths:
+        uploads: public/images/hero
   hero_bg_image_mobile:
     type: image
     label: Hero Background Image (Mobile)
     comment: "Optional mobile version. Recommended size: 1000px × 1000px. If not provided, desktop image will be used."
     cascade: true
+    options:
+      paths:
+        uploads: public/images/hero
   hero_button_text:
     type: text
     label: Hero Button Text
