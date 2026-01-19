@@ -1,22 +1,22 @@
 ---
 _schema: default
 name: LeWrap Macquarie Park
-address: Vicinity Bankstown Central, North Terrace
-suburb: Bankstown
+address: Level 2, Macquarie Centre, Herring Road & Waterloo Rd
+suburb: Macquarie Park
 state: NSW
-postcode: '2200'
+postcode: '2113'
 latitude: -33.91609
 longitude: 151.03902
-phone: (02) 9709 2112
-email: bankstown@lewrap.com
+phone: (02)
+email: macquarie@lewrap.com
 hours:
-  monday: 9:00am - 5:00pm
-  tuesday: 9:00am - 5:00pm
-  wednesday: 9:00am - 5:00pm
-  thursday: 9:00am - 5:00pm
-  friday: 9:00am - 5:00pm
-  saturday: 9:00am - 5:00pm
-  sunday: 10:00am - 4:00pm
+  monday: 9:30am - 6:00pm
+  tuesday: 9:30am - 6:00pm
+  wednesday: 9:30am - 6:00pm
+  thursday: 9:00am - 9:00pm
+  friday: 9:30am - 6:00pm
+  saturday: 9:00am - 6:00pm
+  sunday: 10:00am - 6:00pm
 image: /images/locations/placement-bankstown.webp
 order_now_link: '#'
 featured: true

@@ -1,21 +1,22 @@
 ---
+_schema: default
 name: LeWrap Roselands
-address: 500 Oxford Street
-suburb: Bondi Junction
+address: Level 2 Food Court, Roselands Shopping Centre, 24 Roselands Dr
+suburb: Roselands
 state: NSW
-postcode: '2022'
+postcode: '2196'
 latitude: -33.8915
 longitude: 151.2506
-phone: 02 9389 5678
-email: bondi@lewrap.com.au
+phone: (02)
+email: roselands@lewrap.com
 hours:
-  monday: 7:00am - 9:00pm
-  tuesday: 7:00am - 9:00pm
-  wednesday: 7:00am - 9:00pm
-  thursday: 7:00am - 9:00pm
-  friday: 7:00am - 10:00pm
-  saturday: 8:00am - 10:00pm
-  sunday: 9:00am - 8:00pm
+  monday: 10:00am - 5:00pm
+  tuesday: 10:00am - 5:00pm
+  wednesday: 10:00am - 5:00pm
+  thursday: 10:00am - 9:00pm
+  friday: 10:00am - 5:00pm
+  saturday: 10:00am - 5:00pm
+  sunday: 10:00am - 4:00pm
 image: /images/placement-bondi-junction.jpg
 order_now_link: '#'
 featured: false

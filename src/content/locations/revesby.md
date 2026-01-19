@@ -1,22 +1,22 @@
 ---
 _schema: default
 name: LeWrap Revesby
-address: Vicinity Bankstown Central, North Terrace
-suburb: Bankstown
+address: Shop 5, 19-29 Marco Avenue
+suburb: Revesby
 state: NSW
-postcode: '2200'
+postcode: '2212'
 latitude: -33.91609
 longitude: 151.03902
-phone: (02) 9709 2112
-email: bankstown@lewrap.com
+phone: (02)
+email: revesby@lewrap.com
 hours:
-  monday: 9:00am - 5:00pm
-  tuesday: 9:00am - 5:00pm
-  wednesday: 9:00am - 5:00pm
-  thursday: 9:00am - 5:00pm
-  friday: 9:00am - 5:00pm
-  saturday: 9:00am - 5:00pm
-  sunday: 10:00am - 4:00pm
+  monday: 9:00am - 9:00pm
+  tuesday: 9:00am - 9:00pm
+  wednesday: 9:00am - 9:00pm
+  thursday: 9:00am - 9:00pm
+  friday: 9:00am - 9:00pm
+  saturday: 9:00am - 9:00pm
+  sunday: 9:00am - 9:00pm
 image: /images/locations/placement-bankstown.webp
 order_now_link: '#'
 featured: true

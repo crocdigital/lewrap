@@ -1,22 +1,22 @@
 ---
 _schema: default
 name: LeWrap Parramatta
-address: 159 Church Street
+address: Level 5 Food Court, Westfield Parramatta Shopping Centre, 159-175 Church St
 suburb: Parramatta
 state: NSW
 postcode: '2150'
 latitude: -33.81729
 longitude: 151.00165
-phone: 02 9687 1234
-email: parramatta@lewrap.com.au
+phone: (02)
+email: parramatta@lewrap.com
 hours:
-  monday: 7:00am - 9:00pm
-  tuesday: 7:00am - 9:00pm
-  wednesday: 7:00am - 9:00pm
-  thursday: 7:00am - 9:00pm
-  friday: 7:00am - 9:00pm
-  saturday: 8:00am - 8:00pm
-  sunday: 9:00am - 7:00pm
+  monday: 9:30am - 6:00pm
+  tuesday: 9:30am - 6:00pm
+  wednesday: 9:30am - 6:00pm
+  thursday: 9:00am - 9:00pm
+  friday: 9:30am - 6:00pm
+  saturday: 9:30am - 6:00pm
+  sunday: 9:30am - 6:00pm
 image: /images/stores/parramatta.jpg
 order_now_link: '#'
 featured: true
