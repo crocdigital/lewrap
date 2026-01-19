@@ -1,14 +1,14 @@
 ---
 _schema: default
 name: LeWrap Stanhope Gardens
-address: Vicinity Bankstown Central, North Terrace
-suburb: Bankstown
+address: Shop 18E, Stanhope Village Shopping Centre, 2 Sentry Drive
+suburb: Stanhope Gardens
 state: NSW
-postcode: '2200'
+postcode: '2768'
 latitude: -33.91609
 longitude: 151.03902
-phone: (02) 9709 2112
-email: bankstown@lewrap.com
+phone: (02)
+email: stanhope@lewrap.com
 hours:
   monday: 9:00am - 5:00pm
   tuesday: 9:00am - 5:00pm
