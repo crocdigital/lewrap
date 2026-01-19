@@ -46,8 +46,6 @@ const { heading, text, image, buttonText, buttonLink } = Astro.props;
             /> -->
             <div
                 class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8 [&_p:last-child]:mb-0"
-                data-editable="content"
-                data-prop="franchise_callout.text"
                 data-cms-bind="#franchise_callout.text"
                 set:html={text}
             />
