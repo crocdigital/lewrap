@@ -11,6 +11,9 @@ import LocationCard from "../components/LocationCard.astro";
 import Marquee from "../components/molecules/Marquee.astro";
 import { marqueeSeparator } from "../data/marqueeSeparator";
 
+// Franchise Callout component
+import FranchiseCallout from "../components/FranchiseCallout.astro";
+
 // Import ALL Australian postcodes
 import postcodeData from "../data/postcodes.json";
 
@@ -49,6 +52,12 @@ const {
     show_arrow_green_regular = false,
     show_arrow_blue = false,
     marquee_items = [],
+    show_franchise_callout = false,
+    franchise_heading,
+    franchise_text,
+    franchise_image,
+    franchise_button_text,
+    franchise_button_link,
 } = frontmatter || {};
 ---
 
@@ -124,28 +133,40 @@ const {
                 }
             </div>
         </div>
+
+        {/* Franchise Callout */}
+        {
+            show_franchise_callout && (
+                <FranchiseCallout
+                    heading={franchise_heading}
+                    text={franchise_text}
+                    image={franchise_image}
+                    buttonText={franchise_button_text}
+                    buttonLink={franchise_button_link}
+                />
+            )
+        }
     </main>
-</BaseLayout>
 
-<script define:vars={{ locationsData, postcodeData }}>
-    const postcodeCoords = postcodeData;
+    <script define:vars={{ locationsData, postcodeData }}>
+        const postcodeCoords = postcodeData;
 
-    function calculateDistance(lat1, lon1, lat2, lon2) {
-        const R = 6371;
-        const dLat = ((lat2 - lat1) * Math.PI) / 180;
-        const dLon = ((lon2 - lon1) * Math.PI) / 180;
-        const a =
-            Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos((lat1 * Math.PI) / 180) *
-                Math.cos((lat2 * Math.PI) / 180) *
-                Math.sin(dLon / 2) *
-                Math.sin(dLon / 2);
-        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        return R * c;
-    }
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371;
+            const dLat = ((lat2 - lat1) * Math.PI) / 180;
+            const dLon = ((lon2 - lon1) * Math.PI) / 180;
+            const a =
+                Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos((lat1 * Math.PI) / 180) *
+                    Math.cos((lat2 * Math.PI) / 180) *
+                    Math.sin(dLon / 2) *
+                    Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            return R * c;
+        }
 
-    function createLocationCardHTML(loc) {
-        return `
+        function createLocationCardHTML(loc) {
+            return `
             <div class="border border-[#CBCBCB] bg-white rounded-xl overflow-hidden">
                 <div class="p-6 flex grid md:grid-cols-[1fr_300px] justify-between gap-4">
                     <div>
@@ -177,106 +198,109 @@ const {
                 </div>
             </div>
         `;
-    }
+        }
 
-    // Animated render with fade and slide
-    function renderLocations(locations) {
-        const grid = document.getElementById("locations-grid");
-        if (!grid) return;
+        // Animated render with fade and slide
+        function renderLocations(locations) {
+            const grid = document.getElementById("locations-grid");
+            if (!grid) return;
 
-        // Fade out and slide up
-        grid.style.opacity = "0";
-        grid.style.transform = "translateY(-20px)";
-        grid.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+            // Fade out and slide up
+            grid.style.opacity = "0";
+            grid.style.transform = "translateY(-20px)";
+            grid.style.transition = "opacity 0.3s ease, transform 0.3s ease";
 
-        // Wait for animation, then update content
-        setTimeout(() => {
-            grid.innerHTML = locations
-                .map((loc) => createLocationCardHTML(loc))
-                .join("");
+            // Wait for animation, then update content
+            setTimeout(() => {
+                grid.innerHTML = locations
+                    .map((loc) => createLocationCardHTML(loc))
+                    .join("");
 
-            // Fade in and slide back
-            requestAnimationFrame(() => {
-                grid.style.opacity = "1";
-                grid.style.transform = "translateY(0)";
+                // Fade in and slide back
+                requestAnimationFrame(() => {
+                    grid.style.opacity = "1";
+                    grid.style.transform = "translateY(0)";
+                });
+            }, 300);
+        }
+
+        function searchLocations() {
+            const input = document.getElementById("postcode-search");
+            const searchBtn = document.getElementById("search-btn");
+            const clearBtn = document.getElementById("clear-btn");
+            const message = document.getElementById("search-message");
+            const heading = document.getElementById("locations-heading");
+
+            if (!input || !searchBtn || !clearBtn || !message || !heading)
+                return;
+
+            searchBtn.addEventListener("click", () => {
+                const postcode = input.value.trim();
+
+                if (!postcode || postcode.length !== 4) {
+                    message.textContent =
+                        "⚠️ Please enter a valid 4-digit postcode";
+                    message.className =
+                        "text-sm md:text-lg text-center text-red-600 mt-4";
+                    return;
+                }
+
+                const userCoords = postcodeCoords[postcode];
+
+                if (!userCoords) {
+                    message.textContent = `⚠️ Postcode ${postcode} not found. Try another postcode.`;
+                    message.className =
+                        "text-sm md:text-lg text-center text-orange-600 mt-4";
+                    return;
+                }
+
+                const locationsWithDistance = locationsData
+                    .map((loc) => ({
+                        ...loc,
+                        distance: calculateDistance(
+                            userCoords.lat,
+                            userCoords.lng,
+                            loc.latitude,
+                            loc.longitude,
+                        ),
+                    }))
+                    .sort((a, b) => a.distance - b.distance);
+
+                renderLocations(locationsWithDistance);
+
+                message.textContent = `✅ Showing locations nearest to ${postcode}`;
+                message.className =
+                    "text-sm md:text-lg text-center text-white/90 font-semibold mt-4";
+
+                heading.textContent = `Locations near ${postcode} (${locationsData.length})`;
+
+                clearBtn.classList.remove("hidden");
             });
-        }, 300);
-    }
 
-    function searchLocations() {
-        const input = document.getElementById("postcode-search");
-        const searchBtn = document.getElementById("search-btn");
-        const clearBtn = document.getElementById("clear-btn");
-        const message = document.getElementById("search-message");
-        const heading = document.getElementById("locations-heading");
-
-        if (!input || !searchBtn || !clearBtn || !message || !heading) return;
-
-        searchBtn.addEventListener("click", () => {
-            const postcode = input.value.trim();
-
-            if (!postcode || postcode.length !== 4) {
+            clearBtn.addEventListener("click", () => {
+                input.value = "";
+                renderLocations(locationsData);
                 message.textContent =
-                    "⚠️ Please enter a valid 4-digit postcode";
+                    "We'll show you the closest LeWrap locations";
                 message.className =
-                    "text-sm md:text-lg text-center text-red-600 mt-4";
-                return;
-            }
+                    "text-sm md:text-lg text-white/90 mt-4 text-center";
+                heading.textContent = `Our locations (${locationsData.length})`;
+                clearBtn.classList.add("hidden");
+            });
 
-            const userCoords = postcodeCoords[postcode];
+            input.addEventListener("keypress", (e) => {
+                if (e.key === "Enter") {
+                    searchBtn.click();
+                }
+            });
+        }
 
-            if (!userCoords) {
-                message.textContent = `⚠️ Postcode ${postcode} not found. Try another postcode.`;
-                message.className =
-                    "text-sm md:text-lg text-center text-orange-600 mt-4";
-                return;
-            }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", searchLocations);
+        } else {
+            searchLocations();
+        }
 
-            const locationsWithDistance = locationsData
-                .map((loc) => ({
-                    ...loc,
-                    distance: calculateDistance(
-                        userCoords.lat,
-                        userCoords.lng,
-                        loc.latitude,
-                        loc.longitude,
-                    ),
-                }))
-                .sort((a, b) => a.distance - b.distance);
-
-            renderLocations(locationsWithDistance);
-
-            message.textContent = `✅ Showing locations nearest to ${postcode}`;
-            message.className =
-                "text-sm md:text-lg text-center text-white/90 font-semibold mt-4";
-
-            heading.textContent = `Locations near ${postcode} (${locationsData.length})`;
-
-            clearBtn.classList.remove("hidden");
-        });
-
-        clearBtn.addEventListener("click", () => {
-            input.value = "";
-            renderLocations(locationsData);
-            message.textContent = "We'll show you the closest LeWrap locations";
-            message.className =
-                "text-sm md:text-lg text-white/90 mt-4 text-center";
-            heading.textContent = `Our locations (${locationsData.length})`;
-            clearBtn.classList.add("hidden");
-        });
-
-        input.addEventListener("keypress", (e) => {
-            if (e.key === "Enter") {
-                searchBtn.click();
-            }
-        });
-    }
-
-    if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", searchLocations);
-    } else {
-        searchLocations();
-    }
-
-    document.addEventListener("astro:page-load", searchLocations);
-</script>
+        document.addEventListener("astro:page-load", searchLocations);
+    </script>
+</BaseLayout>

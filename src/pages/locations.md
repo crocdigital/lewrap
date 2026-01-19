@@ -1,6 +1,14 @@
 ---
 layout: ../layouts/LocationsLayout.astro
 title: Our Locations
+#Franchse Callout block
+show_franchise_callout: true
+franchise_heading: "Want to be the next LeWrap store owner?"
+franchise_text: "Join the LeWrap family and bring fresh, delicious wraps to your community!"
+franchise_image: "/images/elements/store-sign.webp"
+franchise_button_text: "Be Your Own Boss"
+franchise_button_link: "/own-a-store"
+#Hero block
 hero_title: Find your nearest LeWrap
 hero_subtitle:
 hero_bg_type: image

@@ -287,5 +287,32 @@ _inputs:
                 hidden: true
     label: Page Blocks
     cascade: true
+  #Franchise Callout block
+  show_franchise_callout:
+    type: switch
+    label: Show Franchise Callout
+    comment: "Display the 'Own a Store' callout section"
+    cascade: true
+  franchise_heading:
+    type: text
+    label: Franchise Heading
+    cascade: true
+  franchise_text:
+    type: textarea
+    label: Franchise Text
+    cascade: true
+  franchise_image:
+    type: image
+    label: Franchise Image
+    comment: "Main image for the callout"
+    cascade: true
+  franchise_button_text:
+    type: text
+    label: Button Text
+    cascade: true
+  franchise_button_link:
+    type: text
+    label: Button Link
+    cascade: true
 
 timezone: Australia/Sydney
