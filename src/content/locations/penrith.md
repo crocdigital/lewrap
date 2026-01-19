@@ -17,7 +17,7 @@ hours:
   friday: 9:00am - 5:00pm
   saturday: 9:00am - 5:00pm
   sunday: 9:00am - 5:00pm
-image: /images/stores/sydney-cbd.jpg
+image: /images/locations/placement-locations-test.webp
 order_now_link: '#'
 featured: true
 ---
