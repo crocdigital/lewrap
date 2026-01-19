@@ -5,12 +5,12 @@ hero_title: Nutritional Information
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
-hero_bg_image: /images/hero/PLACEMENT-hero-taj.webp
-hero_bg_image_mobile: /images/placement-sqratio.webp
-hero_button_text:
-hero_button_link:
-hero_button_variant:
-show_arrow_green_regular: true  # ← Only on pages that need it
+hero_bg_image: /images/hero/nutrition-desktop.webp
+hero_bg_image_mobile: /images/hero/nutrition-mobile.webp
+hero_button_text: Download Nutrition Guide
+hero_button_link: '#'
+hero_button_variant: primary
+show_arrow_green_regular: true
 page_blocks:
   - _template: feature
     heading:
