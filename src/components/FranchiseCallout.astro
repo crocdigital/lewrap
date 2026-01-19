@@ -39,17 +39,15 @@ const { heading, text, image, buttonText, buttonLink } = Astro.props;
                 {heading}
             </h2>
 
-            <!-- <h1
-                class="md:w-auto mx-auto text-white text-4xl md:text-[90px] font-bold leading-[100%] tracking-tight text-center"
-                data-editable="text"
-                data-prop="hero_title"
-                data-cms-bind="#hero_title"
-            >
-                {title}
-            </h1> -->
-
+            <!-- <div
+                class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8 [&_p:last-child]:mb-0"
+                data-cms-bind="#franchise_callout.text"
+                set:html={text}
+            /> -->
             <div
                 class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8 [&_p:last-child]:mb-0"
+                data-editable="content"
+                data-prop="franchise_callout.text"
                 data-cms-bind="#franchise_callout.text"
                 set:html={text}
             />
