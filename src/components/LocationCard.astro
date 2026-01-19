@@ -15,7 +15,7 @@ const { name, address, suburb, state, postcode, slug, distance } = Astro.props;
 ---
 
 <div class="border border-[#CBCBCB] bg-white rounded-xl overflow-hidden">
-    <div class="p-6 flex grid md:grid-cols-2 justify-between gap-4">
+    <div class="p-6 flex grid md:grid-cols-[1fr_300px] justify-between gap-4">
         <div>
             <a
                 href={`/locations/${slug}`}
