@@ -132,12 +132,20 @@ const {
         {/* Franchise Callout block */}
         {
             franchise_callout.show && (
+                // <FranchiseCallout
+                //     heading={franchise_callout.heading}
+                //     text={franchise_callout.text}
+                //     image={franchise_callout.image}
+                //     buttonText={franchise_callout.button_text}
+                //     buttonLink={franchise_callout.button_link}
+                // />
                 <FranchiseCallout
                     heading={franchise_callout.heading}
                     text={franchise_callout.text}
                     image={franchise_callout.image}
                     buttonText={franchise_callout.button_text}
                     buttonLink={franchise_callout.button_link}
+                    cmsBind="#franchise_callout.text"
                 />
             )
         }

@@ -301,7 +301,8 @@ _inputs:
       heading:
         type: text
         label: Heading
-      text:
+      # text:
+      "franchise_callout.text":
         type: html
         options:
           allow_resize: true
