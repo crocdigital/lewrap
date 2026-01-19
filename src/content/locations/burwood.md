@@ -1,22 +1,22 @@
 ---
 _schema: default
 name: LeWrap Burwood
-address: Vicinity Bankstown Central, North Terrace
-suburb: Bankstown
+address: Level 1 Food Court, Westfield Burwood Shopping Centre
+suburb: Burwood
 state: NSW
-postcode: '2200'
+postcode: '2134'
 latitude: -33.91609
 longitude: 151.03902
-phone: (02) 9709 2112
-email: bankstown@lewrap.com
+phone: (02)
+email: burwood@lewrap.com
 hours:
-  monday: 9:00am - 5:00pm
-  tuesday: 9:00am - 5:00pm
-  wednesday: 9:00am - 5:00pm
-  thursday: 9:00am - 5:00pm
-  friday: 9:00am - 5:00pm
-  saturday: 9:00am - 5:00pm
-  sunday: 10:00am - 4:00pm
+  monday: 10:00am - 5:30pm
+  tuesday: 10:00am - 5:30pm
+  wednesday: 10:00am - 5:30pm
+  thursday: 10:00am - 8:30pm
+  friday: 10:00am - 5:30pm
+  saturday: 10:00am - 5:30pm
+  sunday: 10:00am - 5:30pm
 image: /images/locations/placement-bankstown.webp
 order_now_link: '#'
 featured: true
