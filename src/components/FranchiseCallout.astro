@@ -42,7 +42,11 @@ const {
                 {heading}
             </h2>
 
-            <p>{text}</p>
+            <div
+                class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8 [&_p:last-child]:mb-0"
+                data-cms-edit={`text`}
+                set:html={text}
+            />
 
             {
                 buttonText && buttonLink && (
