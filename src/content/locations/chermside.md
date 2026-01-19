@@ -5,8 +5,8 @@ address: Shop FC10, Westfield Chermside Shopping Centre
 suburb: Chermside
 state: QLD
 postcode: '4032'
-latitude: -33.91609
-longitude: 151.03902
+latitude: -27.38332
+longitude: 153.03142
 phone: (02)
 email: chermside@lewrap.com
 hours:
