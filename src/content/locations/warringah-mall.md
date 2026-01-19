@@ -1,7 +1,7 @@
 ---
 _schema: default
 name: LeWrap Warringah Mall
-address: Westfield Warringah Mall Food Court, 145 Condamine St
+address: 145 Condamine St
 suburb: Brookvale
 state: NSW
 postcode: '2100'
