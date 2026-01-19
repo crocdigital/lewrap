@@ -24,7 +24,12 @@ const { heading, text, image, buttonText, buttonLink } = Astro.props;
         />
 
         <div>
-            <img src={image} alt={heading} class="w-full h-full object-cover" />
+            <img
+                class="w-full h-full object-cover"
+                src={image}
+                alt={heading}
+                data-cms-bind="#franchise_callout.image"
+            />
         </div>
 
         <div
@@ -37,11 +42,6 @@ const { heading, text, image, buttonText, buttonLink } = Astro.props;
                 {heading}
             </h2>
 
-            <!-- <div
-                class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8 [&_p:last-child]:mb-0"
-                data-cms-bind="#franchise_callout.text"
-                set:html={text}
-            /> -->
             <div
                 class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8 [&_p:last-child]:mb-0"
                 data-cms-bind="#franchise_callout.text"
