@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/LocationsLayout.astro
+layout: ../layouts/InternalPageLayout.astro
 title: Our Locations
 hero_title: Find your nearest LeWrap
 hero_subtitle:
@@ -10,7 +10,7 @@ hero_bg_image_mobile: /images/hero/locations-mobile.webp
 hero_button_text: ''
 hero_button_link: ''
 hero_button_variant: primary
-# TESTING WHAT HAPPENS IF I HIDE THESE OPTIONS: PATTERN TELLS ME THEY JUST WON'T BE AVAILABLE IN THE EDITOR?
+# TESTING WHAT HAPPENS IF I HIDE THESE OPTIONS: PATTERN TELLS ME THEY JUST WON'T BE AVAILABLE IN THE EDITOR? UPDATE - IT WORKED!
 # show_arrow_green_regular: false
 # marquee_items:
 #   - 100% Australian
