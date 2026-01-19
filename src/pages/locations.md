@@ -25,7 +25,7 @@ marquee_items:
   - Sides
   - Drinks
 franchise_callout:
-  show: false
+  show: true
   heading: Want to be the next LeWrap store owner?
   text: >-
     <p>Join the LeWrap family and bring fresh, delicious wraps to your
