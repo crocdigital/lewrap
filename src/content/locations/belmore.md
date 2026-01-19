@@ -1,10 +1,10 @@
 ---
 _schema: default
 name: LeWrap Belmore
-address: Vicinity Bankstown Central, North Terrace
-suburb: Bankstown
+address: 374 Burwood Road
+suburb: Belmore
 state: NSW
-postcode: '2200'
+postcode: '2192'
 latitude: -33.91609
 longitude: 151.03902
 phone: (02) 9709 2112
