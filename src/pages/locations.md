@@ -31,7 +31,7 @@ marquee_items:
 franchise_callout:
   show: true
   heading: "Want to be the next LeWrap store owner?"
-  text: "Join the LeWrap family!"
+  text: "<p>Join the LeWrap family and bring fresh, delicious wraps to your community!</p>"
   image: "/images/elements/store-sign.webp"
   button_text: "Be Your Own Boss"
   button_link: "/own-a-store"
