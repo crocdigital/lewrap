@@ -1,5 +1,5 @@
 ---
-name: "LeWrap Sydney CBD"
+name: "LeWrap Penrith"
 address: "Shop 5, 100 George Street"
 suburb: "Sydney"
 state: "NSW"

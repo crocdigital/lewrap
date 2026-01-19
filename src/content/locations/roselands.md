@@ -1,5 +1,5 @@
 ---
-name: LeWrap Bondi Junction
+name: LeWrap Roselands
 address: 500 Oxford Street
 suburb: Bondi Junction
 state: NSW
