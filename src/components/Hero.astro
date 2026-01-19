@@ -10,6 +10,7 @@ const {
     hero_button_text,
     hero_button_link,
     hero_button_variant = "primary",
+    show_food_cat_links = false,
     show_search = false,
 } = Astro.props;
 // Determine background style
@@ -76,6 +77,69 @@ if (hero_bg_type === "color") {
                 </h1>
             )
         }
+
+        {/* Food Categories (only shows on Our Food page) */}
+        {
+            show_food_cat_links && (
+                <div class="w-full md:w-[75%] flex flex-wrap gap-2 md:gap-4 justify-center">
+                    <Button
+                        href="#latest-deals"
+                        class="btn-lewrap px-4 py-1 text-base leading-loose"
+                    >
+                        Latest deals
+                    </Button>
+                    <Button
+                        href="#wraps"
+                        class="btn-lewrap px-4 py-1 text-base leading-loose"
+                    >
+                        Wraps
+                    </Button>
+                    <Button
+                        href="#plates"
+                        class="btn-lewrap px-4 py-1 text-base leading-loose"
+                    >
+                        Plates
+                    </Button>
+                    <Button
+                        href="#baguettes"
+                        class="btn-lewrap px-4 py-1 text-base leading-loose"
+                    >
+                        Baguettes
+                    </Button>
+                    <Button
+                        href="#protein-packs"
+                        class="btn-lewrap px-4 py-1 text-base leading-loose"
+                    >
+                        Protein Packs
+                    </Button>
+                    <Button
+                        href="#salads"
+                        class="btn-lewrap px-4 py-1 text-base leading-loose"
+                    >
+                        Salads
+                    </Button>
+                    <Button
+                        href="#kids-meals"
+                        class="btn-lewrap px-4 py-1 text-base leading-loose"
+                    >
+                        Kids Meals
+                    </Button>
+                    <Button
+                        href="#sides"
+                        class="btn-lewrap px-4 py-1 text-base leading-loose"
+                    >
+                        Sides
+                    </Button>
+                    <Button
+                        href="#drinks"
+                        class="btn-lewrap px-4 py-1 text-base leading-loose"
+                    >
+                        Drinks
+                    </Button>
+                </div>
+            )
+        }
+
         {
             subtitle && (
                 <p
