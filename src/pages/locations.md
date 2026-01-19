@@ -32,6 +32,6 @@ franchise_callout:
     sense for Monica when editing content :)</p><p>Testing another para to make
     sure it renders right. Eshay bra.</p>
   image: /images/elements/store-sign.webp
-  button_text: Jesus YAML is a pita
+  button_text: Be your own boss
   button_link: /own-a-store
 ---
