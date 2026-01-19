@@ -7,8 +7,8 @@ address: >-
 suburb: Shellharbour City Centre
 state: NSW
 postcode: '2529'
-latitude: -33.91609
-longitude: 151.03902
+latitude: -34.56268
+longitude: 150.84026
 phone: (02)
 email: shellharbour@lewrap.com
 hours:
