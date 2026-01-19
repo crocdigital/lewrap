@@ -1,4 +1,5 @@
 ---
+# THIS WILL NEED ITS OWN LAYOUT PAGE
 layout: ../layouts/InternalPageLayout.astro
 title: Our Food
 hero_title: Our Food
