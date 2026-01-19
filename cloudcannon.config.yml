@@ -288,39 +288,51 @@ _inputs:
     label: Page Blocks
     cascade: true
   
-  # Franchise callout as a grouped object
+  # Franchise Callout - Define nested inputs at root level with dot notation
+  "franchise_callout.show":
+    type: switch
+    label: Show Franchise Callout
+    cascade: true
+  
+  "franchise_callout.heading":
+    type: text
+    label: Franchise Heading
+    cascade: true
+  
+  "franchise_callout.text":
+    type: html
+    options:
+      allow_resize: true
+      allow_custom_markup: false
+      remove_custom_markup: false
+      initial_height: 320
+      bold: true
+      italic: true
+      format: p h2 h3 h4
+      image_size_attributes: true
+    label: Franchise Text (WYSIWYG)
+    cascade: true
+  
+  "franchise_callout.image":
+    type: image
+    label: Franchise Image
+    cascade: true
+  
+  "franchise_callout.button_text":
+    type: text
+    label: Franchise Button Text
+    cascade: true
+  
+  "franchise_callout.button_link":
+    type: text
+    label: Franchise Button Link
+    cascade: true
+  
+  # Define the object itself
   franchise_callout:
     type: object
     label: Franchise Callout
     comment: "Configure the 'Own a Store' section"
     cascade: true
-    _inputs:
-      show:
-        type: switch
-        label: Show Franchise Callout
-      heading:
-        type: text
-        label: Heading
-      text:  # ← Just "text", not "franchise_callout.text"
-        type: html
-        options:
-          allow_resize: true
-          allow_custom_markup: false
-          remove_custom_markup: false
-          initial_height: 320
-          bold: true
-          format: p h2 h3 h4
-          image_size_attributes: true
-          italic: true
-        label: Content (WYSIWYG)
-      image:
-        type: image
-        label: Image
-      button_text:
-        type: text
-        label: Button Text
-      button_link:
-        type: text
-        label: Button Link
 
 timezone: Australia/Sydney
