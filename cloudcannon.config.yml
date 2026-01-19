@@ -1,15 +1,3 @@
-#Doing the ol' Nuclear trick
-_inputs:
-  "franchise_callout.text":
-    type: html
-    options:
-      toolbar: bold italic link bulletlist orderedlist
-      height: 300
-      format: p h2 h3 h4
-      image_size_attributes: true
-      italic: true
-      bold: true
-
 _editables:
   text:
     bold: true
@@ -321,18 +309,27 @@ _inputs:
         type: text
         label: Heading
       # text:
-      "franchise_callout.text":
-        type: html
-        options:
-          allow_resize: true
-          allow_custom_markup: false
-          remove_custom_markup: false
-          initial_height: 320
-          bold: true
-          format: p h2 h3 h4
-          image_size_attributes: true
-          italic: true
-        label: Content (WYSIWYG)
+      # "franchise_callout.text":
+      #   type: html
+      #   options:
+      #     allow_resize: true
+      #     allow_custom_markup: false
+      #     remove_custom_markup: false
+      #     initial_height: 320
+      #     bold: true
+      #     format: p h2 h3 h4
+      #     image_size_attributes: true
+      #     italic: true
+      #   label: Content (WYSIWYG)
+        franchise_callout:
+          type: object
+          options:
+            inputs:
+              text:
+                type: html
+                options:
+                  height: 300
+                  toolbar: bold italic link bulletlist orderedlist
       image:
         type: image
         label: Image
