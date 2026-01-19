@@ -34,6 +34,6 @@ franchise_callout:
     flavour-packed food that makes people smile and say “mmm” on the first bite
     — proving you can eat well, eat fast, and enjoy every mouthful.</p>
   image: /images/elements/store-sign.webp
-  button_text: Be Your Own Boss
+  button_text: Jesus YAML is a pita
   button_link: /own-a-store
 ---
