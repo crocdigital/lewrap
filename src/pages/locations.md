@@ -10,7 +10,7 @@ hero_bg_image_mobile: /images/hero/locations-mobile.webp
 hero_button_text: ''
 hero_button_link: ''
 hero_button_variant: primary
-show_arrow_green_regular: false
+show_arrow_green_regular: true
 marquee_items:
   - 100% Australian
   - Chicken Wraps
