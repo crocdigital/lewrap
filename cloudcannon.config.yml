@@ -109,7 +109,7 @@ _inputs:
   image:
     type: image
     label: Store Image
-    comment: "Upload a photo of the store. 1200px x 800px"
+    comment: "Upload a photo of the store. 1000px x 1000px"
   order_now_link:
     type: url
     label: Order Now Link
