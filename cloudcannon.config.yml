@@ -41,6 +41,13 @@ collections_config:
     add_options:
       - name: Add Location
         icon: add_location
+    #TESTING THIS
+    _inputs:
+      "franchise_callout.text":
+        type: html
+        options:
+          height: 300
+          toolbar: bold italic link bulletlist orderedlist
     schemas:
       default:
         path: src/content/locations/_defaults.md
