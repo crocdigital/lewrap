@@ -1,3 +1,15 @@
+#Doing the ol' Nuclear trick
+_inputs:
+  "franchise_callout.text":
+    type: html
+    options:
+      toolbar: bold italic link bulletlist orderedlist
+      height: 300
+      format: p h2 h3 h4
+      image_size_attributes: true
+      italic: true
+      bold: true
+
 _editables:
   text:
     bold: true
