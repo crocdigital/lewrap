@@ -1,0 +1,80 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Page Builder components
+import Hero from "../components/Hero.astro";
+// import TwoCol from "../components/TwoCol.astro";
+// import OneCol from "../components/OneCol.astro";
+
+// Marquee component
+// import Marquee from "../components/molecules/Marquee.astro";
+// import { marqueeSeparator } from "../data/marqueeSeparator";
+
+const { frontmatter } = Astro.props;
+const {
+    title,
+    hero_title,
+    hero_subtitle,
+    hero_bg_type,
+    hero_bg_colour,
+    hero_bg_image,
+    hero_bg_image_mobile,
+    hero_button_text,
+    hero_button_link,
+    hero_button_variant,
+    // show_arrow_green_regular = false, // ← Add flags for design elements
+    // show_arrow_blue = false, // Only added so I can see the pattern
+    // show_arrow_green_fat = false, // Used in [slug].astro (Locations detail page)
+    // marquee_items = [],
+    // page_blocks = [],
+} = frontmatter || {};
+---
+
+<BaseLayout title={title}>
+    <main
+        class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10 relative"
+    >
+        {
+            hero_title && (
+                <Hero
+                    title={hero_title}
+                    subtitle={hero_subtitle}
+                    hero_bg_type={hero_bg_type}
+                    hero_bg_colour={hero_bg_colour}
+                    hero_bg_image={hero_bg_image}
+                    hero_bg_image_mobile={hero_bg_image_mobile}
+                    hero_button_text={hero_button_text}
+                    hero_button_link={hero_button_link}
+                    hero_button_variant={hero_button_variant}
+                />
+            )
+        }
+
+        {/* Conditionally render main green arrow */}
+        <!-- {
+            show_arrow_green_regular && (
+                <img
+                    src="/images/elements/arrow-green-regular.svg"
+                    alt="More about LeWrap"
+                    class="w-10 h-auto absolute left-1/2 -translate-x-1/2 top-[calc(65vh-2.5rem)] md:top-[calc(79vh-2.5rem)] z-20"
+                />
+            )
+        } -->
+
+        <!-- <div class="flex flex-col gap-10">
+            {
+                page_blocks?.map((block: any, index: number) => {
+                    if (block._template === "feature") {
+                        return <TwoCol {...block} blockIndex={index} />;
+                    }
+                    if (block._template === "centered_text") {
+                        return <OneCol {...block} blockIndex={index} />;
+                    }
+                    return null;
+                })
+            }
+        </div> -->
+
+        <h2>I SHOULD ONLY SHOW ON THE OUR FOOD PAGE BRA :)</h2>
+    </main>
+</BaseLayout>

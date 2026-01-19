@@ -1,6 +1,6 @@
 ---
 # THIS WILL NEED ITS OWN LAYOUT PAGE!!! BECAUSE OF DIFFERENT PANELS NEEDED FOR FOOD CATEGORIES
-layout: ../layouts/InternalPageLayout.astro
+layout: ../layouts/OurFoodLayout.astro
 title: Our Food
 hero_title: Our Food
 hero_subtitle: The average adult daily energy intake is 8700kj
