@@ -1,8 +1,6 @@
 ---
 layout: ../layouts/LocationsLayout.astro
 title: Our Locations
-
-#Hero block
 hero_title: Find your nearest LeWrap
 hero_subtitle:
 hero_bg_type: image
@@ -26,13 +24,13 @@ marquee_items:
   - Kids Meals
   - Sides
   - Drinks
-
-# Franchise Callout (grouped!)
 franchise_callout:
-  show: true
-  heading: "Want to be the next LeWrap store owner?"
-  text: "<p>Join the LeWrap family and bring fresh, delicious wraps to your community!</p>"
-  image: "/images/elements/store-sign.webp"
-  button_text: "Be Your Own Boss"
-  button_link: "/own-a-store"
+  show: false
+  heading: Want to be the next LeWrap store owner?
+  text: >-
+    <p>Join the LeWrap family and bring fresh, delicious wraps to your
+    community!</p>
+  image: /images/elements/store-sign.webp
+  button_text: Be Your Own Boss
+  button_link: /own-a-store
 ---
