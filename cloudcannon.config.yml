@@ -302,8 +302,17 @@ _inputs:
         type: text
         label: Heading
       text:
-        type: textarea
-        label: Text
+        type: html
+        options:
+          allow_resize: true
+          allow_custom_markup: false
+          remove_custom_markup: false
+          initial_height: 320
+          bold: true
+          format: p h2 h3 h4
+          image_size_attributes: true
+          italic: true
+        label: Content (WYSIWYG)
       image:
         type: image
         label: Image
