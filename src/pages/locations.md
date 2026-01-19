@@ -29,8 +29,8 @@ franchise_callout:
   heading: Want to be the next LeWrap store owner? [PS I took out live editing]
   text: >-
     <p>We can now enter text the <strong>WYSIWYG way</strong> so it makes more
-    sense for Monica :)</p><p>Testing another para to make sure it renders
-    right. Eshay bra.</p>
+    sense for Monica when editing content :)</p><p>Testing another para to make
+    sure it renders right. Eshay bra.</p>
   image: /images/elements/store-sign.webp
   button_text: Jesus YAML is a pita
   button_link: /own-a-store
