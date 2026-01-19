@@ -1,5 +1,5 @@
 ---
-# THIS WILL NEED ITS OWN LAYOUT PAGE
+# THIS WILL NEED ITS OWN LAYOUT PAGE!!! BECAUSE OF DIFFERENT PANELS NEEDED FOR FOOD CATEGORIES
 layout: ../layouts/InternalPageLayout.astro
 title: Our Food
 hero_title: Our Food
