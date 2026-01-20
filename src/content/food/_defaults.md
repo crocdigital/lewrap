@@ -1,7 +1,7 @@
 ---
 name: ""
 price: "$0.00"
-description: "<p>Describe this delicious item...</p>"
+description: ""
 kj: 0
 image: ""
 orderLink: ""

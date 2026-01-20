@@ -50,7 +50,6 @@
       "required": [
         "name",
         "price",
-        "description",
         "kj",
         "image",
         "category"

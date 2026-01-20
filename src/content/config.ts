@@ -32,7 +32,7 @@ const foodCollection = defineCollection({
     schema: z.object({
         name: z.string(),
         price: z.string(),
-        description: z.string(),
+        description: z.string().optional(),
         kj: z.number(),
         image: z.string(),
         orderLink: z.string().optional(),
