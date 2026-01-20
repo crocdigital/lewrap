@@ -53,6 +53,15 @@ collections_config:
     schemas:
       default:
         path: src/content/locations/_defaults.md
+    _inputs:
+      name:
+        type: text
+        label: Store Name
+        comment: "e.g., LeWrap Parramatta"
+      image:
+        type: image
+        label: Store Image
+        comment: "Upload a photo of the store. 1000px x 1000px"
   
   food:
     path: src/content/food
@@ -70,25 +79,23 @@ collections_config:
     schemas:
       default:
         path: src/content/food/_defaults.md
-        name: Food Item
+    _inputs:
+      name:
+        type: text
+        label: Food Item Name
+        comment: "e.g., Chicken Caesar Wrap"
+      image:
+        type: image
+        label: Item Image
+        comment: "Upload a photo of the item. 400px x 400px (square)"
+        options:
+          paths:
+            uploads: public/images/food
 
 # ========================================
 # INPUT DEFINITIONS
 # ========================================
 _inputs:
-  
-  # ------------------------------------
-  # SHARED INPUTS (used by multiple collections)
-  # ------------------------------------
-  name:
-    type: text
-    label: Name
-    comment: "Name of the item (store or food)"
-  
-  image:
-    type: image
-    label: Image
-    comment: "Upload an image"
   
   # ------------------------------------
   # LOCATION-SPECIFIC INPUTS
