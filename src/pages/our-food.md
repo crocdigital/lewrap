@@ -10,6 +10,13 @@ hero_bg_image_mobile: /images/hero/ourfood-mobile.webp
 hero_button_text: ''
 hero_button_link: ''
 hero_button_variant: primary
+
+latest_deals:
+  - image: /images/deals/summer-special.webp
+    alt: "Summer Special - 2 for 1 wraps"
+  - image: /images/deals/family-pack.webp
+    alt: "Family Pack Deal"
+
 category_descriptions:
   wraps:
     description:
@@ -29,7 +36,7 @@ category_descriptions:
     description: ''
     subtitle: Add extra beef, kofta, chicken or schnitzel for only $5.
   kids_meals:
-    description: 'Something for the little wrappers.'
+    description: 'Something for the little LeWrappers.'
     subtitle: ''
   sides:
     description: ''

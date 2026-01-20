@@ -239,6 +239,34 @@ _inputs:
     type: switch
     label: Available
     comment: "Toggle off to mark as sold out"
+
+  # ------------------------------------
+  # LATEST DEALS
+  # ------------------------------------
+  latest_deals:
+    type: array
+    label: Latest Deals
+    comment: "Add promotional deal images (max 4 recommended)"
+    cascade: true
+    options:
+      structures:
+        values:
+          - label: Deal Image
+            value:
+              image: ""
+              alt: ""
+            _inputs:
+              image:
+                type: image
+                label: Deal Image
+                comment: "Upload deal graphic. Recommended size: 1200px x 800px"
+                options:
+                  paths:
+                    uploads: public/images/deals
+              alt:
+                type: text
+                label: Alt Text
+                comment: "Describe the deal for accessibility"
   
   # ------------------------------------
   # CATEGORY DESCRIPTIONS
