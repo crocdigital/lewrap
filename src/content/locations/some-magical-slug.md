@@ -7,7 +7,7 @@ state: NSW
 postcode: '2040'
 latitude: 0
 longitude: 0
-phone: ''
+phone: 0401 010 382
 email: ''
 hours:
   monday: 9:00am - 5:00pm
