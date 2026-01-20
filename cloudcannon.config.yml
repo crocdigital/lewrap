@@ -58,6 +58,8 @@ collections_config:
     path: src/content/food
     icon: restaurant_menu
     url: /food/[slug]/
+    title_key: name
+    path: '{name|slugify}.md'
     _enabled_editors:
       - content
       - data
@@ -70,9 +72,6 @@ collections_config:
     schemas:
       default:
         path: src/content/food/_defaults.md
-      path_options:
-      - name: name
-        path: '{name|slugify}.md'
 
 # ========================================
 # INPUT DEFINITIONS
