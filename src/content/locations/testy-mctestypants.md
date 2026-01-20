@@ -7,8 +7,8 @@ state: NSW
 postcode: '2040'
 latitude: 0
 longitude: 0
-phone: ''
-email: ''
+phone: 0401 010 382
+email: hello@crocdigital.com.au
 hours:
   monday: 9:00am - 5:00pm
   tuesday: 9:00am - 5:00pm
