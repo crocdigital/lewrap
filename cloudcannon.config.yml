@@ -58,20 +58,20 @@ collections_config:
     path: src/content/food
     icon: restaurant_menu
     url: /food/[slug]/
-    title_key: name
-    path: '{name|slugify}.md'
     _enabled_editors:
       - content
       - data
     disable_add: false
-    disable_add_folder: false
-    disable_file_actions: false
-    add_options:
-      - name: Add Food Item
-        icon: add_circle
     schemas:
       default:
         path: src/content/food/_defaults.md
+        create:
+          path: '[relative_base_path]/{title|slugify}.md'
+        extra_data:
+          name: '{title}'
+    add_options:
+      - name: Add Food Item
+        icon: add_circle
 
 # ========================================
 # INPUT DEFINITIONS
