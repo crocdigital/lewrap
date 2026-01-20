@@ -62,6 +62,11 @@ collections_config:
       - content
       - data
     disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    add_options:
+      - name: Add Food Item
+        icon: add_circle
     schemas:
       default:
         path: src/content/food/_defaults.md
@@ -69,9 +74,6 @@ collections_config:
           path: '[relative_base_path]/{title|slugify}.md'
         extra_data:
           name: '{title}'
-    add_options:
-      - name: Add Food Item
-        icon: add_circle
 
 # ========================================
 # INPUT DEFINITIONS
