@@ -10,13 +10,10 @@ hero_bg_image_mobile: /images/hero/ourfood-mobile.webp
 hero_button_text: ''
 hero_button_link: ''
 hero_button_variant: primary
-
 category_descriptions:
   wraps:
-    description: >-
-      Choice of meat, grilled mushroom, onion & capsicum, white or brown rice &
-      salad.
-    subtitle: Chicken, beef, schnitzel, lamb kofta
+    description:
+    subtitle:
   plates:
     description: >-
       Choice of meat, grilled mushroom, onion & capsicum, white or brown rice &
@@ -40,24 +37,23 @@ category_descriptions:
   drinks:
     description: ''
     subtitle: ''
-
 wraps_subcategories:
   chicken:
-    description: "Tender grilled chicken with fresh ingredients"
-    subtitle: "Available in original or spicy"
+    description: Served with 100% Chicken breast.
+    subtitle: Add regular size chips and 390ml drink for $7.00 extra
   beef:
-    description: "Premium beef with our signature marinade"
-    subtitle: "Cooked to perfection"
+    description: Served with Strip Loin steak.
+    subtitle:
   schnitzel:
-    description: "Crispy schnitzel wrapped to perfection"
-    subtitle: "Chicken or veal options"
+    description: Served with 100% Chicken breast Schnitzel.
+    subtitle:
   lamb:
-    description: "Succulent lamb kofta with Mediterranean flavors"
-    subtitle: ""
+    description: Served with 100% Aussie Lamb.
+    subtitle: ''
   vegetarian:
-    description: "Fresh vegetables and delicious plant-based proteins"
-    subtitle: "Vegan options available"
+    description:
+    subtitle:
   kofta:
-    description: "Served with authentic Lamb Kofta."
-    subtitle: "IT'S NOT BARRAMUNDI OR SALMON BRA!"
+    description: Served with authentic Lamb Kofta.
+    subtitle:
 ---
