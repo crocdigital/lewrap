@@ -1,5 +1,56 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+// Page Builder components
+import Hero from "../components/Hero.astro";
+import FoodCard from "../components/FoodCard.astro";
+import Button from "../components/atoms/Button.astro";
+
+// Get all food items
+const allFood = (await getCollection("food")) as CollectionEntry<"food">[];
+
+// Filter by category
+const wraps = allFood.filter(
+    (item) => item.data.category === "Wraps" && item.data.available,
+);
+const plates = allFood.filter(
+    (item) => item.data.category === "Plates" && item.data.available,
+);
+const baguettes = allFood.filter(
+    (item) => item.data.category === "Baguettes" && item.data.available,
+);
+const proteinPacks = allFood.filter(
+    (item) => item.data.category === "Protein Packs" && item.data.available,
+);
+const salads = allFood.filter(
+    (item) => item.data.category === "Salads" && item.data.available,
+);
+const kidsMeals = allFood.filter(
+    (item) => item.data.category === "Kids Meals" && item.data.available,
+);
+const drinks = allFood.filter(
+    (item) => item.data.category === "Drinks" && item.data.available,
+);
+
+const { frontmatter } = Astro.props;
+const {
+    title,
+    hero_title,
+    hero_subtitle,
+    hero_bg_type,
+    hero_bg_colour,
+    hero_bg_image,
+    hero_bg_image_mobile,
+    hero_button_text,
+    hero_button_link,
+    hero_button_variant,
+} = frontmatter || {};
+---
+
+<!-- ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Page Builder components
 import Hero from "../components/Hero.astro";
@@ -200,5 +251,311 @@ const {
                 />
             </div>
         </section>
+    </main>
+</BaseLayout> -->
+<BaseLayout title={title}>
+    <main
+        class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10 relative"
+    >
+        {
+            hero_title && (
+                <Hero
+                    title={hero_title}
+                    show_food_cat_links={true}
+                    subtitle={hero_subtitle}
+                    hero_bg_type={hero_bg_type}
+                    hero_bg_colour={hero_bg_colour}
+                    hero_bg_image={hero_bg_image}
+                    hero_bg_image_mobile={hero_bg_image_mobile}
+                    hero_button_text={hero_button_text}
+                    hero_button_link={hero_button_link}
+                    hero_button_variant={hero_button_variant}
+                />
+            )
+        }
+
+        {/* Food Category Blocks */}
+        {/* Latest Deals */}
+        <section
+            id="latest-deals"
+            class="scroll-mt-10 md:scroll-mt-16 w-[95%] md:max-w-screen-2xl mx-auto p-7 md:p-21 items-center rounded-xl bg-lewrap-green bg-[radial-gradient(ellipse_50.00%_50.00%_at_50.00%_50.00%,_white_0%,_rgba(255,_255,_255,_0)_100%)]"
+        >
+            <div class="relative">
+                <div class="flex flex-col gap-y-8 py-13">
+                    <h2
+                        class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight"
+                    >
+                        Latest Deals
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {/* Placement image for testing purposes */}
+                        <img
+                            src="/images/PLACEMENT-deal01-1200x800.webp"
+                            alt="More about LeWrap locations"
+                            class="w-full h-auto rounded-2xl"
+                        />
+
+                        {/* Placement image for testing purposes */}
+                        <img
+                            src="/images/PLACEMENT-deal01-1200x800.webp"
+                            alt="More about LeWrap locations"
+                            class="w-full h-auto rounded-2xl"
+                        />
+                    </div>
+                </div>
+
+                {/* Order Now button */}
+                <Button href="#" variant="secondary" class="flex mx-auto mb-8">
+                    Order Now
+                </Button>
+
+                {/* Arrow */}
+                <img
+                    src="/images/elements/arrow-darkgreen-regular.svg"
+                    alt="More about LeWrap locations"
+                    class="w-8 h-auto absolute left-1/2 -translate-x-1/2 z-2 md:-bottom-44"
+                />
+            </div>
+        </section>
+
+        {/* Wraps */}
+        {
+            wraps.length > 0 && (
+                <section
+                    id="wraps"
+                    class="scroll-mt-16 w-[95%] md:max-w-screen-2xl mx-auto p-7 md:p-21 items-center rounded-xl"
+                    style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
+                >
+                    {/* Description for category */}
+                    <div class="flex flex-col gap-y-2">
+                        <h2 class="text-lewrap-green-dark text-3xl/11 md:text-5xl/14 font-black tracking-tight">
+                            Wraps
+                        </h2>
+
+                        <p class="text-lg/7">
+                            Choice of meat, grilled mushroom, onion & capsicum,
+                            white or brown rice & salad.
+                        </p>
+
+                        <em class="text-lg/7 font-bold font-italic">
+                            Chicken, beef, schnitzel, lamb kofta
+                        </em>
+                    </div>
+
+                    {/* Food item grid */}
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
+                        {wraps.map((item) => (
+                            <FoodCard
+                                name={item.data.name}
+                                price={item.data.price}
+                                description={item.data.description}
+                                kj={item.data.kj}
+                                image={item.data.image}
+                                orderLink={item.data.orderLink}
+                                slug={item.slug}
+                            />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+
+        {/* Plates */}
+        {
+            plates.length > 0 && (
+                <section
+                    id="plates"
+                    class="scroll-mt-16 w-[95%] md:max-w-screen-2xl mx-auto p-7 md:p-21 items-center rounded-xl"
+                    style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
+                >
+                    {/* Description for category */}
+                    <div class="flex flex-col gap-y-2">
+                        <h2 class="text-lewrap-green-dark text-3xl/11 md:text-5xl/14 font-black tracking-tight">
+                            Plates
+                        </h2>
+
+                        <p class="text-lg/7">
+                            Choice of meat, grilled mushroom, onion & capsicum,
+                            white or brown rice & salad.
+                        </p>
+
+                        <em class="text-lg/7 font-bold font-italic">
+                            Chicken, beef, schnitzel, lamb kofta
+                        </em>
+                    </div>
+
+                    {/* Food item grid */}
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
+                        {plates.map((item) => (
+                            <FoodCard
+                                name={item.data.name}
+                                price={item.data.price}
+                                description={item.data.description}
+                                kj={item.data.kj}
+                                image={item.data.image}
+                                orderLink={item.data.orderLink}
+                                slug={item.slug}
+                            />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+
+        {/* Baguettes */}
+        {
+            baguettes.length > 0 && (
+                <section
+                    id="baguettes"
+                    class="scroll-mt-16 w-[95%] md:max-w-screen-2xl mx-auto p-7 md:p-21 items-center rounded-xl"
+                    style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
+                >
+                    <div class="flex flex-col gap-y-2">
+                        <h2 class="text-lewrap-green-dark text-3xl/11 md:text-5xl/14 font-black tracking-tight">
+                            Baguettes
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
+                        {baguettes.map((item) => (
+                            <FoodCard
+                                name={item.data.name}
+                                price={item.data.price}
+                                description={item.data.description}
+                                kj={item.data.kj}
+                                image={item.data.image}
+                                orderLink={item.data.orderLink}
+                                slug={item.slug}
+                            />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+
+        {/* Protein Packs */}
+        {
+            proteinPacks.length > 0 && (
+                <section
+                    id="protein-packs"
+                    class="scroll-mt-16 w-[95%] md:max-w-screen-2xl mx-auto p-7 md:p-21 items-center rounded-xl"
+                    style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
+                >
+                    <div class="flex flex-col gap-y-2">
+                        <h2 class="text-lewrap-green-dark text-3xl/11 md:text-5xl/14 font-black tracking-tight">
+                            Protein Packs
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
+                        {proteinPacks.map((item) => (
+                            <FoodCard
+                                name={item.data.name}
+                                price={item.data.price}
+                                description={item.data.description}
+                                kj={item.data.kj}
+                                image={item.data.image}
+                                orderLink={item.data.orderLink}
+                                slug={item.slug}
+                            />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+
+        {/* Salads */}
+        {
+            salads.length > 0 && (
+                <section
+                    id="salads"
+                    class="scroll-mt-16 w-[95%] md:max-w-screen-2xl mx-auto p-7 md:p-21 items-center rounded-xl"
+                    style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
+                >
+                    <div class="flex flex-col gap-y-2">
+                        <h2 class="text-lewrap-green-dark text-3xl/11 md:text-5xl/14 font-black tracking-tight">
+                            Salads
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
+                        {salads.map((item) => (
+                            <FoodCard
+                                name={item.data.name}
+                                price={item.data.price}
+                                description={item.data.description}
+                                kj={item.data.kj}
+                                image={item.data.image}
+                                orderLink={item.data.orderLink}
+                                slug={item.slug}
+                            />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+
+        {/* Kids Meals */}
+        {
+            kidsMeals.length > 0 && (
+                <section
+                    id="kids-meals"
+                    class="scroll-mt-16 w-[95%] md:max-w-screen-2xl mx-auto p-7 md:p-21 items-center rounded-xl"
+                    style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
+                >
+                    <div class="flex flex-col gap-y-2">
+                        <h2 class="text-lewrap-green-dark text-3xl/11 md:text-5xl/14 font-black tracking-tight">
+                            Kids Meals
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
+                        {kidsMeals.map((item) => (
+                            <FoodCard
+                                name={item.data.name}
+                                price={item.data.price}
+                                description={item.data.description}
+                                kj={item.data.kj}
+                                image={item.data.image}
+                                orderLink={item.data.orderLink}
+                                slug={item.slug}
+                            />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+
+        {/* Drinks */}
+        {
+            drinks.length > 0 && (
+                <section
+                    id="drinks"
+                    class="scroll-mt-16 w-[95%] md:max-w-screen-2xl mx-auto p-7 md:p-21 items-center rounded-xl"
+                    style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
+                >
+                    <div class="flex flex-col gap-y-2">
+                        <h2 class="text-lewrap-green-dark text-3xl/11 md:text-5xl/14 font-black tracking-tight">
+                            Drinks
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
+                        {drinks.map((item) => (
+                            <FoodCard
+                                name={item.data.name}
+                                price={item.data.price}
+                                description={item.data.description}
+                                kj={item.data.kj}
+                                image={item.data.image}
+                                orderLink={item.data.orderLink}
+                                slug={item.slug}
+                            />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
     </main>
 </BaseLayout>
