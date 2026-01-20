@@ -72,8 +72,8 @@ collections_config:
         path: src/content/food/_defaults.md
         create:
           path: '[relative_base_path]/{title|slugify}.md'
-        extra_data:
-          name: '{title}'
+          extra_data:
+            name: '{title}'
 
 # ========================================
 # INPUT DEFINITIONS
