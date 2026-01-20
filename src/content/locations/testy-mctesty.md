@@ -1,6 +1,6 @@
 ---
 _schema: default
-name: TESTY MCTESTYPANTS
+name: TESTY MCTESTY
 address: 65 Church St
 suburb: Lilyfield
 state: NSW
