@@ -21,21 +21,21 @@ category_descriptions:
     description: "Choice of meat, grilled mushroom, onion & capsicum, white or brown rice & salad."
     subtitle: "Chicken, beef, schnitzel, lamb kofta"
   baguettes:
-    description: "Freshly baked baguettes with your choice of fillings."
+    description: ""
     subtitle: ""
   protein_packs:
-    description: "High-protein meals for those on the go."
+    description: "Served with brown or white rice, caramelised onion & side sauce."
     subtitle: ""
   salads:
-    description: "Fresh, crisp salads with premium ingredients."
-    subtitle: ""
+    description: ""
+    subtitle: "Add extra beef, kofta, chicken or schnitzel for only $5."
   kids_meals:
-    description: "Kid-friendly meals that are both nutritious and delicious."
+    description: ""
     subtitle: ""
   sides:
-    description: "Crispy chips, onion rings, and more to complete your meal."
+    description: ""
     subtitle: ""
   drinks:
-    description: "Refreshing beverages to complement your meal."
+    description: ""
     subtitle: ""
 ---
