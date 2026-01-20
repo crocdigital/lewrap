@@ -64,19 +64,13 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+    add_options:
+      - name: Add Food Item
+        icon: add_circle
     schemas:
       default:
         path: src/content/food/_defaults.md
-        revert_path: src/content/food/_defaults.md
-        create:
-          path: '{title|slugify}.md'
-          extra_data:
-            name: '{title}'
-        _inputs:
-          title:
-            type: text
-            label: Food Item Name
-            comment: Enter the name of the food item
+        name: Food Item
 
 # ========================================
 # INPUT DEFINITIONS
