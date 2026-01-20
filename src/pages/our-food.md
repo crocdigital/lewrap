@@ -10,6 +10,7 @@ hero_bg_image_mobile: /images/hero/ourfood-mobile.webp
 hero_button_text: ''
 hero_button_link: ''
 hero_button_variant: primary
+
 category_descriptions:
   wraps:
     description: >-
@@ -39,4 +40,24 @@ category_descriptions:
   drinks:
     description: ''
     subtitle: ''
+
+wraps_subcategories:
+  chicken:
+    description: "Tender grilled chicken with fresh ingredients"
+    subtitle: "Available in original or spicy"
+  beef:
+    description: "Premium beef with our signature marinade"
+    subtitle: "Cooked to perfection"
+  schnitzel:
+    description: "Crispy schnitzel wrapped to perfection"
+    subtitle: "Chicken or veal options"
+  lamb:
+    description: "Succulent lamb kofta with Mediterranean flavors"
+    subtitle: ""
+  vegetarian:
+    description: "Fresh vegetables and delicious plant-based proteins"
+    subtitle: "Vegan options available"
+  kofta:
+    description: "Served with authentic Lamb Kofta."
+    subtitle: "IT'S NOT BARRAMUNDI OR SALMON BRA!"
 ---

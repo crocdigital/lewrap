@@ -204,7 +204,7 @@ _inputs:
         - Schnitzel Wraps
         - Lamb Wraps
         - Vegetarian Wraps
-        - Fish Wraps
+        - Kofta Wraps
       allow_create: true
   
   price:
@@ -383,14 +383,14 @@ _inputs:
     label: Vegetarian Wraps - Subtitle
     cascade: true
   
-  "wraps_subcategories.fish.description":
+  "wraps_subcategories.kofta.description":
     type: textarea
-    label: Fish Wraps - Description
+    label: Kofta Wraps - Description
     cascade: true
   
-  "wraps_subcategories.fish.subtitle":
+  "wraps_subcategories.kofta.subtitle":
     type: text
-    label: Fish Wraps - Subtitle
+    label: Kofta Wraps - Subtitle
     cascade: true
   
   wraps_subcategories:

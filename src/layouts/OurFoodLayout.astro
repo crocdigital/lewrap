@@ -341,21 +341,21 @@ const {
                         </div>
                     )}
 
-                    {/* Fish Wraps */}
-                    {wraps.filter((w) => w.data.subcategory === "Fish Wraps")
+                    {/* Kofta Wraps */}
+                    {wraps.filter((w) => w.data.subcategory === "Kofta Wraps")
                         .length > 0 && (
                         <div class="mb-12">
                             <h3 class="text-2xl font-bold text-lewrap-green-dark mb-2">
-                                Fish Wraps
+                                Kofta Wraps
                             </h3>
-                            {wraps_subcategories?.fish?.description && (
+                            {wraps_subcategories?.kofta?.description && (
                                 <p class="text-base mb-1">
-                                    {wraps_subcategories.fish.description}
+                                    {wraps_subcategories.kofta.description}
                                 </p>
                             )}
-                            {wraps_subcategories?.fish?.subtitle && (
+                            {wraps_subcategories?.kofta?.subtitle && (
                                 <em class="text-base font-italic mb-4 block">
-                                    {wraps_subcategories.fish.subtitle}
+                                    {wraps_subcategories.kofta.subtitle}
                                 </em>
                             )}
 
@@ -363,7 +363,8 @@ const {
                                 {wraps
                                     .filter(
                                         (w) =>
-                                            w.data.subcategory === "Fish Wraps",
+                                            w.data.subcategory ===
+                                            "Kofta Wraps",
                                     )
                                     .map((item) => (
                                         <FoodCard
