@@ -3,6 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Page Builder components
 import Hero from "../components/Hero.astro";
+import FoodCard from "../components/FoodCard.astro";
+import Button from "../components/atoms/Button.astro";
 
 const { frontmatter } = Astro.props;
 const {
@@ -40,12 +42,163 @@ const {
             )
         }
 
-        {/* ALL FOOD CATEGORY BLOCKS GOING IN HERE */}
+        {/* Food Category Blocks */}
+        {/* Latest Deals */}
         <section
             id="latest-deals"
-            class="scroll-mt-10 md:scroll-mt-16 flex items-center justify-center w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl bg-lewrap-green bg-[radial-gradient(ellipse_50.00%_50.00%_at_50.00%_50.00%,_white_0%,_rgba(255,_255,_255,_0)_100%)]"
+            class="scroll-mt-10 md:scroll-mt-16 w-[95%] md:max-w-screen-2xl mx-auto p-7 md:p-21 items-center rounded-xl bg-lewrap-green bg-[radial-gradient(ellipse_50.00%_50.00%_at_50.00%_50.00%,_white_0%,_rgba(255,_255,_255,_0)_100%)]"
         >
-            <h2>I SHOULD ONLY SHOW ON THE OUR FOOD PAGE BRA :)</h2>
+            <div class="relative">
+                <div class="flex flex-col gap-y-8 py-13">
+                    <h2
+                        class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight"
+                    >
+                        Latest Deals
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {/* Placement image for testing purposes */}
+                        <img
+                            src="/images/PLACEMENT-deal01-1200x800.webp"
+                            alt="More about LeWrap locations"
+                            class="w-full h-auto rounded-2xl"
+                        />
+
+                        {/* Placement image for testing purposes */}
+                        <img
+                            src="/images/PLACEMENT-deal01-1200x800.webp"
+                            alt="More about LeWrap locations"
+                            class="w-full h-auto rounded-2xl"
+                        />
+                    </div>
+                </div>
+
+                {/* Order Now button */}
+                <Button href="#" variant="secondary" class="flex mx-auto mb-8">
+                    Order Now
+                </Button>
+
+                {/* Arrow */}
+                <img
+                    src="/images/elements/arrow-darkgreen-regular.svg"
+                    alt="More about LeWrap locations"
+                    class="w-8 h-auto absolute left-1/2 -translate-x-1/2 z-2 md:-bottom-44"
+                />
+            </div>
+        </section>
+
+        {/* Wraps */}
+        <section
+            id="wraps"
+            class="scroll-mt-16 w-[95%] md:max-w-screen-2xl mx-auto p-7 md:p-21 items-center rounded-xl"
+            style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
+        >
+            {/* Description for category */}
+            <div class="flex flex-col gap-y-2">
+                <h2
+                    class="text-lewrap-green-dark text-3xl/11 md:text-5xl/14 font-black tracking-tight"
+                >
+                    Wraps
+                </h2>
+
+                <p class="text-lg/7">
+                    Choice of meat, grilled mushroom, onion & capsicum, white or
+                    brown rice & salad.
+                </p>
+
+                <em class="text-lg/7 font-bold font-italic">
+                    Chicken, beef, schnitzel, lamb kofta
+                </em>
+            </div>
+
+            {/* Food item grid */}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
+                <FoodCard
+                    name="Chicken Caesar Wrap"
+                    price="$14.90"
+                    description="<p>A shorter description for the food item.</p>"
+                    kj={2100}
+                    image="/images/food/PLACEMENT-chicken-caesar.webp"
+                />
+                <FoodCard
+                    name="Chicken Caesar Wrap"
+                    price="$14.90"
+                    description="<p>Grilled chicken, crisp lettuce, parmesan, and our signature Caesar dressing.</p>"
+                    kj={2100}
+                    image="/images/food/PLACEMENT-chicken-caesar.webp"
+                />
+                <FoodCard
+                    name="Chicken Caesar Wrap"
+                    price="$14.90"
+                    description="<p>Grilled chicken, crisp lettuce, parmesan, and our signature Caesar dressing.</p>"
+                    kj={2100}
+                    image="/images/food/PLACEMENT-chicken-caesar.webp"
+                />
+                <FoodCard
+                    name="Chicken Caesar Wrap"
+                    price="$14.90"
+                    description="<p>Grilled chicken, crisp lettuce, parmesan, and our signature Caesar dressing.</p>"
+                    kj={2100}
+                    image="/images/food/PLACEMENT-chicken-caesar.webp"
+                />
+            </div>
+        </section>
+
+        {/* Plates */}
+        <section
+            id="plates"
+            class="scroll-mt-16 w-[95%] md:max-w-screen-2xl mx-auto p-7 md:p-21 items-center rounded-xl"
+            style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
+        >
+            {/* Description for category */}
+            <div class="flex flex-col gap-y-2">
+                <h2
+                    class="text-lewrap-green-dark text-3xl/11 md:text-5xl/14 font-black tracking-tight"
+                >
+                    Plates
+                </h2>
+
+                <p class="text-lg/7">
+                    Choice of meat, grilled mushroom, onion & capsicum, white or
+                    brown rice & salad.
+                </p>
+
+                <em class="text-lg/7 font-bold font-italic">
+                    Chicken, beef, schnitzel, lamb kofta
+                </em>
+            </div>
+
+            {/* Food item grid */}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
+                <FoodCard
+                    name="Chicken Caesar Wrap"
+                    price="$14.90"
+                    description="<p>A shorter description for the food item.</p>"
+                    kj={2100}
+                    image="/images/food/PLACEMENT-chicken-caesar.webp"
+                />
+                <FoodCard
+                    name="Chicken Caesar Wrap"
+                    price="$14.90"
+                    description="<p>Grilled chicken, crisp lettuce, parmesan, and our signature Caesar dressing.</p>"
+                    kj={2100}
+                    image="/images/food/PLACEMENT-chicken-caesar.webp"
+                />
+                <FoodCard
+                    name="Chicken Caesar Wrap"
+                    price="$14.90"
+                    description="<p>Grilled chicken, crisp lettuce, parmesan, and our signature Caesar dressing.</p>"
+                    kj={2100}
+                    image="/images/food/PLACEMENT-chicken-caesar.webp"
+                />
+                <FoodCard
+                    name="Chicken Caesar Wrap"
+                    price="$14.90"
+                    description="<p>Grilled chicken, crisp lettuce, parmesan, and our signature Caesar dressing.</p>"
+                    kj={2100}
+                    image="/images/food/PLACEMENT-chicken-caesar.webp"
+                />
+            </div>
         </section>
     </main>
 </BaseLayout>

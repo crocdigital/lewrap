@@ -26,7 +26,7 @@ marquee_items:
   - Drinks
 franchise_callout:
   show: true
-  heading: Want to be the next LeWrap store owner? [PS I took out live editing]
+  heading: Want to be the next LeWrap store owner?
   text: >-
     <p>We can now enter text the <strong>WYSIWYG way</strong> so it makes more
     sense for Monica when editing content :)</p><p>Testing another para to make

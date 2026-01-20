@@ -1,0 +1,62 @@
+{
+  "$ref": "#/definitions/food",
+  "definitions": {
+    "food": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "kj": {
+          "type": "number"
+        },
+        "image": {
+          "type": "string"
+        },
+        "orderLink": {
+          "type": "string",
+          "format": "uri"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "Wraps",
+            "Plates",
+            "Baguettes",
+            "Protein Packs",
+            "Salads",
+            "Kids Meals",
+            "Drinks"
+          ]
+        },
+        "featured": {
+          "type": "boolean",
+          "default": false
+        },
+        "available": {
+          "type": "boolean",
+          "default": true
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "price",
+        "description",
+        "kj",
+        "image",
+        "category"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

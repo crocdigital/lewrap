@@ -1,3 +1,6 @@
+# ========================================
+# EDITABLE REGIONS
+# ========================================
 _editables:
   text:
     bold: true
@@ -10,10 +13,16 @@ _editables:
     format: p h2 h3 h4
     image: true
 
+# ========================================
+# FILE PATHS
+# ========================================
 paths:
   uploads: public/images/[collection]
   static: public
 
+# ========================================
+# COLLECTIONS
+# ========================================
 collections_config:
   pages:
     path: src/pages
@@ -44,42 +53,75 @@ collections_config:
     schemas:
       default:
         path: src/content/locations/_defaults.md
+  
+  food:
+    path: src/content/food
+    icon: restaurant_menu
+    url: /food/[slug]/
+    _enabled_editors:
+      - content
+      - data
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    add_options:
+      - name: Add Food Item
+        icon: add_circle
+    schemas:
+      default:
+        path: src/content/food/_defaults.md
 
+# ========================================
+# INPUT DEFINITIONS
+# ========================================
 _inputs:
+  
+  # ------------------------------------
+  # LOCATION INPUTS
+  # ------------------------------------
   name:
     type: text
     label: Store Name
     comment: "e.g., LeWrap Parramatta"
+  
   address:
     type: text
     label: Street Address
     comment: "e.g., 159 Church Street"
+  
   suburb:
     type: text
     label: Suburb
+  
   state:
     type: text
     label: State
     comment: "e.g., NSW"
+  
   postcode:
     type: text
     label: Postcode
+  
   latitude:
     type: number
     label: Latitude
     comment: "Get this from Google Maps. Right-click on location and type coordinates before the 'comma'."
+  
   longitude:
     type: number
     label: Longitude
     comment: "Get this from Google Maps. Right-click on location and type coordinates after the 'comma'."
+  
   phone:
     type: text
     label: Phone Number
     comment: "Optional. Include area code."
+  
   email:
     type: email
     label: Email Address
     comment: "Optional"
+  
   hours:
     type: object
     label: Opening Hours
@@ -106,27 +148,84 @@ _inputs:
       sunday:
         type: text
         label: Sunday
+  
   image:
     type: image
     label: Store Image
     comment: "Upload a photo of the store. 1000px x 1000px"
+  
   order_now_link:
     type: url
     label: Order Now Link
     comment: "Optional. Link to online ordering for this location"
+  
   featured:
     type: switch
     label: Featured Location
     comment: "Toggle on to highlight this location"
   
+  # ------------------------------------
+  # FOOD ITEM INPUTS
+  # ------------------------------------
+  category:
+    type: select
+    label: Category
+    options:
+      values:
+        - Wraps
+        - Plates
+        - Baguettes
+        - Protein Packs
+        - Salads
+        - Kids Meals
+        - Drinks
+  
+  price:
+    type: text
+    label: Price
+    comment: "e.g., $14.90"
+  
+  description:
+    type: html
+    options:
+      allow_resize: true
+      allow_custom_markup: false
+      remove_custom_markup: false
+      initial_height: 200
+      bold: true
+      italic: true
+      format: p
+    label: Description
+    comment: "Brief description of the food item"
+  
+  kj:
+    type: number
+    label: Kilojoules (kJ)
+    comment: "Energy content in kilojoules"
+  
+  orderLink:
+    type: url
+    label: Order Link
+    comment: "RedCat POS external link for this item"
+  
+  available:
+    type: switch
+    label: Available
+    comment: "Toggle off to mark as sold out"
+  
+  # ------------------------------------
+  # HERO BLOCK INPUTS
+  # ------------------------------------
   hero_title:
     type: text
     label: Hero Title
     cascade: true
+  
   hero_subtitle:
     type: text
     label: Hero Subtitle
     cascade: true
+  
   hero_bg_type:
     type: select
     label: Hero Background Type
@@ -136,6 +235,7 @@ _inputs:
         - color
         - image
     cascade: true
+  
   hero_bg_colour:
     type: color
     label: Hero Background Colour
@@ -144,6 +244,7 @@ _inputs:
       format: hex
       alpha: false
     cascade: true
+  
   hero_bg_image:
     type: image
     label: Hero Background Image (Desktop)
@@ -152,6 +253,7 @@ _inputs:
     options:
       paths:
         uploads: public/images/hero
+  
   hero_bg_image_mobile:
     type: image
     label: Hero Background Image (Mobile)
@@ -160,16 +262,19 @@ _inputs:
     options:
       paths:
         uploads: public/images/hero
+  
   hero_button_text:
     type: text
     label: Hero Button Text
     comment: "Leave empty if you don't want to add a button"
     cascade: true
+  
   hero_button_link:
     type: text
     label: Hero Button Link
     comment: "Enter the URL or page path (e.g., /our-food)"
     cascade: true
+  
   hero_button_variant:
     type: select
     label: Hero Button Style
@@ -178,6 +283,10 @@ _inputs:
         - primary
         - secondary
     cascade: true
+  
+  # ------------------------------------
+  # PAGE BLOCK INPUTS
+  # ------------------------------------
   background_type:
     type: select
     label: Background Type
@@ -188,6 +297,7 @@ _inputs:
         - color
         - image
     cascade: true
+  
   background_colour:
     type: color
     label: Background Colour
@@ -196,21 +306,25 @@ _inputs:
       format: hex
       alpha: false
     cascade: true
+  
   background_image:
     type: image
     label: Background Image
     comment: "Only applies if Background Type is set to 'image'. Image will be tiled across the section."
     cascade: true
+  
   button_text:
     type: text
     label: Button Text
     comment: "Leave empty if you don't want to add a button"
     cascade: true
+  
   button_link:
     type: text
     label: Button Link
     comment: "Enter the URL or page path (e.g., /our-food)"
     cascade: true
+  
   button_variant:
     type: select
     label: Button Style
@@ -219,6 +333,7 @@ _inputs:
         - primary
         - secondary
     cascade: true
+  
   page_blocks:
     type: array
     options:
@@ -294,7 +409,9 @@ _inputs:
     label: Page Blocks
     cascade: true
   
-  # Franchise Callout - Define nested inputs at root level with dot notation
+  # ------------------------------------
+  # FRANCHISE CALLOUT INPUTS
+  # ------------------------------------
   "franchise_callout.show":
     type: switch
     label: Show Franchise Callout
@@ -323,6 +440,9 @@ _inputs:
     type: image
     label: Franchise Image
     cascade: true
+    options:
+      paths:
+        uploads: public/images/franchise
   
   "franchise_callout.button_text":
     type: text
@@ -334,7 +454,6 @@ _inputs:
     label: Franchise Button Link
     cascade: true
   
-  # Define the object itself
   franchise_callout:
     type: object
     label: Franchise Callout

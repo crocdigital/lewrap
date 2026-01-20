@@ -1,0 +1,77 @@
+---
+import Button from "../components/atoms/Button.astro";
+
+interface Props {
+    name: string;
+    price: string;
+    description: string;
+    kj: number;
+    image: string;
+    orderLink?: string;
+    slug?: string;
+}
+
+const { name, price, description, kj, image, orderLink, slug } = Astro.props;
+---
+
+<div
+    class="bg-white border border-[#CBCBCB] grid grid-cols-[1fr_100px] md:grid-cols-[1fr_180px] rounded-xl overflow-hidden"
+>
+    <div class="p-3 px-6 flex flex-col gap-2">
+        <div class="flex flex-col">
+            <h3
+                class="text-lg font-medium"
+                data-cms-bind={slug ? `#${slug}.name` : undefined}
+            >
+                {name}
+            </h3>
+            <span
+                class="text-base whitespace-nowrap"
+                data-cms-bind={slug ? `#${slug}.price` : undefined}
+            >
+                {price}
+            </span>
+        </div>
+
+        <div
+            class="prose text-gray-500 leading-tight [&_p]:mb-2 [&_p:last-child]:mb-0"
+            data-cms-bind={slug ? `#${slug}.description` : undefined}
+            set:html={description}
+        />
+
+        <div class="text-sm text-gray-400">
+            <span data-cms-bind={slug ? `#${slug}.kj` : undefined}>{kj}</span>kj
+        </div>
+    </div>
+
+    <div class="relative">
+        <img
+            src={image}
+            alt={name}
+            class="w-full md:h-full object-cover rounded-bl-xl md:rounded-none"
+            data-cms-bind={slug ? `#${slug}.image` : undefined}
+        />
+
+        <!-- THIS IS THE STATIC CODE BLOCK (WITHOUT ANY CC DATA BINDING)
+        <Button
+            href="#"
+            variant="secondary"
+            class="p-2 px-4 text-sm border-2 absolute bottom-3 right-3"
+        >
+            Order
+        </Button> -->
+        {
+            orderLink && (
+                <Button
+                    href={orderLink}
+                    variant="secondary"
+                    class="p-2 px-4 text-sm border-2 absolute bottom-3 right-3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Order
+                </Button>
+            )
+        }
+    </div>
+</div>
