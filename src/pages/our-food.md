@@ -1,5 +1,4 @@
 ---
-# THIS WILL NEED ITS OWN LAYOUT PAGE!!! BECAUSE OF DIFFERENT PANELS NEEDED FOR FOOD CATEGORIES
 layout: ../layouts/OurFoodLayout.astro
 title: Our Food
 hero_title: Our Food
@@ -11,31 +10,33 @@ hero_bg_image_mobile: /images/hero/ourfood-mobile.webp
 hero_button_text: ''
 hero_button_link: ''
 hero_button_variant: primary
-
-# Category Descriptions
 category_descriptions:
   wraps:
-    description: "Choice of meat, grilled mushroom, onion & capsicum, white or brown rice & salad."
-    subtitle: "Chicken, beef, schnitzel, lamb kofta"
+    description: >-
+      Choice of meat, grilled mushroom, onion & capsicum, white or brown rice &
+      salad.
+    subtitle: Chicken, beef, schnitzel, lamb kofta
   plates:
-    description: "Choice of meat, grilled mushroom, onion & capsicum, white or brown rice & salad."
-    subtitle: "Chicken, beef, schnitzel, lamb kofta"
+    description: >-
+      Choice of meat, grilled mushroom, onion & capsicum, white or brown rice &
+      salad.
+    subtitle: Chicken, beef, schnitzel, lamb kofta
   baguettes:
-    description: ""
-    subtitle: ""
+    description: ''
+    subtitle: ''
   protein_packs:
-    description: "Served with brown or white rice, caramelised onion & side sauce."
-    subtitle: ""
+    description: Served with brown or white rice, caramelised onion & side sauce.
+    subtitle: Add extra beef, kofta, chicken or schnitzel for only $5.
   salads:
-    description: ""
-    subtitle: "Add extra beef, kofta, chicken or schnitzel for only $5."
+    description: ''
+    subtitle: Add extra beef, kofta, chicken or schnitzel for only $5.
   kids_meals:
-    description: ""
-    subtitle: ""
+    description: ''
+    subtitle: ''
   sides:
-    description: ""
-    subtitle: ""
+    description: ''
+    subtitle: ''
   drinks:
-    description: ""
-    subtitle: ""
+    description: ''
+    subtitle: ''
 ---
