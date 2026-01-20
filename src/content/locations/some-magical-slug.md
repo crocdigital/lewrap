@@ -5,8 +5,8 @@ address: 65 Church St
 suburb: Lilyfield
 state: NSW
 postcode: '2040'
-latitude: 0
-longitude: 0
+latitude: -33.87091
+longitude: 151.15263
 phone: 0401 010 382
 email: ''
 hours:
