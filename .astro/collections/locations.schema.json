@@ -29,8 +29,23 @@
           "type": "string"
         },
         "email": {
-          "type": "string",
-          "format": "email"
+          "anyOf": [
+            {
+              "anyOf": [
+                {
+                  "not": {}
+                },
+                {
+                  "type": "string",
+                  "format": "email"
+                }
+              ]
+            },
+            {
+              "type": "string",
+              "const": ""
+            }
+          ]
         },
         "hours": {
           "type": "object",

@@ -43,7 +43,7 @@ const locationsCollection = defineCollection({
         latitude: z.number(),
         longitude: z.number(),
         phone: z.string().optional(),
-        email: z.string().email().optional(),
+        email: z.string().email().optional().or(z.literal('')),
         hours: z.object({
             monday: z.string(),
             tuesday: z.string(),
