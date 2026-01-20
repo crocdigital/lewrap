@@ -29,7 +29,7 @@ category_descriptions:
     description: ''
     subtitle: Add extra beef, kofta, chicken or schnitzel for only $5.
   kids_meals:
-    description: ''
+    description: 'Something for the little wrappers.'
     subtitle: ''
   sides:
     description: ''
