@@ -189,6 +189,7 @@ _inputs:
         - Protein Packs
         - Salads
         - Kids Meals
+        - Sides
         - Drinks
       allow_create: true
   
@@ -287,6 +288,16 @@ _inputs:
   "category_descriptions.kids_meals.subtitle":
     type: text
     label: Kids Meals - Subtitle
+    cascade: true
+  
+  "category_descriptions.sides.description":
+    type: textarea
+    label: Sides - Description
+    cascade: true
+  
+  "category_descriptions.sides.subtitle":
+    type: text
+    label: Sides - Subtitle
     cascade: true
   
   "category_descriptions.drinks.description":

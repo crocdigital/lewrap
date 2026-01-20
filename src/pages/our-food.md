@@ -32,6 +32,9 @@ category_descriptions:
   kids_meals:
     description: "Kid-friendly meals that are both nutritious and delicious."
     subtitle: ""
+  sides:
+    description: "Crispy chips, onion rings, and more to complete your meal."
+    subtitle: ""
   drinks:
     description: "Refreshing beverages to complement your meal."
     subtitle: ""

@@ -52,14 +52,6 @@ const { name, price, description, kj, image, orderLink, slug } = Astro.props;
             data-cms-bind={slug ? `#${slug}.image` : undefined}
         />
 
-        <!-- THIS IS THE STATIC CODE BLOCK (WITHOUT ANY CC DATA BINDING)
-        <Button
-            href="#"
-            variant="secondary"
-            class="p-2 px-4 text-sm border-2 absolute bottom-3 right-3"
-        >
-            Order
-        </Button> -->
         {
             orderLink && (
                 <Button
