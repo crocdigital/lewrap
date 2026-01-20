@@ -193,6 +193,20 @@ _inputs:
         - Drinks
       allow_create: true
   
+  subcategory:
+    type: select
+    label: Subcategory
+    comment: "Only applies to Wraps category"
+    options:
+      values:
+        - Chicken Wraps
+        - Beef Wraps
+        - Schnitzel Wraps
+        - Lamb Wraps
+        - Vegetarian Wraps
+        - Fish Wraps
+      allow_create: true
+  
   price:
     type: text
     label: Price
@@ -314,6 +328,75 @@ _inputs:
     type: object
     label: Category Descriptions
     comment: "Descriptions shown for each food category section"
+    cascade: true
+  
+  # ------------------------------------
+  # WRAPS SUBCATEGORY DESCRIPTIONS
+  # ------------------------------------
+  "wraps_subcategories.chicken.description":
+    type: textarea
+    label: Chicken Wraps - Description
+    cascade: true
+  
+  "wraps_subcategories.chicken.subtitle":
+    type: text
+    label: Chicken Wraps - Subtitle
+    cascade: true
+  
+  "wraps_subcategories.beef.description":
+    type: textarea
+    label: Beef Wraps - Description
+    cascade: true
+  
+  "wraps_subcategories.beef.subtitle":
+    type: text
+    label: Beef Wraps - Subtitle
+    cascade: true
+  
+  "wraps_subcategories.schnitzel.description":
+    type: textarea
+    label: Schnitzel Wraps - Description
+    cascade: true
+  
+  "wraps_subcategories.schnitzel.subtitle":
+    type: text
+    label: Schnitzel Wraps - Subtitle
+    cascade: true
+  
+  "wraps_subcategories.lamb.description":
+    type: textarea
+    label: Lamb Wraps - Description
+    cascade: true
+  
+  "wraps_subcategories.lamb.subtitle":
+    type: text
+    label: Lamb Wraps - Subtitle
+    cascade: true
+  
+  "wraps_subcategories.vegetarian.description":
+    type: textarea
+    label: Vegetarian Wraps - Description
+    cascade: true
+  
+  "wraps_subcategories.vegetarian.subtitle":
+    type: text
+    label: Vegetarian Wraps - Subtitle
+    cascade: true
+  
+  "wraps_subcategories.fish.description":
+    type: textarea
+    label: Fish Wraps - Description
+    cascade: true
+  
+  "wraps_subcategories.fish.subtitle":
+    type: text
+    label: Fish Wraps - Subtitle
+    cascade: true
+  
+  wraps_subcategories:
+    type: object
+    label: Wraps Subcategories
+    comment: "Descriptions for wrap subcategories"
     cascade: true
   
   # ------------------------------------

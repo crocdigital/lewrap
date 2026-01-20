@@ -35,9 +35,8 @@
             "Drinks"
           ]
         },
-        "featured": {
-          "type": "boolean",
-          "default": false
+        "subcategory": {
+          "type": "string"
         },
         "available": {
           "type": "boolean",

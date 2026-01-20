@@ -37,7 +37,7 @@ const foodCollection = defineCollection({
         image: z.string(),
         orderLink: z.string().optional(),
         category: z.enum(['Wraps', 'Plates', 'Baguettes', 'Protein Packs', 'Salads', 'Kids Meals', 'Sides', 'Drinks']),
-        featured: z.boolean().default(false),
+        subcategory: z.string().optional(),  // ← Added
         available: z.boolean().default(true),
     }),
 });

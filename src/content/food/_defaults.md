@@ -6,5 +6,6 @@ kj: 0
 image: ""
 orderLink: ""
 category: "Wraps"
+subcategory: ""
 available: true
 ---

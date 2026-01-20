@@ -50,6 +50,7 @@ const {
     hero_button_link,
     hero_button_variant,
     category_descriptions = {},
+    wraps_subcategories = {},
 } = frontmatter || {};
 ---
 
@@ -113,7 +114,7 @@ const {
             </div>
         </section>
 
-        {/* Wraps */}
+        {/* Wraps - WITH SUBCATEGORIES */}
         {
             wraps.length > 0 && (
                 <section
@@ -121,7 +122,8 @@ const {
                     class="scroll-mt-16 w-[95%] md:max-w-screen-2xl mx-auto p-7 md:p-21 items-center rounded-xl"
                     style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
                 >
-                    <div class="flex flex-col gap-y-2">
+                    {/* Main Wraps Category Header */}
+                    <div class="flex flex-col gap-y-2 mb-8">
                         <h2 class="text-lewrap-green-dark text-3xl/11 md:text-5xl/14 font-black tracking-tight">
                             Wraps
                         </h2>
@@ -139,19 +141,244 @@ const {
                         )}
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
-                        {wraps.map((item) => (
-                            <FoodCard
-                                name={item.data.name}
-                                price={item.data.price}
-                                description={item.data.description}
-                                kj={item.data.kj}
-                                image={item.data.image}
-                                orderLink={item.data.orderLink}
-                                slug={item.slug}
-                            />
-                        ))}
-                    </div>
+                    {/* Chicken Wraps */}
+                    {wraps.filter((w) => w.data.subcategory === "Chicken Wraps")
+                        .length > 0 && (
+                        <div class="mb-12">
+                            <h3 class="text-2xl font-bold text-lewrap-green-dark mb-2">
+                                Chicken Wraps
+                            </h3>
+                            {wraps_subcategories?.chicken?.description && (
+                                <p class="text-base mb-1">
+                                    {wraps_subcategories.chicken.description}
+                                </p>
+                            )}
+                            {wraps_subcategories?.chicken?.subtitle && (
+                                <em class="text-base font-italic mb-4 block">
+                                    {wraps_subcategories.chicken.subtitle}
+                                </em>
+                            )}
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                {wraps
+                                    .filter(
+                                        (w) =>
+                                            w.data.subcategory ===
+                                            "Chicken Wraps",
+                                    )
+                                    .map((item) => (
+                                        <FoodCard
+                                            name={item.data.name}
+                                            price={item.data.price}
+                                            description={item.data.description}
+                                            kj={item.data.kj}
+                                            image={item.data.image}
+                                            orderLink={item.data.orderLink}
+                                            slug={item.slug}
+                                        />
+                                    ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Beef Wraps */}
+                    {wraps.filter((w) => w.data.subcategory === "Beef Wraps")
+                        .length > 0 && (
+                        <div class="mb-12">
+                            <h3 class="text-2xl font-bold text-lewrap-green-dark mb-2">
+                                Beef Wraps
+                            </h3>
+                            {wraps_subcategories?.beef?.description && (
+                                <p class="text-base mb-1">
+                                    {wraps_subcategories.beef.description}
+                                </p>
+                            )}
+                            {wraps_subcategories?.beef?.subtitle && (
+                                <em class="text-base font-italic mb-4 block">
+                                    {wraps_subcategories.beef.subtitle}
+                                </em>
+                            )}
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                {wraps
+                                    .filter(
+                                        (w) =>
+                                            w.data.subcategory === "Beef Wraps",
+                                    )
+                                    .map((item) => (
+                                        <FoodCard
+                                            name={item.data.name}
+                                            price={item.data.price}
+                                            description={item.data.description}
+                                            kj={item.data.kj}
+                                            image={item.data.image}
+                                            orderLink={item.data.orderLink}
+                                            slug={item.slug}
+                                        />
+                                    ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Schnitzel Wraps */}
+                    {wraps.filter(
+                        (w) => w.data.subcategory === "Schnitzel Wraps",
+                    ).length > 0 && (
+                        <div class="mb-12">
+                            <h3 class="text-2xl font-bold text-lewrap-green-dark mb-2">
+                                Schnitzel Wraps
+                            </h3>
+                            {wraps_subcategories?.schnitzel?.description && (
+                                <p class="text-base mb-1">
+                                    {wraps_subcategories.schnitzel.description}
+                                </p>
+                            )}
+                            {wraps_subcategories?.schnitzel?.subtitle && (
+                                <em class="text-base font-italic mb-4 block">
+                                    {wraps_subcategories.schnitzel.subtitle}
+                                </em>
+                            )}
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                {wraps
+                                    .filter(
+                                        (w) =>
+                                            w.data.subcategory ===
+                                            "Schnitzel Wraps",
+                                    )
+                                    .map((item) => (
+                                        <FoodCard
+                                            name={item.data.name}
+                                            price={item.data.price}
+                                            description={item.data.description}
+                                            kj={item.data.kj}
+                                            image={item.data.image}
+                                            orderLink={item.data.orderLink}
+                                            slug={item.slug}
+                                        />
+                                    ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Lamb Wraps */}
+                    {wraps.filter((w) => w.data.subcategory === "Lamb Wraps")
+                        .length > 0 && (
+                        <div class="mb-12">
+                            <h3 class="text-2xl font-bold text-lewrap-green-dark mb-2">
+                                Lamb Wraps
+                            </h3>
+                            {wraps_subcategories?.lamb?.description && (
+                                <p class="text-base mb-1">
+                                    {wraps_subcategories.lamb.description}
+                                </p>
+                            )}
+                            {wraps_subcategories?.lamb?.subtitle && (
+                                <em class="text-base font-italic mb-4 block">
+                                    {wraps_subcategories.lamb.subtitle}
+                                </em>
+                            )}
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                {wraps
+                                    .filter(
+                                        (w) =>
+                                            w.data.subcategory === "Lamb Wraps",
+                                    )
+                                    .map((item) => (
+                                        <FoodCard
+                                            name={item.data.name}
+                                            price={item.data.price}
+                                            description={item.data.description}
+                                            kj={item.data.kj}
+                                            image={item.data.image}
+                                            orderLink={item.data.orderLink}
+                                            slug={item.slug}
+                                        />
+                                    ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Vegetarian Wraps */}
+                    {wraps.filter(
+                        (w) => w.data.subcategory === "Vegetarian Wraps",
+                    ).length > 0 && (
+                        <div class="mb-12">
+                            <h3 class="text-2xl font-bold text-lewrap-green-dark mb-2">
+                                Vegetarian Wraps
+                            </h3>
+                            {wraps_subcategories?.vegetarian?.description && (
+                                <p class="text-base mb-1">
+                                    {wraps_subcategories.vegetarian.description}
+                                </p>
+                            )}
+                            {wraps_subcategories?.vegetarian?.subtitle && (
+                                <em class="text-base font-italic mb-4 block">
+                                    {wraps_subcategories.vegetarian.subtitle}
+                                </em>
+                            )}
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                {wraps
+                                    .filter(
+                                        (w) =>
+                                            w.data.subcategory ===
+                                            "Vegetarian Wraps",
+                                    )
+                                    .map((item) => (
+                                        <FoodCard
+                                            name={item.data.name}
+                                            price={item.data.price}
+                                            description={item.data.description}
+                                            kj={item.data.kj}
+                                            image={item.data.image}
+                                            orderLink={item.data.orderLink}
+                                            slug={item.slug}
+                                        />
+                                    ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Fish Wraps */}
+                    {wraps.filter((w) => w.data.subcategory === "Fish Wraps")
+                        .length > 0 && (
+                        <div class="mb-12">
+                            <h3 class="text-2xl font-bold text-lewrap-green-dark mb-2">
+                                Fish Wraps
+                            </h3>
+                            {wraps_subcategories?.fish?.description && (
+                                <p class="text-base mb-1">
+                                    {wraps_subcategories.fish.description}
+                                </p>
+                            )}
+                            {wraps_subcategories?.fish?.subtitle && (
+                                <em class="text-base font-italic mb-4 block">
+                                    {wraps_subcategories.fish.subtitle}
+                                </em>
+                            )}
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                {wraps
+                                    .filter(
+                                        (w) =>
+                                            w.data.subcategory === "Fish Wraps",
+                                    )
+                                    .map((item) => (
+                                        <FoodCard
+                                            name={item.data.name}
+                                            price={item.data.price}
+                                            description={item.data.description}
+                                            kj={item.data.kj}
+                                            image={item.data.image}
+                                            orderLink={item.data.orderLink}
+                                            slug={item.slug}
+                                        />
+                                    ))}
+                            </div>
+                        </div>
+                    )}
                 </section>
             )
         }
