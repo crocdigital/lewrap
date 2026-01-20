@@ -46,6 +46,7 @@ const {
     hero_button_text,
     hero_button_link,
     hero_button_variant,
+    category_descriptions = {},
 } = frontmatter || {};
 ---
 
@@ -320,6 +321,7 @@ const {
         </section>
 
         {/* Wraps */}
+        <!-- ONLY ONE WORKING SO FAR TO TEST... MAKE SURE TO ADD A WRAP IN CC THEN GET THE REST OF THE CODE!!!!!!!!!!! -->
         {
             wraps.length > 0 && (
                 <section
@@ -327,31 +329,28 @@ const {
                     class="scroll-mt-16 w-[95%] md:max-w-screen-2xl mx-auto p-7 md:p-21 items-center rounded-xl"
                     style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
                 >
-                    {/* Description for category */}
                     <div class="flex flex-col gap-y-2">
                         <h2 class="text-lewrap-green-dark text-3xl/11 md:text-5xl/14 font-black tracking-tight">
                             Wraps
                         </h2>
 
-                        <p class="text-lg/7">
-                            Choice of meat, grilled mushroom, onion & capsicum,
-                            white or brown rice & salad.
-                        </p>
+                        {category_descriptions.wraps?.description && (
+                            <p class="text-lg/7">
+                                {category_descriptions.wraps.description}
+                            </p>
+                        )}
 
-                        <em class="text-lg/7 font-bold font-italic">
-                            Chicken, beef, schnitzel, lamb kofta
-                        </em>
+                        {category_descriptions.wraps?.subtitle && (
+                            <em class="text-lg/7 font-bold font-italic">
+                                {category_descriptions.wraps.subtitle}
+                            </em>
+                        )}
                     </div>
 
-                    {/* Food item grid */}
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
                         {wraps.map((item) => (
                             <FoodCard
-                                name={item.data.name}
-                                price={item.data.price}
-                                description={item.data.description}
-                                kj={item.data.kj}
-                                image={item.data.image}
+                                {...item.data}
                                 orderLink={item.data.orderLink}
                                 slug={item.slug}
                             />

@@ -77,13 +77,21 @@ collections_config:
 _inputs:
   
   # ------------------------------------
-  # LOCATION INPUTS
+  # SHARED INPUTS (used by multiple collections)
   # ------------------------------------
   name:
     type: text
-    label: Store Name
-    comment: "e.g., LeWrap Parramatta"
+    label: Name
+    comment: "Name of the item (store or food)"
   
+  image:
+    type: image
+    label: Image
+    comment: "Upload an image"
+  
+  # ------------------------------------
+  # LOCATION-SPECIFIC INPUTS
+  # ------------------------------------
   address:
     type: text
     label: Street Address
@@ -149,11 +157,6 @@ _inputs:
         type: text
         label: Sunday
   
-  image:
-    type: image
-    label: Store Image
-    comment: "Upload a photo of the store. 1000px x 1000px"
-  
   order_now_link:
     type: url
     label: Order Now Link
@@ -165,7 +168,7 @@ _inputs:
     comment: "Toggle on to highlight this location"
   
   # ------------------------------------
-  # FOOD ITEM INPUTS
+  # FOOD ITEM-SPECIFIC INPUTS
   # ------------------------------------
   category:
     type: select
@@ -179,6 +182,7 @@ _inputs:
         - Salads
         - Kids Meals
         - Drinks
+      allow_create: true
   
   price:
     type: text
@@ -206,12 +210,92 @@ _inputs:
   orderLink:
     type: url
     label: Order Link
-    comment: "RedCat POS external link for this item"
+    comment: "External RedCat POS link for this item"
   
   available:
     type: switch
     label: Available
     comment: "Toggle off to mark as sold out"
+  
+  # ------------------------------------
+  # CATEGORY DESCRIPTIONS
+  # ------------------------------------
+  "category_descriptions.wraps.description":
+    type: textarea
+    label: Wraps - Description
+    cascade: true
+  
+  "category_descriptions.wraps.subtitle":
+    type: text
+    label: Wraps - Subtitle
+    comment: "Optional italic subtitle (e.g., 'Chicken, beef, schnitzel, lamb kofta')"
+    cascade: true
+  
+  "category_descriptions.plates.description":
+    type: textarea
+    label: Plates - Description
+    cascade: true
+  
+  "category_descriptions.plates.subtitle":
+    type: text
+    label: Plates - Subtitle
+    cascade: true
+  
+  "category_descriptions.baguettes.description":
+    type: textarea
+    label: Baguettes - Description
+    cascade: true
+  
+  "category_descriptions.baguettes.subtitle":
+    type: text
+    label: Baguettes - Subtitle
+    cascade: true
+  
+  "category_descriptions.protein_packs.description":
+    type: textarea
+    label: Protein Packs - Description
+    cascade: true
+  
+  "category_descriptions.protein_packs.subtitle":
+    type: text
+    label: Protein Packs - Subtitle
+    cascade: true
+  
+  "category_descriptions.salads.description":
+    type: textarea
+    label: Salads - Description
+    cascade: true
+  
+  "category_descriptions.salads.subtitle":
+    type: text
+    label: Salads - Subtitle
+    cascade: true
+  
+  "category_descriptions.kids_meals.description":
+    type: textarea
+    label: Kids Meals - Description
+    cascade: true
+  
+  "category_descriptions.kids_meals.subtitle":
+    type: text
+    label: Kids Meals - Subtitle
+    cascade: true
+  
+  "category_descriptions.drinks.description":
+    type: textarea
+    label: Drinks - Description
+    cascade: true
+  
+  "category_descriptions.drinks.subtitle":
+    type: text
+    label: Drinks - Subtitle
+    cascade: true
+  
+  category_descriptions:
+    type: object
+    label: Category Descriptions
+    comment: "Descriptions shown for each food category section"
+    cascade: true
   
   # ------------------------------------
   # HERO BLOCK INPUTS
