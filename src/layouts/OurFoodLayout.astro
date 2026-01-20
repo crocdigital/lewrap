@@ -77,45 +77,6 @@ const {
         }
 
         {/* Latest Deals */}
-        <!-- <section
-            id="latest-deals"
-            class="scroll-mt-10 md:scroll-mt-16 w-[95%] md:max-w-screen-2xl mx-auto p-7 md:p-21 items-center rounded-xl bg-lewrap-green bg-[radial-gradient(ellipse_50.00%_50.00%_at_50.00%_50.00%,_white_0%,_rgba(255,_255,_255,_0)_100%)]"
-        >
-            <div class="relative">
-                <div class="flex flex-col gap-y-8 py-13">
-                    <h2
-                        class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight"
-                    >
-                        Latest Deals
-                    </h2>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <img
-                            src="/images/PLACEMENT-deal01-1200x800.webp"
-                            alt="More about LeWrap locations"
-                            class="w-full h-auto rounded-2xl"
-                        />
-                        <img
-                            src="/images/PLACEMENT-deal01-1200x800.webp"
-                            alt="More about LeWrap locations"
-                            class="w-full h-auto rounded-2xl"
-                        />
-                    </div>
-                </div>
-
-                <Button href="#" variant="secondary" class="flex mx-auto mb-8">
-                    Order Now
-                </Button>
-
-                <img
-                    src="/images/elements/arrow-darkgreen-regular.svg"
-                    alt="More about LeWrap locations"
-                    class="w-8 h-auto absolute left-1/2 -translate-x-1/2 z-2 md:-bottom-44"
-                />
-            </div>
-        </section> -->
-
-        {/* Latest Deals */}
         {
             latest_deals.length > 0 && (
                 <section
@@ -521,7 +482,10 @@ const {
                 <section
                     id="protein-packs"
                     class="scroll-mt-16 w-[95%] md:max-w-screen-2xl mx-auto p-7 md:p-21 items-center rounded-xl"
-                    style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
+                    style="background-image: url('/images/elements/protein-pack-bgrd.svg'), url('/images/bg-tile-wood.webp'); 
+                            background-repeat: no-repeat, repeat; 
+                            background-position: center, top left; 
+                            background-size: contain, auto;"
                 >
                     <div class="flex flex-col gap-y-2">
                         <h2 class="text-lewrap-green-dark text-3xl/11 md:text-5xl/14 font-black tracking-tight">
