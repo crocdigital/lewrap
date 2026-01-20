@@ -70,6 +70,9 @@ collections_config:
     schemas:
       default:
         path: src/content/food/_defaults.md
+      path_options:
+      - name: name
+        path: '{name|slugify}.md'
 
 # ========================================
 # INPUT DEFINITIONS
