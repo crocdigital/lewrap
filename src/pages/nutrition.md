@@ -19,7 +19,9 @@ page_blocks:
       deformalism post-painterly abstraction neo-classicism
       bauhaus.</p><p>Neo-impressionism romanesque renaissance postminimalism
       nouveau realisme young british artists, intervention art primitivism
-      luminism synthetism.</p>
+      luminism synthetism.</p><p>Modernipsum dolor sit amet mannerism lyrical
+      abstraction structuralism, deformalism post-painterly abstraction
+      neo-classicism bauhaus.</p>
     image_path: /images/pages/ourfood-baguette.webp
     reverse: false
     background_type: color
