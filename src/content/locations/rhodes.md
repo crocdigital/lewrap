@@ -5,8 +5,8 @@ address: Level 4 Food Court, Rhodes Waterside Shopping Centre, 1 Rider Blvd
 suburb: Rhodes
 state: NSW
 postcode: '2138'
-latitude: -33.91609
-longitude: 151.03902
+latitude: -33.83462
+longitude: 151.08519
 phone: (02)
 email: rhodes@lewrap.com
 hours:

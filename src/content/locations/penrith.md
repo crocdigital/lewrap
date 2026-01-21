@@ -5,8 +5,8 @@ address: Level 2 Food Court, Westfield Penrith Shopping Centre, 585 High St
 suburb: Penrith
 state: NSW
 postcode: '2750'
-latitude: -33.8688
-longitude: 151.2093
+latitude: -33.7507
+longitude: 150.695
 phone: (02)
 email: penrith@lewrap.com
 hours:

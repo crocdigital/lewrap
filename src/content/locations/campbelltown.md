@@ -5,8 +5,8 @@ address: Level 3, Macarthur Square Shopping Centre
 suburb: Campbelltown
 state: NSW
 postcode: '2560'
-latitude: -33.91609
-longitude: 151.03902
+latitude: -34.07299
+longitude: 150.79708
 phone: (02)
 email: campbelltown@lewrap.com
 hours:

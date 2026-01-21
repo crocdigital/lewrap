@@ -5,8 +5,8 @@ address: Level 5 Food Court, Westfield Parramatta Shopping Centre, 159-175 Churc
 suburb: Parramatta
 state: NSW
 postcode: '2150'
-latitude: -33.81729
-longitude: 151.00165
+latitude: -33.81719
+longitude: 151.00166
 phone: (02)
 email: parramatta@lewrap.com
 hours:

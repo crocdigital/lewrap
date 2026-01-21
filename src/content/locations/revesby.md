@@ -5,8 +5,8 @@ address: Shop 5, 19-29 Marco Avenue
 suburb: Revesby
 state: NSW
 postcode: '2212'
-latitude: -33.91609
-longitude: 151.03902
+latitude: -33.95178
+longitude: 151.01348
 phone: (02)
 email: revesby@lewrap.com
 hours:

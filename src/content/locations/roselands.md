@@ -5,8 +5,8 @@ address: Level 2 Food Court, Roselands Shopping Centre, 24 Roselands Dr
 suburb: Roselands
 state: NSW
 postcode: '2196'
-latitude: -33.8915
-longitude: 151.2506
+latitude: -33.93488
+longitude: 151.06896
 phone: (02)
 email: roselands@lewrap.com
 hours:

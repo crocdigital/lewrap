@@ -5,8 +5,8 @@ address: Westfield Tuggerah, Shop 1112, 50 Wyong Rd
 suburb: Tuggerah
 state: NSW
 postcode: '2259'
-latitude: -33.91609
-longitude: 151.03902
+latitude: -33.3082
+longitude: 151.41216
 phone: (02)
 email: tuggerah@lewrap.com
 hours:

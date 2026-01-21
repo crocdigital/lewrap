@@ -5,8 +5,8 @@ address: Level 1, Stockland Shopping Centre, McFarlane Street
 suburb: Merrylands
 state: NSW
 postcode: '2160'
-latitude: -33.91609
-longitude: 151.03902
+latitude: -33.83434
+longitude: 150.98804
 phone: (02)
 email: merrylands@lewrap.com
 hours:

@@ -5,8 +5,8 @@ address: Level 1 Food Court, Westfield Burwood Shopping Centre
 suburb: Burwood
 state: NSW
 postcode: '2134'
-latitude: -33.91609
-longitude: 151.03902
+latitude: -33.87443
+longitude: 151.1059
 phone: (02)
 email: burwood@lewrap.com
 hours:

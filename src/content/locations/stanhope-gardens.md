@@ -5,8 +5,8 @@ address: Shop 18E, Stanhope Village Shopping Centre, 2 Sentry Drive
 suburb: Stanhope Gardens
 state: NSW
 postcode: '2768'
-latitude: -33.91609
-longitude: 151.03902
+latitude: -33.71882
+longitude: 150.92059
 phone: (02)
 email: stanhope@lewrap.com
 hours:

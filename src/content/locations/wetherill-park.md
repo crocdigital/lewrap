@@ -7,8 +7,8 @@ address: >-
 suburb: Wetherill Park
 state: NSW
 postcode: '2200'
-latitude: -33.91609
-longitude: 151.03902
+latitude: -33.85895
+longitude: 150.89776
 phone: (02)
 email: wetherillpark@lewrap.com
 hours:

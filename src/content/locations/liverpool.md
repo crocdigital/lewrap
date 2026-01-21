@@ -5,8 +5,8 @@ address: Level 2 Food Court, Westfield Liverpool Shopping Centre
 suburb: Liverpool
 state: NSW
 postcode: '2170'
-latitude: -33.91609
-longitude: 151.03902
+latitude: -33.91823
+longitude: 150.92404
 phone: (02)
 email: liverpool@lewrap.com
 hours:

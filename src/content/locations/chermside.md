@@ -6,7 +6,7 @@ suburb: Chermside
 state: QLD
 postcode: '4032'
 latitude: -27.38332
-longitude: 153.03142
+longitude: 153.03137
 phone: (02)
 email: chermside@lewrap.com
 hours:
