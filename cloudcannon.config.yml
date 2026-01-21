@@ -92,6 +92,35 @@ collections_config:
           paths:
             uploads: public/images/food
 
+  faq:
+    path: src/content/faq
+    icon: help_outline
+    url: /faq/[slug]/
+    _enabled_editors:
+      - content
+      - data
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    add_options:
+      - name: Add FAQ
+        icon: add_circle
+    schemas:
+      default:
+        path: src/content/faq/_defaults.md
+    _inputs:
+      question:
+        type: text
+        label: Question
+      answer:
+        type: html
+        options:
+          allow_resize: true
+          bold: true
+          italic: true
+          format: p
+        label: Answer
+
 # ========================================
 # INPUT DEFINITIONS
 # ========================================
@@ -704,5 +733,43 @@ _inputs:
     label: Franchise Callout
     comment: "Configure the 'Franchise callout' section"
     cascade: true
+
+  # ------------------------------------
+  # FAQ INPUTS
+  # ------------------------------------
+  question:
+    type: text
+    label: Question
+  
+  answer:
+    type: html
+    options:
+      allow_resize: true
+      allow_custom_markup: false
+      remove_custom_markup: false
+      initial_height: 200
+      bold: true
+      italic: true
+      format: p
+    label: Answer
+  
+  category:
+    type: select
+    label: Category
+    options:
+      values:
+        - General
+        - Catering
+        - Franchising
+  
+  featured:
+    type: switch
+    label: Featured
+    comment: "Show on homepage (first 5 featured FAQs)"
+  
+  order:
+    type: number
+    label: Display Order
+    comment: "Lower numbers appear first (0, 1, 2, etc.)"
 
 timezone: Australia/Sydney

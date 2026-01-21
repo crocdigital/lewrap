@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 
+{/* Locations */ }
 const locationsCollection = defineCollection({
     type: 'content',
     schema: z.object({
@@ -27,6 +28,7 @@ const locationsCollection = defineCollection({
     }),
 });
 
+{/* Food items */ }
 const foodCollection = defineCollection({
     type: 'content',
     schema: z.object({
@@ -42,7 +44,20 @@ const foodCollection = defineCollection({
     }),
 });
 
+{/* FAQ items */ }
+const faqCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        question: z.string(),
+        answer: z.string(),
+        category: z.enum(['General', 'Catering', 'Franchising']),
+        featured: z.boolean().default(false),
+        order: z.number().default(0),
+    }),
+});
+
 export const collections = {
     locations: locationsCollection,
     food: foodCollection,
+    faq: faqCollection,
 };
