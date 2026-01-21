@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/InternalPageLayout.astro
 title: Catering
-hero_title: Whatever the event, we've got you covered
+hero_title: Whatever The Event, We've Got You Covered
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
