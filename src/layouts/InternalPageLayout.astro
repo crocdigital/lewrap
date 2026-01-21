@@ -1,5 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+import Button from "../components/atoms/Button.astro";
 
 // Page Builder components
 import Hero from "../components/Hero.astro";
@@ -12,6 +16,12 @@ import { marqueeSeparator } from "../data/marqueeSeparator";
 
 // Catering Callout component
 import CateringCallout from "../components/CateringCallout.astro";
+
+// FAQ component
+import FAQItem from "../components/FAQItem.astro";
+
+// Get FAQs
+const allFAQs = (await getCollection("faq")) as CollectionEntry<"faq">[];
 
 const { frontmatter } = Astro.props;
 const {
@@ -31,7 +41,17 @@ const {
     marquee_items = [],
     page_blocks = [],
     catering_callouts = [],
+    show_faqs = false,
+    faq_category = "General",
+    faq_button_text = "",
+    faq_button_link = "",
+    faq_button_variant = "primary",
 } = frontmatter || {};
+
+// Filter FAQs by category
+const categoryFAQs = allFAQs
+    .filter((faq) => faq.data.category === faq_category)
+    .sort((a, b) => a.data.order - b.data.order);
 ---
 
 <BaseLayout title={title}>
@@ -105,6 +125,40 @@ const {
                                 description={callout.description}
                             />
                         ))}
+                    </div>
+                </section>
+            )
+        }
+
+        {/* FAQ Section */}
+        {
+            show_faqs && categoryFAQs.length > 0 && (
+                <section class="w-[95%] md:max-w-screen-2xl mx-auto">
+                    <div class="bg-white rounded-xl p-8 md:p-12">
+                        <h2 class="text-3xl md:text-5xl font-bold text-lewrap-green-dark mb-8">
+                            Frequently Asked Questions
+                        </h2>
+
+                        <div class="divide-y divide-gray-200">
+                            {categoryFAQs.map((faq: any, index: number) => (
+                                <FAQItem
+                                    question={faq.data.question}
+                                    answer={faq.data.answer}
+                                    index={index}
+                                />
+                            ))}
+                        </div>
+
+                        {faq_button_text && faq_button_link && (
+                            <div class="mt-8 text-center">
+                                <Button
+                                    href={faq_button_link}
+                                    variant={faq_button_variant}
+                                >
+                                    {faq_button_text}
+                                </Button>
+                            </div>
+                        )}
                     </div>
                 </section>
             )

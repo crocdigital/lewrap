@@ -71,4 +71,9 @@ catering_callouts:
     description: >-
       Neo-impressionism romanesque renaissance postminimalism nouveau realisme
       young artists.
+show_faqs: true
+faq_category: "Catering"
+faq_button_text: "View All FAQs"
+faq_button_link: "/faq"
+faq_button_variant: "primary"
 ---

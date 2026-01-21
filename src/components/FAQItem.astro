@@ -1,0 +1,76 @@
+---
+interface Props {
+    question: string;
+    answer: string;
+    index: number;
+}
+
+const { question, answer, index } = Astro.props;
+const id = `faq-${index}`;
+---
+
+<div class="border-b border-gray-200 last:border-0">
+    <button
+        class="w-full text-left py-6 flex justify-between items-center gap-4 hover:text-lewrap-green transition-colors"
+        data-faq-trigger={id}
+        aria-expanded="false"
+        aria-controls={id}
+    >
+        <h3 class="text-xl font-bold text-lewrap-green-dark pr-4">
+            {question}
+        </h3>
+        <svg
+            class="w-6 h-6 flex-shrink-0 transition-transform duration-300"
+            data-faq-icon={id}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+        </svg>
+    </button>
+
+    <div
+        id={id}
+        class="overflow-hidden transition-all duration-300 ease-in-out"
+        style="max-height: 0;"
+        data-faq-content={id}
+    >
+        <div class="pb-6 prose text-lewrap-off-black" set:html={answer} />
+    </div>
+</div>
+
+<script>
+    document.addEventListener("astro:page-load", () => {
+        const triggers = document.querySelectorAll("[data-faq-trigger]");
+
+        triggers.forEach((trigger) => {
+            trigger.addEventListener("click", () => {
+                const id = trigger.getAttribute("data-faq-trigger");
+                const content = document.querySelector(
+                    `[data-faq-content="${id}"]`,
+                ) as HTMLElement;
+                const icon = document.querySelector(
+                    `[data-faq-icon="${id}"]`,
+                ) as HTMLElement;
+                const isOpen = trigger.getAttribute("aria-expanded") === "true";
+
+                if (isOpen) {
+                    // Close
+                    content.style.maxHeight = "0";
+                    trigger.setAttribute("aria-expanded", "false");
+                    icon.style.transform = "rotate(0deg)";
+                } else {
+                    // Open
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    trigger.setAttribute("aria-expanded", "true");
+                    icon.style.transform = "rotate(180deg)";
+                }
+            });
+        });
+    });
+</script>

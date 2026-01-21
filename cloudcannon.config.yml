@@ -735,12 +735,12 @@ _inputs:
     cascade: true
 
   # ------------------------------------
-  # FAQ INPUTS
+  # FAQ INPUTS (for FAQ collection items)
   # ------------------------------------
   question:
     type: text
     label: Question
-  
+
   answer:
     type: html
     options:
@@ -752,7 +752,7 @@ _inputs:
       italic: true
       format: p
     label: Answer
-  
+
   category:
     type: select
     label: Category
@@ -761,15 +761,55 @@ _inputs:
         - General
         - Catering
         - Franchising
-  
+
   featured:
     type: switch
     label: Featured
     comment: "Show on homepage (first 5 featured FAQs)"
-  
+
   order:
     type: number
     label: Display Order
     comment: "Lower numbers appear first (0, 1, 2, etc.)"
+
+  # ------------------------------------
+  # FAQ PAGE DISPLAY INPUTS (for pages that show FAQs)
+  # ------------------------------------
+  show_faqs:
+    type: switch
+    label: Show FAQs
+    comment: "Display FAQ section on this page"
+    cascade: true
+
+  faq_category:
+    type: select
+    label: FAQ Category
+    comment: "Which FAQs to display"
+    options:
+      values:
+        - General
+        - Catering
+        - Franchising
+    cascade: true
+
+  faq_button_text:
+    type: text
+    label: FAQ Button Text
+    comment: "Optional button below FAQs"
+    cascade: true
+
+  faq_button_link:
+    type: text
+    label: FAQ Button Link
+    cascade: true
+
+  faq_button_variant:
+    type: select
+    label: FAQ Button Style
+    options:
+      values:
+        - primary
+        - secondary
+    cascade: true
 
 timezone: Australia/Sydney
