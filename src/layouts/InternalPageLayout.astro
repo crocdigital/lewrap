@@ -10,6 +10,9 @@ import OneCol from "../components/OneCol.astro";
 import Marquee from "../components/molecules/Marquee.astro";
 import { marqueeSeparator } from "../data/marqueeSeparator";
 
+// Catering Callout component
+import CateringCallout from "../components/CateringCallout.astro";
+
 const { frontmatter } = Astro.props;
 const {
     title,
@@ -27,6 +30,7 @@ const {
     show_arrow_green_fat = false, // Used in [slug].astro (Locations detail page)
     marquee_items = [],
     page_blocks = [],
+    catering_callouts = [],
 } = frontmatter || {};
 ---
 
@@ -74,6 +78,7 @@ const {
             )
         }
 
+        {/* Page Builder section */}
         <div class="flex flex-col gap-10">
             {
                 page_blocks?.map((block: any, index: number) => {
@@ -87,5 +92,22 @@ const {
                 })
             }
         </div>
+
+        {/* Catering Callouts section */}
+        {
+            catering_callouts.length > 0 && (
+                <section class="w-[95%] md:max-w-screen-2xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {catering_callouts.map((callout: any) => (
+                            <CateringCallout
+                                image={callout.image}
+                                title={callout.title}
+                                description={callout.description}
+                            />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
     </main>
 </BaseLayout>

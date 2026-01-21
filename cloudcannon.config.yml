@@ -267,6 +267,37 @@ _inputs:
                 type: text
                 label: Alt Text
                 comment: "Describe the deal for accessibility"
+
+  # ------------------------------------
+  # CATERING CALLOUTS
+  # ------------------------------------
+  catering_callouts:
+    type: array
+    label: Catering Callouts
+    comment: "Add benefits or features for catering"
+    cascade: true
+    options:
+      structures:
+        values:
+          - label: Callout Item
+            value:
+              image: ""
+              title: ""
+              description: ""
+            _inputs:
+              image:
+                type: image
+                label: Icon/Image
+                comment: "Upload an SVG icon"
+                options:
+                  paths:
+                    uploads: public/images/icons
+              title:
+                type: text
+                label: Title
+              description:
+                type: textarea
+                label: Description
   
   # ------------------------------------
   # CATEGORY DESCRIPTIONS

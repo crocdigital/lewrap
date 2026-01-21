@@ -55,4 +55,14 @@ page_blocks:
     button_text: Order catering
     button_link: '#'
     button_variant: primary
+catering_callouts:
+  - image: /images/icons/food-quality.svg
+    title: Fresh Quality Food
+    description: Made fresh daily with premium ingredients
+  - image: /images/icons/flexible.svg
+    title: Flexible Packages
+    description: Custom packages to suit any event size
+  - image: /images/icons/delivery.svg
+    title: Reliable Delivery
+    description: On-time delivery guaranteed
 ---
