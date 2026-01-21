@@ -20,7 +20,7 @@ page_blocks:
       bauhaus.</p><p>Neo-impressionism romanesque renaissance postminimalism
       nouveau realisme young british artists, intervention art primitivism
       luminism synthetism.</p>
-    image_path: /images/pages/ourfood-baguette-1.webp
+    image_path: /images/pages/ourfood-baguette.webp
     reverse: false
     background_type: color
     background_colour: '#ffffff'
