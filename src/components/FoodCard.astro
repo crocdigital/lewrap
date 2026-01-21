@@ -39,9 +39,17 @@ const { name, price, description, kj, image, orderLink, slug } = Astro.props;
             set:html={description}
         />
 
-        <div class="text-sm text-gray-400">
-            <span data-cms-bind={slug ? `#${slug}.kj` : undefined}>{kj}</span>kj
-        </div>
+        {/* Hides 'kj' entry if nothing has been entered */}
+        {
+            kj > 0 && (
+                <div class="text-sm text-gray-400">
+                    <span data-cms-bind={slug ? `#${slug}.kj` : undefined}>
+                        {kj}
+                    </span>
+                    kj
+                </div>
+            )
+        }
     </div>
 
     <div class="relative">
@@ -52,7 +60,7 @@ const { name, price, description, kj, image, orderLink, slug } = Astro.props;
             data-cms-bind={slug ? `#${slug}.image` : undefined}
         />
 
-        {/* Chicken Wraps */}
+        {/* Order Now button */}
         {
             orderLink && (
                 <Button
