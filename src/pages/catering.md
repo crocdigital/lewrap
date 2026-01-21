@@ -56,17 +56,17 @@ page_blocks:
     button_link: '#'
     button_variant: primary
 catering_callouts:
-  - image: /images/icons/food-quality.svg
+  - image: /images/icons/corporate-event-catering.svg
     title: Corporate & event catering
     description: >-
       Neo-impressionism romanesque renaissance postminimalism nouveau realisme
       young artists.
-  - image: /images/icons/flexible.svg
+  - image: /images/icons/hosting-friends-family.svg
     title: Hosting friends & family
     description: >-
       Neo-impressionism romanesque renaissance postminimalism nouveau realisme
       young artists.
-  - image: /images/icons/delivery.svg
+  - image: /images/icons/birthday-celebrations.svg
     title: Birthday celebrations
     description: >-
       Neo-impressionism romanesque renaissance postminimalism nouveau realisme
