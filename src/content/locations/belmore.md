@@ -5,8 +5,8 @@ address: 374 Burwood Road
 suburb: Belmore
 state: NSW
 postcode: '2192'
-latitude: -33.91609
-longitude: 151.03902
+latitude: -33.91798
+longitude: 151.0884
 phone: (02)
 email: belmore@lewrap.com
 hours:
