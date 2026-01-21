@@ -15,8 +15,6 @@ latest_deals:
     alt: 1st test for Latest Deal
   - image: /images/deals/PLACEMENT-deal01-1200x800.webp
     alt: 2nd test for Latest Deal
-  - image: /images/deals/PLACEMENT-deal01-1200x800.webp
-    alt: 3rd test for Latest Deal
 category_descriptions:
   wraps:
     description:
