@@ -5,8 +5,8 @@ address: Vicinity Bankstown Central, North Terrace
 suburb: Bankstown
 state: NSW
 postcode: '2200'
-latitude: -33.91609
-longitude: 151.03902
+latitude: -33.91606
+longitude: 151.03897
 phone: (02) 9709 2112
 email: bankstown@lewrap.com
 hours:
