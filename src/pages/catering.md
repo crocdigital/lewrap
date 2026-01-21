@@ -57,12 +57,18 @@ page_blocks:
     button_variant: primary
 catering_callouts:
   - image: /images/icons/food-quality.svg
-    title: Fresh Quality Food
-    description: Made fresh daily with premium ingredients
+    title: Corporate & event catering
+    description: >-
+      Neo-impressionism romanesque renaissance postminimalism nouveau realisme
+      young artists.
   - image: /images/icons/flexible.svg
-    title: Flexible Packages
-    description: Custom packages to suit any event size
+    title: Hosting friends & family
+    description: >-
+      Neo-impressionism romanesque renaissance postminimalism nouveau realisme
+      young artists.
   - image: /images/icons/delivery.svg
-    title: Reliable Delivery
-    description: On-time delivery guaranteed
+    title: Birthday celebrations
+    description: >-
+      Neo-impressionism romanesque renaissance postminimalism nouveau realisme
+      young artists.
 ---
