@@ -50,7 +50,11 @@ const {
 
 // Filter FAQs by category
 const categoryFAQs = allFAQs
-    .filter((faq) => faq.data.category === faq_category)
+    .filter(
+        (faq) =>
+            faq.data.category === faq_category &&
+            faq.data.question.trim() !== "",
+    )
     .sort((a, b) => a.data.order - b.data.order);
 ---
 
@@ -138,9 +142,11 @@ const categoryFAQs = allFAQs
                         class="rounded-xl p-8 md:p-12"
                         style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
                     >
-                        <h2 class="text-3xl md:text-5xl font-bold text-lewrap-green-dark text-center mb-8">
-                            Catering FAQs
-                        </h2>
+                        {faq_category !== "General" && (
+                            <h2 class="text-3xl md:text-5xl font-bold text-lewrap-green-dark text-center mb-8">
+                                {faq_category} FAQs
+                            </h2>
+                        )}
 
                         <div class="max-w-screen-md mx-auto divide-y">
                             {categoryFAQs.map((faq: any, index: number) => (
