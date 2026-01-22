@@ -194,7 +194,7 @@ const categoryFAQs = allFAQs
                     />
 
                     {/* Conditional background images */}
-                    {Astro.url.pathname === "/work-with-us" ? (
+                    {Astro.url.pathname.includes("work-with-us") ? (
                         <img
                             src="/images/elements/baguette-on-board.webp"
                             alt="Work With Us"
