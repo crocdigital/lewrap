@@ -7,12 +7,12 @@ hero_bg_type: image
 hero_bg_colour:
 hero_bg_image: /images/hero/workwithus-desktop.webp
 hero_bg_image_mobile: /images/hero/workwithus-mobile.webp
-hero_button_text: Apply now
-hero_button_link: '#'
-hero_button_variant: primary
+hero_button_text:
+hero_button_link:
+hero_button_variant:
 page_blocks:
   - _template: feature
-    heading: Title going here
+    heading:
     text: >-
       <p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism,
       deformalism post-painterly abstraction neo-classicism
