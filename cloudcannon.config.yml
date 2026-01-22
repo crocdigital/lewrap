@@ -824,7 +824,7 @@ _inputs:
     cascade: true
     options:
       structures:
-          values:
+        values:
           - label: Two Column Block
             value:
               title: ""
@@ -834,6 +834,7 @@ _inputs:
               buttonVariant: "primary"
               bgColor: "#95BA32"
               reverse: false
+              slides: []
             _inputs:
               title:
                 type: text
@@ -863,12 +864,32 @@ _inputs:
               bgColor:
                 type: color
                 label: Background Color
-                comment: "Color for the left column"
+                comment: "Color for the left column (only shown if no slides added)"
                 options:
                   format: hex
               reverse:
                 type: switch
                 label: Reverse Columns
                 comment: "Swap the left and right columns"
-
+              slides:
+                type: array
+                label: Carousel Slides
+                comment: "Add images for the carousel. If empty, shows colored background."
+                options:
+                  structures:
+                    values:
+                      - label: Slide
+                        value:
+                          image: ""
+                          alt: ""
+                        _inputs:
+                          image:
+                            type: image
+                            label: Slide Image
+                            options:
+                              paths:
+                                uploads: public/images/carousel
+                          alt:
+                            type: text
+                            label: Alt Text
 timezone: Australia/Sydney

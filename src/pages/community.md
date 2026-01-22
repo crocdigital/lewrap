@@ -27,13 +27,17 @@ page_blocks:
     button_link:
     button_variant:
 flexible_two_col:
-  - title: We'll be putting a meaningful title in here
-    description: >-
-      <p>Romanesque neue slowenische kunst existentialism neue slowenische kunst
-      new media art neo-fauvism performance art nouveau realisme.</p>
-    buttonText:
-    buttonLink:
-    buttonVariant:
-    bgColor: '#95ba32'
+  - title: "Why Choose LeWrap Catering?"
+    description: "<p>Perfect for events of any size.</p>"
+    buttonText: "Get a Quote"
+    buttonLink: "/contact"
+    buttonVariant: "primary"
     reverse: false
+    slides:
+      - image: /images/carousel/catering-1.jpg
+        alt: "Fresh catering spread"
+      - image: /images/carousel/catering-2.jpg
+        alt: "Event setup"
+      - image: /images/carousel/catering-3.jpg
+        alt: "Happy customers"
 ---
