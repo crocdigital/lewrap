@@ -3,6 +3,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
+// Work With Us form
+import WorkWithUsForm from "../components/WorkWithUsForm.astro";
+
+// Contact Us form
+import ContactForm from "../components/ContactForm.astro";
+
 import Button from "../components/atoms/Button.astro";
 
 // Page Builder components
@@ -209,6 +215,24 @@ const categoryFAQs = allFAQs
                     )}
                 </section>
             ))
+        }
+
+        {/* Work With Us Form */}
+        {
+            Astro.url.pathname.includes("work-with-us") && (
+                <section class="w-[95%] md:max-w-screen-2xl mx-auto">
+                    <WorkWithUsForm />
+                </section>
+            )
+        }
+
+        {/* Contact Form */}
+        {
+            Astro.url.pathname.includes("contact") && (
+                <section class="w-[95%] md:max-w-screen-2xl mx-auto">
+                    <ContactForm />
+                </section>
+            )
         }
     </main>
 </BaseLayout>

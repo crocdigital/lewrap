@@ -1,0 +1,244 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import Button from "./atoms/Button.astro";
+
+// Get all locations for the dropdown
+const allLocations = (await getCollection(
+    "locations",
+)) as CollectionEntry<"locations">[];
+const sortedLocations = allLocations.sort((a, b) =>
+    a.data.name.localeCompare(b.data.name),
+);
+
+// reCAPTCHA site key
+const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
+---
+
+{/* Add reCAPTCHA script */}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<form class="p-8 md:p-12" id="contact-form">
+    <h2
+        class="text-3xl md:text-4xl font-bold text-lewrap-green-dark text-center mb-8"
+    >
+        We'd love to hear from you
+    </h2>
+
+    <div class="max-w-screen-md mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Your name - spans both columns */}
+        <div class="md:col-span-2">
+            <label
+                for="name"
+                class="block text-lg font-medium text-lewrap-off-black mb-2"
+            >
+                Your name <span class="text-red-500">*</span>
+            </label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="bg-white w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lewrap-green focus:border-transparent focus:outline-none"
+            />
+        </div>
+
+        {/* Your email - spans both columns */}
+        <div class="md:col-span-2">
+            <label
+                for="email"
+                class="block text-lg font-medium text-lewrap-off-black mb-2"
+            >
+                Your email <span class="text-red-500">*</span>
+            </label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="bg-white w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lewrap-green focus:border-transparent focus:outline-none"
+            />
+        </div>
+
+        {/* Best contact number - left column */}
+        <div>
+            <label
+                for="phone"
+                class="block text-lg font-medium text-lewrap-off-black mb-2"
+            >
+                Best contact number <span class="text-red-500">*</span>
+            </label>
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                class="bg-white w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lewrap-green focus:border-transparent focus:outline-none"
+            />
+        </div>
+
+        {/* Type of enquiry - right column */}
+        <div>
+            <label
+                for="enquiry_type"
+                class="block text-lg font-medium text-lewrap-off-black mb-2"
+            >
+                Type of enquiry <span class="text-red-500">*</span>
+            </label>
+            <select
+                id="enquiry_type"
+                name="enquiry_type"
+                required
+                class="bg-white w-full p-4.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lewrap-green focus:border-transparent focus:outline-none appearance-none focus:outline-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23CBCBCB%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:30px_30px] bg-[right_0.5rem_center] bg-no-repeat pr-12"
+            >
+                <option value="">Select enquiry type</option>
+                <option value="General">General</option>
+                <option value="Dietary">Dietary</option>
+                <option value="Careers">Careers</option>
+                <option value="Franchise">Franchise</option>
+                <option value="Feedback">Feedback</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        {/* Location preference - Radio buttons - left column */}
+        <div>
+            <label class="block text-lg font-medium text-lewrap-off-black mb-2">
+                Send to <span class="text-red-500">*</span>
+            </label>
+            <div class="space-y-3">
+                <label class="flex items-center cursor-pointer">
+                    <input
+                        type="radio"
+                        name="location_preference"
+                        value="headquarters"
+                        required
+                        class="w-5 h-5 text-lewrap-green focus:ring-lewrap-green"
+                    />
+                    <span class="ml-3 text-lewrap-off-black"
+                        >LeWrap Headquarters</span
+                    >
+                </label>
+                <label class="flex items-center cursor-pointer">
+                    <input
+                        type="radio"
+                        name="location_preference"
+                        value="store"
+                        id="store-radio"
+                        required
+                        class="w-5 h-5 text-lewrap-green focus:ring-lewrap-green"
+                    />
+                    <span class="ml-3 text-lewrap-off-black">Closest store</span
+                    >
+                </label>
+            </div>
+        </div>
+
+        {/* Conditional store dropdown - right column */}
+        <div id="store-dropdown" class="hidden">
+            <label
+                for="preferred_store"
+                class="block text-lg font-medium text-lewrap-off-black mb-2"
+            >
+                Choose the store closest to you <span class="text-red-500"
+                    >*</span
+                >
+            </label>
+            <select
+                id="preferred_store"
+                name="preferred_store"
+                class="bg-white w-full p-4.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lewrap-green focus:border-transparent appearance-none focus:outline-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23CBCBCB%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:30px_30px] bg-[right_0.5rem_center] bg-no-repeat pr-12"
+            >
+                <option value="">Select a store</option>
+                {
+                    sortedLocations.map((location) => (
+                        <option
+                            value={location.data.email || location.data.name}
+                        >
+                            {location.data.name}
+                        </option>
+                    ))
+                }
+            </select>
+        </div>
+
+        {/* Message - spans both columns */}
+        <div class="md:col-span-2">
+            <label
+                for="message"
+                class="block text-lg font-medium text-lewrap-off-black mb-2"
+            >
+                Your message <span class="text-red-500">*</span>
+            </label>
+            <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                class="bg-white w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lewrap-green focus:border-transparent focus:outline-none"
+            ></textarea>
+        </div>
+
+        {/* reCAPTCHA - spans both columns */}
+        <div class="md:col-span-2">
+            <div class="g-recaptcha" data-sitekey={RECAPTCHA_SITE_KEY}></div>
+        </div>
+
+        {/* Submit button - spans both columns */}
+        <div class="md:col-span-2 pt-4">
+            <Button type="submit" variant="secondary"> Send message </Button>
+        </div>
+    </div>
+</form>
+
+<script>
+    // Show/hide store dropdown based on radio selection
+    const storeRadio = document.getElementById(
+        "store-radio",
+    ) as HTMLInputElement;
+    const headquartersRadio = document.querySelector(
+        'input[value="headquarters"]',
+    ) as HTMLInputElement;
+    const storeDropdown = document.getElementById(
+        "store-dropdown",
+    ) as HTMLElement;
+    const storeSelect = document.getElementById(
+        "preferred_store",
+    ) as HTMLSelectElement;
+
+    function toggleStoreDropdown() {
+        if (storeRadio?.checked) {
+            storeDropdown.classList.remove("hidden");
+            storeSelect.required = true;
+        } else {
+            storeDropdown.classList.add("hidden");
+            storeSelect.required = false;
+            storeSelect.value = "";
+        }
+    }
+
+    storeRadio?.addEventListener("change", toggleStoreDropdown);
+    headquartersRadio?.addEventListener("change", toggleStoreDropdown);
+
+    // Handle form submission with reCAPTCHA validation
+    const form = document.getElementById("contact-form") as HTMLFormElement;
+    form?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Check if reCAPTCHA is completed
+        const recaptchaResponse = (window as any).grecaptcha.getResponse();
+
+        if (!recaptchaResponse) {
+            alert("Please complete the reCAPTCHA verification");
+            return;
+        }
+
+        // Add your form submission logic here
+        const formData = new FormData(form);
+        formData.append("g-recaptcha-response", recaptchaResponse);
+
+        console.log("Form data:", Object.fromEntries(formData));
+
+        alert("Form submitted! (You need to configure form handling)");
+    });
+</script>
