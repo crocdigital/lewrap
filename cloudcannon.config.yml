@@ -750,6 +750,7 @@ _inputs:
       initial_height: 200
       bold: true
       italic: true
+      link: true
       format: p
     label: Answer
 
