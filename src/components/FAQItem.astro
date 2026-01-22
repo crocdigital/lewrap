@@ -45,7 +45,10 @@ const id = `faq-${index}`;
         style="max-height: 0;"
         data-faq-content={id}
     >
-        <div class="pb-6 prose text-lewrap-off-black" set:html={answer} />
+        <div
+            class="pb-6 prose text-lewrap-off-black [&_p]:mb-2"
+            set:html={answer}
+        />
     </div>
 </div>
 
