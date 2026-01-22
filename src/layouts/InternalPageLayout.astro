@@ -180,7 +180,7 @@ const categoryFAQs = allFAQs
         {/* Flexible Two Column Section */}
         {
             flexible_two_col.map((block: any, index: number) => (
-                <section class="w-[95%] md:max-w-screen-2xl mx-auto">
+                <section class="w-[95%] md:max-w-screen-2xl mx-auto gap-8 p-7 md:p-21 rounded-xl bg-white relative">
                     <FlexibleTwoCol
                         title={block.title}
                         description={block.description}
@@ -191,6 +191,21 @@ const categoryFAQs = allFAQs
                         reverse={block.reverse}
                         index={index}
                     />
+
+                    {/* Conditional background images */}
+                    {Astro.url.pathname === "/work-with-us" ? (
+                        <img
+                            src="/images/elements/different-image.webp"
+                            alt="Work With Us"
+                            class="w-28 md:w-36 h-auto absolute -bottom-8 right-4"
+                        />
+                    ) : (
+                        <img
+                            src="/images/elements/baguette-on-board.webp"
+                            alt="More about LeWrap"
+                            class="w-28 md:w-36 h-auto absolute -bottom-8 right-4"
+                        />
+                    )}
                 </section>
             ))
         }
