@@ -36,7 +36,7 @@ const carouselSlides = slides.map((slide) => ({
     type: "image" as const,
     src: slide.image,
     alt: slide.alt,
-    objectFit: "cover" as const,
+    objectFit: "contain" as const,
 }));
 
 const hasSlides = slides.length > 0;
@@ -59,7 +59,8 @@ const hasSlides = slides.length > 0;
                         disableOnInteraction: false,
                     }}
                     loop={true}
-                    className="h-[400px] md:h-[500px]"
+                    height=""
+                    className="w-full aspect-[3/2]"
                 />
             ) : (
                 <div

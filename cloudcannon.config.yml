@@ -886,6 +886,7 @@ _inputs:
                           image:
                             type: image
                             label: Slide Image
+                            comment: "Upload image. Required size: 1200px × 800px"
                             options:
                               paths:
                                 uploads: public/images/carousel
