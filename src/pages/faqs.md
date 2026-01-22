@@ -5,11 +5,11 @@ hero_title: Frequently Asked Questions
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
-hero_bg_image: /images/hero/catering-desktop.webp
-hero_bg_image_mobile: /images/hero/catering-mobile.webp
-hero_button_text: Order catering
-hero_button_link: '#'
-hero_button_variant: primary
+hero_bg_image: /images/hero/faq-desktop.webp
+hero_bg_image_mobile: /images/hero/faq-mobile.webp
+hero_button_text:
+hero_button_link:
+hero_button_variant:
 marquee_items:
   - 100% Australian
   - Chicken Wraps
