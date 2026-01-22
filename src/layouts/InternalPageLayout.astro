@@ -179,7 +179,7 @@ const categoryFAQs = allFAQs
 
         {/* Flexible Two Column Section */}
         {
-            flexible_two_col.map((block: any) => (
+            flexible_two_col.map((block: any, index: number) => (
                 <section class="w-[95%] md:max-w-screen-2xl mx-auto">
                     <FlexibleTwoCol
                         title={block.title}
@@ -189,6 +189,7 @@ const categoryFAQs = allFAQs
                         buttonVariant={block.buttonVariant}
                         bgColor={block.bgColor}
                         reverse={block.reverse}
+                        index={index}
                     />
                 </section>
             ))
