@@ -113,7 +113,7 @@ const categoryFAQs = allFAQs
             }
         </div>
 
-        {/* Catering Callouts section (on Catering page) */}
+        {/* Catering Callouts section (on Catering page only) */}
         {
             catering_callouts.length > 0 && (
                 <section class="w-[95%] md:max-w-screen-xl mx-auto p-7 md:p-21">
@@ -130,16 +130,19 @@ const categoryFAQs = allFAQs
             )
         }
 
-        {/* FAQ Section */}
+        {/* FAQ section */}
         {
             show_faqs && categoryFAQs.length > 0 && (
                 <section class="w-[95%] md:max-w-screen-2xl mx-auto">
-                    <div class="bg-white rounded-xl p-8 md:p-12">
-                        <h2 class="text-3xl md:text-5xl font-bold text-lewrap-green-dark mb-8">
-                            Frequently Asked Questions
+                    <div
+                        class="rounded-xl p-8 md:p-12"
+                        style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
+                    >
+                        <h2 class="text-3xl md:text-5xl font-bold text-lewrap-green-dark text-center mb-8">
+                            Catering FAQs
                         </h2>
 
-                        <div class="divide-y divide-gray-200">
+                        <div class="max-w-screen-md mx-auto divide-y">
                             {categoryFAQs.map((faq: any, index: number) => (
                                 <FAQItem
                                     question={faq.data.question}
