@@ -23,25 +23,35 @@ const {
 ---
 
 <div
-    class={`grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-8 ${reverse ? "md:grid-cols-[1fr_2fr]" : ""}`}
+    class={`grid grid-cols-1 md:grid-cols-[1.618fr_1fr] gap-8 p-7 ${reverse ? "md:grid-cols-[1fr_1.618fr]" : ""}`}
 >
-    {/* Left column - placeholder with color */}
+    {
+        /* Left column - placeholder with color (DELETE style ENTRY ONCE WE GET SLIDER WORKING) */
+    }
     <div
         class={`rounded-xl min-h-[400px] flex items-center justify-center ${reverse ? "md:order-2" : ""}`}
         style={`background-color: ${bgColor};`}
     >
-        <p class="text-white text-2xl font-bold">Slider will go here</p>
+        <p class="text-white text-2xl font-bold">Slider will go here bra :)</p>
     </div>
 
     {/* Right column - content */}
     <div
-        class={`flex flex-col justify-center gap-6 ${reverse ? "md:order-1" : ""}`}
+        class={`flex flex-col justify-center gap-6 p-7 md:p-0 ${reverse ? "md:order-1" : ""}`}
     >
-        <h2 class="text-3xl md:text-5xl font-bold text-lewrap-green-dark">
+        <h2
+            class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight"
+            data-editable="text"
+            data-prop="flexible_two_col_title"
+            data-cms-bind="#flexible_two_col_title"
+        >
             {title}
         </h2>
 
-        <div class="prose text-lewrap-off-black" set:html={description} />
+        <div
+            class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8 [&_p:last-child]:mb-0"
+            set:html={description}
+        />
 
         {
             buttonText && buttonLink && (
