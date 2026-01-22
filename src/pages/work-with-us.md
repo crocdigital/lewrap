@@ -8,7 +8,7 @@ hero_bg_colour:
 hero_bg_image: /images/hero/workwithus-desktop.webp
 hero_bg_image_mobile: /images/hero/workwithus-mobile.webp
 hero_button_text: Apply now
-hero_button_link: '#'
+hero_button_link: '#apply'
 hero_button_variant: primary
 marquee_items:
   - 100% Australian

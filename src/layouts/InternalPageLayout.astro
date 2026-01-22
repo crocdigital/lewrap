@@ -220,7 +220,10 @@ const categoryFAQs = allFAQs
         {/* Work With Us Form */}
         {
             Astro.url.pathname.includes("work-with-us") && (
-                <section class="w-[95%] md:max-w-screen-2xl mx-auto">
+                <section
+                    id="apply"
+                    class="w-[95%] md:max-w-screen-2xl mx-auto scroll-mt-24"
+                >
                     <WorkWithUsForm />
                 </section>
             )
