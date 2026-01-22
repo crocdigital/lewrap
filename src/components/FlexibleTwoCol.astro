@@ -1,0 +1,54 @@
+---
+import Button from "./atoms/Button.astro";
+
+interface Props {
+    title: string;
+    description: string;
+    buttonText?: string;
+    buttonLink?: string;
+    buttonVariant?: "primary" | "secondary";
+    bgColor?: string;
+    reverse?: boolean;
+}
+
+const {
+    title,
+    description,
+    buttonText,
+    buttonLink,
+    buttonVariant = "primary",
+    bgColor = "#95BA32",
+    reverse = false,
+} = Astro.props;
+---
+
+<div
+    class={`grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-8 ${reverse ? "md:grid-cols-[1fr_2fr]" : ""}`}
+>
+    {/* Left column - placeholder with color */}
+    <div
+        class={`rounded-xl min-h-[400px] flex items-center justify-center ${reverse ? "md:order-2" : ""}`}
+        style={`background-color: ${bgColor};`}
+    >
+        <p class="text-white text-2xl font-bold">Slider will go here</p>
+    </div>
+
+    {/* Right column - content */}
+    <div
+        class={`flex flex-col justify-center gap-6 ${reverse ? "md:order-1" : ""}`}
+    >
+        <h2 class="text-3xl md:text-5xl font-bold text-lewrap-green-dark">
+            {title}
+        </h2>
+
+        <div class="prose text-lewrap-off-black" set:html={description} />
+
+        {
+            buttonText && buttonLink && (
+                <Button href={buttonLink} variant={buttonVariant}>
+                    {buttonText}
+                </Button>
+            )
+        }
+    </div>
+</div>

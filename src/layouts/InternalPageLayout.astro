@@ -10,6 +10,9 @@ import Hero from "../components/Hero.astro";
 import TwoCol from "../components/TwoCol.astro";
 import OneCol from "../components/OneCol.astro";
 
+// Flexible 2 column component
+import FlexibleTwoCol from "../components/FlexibleTwoCol.astro";
+
 // Marquee component
 import Marquee from "../components/molecules/Marquee.astro";
 import { marqueeSeparator } from "../data/marqueeSeparator";
@@ -46,6 +49,7 @@ const {
     faq_button_text = "",
     faq_button_link = "",
     faq_button_variant = "primary",
+    flexible_two_col = [],
 } = frontmatter || {};
 
 // Filter FAQs by category
@@ -171,6 +175,23 @@ const categoryFAQs = allFAQs
                     </div>
                 </section>
             )
+        }
+
+        {/* Flexible Two Column Sections */}
+        {
+            flexible_two_col.map((block: any) => (
+                <section class="w-[95%] md:max-w-screen-2xl mx-auto">
+                    <FlexibleTwoCol
+                        title={block.title}
+                        description={block.description}
+                        buttonText={block.buttonText}
+                        buttonLink={block.buttonLink}
+                        buttonVariant={block.buttonVariant}
+                        bgColor={block.bgColor}
+                        reverse={block.reverse}
+                    />
+                </section>
+            ))
         }
     </main>
 </BaseLayout>

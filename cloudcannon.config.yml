@@ -814,4 +814,61 @@ _inputs:
         - secondary
     cascade: true
 
+  # ------------------------------------
+  # Flexible Two Column section
+  # ------------------------------------
+  flexible_two_col:
+    type: array
+    label: Flexible Two Column Sections
+    comment: "Add asymmetric two-column content blocks"
+    cascade: true
+    options:
+      structures:
+          values:
+          - label: Two Column Block
+            value:
+              title: ""
+              description: "<p>Your content here...</p>"
+              buttonText: ""
+              buttonLink: ""
+              buttonVariant: "primary"
+              bgColor: "#95BA32"
+              reverse: false
+            _inputs:
+              title:
+                type: text
+                label: Title
+              description:
+                type: html
+                options:
+                  bold: true
+                  italic: true
+                  link: true
+                  format: p h2 h3 h4
+                label: Description
+              buttonText:
+                type: text
+                label: Button Text
+                comment: "Optional"
+              buttonLink:
+                type: text
+                label: Button Link
+              buttonVariant:
+                type: select
+                label: Button Style
+                options:
+                  values:
+                    - primary
+                    - secondary
+              bgColor:
+                type: color
+                label: Background Color
+                comment: "Color for the left column"
+                options:
+                  format: hex
+              reverse:
+                type: switch
+                label: Reverse Columns
+                comment: "Swap the left and right columns"
+
 timezone: Australia/Sydney
