@@ -253,7 +253,6 @@ _inputs:
       italic: true
       format: p
     label: Description
-    comment: "Brief description of the food item"
   
   kj:
     type: number

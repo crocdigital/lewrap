@@ -29,19 +29,19 @@ page_blocks:
 flexible_two_col:
   - title: Title to complement carousel imges
     description: >-
-      <p>Pauly, make sure you edit all the labels in the yml file so Mon ica
-      doesn't get confused!</p><p>So far so good, we're about to test the
-      carousel inclusion.</p>
-    buttonText: Get a Quote
-    buttonLink: /contact
-    buttonVariant: primary
+      <p>Pauly, make sure you edit all the labels in the yml file so Monica (or
+      any content editor) doesn't get confused!</p><p>So far so good, we're
+      about to test the carousel inclusion.</p>
+    buttonText:
+    buttonLink:
+    buttonVariant:
     bgColor: '#95ba32'
     reverse: false
     slides:
       - image: /images/carousel/community-01.webp
         alt: At LeWrap we're all about community
-      - image: /images/carousel/catering-2.jpg
-        alt: Event setup
-      - image: /images/carousel/catering-3.jpg
-        alt: Happy customers
+      - image: /images/carousel/community-01.webp
+        alt: 2nd slide image
+      - image: /images/carousel/community-01.webp
+        alt: 3rd slide image
 ---
