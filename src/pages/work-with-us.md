@@ -35,7 +35,7 @@ page_blocks:
     image_path: /images/pages/lewrap-franchise-team.webp
     reverse: false
     background_type: none
-    background_colour: '#ffffff'
+    background_colour:
     background_image:
     button_text: Apply now
     button_link: '#'
