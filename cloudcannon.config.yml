@@ -743,7 +743,7 @@ _inputs:
 
   answer:
     type: html
-    link: true
+    label: Answer
     options:
       allow_resize: true
       allow_custom_markup: false
@@ -751,8 +751,8 @@ _inputs:
       initial_height: 200
       bold: true
       italic: true
-      format: p
-    label: Answer
+      link: true
+      format: p h2 h3 h4
 
   category:
     type: select
