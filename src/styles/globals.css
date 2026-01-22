@@ -102,6 +102,7 @@ button,
 
 p>a {
   color: var(--lewrap-green);
+  text-decoration: underline;
 }
 
 /* Restore default cursor on touch devices */
