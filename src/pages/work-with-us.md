@@ -41,11 +41,11 @@ page_blocks:
     button_link: '#'
     button_variant: primary
 flexible_two_col:
-  - title: Title to complement carousel imges
+  - title: Some title going in here
     description: >-
       <p>Pauly, make sure you edit all the labels in the yml file so Monica (or
-      any content editor) doesn't get confused!</p><p>So far so good, we're
-      about to test the carousel inclusion.</p>
+      any content editor) doesn't get confused!</p><p>So far so good -
+      everything seems to be working as intended so far!</p>
     buttonText:
     buttonLink:
     buttonVariant:
