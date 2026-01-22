@@ -27,17 +27,21 @@ page_blocks:
     button_link:
     button_variant:
 flexible_two_col:
-  - title: "Why Choose LeWrap Catering?"
-    description: "<p>Perfect for events of any size.</p>"
-    buttonText: "Get a Quote"
-    buttonLink: "/contact"
-    buttonVariant: "primary"
+  - title: Title to complement carousel imges
+    description: >-
+      <p>Pauly, make sure you edit all the labels in the yml file so Mon ica
+      doesn't get confused!</p><p>So far so good, we're about to test the
+      carousel inclusion.</p>
+    buttonText: Get a Quote
+    buttonLink: /contact
+    buttonVariant: primary
+    bgColor: '#95ba32'
     reverse: false
     slides:
-      - image: /images/carousel/catering-1.jpg
-        alt: "Fresh catering spread"
+      - image: /images/carousel/community-01.webp
+        alt: At LeWrap we're all about community
       - image: /images/carousel/catering-2.jpg
-        alt: "Event setup"
+        alt: Event setup
       - image: /images/carousel/catering-3.jpg
-        alt: "Happy customers"
+        alt: Happy customers
 ---
