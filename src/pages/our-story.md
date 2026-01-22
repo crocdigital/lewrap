@@ -10,7 +10,7 @@ hero_bg_image_mobile: /images/placement-sqratio.webp
 hero_button_text:
 hero_button_link:
 hero_button_variant:
-show_arrow_green_regular: true  # ← Only on pages that need it
+show_arrow_green_regular: true
 page_blocks:
   - _template: feature
     heading:
@@ -54,7 +54,7 @@ page_blocks:
       more communities every day.</p><p>Want to be the next local store
       franchise owner? Learn more here (this will be a link: show Monica how to
       do).</p>
-    image_path: /images/lewrap-franchise-team.webp
+    image_path: /images/pages/lewrap-franchise-team.webp
     reverse: true
     background_type: none
     background_colour:
