@@ -27,7 +27,7 @@ page_blocks:
     button_link:
     button_variant:
 flexible_two_col:
-  - title: Title will be going in here :)
+  - title: We'll be putting a meaningful title in here
     description: >-
       <p>Romanesque neue slowenische kunst existentialism neue slowenische kunst
       new media art neo-fauvism performance art nouveau realisme.</p>
