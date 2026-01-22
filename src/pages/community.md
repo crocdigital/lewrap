@@ -26,4 +26,12 @@ page_blocks:
     button_text:
     button_link:
     button_variant:
+flexible_two_col:
+  - title: "Why Choose LeWrap Catering?"
+    description: "<p>Perfect for events of any size, from corporate lunches to weddings.</p>"
+    buttonText: "Get a Quote"
+    buttonLink: "/contact"
+    buttonVariant: "primary"
+    bgColor: "#95BA32"
+    reverse: false
 ---
