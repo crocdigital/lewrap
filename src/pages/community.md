@@ -31,9 +31,9 @@ flexible_two_col:
     description: >-
       <p>Romanesque neue slowenische kunst existentialism neue slowenische kunst
       new media art neo-fauvism performance art nouveau realisme.</p>
-    buttonText: Testing button
-    buttonLink: /contact
-    buttonVariant: primary
+    buttonText:
+    buttonLink:
+    buttonVariant:
     bgColor: '#95ba32'
     reverse: false
 ---
