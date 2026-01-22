@@ -73,7 +73,7 @@ catering_callouts:
       young artists.
 show_faqs: true
 faq_category: Catering
-faq_button_text: We don't need to show a link :)
-faq_button_link: /faq
+faq_button_text: Order catering
+faq_button_link: '#'
 faq_button_variant: primary
 ---
