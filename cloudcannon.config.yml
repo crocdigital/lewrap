@@ -118,6 +118,7 @@ collections_config:
           allow_resize: true
           bold: true
           italic: true
+          link: true
           format: p
         label: Answer
 
