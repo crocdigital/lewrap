@@ -27,11 +27,13 @@ page_blocks:
     button_link:
     button_variant:
 flexible_two_col:
-  - title: "Why Choose LeWrap Catering?"
-    description: "<p>Perfect for events of any size, from corporate lunches to weddings.</p>"
-    buttonText: "Get a Quote"
-    buttonLink: "/contact"
-    buttonVariant: "primary"
-    bgColor: "#95BA32"
+  - title: Title will be going in here :)
+    description: >-
+      <p>Romanesque neue slowenische kunst existentialism neue slowenische kunst
+      new media art neo-fauvism performance art nouveau realisme.</p>
+    buttonText: Testing button
+    buttonLink: /contact
+    buttonVariant: primary
+    bgColor: '#95ba32'
     reverse: false
 ---
