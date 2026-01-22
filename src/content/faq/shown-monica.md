@@ -6,7 +6,7 @@ answer: >-
   can add your FAQ question then apply it to the page that needs to show FAQ
   questions. Pretty swish.</p><p><strong>Plus</strong>, the latest 5 FAQs in the
   Faq page will show on the homepage - without any need to enter anything.</p>
-category: Franchising
+category: Catering
 featured: false
 order: 0
 ---
