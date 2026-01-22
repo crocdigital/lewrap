@@ -26,17 +26,4 @@ page_blocks:
     button_text:
     button_link:
     button_variant:
-  - _template: centered_text
-    text: >-
-      <p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism,
-      deformalism post-painterly abstraction neo-classicism
-      bauhaus.</p><p>Neo-impressionism romanesque renaissance postminimalism
-      nouveau realisme young british artists, intervention art primitivism
-      luminism synthetism.</p>
-    background_type: none
-    background_colour:
-    background_image: ''
-    button_text: Order catering
-    button_link: '#'
-    button_variant: primary
 ---
