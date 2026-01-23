@@ -45,6 +45,25 @@ page_blocks:
     button_text:
     button_link:
     button_variant:
+  - _template: feature
+    heading: In business for yourself, not by yourself
+    text: >-
+      <p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism,
+      deformalism post-painterly abstraction neo-classicism
+      bauhaus.</p><p>Neo-impressionism romanesque renaissance postminimalism
+      nouveau realisme young british artists, intervention art primitivism
+      luminism synthetism.</p><p>Romanesque neue slowenische kunst
+      existentialism neue slowenische kunst new media art neo-fauvism
+      performance art nouveau realisme, renaissance gothic art relational art
+      land art tonalism scuola romana.</p>
+    image_path: /images/pages/in-business-for-yourself.webp
+    reverse: false
+    background_type: none
+    background_colour: '#ffffff'
+    background_image:
+    button_text: Get our franchise info pack
+    button_link: '#'
+    button_variant: primary
 show_faqs: true
 faq_category: Franchising
 faq_button_text: Enquire now
