@@ -49,10 +49,6 @@ const {
     hero_button_text,
     hero_button_link,
     hero_button_variant,
-    // HIDING THESE ARROWS... NEED TO REFERENCE HOW TO SHOW THEM IN THE EDITOR. MAYBE SHOULDN'T BE THERE, AND JUST SHOW ON THE PAGE? REFERENCE LOCATIONS PAGE [slug].astro
-    // show_arrow_green_regular = false,
-    // show_arrow_blue = false,
-    // show_arrow_green_fat = false,
     marquee_items = [],
     franchise_callout = {},
 } = frontmatter || {};
@@ -78,17 +74,6 @@ const {
                 />
             )
         }
-
-        {/* Conditionally render main green arrow */}
-        <!-- {
-            show_arrow_green_regular && (
-                <img
-                    src="/images/elements/arrow-green-regular.svg"
-                    alt="More about LeWrap"
-                    class="w-10 h-auto absolute left-1/2 -translate-x-1/2 top-[calc(65vh-2.5rem)] md:top-[calc(79vh-2.5rem)] z-20"
-                />
-            )
-        } -->
 
         {/* Only shows if marquee_items exist */}
         {
