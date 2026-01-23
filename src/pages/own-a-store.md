@@ -64,6 +64,16 @@ page_blocks:
     button_text: Get our franchise info pack
     button_link: '#'
     button_variant: primary
+franchise_callout:
+  show: true
+  heading: Need a location?
+  text: >-
+    <p>We can now enter text the <strong>WYSIWYG way</strong> so it makes more
+    sense for Monica when editing content :)</p><p>Testing another para to make
+    sure it renders right. Eshay bra.</p>
+  image: /images/elements/store-sign.webp
+  button_text: Enquire now
+  button_link: '#'
 show_faqs: true
 faq_category: Franchising
 faq_button_text: Enquire now

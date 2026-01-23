@@ -23,6 +23,9 @@ import FlexibleTwoCol from "../components/FlexibleTwoCol.astro";
 import Marquee from "../components/molecules/Marquee.astro";
 import { marqueeSeparator } from "../data/marqueeSeparator";
 
+// Franchise Callout component
+import FranchiseCallout from "../components/FranchiseCallout.astro";
+
 // Catering Callout component
 import CateringCallout from "../components/CateringCallout.astro";
 
@@ -50,6 +53,7 @@ const {
     marquee_items = [],
     page_blocks = [],
     catering_callouts = [],
+    franchise_callout = {},
     show_faqs = false,
     faq_category = "General",
     faq_button_text = "",
@@ -141,6 +145,19 @@ const categoryFAQs = allFAQs
                         ))}
                     </div>
                 </section>
+            )
+        }
+
+        {/* Franchise Callout block */}
+        {
+            franchise_callout.show && (
+                <FranchiseCallout
+                    heading={franchise_callout.heading}
+                    text={franchise_callout.text}
+                    image={franchise_callout.image}
+                    buttonText={franchise_callout.button_text}
+                    buttonLink={franchise_callout.button_link}
+                />
             )
         }
 
