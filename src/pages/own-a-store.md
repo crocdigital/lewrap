@@ -12,7 +12,7 @@ hero_button_link: '#'
 hero_button_variant: primary
 page_blocks:
   - _template: feature
-    heading:
+    heading: Supporting you every step of the way
     text: >-
       <p>At LeWrap, everything is made fresh — from our grilled proteins to the
       veggies we cut fresh every morning. Choose from wraps, baguettes, salads
@@ -29,19 +29,22 @@ page_blocks:
     button_text:
     button_link:
     button_variant:
-  - _template: centered_text
+  - _template: feature
+    heading: About the LeWrap brand
     text: >-
       <p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism,
       deformalism post-painterly abstraction neo-classicism
       bauhaus.</p><p>Neo-impressionism romanesque renaissance postminimalism
       nouveau realisme young british artists, intervention art primitivism
       luminism synthetism.</p>
+    image_path: /images/pages/about-the-brand.webp
+    reverse: true
     background_type: none
-    background_colour:
-    background_image: ''
-    button_text: Order catering
-    button_link: '#'
-    button_variant: primary
+    background_colour: '#ffffff'
+    background_image:
+    button_text:
+    button_link:
+    button_variant:
 show_faqs: true
 faq_category: Franchising
 faq_button_text: Enquire now
