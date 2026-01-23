@@ -58,4 +58,14 @@ flexible_two_col:
         alt: 2nd slide image
       - image: /images/carousel/community-01.webp
         alt: 3rd slide image
+franchise_callout:
+  show: true
+  heading: Want to be the next LeWrap store owner?
+  text: >-
+    <p>We can now enter text the <strong>WYSIWYG way</strong> so it makes more
+    sense for Monica when editing content :)</p><p>Testing another para to make
+    sure it renders right. Eshay bra.</p>
+  image: /images/elements/store-sign.webp
+  button_text: Enquire now
+  button_link: /own-a-store
 ---
