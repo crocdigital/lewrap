@@ -18,7 +18,7 @@ page_blocks:
       as well.</p>
     image_path: /images/pages/catering.webp
     reverse: false
-    background_type: none
+    background_type: image
     background_colour: '#ffffff'
     background_image:
     button_text:
