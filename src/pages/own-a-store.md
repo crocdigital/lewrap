@@ -14,13 +14,8 @@ page_blocks:
   - _template: feature
     heading: Supporting you every step of the way
     text: >-
-      <p>At LeWrap, everything is made fresh — from our grilled proteins to the
-      veggies we cut fresh every morning. Choose from wraps, baguettes, salads
-      or chips, all crafted with real ingredients and big flavour.</p><p>Whether
-      you’re hosting friends, feeding the family, catering the office, or
-      celebrating life’s special moments, birthdays, baby showers, anniversaries
-      or wedding day prep, we’ve got fresh, crowd-pleasing options for every
-      occasion.</p>
+      <p>Owner quote going in here :)</p><p>Refactor code to accept video files
+      as well.</p>
     image_path: /images/pages/catering.webp
     reverse: false
     background_type: none
