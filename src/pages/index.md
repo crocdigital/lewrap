@@ -5,11 +5,11 @@ hero_slides:
   - image_desktop: /images/hero/catering-desktop.webp
     image_mobile: /images/hero/locations-mobile.webp
     alt: Fresh wraps and healthy food
-  - image_desktop: /images/hero/slide-2-desktop.jpg
-    image_mobile: /images/hero/slide-2-mobile.jpg
+  - image_desktop: /images/hero/community-desktop.webp
+    image_mobile: /images/hero/community-mobile.webp
     alt: LeWrap restaurant interior
-  - image_desktop: /images/hero/slide-3-desktop.jpg
-    image_mobile: /images/hero/slide-3-mobile.jpg
+  - image_desktop: /images/hero/locations-desktop.webp
+    image_mobile: /images/hero/locations-mobile.webp
     alt: Happy customers enjoying food
 hero_heading: We believe in all things good and fresh
 hero_cta1_text: Our food
