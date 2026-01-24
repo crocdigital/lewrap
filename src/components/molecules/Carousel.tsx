@@ -15,7 +15,7 @@ import '../../styles/carousel.css';
 export type SlideContent =
     | { type: 'image'; src: string | any; alt: string; objectFit?: 'cover' | 'contain' | 'fill' }
     | { type: 'video'; src: string; controls?: boolean; autoPlay?: boolean; muted?: boolean; loop?: boolean }
-    | { type: 'html'; content: React.ReactNode };
+    | { type: 'html'; content: string };
 
 export interface CarouselProps {
     slides: SlideContent[];
@@ -150,8 +150,13 @@ export default function Carousel({
                     />
                 );
 
-            case 'html':
-                return <div className="w-full h-full">{slide.content}</div>;
+            case 'html':  // ← UNCOMMENT THIS
+                return (
+                    <div
+                        className="w-full h-full"
+                        dangerouslySetInnerHTML={{ __html: slide.content }}
+                    />
+                );
 
             default:
                 return null;

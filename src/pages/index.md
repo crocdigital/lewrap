@@ -3,7 +3,7 @@ layout: ../layouts/HomeLayout.astro
 title: LeWrap - Fresh, Healthy Wraps
 hero_slides:
   - image_desktop: /images/hero/catering-desktop.webp
-    image_mobile: /images/hero/catering-mobile.webp
+    image_mobile: /images/hero/locations-mobile.webp
     alt: Fresh wraps and healthy food
   - image_desktop: /images/hero/slide-2-desktop.jpg
     image_mobile: /images/hero/slide-2-mobile.jpg
@@ -16,4 +16,17 @@ hero_cta1_text: Our food
 hero_cta1_link: /our-food
 hero_cta2_text: Order now
 hero_cta2_link: /order
+marquee_items:
+  - 100% Australian
+  - Chicken Wraps
+  - Schnitzel Wraps
+  - Beef Wraps
+  - Lamb Wraps
+  - Vegetarian Wraps
+  - Plates
+  - Baguettes
+  - Salads
+  - Kids Meals
+  - Sides
+  - Drinks
 ---

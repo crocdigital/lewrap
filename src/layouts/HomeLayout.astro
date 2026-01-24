@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import Carousel from "../components/molecules/Carousel";
+import Marquee from "../components/molecules/Marquee.astro";
+import { marqueeSeparator } from "../data/marqueeSeparator";
 import { Image } from "astro:assets";
 import leWrapLogo from "../assets/brand/lewrap-white.svg";
 
@@ -13,6 +15,7 @@ const {
     hero_cta1_link = "/our-food",
     hero_cta2_text = "Order now",
     hero_cta2_link = "/order",
+    marquee_items = [],
 } = frontmatter || {};
 
 // Transform hero slides with HTML content for responsive images
@@ -82,7 +85,18 @@ const carouselSlides = hero_slides.map((slide: any) => {
                 </Carousel>
             </section>
 
-            {/* More homepage sections will go here */}
+            {/* Only shows if marquee_items exist */}
+            {
+                marquee_items.length > 0 && (
+                    <Marquee
+                        items={marquee_items}
+                        separator={marqueeSeparator}
+                        className="w-[95%] mx-auto bg-lewrap-green py-4 rounded-2xl"
+                        gradientColor="#95BA32"
+                        speed={50}
+                    />
+                )
+            }
         </div>
     </main>
 </BaseLayout>

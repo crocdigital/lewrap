@@ -148,14 +148,14 @@ _inputs:
               image_desktop:
                 type: image
                 label: Desktop Image
-                comment: "Desktop/tablet hero image (recommended: 1920px × 1080px, 16:9 ratio)"
+                comment: "Desktop/tablet hero image (16:9 ratio) for best results. Recommended size: 1920px x 1080px"
                 options:
                   paths:
                     uploads: public/images/hero
               image_mobile:
                 type: image
                 label: Mobile Image
-                comment: "Mobile hero image (recommended: 1080px × 1920px, 9:16 ratio). Falls back to desktop if empty."
+                comment: "Upload a square image (1:1 ratio) for best results. Recommended size: 1000px by 1000px"
                 options:
                   paths:
                     uploads: public/images/hero
