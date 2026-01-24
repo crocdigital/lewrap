@@ -2,6 +2,10 @@
 import BaseLayout from "./BaseLayout.astro";
 import Carousel from "../components/molecules/Carousel";
 
+// Flexible 2 column component
+import FlexibleTwoCol from "../components/FlexibleTwoCol.astro";
+
+// Marquee component
 import Marquee from "../components/molecules/Marquee.astro";
 import { marqueeSeparator } from "../data/marqueeSeparator";
 
@@ -27,6 +31,7 @@ const {
     welcome_image = "",
     welcome_button_text = "Our Food",
     welcome_button_link = "/our-food",
+    flexible_two_col = [],
 } = frontmatter || {};
 
 // Transform hero slides with HTML content for responsive images
@@ -136,11 +141,11 @@ const carouselSlides = hero_slides.map((slide: any) => {
 
                     {
                         welcome_button_text && welcome_button_link && (
-                            <div>
+                            <ScrollReveal>
                                 <Button href={welcome_button_link}>
                                     {welcome_button_text}
                                 </Button>
-                            </div>
+                            </ScrollReveal>
                         )
                     }
                 </div>
@@ -156,6 +161,31 @@ const carouselSlides = hero_slides.map((slide: any) => {
                     )
                 }
             </section>
+
+            {/* Find a LeWrap near you */}
+            {
+                flexible_two_col && flexible_two_col[0] && (
+                    <section class="w-[95%] md:max-w-screen-2xl mx-auto gap-8 p-7 md:p-21 rounded-xl bg-white relative">
+                        <FlexibleTwoCol
+                            title={flexible_two_col[0].title}
+                            description={flexible_two_col[0].description}
+                            buttonText={flexible_two_col[0].buttonText}
+                            buttonLink={flexible_two_col[0].buttonLink}
+                            buttonVariant={flexible_two_col[0].buttonVariant}
+                            bgColor={flexible_two_col[0].bgColor}
+                            reverse={flexible_two_col[0].reverse}
+                            slides={flexible_two_col[0].slides}
+                            index={0}
+                        />
+
+                        <img
+                            src="/images/elements/koftas.webp"
+                            alt="More about LeWrap"
+                            class="w-28 md:w-36 h-auto absolute -bottom-8 right-4"
+                        />
+                    </section>
+                )
+            }
         </div>
     </main>
 </BaseLayout>

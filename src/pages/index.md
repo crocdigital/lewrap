@@ -37,4 +37,20 @@ welcome_text: "<p>Modernipsum dolor sit amet mannerism lyrical abstraction struc
 welcome_image: /images/pages/welcome-lewrap.webp
 welcome_button_text: Our Food
 welcome_button_link: /our-food
+flexible_two_col:
+  - title: Find a LeWrap near you
+    description: >-
+      <p>There’s a LeWrap near you, ready to serve fresh, made-to-order wraps, salads, plates and baguettes. We make it easy to enjoy something good and fresh, wherever you are.</p>
+    buttonText: Our locations
+    buttonLink: /locations
+    buttonVariant: primary
+    bgColor: '#95ba32'
+    reverse: false
+    slides:
+      - image: /images/carousel/community-01.webp
+        alt: At LeWrap we're all about community
+      - image: /images/carousel/community-01.webp
+        alt: 2nd slide image
+      - image: /images/carousel/community-01.webp
+        alt: 3rd slide image
 ---
