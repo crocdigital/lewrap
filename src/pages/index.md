@@ -11,6 +11,9 @@ hero_slides:
   - image_desktop: /images/hero/locations-desktop.webp
     image_mobile: /images/hero/locations-mobile.webp
     alt: Happy customers enjoying food
+  - image_desktop: /images/hero/nutrition-desktop.webp
+    image_mobile: /images/hero/nutrition-mobile.webp
+    alt: 'Added a 4th slide just to test '
 hero_heading: We believe in all things good and fresh
 hero_cta1_text: Our food
 hero_cta1_link: /our-food
