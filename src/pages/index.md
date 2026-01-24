@@ -41,7 +41,7 @@ flexible_two_col:
   - title: Find a LeWrap near you
     description: >-
       <p>There’s a LeWrap near you, ready to serve fresh, made-to-order wraps, salads, plates and baguettes. We make it easy to enjoy something good and fresh, wherever you are.</p>
-    buttonText: Our locations
+    buttonText: All locations
     buttonLink: /locations
     buttonVariant: primary
     bgColor: '#95ba32'
