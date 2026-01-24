@@ -65,11 +65,11 @@ flexible_two_col:
         alt: Testing adding a 4th slide
 lewrapstory_heading: The LeWrap Story
 lewrapstory_text: >-
-  <p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism,
-  deformalism post-painterly abstraction neo-classicism
-  bauhaus.</p><p>Neo-impressionism romanesque renaissance postminimalism nouveau
-  realisme young british artists, intervention art primitivism luminism
-  synthetism.</p>
+  <p>LeWrap started in 2005 in Western Sydney, born from a simple idea - fresh,
+  high-quality food, made fast. From day one, we’ve focused on wholesome meals
+  made to order with the best ingredients.</p><p>Today, we’re expanding,
+  bringing our passion for good, fresh food to more communities than ever —
+  always made just for you.</p>
 lewrapstory_button_text: Learn more
 lewrapstory_button_link: /our-story
 lewrapstory_image: /images/kaan-celik.webp
