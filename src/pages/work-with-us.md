@@ -43,9 +43,10 @@ page_blocks:
 flexible_two_col:
   - title: Some title going in here
     description: >-
-      <p>Pauly, make sure you edit all the labels in the yml file so Monica (or
-      any content editor) doesn't get confused!</p><p>So far so good -
-      everything seems to be working as intended so far!</p>
+      Pauly, make sure you edit all the labels in the yml file so Monica (or any
+      content editor) doesn't get confused!
+
+      So far so good - everything seems to be working as intended so far!
     buttonText:
     buttonLink:
     buttonVariant:
