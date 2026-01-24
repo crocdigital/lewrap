@@ -45,9 +45,10 @@ welcome_button_link: /our-food
 flexible_two_col:
   - title: Find a LeWrap near you
     description: >-
-      <p>There’s a LeWrap near you, ready to serve fresh, made-to-order wraps,
-      salads, plates and baguettes. We make it easy to enjoy something good and
-      fresh, wherever you are.</p>
+      <p>There’s a <a href="/locations/" title="LeWrap locations">LeWrap near
+      you</a>, ready to serve fresh, made-to-order wraps, salads, plates and
+      baguettes. We make it easy to enjoy something good and fresh, wherever you
+      are.</p>
     buttonText: All locations
     buttonLink: /locations
     buttonVariant: primary
