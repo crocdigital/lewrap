@@ -32,10 +32,15 @@ marquee_items:
   - Kids Meals
   - Sides
   - Drinks
-welcome_heading: "Nobody makes a wrap like us"
-welcome_text_1: "<p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism, deformalism post-painterly abstraction neo-classicism bauhaus.</p>"
-welcome_text_2: "<p><a href='#'>Neo-impressionism</a> romanesque renaissance postminimalism nouveau realisme young british artists, intervention art primitivism luminism synthetism.</p>"
-welcome_image: /images/homepage/welcome-lewrap.png
-welcome_button_text: "Our Food"
-welcome_button_link: "/our-food"
+welcome_heading: Nobody makes a wrap like us
+welcome_text_1: >-
+  <p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism,
+  deformalism post-painterly abstraction neo-classicism bauhaus.</p>
+welcome_text_2: >-
+  <p><a href='#'>Neo-impressionism</a> romanesque renaissance postminimalism
+  nouveau realisme young british artists, intervention art primitivism luminism
+  synthetism.</p>
+welcome_image: /images/pages/welcome-lewrap.webp
+welcome_button_text: Our Food
+welcome_button_link: /our-food
 ---
