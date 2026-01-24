@@ -204,6 +204,30 @@ const categoryFAQs = allFAQs
                                 </Button>
                             </div>
                         )}
+
+                        {/* Franchise disclaimer (only on Own A Store page) */}
+                        {Astro.url.pathname.includes("own-a-store") && (
+                            <p class="max-w-2xl mx-auto mt-10 text-xs text-center">
+                                <strong>
+                                    Disclaimer - Franchise Information
+                                </strong>
+                                <br />
+                                The information in this FAQ is for general
+                                guidance only and does not constitute an offer
+                                to sell or invest in a franchise. While we aim
+                                to keep it accurate, details may change and may
+                                not reflect your individual circumstances.
+                                Prospective franchisees should seek independent
+                                legal, financial, and business advice before
+                                entering a franchise agreement. Full details are
+                                provided in the{" "}
+                                <strong>
+                                    Franchise Disclosure Document (FDD)
+                                </strong>{" "}
+                                as required under the{" "}
+                                <strong>Franchise Code of Conduct</strong>.
+                            </p>
+                        )}
                     </div>
                 </section>
             )
