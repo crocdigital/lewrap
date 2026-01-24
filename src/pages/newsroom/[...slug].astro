@@ -1,0 +1,20 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import NewsroomLayout from "../../layouts/NewsroomLayout.astro";
+
+export async function getStaticPaths() {
+    const newsroomEntries = await getCollection("newsroom");
+    return newsroomEntries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<NewsroomLayout frontmatter={entry.data}>
+    <Content />
+</NewsroomLayout>

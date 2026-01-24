@@ -35,6 +35,9 @@ import FAQItem from "../components/FAQItem.astro";
 // Get FAQs
 const allFAQs = (await getCollection("faq")) as CollectionEntry<"faq">[];
 
+// Newsroom articles
+import NewsroomCard from "../components/NewsRoomCard.astro";
+
 const { frontmatter } = Astro.props;
 const {
     title,
@@ -60,6 +63,7 @@ const {
     faq_button_link = "",
     faq_button_variant = "primary",
     flexible_two_col = [],
+    show_newsroom_listing = false,
 } = frontmatter || {};
 
 // Filter FAQs by category
@@ -70,6 +74,18 @@ const categoryFAQs = allFAQs
             faq.data.question.trim() !== "",
     )
     .sort((a, b) => a.data.order - b.data.order);
+
+// Get all newsroom articles
+const allNewsroom = (await getCollection(
+    "newsroom",
+)) as CollectionEntry<"newsroom">[];
+const sortedNewsroom = allNewsroom.sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+);
+const categories = [
+    "All",
+    ...new Set(allNewsroom.map((article: any) => article.data.category)),
+];
 ---
 
 <BaseLayout title={title}>
@@ -284,6 +300,48 @@ const categoryFAQs = allFAQs
             Astro.url.pathname.includes("contact") && (
                 <section class="w-[95%] md:max-w-screen-2xl mx-auto">
                     <ContactForm />
+                </section>
+            )
+        }
+
+        {/* Newsroom Listing */}
+        {
+            show_newsroom_listing && (
+                <section class="w-[95%] md:max-w-screen-2xl mx-auto">
+                    {/* Category Filter */}
+                    <div class="flex flex-wrap gap-3 justify-center mb-12">
+                        {categories.map((category: string) => (
+                            <button
+                                class="px-6 py-2 rounded-full border-2 border-lewrap-green text-lewrap-green-dark hover:bg-lewrap-green hover:text-white transition-colors"
+                                data-category={category}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Articles Grid */}
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {sortedNewsroom.map((article: any) => (
+                            <NewsroomCard
+                                title={article.data.title}
+                                hero_image={article.data.hero_image}
+                                category={article.data.category}
+                                date={article.data.date}
+                                preview_text={article.data.preview_text}
+                                slug={article.slug}
+                            />
+                        ))}
+                    </div>
+
+                    {/* Empty State */}
+                    {sortedNewsroom.length === 0 && (
+                        <div class="text-center py-16">
+                            <p class="text-xl text-gray-600">
+                                No articles yet. Check back soon!
+                            </p>
+                        </div>
+                    )}
                 </section>
             )
         }
