@@ -127,6 +127,42 @@ collections_config:
 # INPUT DEFINITIONS
 # ========================================
 _inputs:
+
+  # ------------------------------------
+  # HERO SLIDER - HOMEPAGE
+  # ------------------------------------
+  hero_slides:
+    type: array
+    label: Hero Carousel Slides
+    comment: "Add images for the homepage hero carousel"
+    cascade: true
+    options:
+      structures:
+        values:
+          - label: Hero Slide
+            value:
+              image_desktop: ""
+              image_mobile: ""
+              alt: ""
+            _inputs:
+              image_desktop:
+                type: image
+                label: Desktop Image
+                comment: "Desktop/tablet hero image (recommended: 1920px × 1080px, 16:9 ratio)"
+                options:
+                  paths:
+                    uploads: public/images/hero
+              image_mobile:
+                type: image
+                label: Mobile Image
+                comment: "Mobile hero image (recommended: 1080px × 1920px, 9:16 ratio). Falls back to desktop if empty."
+                options:
+                  paths:
+                    uploads: public/images/hero
+              alt:
+                type: text
+                label: Alt Text
+                comment: "Describe the image for accessibility"
   
   # ------------------------------------
   # LOCATION-SPECIFIC INPUTS

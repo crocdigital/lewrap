@@ -1,0 +1,88 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Carousel from "../components/molecules/Carousel";
+import { Image } from "astro:assets";
+import leWrapLogo from "../assets/brand/lewrap-white.svg";
+
+const { frontmatter } = Astro.props;
+const {
+    title = "LeWrap - Fresh, Healthy Wraps",
+    hero_slides = [],
+    hero_heading = "We believe in all things good and fresh",
+    hero_cta1_text = "Our food",
+    hero_cta1_link = "/our-food",
+    hero_cta2_text = "Order now",
+    hero_cta2_link = "/order",
+} = frontmatter || {};
+
+// Transform hero slides with HTML content for responsive images
+const carouselSlides = hero_slides.map((slide: any) => {
+    const mobileSrc = slide.image_mobile || slide.image_desktop;
+    const desktopSrc = slide.image_desktop;
+    const alt = slide.alt || "LeWrap hero image";
+
+    return {
+        type: "html" as const,
+        content: `
+            <picture>
+                <source media="(max-width: 768px)" srcset="${mobileSrc}" />
+                <img
+                    src="${desktopSrc}"
+                    alt="${alt}"
+                    class="w-full h-full object-cover"
+                />
+            </picture>
+        `,
+    };
+});
+---
+
+<BaseLayout title={title}>
+    <main class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black">
+        <div class="flex flex-col gap-5">
+            {/* Hero Carousel */}
+            <section class="mt-10 md:mt-15">
+                <Carousel
+                    client:load
+                    slides={carouselSlides}
+                    showPagination={true}
+                    showNavigation={true}
+                    autoplay={{
+                        delay: 5000,
+                        disableOnInteraction: false,
+                    }}
+                    cta={{
+                        text: hero_cta1_text,
+                        href: hero_cta1_link,
+                    }}
+                    cta2={{
+                        text: hero_cta2_text,
+                        href: hero_cta2_link,
+                    }}
+                    loop={true}
+                    hasGradient={true}
+                    className="w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden"
+                >
+                    {/* Content overlay */}
+                    <div
+                        class="max-w-6xl flex flex-col items-center text-center z-30 pointer-events-none select-none"
+                    >
+                        <Image
+                            src={leWrapLogo}
+                            alt="LeWrap"
+                            class="w-[128px] h-[37px] md:w-[266px] md:h-[78px]"
+                        />
+                        <h1
+                            class="text-white text-4xl md:text-[90px] w-3/4 md:w-auto font-bold leading-[100%] tracking-tight"
+                            data-cms-bind="#hero_heading"
+                        >
+                            {hero_heading}
+                        </h1>
+                    </div>
+                </Carousel>
+            </section>
+
+            {/* More homepage sections will go here */}
+        </div>
+    </main>
+</BaseLayout>
