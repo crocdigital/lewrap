@@ -44,9 +44,8 @@ flexible_two_col:
   - title: Some title going in here
     description: >-
       Pauly, make sure you edit all the labels in the yml file so Monica (or any
-      content editor) doesn't get confused!
-
-      So far so good - everything seems to be working as intended so far!
+      content editor) doesn't get confused! So far so good - everything seems to
+      be working as intended so far!
     buttonText:
     buttonLink:
     buttonVariant:
