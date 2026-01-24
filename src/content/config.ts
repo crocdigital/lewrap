@@ -56,8 +56,22 @@ const faqCollection = defineCollection({
     }),
 });
 
+{/* Newsroom articles */ }
+const newsroomCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        hero_image: z.string(),
+        category: z.enum(['Franchise', 'Promotion', 'Community', 'Updates']), // ← Change Categories here
+        date: z.date(),
+        preview_text: z.string(),
+        featured: z.boolean().default(false),
+    }),
+});
+
 export const collections = {
     locations: locationsCollection,
     food: foodCollection,
     faq: faqCollection,
+    newsroom: newsroomCollection,
 };

@@ -123,6 +123,23 @@ collections_config:
           format: p
         label: Answer
 
+  newsroom:
+    path: src/content/newsroom
+    icon: newspaper
+    url: /newsroom/[slug]/
+    _enabled_editors:
+      - content
+      - data
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    add_options:
+      - name: Add Article
+        icon: add_circle
+    schemas:
+      default:
+        path: src/content/newsroom/_defaults.md
+
 # ========================================
 # INPUT DEFINITIONS (NUCLEAR FIX)
 # ========================================
@@ -333,6 +350,22 @@ _inputs:
     type: text
     label: Catering Button Link
     cascade: true
+
+  # ------------------------------------
+  # NEWSROOM INPUTS
+  # ------------------------------------
+  hero_image:
+    type: image
+    label: Hero Image
+    comment: "Main image for article (recommended: 1200px × 800px)"
+    options:
+      paths:
+        uploads: public/images/newsroom
+
+  preview_text:
+    type: textarea
+    label: Preview Text
+    comment: "Short description shown on newsroom listings (150-200 characters recommended)"
   
   # ------------------------------------
   # LOCATION-SPECIFIC INPUTS

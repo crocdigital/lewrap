@@ -1,0 +1,70 @@
+---
+interface Props {
+    title: string;
+    hero_image: string;
+    category: string;
+    date: Date;
+    preview_text: string;
+    slug: string;
+}
+
+const { title, hero_image, category, date, preview_text, slug } = Astro.props;
+
+// Format date
+const formattedDate = new Intl.DateTimeFormat("en-AU", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+}).format(new Date(date));
+---
+
+<article
+    class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+>
+    <a href={`/newsroom/${slug}`} class="block">
+        <img
+            src={hero_image}
+            alt={title}
+            class="w-full aspect-video object-cover"
+        />
+
+        <div class="p-6 flex flex-col gap-3">
+            <div class="flex items-center gap-3 text-sm text-gray-600">
+                <span
+                    class="px-3 py-1 bg-lewrap-green text-white rounded-full text-xs font-semibold"
+                >
+                    {category}
+                </span>
+                <time datetime={date.toISOString()}>{formattedDate}</time>
+            </div>
+
+            <h3
+                class="text-2xl font-bold text-lewrap-green-dark hover:text-lewrap-green transition-colors"
+            >
+                {title}
+            </h3>
+
+            <p class="text-gray-700 line-clamp-3">
+                {preview_text}
+            </p>
+
+            <span
+                class="text-lewrap-green font-semibold inline-flex items-center gap-2 mt-2"
+            >
+                Read more
+                <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"></path>
+                </svg>
+            </span>
+        </div>
+    </a>
+</article>
