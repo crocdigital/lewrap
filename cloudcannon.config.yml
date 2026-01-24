@@ -620,7 +620,8 @@ _inputs:
               _template: feature
               heading: New Section
               text: <p>Write content here...</p>
-              image_path: /uploads/placeholder.jpg
+              image_path: ""
+              video_url: ""
               reverse: false
               background_type: none
               background_colour: ""
@@ -648,6 +649,10 @@ _inputs:
                 type: image
                 label: Image
                 comment: "Upload a square image (1:1 ratio) for best results. Recommended size: 1000px by 1000px"
+              video_url:
+                type: text
+                label: Video URL (Vimeo)
+                comment: "Paste full Vimeo URL (e.g., https://vimeo.com/123456789). Leave blank if using image."
               reverse:
                 type: switch
                 label: Reverse layout

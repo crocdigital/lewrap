@@ -5,6 +5,41 @@ const {
     heading,
     text,
     image_path,
+    video_url, // ← Add this
+    reverse = false,
+    blockIndex,
+    background_type = "none",
+    background_colour,
+    background_image,
+    button_text,
+    button_link,
+    button_variant = "primary",
+    index = 0,
+} = Astro.props;
+
+// Determine inline style for backgrounds
+let backgroundStyle = "";
+if (background_type === "color" && background_colour) {
+    backgroundStyle = `background-color: ${background_colour};`;
+} else if (background_type === "image" && background_image) {
+    backgroundStyle = `background-image: url('${background_image}'); background-repeat: repeat;`;
+}
+
+// Extract Vimeo video ID from URL
+let vimeoId = "";
+if (video_url) {
+    const match = video_url.match(/vimeo\.com\/(\d+)/);
+    if (match) vimeoId = match[1];
+}
+---
+
+<!-- ---
+import Button from "../components/atoms/Button.astro";
+
+const {
+    heading,
+    text,
+    image_path,
     reverse = false,
     blockIndex,
     background_type = "none",
@@ -71,6 +106,91 @@ if (background_type === "color" && background_colour) {
                     class="w-full aspect-square object-cover rounded-xl"
                     data-cms-edit={`page_blocks.${blockIndex}.image_path`}
                 />
+            </div>
+        )
+    }
+
+    {/* Green arrow l2r-sml */}
+    {
+        Astro.url.pathname.includes("own-a-store") && index === 0 && (
+            <img
+                src="/images/elements/arrow-green-l2r-sml.svg"
+                alt="LeWrap"
+                class="absolute left-1/2 -translate-x-1/2 z-20
+                    /* Mobile */
+                    bottom-[37vh]
+                    rotate-90
+                    /* Desktop */
+                    md:top-[24vh]
+                    md:rotate-0"
+            />
+        )
+    }
+</section> -->
+<section
+    class="w-[95%] md:max-w-screen-2xl mx-auto grid md:grid-cols-2 gap-8 p-7 md:p-21 items-center rounded-xl relative"
+    style={backgroundStyle}
+    data-cms-bind={`page_blocks[${blockIndex}]`}
+>
+    <div
+        class={`flex flex-col gap-y-8 p-7 md:p-0 ${reverse ? "md:order-2" : ""}`}
+    >
+        {
+            heading && (
+                <h2 class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight">
+                    <span data-cms-edit={`page_blocks.${blockIndex}.heading`}>
+                        {heading}
+                    </span>
+                </h2>
+            )
+        }
+
+        {/* Copy */}
+        <div
+            class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8 [&_p:last-child]:mb-0"
+            data-cms-edit={`page_blocks.${blockIndex}.text`}
+            set:html={text}
+        />
+
+        {/* Button */}
+        {
+            button_text && button_link && (
+                <div>
+                    <Button href={button_link} variant={button_variant}>
+                        {button_text}
+                    </Button>
+                </div>
+            )
+        }
+    </div>
+
+    {/* Media column - Video or Image */}
+    {
+        (vimeoId || image_path) && (
+            <div class={reverse ? "md:order-1" : ""}>
+                {vimeoId ? (
+                    // Vimeo Video
+                    <div
+                        class="relative w-full aspect-square rounded-xl overflow-hidden bg-black"
+                        data-cms-edit={`page_blocks.${blockIndex}.video_url`}
+                    >
+                        <iframe
+                            src={`https://player.vimeo.com/video/${vimeoId}?badge=0&autopause=1&player_id=0&app_id=58479`}
+                            class="absolute inset-0 w-full h-full"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                            title={heading || "Video"}
+                        />
+                    </div>
+                ) : (
+                    // Image
+                    <img
+                        src={image_path}
+                        alt={heading || "Feature Image"}
+                        class="w-full aspect-square object-cover rounded-xl"
+                        data-cms-edit={`page_blocks.${blockIndex}.image_path`}
+                    />
+                )}
             </div>
         )
     }
