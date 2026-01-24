@@ -3,7 +3,7 @@ layout: ../layouts/HomeLayout.astro
 title: LeWrap - Fresh, Healthy Wraps
 hero_slides:
   - image_desktop: /images/hero/catering-desktop.webp
-    image_mobile: /images/hero/locations-mobile.webp
+    image_mobile: /images/hero/catering-mobile.webp
     alt: Fresh wraps and healthy food
   - image_desktop: /images/hero/community-desktop.webp
     image_mobile: /images/hero/community-mobile.webp
