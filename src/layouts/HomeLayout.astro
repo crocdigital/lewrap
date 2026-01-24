@@ -1,10 +1,16 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import Carousel from "../components/molecules/Carousel";
+
 import Marquee from "../components/molecules/Marquee.astro";
 import { marqueeSeparator } from "../data/marqueeSeparator";
+
 import { Image } from "astro:assets";
 import leWrapLogo from "../assets/brand/lewrap-white.svg";
+
+import Button from "../components/atoms/Button.astro";
+import ScrollReveal from "../components/molecules/ScrollReveal.astro";
+import bgTexture from "../assets/bgrds/bg-texture.webp";
 
 const { frontmatter } = Astro.props;
 const {
@@ -16,6 +22,12 @@ const {
     hero_cta2_text = "Order now",
     hero_cta2_link = "/order",
     marquee_items = [],
+    welcome_heading = "Nõbody makës ă wrap like us",
+    welcome_text_1 = "",
+    welcome_text_2 = "",
+    welcome_image = "",
+    welcome_button_text = "Our Food",
+    welcome_button_link = "/our-food",
 } = frontmatter || {};
 
 // Transform hero slides with HTML content for responsive images
@@ -85,7 +97,7 @@ const carouselSlides = hero_slides.map((slide: any) => {
                 </Carousel>
             </section>
 
-            {/* Only shows if marquee_items exist */}
+            {/* Marquee */}
             {
                 marquee_items.length > 0 && (
                     <Marquee
@@ -97,6 +109,56 @@ const carouselSlides = hero_slides.map((slide: any) => {
                     />
                 )
             }
+
+            {/* Welcome Section */}
+            <section
+                class="w-[95%] mx-auto bg-cover bg-center bg-no-repeat p-7 rounded-2xl grid md:grid-cols-2 relative"
+                style={{
+                    backgroundImage: `radial-gradient(ellipse 93.38% 101.86% at 50% 50%, white 15%, rgba(255, 255, 255, 0) 100%), url(${bgTexture.src})`,
+                }}
+            >
+                <div class="max-w-xl mx-auto flex flex-col gap-y-8 py-16">
+                    <h2
+                        class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight"
+                        data-cms-bind="#welcome_heading"
+                    >
+                        {welcome_heading}
+                    </h2>
+
+                    <div
+                        class="text-2xl/8 prose [&_p]:mb-6"
+                        data-cms-bind="#welcome_text_1"
+                        set:html={welcome_text_1}
+                    />
+
+                    <div
+                        class="text-2xl/8 prose [&_p]:mb-6"
+                        data-cms-bind="#welcome_text_2"
+                        set:html={welcome_text_2}
+                    />
+
+                    {
+                        welcome_button_text && welcome_button_link && (
+                            <div>
+                                <Button href={welcome_button_link}>
+                                    {welcome_button_text}
+                                </Button>
+                            </div>
+                        )
+                    }
+                </div>
+
+                {
+                    welcome_image && (
+                        <img
+                            src={welcome_image}
+                            alt="LeWrap welcome"
+                            class="w-[300px] md:w-[629px] h-auto block relative md:absolute mx-auto md:bottom-0 md:right-28 md:mx-0 mb-[-28px] md:mb-0"
+                            loading="eager"
+                        />
+                    )
+                }
+            </section>
         </div>
     </main>
 </BaseLayout>
