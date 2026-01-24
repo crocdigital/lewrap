@@ -16,7 +16,8 @@ page_blocks:
     text: >-
       <p>Owner quote going in here :)</p><p>Refactor code to accept video files
       as well.</p>
-    image_path: /images/pages/catering.webp
+    image_path:
+    video_url: https://vimeo.com/123456789
     reverse: false
     background_type: color
     background_colour: '#ffffff'
@@ -33,6 +34,7 @@ page_blocks:
       nouveau realisme young british artists, intervention art primitivism
       luminism synthetism.</p>
     image_path: /images/pages/about-the-brand.webp
+    video_url: ''
     reverse: true
     background_type: none
     background_colour: '#ffffff'
@@ -52,6 +54,7 @@ page_blocks:
       performance art nouveau realisme, renaissance gothic art relational art
       land art tonalism scuola romana.</p>
     image_path: /images/pages/in-business-for-yourself.webp
+    video_url: ''
     reverse: false
     background_type: none
     background_colour: '#ffffff'
