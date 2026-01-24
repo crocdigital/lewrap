@@ -84,4 +84,14 @@ catering_text: >-
 catering_button_text: Find out more
 catering_button_link: /catering
 catering_image: /images/pages/catering.webp
+franchise_callout:
+  show: true
+  heading: Want to be the next LeWrap store owner?
+  text: >-
+    <p>We can now enter text the <strong>WYSIWYG way</strong> so it makes more
+    sense for Monica when editing content :)</p><p>Testing another para to make
+    sure it renders right. Eshay bra.</p>
+  image: /images/elements/store-sign.webp
+  button_text: Be your own boss
+  button_link: /own-a-store
 ---

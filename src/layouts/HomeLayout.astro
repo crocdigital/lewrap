@@ -9,6 +9,9 @@ import FlexibleTwoCol from "../components/FlexibleTwoCol.astro";
 import Marquee from "../components/molecules/Marquee.astro";
 import { marqueeSeparator } from "../data/marqueeSeparator";
 
+// Franchise Callout component
+import FranchiseCallout from "../components/FranchiseCallout.astro";
+
 import { Image } from "astro:assets";
 import leWrapLogo from "../assets/brand/lewrap-white.svg";
 
@@ -56,6 +59,7 @@ const {
     catering_button_text = "Learn more",
     catering_button_link = "/catering",
     catering_image = "",
+    franchise_callout = {},
 } = frontmatter || {};
 
 // Transform hero slides with HTML content for responsive images
@@ -347,24 +351,41 @@ const carouselSlides = hero_slides.map((slide: any) => {
                 <img
                     src="/images/bgrds/tomatoes.webp"
                     alt="LeWrap"
-                    class="absolute left-0 bottom-0 w-40 h-auto -z-1"
+                    class="absolute left-0 top-7 md:top-16 w-30 md:w-40 h-auto -z-1"
                 />
 
-                {/* Green arrow l2r-lng */}
+                {/* Green arrow l2r-under */}
                 <img
-                    src="/images/elements/arrow-green-l2r-lng.svg"
+                    src="/images/elements/arrow-green-l2r-under.svg"
                     alt="LeWrap"
-                    class="absolute left-1/2 -translate-x-1/2 z-20
-        /* Mobile */
-        bottom-[42vh]
-        w-[30%]
-        rotate-90
-        /* Desktop */
-        md:top-[17vh]
-        md:w-auto
-        md:rotate-0"
+                    class="absolute -translate-x-1/2 z-1
+                        /* Mobile */
+                        left-1/2
+                        bottom-[370px]
+                        w-[20%]
+                        rotate-90
+                        /* Desktop */
+                        md:top-[21vh]
+                        md:left-[46%]
+                        md:w-auto
+                        md:rotate-0"
                 />
             </section>
+
+            {/* Franchise Callout block */}
+            {
+                franchise_callout.show && (
+                    <FranchiseCallout
+                        heading={franchise_callout.heading}
+                        text={franchise_callout.text}
+                        image={franchise_callout.image}
+                        buttonText={franchise_callout.button_text}
+                        buttonLink={franchise_callout.button_link}
+                    />
+                )
+            }
+
+            {/* Newsroom articles (latest 3) */}
         </div>
     </main>
 </BaseLayout>
