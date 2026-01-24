@@ -61,4 +61,6 @@ flexible_two_col:
         alt: 2nd slide image
       - image: /images/carousel/community-01.webp
         alt: 3rd slide image
+      - image: /images/carousel/community-01.webp
+        alt: Testing adding a 4th slide
 ---
