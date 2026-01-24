@@ -74,11 +74,14 @@ lewrapstory_button_text: Learn more
 lewrapstory_button_link: /our-story
 lewrapstory_image: /images/kaan-celik.webp
 show_home_faqs: true
-home_faq_button_text: "View all FAQs"
-home_faq_button_link: "/faqs"
-catering_heading: "Let us cater your next event"
-catering_text: "<p>Perfect for corporate events, parties, and special occasions.</p>"
-catering_button_text: "Learn more"
-catering_button_link: "/catering"
-catering_image: /images/homepage/catering-event.jpg
+home_faq_button_text: View all FAQs
+home_faq_button_link: /faqs
+catering_heading: Let us cater your next event
+catering_text: >-
+  <p>No event is too big or too small. From office catering to family
+  get-togethers and special celebrations, we’ve got fresh wraps, baguettes,
+  salads and chips to suit any occasion.</p>
+catering_button_text: Find out more
+catering_button_link: /catering
+catering_image: /images/pages/catering.webp
 ---
