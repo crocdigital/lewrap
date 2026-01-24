@@ -124,7 +124,7 @@ collections_config:
         label: Answer
 
 # ========================================
-# INPUT DEFINITIONS
+# INPUT DEFINITIONS (NUCLEAR FIX)
 # ========================================
 _inputs:
 

@@ -12,9 +12,23 @@ import { marqueeSeparator } from "../data/marqueeSeparator";
 import { Image } from "astro:assets";
 import leWrapLogo from "../assets/brand/lewrap-white.svg";
 
+import FAQItem from "../components/FAQItem.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
 import Button from "../components/atoms/Button.astro";
 import ScrollReveal from "../components/molecules/ScrollReveal.astro";
 import bgTexture from "../assets/bgrds/bg-texture.webp";
+import AppBanner from "../components/organisms/AppBanner.astro";
+
+// Get featured FAQs for homepage
+const allFAQs = (await getCollection("faq")) as CollectionEntry<"faq">[];
+const featuredFAQs = allFAQs
+    .filter(
+        (faq) => faq.data.featured === true && faq.data.question.trim() !== "",
+    )
+    .sort((a, b) => a.data.order - b.data.order)
+    .slice(0, 5); // First 5 featured FAQs
 
 const { frontmatter } = Astro.props;
 const {
@@ -248,7 +262,40 @@ const carouselSlides = hero_slides.map((slide: any) => {
                 />
             </section>
 
-            {/* FAQ (showing the 5 filtered for the homepage) */}
+            {/* Featured FAQs */}
+            {
+                featuredFAQs.length > 0 && (
+                    <section class="w-[95%] md:max-w-screen-2xl mx-auto">
+                        <div
+                            class="rounded-xl p-8 md:p-12"
+                            style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
+                        >
+                            <h2 class="text-3xl md:text-5xl font-bold text-lewrap-green-dark text-center mb-8">
+                                Frequently Asked Questions
+                            </h2>
+
+                            <div class="max-w-screen-md mx-auto divide-y">
+                                {featuredFAQs.map((faq: any, index: number) => (
+                                    <FAQItem
+                                        question={faq.data.question}
+                                        answer={faq.data.answer}
+                                        index={index}
+                                    />
+                                ))}
+                            </div>
+
+                            <div class="mt-12 text-center">
+                                <Button href="/faqs" variant="primary">
+                                    View all FAQs
+                                </Button>
+                            </div>
+                        </div>
+                    </section>
+                )
+            }
+
+            {/* Download App banner (specially for homepage) */}
+            <AppBanner />
         </div>
     </main>
 </BaseLayout>

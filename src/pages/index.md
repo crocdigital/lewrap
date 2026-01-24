@@ -73,4 +73,7 @@ lewrapstory_text: >-
 lewrapstory_button_text: Learn more
 lewrapstory_button_link: /our-story
 lewrapstory_image: /images/kaan-celik.webp
+show_home_faqs: true
+home_faq_button_text: "View all FAQs"
+home_faq_button_link: "/faqs"
 ---
