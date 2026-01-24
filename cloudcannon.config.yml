@@ -119,6 +119,7 @@ collections_config:
           bold: true
           italic: true
           link: true
+          bulletedlist: true
           format: p
         label: Answer
 
