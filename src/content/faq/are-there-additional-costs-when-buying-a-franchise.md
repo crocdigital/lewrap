@@ -8,7 +8,7 @@ answer: >-
   initial stock, first months rent, and working capital. All costs payable to
   the franchisor will be disclosed in the Disclosure Document in accordance with
   the Franchising Code of Conduct.</p>
-category: General
+category: Franchising
 featured: false
 order: 3
 ---
