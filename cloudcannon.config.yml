@@ -165,6 +165,62 @@ _inputs:
                 comment: "Describe the image for accessibility"
 
   # ------------------------------------
+  # FLEXIBLE TWO COLUMN INPUTS
+  # ------------------------------------
+  title:
+    type: text
+    label: Title
+  
+  description:
+    type: html
+    label: Description
+    options:
+      bold: true
+      italic: true
+      link: true
+      format: p h2 h3 h4
+      allow_resize: true
+  
+  buttonText:
+    type: text
+    label: Button Text
+  
+  buttonLink:
+    type: text
+    label: Button Link
+  
+  buttonVariant:
+    type: select
+    label: Button Style
+    options:
+      values:
+        - primary
+        - secondary
+
+  slides:
+    type: array
+    label: Carousel Slides
+    comment: "Add images for the carousel. If empty, shows colored background."
+    options:
+      structures:
+        values:
+          - label: Slide
+            value:
+              image: ""
+              alt: ""
+            _inputs:
+              image:
+                type: image
+                label: Slide Image
+                comment: "Upload image. Required size: 1200px x 800px"
+                options:
+                  paths:
+                    uploads: public/images/carousel
+              alt:
+                type: text
+                label: Alt Text
+  
+  # ------------------------------------
   # WELCOME SECTION - HOMEPAGE
   # ------------------------------------
   welcome_heading:
@@ -914,63 +970,4 @@ welcome_button_link:
               bgColor: "#95BA32"
               reverse: false
               slides: []
-            _inputs:
-              title:
-                type: text
-                label: Title
-              description:
-                type: html
-                options:
-                  bold: true
-                  italic: true
-                  link: true
-                  format: p h2 h3 h4
-                  allow_resize: true
-                label: Description
-              buttonText:
-                type: text
-                label: Button Text
-                comment: "Optional"
-              buttonLink:
-                type: text
-                label: Button Link
-              buttonVariant:
-                type: select
-                label: Button Style
-                options:
-                  values:
-                    - primary
-                    - secondary
-              bgColor:
-                type: color
-                label: Background Color
-                comment: "Color for the left column (only shown if no slides added)"
-                options:
-                  format: hex
-              reverse:
-                type: switch
-                label: Reverse Columns
-                comment: "Swap the left and right columns"
-              slides:
-                type: array
-                label: Carousel Slides
-                comment: "Add images for the carousel. If empty, shows colored background."
-                options:
-                  structures:
-                    values:
-                      - label: Slide
-                        value:
-                          image: ""
-                          alt: ""
-                        _inputs:
-                          image:
-                            type: image
-                            label: Slide Image
-                            comment: "Upload image. Required size: 1200px × 800px"
-                            options:
-                              paths:
-                                uploads: public/images/carousel
-                          alt:
-                            type: text
-                            label: Alt Text
 timezone: Australia/Sydney
