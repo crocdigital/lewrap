@@ -295,6 +295,44 @@ _inputs:
     type: text
     label: LeWrap Story Button Link
     cascade: true
+
+  # ------------------------------------
+  # CATERING SECTION - HOMEPAGE
+  # ------------------------------------
+  catering_heading:
+    type: text
+    label: Catering Heading
+    cascade: true
+
+  catering_text:
+    type: html
+    label: Catering Text
+    options:
+      bold: true
+      italic: true
+      link: true
+      format: p
+      allow_resize: true
+    cascade: true
+
+  catering_image:
+    type: image
+    label: Catering Image
+    comment: "Image shown on right side (recommended: 1000px × 1000px square)"
+    options:
+      paths:
+        uploads: public/images/homepage
+    cascade: true
+
+  catering_button_text:
+    type: text
+    label: Catering Button Text
+    cascade: true
+
+  catering_button_link:
+    type: text
+    label: Catering Button Link
+    cascade: true
   
   # ------------------------------------
   # LOCATION-SPECIFIC INPUTS
