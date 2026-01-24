@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/NewsroomLayout.astro
 _schema: default
 title: My first Newsroom test entry
 hero_image: /images/newsroom/placement-newsroom-desktop.webp

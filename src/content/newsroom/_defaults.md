@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/NewsroomLayout.astro
 title: ""
 hero_image: ""
 category: "News"
