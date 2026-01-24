@@ -17,7 +17,7 @@ page_blocks:
       <p>Owner quote going in here :)</p><p>Refactor code to accept video files
       as well.</p>
     image_path:
-    video_url: https://vimeo.com/922247437
+    video_url: https://vimeo.com/921611369
     reverse: false
     background_type: color
     background_colour: '#ffffff'
