@@ -124,8 +124,6 @@ const carouselSlides = hero_slides.map((slide: any) => {
                 <div class="max-w-xl mx-auto flex flex-col gap-y-8 py-16">
                     <h2
                         class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight"
-                        data-editable="text"
-                        data-prop="welcome_heading"
                         data-cms-bind="#welcome_heading"
                     >
                         {welcome_heading}
@@ -133,8 +131,6 @@ const carouselSlides = hero_slides.map((slide: any) => {
 
                     <div
                         class="text-2xl/8 prose [&_p]:mb-6"
-                        data-editable="text"
-                        data-prop="welcome_text"
                         data-cms-bind="#welcome_text"
                         set:html={welcome_text}
                     />

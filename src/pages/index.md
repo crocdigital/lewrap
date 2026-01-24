@@ -33,14 +33,21 @@ marquee_items:
   - Sides
   - Drinks
 welcome_heading: Nobody makes a wrap like us
-welcome_text: "<p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism, deformalism post-painterly abstraction neo-classicism bauhaus.</p><p><a href='#'>Neo-impressionism</a> romanesque renaissance postminimalism nouveau realisme young british artists, intervention art primitivism luminism synthetism.</p>"
+welcome_text: >-
+  <p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism,
+  deformalism post-painterly abstraction neo-classicism
+  bauhaus.</p><p>Neo-impressionism romanesque renaissance postminimalism nouveau
+  realisme young british artists, intervention art primitivism luminism
+  synthetism.</p>
 welcome_image: /images/pages/welcome-lewrap.webp
 welcome_button_text: Our Food
 welcome_button_link: /our-food
 flexible_two_col:
   - title: Find a LeWrap near you
     description: >-
-      <p>There’s a LeWrap near you, ready to serve fresh, made-to-order wraps, salads, plates and baguettes. We make it easy to enjoy something good and fresh, wherever you are.</p>
+      <p>There’s a LeWrap near you, ready to serve fresh, made-to-order wraps,
+      salads, plates and baguettes. We make it easy to enjoy something good and
+      fresh, wherever you are.</p>
     buttonText: All locations
     buttonLink: /locations
     buttonVariant: primary
