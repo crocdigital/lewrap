@@ -257,6 +257,44 @@ welcome_button_link:
   type: text
   label: Welcome Button Link
   cascade: true
+
+# ------------------------------------
+# LEWRAP STORY SECTION - HOMEPAGE
+# ------------------------------------
+lewrapstory_heading:
+  type: text
+  label: LeWrap Story Heading
+  cascade: true
+
+lewrapstory_text:
+  type: html
+  label: LeWrap Story Text
+  options:
+    bold: true
+    italic: true
+    link: true
+    format: p
+    allow_resize: true
+  cascade: true
+
+lewrapstory_image:
+  type: image
+  label: LeWrap Story Image
+  comment: "Image shown on right side (recommended: 1000px x 1000px square)"
+  options:
+    paths:
+      uploads: public/images/homepage
+  cascade: true
+
+lewrapstory_button_text:
+  type: text
+  label: LeWrap Story Button Text
+  cascade: true
+
+lewrapstory_button_link:
+  type: text
+  label: LeWrap Story Button Link
+  cascade: true
   
   # ------------------------------------
   # LOCATION-SPECIFIC INPUTS
