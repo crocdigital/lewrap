@@ -62,7 +62,7 @@ const newsroomCollection = defineCollection({
     schema: z.object({
         title: z.string(),
         hero_image: z.string(),
-        category: z.enum(['Franchise', 'Promotion', 'Community', 'Updates']), // ← Change Categories here
+        category: z.enum(['General', 'Franchising', 'Promotion', 'Community', 'Updates']),
         date: z.date(),
         preview_text: z.string(),
         featured: z.boolean().default(false),

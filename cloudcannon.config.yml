@@ -357,7 +357,7 @@ _inputs:
   hero_image:
     type: image
     label: Hero Image
-    comment: "Main image for article (recommended: 1200px × 800px)"
+    comment: "Main image for article (recommended: 1920px x 1080px)"
     options:
       paths:
         uploads: public/images/newsroom
@@ -1005,8 +1005,10 @@ _inputs:
     options:
       values:
         - General
-        - Catering
         - Franchising
+        - Promotion
+        - Community
+        - Updates
 
   featured:
     type: switch
