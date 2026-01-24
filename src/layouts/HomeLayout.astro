@@ -26,12 +26,17 @@ const {
     hero_cta2_text = "Order now",
     hero_cta2_link = "/order",
     marquee_items = [],
-    welcome_heading = "Nõbody makës ă wrap like us",
+    welcome_heading = "Nobody makes a wrap like us",
     welcome_text = "",
     welcome_image = "",
     welcome_button_text = "Our Food",
     welcome_button_link = "/our-food",
     flexible_two_col = [],
+    lewrapstory_heading = "The LeWrap Story",
+    lewrapstory_text = "",
+    lewrapstory_button_text = "Learn more",
+    lewrapstory_button_link = "/our-story",
+    lewrapstory_image = "/images/kaan-celik.webp",
 } = frontmatter || {};
 
 // Transform hero slides with HTML content for responsive images
@@ -182,6 +187,68 @@ const carouselSlides = hero_slides.map((slide: any) => {
                     </section>
                 )
             }
+
+            {/* The LeWrap Story */}
+            <section
+                class="w-[95%] md:max-w-screen-2xl mx-auto grid md:grid-cols-2 gap-8 p-7 md:p-21 items-center rounded-xl overflow-hidden relative"
+            >
+                <div class="max-w-xl mx-auto flex flex-col gap-y-8 py-16">
+                    <h2
+                        class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight"
+                        data-cms-bind="#lewrapstory_heading"
+                    >
+                        {lewrapstory_heading}
+                    </h2>
+
+                    <div
+                        class="text-2xl/8 prose [&_p]:mb-6"
+                        data-cms-bind="#lewrapstory_text"
+                        set:html={lewrapstory_text}
+                    />
+
+                    {
+                        lewrapstory_button_text && lewrapstory_button_link && (
+                            <ScrollReveal>
+                                <Button href={lewrapstory_button_link}>
+                                    {lewrapstory_button_text}
+                                </Button>
+                            </ScrollReveal>
+                        )
+                    }
+                </div>
+
+                {
+                    lewrapstory_image && (
+                        <img
+                            src={lewrapstory_image}
+                            alt="Kaan Celik, LeWrap's founder"
+                            class="w-full aspect-square object-cover rounded-xl"
+                        />
+                    )
+                }
+
+                {/* Background image */}
+                <img
+                    src="/images/bgrds/lewrap-bgrd.svg"
+                    alt="LeWrap"
+                    class="absolute left-0 bottom-0 -z-1"
+                />
+
+                {/* Green arrow l2r-sml */}
+                <img
+                    src="/images/elements/arrow-green-l2r-sml.svg"
+                    alt="LeWrap"
+                    class="absolute left-1/2 -translate-x-1/2 z-20
+                    /* Mobile */
+                    bottom-[42vh]
+                    rotate-90
+                    /* Desktop */
+                    md:top-[24vh]
+                    md:rotate-0"
+                />
+            </section>
+
+            {/* FAQ (showing the 5 filtered for the homepage) */}
         </div>
     </main>
 </BaseLayout>

@@ -63,4 +63,14 @@ flexible_two_col:
         alt: 3rd slide image
       - image: /images/carousel/community-01.webp
         alt: Testing adding a 4th slide
+lewrapstory_heading: The LeWrap Story
+lewrapstory_text: >-
+  <p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism,
+  deformalism post-painterly abstraction neo-classicism
+  bauhaus.</p><p>Neo-impressionism romanesque renaissance postminimalism nouveau
+  realisme young british artists, intervention art primitivism luminism
+  synthetism.</p>
+lewrapstory_button_text: Learn more
+lewrapstory_button_link: /our-story
+lewrapstory_image: /images/kaan-celik.webp
 ---
