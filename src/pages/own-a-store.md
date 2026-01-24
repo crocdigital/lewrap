@@ -14,8 +14,8 @@ page_blocks:
   - _template: feature
     heading: Supporting you every step of the way
     text: >-
-      <p>Owner quote going in here :)</p><p>Refactor code to accept video files
-      as well.</p>
+      <p>Owner quote going in here :)</p><p>I've refactored code to accept video
+      files as well as images. Pretty swish!</p>
     image_path:
     video_url: https://vimeo.com/921611369
     reverse: false
