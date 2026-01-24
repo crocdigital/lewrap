@@ -23,8 +23,7 @@ const {
     hero_cta2_link = "/order",
     marquee_items = [],
     welcome_heading = "Nõbody makës ă wrap like us",
-    welcome_text_1 = "",
-    welcome_text_2 = "",
+    welcome_text = "",
     welcome_image = "",
     welcome_button_text = "Our Food",
     welcome_button_link = "/our-food",
@@ -127,14 +126,9 @@ const carouselSlides = hero_slides.map((slide: any) => {
 
                     <div
                         class="text-2xl/8 prose [&_p]:mb-6"
-                        data-cms-bind="#welcome_text_1"
-                        set:html={welcome_text_1}
-                    />
-
-                    <div
-                        class="text-2xl/8 prose [&_p]:mb-6"
-                        data-cms-bind="#welcome_text_2"
-                        set:html={welcome_text_2}
+                        data-editable="text"
+                        data-cms-bind="#welcome_text"
+                        set:html={welcome_text}
                     />
 
                     {

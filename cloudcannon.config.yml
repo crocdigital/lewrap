@@ -163,6 +163,44 @@ _inputs:
                 type: text
                 label: Alt Text
                 comment: "Describe the image for accessibility"
+
+  # ------------------------------------
+  # WELCOME SECTION - HOMEPAGE
+  # ------------------------------------
+  welcome_heading:
+    type: text
+    label: Welcome Heading
+    cascade: true
+
+  welcome_text:
+    type: html
+    label: Welcome Text
+    options:
+      bold: true
+      italic: true
+      link: true
+      format: p
+      allow_resize: true
+    cascade: true
+
+  welcome_image:
+    type: image
+    label: Welcome Image
+    comment: "Image shown on right side (recommended: 629px wide, transparent PNG)"
+    options:
+      paths:
+        uploads: public/images/homepage
+    cascade: true
+
+welcome_button_text:
+  type: text
+  label: Welcome Button Text
+  cascade: true
+
+welcome_button_link:
+  type: text
+  label: Welcome Button Link
+  cascade: true
   
   # ------------------------------------
   # LOCATION-SPECIFIC INPUTS
