@@ -925,6 +925,7 @@ welcome_button_link:
                   italic: true
                   link: true
                   format: p h2 h3 h4
+                  allow_resize: true
                 label: Description
               buttonText:
                 type: text
