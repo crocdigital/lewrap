@@ -2,7 +2,7 @@
 layout: ../../layouts/NewsroomLayout.astro
 title: ""
 hero_image: ""
-category: "News"
+category: ""
 date: 2026-01-26
 preview_text: ""
 featured: false
