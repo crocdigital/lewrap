@@ -86,12 +86,11 @@ catering_button_link: /catering
 catering_image: /images/pages/catering.webp
 franchise_callout:
   show: true
-  heading: Want to be the next LeWrap store owner?
+  heading: Own a LeWrap store
   text: >-
-    <p>We can now enter text the <strong>WYSIWYG way</strong> so it makes more
-    sense for Monica when editing content :)</p><p>Testing another para to make
-    sure it renders right. Eshay bra.</p>
-  image: /images/elements/store-sign.webp
+    <p>Neo-impressionism romanesque renaissance postminimalism nouveau realisme
+    young british artists, intervention art primitivism luminism synthetism.</p>
+  image: /images/franchise/lewrap-location.webp
   button_text: Be your own boss
   button_link: /own-a-store
 ---
