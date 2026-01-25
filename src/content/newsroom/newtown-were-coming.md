@@ -1,11 +1,11 @@
 ---
 _schema: default
 layout: ../../layouts/NewsroomLayout.astro
-title: 2nd test Newsroom entry
-hero_image: /images/newsroom/placement-newsroom-desktop.webp
-hero_image_mobile: /images/hero/contact-mobile.webp
-category: Community
-date: 2026-01-26T00:00:00Z
+title: Newtown, we're coming!
+hero_image: /images/newsroom/newtown-were-coming-desktop.webp
+hero_image_mobile: /images/newsroom/newtown-were-coming-mobile.webp
+category: Franchising
+date: 2026-03-02T09:00:00+11:00
 preview_text: 2nd test entry
 featured: true
 ---
