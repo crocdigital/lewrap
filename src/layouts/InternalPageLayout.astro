@@ -363,6 +363,37 @@ const categories = [
                 const filterButtons = document.querySelectorAll(".filter-btn");
                 const articles = document.querySelectorAll(".newsroom-article");
 
+                // Function to update counts
+                function updateCounts() {
+                    filterButtons.forEach((button) => {
+                        const category = button.getAttribute("data-category");
+                        let count = 0;
+
+                        if (category === "All") {
+                            count = articles.length;
+                        } else {
+                            articles.forEach((article) => {
+                                if (
+                                    article.getAttribute("data-category") ===
+                                    category
+                                ) {
+                                    count++;
+                                }
+                            });
+                        }
+
+                        // Update button text with count
+                        const buttonText =
+                            button.textContent
+                                ?.trim()
+                                .replace(/\s*\(\d+\)$/, "") || category;
+                        button.textContent = `${buttonText} (${count})`;
+                    });
+                }
+
+                // Update counts on load
+                updateCounts();
+
                 filterButtons.forEach((button) => {
                     button.addEventListener("click", () => {
                         const selectedCategory =
@@ -392,10 +423,8 @@ const categories = [
                                 selectedCategory === "All" ||
                                 articleCategory === selectedCategory
                             ) {
-                                // Show
                                 htmlArticle.classList.remove("hidden-article");
                             } else {
-                                // Hide
                                 htmlArticle.classList.add("hidden-article");
                             }
                         });
