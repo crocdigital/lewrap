@@ -5,7 +5,7 @@ title: Free Wrap on the App
 hero_image: /images/newsroom/freewrap-desktop.webp
 hero_image_mobile: /images/newsroom/freewrap-mobile.webp
 category: Promotion
-date: 2026-01-01T09:00:00+11:00
+date: 2026-02-01T09:00:00+11:00
 preview_text: For a limited time only, download the app to claim your freebie!
 featured: true
 ---
