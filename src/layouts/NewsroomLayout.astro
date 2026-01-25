@@ -25,25 +25,34 @@ const formattedDate = new Intl.DateTimeFormat("en-AU", {
             >
             </div>
             <div
-                class="max-w-[930px] relative z-20 flex flex-col items-center justify-center h-full w-full gap-y-6 px-6"
+                class="max-w-[930px] relative z-20 flex flex-col items-center justify-center h-full w-full px-6"
             >
                 {/* Back Button */}
-                <div class="">
-                    <Button
-                        href="/newsroom"
-                        variant="secondary"
-                        class="py-3 px-6 text-sm"
-                    >
-                        ← Back to Newsroom
-                    </Button>
-                </div>
+                <Button
+                    href="/newsroom"
+                    variant="secondary"
+                    class="py-3 px-6 text-sm mb-6"
+                >
+                    ← Back to Newsroom
+                </Button>
 
+                {/* Category */}
+                {
+                    /* <span
+                    class="font-helvetica-condensed font-semibold text-base uppercase"
+                >
+                    {category}
+                </span> */
+                }
+
+                {/* Title */}
                 <h1
-                    class="md:w-auto mx-auto text-white text-4xl md:text-[90px] font-bold leading-[100%] tracking-tight text-center"
+                    class="md:w-auto mx-auto text-white text-4xl md:text-[90px] font-bold leading-[100%] tracking-tight text-center mb-6"
                 >
                     {title}
                 </h1>
 
+                {/* Date */}
                 <time
                     datetime={date.toISOString()}
                     class="text-xl md:text-2xl leading-tight text-white text-center max-w-2xl px-8 mx-auto"
@@ -68,25 +77,6 @@ const formattedDate = new Intl.DateTimeFormat("en-AU", {
         <section
             class="w-[95%] md:max-w-screen-lg mx-auto gap-8 p-7 md:p-21 items-center rounded-xl relative"
         >
-            {/* Meta Info */}
-            <div class="flex items-center gap-4 mb-6">
-                <span
-                    class="px-4 py-2 bg-lewrap-green text-white rounded-full text-sm font-semibold"
-                >
-                    {category}
-                </span>
-                <time datetime={date.toISOString()} class="text-gray-600">
-                    {formattedDate}
-                </time>
-            </div>
-
-            {/* Title */}
-            <h1
-                class="text-4xl md:text-6xl font-bold text-lewrap-green-dark mb-6"
-            >
-                {title}
-            </h1>
-
             {/* Article Content */}
             <div class="prose prose-lg max-w-none article-content">
                 <slot />
