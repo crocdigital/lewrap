@@ -408,7 +408,7 @@ const featuredNews = allNewsroom
                             Latest News
                         </h2>
 
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
                             {featuredNews.map((article) => (
                                 <NewsRoomCard
                                     title={article.data.title}
@@ -423,7 +423,7 @@ const featuredNews = allNewsroom
 
                         <div class="text-center mt-12">
                             <Button href="/newsroom" variant="primary">
-                                View all news
+                                View all articles
                             </Button>
                         </div>
                     </section>

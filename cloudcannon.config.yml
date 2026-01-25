@@ -1013,7 +1013,7 @@ _inputs:
   featured:
     type: switch
     label: Featured
-    comment: "Show on homepage (first 5 featured FAQs)"
+    comment: "Show on homepage (shows the latest 3 articles)"
 
   order:
     type: number

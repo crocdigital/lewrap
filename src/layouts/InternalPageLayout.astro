@@ -304,7 +304,7 @@ const categories = [
             )
         }
 
-        {/* Newsroom Listing */}
+        {/* Newsroom */}
         {
             show_newsroom_listing && (
                 <section class="w-[95%] md:max-w-screen-2xl mx-auto">
@@ -321,7 +321,7 @@ const categories = [
                     </div>
 
                     {/* Articles Grid */}
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-8">
                         {sortedNewsroom.map((article: any) => (
                             <NewsroomCard
                                 title={article.data.title}
