@@ -2,6 +2,7 @@
 layout: ../../layouts/NewsroomLayout.astro
 title: ""
 hero_image: ""
+hero_bg_image_mobile: ""
 category: ""
 date: 2026-01-26
 preview_text: ""

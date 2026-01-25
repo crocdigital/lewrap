@@ -362,6 +362,14 @@ _inputs:
       paths:
         uploads: public/images/newsroom
 
+  hero_image_mobile:
+    type: image
+    label: Hero Image (Mobile)
+    comment: "Optional mobile version. Recommended size: 1000px x 1000px. If not provided, desktop image will be used."
+    options:
+      paths:
+        uploads: public/images/newsroom
+
   preview_text:
     type: textarea
     label: Preview Text

@@ -3,6 +3,7 @@ layout: ../../layouts/NewsroomLayout.astro
 _schema: default
 title: My first Newsroom test entry
 hero_image: /images/newsroom/placement-newsroom-desktop.webp
+hero_bg_image_mobile: /images/hero/contact-mobile.webp
 category: Franchising
 date: 2026-01-26T01:00:00+11:00
 preview_text: Change hero image text in yml to 1920x1080. Confirm!

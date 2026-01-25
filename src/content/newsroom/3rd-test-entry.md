@@ -3,6 +3,7 @@ _schema: default
 layout: ../../layouts/NewsroomLayout.astro
 title: 3rd test entry
 hero_image: /images/newsroom/placement-newsroom-desktop.webp
+hero_bg_image_mobile: /images/hero/contact-mobile.webp
 category: Community
 date: 2026-01-28T00:00:00+11:00
 preview_text: 3rd test for Newsroom
