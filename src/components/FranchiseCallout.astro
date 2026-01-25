@@ -1,5 +1,6 @@
 ---
 import Button from "./atoms/Button.astro";
+import ScrollReveal from "../components/molecules/ScrollReveal.astro";
 
 interface Props {
     heading?: string;
@@ -63,9 +64,11 @@ const { heading, text, image, buttonText, buttonLink } = Astro.props;
 
             {
                 buttonText && buttonLink && (
-                    <Button href={buttonLink} variant="primary">
-                        {buttonText}
-                    </Button>
+                    <ScrollReveal>
+                        <Button href={buttonLink} variant="primary">
+                            {buttonText}
+                        </Button>
+                    </ScrollReveal>
                 )
             }
         </div>
