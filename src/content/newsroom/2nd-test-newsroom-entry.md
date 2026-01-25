@@ -3,7 +3,7 @@ _schema: default
 layout: ../../layouts/NewsroomLayout.astro
 title: 2nd test Newsroom entry
 hero_image: /images/newsroom/placement-newsroom-desktop.webp
-hero_bg_image_mobile: /images/hero/contact-mobile.webp
+hero_image_mobile: /images/hero/contact-mobile.webp
 category: Community
 date: 2026-01-26T00:00:00Z
 preview_text: 2nd test entry

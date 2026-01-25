@@ -13,8 +13,18 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+// Explicitly create frontmatter object with all fields
+const frontmatter = {
+    title: entry.data.title,
+    hero_image: entry.data.hero_image,
+    hero_image_mobile: entry.data.hero_image_mobile,
+    category: entry.data.category,
+    date: entry.data.date,
+    preview_text: entry.data.preview_text,
+};
 ---
 
-<NewsroomLayout frontmatter={entry.data}>
+<NewsroomLayout frontmatter={frontmatter}>
     <Content />
 </NewsroomLayout>

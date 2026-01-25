@@ -304,15 +304,19 @@ const categories = [
             )
         }
 
-        {/* Newsroom */}
+        {/* Newsroom Listing */}
         {
             show_newsroom_listing && (
-                <section class="w-[95%] md:max-w-screen-2xl mx-auto">
+                <section class="w-[95%] md:max-w-screen-xl mx-auto">
                     {/* Category Filter */}
                     <div class="flex flex-wrap gap-3 justify-center mb-12">
                         {categories.map((category: string) => (
                             <button
-                                class="px-6 py-2 rounded-full border-2 border-lewrap-green text-lewrap-green-dark hover:bg-lewrap-green hover:text-white transition-colors"
+                                class="filter-btn px-6 py-2 rounded-full border-2 border-lewrap-green font-cocogoose text-lewrap-green hover:bg-lewrap-green hover:text-white transition-colors"
+                                class:list={[
+                                    category === "All" &&
+                                        "active bg-lewrap-green text-white",
+                                ]}
                                 data-category={category}
                             >
                                 {category}
@@ -321,16 +325,24 @@ const categories = [
                     </div>
 
                     {/* Articles Grid */}
-                    <div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-8">
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                        id="newsroom-grid"
+                    >
                         {sortedNewsroom.map((article: any) => (
-                            <NewsroomCard
-                                title={article.data.title}
-                                hero_image={article.data.hero_image}
-                                category={article.data.category}
-                                date={article.data.date}
-                                preview_text={article.data.preview_text}
-                                slug={article.slug}
-                            />
+                            <div
+                                class="newsroom-article"
+                                data-category={article.data.category}
+                            >
+                                <NewsroomCard
+                                    title={article.data.title}
+                                    hero_image={article.data.hero_image}
+                                    category={article.data.category}
+                                    date={article.data.date}
+                                    preview_text={article.data.preview_text}
+                                    slug={article.slug}
+                                />
+                            </div>
                         ))}
                     </div>
 
@@ -345,5 +357,69 @@ const categories = [
                 </section>
             )
         }
+
+        <script>
+            document.addEventListener("astro:page-load", () => {
+                const filterButtons = document.querySelectorAll(".filter-btn");
+                const articles = document.querySelectorAll(".newsroom-article");
+
+                filterButtons.forEach((button) => {
+                    button.addEventListener("click", () => {
+                        const selectedCategory =
+                            button.getAttribute("data-category");
+
+                        // Update active button
+                        filterButtons.forEach((btn) => {
+                            btn.classList.remove(
+                                "active",
+                                "bg-lewrap-green",
+                                "text-white",
+                            );
+                        });
+                        button.classList.add(
+                            "active",
+                            "bg-lewrap-green",
+                            "text-white",
+                        );
+
+                        // Filter articles with fade effect
+                        articles.forEach((article) => {
+                            const articleCategory =
+                                article.getAttribute("data-category");
+                            const htmlArticle = article as HTMLElement;
+
+                            if (
+                                selectedCategory === "All" ||
+                                articleCategory === selectedCategory
+                            ) {
+                                // Show
+                                htmlArticle.classList.remove("hidden-article");
+                            } else {
+                                // Hide
+                                htmlArticle.classList.add("hidden-article");
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+
+        <style>
+            .newsroom-article {
+                opacity: 1;
+                transform: scale(1);
+                transition:
+                    opacity 0.3s ease,
+                    transform 0.3s ease;
+            }
+
+            .newsroom-article.hidden-article {
+                opacity: 0;
+                transform: scale(0.95);
+                pointer-events: none;
+                position: absolute;
+                visibility: hidden;
+            }
+        </style>
     </main>
 </BaseLayout>
