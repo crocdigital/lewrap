@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import Button from "../components/atoms/Button.astro";
 
 const { frontmatter } = Astro.props;
 const { title, terms_content, privacy_content } = frontmatter;
@@ -9,7 +10,7 @@ const { title, terms_content, privacy_content } = frontmatter;
     <main class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black">
         {/* Static Hero Block */}
         <section
-            class="mt-10 md:mt-15 w-[95%] mx-auto bg-lewrap-green rounded-2xl p-8 md:p-16 text-center"
+            class="mt-10 md:mt-15 w-[95%] mx-auto bg-lewrap-green rounded-2xl px-7 py-22 text-center"
         >
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-8">
                 Policies
@@ -19,48 +20,51 @@ const { title, terms_content, privacy_content } = frontmatter;
             <div class="flex gap-4 justify-center">
                 <button
                     id="terms-tab"
-                    class="tab-btn active px-8 py-3 bg-white text-lewrap-green-dark font-semibold rounded-lg hover:bg-lewrap-green-dark hover:text-white transition-colors"
+                    class="tab-btn active px-4 py-4 bg-white font-cocogoose text-sm text-lewrap-green-dark rounded-full hover:bg-lewrap-green-dark hover:text-white transition-colors"
                 >
                     Terms & Conditions
                 </button>
                 <button
                     id="privacy-tab"
-                    class="tab-btn px-8 py-3 bg-white text-lewrap-green-dark font-semibold rounded-lg hover:bg-lewrap-green-dark hover:text-white transition-colors"
+                    class="tab-btn px-4 py-4 bg-white font-cocogoose text-sm text-lewrap-green-dark rounded-full hover:bg-lewrap-green-dark hover:text-white transition-colors"
                 >
                     Privacy Policy
                 </button>
             </div>
         </section>
-
-        {/* Content Area */}
-        <section class="w-[95%] md:max-w-4xl mx-auto py-16">
-            {/* Terms & Conditions Content */}
-            <div id="terms-content" class="policy-content active">
-                <h2
-                    class="text-3xl md:text-5xl font-bold text-lewrap-green-dark mb-8"
-                >
-                    Terms & Conditions
-                </h2>
-                <div
-                    class="prose prose-lg max-w-none"
-                    set:html={terms_content}
-                />
-            </div>
-
-            {/* Privacy Policy Content */}
-            <div id="privacy-content" class="policy-content">
-                <h2
-                    class="text-3xl md:text-5xl font-bold text-lewrap-green-dark mb-8"
-                >
-                    Privacy Policy
-                </h2>
-                <div
-                    class="prose prose-lg max-w-none"
-                    set:html={privacy_content}
-                />
-            </div>
-        </section>
     </main>
+
+    {/* Content Area */}
+    <section class="w-[95%] md:max-w-4xl mx-auto py-16 p-7 md:px-0">
+        {/* Terms & Conditions Content */}
+        <div
+            id="terms-content"
+            class="policy-content text-lewrap-off-black active"
+        >
+            <h2
+                class="text-3xl md:text-5xl font-bold text-lewrap-green-dark mb-8"
+            >
+                Terms & Conditions
+            </h2>
+            <div
+                class="prose text-xl/8 [&_p]:mb-6 [&_p:last-child]:mb-0"
+                set:html={terms_content}
+            />
+        </div>
+
+        {/* Privacy Policy Content */}
+        <div id="privacy-content" class="policy-content text-lewrap-off-black">
+            <h2
+                class="text-3xl md:text-5xl font-bold text-lewrap-green-dark mb-8"
+            >
+                Privacy Policy
+            </h2>
+            <div
+                class="prose text-xl/8 [&_p]:mb-6 [&_p:last-child]:mb-0"
+                set:html={privacy_content}
+            />
+        </div>
+    </section>
 </BaseLayout>
 
 <script>
