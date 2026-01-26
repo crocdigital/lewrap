@@ -374,6 +374,31 @@ _inputs:
     type: textarea
     label: Preview Text
     comment: "Short description shown on newsroom listings (150-200 characters recommended)"
+
+  # ------------------------------------
+  # POLICIES INPUTS (TERMS & PRIVACY)
+  # ------------------------------------
+  terms_content:
+    type: html
+    label: Terms & Conditions Content
+    options:
+      bold: true
+      italic: true
+      link: true
+      format: p h2 h3 h4
+      allow_resize: true
+    cascade: true
+
+  privacy_content:
+    type: html
+    label: Privacy Policy Content
+    options:
+      bold: true
+      italic: true
+      link: true
+      format: p h2 h3 h4
+      allow_resize: true
+      cascade: true
   
   # ------------------------------------
   # LOCATION-SPECIFIC INPUTS
