@@ -36,7 +36,6 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-    parse_branch_index: true
   
   locations:
     path: src/content/locations
