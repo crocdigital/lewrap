@@ -140,6 +140,61 @@ collections_config:
       default:
         path: src/content/newsroom/_defaults.md
 
+  popups:
+    path: src/content/popups
+    icon: web_asset
+    _enabled_editors:
+      - data
+    disable_add: true
+    disable_file_actions: true
+    _inputs:
+      popup_id:
+        type: select
+        label: Popup ID
+        comment: "Which popup this content is for (DO NOT CHANGE)"
+        options:
+          values:
+            - newsletter_modal
+            - franchise_enquiry
+        hidden: true
+      
+      title:
+        type: text
+        label: Popup Title
+      
+      description:
+        type: html
+        label: Description
+        options:
+          bold: true
+          italic: true
+          link: true
+          format: p
+          allow_resize: true
+      
+      image:
+        type: image
+        label: Decorative Image (Optional)
+        comment: "Optional decorative image (like koftas)"
+        options:
+          paths:
+            uploads: public/images/elements
+      
+      image_position:
+        type: text
+        label: Image Position Classes
+        comment: "Tailwind classes for positioning (e.g., 'absolute left-1/2 -translate-x-1/2 -top-13')"
+      
+      show_on_load:
+        type: switch
+        label: Show on Page Load
+        comment: "Automatically show this popup when page loads"
+      
+      remember_close:
+        type: switch
+        label: Remember When Closed
+        comment: "Don't show again after user closes it"
+
 # ========================================
 # INPUT DEFINITIONS (NUCLEAR FIX)
 # ========================================

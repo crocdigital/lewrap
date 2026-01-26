@@ -70,9 +70,24 @@ const newsroomCollection = defineCollection({
     }),
 });
 
+{/* Popups */ }
+const popupsCollection = defineCollection({
+    type: 'data',
+    schema: z.object({
+        popup_id: z.enum(['newsletter_modal', 'franchise_enquiry']),
+        title: z.string(),
+        description: z.string(),
+        image: z.string().optional(),
+        image_position: z.string().optional(), // CSS classes for positioning
+        show_on_load: z.boolean().default(false),
+        remember_close: z.boolean().default(false),
+    }),
+});
+
 export const collections = {
     locations: locationsCollection,
     food: foodCollection,
     faq: faqCollection,
     newsroom: newsroomCollection,
+    popups: popupsCollection,
 };

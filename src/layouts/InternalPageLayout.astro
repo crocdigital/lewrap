@@ -14,6 +14,7 @@ import ContactForm from "../components/ContactForm.astro";
 
 // Franchise Enquiry form
 import FranchiseEnquiryForm from "../components/FranchiseEnquiryForm.astro";
+import { getEntry } from "astro:content";
 
 import Button from "../components/atoms/Button.astro";
 
@@ -40,6 +41,9 @@ import FranchiseProcessCarousel from "../components/FranchiseProcessCarousel.ast
 
 // FAQ component
 import FAQItem from "../components/FAQItem.astro";
+
+// Get franchise enquiry popup content
+const franchisePopup = await getEntry("popups", "franchise-enquiry");
 
 // Get FAQs
 const allFAQs = (await getCollection("faq")) as CollectionEntry<"faq">[];
@@ -101,16 +105,16 @@ const categories = [
     {/* Franchise Enquiry Modal - Own A Store page only */}
     {
         (Astro.url.pathname.includes("own-a-store") ||
-            Astro.url.pathname.includes("own-a-store/")) && (
-            <Modal id="franchise_enquiry" title="Start Your Franchise Journey">
-                <p class="text-lg/6 mb-6">
-                    Please complete your details to register your interest.
-                    <br />
-                    <em>All fields are compulsory</em>
-                </p>
-                <FranchiseEnquiryForm />
-            </Modal>
-        )
+            Astro.url.pathname.includes("own-a-store/")) &&
+            franchisePopup && (
+                <Modal
+                    id={franchisePopup.data.popup_id}
+                    title={franchisePopup.data.title}
+                >
+                    <div set:html={franchisePopup.data.description} />
+                    <FranchiseEnquiryForm />
+                </Modal>
+            )
     }
 
     <main
