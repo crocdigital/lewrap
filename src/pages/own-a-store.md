@@ -73,16 +73,26 @@ franchise_callout:
   button_text: Enquire now
   button_link: '#'
 franchise_process_steps:
-  - title: "Submit Your Application"
-    description: "Fill out our franchise application form and tell us about your business experience and goals."
-  - title: "Initial Meeting"
-    description: "Meet with our franchise team to discuss the opportunity and ask questions."
-  - title: "Site Selection"
-    description: "Work with us to find the perfect location for your LeWrap franchise."
-  - title: "Training & Setup"
-    description: "Complete our comprehensive training program and set up your store."
-  - title: "Grand Opening"
-    description: "Launch your LeWrap franchise with full support from our team!"
+  - title: Initial Enquiry and Information Pack
+    description: >-
+      We share our Franchise Information Pack to give you an overview of the
+      brand and opportunity.
+  - title: Phone interview - Meet the Franchising Team
+    description: >-
+      A member of our Franchising team will be in contact with you to discuss
+      your interest.
+  - title: Application form - Your next step
+    description: >-
+      Complete and return the Franchise Application Form. This is the first step
+      in our approval process.
+  - title: In-person interview/meeting
+    description: >-
+      Our Franchising Manager will discuss the LeWrap model & growth plans.
+      Let’s determine suitability for partnership.
+  - title: Something else here
+    description: Launch your LeWrap franchise with full support from our team!
+  - title: Adding a new step
+    description: Adding a new step to test that everything is automating properly.
 show_faqs: true
 faq_category: Franchising
 faq_button_text: Enquire now
