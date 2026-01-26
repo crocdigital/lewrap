@@ -1,0 +1,135 @@
+---
+interface Props {
+    id: string;
+    title?: string;
+    showOnLoad?: boolean;
+    rememberClose?: boolean; // If true, won't show again after close
+}
+
+const { id, title, showOnLoad = false, rememberClose = false } = Astro.props;
+---
+
+<div
+    id={id}
+    class="modal-overlay fixed inset-0 bg-black/60 backdrop-blur-[6px] z-50 hidden items-center justify-center p-4"
+    data-remember-close={rememberClose}
+>
+    <div
+        class="modal-content bg-lewrap-green rounded-2xl max-w-lg w-full max-h-[90vh] shadow-[0px_9px_32.900001525878906px_0px_rgba(0,0,0,0.49)] text-white text-center relative"
+    >
+        {/* Close button */}
+        <button
+            class="modal-close absolute -top-11 right-2 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors z-10"
+            aria-label="Close"
+        >
+            <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <div class="p-8">
+            {title && <h2 class="text-3xl font-bold mb-6">{title}</h2>}
+
+            {/* Content slot */}
+            <slot />
+        </div>
+    </div>
+</div>
+
+<script define:vars={{ id, showOnLoad, rememberClose }}>
+    document.addEventListener("astro:page-load", () => {
+        const modal = document.getElementById(id);
+        const closeBtn = modal?.querySelector(".modal-close");
+        const overlay = modal;
+
+        // Check if user has closed this modal before
+        const hasClosedBefore =
+            rememberClose && localStorage.getItem(`modal-closed-${id}`);
+
+        // Show on load if configured and not closed before
+        if (showOnLoad && !hasClosedBefore) {
+            setTimeout(() => {
+                modal?.classList.remove("hidden");
+                modal?.classList.add("flex");
+                document.body.style.overflow = "hidden";
+            }, 1000); // Show after 1 second
+        }
+
+        // Close button
+        closeBtn?.addEventListener("click", () => {
+            modal?.classList.add("hidden");
+            modal?.classList.remove("flex");
+            document.body.style.overflow = "";
+
+            // Remember close if configured
+            if (rememberClose) {
+                localStorage.setItem(`modal-closed-${id}`, "true");
+            }
+        });
+
+        // Close on overlay click
+        overlay?.addEventListener("click", (e) => {
+            if (e.target === overlay) {
+                modal?.classList.add("hidden");
+                modal?.classList.remove("flex");
+                document.body.style.overflow = "";
+
+                if (rememberClose) {
+                    localStorage.setItem(`modal-closed-${id}`, "true");
+                }
+            }
+        });
+
+        // Expose open/close functions globally
+        window[`open_${id}`] = () => {
+            modal?.classList.remove("hidden");
+            modal?.classList.add("flex");
+            document.body.style.overflow = "hidden";
+        };
+
+        window[`close_${id}`] = () => {
+            modal?.classList.add("hidden");
+            modal?.classList.remove("flex");
+            document.body.style.overflow = "";
+        };
+    });
+</script>
+
+<style>
+    .modal-overlay {
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .modal-content {
+        animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+</style>
