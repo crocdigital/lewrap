@@ -19,7 +19,7 @@ const { id, title, showOnLoad = false, rememberClose = false } = Astro.props;
     >
         {/* Close button */}
         <button
-            class="modal-close absolute -top-11 right-2 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors z-10"
+            class="modal-close absolute -top-11 right-2 w-10 h-10 flex items-center justify-center hover:text-lewrap-green transition-colors z-10"
             aria-label="Close"
         >
             <svg
@@ -37,7 +37,7 @@ const { id, title, showOnLoad = false, rememberClose = false } = Astro.props;
         </button>
 
         <div class="p-8">
-            {title && <h2 class="text-3xl font-bold mb-6">{title}</h2>}
+            {title && <h2 class="text-3xl font-bold mt-4 mb-2">{title}</h2>}
 
             {/* Content slot */}
             <slot />
