@@ -15,9 +15,9 @@ const { id, title, showOnLoad = false, rememberClose = false } = Astro.props;
     data-remember-close={rememberClose}
 >
     <div
-        class="modal-content bg-lewrap-green rounded-2xl max-w-lg w-full max-h-[90vh] shadow-[0px_9px_32.900001525878906px_0px_rgba(0,0,0,0.49)] text-white text-center relative"
+        class="modal-content bg-lewrap-green rounded-2xl max-w-lg w-full max-h-[90vh] shadow-[0px_9px_32.900001525878906px_0px_rgba(0,0,0,0.49)] text-white text-center relative flex flex-col"
     >
-        {/* Close button */}
+        {/* Close button - stays fixed at top */}
         <button
             class="modal-close absolute -top-11 right-2 w-10 h-10 flex items-center justify-center hover:text-lewrap-green transition-colors z-10"
             aria-label="Close"
@@ -36,7 +36,8 @@ const { id, title, showOnLoad = false, rememberClose = false } = Astro.props;
             </svg>
         </button>
 
-        <div class="p-8">
+        {/* Scrollable content wrapper */}
+        <div class="overflow-y-auto p-8">
             {title && <h2 class="text-3xl font-bold mt-4 mb-2">{title}</h2>}
 
             {/* Content slot */}
@@ -61,7 +62,7 @@ const { id, title, showOnLoad = false, rememberClose = false } = Astro.props;
                 modal?.classList.remove("hidden");
                 modal?.classList.add("flex");
                 document.body.style.overflow = "hidden";
-            }, 1000); // Show after 1 second
+            }, 3000); // Show after 3 seconds
         }
 
         // Close button
@@ -100,6 +101,11 @@ const { id, title, showOnLoad = false, rememberClose = false } = Astro.props;
             modal?.classList.add("hidden");
             modal?.classList.remove("flex");
             document.body.style.overflow = "";
+
+            // Remember close if configured
+            if (rememberClose) {
+                localStorage.setItem(`modal-closed-${id}`, "true");
+            }
         };
     });
 </script>
