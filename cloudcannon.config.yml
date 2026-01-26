@@ -376,6 +376,29 @@ _inputs:
     comment: "Short description shown on newsroom listings (150-200 characters recommended)"
 
   # ------------------------------------
+  # FRANCHISE PROCESS INPUTS
+  # ------------------------------------
+  franchise_process_steps:
+    type: array
+    label: Franchise Process Steps
+    comment: "Add steps for the franchise process (numbers auto-generate)"
+    cascade: true
+    options:
+      structures:
+        values:
+          - label: Process Step
+            value:
+              title: ""
+              description: ""
+            _inputs:
+              title:
+                type: text
+                label: Step Title
+              description:
+                type: textarea
+                label: Step Description
+  
+  # ------------------------------------
   # POLICIES INPUTS (TERMS & PRIVACY)
   # ------------------------------------
   terms_content:

@@ -72,6 +72,17 @@ franchise_callout:
   image: /images/franchise/lewrap-location.webp
   button_text: Enquire now
   button_link: '#'
+franchise_process_steps:
+  - title: "Submit Your Application"
+    description: "Fill out our franchise application form and tell us about your business experience and goals."
+  - title: "Initial Meeting"
+    description: "Meet with our franchise team to discuss the opportunity and ask questions."
+  - title: "Site Selection"
+    description: "Work with us to find the perfect location for your LeWrap franchise."
+  - title: "Training & Setup"
+    description: "Complete our comprehensive training program and set up your store."
+  - title: "Grand Opening"
+    description: "Launch your LeWrap franchise with full support from our team!"
 show_faqs: true
 faq_category: Franchising
 faq_button_text: Enquire now

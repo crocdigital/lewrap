@@ -29,6 +29,9 @@ import FranchiseCallout from "../components/FranchiseCallout.astro";
 // Catering Callout component
 import CateringCallout from "../components/CateringCallout.astro";
 
+// Franchise Process component
+import FranchiseProcessCarousel from "../components/FranchiseProcessCarousel.astro";
+
 // FAQ component
 import FAQItem from "../components/FAQItem.astro";
 
@@ -64,6 +67,7 @@ const {
     faq_button_variant = "primary",
     flexible_two_col = [],
     show_newsroom_listing = false,
+    franchise_process_steps = [],
 } = frontmatter || {};
 
 // Filter FAQs by category
@@ -183,6 +187,18 @@ const categories = [
                     buttonText={franchise_callout.button_text}
                     buttonLink={franchise_callout.button_link}
                 />
+            )
+        }
+
+        {/* Franchise Process Carousel (only on Own A Store page) */}
+        {
+            franchise_process_steps.length > 0 && (
+                <section class="w-[95%] md:max-w-screen-2xl mx-auto">
+                    <h2 class="text-3xl md:text-5xl font-bold text-lewrap-green-dark text-center mb-12">
+                        The 10-Step LeWrap franchising process
+                    </h2>
+                    <FranchiseProcessCarousel steps={franchise_process_steps} />
+                </section>
             )
         }
 

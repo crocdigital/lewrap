@@ -1,0 +1,67 @@
+---
+import Carousel from "./molecules/Carousel";
+
+interface Step {
+    title: string;
+    description: string;
+}
+
+interface Props {
+    steps: Step[];
+}
+
+const { steps = [] } = Astro.props;
+
+// Transform steps into HTML slides with auto-numbered badges
+const carouselSlides = steps.map((step, index) => ({
+    type: "html" as const,
+    content: `
+        <div class="flex flex-col justify-between p-12 h-full bg-[#F3F6F1] rounded-2xl">
+            <div>
+                <div class="w-10 h-10 rounded-full bg-white border-3 border-lewrap-green flex items-center justify-center mb-3">
+                    <span class="text-lg font-bold text-lewrap-green">${index + 1}</span>
+                </div>
+                <h3 class="text-xl font-bold text-lewrap-green-dark mb-2">
+                    ${step.title}
+                </h3>
+            </div>
+            <p class="text-base/6 text-lewrap-off-black max-w-2xl">
+                ${step.description}
+            </p>
+        </div>
+    `,
+}));
+---
+
+{
+    carouselSlides.length > 0 && (
+        <div class="franchise-carousel">
+            <Carousel
+                client:load
+                slides={carouselSlides}
+                showPagination={true}
+                showNavigation={true}
+                autoplay={false}
+                loop={true}
+                slidesPerView={1}
+                spaceBetween={20}
+                breakpoints={{
+                    640: { slidesPerView: 2 },
+                    768: { slidesPerView: 3 },
+                    1024: { slidesPerView: 4 },
+                }}
+                height=""
+                className="w-full h-[320px]"
+            />
+        </div>
+    )
+}
+
+<style>
+    .franchise-carousel :global(.swiper-slide) {
+        background: transparent !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
