@@ -1,7 +1,6 @@
 ---
 layout: ../layouts/HomeLayout.astro
 title: LeWrap - Fresh, Healthy Wraps
-_display_title: Home
 hero_slides:
   - image_desktop: /images/hero/catering-desktop.webp
     image_mobile: /images/hero/catering-mobile.webp
