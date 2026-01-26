@@ -111,7 +111,10 @@ const categories = [
                     id={franchisePopup.data.popup_id}
                     title={franchisePopup.data.title}
                 >
-                    <div set:html={franchisePopup.data.description} />
+                    <div
+                        class="text-lg/6 mb-6"
+                        set:html={franchisePopup.data.description}
+                    />
                     <FranchiseEnquiryForm />
                 </Modal>
             )

@@ -125,7 +125,10 @@ const featuredNews = allNewsroom
                     />
                 )}
 
-                <div set:html={newsletterPopup.data.description} />
+                <div
+                    class="text-lg/6 mb-6"
+                    set:html={newsletterPopup.data.description}
+                />
 
                 <form
                     class="flex flex-col md:flex-row w-full md:bg-white rounded-3xl md:rounded-full overflow-hidden mx-auto gap-y-2"
