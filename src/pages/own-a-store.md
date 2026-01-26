@@ -8,7 +8,7 @@ hero_bg_colour:
 hero_bg_image: /images/hero/ownastore-desktop.webp
 hero_bg_image_mobile: /images/hero/ownastore-mobile.webp
 hero_button_text: Enquire now
-hero_button_link: '#'
+hero_button_link: "javascript:open_franchise_enquiry()"
 hero_button_variant: primary
 page_blocks:
   - _template: feature
@@ -71,7 +71,7 @@ franchise_callout:
     sure it renders right. Eshay bra.</p>
   image: /images/franchise/lewrap-location.webp
   button_text: Enquire now
-  button_link: '#'
+  button_link: "javascript:open_franchise_enquiry()"
 franchise_process_steps:
   - title: Initial Enquiry and Information Pack
     description: >-
@@ -96,6 +96,6 @@ franchise_process_steps:
 show_faqs: true
 faq_category: Franchising
 faq_button_text: Enquire now
-faq_button_link: '#'
+faq_button_link: "javascript:open_franchise_enquiry()"
 faq_button_variant: primary
 ---

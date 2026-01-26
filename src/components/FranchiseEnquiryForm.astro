@@ -1,0 +1,341 @@
+---
+// No props needed - self-contained form
+import Button from "../components/atoms/Button.astro";
+---
+
+<div class="franchise-enquiry-form">
+    {/* Progress Indicator */}
+    <div class="progress-indicator flex justify-center items-center gap-2 mb-8">
+        <div class="step-dot active" data-step="1">
+            <span>1</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-dot" data-step="2">
+            <span>2</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-dot" data-step="3">
+            <span>3</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-dot" data-step="4">
+            <span>4</span>
+        </div>
+    </div>
+
+    <form id="franchise-form" class="space-y-6">
+        {/* Step 1: Personal Info */}
+        <div class="form-step active" data-step="1">
+            <h3 class="text-xl font-bold mb-4">Personal Information</h3>
+
+            <div class="space-y-4">
+                <input
+                    type="text"
+                    name="first_name"
+                    placeholder="First Name"
+                    required
+                    class="w-full px-4 py-3 bg-white text-lewrap-off-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent"
+                />
+
+                <input
+                    type="text"
+                    name="last_name"
+                    placeholder="Last Name"
+                    required
+                    class="w-full px-4 py-3 bg-white text-lewrap-off-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent"
+                />
+
+                <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    required
+                    class="w-full px-4 py-3 bg-white text-lewrap-off-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent"
+                />
+            </div>
+
+            <!-- <button
+                type="button"
+                class="next-btn mt-6 w-full px-6 py-3 bg-white text-lewrap-green font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+            >
+                Next
+            </button> -->
+            <Button
+                variant="secondary"
+                class="next-btn text-sm px-6 py-3 w-full mt-3 hover:bg-lewrap-green-dark hover:text-lewrap-green"
+                >Next</Button
+            >
+        </div>
+
+        {/* Step 2: Location & Timeline */}
+        <div class="form-step" data-step="2">
+            <h3 class="text-xl font-bold mb-4">Location & Timeline</h3>
+
+            <div class="space-y-4">
+                <input
+                    type="text"
+                    name="location"
+                    placeholder="Location of Interest (Suburb, State)"
+                    required
+                    class="w-full px-4 py-3 bg-white text-lewrap-off-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent"
+                />
+
+                <select
+                    name="timeline"
+                    required
+                    class="w-full px-4 py-3 bg-white text-lewrap-off-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23CBCBCB%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:24px_24px] bg-[right_1rem_center] bg-no-repeat pr-12"
+                >
+                    <option value="">When are you looking to invest?</option>
+                    <option value="Now">Now</option>
+                    <option value="3-6 months">3-6 months</option>
+                    <option value="6-12 months">6-12 months</option>
+                </select>
+            </div>
+
+            <div class="flex gap-3 mt-6">
+                <button
+                    type="button"
+                    class="back-btn flex-1 px-6 py-3 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-colors"
+                >
+                    Back
+                </button>
+                <button
+                    type="button"
+                    class="next-btn flex-1 px-6 py-3 bg-white text-lewrap-green font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                    Next
+                </button>
+            </div>
+        </div>
+
+        {/* Step 3: Investment Capacity */}
+        <div class="form-step" data-step="3">
+            <h3 class="text-xl font-bold mb-4">Investment Capacity</h3>
+
+            <div class="space-y-4">
+                <select
+                    name="fund_capacity"
+                    required
+                    class="w-full px-4 py-3 bg-white text-lewrap-off-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23CBCBCB%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:24px_24px] bg-[right_1rem_center] bg-no-repeat pr-12"
+                >
+                    <option value=""
+                        >Current fund capacity ($250-$350k or more)</option
+                    >
+                    <option value="Current funds available"
+                        >Current funds available</option
+                    >
+                    <option value="Borrowing">Borrowing</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="flex gap-3 mt-6">
+                <button
+                    type="button"
+                    class="back-btn flex-1 px-6 py-3 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-colors"
+                >
+                    Back
+                </button>
+                <button
+                    type="button"
+                    class="next-btn flex-1 px-6 py-3 bg-white text-lewrap-green font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                    Review
+                </button>
+            </div>
+        </div>
+
+        {/* Step 4: Review & Submit */}
+        <div class="form-step" data-step="4">
+            <h3 class="text-xl font-bold mb-4">Review Your Information</h3>
+
+            <div
+                class="bg-white/10 rounded-lg p-4 space-y-2 text-left mb-6"
+                id="review-content"
+            >
+                {/* Dynamic review content will be inserted here */}
+            </div>
+
+            <div class="flex gap-3">
+                <button
+                    type="button"
+                    class="back-btn flex-1 px-6 py-3 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-colors"
+                >
+                    Back
+                </button>
+                <button
+                    type="submit"
+                    class="flex-1 px-6 py-3 bg-white text-lewrap-green font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                    Submit Enquiry
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.addEventListener("astro:page-load", () => {
+        const form = document.getElementById(
+            "franchise-form",
+        ) as HTMLFormElement;
+        const steps = document.querySelectorAll(".form-step");
+        const dots = document.querySelectorAll(".step-dot");
+        let currentStep = 1;
+
+        // Next button handler
+        document.querySelectorAll(".next-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const currentStepEl = document.querySelector(
+                    `.form-step[data-step="${currentStep}"]`,
+                ) as HTMLElement;
+                const inputs = currentStepEl.querySelectorAll("input, select");
+                let isValid = true;
+
+                // Validate current step
+                inputs.forEach((input) => {
+                    const htmlInput = input as HTMLInputElement;
+                    if (!htmlInput.checkValidity()) {
+                        htmlInput.reportValidity();
+                        isValid = false;
+                    }
+                });
+
+                if (isValid && currentStep < 4) {
+                    goToStep(currentStep + 1);
+                }
+            });
+        });
+
+        // Back button handler
+        document.querySelectorAll(".back-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                if (currentStep > 1) {
+                    goToStep(currentStep - 1);
+                }
+            });
+        });
+
+        // Submit handler
+        form?.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            console.log("Form submitted:", Object.fromEntries(formData));
+            alert("Form submitted! (Configure submission endpoint)");
+            // Add your form submission logic here
+        });
+
+        function goToStep(step: number) {
+            // Hide all steps
+            steps.forEach((s) => s.classList.remove("active"));
+            dots.forEach((d) => d.classList.remove("active", "completed"));
+
+            // Show target step
+            const targetStep = document.querySelector(
+                `.form-step[data-step="${step}"]`,
+            );
+            targetStep?.classList.add("active");
+
+            // Update dots
+            dots.forEach((dot, index) => {
+                if (index + 1 < step) {
+                    dot.classList.add("completed");
+                } else if (index + 1 === step) {
+                    dot.classList.add("active");
+                }
+            });
+
+            // Update review on step 4
+            if (step === 4) {
+                updateReview();
+            }
+
+            currentStep = step;
+        }
+
+        function updateReview() {
+            const formData = new FormData(form);
+            const reviewContent = document.getElementById("review-content");
+
+            const labels: Record<string, string> = {
+                first_name: "First Name",
+                last_name: "Last Name",
+                phone: "Phone",
+                location: "Location",
+                timeline: "Investment Timeline",
+                fund_capacity: "Fund Capacity",
+            };
+
+            let html = "";
+            formData.forEach((value, key) => {
+                if (value) {
+                    html += `<div><strong>${labels[key]}:</strong> ${value}</div>`;
+                }
+            });
+
+            if (reviewContent) {
+                reviewContent.innerHTML = html;
+            }
+        }
+    });
+</script>
+
+<style>
+    .form-step {
+        display: none;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .form-step.active {
+        display: block;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateX(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Progress Indicator Styles */
+    .step-dot {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+
+    .step-dot.active {
+        background: white;
+        color: #95ba32;
+        transform: scale(1.1);
+    }
+
+    .step-dot.completed {
+        background: white;
+        color: #95ba32;
+    }
+
+    .step-dot.completed span:after {
+        content: "✓";
+    }
+
+    .step-dot.completed span {
+        display: none;
+    }
+
+    .step-line {
+        width: 40px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.3);
+    }
+</style>

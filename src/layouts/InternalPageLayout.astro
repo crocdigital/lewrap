@@ -3,11 +3,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
+// Popup modal
+import Modal from "../components/Modal.astro";
+
 // Work With Us form
 import WorkWithUsForm from "../components/WorkWithUsForm.astro";
 
 // Contact Us form
 import ContactForm from "../components/ContactForm.astro";
+
+// Franchise Enquiry form
+import FranchiseEnquiryForm from "../components/FranchiseEnquiryForm.astro";
 
 import Button from "../components/atoms/Button.astro";
 
@@ -54,7 +60,6 @@ const {
     hero_button_link,
     hero_button_variant,
     show_arrow_green_regular = false, // ← Add flags for design elements
-    show_arrow_blue = false, // Only added so I can see the pattern
     show_arrow_green_fat = false, // Used in [slug].astro (Locations detail page)
     marquee_items = [],
     page_blocks = [],
@@ -93,6 +98,21 @@ const categories = [
 ---
 
 <BaseLayout title={title}>
+    {/* Franchise Enquiry Modal - Own A Store page only */}
+    {
+        (Astro.url.pathname.includes("own-a-store") ||
+            Astro.url.pathname.includes("own-a-store/")) && (
+            <Modal id="franchise_enquiry" title="Start Your Franchise Journey">
+                <p class="text-lg/6 mb-6">
+                    Please complete your details to register your interest.
+                    <br />
+                    <em>All fields are compulsory</em>
+                </p>
+                <FranchiseEnquiryForm />
+            </Modal>
+        )
+    }
+
     <main
         class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10 relative"
     >
