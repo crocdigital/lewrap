@@ -32,7 +32,7 @@ marquee_items:
   - Kids Meals
   - Sides
   - Drinks
-welcome_heading: Nobody makes a wrap like us
+welcome_heading: Nobody makes a wrap like us - bro!
 welcome_text: >-
   <p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism,
   deformalism post-painterly abstraction neo-classicism
