@@ -1,12 +1,12 @@
 ---
 _schema: default
 name: LeWrap Warringah Mall
-address: Westfield Warringah Mall, 145 Condamine Street
+address: 145 Condamine St
 suburb: Brookvale
 state: NSW
 postcode: '2100'
-latitude: -33.91609
-longitude: 151.03902
+latitude: -33.76868
+longitude: 151.26629
 phone: (02)
 email: warringah@lewrap.com
 hours:
