@@ -225,6 +225,7 @@ collections_config:
         label: Category
         options:
           values:
+            - Franchising
             - Promotion
             - Community
             - Updates
