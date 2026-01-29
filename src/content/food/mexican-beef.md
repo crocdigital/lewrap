@@ -9,6 +9,6 @@ kj: 3230
 image: /images/food/PLACEMENT-chicken-caesar.webp
 orderLink: '#'
 category: Wraps
-subcategory: Chicken Wraps
+subcategory: Beef Wraps
 available: true
 ---
