@@ -18,7 +18,7 @@ hero_heading: We believe in all things good and fresh
 hero_cta1_text: Our food
 hero_cta1_link: /our-food
 hero_cta2_text: Order now
-hero_cta2_link: /order
+hero_cta2_link: /
 marquee_items:
   - 100% Australian
   - Chicken Wraps
@@ -32,7 +32,7 @@ marquee_items:
   - Kids Meals
   - Sides
   - Drinks
-welcome_heading: Nobody makes a wrap like us - bro!
+welcome_heading: Nobody makes a wrap like us
 welcome_text: >-
   <p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism,
   deformalism post-painterly abstraction neo-classicism
