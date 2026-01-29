@@ -91,6 +91,60 @@ collections_config:
         options:
           paths:
             uploads: public/images/food
+      category:
+        type: select
+        label: Category
+        options:
+          values:
+            - Wraps
+            - Plates
+            - Baguettes
+            - Protein Packs
+            - Salads
+            - Kids Meals
+            - Sides
+            - Drinks
+          allow_create: true
+      subcategory:
+        type: select
+        label: Subcategory
+        comment: "Only applies to Wraps category"
+        options:
+          values:
+            - Chicken Wraps
+            - Beef Wraps
+            - Schnitzel Wraps
+            - Lamb Wraps
+            - Vegetarian Wraps
+            - Kofta Wraps
+          allow_create: true
+      price:
+        type: text
+        label: Price
+        comment: "e.g., $14.90"
+      description:
+        type: html
+        options:
+          allow_resize: true
+          allow_custom_markup: false
+          remove_custom_markup: false
+          initial_height: 200
+          bold: true
+          italic: true
+          format: p
+        label: Description
+      kj:
+        type: number
+        label: Kilojoules (kJ)
+        comment: "Energy content in kilojoules"
+      orderLink:
+        type: url
+        label: Order Link
+        comment: "External RedCat POS link for this item"
+      available:
+        type: switch
+        label: Available
+        comment: "Toggle off to mark as sold out"
 
   faq:
     path: src/content/faq
@@ -122,6 +176,18 @@ collections_config:
           bulletedlist: true
           format: p
         label: Answer
+      category:
+        type: select
+        label: Category
+        options:
+          values:
+            - General
+            - Catering
+            - Franchising
+      order:
+        type: number
+        label: Display Order
+        comment: "Lower numbers appear first (0, 1, 2, etc.)"
 
   newsroom:
     path: src/content/newsroom
@@ -139,6 +205,37 @@ collections_config:
     schemas:
       default:
         path: src/content/newsroom/_defaults.md
+    _inputs:
+      hero_image:
+        type: image
+        label: Hero Image
+        comment: "Main image for article (recommended: 1920px x 1080px)"
+        options:
+          paths:
+            uploads: public/images/newsroom
+      hero_image_mobile:
+        type: image
+        label: Hero Image (Mobile)
+        comment: "Optional mobile version. Recommended size: 1000px x 1000px. If not provided, desktop image will be used."
+        options:
+          paths:
+            uploads: public/images/newsroom
+      category:
+        type: select
+        label: Category
+        options:
+          values:
+            - Promotion
+            - Community
+            - Updates
+      featured:
+        type: switch
+        label: Featured
+        comment: "Show on newsroom page featured section"
+      preview_text:
+        type: textarea
+        label: Preview Text
+        comment: "Short description shown on newsroom listings (150-200 characters recommended)"
 
   popups:
     path: src/content/popups
@@ -157,11 +254,9 @@ collections_config:
             - newsletter_modal
             - franchise_enquiry
         hidden: true
-      
       title:
         type: text
         label: Popup Title
-      
       description:
         type: html
         label: Description
@@ -171,7 +266,6 @@ collections_config:
           link: true
           format: p
           allow_resize: true
-      
       image:
         type: image
         label: Decorative Image (Optional)
@@ -179,17 +273,14 @@ collections_config:
         options:
           paths:
             uploads: public/images/elements
-      
       image_position:
         type: text
         label: Image Position Classes
         comment: "Tailwind classes for positioning (e.g., 'absolute left-1/2 -translate-x-1/2 -top-13')"
-      
       show_on_load:
         type: switch
         label: Show on Page Load
         comment: "Automatically show this popup when page loads"
-      
       remember_close:
         type: switch
         label: Remember When Closed
@@ -407,30 +498,6 @@ _inputs:
     cascade: true
 
   # ------------------------------------
-  # NEWSROOM INPUTS
-  # ------------------------------------
-  hero_image:
-    type: image
-    label: Hero Image
-    comment: "Main image for article (recommended: 1920px x 1080px)"
-    options:
-      paths:
-        uploads: public/images/newsroom
-
-  hero_image_mobile:
-    type: image
-    label: Hero Image (Mobile)
-    comment: "Optional mobile version. Recommended size: 1000px x 1000px. If not provided, desktop image will be used."
-    options:
-      paths:
-        uploads: public/images/newsroom
-
-  preview_text:
-    type: textarea
-    label: Preview Text
-    comment: "Short description shown on newsroom listings (150-200 characters recommended)"
-
-  # ------------------------------------
   # FRANCHISE PROCESS INPUTS
   # ------------------------------------
   franchise_process_steps:
@@ -476,7 +543,7 @@ _inputs:
       link: true
       format: p h2 h3 h4
       allow_resize: true
-      cascade: true
+    cascade: true
   
   # ------------------------------------
   # LOCATION-SPECIFIC INPUTS
@@ -551,75 +618,6 @@ _inputs:
     label: Order Now Link
     comment: "Optional. Link to online ordering for this location"
   
-  featured:
-    type: switch
-    label: Featured Location
-    comment: "Toggle on to highlight this location"
-  
-  # ------------------------------------
-  # FOOD ITEM-SPECIFIC INPUTS
-  # ------------------------------------
-  category:
-    type: select
-    label: Category
-    options:
-      values:
-        - Wraps
-        - Plates
-        - Baguettes
-        - Protein Packs
-        - Salads
-        - Kids Meals
-        - Sides
-        - Drinks
-      allow_create: true
-  
-  subcategory:
-    type: select
-    label: Subcategory
-    comment: "Only applies to Wraps category"
-    options:
-      values:
-        - Chicken Wraps
-        - Beef Wraps
-        - Schnitzel Wraps
-        - Lamb Wraps
-        - Vegetarian Wraps
-        - Kofta Wraps
-      allow_create: true
-  
-  price:
-    type: text
-    label: Price
-    comment: "e.g., $14.90"
-  
-  description:
-    type: html
-    options:
-      allow_resize: true
-      allow_custom_markup: false
-      remove_custom_markup: false
-      initial_height: 200
-      bold: true
-      italic: true
-      format: p
-    label: Description
-  
-  kj:
-    type: number
-    label: Kilojoules (kJ)
-    comment: "Energy content in kilojoules"
-  
-  orderLink:
-    type: url
-    label: Order Link
-    comment: "External RedCat POS link for this item"
-  
-  available:
-    type: switch
-    label: Available
-    comment: "Toggle off to mark as sold out"
-
   # ------------------------------------
   # LATEST DEALS
   # ------------------------------------
@@ -1091,47 +1089,6 @@ _inputs:
     cascade: true
 
   # ------------------------------------
-  # FAQ INPUTS (for FAQ collection items)
-  # ------------------------------------
-  question:
-    type: text
-    label: Question
-
-  answer:
-    type: html
-    label: Answer
-    options:
-      allow_resize: true
-      allow_custom_markup: false
-      remove_custom_markup: false
-      initial_height: 200
-      bold: true
-      italic: true
-      link: true
-      format: p h2 h3 h4
-
-  category:
-    type: select
-    label: Category
-    options:
-      values:
-        - General
-        - Franchising
-        - Promotion
-        - Community
-        - Updates
-
-  featured:
-    type: switch
-    label: Featured
-    comment: "Show on homepage (shows the latest 3 articles)"
-
-  order:
-    type: number
-    label: Display Order
-    comment: "Lower numbers appear first (0, 1, 2, etc.)"
-
-  # ------------------------------------
   # FAQ PAGE DISPLAY INPUTS (for pages that show FAQs)
   # ------------------------------------
   show_faqs:
@@ -1192,4 +1149,5 @@ _inputs:
               bgColor: "#95BA32"
               reverse: false
               slides: []
+
 timezone: Australia/Sydney
