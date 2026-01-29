@@ -74,7 +74,7 @@ export default function Carousel({
     navigationClassName = '',
     paginationClassName = '',
     centeredSlides = false,
-    grabCursor = true,
+    grabCursor = false,
     hasGradient = false,
     onSlideChange,
     onSwiper,
