@@ -150,7 +150,7 @@ export default function Carousel({
                     />
                 );
 
-            case 'html':  // ← UNCOMMENT THIS
+            case 'html':
                 return (
                     <div
                         className="w-full h-full"
@@ -217,6 +217,7 @@ export default function Carousel({
                                 href={cta2.href}
                                 target={cta2.newTab ? '_blank' : undefined}
                                 className={`btn-lewrap-secondary ${cta2.className || ''}`}
+                                target="_blank"
                             >
                                 {cta2.text}
                             </a>
