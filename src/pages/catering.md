@@ -2,7 +2,7 @@
 layout: ../layouts/InternalPageLayout.astro
 title: Catering
 seo_title:
-seo_description:
+seo_description: Ooga booga boo, Ooga booga boo.
 seo_image: ''
 seo_keywords:
 seo_robots: index, follow
@@ -41,6 +41,7 @@ page_blocks:
       or wedding day prep, we’ve got fresh, crowd-pleasing options for every
       occasion.</p>
     image_path: /images/pages/catering.webp
+    video_url: ''
     reverse: false
     background_type: none
     background_colour: '#ffffff'
