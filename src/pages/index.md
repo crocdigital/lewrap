@@ -1,12 +1,12 @@
 ---
 layout: ../layouts/HomeLayout.astro
 title: LeWrap - Fresh, Healthy Wraps
-seo_title: ""
-seo_description: ""
-seo_image: ""
-seo_keywords: ""
-seo_robots: "index, follow"
-seo_canonical: ""
+seo_title: ''
+seo_description: ''
+seo_image: ''
+seo_keywords: testy, mctestypants
+seo_robots: index, follow
+seo_canonical: ''
 hero_slides:
   - image_desktop: /images/hero/catering-desktop.webp
     image_mobile: /images/hero/catering-mobile.webp
