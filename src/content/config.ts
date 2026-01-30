@@ -68,7 +68,7 @@ const newsroomCollection = defineCollection({
         title: z.string(),
         hero_image: z.string(),
         hero_image_mobile: z.string().optional(),
-        category: z.enum(['General', 'Franchising', 'Promotion', 'Community', 'Updates']),
+        category: z.enum(['Promotion', 'Community', 'Updates', 'Franchising']).default('Updates'),
         date: z.date(),
         preview_text: z.string(),
         featured: z.boolean().default(false),

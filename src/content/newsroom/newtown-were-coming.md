@@ -1,5 +1,4 @@
 ---
-_schema: default
 layout: ../../layouts/NewsroomLayout.astro
 title: Newtown, we're coming!
 seo_title:

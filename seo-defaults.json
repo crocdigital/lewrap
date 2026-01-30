@@ -1,0 +1,57 @@
+{
+    "homepage": {
+        "seo_title": "LeWrap - Fresh, Healthy Wraps & More | Australian Fast Food",
+        "seo_description": "Discover LeWrap's delicious range of fresh wraps, plates, salads and more. Made fresh daily with quality ingredients. Find your nearest LeWrap location in Australia.",
+        "seo_keywords": "LeWrap, healthy wraps Australia, fresh wraps Sydney, healthy fast food, fresh lunch options, wrap restaurant, Australian healthy food, quick healthy meals"
+    },
+    "our_food": {
+        "seo_title": "Our Menu - Fresh Wraps, Salads & More | LeWrap",
+        "seo_description": "Explore LeWrap's fresh menu featuring chicken wraps, beef wraps, schnitzel wraps, healthy salads, protein bowls and more. Made fresh daily with quality ingredients.",
+        "seo_keywords": "healthy wraps menu, chicken wraps, beef wraps, fresh salads, protein bowls, healthy meal options, wrap nutrition, fresh ingredients, made to order wraps"
+    },
+    "locations": {
+        "seo_title": "Find Your Nearest LeWrap Location | Store Locator",
+        "seo_description": "Find your nearest LeWrap restaurant. Browse all our locations across Australia with opening hours, contact details and directions.",
+        "seo_keywords": "LeWrap locations, LeWrap near me, wrap restaurant Sydney, healthy food locations, fresh wraps near me"
+    },
+    "location_template": {
+        "seo_title": "LeWrap [SUBURB] - Fresh Wraps & Healthy Food | [ADDRESS]",
+        "seo_description": "Visit LeWrap at [FULL_ADDRESS]. Enjoy fresh wraps, salads and healthy meals. View opening hours and contact details.",
+        "seo_keywords": "LeWrap [SUBURB], wrap restaurant [SUBURB], healthy lunch [SUBURB], fresh food [SUBURB], [SUBURB] healthy dining"
+    },
+    "catering": {
+        "seo_title": "Catering Services - Fresh & Healthy Catering | LeWrap",
+        "seo_description": "LeWrap offers fresh, healthy catering for corporate events, office lunches and special occasions. Browse our catering menu and place your order today.",
+        "seo_keywords": "healthy catering Sydney, wrap catering, corporate lunch catering, event catering healthy options, fresh catering menu, office lunch catering"
+    },
+    "own_a_store": {
+        "seo_title": "Franchise Opportunities - Own a LeWrap Store | Join Our Team",
+        "seo_description": "Join the LeWrap family! Discover franchise opportunities with Australia's leading fresh wrap restaurant. Low startup costs, comprehensive training and ongoing support.",
+        "seo_keywords": "LeWrap franchise, healthy food franchise Australia, wrap franchise opportunity, fast food franchise, restaurant franchise Sydney, franchising opportunities"
+    },
+    "about": {
+        "seo_title": "About LeWrap - Fresh, Healthy Wraps Since [YEAR]",
+        "seo_description": "Learn about LeWrap's story, our commitment to fresh ingredients and healthy eating. Discover what makes LeWrap Australia's favourite wrap restaurant.",
+        "seo_keywords": "about LeWrap, LeWrap story, healthy food philosophy, fresh ingredients, Australian wrap restaurant"
+    },
+    "newsroom_promotion": {
+        "seo_title": "[DEAL/OFFER NAME] - Latest LeWrap Deals & Specials",
+        "seo_description": "[Brief description of the promotion/deal - 150-160 characters]",
+        "seo_keywords": "LeWrap deals, wrap specials, healthy food offers, LeWrap promotions, discount wraps"
+    },
+    "newsroom_community": {
+        "seo_title": "[EVENT/PARTNERSHIP NAME] - LeWrap Community News",
+        "seo_description": "[Brief description of the community initiative - 150-160 characters]",
+        "seo_keywords": "LeWrap community, local partnerships, healthy eating initiatives, community events, LeWrap news"
+    },
+    "newsroom_updates": {
+        "seo_title": "[UPDATE TITLE] - LeWrap Company News & Updates",
+        "seo_description": "[Brief description of the update - 150-160 characters]",
+        "seo_keywords": "LeWrap news, company updates, restaurant news, new locations, menu updates"
+    },
+    "newsroom_franchising": {
+        "seo_title": "[FRANCHISE NEWS] - LeWrap Franchise Updates",
+        "seo_description": "[Brief description of franchising news - 150-160 characters]",
+        "seo_keywords": "LeWrap franchise news, franchising updates, new franchise locations, franchise success stories"
+    }
+}
