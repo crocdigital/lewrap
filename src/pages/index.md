@@ -1,8 +1,8 @@
 ---
 layout: ../layouts/HomeLayout.astro
 title: LeWrap - Fresh, Healthy Wraps
-seo_title: ''
-seo_description:
+seo_title: Testy McTestyPants Title
+seo_description: Testing to make sure description text goes in bra.
 seo_image: ''
 seo_keywords:
 seo_robots: index, follow
