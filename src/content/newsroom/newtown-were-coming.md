@@ -1,8 +1,9 @@
 ---
+_schema: default
 layout: ../../layouts/NewsroomLayout.astro
 title: Newtown, we're coming!
 seo_title: ''
-seo_description: ''
+seo_description: Adding an SEO description in Newtown entry bra :)
 seo_image: ''
 seo_keywords:
 seo_robots: index, follow
