@@ -1,5 +1,11 @@
 ---
 _schema: default
+seo_title: ''
+seo_description: ''
+seo_image: ''
+seo_keywords:
+seo_robots: index, follow
+seo_canonical: ''
 name: LeWrap Bankstown
 address: Vicinity Bankstown Central, North Terrace
 suburb: Bankstown

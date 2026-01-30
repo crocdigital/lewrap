@@ -23,6 +23,9 @@ const {
     schema,
 } = Astro.props;
 
+// Add " | LeWrap" to title if it doesn't already have it
+const pageTitle = title.includes("LeWrap") ? title : `${title} | LeWrap`;
+
 // Get current URL for canonical and OG
 const currentUrl = canonical || Astro.url.href;
 
@@ -31,15 +34,15 @@ const fullImageUrl = new URL(image, Astro.site || Astro.url.origin).href;
 
 // Default keywords
 const defaultKeywords =
-    "LeWrap, wraps, healthy food, fresh food, fast food, Australian food";
+    "LeWrap, healthy wraps Australia, fresh wraps Sydney, healthy fast food, fresh lunch options, wrap restaurant, Australian healthy food, quick healthy meals";
 const allKeywords = keywords
     ? `${defaultKeywords}, ${keywords}`
     : defaultKeywords;
 ---
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
+<title>{pageTitle}</title>
+<meta name="title" content={pageTitle} />
 <meta name="description" content={description} />
 <meta name="keywords" content={allKeywords} />
 <meta name="author" content={author} />
