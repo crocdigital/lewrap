@@ -295,12 +295,6 @@ _inputs:
   # ------------------------------------
   # SEO INPUTS
   # ------------------------------------
-  _seo_section:
-    type: heading
-    label: "🔍 SEO Settings"
-    comment: "Search engine optimization and social sharing"
-    cascade: true
-
   seo_title:
     type: text
     label: SEO Title
