@@ -2,7 +2,7 @@
 layout: ../layouts/InternalPageLayout.astro
 title: Catering
 seo_title:
-seo_description: Ooga booga boo, Ooga booga boo.
+seo_description:
 seo_image: ''
 seo_keywords:
 seo_robots: index, follow
