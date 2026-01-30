@@ -32,6 +32,7 @@ const locationsData = sortedLocations.map((loc) => ({
     suburb: loc.data.suburb,
     state: loc.data.state,
     postcode: loc.data.postcode,
+    order_now_link: loc.data.order_now_link,
     slug: loc.slug,
     latitude: loc.data.latitude,
     longitude: loc.data.longitude,
@@ -109,6 +110,7 @@ const {
                             suburb={store.data.suburb}
                             state={store.data.state}
                             postcode={store.data.postcode}
+                            order_now_link={store.data.order_now_link}
                             slug={store.slug}
                         />
                     ))
