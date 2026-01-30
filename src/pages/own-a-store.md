@@ -1,6 +1,12 @@
 ---
 layout: ../layouts/InternalPageLayout.astro
 title: Own a store
+seo_title:
+seo_description:
+seo_image: ''
+seo_keywords:
+seo_robots: index, follow
+seo_canonical: ''
 hero_title: Be Your Own Boss
 hero_subtitle:
 hero_bg_type: image

@@ -1,6 +1,12 @@
 ---
 layout: ../layouts/PoliciesLayout.astro
 title: Policies - LeWrap
+seo_title:
+seo_description:
+seo_image: ''
+seo_keywords:
+seo_robots: index, follow
+seo_canonical: ''
 terms_content: >-
   <p><em>Last updated: January 2026</em></p><h2>Agreement to Terms</h2><p>By
   accessing our website, you agree to be bound by these terms and

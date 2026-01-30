@@ -1,6 +1,12 @@
 ---
 layout: ../layouts/InternalPageLayout.astro
 title: Our Story
+seo_title:
+seo_description:
+seo_image: ''
+seo_keywords:
+seo_robots: index, follow
+seo_canonical: ''
 hero_title: Our Story
 hero_subtitle:
 hero_bg_type: image

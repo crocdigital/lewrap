@@ -1,6 +1,12 @@
 ---
 layout: ../layouts/OurFoodLayout.astro
 title: Our Food
+seo_title:
+seo_description:
+seo_image: ''
+seo_keywords:
+seo_robots: index, follow
+seo_canonical: ''
 hero_title: Our Food
 hero_subtitle: The average adult daily energy intake is 8700kj
 hero_bg_type: image
