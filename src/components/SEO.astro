@@ -23,6 +23,18 @@ const {
     schema,
 } = Astro.props;
 
+// Helper function to handle empty strings
+const cleanValue = (value: string | undefined) => {
+    return value && value.trim() !== "" ? value : undefined;
+};
+
+// Clean values - treat empty strings as undefined so defaults kick in
+const cleanDescription =
+    cleanValue(description) ||
+    "Discover LeWrap's delicious range of fresh wraps, plates, salads and more. Made fresh daily with quality ingredients. Find your nearest LeWrap location.";
+const cleanImage = cleanValue(image) || "/images/og/lewrap-og-default.jpg";
+const cleanKeywords = cleanValue(keywords);
+
 // Add " | LeWrap" to title (homepage already has it in default)
 const pageTitle =
     title.endsWith("LeWrap") || title.includes(" | LeWrap")
@@ -46,7 +58,7 @@ const allKeywords = keywords
 <!-- Primary Meta Tags -->
 <title>{pageTitle}</title>
 <meta name="title" content={pageTitle} />
-<meta name="description" content={description} />
+<meta name="description" content={cleanDescription} />
 <meta name="keywords" content={allKeywords} />
 <meta name="author" content={author} />
 <meta name="robots" content={robots} />

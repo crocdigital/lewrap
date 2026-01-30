@@ -28,10 +28,12 @@ const locationSchema = generateLocationSchema(
     Astro.site?.toString() || Astro.url.origin,
 );
 
-// Get SEO data from location frontmatter
-const seoTitle = location.data.seo_title || `${location.data.name}`;
+// Get SEO data from location frontmatter - handle empty strings
+const seoTitle =
+    (location.data.seo_title && location.data.seo_title.trim()) ||
+    `${location.data.name}`;
 const seoDescription =
-    location.data.seo_description ||
+    (location.data.seo_description && location.data.seo_description.trim()) ||
     `Visit LeWrap at ${location.data.address}, ${location.data.suburb}. Fresh wraps, salads and more.`;
 const seoImage = location.data.seo_image;
 const seoKeywords = location.data.seo_keywords;
