@@ -1,5 +1,9 @@
 ---
-_schema: default
+seo_title: ""
+seo_description: ""
+seo_image: ""
+seo_keywords: ""
+seo_robots: "index, follow"
 name: LeWrap Stanhope Gardens
 address: Shop 18E, Stanhope Village Shopping Centre, 2 Sentry Drive
 suburb: Stanhope Gardens

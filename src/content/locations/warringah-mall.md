@@ -1,5 +1,9 @@
 ---
-_schema: default
+seo_title: ""
+seo_description: ""
+seo_image: ""
+seo_keywords: ""
+seo_robots: "index, follow"
 name: LeWrap Warringah Mall
 address: 145 Condamine St
 suburb: Brookvale

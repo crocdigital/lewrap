@@ -1,5 +1,9 @@
 ---
-_schema: default
+seo_title: ""
+seo_description: ""
+seo_image: ""
+seo_keywords: ""
+seo_robots: "index, follow"
 name: LeWrap Roselands
 address: Level 2 Food Court, Roselands Shopping Centre, 24 Roselands Dr
 suburb: Roselands

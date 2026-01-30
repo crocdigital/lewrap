@@ -1,5 +1,9 @@
 ---
-_schema: default
+seo_title: ""
+seo_description: ""
+seo_image: ""
+seo_keywords: ""
+seo_robots: "index, follow"
 name: LeWrap Wetherill Park
 address: >-
   Ground Floor Food Court, Stockland Wetherill Park Shopping Centre, 561-583

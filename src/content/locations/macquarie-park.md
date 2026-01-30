@@ -1,5 +1,9 @@
 ---
-_schema: default
+seo_title: ""
+seo_description: ""
+seo_image: ""
+seo_keywords: ""
+seo_robots: "index, follow"
 name: LeWrap Macquarie Park
 address: Level 2, Macquarie Centre, Herring Road & Waterloo Rd
 suburb: Macquarie Park
