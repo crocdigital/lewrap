@@ -45,7 +45,14 @@ const featuredFAQs = allFAQs
 
 const { frontmatter } = Astro.props;
 const {
-    title = "LeWrap - Fresh, Healthy Wraps",
+    // title = "LeWrap - Fresh, Healthy Wraps",
+    title,
+    seo_title,
+    seo_description,
+    seo_image,
+    seo_keywords,
+    seo_robots,
+    seo_canonical,
     hero_slides = [],
     hero_heading = "We believe in all things good and fresh",
     hero_cta1_text = "Our food",
@@ -71,6 +78,24 @@ const {
     catering_image = "",
     franchise_callout = {},
 } = frontmatter || {};
+
+// Organization Schema for homepage
+const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    name: "LeWrap",
+    url: Astro.site,
+    logo: new URL("/images/logo.png", Astro.site).href,
+    description:
+        seo_description ||
+        "Fresh, healthy wraps and more. Made fresh daily with quality ingredients.",
+    address: {
+        "@type": "PostalAddress",
+        addressCountry: "AU",
+    },
+    servesCuisine: "Fast Food, Healthy Food",
+    priceRange: "$$",
+};
 
 // Transform hero slides with HTML content for responsive images
 const carouselSlides = hero_slides.map((slide: any) => {
@@ -106,7 +131,15 @@ const featuredNews = allNewsroom
     .slice(0, 3); // Latest 3 featured articles
 ---
 
-<BaseLayout title={title}>
+<BaseLayout
+    title={seo_title || title || "LeWrap - Fresh, Healthy Wraps"}
+    description={seo_description}
+    image={seo_image}
+    keywords={seo_keywords}
+    robots={seo_robots || "index, follow"}
+    canonical={seo_canonical}
+    schema={organizationSchema}
+>
     {/* Newsletter Popup */}
     {
         newsletterPopup && (

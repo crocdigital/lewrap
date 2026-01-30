@@ -1,0 +1,78 @@
+---
+interface Props {
+    title?: string;
+    description?: string;
+    image?: string;
+    type?: string;
+    robots?: string;
+    canonical?: string;
+    author?: string;
+    keywords?: string[];
+    schema?: object;
+}
+
+const {
+    title = "LeWrap - Fresh, Healthy Wraps & More",
+    description = "Discover LeWrap's delicious range of fresh wraps, plates, salads and more. Made fresh daily with quality ingredients. Find your nearest LeWrap location.",
+    image = "/images/og/lewrap-og-default.jpg",
+    type = "website",
+    robots = "index, follow",
+    canonical,
+    author = "LeWrap",
+    keywords = [],
+    schema,
+} = Astro.props;
+
+// Get current URL for canonical and OG
+const currentUrl = canonical || Astro.url.href;
+
+// Full image URL for OG (needs absolute URL)
+const fullImageUrl = new URL(image, Astro.site || Astro.url.origin).href;
+
+// Default keywords
+const defaultKeywords = [
+    "LeWrap",
+    "wraps",
+    "healthy food",
+    "fresh food",
+    "fast food",
+    "Australian food",
+];
+const allKeywords = [...defaultKeywords, ...keywords];
+---
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="keywords" content={allKeywords.join(", ")} />
+<meta name="author" content={author} />
+<meta name="robots" content={robots} />
+<link rel="canonical" href={currentUrl} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={currentUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={fullImageUrl} />
+<meta property="og:site_name" content="LeWrap" />
+<meta property="og:locale" content="en_AU" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={currentUrl} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullImageUrl} />
+
+<!-- Additional Meta -->
+<meta name="format-detection" content="telephone=no" />
+<meta name="creator" content="LeWrap" />
+
+<!-- Schema.org JSON-LD -->
+{
+    schema && (
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    )
+}

@@ -3,7 +3,43 @@ import BaseLayout from "./BaseLayout.astro";
 import Button from "../components/atoms/Button.astro";
 
 const { frontmatter } = Astro.props;
-const { title, hero_image, hero_image_mobile, category, date } = frontmatter;
+const {
+    title,
+    hero_image,
+    hero_image_mobile,
+    category,
+    date,
+    preview_text,
+    seo_title,
+    seo_description,
+    seo_image,
+    seo_keywords,
+    seo_robots,
+} = frontmatter;
+
+// Article Schema for newsroom posts
+const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: seo_title || title,
+    description: seo_description || preview_text,
+    image: new URL(seo_image || hero_image, Astro.site).href,
+    datePublished: new Date(date).toISOString(),
+    dateModified: new Date(date).toISOString(),
+    author: {
+        "@type": "Organization",
+        name: "LeWrap",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "LeWrap",
+        logo: {
+            "@type": "ImageObject",
+            url: new URL("/images/logo.png", Astro.site).href,
+        },
+    },
+    articleSection: category,
+};
 
 // Format date
 const formattedDate = new Intl.DateTimeFormat("en-AU", {
@@ -13,7 +49,15 @@ const formattedDate = new Intl.DateTimeFormat("en-AU", {
 }).format(new Date(date));
 ---
 
-<BaseLayout title={title}>
+<BaseLayout
+    title={seo_title || title}
+    description={seo_description || preview_text}
+    image={seo_image || hero_image}
+    type="article"
+    keywords={seo_keywords}
+    robots={seo_robots || "index, follow"}
+    schema={articleSchema}
+>
     <article
         class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10 relative"
     >
@@ -37,13 +81,11 @@ const formattedDate = new Intl.DateTimeFormat("en-AU", {
                 </Button>
 
                 {/* Category */}
-                {
-                    /* <span
+                <span
                     class="font-helvetica-condensed font-semibold text-base uppercase"
                 >
                     {category}
-                </span> */
-                }
+                </span>
 
                 {/* Title */}
                 <h1

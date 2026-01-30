@@ -1,16 +1,29 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import SEO from "../components/SEO.astro";
 import Navigation from "../components/organisms/Navigation.astro";
 import Footer from "../components/organisms/Footer.astro";
 import CustomCursor from "../components/atoms/CustomCursor";
 import BackToTop from "../components/atoms/BackToTop.astro";
 import "../styles/globals.css";
 
+// interface Props {
+//   title?: string;
+// }
 interface Props {
   title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+  robots?: string;
+  canonical?: string;
+  keywords?: string[];
+  schema?: object;
 }
 
-const { title = "LeWrap" } = Astro.props;
+// const { title = "LeWrap" } = Astro.props;
+const { title, description, image, type, robots, canonical, keywords, schema } =
+  Astro.props;
 const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
 ---
 
@@ -28,8 +41,19 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <meta name="generator" content={Astro.generator} />
-    <title>{displayTitle}</title>
+    <!-- <meta name="generator" content={Astro.generator} />
+    <title>{displayTitle}</title> -->
+    <!-- SEO Component -->
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      type={type}
+      robots={robots}
+      canonical={canonical}
+      keywords={keywords}
+      schema={schema}
+    />
     <ClientRouter />
   </head>
   <body

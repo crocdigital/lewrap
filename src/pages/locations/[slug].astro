@@ -2,6 +2,7 @@
 // Locations details
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { generateLocationSchema } from "../../utils/generateLocationSchema";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 import Button from "../../components/atoms/Button.astro";
@@ -20,6 +21,12 @@ interface Props {
 
 const { location } = Astro.props;
 const { Content } = await location.render();
+
+// Generate schema - cast Astro.site to string with fallback
+const locationSchema = generateLocationSchema(
+    location,
+    Astro.site?.toString() || Astro.url.origin,
+);
 
 // Format hours for display
 const daysOfWeek = [
@@ -42,7 +49,11 @@ const dayLabels: Record<string, string> = {
 };
 ---
 
-<BaseLayout title={`${location.data.name} | LeWrap Locations`}>
+<BaseLayout
+    title={`${location.data.name} - LeWrap`}
+    description={`Visit LeWrap at ${location.data.address}, ${location.data.suburb}. Fresh wraps, salads and more.`}
+    schema={locationSchema}
+>
     <main
         class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10"
     >

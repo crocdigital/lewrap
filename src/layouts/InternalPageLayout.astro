@@ -54,6 +54,12 @@ import NewsroomCard from "../components/NewsRoomCard.astro";
 const { frontmatter } = Astro.props;
 const {
     title,
+    seo_title,
+    seo_description,
+    seo_image,
+    seo_keywords,
+    seo_robots,
+    seo_canonical,
     hero_title,
     hero_subtitle,
     hero_bg_type,
@@ -79,6 +85,20 @@ const {
     franchise_process_steps = [],
 } = frontmatter || {};
 
+// WebPage Schema for internal pages
+const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seo_title || title,
+    description: seo_description,
+    url: Astro.url.href,
+    publisher: {
+        "@type": "Organization",
+        name: "LeWrap",
+        url: Astro.site,
+    },
+};
+
 // Filter FAQs by category
 const categoryFAQs = allFAQs
     .filter(
@@ -101,7 +121,15 @@ const categories = [
 ];
 ---
 
-<BaseLayout title={title}>
+<BaseLayout
+    title={seo_title || title}
+    description={seo_description}
+    image={seo_image}
+    keywords={seo_keywords}
+    robots={seo_robots || "index, follow"}
+    canonical={seo_canonical}
+    schema={webPageSchema}
+>
     {/* Franchise Enquiry Modal - Own A Store page only */}
     {
         (Astro.url.pathname.includes("own-a-store") ||

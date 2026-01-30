@@ -5,17 +5,17 @@ import tailwindcss from '@tailwindcss/vite';
 
 import vercel from '@astrojs/vercel';
 
-// https://astro.build/config
 export default defineConfig({
+  site: 'https://lewrap.com', // ← Actual domain
   devToolbar: {
-      enabled: false
+    enabled: false
   },
 
   integrations: [react()],
 
   vite: {
-      // @ts-ignore
-      plugins: [tailwindcss()],
+    // @ts-ignore
+    plugins: [tailwindcss()],
   },
 
   adapter: vercel(),

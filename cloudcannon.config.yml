@@ -293,6 +293,54 @@ collections_config:
 _inputs:
 
   # ------------------------------------
+  # SEO INPUTS
+  # ------------------------------------
+  seo_title:
+    type: text
+    label: SEO Title
+    comment: "Page title for search engines (50-60 characters). Leave blank to use page title."
+    cascade: true
+
+  seo_description:
+    type: textarea
+    label: SEO Description
+    comment: "Meta description for search results (150-160 characters). Leave blank for auto-generated."
+    cascade: true
+
+  seo_image:
+    type: image
+    label: SEO / Social Share Image
+    comment: "Image shown when sharing on social media (1200px x 630px). Leave blank to use default LeWrap image."
+    options:
+      paths:
+        uploads: public/images/og
+    cascade: true
+
+  seo_keywords:
+    type: array
+    label: SEO Keywords
+    comment: "Additional keywords for this page (optional)"
+    cascade: true
+
+  seo_robots:
+    type: select
+    label: Search Engine Indexing
+    comment: "Control how search engines index this page"
+    options:
+      values:
+        - "index, follow"
+        - "noindex, follow"
+        - "index, nofollow"
+        - "noindex, nofollow"
+    cascade: true
+
+  seo_canonical:
+    type: text
+    label: Canonical URL
+    comment: "Optional. Override canonical URL (leave blank for auto-generated)"
+    cascade: true
+  
+  # ------------------------------------
   # HERO SLIDER - HOMEPAGE
   # ------------------------------------
   hero_slides:
