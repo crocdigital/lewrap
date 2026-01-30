@@ -1,4 +1,10 @@
 ---
+seo_title: ''
+seo_description: ''
+seo_image: ''
+seo_keywords:
+seo_robots: index, follow
+seo_canonical: ''
 name: ""
 address: ""
 suburb: ""
