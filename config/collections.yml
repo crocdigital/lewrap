@@ -1,0 +1,285 @@
+# ========================================
+# COLLECTIONS CONFIGURATION
+# ========================================
+# Defines all content collections and their settings
+
+# ------------------------------------
+# PAGES COLLECTION
+# ------------------------------------
+pages:
+  path: src/pages
+  icon: wysiwyg
+  url: /[slug]/
+  disable_url: false
+  _enabled_editors:
+    - visual
+    - content
+    - data
+  disable_add: false
+  disable_add_folder: false
+  disable_file_actions: false
+
+# ------------------------------------
+# LOCATIONS COLLECTION
+# ------------------------------------
+locations:
+  path: src/content/locations
+  icon: location_on
+  url: /locations/[slug]/
+  _enabled_editors:
+    - content
+    - data
+  disable_add: false
+  disable_add_folder: false
+  disable_file_actions: false
+  add_options:
+    - name: Add Location
+      icon: add_location
+  schemas:
+    default:
+      path: src/content/locations/_defaults.md
+  _inputs:
+    name:
+      type: text
+      label: Store Name
+      comment: "e.g., LeWrap Parramatta"
+    image:
+      type: image
+      label: Store Image
+      comment: "Upload a photo of the store. 1000px x 1000px"
+
+# ------------------------------------
+# FOOD COLLECTION
+# ------------------------------------
+food:
+  path: src/content/food
+  icon: restaurant_menu
+  url: /food/[slug]/
+  _enabled_editors:
+    - content
+    - data
+  disable_add: false
+  disable_add_folder: false
+  disable_file_actions: false
+  add_options:
+    - name: Add Food Item
+      icon: add_circle
+  schemas:
+    default:
+      path: src/content/food/_defaults.md
+  _inputs:
+    name:
+      type: text
+      label: Food Item Name
+      comment: "e.g., Chicken Caesar Wrap"
+    image:
+      type: image
+      label: Item Image
+      comment: "Upload a photo of the item. 400px x 400px (square)"
+      options:
+        paths:
+          uploads: public/images/food
+    category:
+      type: select
+      label: Category
+      options:
+        values:
+          - Wraps
+          - Plates
+          - Baguettes
+          - Protein Packs
+          - Salads
+          - Kids Meals
+          - Sides
+          - Drinks
+        allow_create: true
+    subcategory:
+      type: select
+      label: Subcategory
+      comment: "Only applies to Wraps category"
+      options:
+        values:
+          - Chicken Wraps
+          - Beef Wraps
+          - Schnitzel Wraps
+          - Lamb Wraps
+          - Vegetarian Wraps
+          - Kofta Wraps
+        allow_create: true
+    price:
+      type: text
+      label: Price
+      comment: "e.g., $14.90"
+    description:
+      type: html
+      options:
+        allow_resize: true
+        allow_custom_markup: false
+        remove_custom_markup: false
+        initial_height: 200
+        bold: true
+        italic: true
+        format: p
+      label: Description
+    kj:
+      type: number
+      label: Kilojoules (kJ)
+      comment: "Energy content in kilojoules"
+    orderLink:
+      type: url
+      label: Order Link
+      comment: "External RedCat POS link for this item"
+    available:
+      type: switch
+      label: Available
+      comment: "Toggle off to mark as sold out"
+
+# ------------------------------------
+# FAQ COLLECTION
+# ------------------------------------
+faq:
+  path: src/content/faq
+  icon: help_outline
+  url: /faq/[slug]/
+  _enabled_editors:
+    - content
+    - data
+  disable_add: false
+  disable_add_folder: false
+  disable_file_actions: false
+  add_options:
+    - name: Add FAQ
+      icon: add_circle
+  schemas:
+    default:
+      path: src/content/faq/_defaults.md
+  _inputs:
+    question:
+      type: text
+      label: Question
+    answer:
+      type: html
+      options:
+        allow_resize: true
+        bold: true
+        italic: true
+        link: true
+        bulletedlist: true
+        format: p
+      label: Answer
+    category:
+      type: select
+      label: Category
+      options:
+        values:
+          - General
+          - Catering
+          - Franchising
+    order:
+      type: number
+      label: Display Order
+      comment: "Lower numbers appear first (0, 1, 2, etc.)"
+
+# ------------------------------------
+# NEWSROOM COLLECTION
+# ------------------------------------
+newsroom:
+  path: src/content/newsroom
+  icon: newspaper
+  url: /newsroom/[slug]/
+  _enabled_editors:
+    - content
+    - data
+  disable_add: false
+  disable_add_folder: false
+  disable_file_actions: false
+  add_options:
+    - name: Add Article
+      icon: add_circle
+  schemas:
+    default:
+      path: src/content/newsroom/_defaults.md
+  _inputs:
+    hero_image:
+      type: image
+      label: Hero Image
+      comment: "Main image for article (recommended: 1920px x 1080px)"
+      options:
+        paths:
+          uploads: public/images/newsroom
+    hero_image_mobile:
+      type: image
+      label: Hero Image (Mobile)
+      comment: "Optional mobile version. Recommended size: 1000px x 1000px. If not provided, desktop image will be used."
+      options:
+        paths:
+          uploads: public/images/newsroom
+    category:
+      type: select
+      label: Category
+      options:
+        values:
+          - Promotion
+          - Community
+          - Updates
+          - Franchising
+    featured:
+      type: switch
+      label: Featured
+      comment: "Show on newsroom page featured section"
+    preview_text:
+      type: textarea
+      label: Preview Text
+      comment: "Short description shown on newsroom listings (150-200 characters recommended)"
+
+# ------------------------------------
+# POPUPS COLLECTION
+# ------------------------------------
+popups:
+  path: src/content/popups
+  icon: web_asset
+  _enabled_editors:
+    - data
+  disable_add: true
+  disable_file_actions: true
+  _inputs:
+    popup_id:
+      type: select
+      label: Popup ID
+      comment: "Which popup this content is for (DO NOT CHANGE)"
+      options:
+        values:
+          - newsletter_modal
+          - franchise_enquiry
+      hidden: true
+    title:
+      type: text
+      label: Popup Title
+    description:
+      type: html
+      label: Description
+      options:
+        bold: true
+        italic: true
+        link: true
+        format: p
+        allow_resize: true
+    image:
+      type: image
+      label: Decorative Image (Optional)
+      comment: "Optional decorative image (like koftas)"
+      options:
+        paths:
+          uploads: public/images/elements
+    image_position:
+      type: text
+      label: Image Position Classes
+      comment: "Tailwind classes for positioning (e.g., 'absolute left-1/2 -translate-x-1/2 -top-13')"
+    show_on_load:
+      type: switch
+      label: Show on Page Load
+      comment: "Automatically show this popup when page loads"
+    remember_close:
+      type: switch
+      label: Remember When Closed
+      comment: "Don't show again after user closes it"

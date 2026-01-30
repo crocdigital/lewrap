@@ -1,0 +1,16 @@
+# ========================================
+# EDITABLE REGIONS
+# ========================================
+# Defines default rich text editor settings
+
+text:
+  bold: true
+  italic: true
+  link: true
+
+content:
+  bold: true
+  italic: true
+  link: true
+  format: p h2 h3 h4
+  image: true
