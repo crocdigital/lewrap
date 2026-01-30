@@ -1,7 +1,12 @@
 ---
-_schema: default
 layout: ../../layouts/NewsroomLayout.astro
 title: 4th test Newsroom entry
+seo_title: ''
+seo_description: ''
+seo_image: ''
+seo_keywords:
+seo_robots: index, follow
+seo_canonical: ''
 hero_image: /images/newsroom/placement-newsroom-desktop.webp
 hero_image_mobile: /images/hero/community-mobile.webp
 category: Updates

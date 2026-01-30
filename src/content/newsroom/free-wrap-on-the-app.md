@@ -1,7 +1,12 @@
 ---
-_schema: default
 layout: ../../layouts/NewsroomLayout.astro
 title: Free Wrap on the App
+seo_title: ''
+seo_description: ''
+seo_image: ''
+seo_keywords:
+seo_robots: index, follow
+seo_canonical: ''
 hero_image: /images/newsroom/freewrap-desktop.webp
 hero_image_mobile: /images/newsroom/freewrap-mobile.webp
 category: Promotion
