@@ -1,7 +1,0 @@
-# ========================================
-# FILE PATHS
-# ========================================
-# Defines where uploaded files are stored
-
-uploads: public/images/[collection]
-static: public
