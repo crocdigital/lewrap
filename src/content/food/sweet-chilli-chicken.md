@@ -6,8 +6,8 @@ description: >-
   <p>Grilled Chicken Breast, Grilled Onion, Lettuce, Tomato, Mozzarella Cheese
   &amp; Sweet Chilli Sauce.</p>
 kj: 2680
-image: /images/food/wrap-ckn-sweetchilli.png
-orderLink: '#'
+image: /images/food/wrap-ckn-sweetchilli.webp
+orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Chicken Wraps
 available: true
