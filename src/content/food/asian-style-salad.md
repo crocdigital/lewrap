@@ -7,7 +7,7 @@ description: >-
   &amp; Sweet Chilli Sauce.</p>
 kj: 2510
 image: /images/food/PLACEMENT-chicken-caesar.webp
-orderLink: '#'
+orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Salads
 subcategory: ''
 available: true

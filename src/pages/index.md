@@ -24,7 +24,7 @@ hero_heading: We believe in all things good and fresh
 hero_cta1_text: Our food
 hero_cta1_link: /our-food
 hero_cta2_text: Order now
-hero_cta2_link: /
+hero_cta2_link: https://lewrap.redcatcloud.com.au/app/menu/
 marquee_items:
   - 100% Australian
   - Chicken Wraps

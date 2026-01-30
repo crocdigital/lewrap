@@ -7,7 +7,7 @@ description: >-
   Rice &amp; Salad.</p>
 kj: 2870
 image: /images/food/PLACEMENT-chicken-caesar.webp
-orderLink: '#'
+orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Plates
 subcategory: ''
 available: true

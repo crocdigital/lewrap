@@ -5,7 +5,7 @@ price: $5.00
 description: ''
 kj: 0
 image: /images/food/placement-drink.webp
-orderLink: '#'
+orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Drinks
 subcategory: ''
 available: true

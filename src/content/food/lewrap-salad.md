@@ -7,7 +7,7 @@ description: >-
   Capsicum, Feta Cheese, Olives &amp; Choice of Dressing.</p>
 kj: 723
 image: /images/food/PLACEMENT-chicken-caesar.webp
-orderLink: '#'
+orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Salads
 subcategory: ''
 available: true

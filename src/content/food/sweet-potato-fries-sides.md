@@ -5,7 +5,7 @@ price: $6.00 / $10.00
 description: ''
 kj: 0
 image: /images/food/PLACEMENT-chicken-caesar.webp
-orderLink: '#'
+orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Sides
 subcategory: ''
 available: true
