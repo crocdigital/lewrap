@@ -2,8 +2,8 @@
 _schema: default
 layout: ../../layouts/NewsroomLayout.astro
 title: Newtown, we're coming!
-seo_title: Is the title working as well?
-seo_description: WTF is going on here
+seo_title:
+seo_description:
 seo_image: ''
 seo_keywords:
 seo_robots: index, follow
