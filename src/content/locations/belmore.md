@@ -1,9 +1,10 @@
 ---
-seo_title: ""
-seo_description: ""
-seo_image: ""
-seo_keywords: ""
-seo_robots: "index, follow"
+_schema: default
+seo_title: ''
+seo_description: Adding description to Belmore to see what happens bra.
+seo_image: ''
+seo_keywords: ''
+seo_robots: index, follow
 name: LeWrap Belmore
 address: 374 Burwood Road
 suburb: Belmore
