@@ -2,7 +2,7 @@
 layout: ../layouts/HomeLayout.astro
 title: LeWrap - Fresh, Healthy Wraps
 seo_title: ''
-seo_description: ''
+seo_description: Flak Jacket optional.
 seo_image: ''
 seo_keywords:
 seo_robots: index, follow

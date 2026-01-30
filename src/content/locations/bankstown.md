@@ -1,7 +1,7 @@
 ---
 _schema: default
 seo_title: ''
-seo_description: Flak Jacket optional.
+seo_description:
 seo_image: ''
 seo_keywords:
 seo_robots: index, follow
