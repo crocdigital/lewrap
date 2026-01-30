@@ -6,7 +6,7 @@ description: >-
   <p>Grilled Chicken Breast, Grilled Onion, Lettuce, Tomato, Mozzarella Cheese
   &amp; Sweet Chilli Sauce.</p>
 kj: 2680
-image: /images/food/PLACEMENT-chicken-caesar.webp
+image: /images/food/wrap-ckn-sweetchilli.png
 orderLink: '#'
 category: Wraps
 subcategory: Chicken Wraps

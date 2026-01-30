@@ -6,7 +6,7 @@ description: >-
   <p>Grilled Chicken Breast, Lettuce, Guacamole, Mozzarella Cheese &amp; Caesar
   Sauce.</p>
 kj: 3590
-image: /images/food/PLACEMENT-chicken-caesar.webp
+image: /images/food/wrap-ckn-cknavocado.png
 orderLink: '#'
 category: Wraps
 subcategory: Chicken Wraps

@@ -6,7 +6,7 @@ description: >-
   <p>Grilled Chicken Breast, Lettuce, Tomato, Onion, Crispy Cabbage, Carrot
   &amp; Choice of Sauce.</p>
 kj: 2450
-image: /images/food/PLACEMENT-chicken-caesar.webp
+image: /images/food/wrap-ckn-classicckn.png
 orderLink: '#'
 category: Wraps
 subcategory: Chicken Wraps
