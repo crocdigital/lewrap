@@ -1,7 +1,7 @@
 ---
 _schema: default
 seo_title: ''
-seo_description:
+seo_description: Don't forget a thick armour suit.
 seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
