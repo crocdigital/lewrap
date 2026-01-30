@@ -7,9 +7,6 @@ import CustomCursor from "../components/atoms/CustomCursor";
 import BackToTop from "../components/atoms/BackToTop.astro";
 import "../styles/globals.css";
 
-// interface Props {
-//   title?: string;
-// }
 interface Props {
   title?: string;
   description?: string;
@@ -41,9 +38,6 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <!-- <meta name="generator" content={Astro.generator} />
-    <title>{displayTitle}</title> -->
-    <!-- SEO Component -->
     <SEO
       title={title}
       description={description}
