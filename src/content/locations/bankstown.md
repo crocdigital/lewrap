@@ -1,10 +1,10 @@
 ---
-# _schema: default
-seo_title: ""
-seo_description: ""
-seo_image: ""
-seo_keywords: ""
-seo_robots: "index, follow"
+_schema: default
+seo_title: ''
+seo_description: Flak Jacket optional bra.
+seo_image: ''
+seo_keywords: ''
+seo_robots: index, follow
 name: LeWrap Bankstown
 address: Vicinity Bankstown Central, North Terrace
 suburb: Bankstown
