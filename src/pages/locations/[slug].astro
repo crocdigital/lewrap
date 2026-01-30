@@ -61,9 +61,9 @@ const dayLabels: Record<string, string> = {
 <BaseLayout
     title={seoTitle}
     description={seoDescription}
-    image={seoImage}
-    keywords={seoKeywords}
-    robots={seoRobots}
+    image={seoImage || undefined}
+    keywords={seoKeywords || undefined}
+    robots={seoRobots || "index, follow"}
     schema={locationSchema}
 >
     <main
