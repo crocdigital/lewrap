@@ -258,13 +258,14 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
                 Own a store
             </a>
             <a
-                href="#"
+                href="https://lewrap.redcatcloud.com.au/app/menu"
                 class:list={[
                     "btn-lewrap-secondary text-lg",
-                    pathname === "#"
+                    pathname === "https://lewrap.redcatcloud.com.au/app/menu"
                         ? "text-lewrap-green pointer-events-none"
                         : "hover:text-white hover:bg-lewrap-green hover:scale-105",
                 ]}
+                target="_blank"
             >
                 Order now
             </a>
@@ -377,8 +378,9 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 
         {/* Order Now Button */}
         <a
-            href="#"
+            href="https://lewrap.redcatcloud.com.au/app/menu"
             class="px-8 py-4 bg-lewrap-green-dark rounded-full w-full border-4 border-lewrap-green text-white font-cocogoose uppercase duration-200 text-2xl hover:bg-lewrap-green hover:scale-105 text-center mt-4 mobile-link"
+            target="_blank"
         >
             Order now
         </a>
