@@ -299,12 +299,20 @@ _inputs:
     type: text
     label: SEO Title
     comment: "Page title for search engines (50-60 characters). Leave blank to use page title."
+    context:
+      open: false
+      title: SEO Settings
+      icon: search
     cascade: true
 
   seo_description:
     type: textarea
     label: SEO Description
     comment: "Meta description for search results (150-160 characters). Leave blank for auto-generated."
+    context:
+      open: false
+      title: SEO Settings
+      icon: search
     cascade: true
 
   seo_image:
@@ -314,12 +322,20 @@ _inputs:
     options:
       paths:
         uploads: public/images/og
+    context:
+      open: false
+      title: SEO Settings
+      icon: search
     cascade: true
 
   seo_keywords:
     type: text
     label: SEO Keywords
     comment: "Comma-separated keywords (e.g., healthy wraps, fresh food, australian cuisine)"
+    context:
+      open: false
+      title: SEO Settings
+      icon: search
     cascade: true
 
   seo_robots:
@@ -332,12 +348,20 @@ _inputs:
         - "noindex, follow"
         - "index, nofollow"
         - "noindex, nofollow"
+    context:
+      open: false
+      title: SEO Settings
+      icon: search
     cascade: true
 
   seo_canonical:
     type: text
     label: Canonical URL
     comment: "Optional. Override canonical URL (leave blank for auto-generated)"
+    context:
+      open: false
+      title: SEO Settings
+      icon: search
     cascade: true
   
   # ------------------------------------
