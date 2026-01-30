@@ -25,6 +25,11 @@ const locationsCollection = defineCollection({
         image: z.string(),
         order_now_link: z.string().optional(),
         featured: z.boolean().default(false),
+        seo_title: z.string().optional(),
+        seo_description: z.string().optional(),
+        seo_image: z.string().optional(),
+        seo_keywords: z.string().optional(),
+        seo_robots: z.string().optional(),
     }),
 });
 

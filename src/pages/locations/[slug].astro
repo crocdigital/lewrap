@@ -22,11 +22,20 @@ interface Props {
 const { location } = Astro.props;
 const { Content } = await location.render();
 
-// Generate schema - cast Astro.site to string with fallback
+// Generate schema
 const locationSchema = generateLocationSchema(
     location,
     Astro.site?.toString() || Astro.url.origin,
 );
+
+// Get SEO data from location frontmatter
+const seoTitle = location.data.seo_title || `${location.data.name}`;
+const seoDescription =
+    location.data.seo_description ||
+    `Visit LeWrap at ${location.data.address}, ${location.data.suburb}. Fresh wraps, salads and more.`;
+const seoImage = location.data.seo_image;
+const seoKeywords = location.data.seo_keywords;
+const seoRobots = location.data.seo_robots || "index, follow";
 
 // Format hours for display
 const daysOfWeek = [
@@ -50,8 +59,11 @@ const dayLabels: Record<string, string> = {
 ---
 
 <BaseLayout
-    title={location.data.name}
-    description={`Visit LeWrap at ${location.data.address}, ${location.data.suburb}. Fresh wraps, salads and more.`}
+    title={seoTitle}
+    description={seoDescription}
+    image={seoImage}
+    keywords={seoKeywords}
+    robots={seoRobots}
     schema={locationSchema}
 >
     <main
