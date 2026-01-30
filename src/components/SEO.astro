@@ -7,7 +7,7 @@ interface Props {
     robots?: string;
     canonical?: string;
     author?: string;
-    keywords?: string[];
+    keywords?: string;
     schema?: object;
 }
 
@@ -19,7 +19,7 @@ const {
     robots = "index, follow",
     canonical,
     author = "LeWrap",
-    keywords = [],
+    keywords = "",
     schema,
 } = Astro.props;
 
@@ -30,22 +30,18 @@ const currentUrl = canonical || Astro.url.href;
 const fullImageUrl = new URL(image, Astro.site || Astro.url.origin).href;
 
 // Default keywords
-const defaultKeywords = [
-    "LeWrap",
-    "wraps",
-    "healthy food",
-    "fresh food",
-    "fast food",
-    "Australian food",
-];
-const allKeywords = [...defaultKeywords, ...keywords];
+const defaultKeywords =
+    "LeWrap, wraps, healthy food, fresh food, fast food, Australian food";
+const allKeywords = keywords
+    ? `${defaultKeywords}, ${keywords}`
+    : defaultKeywords;
 ---
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
-<meta name="keywords" content={allKeywords.join(", ")} />
+<meta name="keywords" content={allKeywords} />
 <meta name="author" content={author} />
 <meta name="robots" content={robots} />
 <link rel="canonical" href={currentUrl} />

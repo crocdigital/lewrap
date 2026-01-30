@@ -317,9 +317,9 @@ _inputs:
     cascade: true
 
   seo_keywords:
-    type: array
+    type: text
     label: SEO Keywords
-    comment: "Additional keywords for this page (optional)"
+    comment: "Comma-separated keywords (e.g., healthy wraps, fresh food, australian cuisine)"
     cascade: true
 
   seo_robots:

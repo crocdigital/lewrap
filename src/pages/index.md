@@ -4,7 +4,7 @@ title: LeWrap - Fresh, Healthy Wraps
 seo_title: ""
 seo_description: ""
 seo_image: ""
-seo_keywords: []
+seo_keywords: ""
 seo_robots: "index, follow"
 seo_canonical: ""
 hero_slides:
