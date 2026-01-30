@@ -1,9 +1,10 @@
 ---
-seo_title: ""
-seo_description: ""
-seo_image: ""
-seo_keywords: ""
-seo_robots: "index, follow"
+_schema: default
+seo_title: ''
+seo_description: ''
+seo_image: ''
+seo_keywords: ''
+seo_robots: index, follow
 name: LeWrap Roselands
 address: Level 2 Food Court, Roselands Shopping Centre, 24 Roselands Dr
 suburb: Roselands
@@ -22,7 +23,7 @@ hours:
   saturday: 10:00am - 5:00pm
   sunday: 10:00am - 4:00pm
 image: /images/placement-bondi-junction.jpg
-order_now_link: '#'
+order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: false
 ---
 Right in the heart of Bondi Junction, our store is perfect for beach-goers and locals alike. Grab a fresh wrap before hitting the beach or after a shopping spree at Westfield!

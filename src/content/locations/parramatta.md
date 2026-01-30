@@ -1,9 +1,10 @@
 ---
-seo_title: ""
-seo_description: ""
-seo_image: ""
-seo_keywords: ""
-seo_robots: "index, follow"
+_schema: default
+seo_title: ''
+seo_description: ''
+seo_image: ''
+seo_keywords: ''
+seo_robots: index, follow
 name: LeWrap Parramatta
 address: Level 5 Food Court, Westfield Parramatta Shopping Centre, 159-175 Church St
 suburb: Parramatta
@@ -22,7 +23,7 @@ hours:
   saturday: 9:30am - 6:00pm
   sunday: 9:30am - 6:00pm
 image: /images/stores/parramatta.jpg
-order_now_link: '#'
+order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
 ---
 Our flagship Parramatta store has been serving fresh, delicious wraps since 2005. Located in the heart of Westfield Parramatta, we're your go-to spot for a quick, healthy lunch or dinner. Pop in and say hi to our friendly team!

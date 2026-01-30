@@ -1,9 +1,10 @@
 ---
-seo_title: ""
-seo_description: ""
-seo_image: ""
-seo_keywords: ""
-seo_robots: "index, follow"
+_schema: default
+seo_title: ''
+seo_description: ''
+seo_image: ''
+seo_keywords: ''
+seo_robots: index, follow
 name: LeWrap Penrith
 address: Level 2 Food Court, Westfield Penrith Shopping Centre, 585 High St
 suburb: Penrith
@@ -22,7 +23,7 @@ hours:
   saturday: 9:00am - 5:00pm
   sunday: 9:00am - 5:00pm
 image: /images/locations/placement-bankstown.webp
-order_now_link: '#'
+order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
 ---
 Our CBD location is all about speed and quality for busy professionals. Whether you're rushing between meetings or need a quick lunch, we've got you covered with the freshest wraps in town.
