@@ -1,6 +1,12 @@
 ---
 layout: ../../layouts/NewsroomLayout.astro
 title: ""
+seo_title: ''
+seo_description: ''
+seo_image: ''
+seo_keywords:
+seo_robots: index, follow
+seo_canonical: ''
 hero_image: ""
 hero_image_mobile: ""
 category: ""
