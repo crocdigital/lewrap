@@ -6,7 +6,7 @@ description: >-
   <p>Grilled Lamb Kofta, Grilled Onion, Capsicum &amp; Mushroom, Fresh Lettuce,
   Cucumber &amp; Lime Tahini Sauce.</p>
 kj: 2296
-image: /images/food/PLACEMENT-chicken-caesar.webp
+image: /images/food/baguette-kofta.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Baguettes
 subcategory: ''

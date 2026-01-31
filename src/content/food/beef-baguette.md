@@ -6,7 +6,7 @@ description: >-
   <p>Grilled Strip Loin Steak, Grilled Onion, Capsicum &amp; Mushroom, Fresh
   Lettuce, Tomato &amp; Choice of Sauce.</p>
 kj: 2220
-image: /images/food/PLACEMENT-chicken-caesar.webp
+image: /images/food/baguette-beef.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Baguettes
 subcategory: ''
