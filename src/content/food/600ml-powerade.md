@@ -1,10 +1,10 @@
 ---
 _schema: default
 name: 600ml Powerade
-price: $7.20
+price: $5.90
 description: ''
 kj: 0
-image: /images/food/placement-drink.webp
+image: /images/food/drinks-powerade.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Drinks
 subcategory: ''
