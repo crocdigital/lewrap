@@ -1,6 +1,6 @@
 ---
 _schema: default
-name: Kofta Protein Pack
+name: Kofta
 price: $12.90
 description: >-
   <p>Grilled Lamb Kofta, Caramelised Onion, White or Brown Rice &amp; Choice of

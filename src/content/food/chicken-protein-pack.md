@@ -1,6 +1,6 @@
 ---
 _schema: default
-name: Chicken Protein Pack
+name: Chicken
 price: $12.90
 description: >-
   <p>Grilled Chicken Breast, Caramelised Onion, White or Brown Rice &amp; Choice

@@ -1,6 +1,6 @@
 ---
 _schema: default
-name: Beef Protein Pack
+name: Beef
 price: $12.90
 description: >-
   <p>Grilled Strip Loin Steak, Caramelised Onion, White or Brown Rice &amp;
