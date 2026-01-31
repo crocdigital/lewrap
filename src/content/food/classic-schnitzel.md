@@ -6,7 +6,7 @@ description: >-
   <p>Chicken Schnitzel, Lettuce, Tomato, Mozzarella Cheese &amp; Signature
   Mayo.</p>
 kj: 2744
-image: /images/food/PLACEMENT-chicken-caesar.webp
+image: /images/food/classic-schnitzel.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Schnitzel Wraps
