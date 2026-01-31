@@ -6,7 +6,7 @@ description: >-
   <p>Grilled Strip Loin Steak, Grilled Mushroom, Onion &amp; Capsicum, White or
   Brown Rice &amp; Salad.</p>
 kj: 2600
-image: /images/food/PLACEMENT-chicken-caesar.webp
+image: /images/food/plate-beef.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Plates
 subcategory: ''
