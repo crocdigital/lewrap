@@ -6,7 +6,7 @@ description: >-
   <p>Grilled Chicken Breast, Lettuce, Tomato, Onion, Crispy Cabbage, Carrot
   &amp; Choice of Sauce.</p>
 kj: 2450
-image: /images/food/wrap-ckn-classicckn.webp
+image: /images/food/classic-chicken.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Chicken Wraps
