@@ -6,7 +6,7 @@ description: >-
   <p>Grilled Strip Loin Steak, Lettuce, Guacamole, Mozzarella Cheese, Tomato,
   Salsa &amp; Sour Cream.</p>
 kj: 3230
-image: /images/food/PLACEMENT-chicken-caesar.webp
+image: /images/food/mexican-beef.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Beef Wraps

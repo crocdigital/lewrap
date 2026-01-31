@@ -6,7 +6,7 @@ description: >-
   <p>Grilled Strip Loin Steak, Lettuce, Tomato, Onion, Crispy Cabbage, Carrot
   &amp; Choice of Sauce.</p>
 kj: 2380
-image: /images/food/PLACEMENT-chicken-caesar.webp
+image: /images/food/classic-beef.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Beef Wraps
