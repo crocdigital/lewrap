@@ -1,0 +1,14 @@
+---
+_schema: default
+name: Kofta Protein Pack
+price: $12.90
+description: >-
+  <p>Grilled Lamb Kofta, Caramelised Onion, White or Brown Rice &amp; Choice of
+  Sauce.</p>
+kj: 2554
+image: /images/food/proteinpack-kofta.webp
+orderLink: https://lewrap.redcatcloud.com.au/app/menu/
+category: Protein Packs
+subcategory: ''
+available: true
+---
