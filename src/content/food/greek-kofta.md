@@ -6,7 +6,7 @@ description: >-
   <p>Grilled Lamb Kofta, Lettuce, Tomato, Red Onion, Feta Cheese &amp;
   Tzatziki.</p>
 kj: 1640
-image: /images/food/PLACEMENT-chicken-caesar.webp
+image: /images/food/kofta-greek.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Kofta Wraps
