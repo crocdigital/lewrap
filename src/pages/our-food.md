@@ -17,10 +17,10 @@ hero_button_text: ''
 hero_button_link: ''
 hero_button_variant: primary
 latest_deals:
-  - image: /images/deals/PLACEMENT-deal01-1200x800.webp
-    alt: 1st test for Latest Deal
-  - image: /images/deals/PLACEMENT-deal01-1200x800.webp
-    alt: 2nd test for Latest Deal
+  - image: /images/deals/make-it-a-combo.webp
+    alt: Make it a combo
+  - image: /images/deals/swap-tortilla.webp
+    alt: Swap your tortilla
 category_descriptions:
   wraps:
     description:
