@@ -1,10 +1,10 @@
 ---
 _schema: default
 name: 450ml Sparkling Water
-price: $5.00
+price: $4.90
 description: ''
 kj: 0
-image: /images/food/placement-drink.webp
+image: /images/food/drinks-sparkling-water.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Drinks
 subcategory: ''
