@@ -1,6 +1,6 @@
 ---
 _schema: default
-name: Asian Style
+name: Asian
 price: $14.90
 description: >-
   <p>Crispy Cabbage, Carrot, Red Onion, Cucumber Fresh Coriander, Signature Mayo
