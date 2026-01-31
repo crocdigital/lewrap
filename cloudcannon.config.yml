@@ -87,7 +87,7 @@ collections_config:
       image:
         type: image
         label: Item Image
-        comment: "Upload a photo of the item. 400px x 400px (square)"
+        comment: "Upload a photo of the item. 600px x 600px (use the same image from RedCat entry)"
         options:
           paths:
             uploads: public/images/food
