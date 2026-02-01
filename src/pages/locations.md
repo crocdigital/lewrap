@@ -31,12 +31,11 @@ marquee_items:
   - Drinks
 franchise_callout:
   show: true
-  heading: Want to be the next LeWrap store owner?
+  heading: Where should we open next?
   text: >-
-    <p>We can now enter text the <strong>WYSIWYG way</strong> so it makes more
-    sense for Monica when editing content :)</p><p>Testing another para to make
-    sure it renders right. Eshay bra.</p>
+    <p>Interested in opening your own store? Be your own boss. In business for
+    yourself, not by yourself.</p>
   image: /images/elements/store-sign.webp
-  button_text: Be your own boss
+  button_text: Learn more
   button_link: /own-a-store
 ---
