@@ -62,7 +62,7 @@ page_blocks:
       we’re now entering our next phase of national growth. Driven by a
       passionate and experienced Head Office Team, we are committed to
       supporting franchise partners on their success journey, bringing good food
-      to local communities. Want to be our next success story?</p>
+      to local communities.</p><p>Want to be our next success story?</p>
     image_path: /images/pages/lewrap-franchise-team.webp
     video_url: ''
     reverse: true
