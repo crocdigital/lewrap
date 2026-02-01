@@ -11,8 +11,8 @@ hero_title: At LeWrap we support local communities
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
-hero_bg_image: /images/hero/community-desktop.webp
-hero_bg_image_mobile: /images/hero/community-mobile.webp
+hero_bg_image: /images/hero/community-desktop-1.webp
+hero_bg_image_mobile: /images/hero/community-mobile-1.webp
 page_blocks:
   - _template: feature
     heading:
@@ -25,6 +25,7 @@ page_blocks:
       or wedding day prep, we’ve got fresh, crowd-pleasing options for every
       occasion.</p>
     image_path: /images/pages/catering.webp
+    video_url: ''
     reverse: false
     background_type: none
     background_colour: '#ffffff'
