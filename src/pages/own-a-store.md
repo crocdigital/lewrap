@@ -77,7 +77,7 @@ franchise_callout:
     we’re now entering our next phase of national growth.</p><p>Actively seeking
     driven, passionate partners to join us on this journey.</p><p>Opportunities
     now available across Australia.</p>
-  image: /images/franchise/site-opportunities.webp
+  image: /images/franchise/site-opportunities-1.webp
   button_text: Enquire now
   button_link: javascript:open_franchise_enquiry()
 franchise_process_steps:
