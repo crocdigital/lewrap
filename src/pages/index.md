@@ -96,6 +96,6 @@ franchise_callout:
     <p>The only thing better than eating at LeWrap is owning one. Looking for a
     career change? Wrap up your success.</p>
   image: /images/franchise/lewrap-location.webp
-  button_text: Be your own boss
+  button_text: Learn more
   button_link: /own-a-store
 ---
