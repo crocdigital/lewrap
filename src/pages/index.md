@@ -61,14 +61,12 @@ flexible_two_col:
     bgColor: '#95ba32'
     reverse: false
     slides:
-      - image: /images/carousel/community-01.webp
-        alt: At LeWrap we're all about community
-      - image: /images/carousel/community-01.webp
-        alt: 2nd slide image
-      - image: /images/carousel/community-01.webp
-        alt: 3rd slide image
-      - image: /images/carousel/community-01.webp
-        alt: Testing adding a 4th slide
+      - image: /images/carousel/findalewrap-01.webp
+        alt: Find a LeWrap near you
+      - image: /images/carousel/findalewrap-02.webp
+        alt: Find a LeWrap near you
+      - image: /images/carousel/findalewrap-03.webp
+        alt: Find a LeWrap near you
 lewrapstory_heading: The LeWrap Story
 lewrapstory_text: >-
   <p>LeWrap started in 2005 in Western Sydney, born from a simple idea - fresh,
