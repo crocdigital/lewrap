@@ -70,11 +70,13 @@ page_blocks:
     button_variant: primary
 franchise_callout:
   show: true
-  heading: Need a location?
+  heading: NEW Site Opportunities
   text: >-
-    <p>We can now enter text the <strong>WYSIWYG way</strong> so it makes more
-    sense for Monica when editing content :)</p><p>Testing another para to make
-    sure it renders right. Eshay bra.</p>
+    <p>LeWrap is on a mission to become Australia’s most recognised and loved
+    fresh fast-food brand. With a strong foundation of 20+ years in business,
+    we’re now entering our next phase of national growth.</p><p>Actively seeking
+    driven, passionate partners to join us on this journey.</p><p>Opportunities
+    now available across Australia.</p>
   image: /images/franchise/lewrap-location.webp
   button_text: Enquire now
   button_link: javascript:open_franchise_enquiry()
