@@ -2,7 +2,7 @@
     "popup_id": "newsletter_modal",
     "title": "Sign up to our Loyalty Program",
     "description": "<p>Subscribe to our newsletter for exclusive offers, new menu items, and updates!</p>",
-    "image": "/images/elements/koftas.webp",
+    "image": "/images/elements/baguette-beef.webp",
     "image_position": "w-28 md:w-36 h-auto absolute left-1/2 -translate-x-1/2 -top-13 md:-top-21",
     "show_on_load": true,
     "remember_close": true
