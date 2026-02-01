@@ -68,11 +68,13 @@ flexible_two_col:
         alt: Find a LeWrap near you
 lewrapstory_heading: The LeWrap Story
 lewrapstory_text: >-
-  <p>LeWrap started in 2005 in Western Sydney, born from a simple idea - fresh,
-  high-quality food, made fast. From day one, we’ve focused on wholesome meals
-  made to order with the best ingredients.</p><p>Today, we’re expanding,
-  bringing our passion for good, fresh food to more communities than ever —
-  always made just for you.</p>
+  <p>From one store to a national brand. Kaan Celik founded LeWrap with a clear
+  goal: serve delicious food made fresh before your eyes. With over 20 years of
+  success, Kaan believes he has something better than fast food to offer.
+  </p><p>His passion for flavour and theatre led to the signature open-kitchen
+  experience, where the cooking is part of the show. We are not just serving
+  fast food, we are about delivering food that’s made with intention, care, and
+  the kind of quality that keeps our customers coming back.</p>
 lewrapstory_button_text: Learn more
 lewrapstory_button_link: /our-story
 lewrapstory_image: /images/kaan-celik.webp
