@@ -11,8 +11,8 @@ hero_title: Our Story
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
-hero_bg_image: /images/hero/PLACEMENT-hero-taj.webp
-hero_bg_image_mobile: /images/placement-sqratio.webp
+hero_bg_image: /images/hero/ourstory-desktop.webp
+hero_bg_image_mobile: /images/hero/ourstory-mobile.webp
 hero_button_text:
 hero_button_link:
 hero_button_variant:
@@ -21,12 +21,16 @@ page_blocks:
   - _template: feature
     heading:
     text: >-
-      <p>2005 was a pretty great year - YouTube launched, Harry Potter hit the
-      big screen, and the very first LeWrap opened at Westfield Parramatta.
-      Coincidence? We think not.</p><p>Since then, we’ve been serving up fresh,
-      flavour-packed food that makes people smile and say “mmm” on the first
-      bite — proving you can eat well, eat fast, and enjoy every mouthful.</p>
+      <p>We believe in all things good and fresh. Our made-to-order philosophy
+      means nothing sits pre-made. Every dish is made fresh, right in front of
+      the customer, ensuring a superior product that’s as enjoyable to watch
+      being made as it is to eat.</p><p>At LeWrap, we believe that food should
+      be fresh, full of flavour, and fun to experience.</p><p>Since 2005, we’ve
+      redefined the fast-food scene by delivering made-to-order wraps, plates,
+      and salads that combine quality, taste, and speed, all from an open
+      kitchen that puts our food on show.</p>
     image_path: /images/smiling-staff.webp
+    video_url: ''
     reverse: false
     background_type: none
     background_colour: '#ffffff'
@@ -36,14 +40,14 @@ page_blocks:
     button_variant:
   - _template: centered_text
     text: >-
-      <p>LeWrap was brought to life by Kaan Celik, who over 20 years ago set out
-      with a vision to create fresh, nutritious fast food without compromising
-      on flavour or speed. Born in Ankara, Turkey, Kaan’s experience in the QSR
-      industry shaped his passion for quality recipes and efficient
-      service.</p><p>In 2005, he opened the first LeWrap store in Parramatta,
-      followed by expansion into Bankstown as the brand grew. Today, alongside
-      his wife and six children, Kaan continues to lead LeWrap while enjoying
-      travel and the occasional game of soccer.</p>
+      <p><em>“After working in the QSR industry for over 20 years, I wanted to
+      create made-to-order food that was freshly prepared, healthy, delicious
+      and high quality.”</em><br />- Kaan Celik, LeWrap founder.</p><p>We’ve
+      incorporated fresh local ingredients to offer great foodie experience to
+      everyone who dines with us. All our produce is locally sourced from
+      trusted Australian farmers.</p><p>LeWrap isn’t just a brand. It’s a
+      movement toward healthier, high-quality fast-casual dining that
+      Australians have come to love.</p>
     background_type: none
     background_colour:
     background_image: ''
@@ -53,19 +57,19 @@ page_blocks:
   - _template: feature
     heading:
     text: >-
-      <p>Now, LeWrap is in an exciting phase of rapid expansion, with new stores
-      opening regularly across Australia. Behind every store is a passionate
-      Head Office team working together to support our network and keep the
-      LeWrap experience strong, fresh and consistent — bringing good food to
-      more communities every day.</p><p>Want to be the next local store
-      franchise owner? Learn more here (this will be a link: show Monica how to
-      do).</p>
+      <p>LeWrap is on a mission to become Australia’s most recognised and loved
+      fresh fast-food brand. With a strong foundation of 20+ years in business,
+      we’re now entering our next phase of national growth. Driven by a
+      passionate and experienced Head Office Team, we are committed to
+      supporting franchise partners on their success journey, bringing good food
+      to local communities. Want to be our next success story?</p>
     image_path: /images/pages/lewrap-franchise-team.webp
+    video_url: ''
     reverse: true
     background_type: none
     background_colour:
     background_image:
-    button_text: ''
-    button_link: ''
+    button_text: Learn more
+    button_link: /own-a-store
     button_variant: primary
 ---
