@@ -3,7 +3,7 @@
     "title": "Sign up to our Loyalty Program",
     "description": "<p>Subscribe to our newsletter for exclusive offers, new menu items, and updates!</p>",
     "image": "/images/elements/baguette-beef.webp",
-    "image_position": "w-28 md:w-36 h-auto absolute left-1/2 -translate-x-1/2 -top-9 md:-top-19",
+    "image_position": "w-28 md:w-39 h-auto absolute left-1/2 -translate-x-1/2 -top-9 md:-top-18",
     "show_on_load": true,
     "remember_close": true
 }
