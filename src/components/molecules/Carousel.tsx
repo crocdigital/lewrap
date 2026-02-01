@@ -215,7 +215,7 @@ export default function Carousel({
                         {cta2 && (
                             <a
                                 href={cta2.href}
-                                target={cta2.newTab ? '_blank' : undefined}
+                                target="_blank"
                                 className={`btn-lewrap-secondary ${cta2.className || ''}`}
                             >
                                 {cta2.text}
