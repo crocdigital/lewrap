@@ -14,7 +14,7 @@ hero_bg_colour:
 hero_bg_image: /images/hero/ownastore-desktop.webp
 hero_bg_image_mobile: /images/hero/ownastore-mobile.webp
 hero_button_text: Enquire now
-hero_button_link: "javascript:open_franchise_enquiry()"
+hero_button_link: javascript:open_franchise_enquiry()
 hero_button_variant: primary
 page_blocks:
   - _template: feature
@@ -77,12 +77,15 @@ franchise_callout:
     sure it renders right. Eshay bra.</p>
   image: /images/franchise/lewrap-location.webp
   button_text: Enquire now
-  button_link: "javascript:open_franchise_enquiry()"
+  button_link: javascript:open_franchise_enquiry()
 franchise_process_steps:
   - title: Initial Enquiry and Information Pack
     description: >-
-      We share our Franchise Information Pack to give you an overview of the
-      brand and opportunity.
+      You’ve taken the first step-thank you for your interest!
+
+      We’ve shared our Franchise Information Pack to give you an overview of the
+      brand and opportunity. Interested to know more, complete the
+      Confidentiality form (NDA) so that we can share more information with you.
   - title: Phone interview - Meet the Franchising Team
     description: >-
       A member of our Franchising team will be in contact with you to discuss
@@ -102,6 +105,6 @@ franchise_process_steps:
 show_faqs: true
 faq_category: Franchising
 faq_button_text: Enquire now
-faq_button_link: "javascript:open_franchise_enquiry()"
+faq_button_link: javascript:open_franchise_enquiry()
 faq_button_variant: primary
 ---
