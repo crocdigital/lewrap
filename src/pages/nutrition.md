@@ -7,7 +7,7 @@ seo_image: ''
 seo_keywords:
 seo_robots: index, follow
 seo_canonical: ''
-hero_title: Nutritional Information
+hero_title: Nutrition & Allergens Information
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
