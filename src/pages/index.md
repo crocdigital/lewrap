@@ -8,8 +8,8 @@ seo_keywords:
 seo_robots: index, follow
 seo_canonical: ''
 hero_slides:
-  - image_desktop: /images/hero/catering-desktop.webp
-    image_mobile: /images/hero/catering-mobile.webp
+  - image_desktop: /images/hero/carousel-catering-desktop.webp
+    image_mobile: /images/hero/carousel-catering-mobile.webp
     alt: Fresh wraps and healthy food
   - image_desktop: /images/hero/community-desktop.webp
     image_mobile: /images/hero/community-mobile.webp
