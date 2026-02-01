@@ -93,8 +93,8 @@ franchise_callout:
   show: true
   heading: Own a LeWrap store
   text: >-
-    <p>Neo-impressionism romanesque renaissance postminimalism nouveau realisme
-    young british artists, intervention art primitivism luminism synthetism.</p>
+    <p>The only thing better than eating at LeWrap is owning one. Looking for a
+    career change? Wrap up your success.</p>
   image: /images/franchise/lewrap-location.webp
   button_text: Be your own boss
   button_link: /own-a-store
