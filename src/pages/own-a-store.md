@@ -86,22 +86,60 @@ franchise_process_steps:
       We’ve shared our Franchise Information Pack to give you an overview of the
       brand and opportunity. Interested to know more, complete the
       Confidentiality form (NDA) so that we can share more information with you.
-  - title: Phone interview - Meet the Franchising Team
+  - title: Phone Interview - Meet the Franchising Team
     description: >-
       A member of our Franchising team will be in contact with you to discuss
-      your interest.
-  - title: Application form - Your next step
+      your interest. You will have the opportunity to chat all things LeWrap
+      Franchising and answer any initial questions.
+  - title: Application Form - Your Next Step
     description: >-
-      Complete and return the Franchise Application Form. This is the first step
-      in our approval process.
-  - title: In-person interview/meeting
+      Keen to progress- Great! Take a
+
+      moment to complete and return the
+
+      Franchise Application Form. This is the first step in our approval process
+      and helps us assess your background and suitability as a LeWrap
+      Franchisee. We will be in touch once we receive this.
+  - title: In-person Interview/Meeting
     description: >-
-      Our Franchising Manager will discuss the LeWrap model & growth plans.
-      Let’s determine suitability for partnership.
-  - title: Something else here
-    description: Launch your LeWrap franchise with full support from our team!
-  - title: Adding a new step
-    description: Adding a new step to test that everything is automating properly.
+      In this interview our Franchising Manager will discuss the LeWrap model &
+      growth plans. An opportunity for us to learn more about you and your
+      business goals and determine suitability for partnership.
+  - title: In-Store Experience & Background Review
+    description: >-
+      You’ll be invited to visit a LeWrap to complete an In-store to experience.
+      This is an opportunity for you to see the operations firsthand and ask any
+      questions you may have. During this stage, we’ll also complete a
+      confidential review of your financials, application, and business
+      experience.
+  - title: Pre-Approval, Site Selection & Business Planning
+    description: >-
+      Once we’re aligned on values, vision, and commitment, we’ll move forward
+      with identifying suitable LeWrap site opportunities and begin guiding you
+      through the business planning process to set you up for long-term success.
+  - title: Final Approval & Franchise Agreement
+    description: >-
+      After completing all due diligence, we’ll move toward formal
+      documentation. At this stage of the process to secure your site/location,
+      a deposit is required. You will officially be welcomed as a LeWrap
+      Franchise Partner!
+  - title: Comprehensive Training Program
+    description: >-
+      You will complete our practical 6-week training program where you are
+      trained on all facets of a LeWrap Business. This covers everything from
+      product and operations to systems and customer service—equipping you to
+      launch with confidence.
+  - title: Store Build & Fitout
+    description: >-
+      Our project and design team will manage your store build in line with
+      LeWrap brand guidelines. We will keep you in the loop along the way. Once
+      complete, you’ll be handed the keys—ready for business!
+  - title: Grand Opening & Ongoing Support
+    description: >-
+      From launch day, you’ll be supported by our training, marketing,
+      operations, and IT teams. Your dedicated Area Manager and experienced HQ
+      Team will be with you every step of the way to ensure a strong start—and
+      long-term success.
 show_faqs: true
 faq_category: Franchising
 faq_button_text: Enquire now
