@@ -232,7 +232,7 @@ const dayLabels: Record<string, string> = {
             />
         </section>
 
-        {/* Find us, contact, hours */}
+        {/* Find us, contact, order now */}
         <section
             class="w-[95%] max-w-screen-2xl mx-auto bg-cover bg-center bg-no-repeat rounded-2xl overflow-hidden grid md:grid-cols-2"
             style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
@@ -285,42 +285,27 @@ const dayLabels: Record<string, string> = {
                 }
             </div>
 
+            {/* Order Now */}
             <div
-                class="w-full md:w-[85%] mx-auto flex flex-col gap-y-8 p-7 py-16 text-2xl/8 text-lewrap-off-black"
+                class="w-full md:w-[85%] mx-auto flex flex-col gap-y-8 p-7 pt-40 py-16 text-2xl/8 items-center justify-end relative"
             >
-                <h2 class="text-4xl font-black text-lewrap-green-dark">
+                <!-- <h2 class="text-4xl font-black text-lewrap-green-dark">
                     Hours
-                </h2>
+                </h2> -->
+                <Button
+                    href="https://lewrap.redcatcloud.com.au/app/menu"
+                    target="_blank"
+                    variant="secondary"
+                    class="absolute z-1"
+                >
+                    Order Now
+                </Button>
 
-                {/* Hours */}
-                <div>
-                    <div class="space-y-1">
-                        {
-                            daysOfWeek.map((day) => (
-                                <div class="flex justify-between items-center text-lg">
-                                    <span class="capitalize">
-                                        {dayLabels[day]}
-                                    </span>
-                                    <span
-                                        class={`font-bold ${
-                                            location.data.hours[
-                                                day as keyof typeof location.data.hours
-                                            ] === "Closed"
-                                                ? "text-red-600"
-                                                : ""
-                                        }`}
-                                    >
-                                        {
-                                            location.data.hours[
-                                                day as keyof typeof location.data.hours
-                                            ]
-                                        }
-                                    </span>
-                                </div>
-                            ))
-                        }
-                    </div>
-                </div>
+                <img
+                    src="/images/pages/welcome-lewrap.webp"
+                    alt="LeWrap welcome"
+                    class="w-[200px] md:w-[420px] h-auto left-1/2 -translate-x-1/2 absolute mx-auto bottom-0"
+                />
             </div>
         </section>
     </main>
