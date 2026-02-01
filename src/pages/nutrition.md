@@ -24,7 +24,10 @@ page_blocks:
       <p>We believe good food starts with good ingredients. That’s why
       everything we serve is made fresh to order, using quality produce sourced
       from trusted Australian farmers. From vegetables cut fresh daily, to
-      proteins grilled to order, freshness is at the heart of what we do.</p>
+      proteins grilled to order, freshness is at the heart of what we
+      do.</p><p>We keep things simple, fresh, and full of flavour. No shortcuts,
+      just real food, prepared fresh.</p><p>We believe good food should be
+      amazing, high quality, and something everyone can enjoy.</p>
     image_path: /images/pages/ourfood-baguette.webp
     video_url: ''
     reverse: false
@@ -35,10 +38,7 @@ page_blocks:
     button_link:
     button_variant:
   - _template: centered_text
-    text: >-
-      <p>We keep things simple, fresh, and full of flavour. No shortcuts, just
-      real food, prepared fresh.</p><p>We believe good food should be amazing,
-      high quality, and something everyone can enjoy.</p>
+    text:
     background_type: none
     background_colour:
     background_image: ''
