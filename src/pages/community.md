@@ -11,8 +11,8 @@ hero_title: At LeWrap we support local communities
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
-hero_bg_image: /images/hero/community-desktop-1.webp
-hero_bg_image_mobile: /images/hero/community-mobile-1.webp
+hero_bg_image: /images/hero/community-desktop.webp
+hero_bg_image_mobile: /images/hero/community-mobile.webp
 page_blocks:
   - _template: feature
     heading:
