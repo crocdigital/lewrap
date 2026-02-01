@@ -58,9 +58,9 @@ page_blocks:
     background_type: none
     background_colour:
     background_image: ''
-    button_text: Order catering
-    button_link: '#'
-    button_variant: primary
+    button_text:
+    button_link:
+    button_variant:
 catering_callouts:
   - image: /images/icons/corporate-event-catering.svg
     title: Corporate & event catering
