@@ -1,7 +1,7 @@
 {
     "popup_id": "franchise_enquiry",
     "title": "Start Your Franchise Journey",
-    "description": "<p>Please complete your details to register your interest.<br /><em>All fields are compulsory</em></p>",
+    "description": "<p>Please complete your details to register your interest.</p>",
     "show_on_load": false,
     "remember_close": false
 }
