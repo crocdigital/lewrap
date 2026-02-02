@@ -12,20 +12,18 @@ state: NSW
 postcode: '2134'
 latitude: -33.87443
 longitude: 151.1059
-phone: (02)
+phone: 0404 105 974
 email: burwood@lewrap.com
 hours:
-  monday: 10:00am - 5:30pm
-  tuesday: 10:00am - 5:30pm
-  wednesday: 10:00am - 5:30pm
-  thursday: 10:00am - 8:30pm
-  friday: 10:00am - 5:30pm
-  saturday: 10:00am - 5:30pm
-  sunday: 10:00am - 5:30pm
+  monday: 9:00am - 5:30pm
+  tuesday: 9:00am - 5:30pm
+  wednesday: 9:00am - 5:30pm
+  thursday: 9:00am - 8:30pm
+  friday: 9:00am - 5:30pm
+  saturday: 9:00am - 5:30pm
+  sunday: 9:00am - 5:30pm
 image: /images/locations/placement-bankstown.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
 ---
-Modernipsum dolor sit amet mannerism lyrical abstraction structuralism, deformalism post-painterly abstraction neo-classicism bauhaus.
-
-Neo-impressionism romanesque renaissance postminimalism nouveau realisme young british artists, intervention art primitivism luminism synthetism.
+Located in the heart of Burwood, at Westfield level 1 food court, LeWrap Burwood brings fresh, flavour-packed wraps, plates, salads and baguettes to a vibrant, diverse community. Known for its quick service, high-quality ingredients, and fully customisable menu. LeWrap Burwood is the go-to spot for delicious, freshly made, convenient meals since 2012.

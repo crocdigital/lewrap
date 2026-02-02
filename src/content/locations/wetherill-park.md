@@ -14,7 +14,7 @@ state: NSW
 postcode: '2200'
 latitude: -33.85895
 longitude: 150.89776
-phone: (02)
+phone: 0410 990 781
 email: wetherillpark@lewrap.com
 hours:
   monday: 9:00am - 5:30pm
@@ -23,11 +23,9 @@ hours:
   thursday: 9:00am - 9:00pm
   friday: 9:00am - 5:30pm
   saturday: 9:00am - 5:30pm
-  sunday: 10:00am - 4:00pm
+  sunday: 9:00am - 5:00pm
 image: /images/locations/placement-bankstown.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
 ---
-Modernipsum dolor sit amet mannerism lyrical abstraction structuralism, deformalism post-painterly abstraction neo-classicism bauhaus.
-
-Neo-impressionism romanesque renaissance postminimalism nouveau realisme young british artists, intervention art primitivism luminism synthetism.
+Located in Stockland Wetherill Park food court, LeWrap Wetherill Park has been serving freshly made, flavour-packed wraps, plates, salads and baguettes to the local community since 2015. Known for its quick service, high-quality ingredients, and fully customisable menu, LeWrap Wetherill Park is the go-to destination for a fresh, satisfying meal any time of day.

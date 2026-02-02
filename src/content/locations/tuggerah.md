@@ -12,20 +12,18 @@ state: NSW
 postcode: '2259'
 latitude: -33.3082
 longitude: 151.41216
-phone: (02)
+phone: (02) 4314 8737
 email: tuggerah@lewrap.com
 hours:
-  monday: 9:30am - 5:30pm
-  tuesday: 9:30am - 5:30pm
-  wednesday: 9:30am - 5:30pm
+  monday: 9:00am - 5:30pm
+  tuesday: 9:00am - 5:30pm
+  wednesday: 9:00am - 5:30pm
   thursday: 9:00am - 9:00pm
-  friday: 9:30am - 5:30pm
+  friday: 9:00am - 5:30pm
   saturday: 9:00am - 5:30pm
   sunday: 10:00am - 5:30pm
 image: /images/locations/placement-bankstown.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
 ---
-Modernipsum dolor sit amet mannerism lyrical abstraction structuralism, deformalism post-painterly abstraction neo-classicism bauhaus.
-
-Neo-impressionism romanesque renaissance postminimalism nouveau realisme young british artists, intervention art primitivism luminism synthetism.
+LeWrap’s first store in the Central Coast, LeWrap Tuggerah brings fresh, flavour-packed wraps, plates, salads and baguettes to the local community. Known for its quick service, high-quality, fresh ingredients, and fully customisable menu. Conveniently located in a bustling Westfield Tuggerah food court precinct, LeWrap Tuggerah is the perfect destination for satisfying a freshly made meal everytime.

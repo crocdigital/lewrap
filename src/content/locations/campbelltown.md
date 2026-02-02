@@ -12,7 +12,7 @@ state: NSW
 postcode: '2560'
 latitude: -34.07299
 longitude: 150.79708
-phone: (02)
+phone: 0455 507 066
 email: campbelltown@lewrap.com
 hours:
   monday: 9:00am - 5:00pm
@@ -26,6 +26,4 @@ image: /images/locations/placement-bankstown.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
 ---
-Modernipsum dolor sit amet mannerism lyrical abstraction structuralism, deformalism post-painterly abstraction neo-classicism bauhaus.
-
-Neo-impressionism romanesque renaissance postminimalism nouveau realisme young british artists, intervention art primitivism luminism synthetism.
+Situated on Level 3 of Macarthur Square food court, LeWrap Campbelltown has been serving fresh, flavour-packed wraps, plates, salads and baguettes to the local community since 2008. Known for its quick service, high-quality ingredients, and fully customisable menu. LeWrap Campbelltown is the perfect destination satisfying a freshly made meal everytime.

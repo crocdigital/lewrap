@@ -12,7 +12,7 @@ state: NSW
 postcode: '2100'
 latitude: -33.76868
 longitude: 151.26629
-phone: (02)
+phone: (02) 7234 0478
 email: warringah@lewrap.com
 hours:
   monday: 9:30am - 6:30pm
@@ -26,6 +26,4 @@ image: /images/locations/placement-bankstown.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
 ---
-Modernipsum dolor sit amet mannerism lyrical abstraction structuralism, deformalism post-painterly abstraction neo-classicism bauhaus.
-
-Neo-impressionism romanesque renaissance postminimalism nouveau realisme young british artists, intervention art primitivism luminism synthetism.
+LeWrap’s first store in the northern beaches, LeWrap Warringah Mall brings fresh, flavour-packed wraps, plates, salads and baguettes to the local community. Known for its quick service, high-quality, fresh ingredients, and fully customisable menu. Conveniently located in a bustling Westfield Warringah Mall food court precinct, LeWrap Warringah is the perfect destination for satisfying a freshly made meal everytime.
