@@ -12,12 +12,17 @@ terms_content: >-
   use of this website indicates your acceptance of these Terms and
   Conditions.</p><p>LeWrap may from time to time amend, update or change this
   website including these Terms and Conditions without prior
-  notice.</p><h3><strong>Public Holidays</strong></h3><p>15% Public Holiday
-  surcharge applies on all Public Holidays. This helps cover the extra costs of
-  operating on these days, including staffing and other expenses, when running
-  the business is typically more
-  costly.</p><h3><strong>Privacy</strong></h3><p>Refer to the Privacy Policy,
-  which form part of these Terms and Conditions of
+  notice.</p><h3>Catering Cancellation Policy</h3><p>Cancellations must be made
+  48 hours prior to pick-up. Please contact your local store. <a
+  href="/locations/">Click here</a> to see all store contact
+  details.</p><p>Orders must be collected from the selected LeWrap location at
+  the agreed date and time. LeWrap is not responsible for orders that are not
+  collected on time or from the nominated location.</p><h3><strong>Public
+  Holidays</strong></h3><p>15% Public Holiday surcharge applies on all Public
+  Holidays. This helps cover the extra costs of operating on these days,
+  including staffing and other expenses, when running the business is typically
+  more costly.</p><h3><strong>Privacy</strong></h3><p>Refer to the Privacy
+  Policy, which form part of these Terms and Conditions of
   Use.</p><h3><strong>Information on Website</strong></h3><p>LeWrap does not
   undertake to keep this website updated. LeWrap is not liable to you or anyone
   else if errors occur in the information on this website or if that information
