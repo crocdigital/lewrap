@@ -64,7 +64,7 @@ page_blocks:
     button_variant:
 franchise_callout:
   show: true
-  heading: NEW Site Opportunities
+  heading: Site Opportunities
   text: >-
     <p>LeWrap is on a mission to become Australia’s most recognised and loved
     fresh fast-food brand. With a strong foundation of 20+ years in business,
