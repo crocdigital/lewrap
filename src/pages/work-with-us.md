@@ -31,14 +31,17 @@ marquee_items:
   - Drinks
 page_blocks:
   - _template: feature
-    heading: Title going here
+    heading:
     text: >-
-      <p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism,
-      deformalism post-painterly abstraction neo-classicism
-      bauhaus.</p><p>Neo-impressionism romanesque renaissance postminimalism
-      nouveau.<br />Romanesque neue slowenische kunst existentialism neue
-      slowenische kunst new media art neo-fauvism.</p>
+      <p>LeWrap is always on the lookout for friendly, motivated people to join
+      the crew — whether you’re keen to work in one of our local stores or at
+      Head Office. In-store roles include front of house serving customers,
+      prepping fresh food, or firing up the grill in a fun, fast-paced,
+      team-first environment. <br /><br />Prefer behind the scenes? Our Head
+      Office team supports our stores and helps the LeWrap brand grow. Apply
+      today and come be part of it!</p>
     image_path: /images/pages/lewrap-franchise-team.webp
+    video_url: ''
     reverse: false
     background_type: none
     background_colour:
