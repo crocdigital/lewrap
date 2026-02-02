@@ -7,7 +7,7 @@ seo_image: ''
 seo_keywords:
 seo_robots: index, follow
 seo_canonical: ''
-hero_title: At LeWrap we support local communities
+hero_title: Community Wrap Up
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
@@ -15,15 +15,17 @@ hero_bg_image: /images/hero/community-desktop.webp
 hero_bg_image_mobile: /images/hero/community-mobile.webp
 page_blocks:
   - _template: feature
-    heading:
+    heading: Proudly Supporting Mental Health
     text: >-
-      <p>At LeWrap, everything is made fresh — from our grilled proteins to the
-      veggies we cut fresh every morning. Choose from wraps, baguettes, salads
-      or chips, all crafted with real ingredients and big flavour.</p><p>Whether
-      you’re hosting friends, feeding the family, catering the office, or
-      celebrating life’s special moments, birthdays, baby showers, anniversaries
-      or wedding day prep, we’ve got fresh, crowd-pleasing options for every
-      occasion.</p>
+      <p>1 in 7 Australians are affected by mental health issues. We've proud
+      partners of Keith's Closet over the last 5+ years. Keith's Closet is a
+      not-for-profit charity that provides people accessing mental health
+      services, essential items including wardrobes, toiletries and accessories,
+      whether in hospital or in the community.</p><p>LeWrap hosts an annual $5
+      Wrap Day with $1 from every wrap going back to Keith's Closet. In 2025,
+      together we raised over $11,000 in single day, and we’re just getting
+      started.</p><p>To learn more about Keith's Closet and how you can help
+      support, click here.</p>
     image_path: /images/pages/catering.webp
     video_url: ''
     reverse: false
