@@ -38,6 +38,18 @@ page_blocks:
     button_text:
     button_link:
     button_variant:
+  - _template: centered_text
+    text: >-
+      <h2>We love getting involve in the local community</h2><p>We believe in
+      all things good and fresh, from our food to the communities we’re apart
+      of. We’re proud to support grass root sports and local initiatives that
+      bring people together and play an important role in our communities.</p>
+    background_type: none
+    background_colour:
+    background_image: ''
+    button_text: ''
+    button_link: ''
+    button_variant: primary
 flexible_two_col:
   - title: Title to complement carousel imges
     description: >-
