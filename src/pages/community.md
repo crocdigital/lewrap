@@ -25,7 +25,8 @@ page_blocks:
       Wrap Day with $1 from every wrap going back to Keith's Closet. In 2025,
       together we raised over $11,000 in single day, and we’re just getting
       started.</p><p>To learn more about Keith's Closet and how you can help
-      support, click here.</p>
+      support, <a href="https://www.keithscloset.org/" target="_blank"
+      rel="noopener">click here</a>.</p>
     image_path: /images/pages/catering.webp
     video_url: ''
     reverse: false
