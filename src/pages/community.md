@@ -18,16 +18,18 @@ page_blocks:
     heading: Proudly Supporting Mental Health
     text: >-
       <p>1 in 7 Australians are affected by mental health issues. We've proud
-      partners of Keith's Closet over the last 5+ years. Keith's Closet is a
-      not-for-profit charity that provides people accessing mental health
-      services, essential items including wardrobes, toiletries and accessories,
-      whether in hospital or in the community.</p><p>LeWrap hosts an annual $5
-      Wrap Day with $1 from every wrap going back to Keith's Closet. In 2025,
-      together we raised over $11,000 in single day, and we’re just getting
-      started.</p><p>To learn more about Keith's Closet and how you can help
-      support, <a href="https://www.keithscloset.org/" target="_blank"
-      rel="noopener">click here</a>.</p>
-    image_path: /images/pages/catering.webp
+      partners of <a href="https://www.keithscloset.org/" title="Visit Keith's
+      Closet" target="_blank" rel="noopener">Keith's Closet</a> over the last 5+
+      years. Keith's Closet is a not-for-profit charity that provides people
+      accessing mental health services, essential items including wardrobes,
+      toiletries and accessories, whether in hospital or in the
+      community.</p><p>LeWrap hosts an annual $5 Wrap Day with $1 from every
+      wrap going back to Keith's Closet. In 2025, together we raised over
+      $11,000 in single day, and we’re just getting started.</p><p>To learn more
+      about Keith's Closet and how you can help support, <a
+      href="https://www.keithscloset.org/" target="_blank" rel="noopener"
+      title="Visit Keith's Closet">click here</a>.</p>
+    image_path: /images/pages/keiths-closet.webp
     video_url: ''
     reverse: false
     background_type: none
