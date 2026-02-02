@@ -18,10 +18,11 @@ hero_button_link: javascript:open_franchise_enquiry()
 hero_button_variant: primary
 page_blocks:
   - _template: feature
-    heading: Supporting you every step of the way
+    heading: Supporting You Every Step of the Way
     text: >-
-      <p>Owner quote going in here :)</p><p>I've refactored code to accept video
-      files as well as images. Pretty swish!</p>
+      <p><strong>“The support is real. From my first store to my fifth, I’ve
+      never felt alone.”</strong><br />-Renae Hammoud, Multi-Site Franchise
+      Owner</p>
     image_path:
     video_url: https://vimeo.com/921611369
     reverse: false
@@ -32,22 +33,21 @@ page_blocks:
     button_link:
     button_variant:
   - _template: feature
-    heading: About the LeWrap brand
+    heading: Become a Franchise Partner
     text: >-
-      <p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism,
-      deformalism post-painterly abstraction neo-classicism
-      bauhaus.</p><p>Neo-impressionism romanesque renaissance postminimalism
-      nouveau realisme young british artists, intervention art primitivism
-      luminism synthetism.</p>
+      <p>Franchisees are the driving force behind LeWrap’s success. United by a
+      shared passion and purpose, we build strong partnerships that elevate
+      customer experiences and strengthen our connection to the communities we
+      serve.</p><p>Interested in bringing LeWrap to your local community?</p>
     image_path: /images/pages/about-the-brand.webp
     video_url: ''
     reverse: true
     background_type: none
     background_colour: '#ffffff'
     background_image:
-    button_text:
-    button_link:
-    button_variant:
+    button_text: Enquire now
+    button_link: javascript:open_franchise_enquiry()
+    button_variant: primary
   - _template: feature
     heading: In business for yourself, not by yourself
     text: >-
