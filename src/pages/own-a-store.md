@@ -59,9 +59,9 @@ page_blocks:
     background_type: none
     background_colour: '#ffffff'
     background_image:
-    button_text: Get our franchise info pack
-    button_link: '#'
-    button_variant: primary
+    button_text:
+    button_link:
+    button_variant:
 franchise_callout:
   show: true
   heading: NEW Site Opportunities
