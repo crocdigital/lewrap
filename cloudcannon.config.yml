@@ -1042,6 +1042,7 @@ _inputs:
                   format: p h2 h3 h4
                   image_size_attributes: true
                   italic: true
+                  link: true
                 label: Content (WYSIWYG)
               image_path:
                 type: image
