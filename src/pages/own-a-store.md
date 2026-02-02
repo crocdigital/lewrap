@@ -21,8 +21,8 @@ page_blocks:
     heading: Supporting You Every Step of the Way
     text: >-
       <p><strong>“The support is real. From my first store to my fifth, I’ve
-      never felt alone.”</strong><br />-Renae Hammoud, Multi-Site Franchise
-      Owner</p>
+      never felt alone.”</strong></p><p><em>-Renae Hammoud, Multi-Site Franchise
+      Owner</em></p>
     image_path:
     video_url: https://vimeo.com/921611369
     reverse: false
@@ -49,16 +49,10 @@ page_blocks:
     button_link: javascript:open_franchise_enquiry()
     button_variant: primary
   - _template: feature
-    heading: In business for yourself, not by yourself
+    heading: In Business for Yourself, Not by Yourself
     text: >-
-      <p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism,
-      deformalism post-painterly abstraction neo-classicism
-      bauhaus.</p><p>Neo-impressionism romanesque renaissance postminimalism
-      nouveau realisme young british artists, intervention art primitivism
-      luminism synthetism.</p><p>Romanesque neue slowenische kunst
-      existentialism neue slowenische kunst new media art neo-fauvism
-      performance art nouveau realisme, renaissance gothic art relational art
-      land art tonalism scuola romana.</p>
+      <p><em><strong>[NOTE FOR MONICA]</strong></em> - I have to build this
+      component, will do so while you're reviewing everything else.</p>
     image_path: /images/pages/in-business-for-yourself.webp
     video_url: ''
     reverse: false
