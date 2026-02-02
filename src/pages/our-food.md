@@ -50,13 +50,13 @@ category_descriptions:
     subtitle: ''
 wraps_subcategories:
   chicken:
-    description: Served with 100% Chicken breast.
-    subtitle: Add regular size chips and 390ml drink for $7.00 extra
+    description: Served with 100% Chicken Breast.
+    subtitle: 
   beef:
-    description: Served with Strip Loin steak.
+    description: Served with Strip Loin Steak.
     subtitle:
   schnitzel:
-    description: Served with 100% Chicken breast Schnitzel.
+    description: Served with 100% Chicken Breast Schnitzel.
     subtitle:
   lamb:
     description: Served with 100% Aussie Lamb.
