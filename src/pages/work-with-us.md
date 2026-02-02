@@ -47,24 +47,7 @@ page_blocks:
     background_colour:
     background_image:
     button_text: Apply now
-    button_link: '#'
+    button_link: '#apply'
     button_variant: primary
-flexible_two_col:
-  - title: Some title going in here
-    description: >-
-      Pauly, make sure you edit all the labels in the yml file so Monica (or any
-      content editor) doesn't get confused! So far so good - everything seems to
-      be working as intended so far!
-    buttonText:
-    buttonLink:
-    buttonVariant:
-    bgColor: '#95ba32'
-    reverse: false
-    slides:
-      - image: /images/carousel/community-01.webp
-        alt: At LeWrap we're all about community
-      - image: /images/carousel/community-01.webp
-        alt: 2nd slide image
-      - image: /images/carousel/community-01.webp
-        alt: 3rd slide image
+flexible_two_col: []
 ---
