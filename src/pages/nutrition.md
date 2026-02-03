@@ -43,6 +43,6 @@ page_blocks:
     background_colour:
     background_image: ''
     button_text: Download Allergens Guide (PDF)
-    button_link: '#'
+    button_link: '/downloads/allergens-feb26.pdf'
     button_variant: primary
 ---
