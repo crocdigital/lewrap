@@ -72,12 +72,15 @@ if (video_url) {
 
     {/* Media column - Video or Image */}
     {
+        /* NOTE FOR FUTURE: in div holding video link, changed aspect from aspect-square to aspect-16/9 */
+    }
+    {
         (vimeoId || image_path) && (
             <div class={reverse ? "md:order-1" : ""}>
                 {vimeoId ? (
                     // Vimeo Video
                     <div
-                        class="relative w-full aspect-square rounded-xl overflow-hidden bg-black"
+                        class="relative w-full aspect-16/9 rounded-xl overflow-hidden"
                         data-cms-edit={`page_blocks.${blockIndex}.video_url`}
                     >
                         <iframe
