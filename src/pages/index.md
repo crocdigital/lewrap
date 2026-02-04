@@ -64,13 +64,13 @@ flexible_two_col:
         alt: Find a LeWrap near you
 lewrapstory_heading: The LeWrap Story
 lewrapstory_text: >-
-  <p>Nobody makes a wrap like us because nobody does freshness like us. Our
-  vegetables are locally sourced and cut fresh daily, then prepared to order so
-  your meal is made exactly how it should be: fresh, fast and full of flavour.
-  From 100% Australian chicken breast and strip loin steak to chicken breast
-  schnitzel and authentic lamb kofta, our proteins are grilled fresh to order.
-  It’s simple food done right. We believe in all things good and fresh and it
-  shows in every wrap, salad, plate and baguette we make.</p>
+  <p>From one store to a national brand. Kaan Celik founded LeWrap with a clear
+  goal: serve delicious food made fresh before your eyes. With over 20 years of
+  success, Kaan believes he has something better than fast food to offer.
+  </p><p>His passion for flavour and theatre led to the signature open-kitchen
+  experience, where the cooking is part of the show. We are not just serving
+  fast food, we are about delivering food that’s made with intention, care, and
+  the kind of quality that keeps our customers coming back.</p>
 lewrapstory_button_text: Learn more
 lewrapstory_button_link: /our-story
 lewrapstory_image: /images/kaan-celik.webp
