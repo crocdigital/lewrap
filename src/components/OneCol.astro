@@ -10,6 +10,8 @@ const {
     button_text,
     button_link,
     button_variant = "primary",
+    button_target,
+    button_download,
 } = Astro.props;
 
 // Determine inline style for backgrounds
@@ -40,7 +42,12 @@ const hasBackground =
     {
         button_text && button_link && (
             <div class="flex justify-center mt-8">
-                <Button href={button_link} variant={button_variant}>
+                <Button
+                    href={button_link}
+                    variant={button_variant}
+                    target={button_target || undefined}
+                    download={button_download || undefined}
+                >
                     {button_text}
                 </Button>
             </div>

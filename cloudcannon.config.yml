@@ -1027,6 +1027,8 @@ _inputs:
               button_text: ""
               button_link: ""
               button_variant: primary
+              button_target: ""
+              button_download: false
             _inputs:
               heading:
                 type: text
@@ -1056,6 +1058,34 @@ _inputs:
                 type: switch
                 label: Reverse layout
                 comment: "Default: Text left, Image right. Toggle ON to swap columns."
+              button_text:
+                type: text
+                label: Button Text
+                comment: "Leave empty to hide button"
+              button_link:
+                type: text
+                label: Button Link
+              button_variant:
+                type: select
+                label: Button Style
+                options:
+                  values:
+                    - primary
+                    - secondary
+              button_target:
+                type: select
+                label: Button Target
+                comment: "How the link opens"
+                options:
+                  values:
+                    - label: Same Tab
+                      value: ""
+                    - label: New Tab
+                      value: "_blank"
+              button_download:
+                type: switch
+                label: Force Download
+                comment: "Download file instead of opening (for PDFs, documents)"
               _template:
                 hidden: true
           - label: 1 Column
@@ -1069,6 +1099,8 @@ _inputs:
               button_text: ""
               button_link: ""
               button_variant: primary
+              button_target: ""
+              button_download: false
             _inputs:
               text:
                 type: html
@@ -1082,6 +1114,34 @@ _inputs:
                   image_size_attributes: true
                   italic: true
                 label: Content (WYSIWYG)
+              button_text:
+                type: text
+                label: Button Text
+                comment: "Leave empty to hide button"
+              button_link:
+                type: text
+                label: Button Link
+              button_variant:
+                type: select
+                label: Button Style
+                options:
+                  values:
+                    - primary
+                    - secondary
+              button_target:
+                type: select
+                label: Button Target
+                comment: "How the link opens"
+                options:
+                  values:
+                    - label: Same Tab
+                      value: ""
+                    - label: New Tab
+                      value: "_blank"
+              button_download:
+                type: switch
+                label: Force Download
+                comment: "Download file instead of opening (for PDFs, documents)"
               _template:
                 hidden: true
     label: Page Blocks
