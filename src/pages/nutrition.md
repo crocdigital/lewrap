@@ -58,5 +58,5 @@ page_blocks:
     button_link: /downloads/LeWrap-Allergens-Feb26.pdf
     button_variant: primary
     button_target:
-    button_download: true
+    button_download: false
 ---
