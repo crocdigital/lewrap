@@ -52,22 +52,6 @@ page_blocks:
     button_variant: primary
     button_target: false
     button_download: false
-  - _template: feature
-    heading: In Business for Yourself, Not by Yourself
-    text: >-
-      <p><em><strong>[NOTE FOR MONICA]</strong></em> - I have to build this
-      component, will do so while you're reviewing everything else.</p>
-    image_path: /images/pages/in-business-for-yourself.webp
-    video_url: ''
-    reverse: false
-    background_type: none
-    background_colour: '#ffffff'
-    background_image:
-    button_text:
-    button_link:
-    button_variant:
-    button_target: false
-    button_download: false
 three_col_franchise_promo:
   - image: /images/franchise/our-food.webp
     title: Our Food
