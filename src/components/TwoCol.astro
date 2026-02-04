@@ -111,11 +111,7 @@ if (video_url) {
                 src="/images/elements/arrow-green-l2r-sml.svg"
                 alt="LeWrap"
                 class="absolute left-1/2 -translate-x-1/2 z-20 rotate-90 md:top-[24vh] md:rotate-0"
-                style={
-                    Astro.url.pathname === "/own-a-store"
-                        ? "bottom: 26.5vh"
-                        : "bottom: 42vh"
-                }
+                style={`bottom: ${Astro.url.pathname === "/own-a-store" ? "26.5vh" : "42vh"}`}
             />
         )
     }
