@@ -34,11 +34,13 @@ marquee_items:
   - Drinks
 welcome_heading: Nobody makes a wrap like us
 welcome_text: >-
-  <p>Modernipsum dolor sit amet mannerism lyrical abstraction structuralism,
-  deformalism post-painterly abstraction neo-classicism
-  bauhaus.</p><p>Neo-impressionism romanesque renaissance postminimalism nouveau
-  realisme young british artists, intervention art primitivism luminism
-  synthetism.</p>
+  <p>Nobody makes a wrap like us because nobody does freshness like us. Our
+  vegetables are locally sourced and cut fresh daily, then prepared to order so
+  your meal is made exactly how it should be: fresh, fast and full of flavour.
+  From 100% Australian chicken breast and strip loin steak to chicken breast
+  schnitzel and authentic lamb kofta, our proteins are grilled fresh to order.
+  It’s simple food done right. We believe in all things good and fresh and it
+  shows in every wrap, salad, plate and baguette we make.</p>
 welcome_image: /images/pages/welcome-lewrap.webp
 welcome_button_text: Our Food
 welcome_button_link: /our-food
