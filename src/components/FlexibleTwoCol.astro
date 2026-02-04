@@ -80,7 +80,7 @@ const hasSlides = slides.length > 0;
         class={`flex flex-col justify-center gap-8 p-7 md:p-0 ${reverse ? "md:order-1" : ""}`}
     >
         <h2
-            class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight"
+            class="text-lewrap-green-dark text-4xl/10 md:text-5xl/11 font-black tracking-tight"
             data-prop={`flexible_two_col.${index}.title`}
             data-cms-bind={`#flexible_two_col.${index}.title`}
         >
@@ -88,7 +88,7 @@ const hasSlides = slides.length > 0;
         </h2>
 
         <div
-            class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-6 [&_p:last-child]:mb-0"
+            class="prose text-xl/7 text-lewrap-off-black [&_p]:mb-6 [&_p:last-child]:mb-0"
             data-cms-bind={`#flexible_two_col.${index}.description`}
             set:html={description}
         />
