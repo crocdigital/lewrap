@@ -21,6 +21,46 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
 {/* Add reCAPTCHA script */}
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
+<script>
+    // Declare grecaptcha for TypeScript
+    declare const grecaptcha: any;
+
+    function renderRecaptcha() {
+        const recaptchaContainer = document.querySelector(".g-recaptcha");
+
+        if (!recaptchaContainer) return;
+
+        // Check if already rendered (has children)
+        if (recaptchaContainer.children.length > 0) return;
+
+        // Wait for grecaptcha to be available
+        const checkAndRender = () => {
+            if (typeof grecaptcha !== "undefined" && grecaptcha.render) {
+                try {
+                    grecaptcha.render(recaptchaContainer, {
+                        sitekey:
+                            recaptchaContainer.getAttribute("data-sitekey"),
+                    });
+                } catch (e) {
+                    // Already rendered or error
+                    console.log("reCAPTCHA already rendered or error:", e);
+                }
+            } else {
+                // Script not loaded yet, try again
+                setTimeout(checkAndRender, 100);
+            }
+        };
+
+        checkAndRender();
+    }
+
+    // Render on initial load
+    renderRecaptcha();
+
+    // Re-render after view transitions
+    document.addEventListener("astro:page-load", renderRecaptcha);
+</script>
+
 <form class="p-8 md:p-12" id="work-with-us-form">
     <h2
         class="text-3xl/7 md:text-4xl font-bold text-lewrap-green-dark text-center mb-8"
