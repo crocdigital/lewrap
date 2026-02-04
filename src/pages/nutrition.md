@@ -37,6 +37,8 @@ page_blocks:
     button_text:
     button_link:
     button_variant:
+    button_target: ''
+    button_download: false
   - _template: centered_text
     text:
     background_type: none
@@ -45,4 +47,16 @@ page_blocks:
     button_text: Download Allergens Guide (PDF)
     button_link: /downloads/LeWrap-Allergens-Feb26.pdf
     button_variant: primary
+    button_target:
+    button_download: false
+  - _template: centered_text
+    text: <p>Write your content here...</p>
+    background_type: none
+    background_colour:
+    background_image: ''
+    button_text: Testing :)
+    button_link: /downloads/LeWrap-Allergens-Feb26.pdf
+    button_variant: primary
+    button_target:
+    button_download: true
 ---
