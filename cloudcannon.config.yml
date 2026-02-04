@@ -1099,8 +1099,14 @@ _inputs:
               button_text: ""
               button_link: ""
               button_variant: primary
-              button_target: ""
-              button_download: false
+              button_target:
+                type: switch
+                label: Open in New Tab
+                comment: "Toggle on to open link in a new browser tab"
+              button_download:
+                type: switch
+                label: Force Download PDF
+                comment: "Download file instead of opening in browser"
             _inputs:
               text:
                 type: html
@@ -1142,17 +1148,13 @@ _inputs:
                     - primary
                     - secondary
               button_target:
-                type: select
-                label: Open Link In
-                options:
-                  values:
-                    - label: Same Tab
-                      value: ""
-                    - label: New Tab
-                      value: "_blank"
+                type: switch
+                label: Open in New Tab
+                comment: "Toggle on to open link in a new browser tab"
               button_download:
                 type: switch
                 label: Force Download PDF
+                comment: "Download file instead of opening in browser"
               _template:
                 hidden: true
     label: Page Blocks

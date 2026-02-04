@@ -14,6 +14,10 @@ const {
     button_download,
 } = Astro.props;
 
+// Convert switch values to proper attributes
+const targetAttr = button_target ? "_blank" : undefined;
+const downloadAttr = button_download ? true : undefined;
+
 // Determine inline style for backgrounds
 let backgroundStyle = "";
 if (background_type === "color" && background_colour) {
@@ -45,8 +49,8 @@ const hasBackground =
                 <Button
                     href={button_link}
                     variant={button_variant}
-                    target={button_target || undefined}
-                    download={button_download || undefined}
+                    target={targetAttr}
+                    download={downloadAttr}
                 >
                     {button_text}
                 </Button>
