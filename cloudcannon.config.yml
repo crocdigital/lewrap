@@ -1148,13 +1148,17 @@ _inputs:
                     - primary
                     - secondary
               button_target:
-                type: switch
-                label: Open in New Tab
-                comment: "Toggle on to open link in a new browser tab"
+                type: select
+                label: Open Link In
+                options:
+                  values:
+                    - label: Same Tab
+                      value: ""
+                    - label: New Tab
+                      value: "_blank"
               button_download:
                 type: switch
                 label: Force Download PDF
-                comment: "Download file instead of opening in browser"
               _template:
                 hidden: true
     label: Page Blocks
