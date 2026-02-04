@@ -52,7 +52,7 @@ page_blocks:
     button_variant: primary
     button_target: false
     button_download: false
-three_col_franchise_promo_title: Eegen Bleegen Largen Logen
+three_col_franchise_promo_title: In Business for Yourself, Not by Yourself
 three_col_franchise_promo:
   - image: /images/franchise/our-food.webp
     title: Our Food
