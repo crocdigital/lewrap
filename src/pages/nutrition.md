@@ -37,7 +37,7 @@ page_blocks:
     button_text:
     button_link:
     button_variant:
-    button_target: ''
+    button_target: false
     button_download: false
   - _template: centered_text
     text:
@@ -57,6 +57,6 @@ page_blocks:
     button_text: Testing :)
     button_link: /downloads/LeWrap-Allergens-Feb26.pdf
     button_variant: primary
-    button_target:
+    button_target: true
     button_download: false
 ---
