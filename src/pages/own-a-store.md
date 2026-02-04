@@ -77,65 +77,59 @@ franchise_callout:
 franchise_process_steps:
   - title: Initial Enquiry and Information Pack
     description: >-
-      You’ve taken the first step-thank you for your interest!
-
-      We’ve shared our Franchise Information Pack to give you an overview of the
-      brand and opportunity. Interested to know more, complete the
-      Confidentiality form (NDA) so that we can share more information with you.
-  - title: Phone Interview - Meet the Franchising Team
+      Ready to take the first step? Give it a go, enquire now! A Franchise
+      Information Pack will be sent to you. Let this next big, exciting chapter
+      begin. 
+  - title: Let’s Chat!
     description: >-
-      A member of our Franchising team will be in contact with you to discuss
-      your interest. You will have the opportunity to chat all things LeWrap
-      Franchising and answer any initial questions.
-  - title: Application Form - Your Next Step
+      Our team will be in contact to discuss your interest. You will have the
+      opportunity to chat all things LeWrap Franchising and answer any initial
+      questions.
+  - title: Application Form & NDA
     description: >-
-      Keen to progress- Great! Take a
-
-      moment to complete and return the
-
-      Franchise Application Form. This is the first step in our approval process
-      and helps us assess your background and suitability as a LeWrap
-      Franchisee. We will be in touch once we receive this.
-  - title: In-person Interview/Meeting
+      Keen to progress? Take a moment to complete our Franchise Application
+      Form. This is the first step in our approval process. We will be in touch
+      shortly after. 
+  - title: In-Person Meeting
     description: >-
-      In this interview our Franchising Manager will discuss the LeWrap model &
-      growth plans. An opportunity for us to learn more about you and your
-      business goals and determine suitability for partnership.
-  - title: In-Store Experience & Background Review
+      Time to chat all things you and LeWrap. When we meet, we’ll share more
+      about our business strategy, learn more about you, your business goals and
+      determine suitability for partnership.
+  - title: In-Store Experience
     description: >-
-      You’ll be invited to visit a LeWrap to complete an In-store to experience.
-      This is an opportunity for you to see the operations firsthand and ask any
-      questions you may have. During this stage, we’ll also complete a
-      confidential review of your financials, application, and business
-      experience.
+      Time to see it all in action! This is an opportunity for you to see the
+      operations firsthand in-store and ask any questions. If your keen enough,
+      you can also jump right in and give wrap making a go! 
   - title: Pre-Approval, Site Selection & Business Planning
     description: >-
-      Once we’re aligned on values, vision, and commitment, we’ll move forward
-      with identifying suitable LeWrap site opportunities and begin guiding you
-      through the business planning process to set you up for long-term success.
+      Aligned on values, vision, and commitment? Great let’s move forward to
+      learn about new site opportunities and begin guiding you through the
+      business planning process. Your success is our success!
   - title: Final Approval & Franchise Agreement
     description: >-
-      After completing all due diligence, we’ll move toward formal
-      documentation. At this stage of the process to secure your site/location,
-      a deposit is required. You will officially be welcomed as a LeWrap
-      Franchise Partner!
-  - title: Comprehensive Training Program
+      It’s almost official! After completing your due diligence process, we’ll
+      move towards formal documentation. Secure your location and become our
+      next success story.
+  - title: Training Program
     description: >-
-      You will complete our practical 6-week training program where you are
-      trained on all facets of a LeWrap Business. This covers everything from
-      product and operations to systems and customer service—equipping you to
-      launch with confidence.
-  - title: Store Build & Fitout
+      No experience? We’ll have you trained up on all areas of the business.   
+
+      Complete our 4-week training program. From day one, we provide
+      comprehensive training, marketing tools, operations support, and ongoing
+      guidance. We cover everything you need to know, you're never alone on the
+      journey - even after you open doors.
+  - title: Store Build & Fit out
     description: >-
-      Our project and design team will manage your store build in line with
-      LeWrap brand guidelines. We will keep you in the loop along the way. Once
-      complete, you’ll be handed the keys—ready for business!
+      We've got you covered! Our project and design team will manage the entire
+      build from start to finish. We will keep you in the loop along the way.
+      Once complete, we’ll assist in training staff and hand you the keys for
+      your official opening day. 
   - title: Grand Opening & Ongoing Support
     description: >-
-      From launch day, you’ll be supported by our training, marketing,
-      operations, and IT teams. Your dedicated Area Manager and experienced HQ
-      Team will be with you every step of the way to ensure a strong start—and
-      long-term success.
+      The day is officially here! Time to cut that ribbon. You’ll be supported
+      by our training, marketing, franchise operations, and IT team. Your
+      dedicated Area Manager and experienced HQ Team will be with you every step
+      of the way to ensure a strong start and long-term success.
 show_faqs: true
 faq_category: Franchising
 faq_button_text: Enquire now
