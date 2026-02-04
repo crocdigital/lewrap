@@ -1163,6 +1163,12 @@ _inputs:
   # ------------------------------------
   # THREE COLUMN FRANCHISE PROMO
   # ------------------------------------
+  three_col_franchise_promo_title:
+    type: text
+    label: Three Column Section Title
+    comment: "Heading that appears above the three franchise promo items"
+    cascade: true
+  
   three_col_franchise_promo:
     type: array
     label: Three Column Franchise Promo
