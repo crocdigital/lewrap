@@ -72,53 +72,6 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
       schema={schema}
     />
     <ClientRouter />
-
-    <!-- Lazy load reCAPTCHA -->
-    <script is:inline>
-      (function () {
-        let recaptchaLoaded = false;
-
-        function loadRecaptcha() {
-          if (recaptchaLoaded) return;
-          recaptchaLoaded = true;
-
-          const script = document.createElement("script");
-          script.src = "https://www.google.com/recaptcha/api.js";
-          script.async = true;
-          script.defer = true;
-          document.head.appendChild(script);
-        }
-
-        // Load on first interaction with any form
-        function setupFormListeners() {
-          const forms = document.querySelectorAll("form");
-
-          forms.forEach((form) => {
-            // Load when user focuses on any input
-            form.addEventListener("focusin", loadRecaptcha, {
-              once: true,
-              passive: true,
-            });
-            // Load when user starts typing
-            form.addEventListener("input", loadRecaptcha, {
-              once: true,
-              passive: true,
-            });
-            // Load when user moves mouse over form
-            form.addEventListener("mouseenter", loadRecaptcha, {
-              once: true,
-              passive: true,
-            });
-          });
-        }
-
-        // Setup on initial load
-        setupFormListeners();
-
-        // Re-setup after page transitions
-        document.addEventListener("astro:page-load", setupFormListeners);
-      })();
-    </script>
   </head>
   <body
     class="antialiased overflow-x-hidden font-sans font-helvetica-condensed"
