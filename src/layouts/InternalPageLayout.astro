@@ -39,6 +39,9 @@ import CateringCallout from "../components/CateringCallout.astro";
 // Franchise Process component
 import FranchiseProcessCarousel from "../components/FranchiseProcessCarousel.astro";
 
+// Three column Franchise Promo component
+import ThreeColFranchisePromo from "../components/ThreeColFranchisePromo.astro";
+
 // FAQ component
 import FAQItem from "../components/FAQItem.astro";
 
@@ -76,6 +79,7 @@ const {
     marquee_items = [],
     page_blocks = [],
     catering_callouts = [],
+    three_col_franchise_promo = [],
     franchise_callout = {},
     show_faqs = false,
     faq_category = "General",
@@ -229,6 +233,23 @@ const categories = [
                                 image={callout.image}
                                 title={callout.title}
                                 description={callout.description}
+                            />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+
+        {/* Three column Franchise Promo block (on Own A Store page only) */}
+        {
+            three_col_franchise_promo.length > 0 && (
+                <section class="w-[95%] md:max-w-screen-xl mx-auto p-7 md:p-21">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {three_col_franchise_promo.map((promo: any) => (
+                            <ThreeColFranchisePromo
+                                image={promo.image}
+                                title={promo.title}
+                                description={promo.description}
                             />
                         ))}
                     </div>

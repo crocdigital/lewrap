@@ -62,6 +62,19 @@ page_blocks:
     button_text:
     button_link:
     button_variant:
+three_col_franchise_promo:
+  - image: /images/icons/corporate-event-catering.svg
+    title: Corporate & event catering
+    description: >-
+      Good Food that Sells Itself. At LeWrap, excellence in food and service is more than a standard, it’s our commitment. From day one, we’ve been passionate about creating fresh, high-quality food, focused on delivering an exceptional experience, always. 
+  - image: /images/icons/hosting-friends-family.svg
+    title: Hosting friends & family
+    description: >-
+      LeWrap is a brand that people trust. Loved for our freshness and commitment to quality, we have earned a reputation as leaders in fresh fast-food space. This trust and our growing fan base is the driving force for our expansion, bringing LeWrap to more communities national wide.
+  - image: /images/icons/birthday-celebrations.svg
+    title: Birthday celebrations
+    description: >-
+      At LeWrap, we’re all about supporting our people and partners to succeed. With a proven support model and a focus on growth, we empower our team and partners to build exceptional businesses. Together, our shared purpose drives everything we do. 
 franchise_callout:
   show: true
   heading: Site Opportunities

@@ -1161,6 +1161,37 @@ _inputs:
     cascade: true
   
   # ------------------------------------
+  # THREE COLUMN FRANCHISE PROMO
+  # ------------------------------------
+  three_col_franchise_promo:
+    type: array
+    label: Three Column Franchise Promo
+    comment: "Add promotional items for franchise"
+    cascade: true
+    options:
+      structures:
+        values:
+          - label: Promo Item
+            value:
+              image: ""
+              title: ""
+              description: ""
+            _inputs:
+              image:
+                type: image
+                label: Icon/Image
+                comment: "Upload an image. 600 x 600px recommended"
+                options:
+                  paths:
+                    uploads: public/images/franchise
+              title:
+                type: text
+                label: Title
+              description:
+                type: textarea
+                label: Description
+  
+  # ------------------------------------
   # FRANCHISE CALLOUT INPUTS
   # ------------------------------------
   "franchise_callout.show":
