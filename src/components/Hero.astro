@@ -10,9 +10,16 @@ const {
     hero_button_text,
     hero_button_link,
     hero_button_variant = "primary",
+    hero_button_target,
+    hero_button_download,
     show_food_cat_links = false,
     show_search = false,
 } = Astro.props;
+
+// Convert switch values to proper attributes
+const targetAttr = hero_button_target ? "_blank" : undefined;
+const downloadAttr = hero_button_download ? true : undefined;
+
 // Determine background style
 let backgroundStyle = "";
 let showColorBackground = false;
@@ -226,6 +233,8 @@ if (hero_bg_type === "color") {
                     <Button
                         href={hero_button_link}
                         variant={hero_button_variant}
+                        target={targetAttr}
+                        download={downloadAttr}
                     >
                         {hero_button_text}
                     </Button>

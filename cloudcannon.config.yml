@@ -955,6 +955,18 @@ _inputs:
         - primary
         - secondary
     cascade: true
+
+  hero_button_target:
+    type: switch
+    label: Open Hero Button in New Tab
+    comment: "Toggle on to open hero button link in a new tab"
+    cascade: true
+
+  hero_button_download:
+    type: switch
+    label: Force Download from Hero Button
+    comment: "Toggle on to download file instead of opening"
+    cascade: true 
   
   # ------------------------------------
   # PAGE BLOCK INPUTS
