@@ -48,7 +48,7 @@ const arrowBottomPosition = Astro.url.pathname.includes("own-a-store")
     >
         {
             heading && (
-                <h2 class="text-lewrap-green-dark text-5xl/11 md:text-6xl/14 font-black tracking-tight">
+                <h2 class="text-lewrap-green-dark text-4xl/10 md:text-5xl/11 font-black tracking-tight">
                     <span data-cms-edit={`page_blocks.${blockIndex}.heading`}>
                         {heading}
                     </span>
@@ -58,7 +58,7 @@ const arrowBottomPosition = Astro.url.pathname.includes("own-a-store")
 
         {/* Copy */}
         <div
-            class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-6 [&_p:last-child]:mb-0"
+            class="prose text-xl/7 text-lewrap-off-black [&_p]:mb-6 [&_p:last-child]:mb-0"
             data-cms-edit={`page_blocks.${blockIndex}.text`}
             set:html={text}
         />
