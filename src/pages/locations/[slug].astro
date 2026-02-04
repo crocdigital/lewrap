@@ -201,12 +201,14 @@ const dayLabels: Record<string, string> = {
             class="w-[95%] mx-auto bg-cover bg-center bg-no-repeat p-7 rounded-2xl grid md:grid-cols-2 relative overflow-hidden"
         >
             <div class="max-w-xl mx-auto flex flex-col gap-y-8 py-16">
-                <h2 class="text-5xl font-black text-lewrap-green-dark">
+                <h2
+                    class="text-4xl/10 md:text-5xl/11 font-black text-lewrap-green-dark"
+                >
                     {location.data.name}
                 </h2>
 
                 <div
-                    class="prose text-2xl/8 text-lewrap-off-black [&_p]:mb-8 [&_p:last-child]:mb-0"
+                    class="prose text-xl/7 text-lewrap-off-black [&_p]:mb-8 [&_p:last-child]:mb-0"
                 >
                     <Content />
                 </div>
@@ -240,9 +242,9 @@ const dayLabels: Record<string, string> = {
             <div
                 class="w-full mx-auto flex flex-col p-7 py-16 bg-lewrap-green text-lg/6 text-lewrap-off-black"
             >
-                <h2 class="text-4xl font-black text-white mb-8">Find us</h2>
+                <h2 class="text-4xl font-black text-white mb-4">Find us</h2>
                 {/* Address */}
-                <p class="w-[80%] mb-4">
+                <p class="w-[80%] mb-6">
                     {location.data.address}, {location.data.suburb}, {
                         location.data.state
                     }
@@ -259,7 +261,7 @@ const dayLabels: Record<string, string> = {
                     Get Directions
                 </Button>
 
-                <h2 class="text-4xl font-black text-white mt-10 mb-8">
+                <h2 class="text-4xl font-black text-white mt-10 mb-4">
                     Contact
                 </h2>
                 {/* Phone, email */}
@@ -289,9 +291,6 @@ const dayLabels: Record<string, string> = {
             <div
                 class="w-full md:w-[85%] mx-auto flex flex-col gap-y-8 p-7 pt-40 py-16 text-2xl/8 items-center justify-end relative"
             >
-                <!-- <h2 class="text-4xl font-black text-lewrap-green-dark">
-                    Hours
-                </h2> -->
                 <Button
                     href="https://lewrap.redcatcloud.com.au/app/menu"
                     target="_blank"
@@ -304,7 +303,7 @@ const dayLabels: Record<string, string> = {
                 <img
                     src="/images/pages/welcome-lewrap.webp"
                     alt="LeWrap welcome"
-                    class="w-[200px] md:w-[420px] h-auto left-1/2 -translate-x-1/2 absolute mx-auto bottom-0"
+                    class="w-[200px] md:w-[380px] h-auto left-1/2 -translate-x-1/2 absolute mx-auto bottom-0"
                 />
             </div>
         </section>
