@@ -1180,7 +1180,7 @@ _inputs:
               image:
                 type: image
                 label: Icon/Image
-                comment: "Upload an image. 600 x 600px recommended"
+                comment: "Upload an image. 600px x 600px recommended"
                 options:
                   paths:
                     uploads: public/images/franchise
