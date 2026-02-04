@@ -966,7 +966,7 @@ _inputs:
     type: switch
     label: Force Download from Hero Button
     comment: "Toggle on to download file instead of opening"
-    cascade: true 
+    cascade: true
   
   # ------------------------------------
   # PAGE BLOCK INPUTS
