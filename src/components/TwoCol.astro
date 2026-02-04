@@ -33,8 +33,9 @@ if (video_url) {
 }
 
 // Define arrow bottom position based on page
-const arrowBottomPosition =
-    Astro.url.pathname === "/own-a-store" ? "26.5vh" : "42vh";
+const arrowBottomPosition = Astro.url.pathname.includes("own-a-store")
+    ? "26.5vh"
+    : "42vh";
 ---
 
 <section
