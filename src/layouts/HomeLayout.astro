@@ -186,74 +186,7 @@ const featuredNews = allNewsroom
     <main class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black">
         <div class="flex flex-col gap-5">
             {/* Hero Carousel */}
-            <section class="mt-10 md:mt-15 relative">
-                {/* Preload first slide image */}
-                {
-                    hero_slides?.[0] && (
-                        <>
-                            <link
-                                rel="preload"
-                                as="image"
-                                href={hero_slides[0].image_desktop}
-                                fetchpriority="high"
-                                media="(min-width: 769px)"
-                            />
-                            {hero_slides[0].image_mobile && (
-                                <link
-                                    rel="preload"
-                                    as="image"
-                                    href={hero_slides[0].image_mobile}
-                                    fetchpriority="high"
-                                    media="(max-width: 768px)"
-                                />
-                            )}
-                        </>
-                    )
-                }
-
-                {/* Show first slide while Swiper loads */}
-                {
-                    hero_slides?.[0] && (
-                        <div
-                            class="carousel-placeholder w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden relative"
-                            style="display: block;"
-                        >
-                            <picture>
-                                {hero_slides[0].image_mobile && (
-                                    <source
-                                        media="(max-width: 768px)"
-                                        srcset={hero_slides[0].image_mobile}
-                                    />
-                                )}
-                                <img
-                                    src={hero_slides[0].image_desktop}
-                                    alt={hero_slides[0].alt || "LeWrap"}
-                                    class="w-full h-full object-cover"
-                                    loading="eager"
-                                    fetchpriority="high"
-                                />
-                            </picture>
-
-                            {/* Gradient overlay */}
-                            <div class="absolute inset-0 bg-gradient-to-b from-black/0 to-black/40 z-10" />
-
-                            {/* Hero heading overlay */}
-                            <div class="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
-                                <div class="max-w-6xl flex flex-col items-center text-center">
-                                    <Image
-                                        src={leWrapLogo}
-                                        alt="LeWrap"
-                                        class="w-[128px] h-[37px] md:w-[266px] md:h-[78px]"
-                                    />
-                                    <h1 class="text-white text-4xl md:text-[90px] w-3/4 md:w-auto font-bold leading-[100%] tracking-tight">
-                                        {hero_heading}
-                                    </h1>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                }
-
+            <section class="mt-10 md:mt-15">
                 <Carousel
                     client:idle
                     slides={carouselSlides}
@@ -273,7 +206,7 @@ const featuredNews = allNewsroom
                     }}
                     loop={true}
                     hasGradient={true}
-                    className="w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden carousel-loaded"
+                    className="w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden"
                 >
                     {/* Content overlay */}
                     <div
@@ -293,6 +226,25 @@ const featuredNews = allNewsroom
                     </div>
                 </Carousel>
             </section>
+
+            <style>
+                /* Show first slide background while Swiper loads */
+                .carousel-container::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background-image: url("{hero_slides?.[0]?.image_desktop}");
+                    background-size: cover;
+                    background-position: center;
+                    z-index: 0;
+                }
+
+                @media (max-width: 768px) {
+                    .carousel-container::before {
+                        background-image: url("{hero_slides?.[0]?.image_mobile || hero_slides?.[0]?.image_desktop}");
+                    }
+                }
+            </style>
 
             <style>
                 .carousel-placeholder {
