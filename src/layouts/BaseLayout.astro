@@ -48,6 +48,19 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+    {/* Preload hero images */}
+    {
+      preloadImages.map((img) => (
+        <link
+          rel="preload"
+          as="image"
+          href={img.src}
+          fetchpriority="high"
+          media={img.media}
+        />
+      ))
+    }
+
     <!-- Inline critical font CSS BEFORE preloads -->
     <style>
       @font-face {
@@ -78,42 +91,6 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
         font-display: swap;
       }
     </style>
-
-    <!-- Preload critical fonts -->
-    <link
-      rel="preload"
-      href="/fonts/Cocogoose.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/fonts/HelveticaNeueCondensedBold.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/fonts/HelveticaNeueCondensedBlack.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-
-    {/* Preload hero images */}
-    {
-      preloadImages.map((img) => (
-        <link
-          rel="preload"
-          as="image"
-          href={img.src}
-          fetchpriority="high"
-          media={img.media}
-        />
-      ))
-    }
 
     <SEO
       title={title}
