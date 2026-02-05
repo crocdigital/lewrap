@@ -35,40 +35,42 @@ if (hero_bg_type === "color") {
     // Image will be rendered as <picture> tag instead
     showColorBackground = false;
 }
+
+// Generate preload link for hero image
+const heroImageToPreload = hero_bg_image_mobile || hero_bg_image;
 ---
 
 <section
-    class="relative flex items-center justify-center mt-10 md:mt-15 w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden bg-lewrap-green"
-    style={showColorBackground ? backgroundStyle : ""}
+    class="relative flex items-center justify-center mt-10 md:mt-15 w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden"
+    style={hero_bg_type === "image" && hero_bg_image
+        ? `background-image: url('${hero_bg_image}'); background-size: cover; background-position: center;`
+        : showColorBackground
+          ? backgroundStyle
+          : "background-color: #95BA32;"}
 >
-    {/* Background Image (if selected) */}
+    {/* Preload hero image */}
     {
-        hero_bg_type === "image" && (hero_bg_image || hero_bg_image_mobile) && (
-            <picture>
-                {/* Mobile version (optional) */}
-                {hero_bg_image_mobile && (
-                    <source
-                        media="(max-width: 768px)"
-                        srcset={hero_bg_image_mobile}
-                        type="image/webp"
+        hero_bg_type === "image" && heroImageToPreload && (
+            <>
+                {hero_bg_image && (
+                    <link
+                        rel="preload"
+                        as="image"
+                        href={hero_bg_image}
+                        fetchpriority="high"
+                        media="(min-width: 769px)"
                     />
                 )}
-                {/* Desktop version (fallback) */}
-                <source
-                    srcset={hero_bg_image || hero_bg_image_mobile}
-                    type="image/webp"
-                />
-                <img
-                    src={hero_bg_image || hero_bg_image_mobile}
-                    alt={title || "Hero background"}
-                    class="absolute inset-0 w-full h-full object-cover z-0"
-                    loading="eager"
-                    fetchpriority="high"
-                    decoding="async"
-                    width="1920"
-                    height="1080"
-                />
-            </picture>
+                {hero_bg_image_mobile && (
+                    <link
+                        rel="preload"
+                        as="image"
+                        href={hero_bg_image_mobile}
+                        fetchpriority="high"
+                        media="(max-width: 768px)"
+                    />
+                )}
+            </>
         )
     }
     {/* Gradient Overlay */}
