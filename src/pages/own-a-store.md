@@ -47,7 +47,7 @@ page_blocks:
     background_type: none
     background_colour: '#ffffff'
     background_image:
-    button_text: Enquire now
+    button_text: Download franchise pack
     button_link: javascript:open_franchise_enquiry()
     button_variant: primary
     button_target: false
