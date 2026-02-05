@@ -50,15 +50,23 @@ if (hero_bg_type === "color") {
                     <source
                         media="(max-width: 768px)"
                         srcset={hero_bg_image_mobile}
+                        type="image/webp"
                     />
                 )}
                 {/* Desktop version (fallback) */}
+                <source
+                    srcset={hero_bg_image || hero_bg_image_mobile}
+                    type="image/webp"
+                />
                 <img
                     src={hero_bg_image || hero_bg_image_mobile}
                     alt={title || "Hero background"}
                     class="absolute inset-0 w-full h-full object-cover z-0"
                     loading="eager"
                     fetchpriority="high"
+                    decoding="async"
+                    width="1920"
+                    height="1080"
                 />
             </picture>
         )
