@@ -52,9 +52,5 @@ export default defineConfig({
     },
   },
 
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true, // Enable Vercel Analytics
-    },
-  }),
+  adapter: vercel(),
 });
