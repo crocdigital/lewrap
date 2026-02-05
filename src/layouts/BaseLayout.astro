@@ -38,6 +38,60 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+    <!-- Inline critical font CSS BEFORE preloads -->
+    <style>
+      @font-face {
+        font-family: "Cocogoose";
+        src:
+          url("/fonts/Cocogoose.woff2") format("woff2"),
+          url("/fonts/Cocogoose.otf") format("opentype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "HelveticaNeueCondensed";
+        src:
+          url("/fonts/HelveticaNeueCondensedBold.woff2") format("woff2"),
+          url("/fonts/HelveticaNeueCondensedBold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "HelveticaNeueCondensed";
+        src:
+          url("/fonts/HelveticaNeueCondensedBlack.woff2") format("woff2"),
+          url("/fonts/HelveticaNeueCondensedBlack.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+
+    <!-- Preload critical fonts -->
+    <link
+      rel="preload"
+      href="/fonts/Cocogoose.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/HelveticaNeueCondensedBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/HelveticaNeueCondensedBlack.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <SEO
       title={title}
       description={description}
