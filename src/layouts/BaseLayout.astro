@@ -16,11 +16,21 @@ interface Props {
   canonical?: string;
   keywords?: string;
   schema?: object;
+  preloadImages?: { src: string; media?: string }[];
 }
 
 // const { title = "LeWrap" } = Astro.props;
-const { title, description, image, type, robots, canonical, keywords, schema } =
-  Astro.props;
+const {
+  title,
+  description,
+  image,
+  type,
+  robots,
+  canonical,
+  keywords,
+  schema,
+  preloadImages = [],
+} = Astro.props;
 const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
 ---
 
@@ -91,6 +101,19 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
       type="font/woff2"
       crossorigin
     />
+
+    {/* Preload hero images */}
+    {
+      preloadImages.map((img) => (
+        <link
+          rel="preload"
+          as="image"
+          href={img.src}
+          fetchpriority="high"
+          media={img.media}
+        />
+      ))
+    }
 
     <SEO
       title={title}

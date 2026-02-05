@@ -138,6 +138,22 @@ const featuredNews = allNewsroom
     robots={seo_robots || "index, follow"}
     canonical={seo_canonical}
     schema={organizationSchema}
+    preloadImages={hero_slides?.[0]
+        ? [
+              {
+                  src: hero_slides[0].image_desktop,
+                  media: "(min-width: 769px)",
+              },
+              ...(hero_slides[0].image_mobile
+                  ? [
+                        {
+                            src: hero_slides[0].image_mobile,
+                            media: "(max-width: 768px)",
+                        },
+                    ]
+                  : []),
+          ]
+        : []}
 >
     {/* Newsletter Popup */}
     {

@@ -136,6 +136,17 @@ const categories = [
     robots={seo_robots || "index, follow"}
     canonical={seo_canonical}
     schema={webPageSchema}
+    preloadImages={hero_bg_type === "image" &&
+    (hero_bg_image || hero_bg_image_mobile)
+        ? [
+              ...(hero_bg_image
+                  ? [{ src: hero_bg_image, media: "(min-width: 769px)" }]
+                  : []),
+              ...(hero_bg_image_mobile
+                  ? [{ src: hero_bg_image_mobile, media: "(max-width: 768px)" }]
+                  : []),
+          ]
+        : []}
 >
     {/* Franchise Enquiry Modal - Own A Store page only */}
     {
