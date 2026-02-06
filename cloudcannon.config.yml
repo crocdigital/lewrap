@@ -33,7 +33,7 @@ collections_config:
       image:
         type: image
         label: Store Image
-        comment: Upload a photo of the store. 1000px x 1000px
+        comment: Upload a photo of the store. 1200px x 800px
         cascade: true
     add_options:
       - name: Add Location
