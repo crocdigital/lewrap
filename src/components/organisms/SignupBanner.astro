@@ -3,9 +3,11 @@ import Button from "../atoms/Button.astro";
 ---
 
 <section
-    class="bg-[#CBE0BC] border-b-4 border-background rounded-t-2xl px-10 py-18 text-lewrap-off-black"
+    class="bg-[#CBE0BC] border-b-4 border-background rounded-t-2xl px-10 py-8 text-lewrap-off-black"
 >
-    <div class="grid md:grid-cols-2 items-center">
+    <div
+        class="max-w-screen-lg mx-auto flex flex-col md:flex-row gap-4 justify-center items-center"
+    >
         <div class="flex flex-col gap-y-4 md:gap-y-1">
             <h3
                 class="text-4xl font-bold text-lewrap-green-dark text-center md:text-left"
@@ -18,12 +20,10 @@ import Button from "../atoms/Button.astro";
             </p>
         </div>
 
-        <div class="mt-4 md:mt-0 mx-auto">
-            <Button
-                variant="secondary"
-                href="https://lewrap.redcatcloud.com.au/app/menu"
-                target="_blank">Sign me up!</Button
-            >
-        </div>
+        <Button
+            variant="secondary"
+            href="https://lewrap.redcatcloud.com.au/app/menu"
+            target="_blank">Sign me up!</Button
+        >
     </div>
 </section>

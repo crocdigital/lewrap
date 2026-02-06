@@ -73,7 +73,7 @@ const dayLabels: Record<string, string> = {
     >
         <div class="relative">
             <section
-                class="grid grid-cols-1 md:grid-cols-2 items-center justify-center mt-10 md:mt-15 w-[95%] mx-auto min-h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden bg-white"
+                class="grid grid-cols-1 md:grid-cols-2 items-center justify-center mt-10 md:mt-15 w-[95%] mx-auto min-h-[62vh] md:min-h-[75vh] rounded-2xl overflow-hidden bg-white"
             >
                 {
                     /* Google Map NOTE: THIS MIGHT BREAK WITH LOCATIONS THAT AREN'T INDEXED YET. CHECK BEST WAY TO SOLVE THIS */
@@ -91,7 +91,7 @@ const dayLabels: Record<string, string> = {
 
                 {/* Location details */}
                 <div
-                    class="flex flex-col p-8 py-10 items-center justify-center gap-y-6"
+                    class="flex flex-col p-8 py-10 md:pt-20 items-center justify-center gap-y-6"
                 >
                     <div class="flex flex-col items-center">
                         <a

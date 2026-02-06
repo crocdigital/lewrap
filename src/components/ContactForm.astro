@@ -142,67 +142,6 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
             </select>
         </div>
 
-        {/* Location preference - Radio buttons - left column */}
-        <div>
-            <label class="block text-lg font-medium text-lewrap-off-black mb-2">
-                Send to <span class="text-red-500">*</span>
-            </label>
-            <div class="space-y-3">
-                <label class="flex items-center cursor-pointer">
-                    <input
-                        type="radio"
-                        name="location_preference"
-                        value="headquarters"
-                        required
-                        class="w-5 h-5 text-lewrap-green focus:ring-lewrap-green"
-                    />
-                    <span class="ml-3 text-lewrap-off-black"
-                        >LeWrap Head Office</span
-                    >
-                </label>
-                <label class="flex items-center cursor-pointer">
-                    <input
-                        type="radio"
-                        name="location_preference"
-                        value="store"
-                        id="store-radio"
-                        required
-                        class="w-5 h-5 text-lewrap-green focus:ring-lewrap-green"
-                    />
-                    <span class="ml-3 text-lewrap-off-black">Closest store</span
-                    >
-                </label>
-            </div>
-        </div>
-
-        {/* Conditional store dropdown - right column */}
-        <div id="store-dropdown" class="hidden">
-            <label
-                for="preferred_store"
-                class="block text-lg font-medium text-lewrap-off-black mb-2"
-            >
-                Choose the store closest to you <span class="text-red-500"
-                    >*</span
-                >
-            </label>
-            <select
-                id="preferred_store"
-                name="preferred_store"
-                class="bg-white w-full p-4.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lewrap-green focus:border-transparent appearance-none focus:outline-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23CBCBCB%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:30px_30px] bg-[right_0.5rem_center] bg-no-repeat pr-12"
-            >
-                <option value="">Select a store</option>
-                {
-                    sortedLocations.map((location) => (
-                        <option
-                            value={location.data.email || location.data.name}
-                        >
-                            {location.data.name}
-                        </option>
-                    ))
-                }
-            </select>
-        </div>
-
         {/* Message - spans both columns */}
         <div class="md:col-span-2">
             <label
@@ -233,34 +172,6 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
 </form>
 
 <script>
-    // Show/hide store dropdown based on radio selection
-    const storeRadio = document.getElementById(
-        "store-radio",
-    ) as HTMLInputElement;
-    const headquartersRadio = document.querySelector(
-        'input[value="headquarters"]',
-    ) as HTMLInputElement;
-    const storeDropdown = document.getElementById(
-        "store-dropdown",
-    ) as HTMLElement;
-    const storeSelect = document.getElementById(
-        "preferred_store",
-    ) as HTMLSelectElement;
-
-    function toggleStoreDropdown() {
-        if (storeRadio?.checked) {
-            storeDropdown.classList.remove("hidden");
-            storeSelect.required = true;
-        } else {
-            storeDropdown.classList.add("hidden");
-            storeSelect.required = false;
-            storeSelect.value = "";
-        }
-    }
-
-    storeRadio?.addEventListener("change", toggleStoreDropdown);
-    headquartersRadio?.addEventListener("change", toggleStoreDropdown);
-
     // Handle form submission with reCAPTCHA validation
     const form = document.getElementById("contact-form") as HTMLFormElement;
     form?.addEventListener("submit", async (e) => {
