@@ -22,7 +22,7 @@ hours:
   friday: 9:00am - 9:30pm
   saturday: 9:00am - 9:30pm
   sunday: 9:00am - 9:30pm
-image: /images/locations/placement-bankstown.webp
+image: /images/locations/belmore.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
 ---
