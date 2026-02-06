@@ -11,8 +11,8 @@ hero_title: Community Wrap Up
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
-hero_bg_image: /images/hero/community-desktop.webp
-hero_bg_image_mobile: /images/hero/community-mobile.webp
+hero_bg_image: /images/hero/community-desktop.jpg
+hero_bg_image_mobile: /images/hero/community-mobile.jpg
 page_blocks:
   - _template: feature
     heading: Proudly Supporting Mental Health
@@ -38,6 +38,8 @@ page_blocks:
     button_text:
     button_link:
     button_variant:
+    button_target: false
+    button_download: false
 flexible_two_col:
   - title: We love getting involved in the local community
     description: >-
