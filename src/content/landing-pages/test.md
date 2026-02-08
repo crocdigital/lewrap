@@ -4,6 +4,16 @@ description: This is a test landing page for LeWrap
 robots: noindex, nofollow
 page_blocks:
   - _template: centered_text
+    text: <p>You can edit this text to be whatever you like. Pretty flash aye!</p>
+    background_type: none
+    background_colour:
+    background_image: ''
+    button_text:
+    button_link:
+    button_variant:
+    button_target: false
+    button_download: false
+  - _template: centered_text
     heading: Welcome to LeWrap
     text: >-
       <p>This is a test landing page. You can add more blocks and style them
