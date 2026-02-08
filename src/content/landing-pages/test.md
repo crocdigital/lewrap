@@ -4,7 +4,11 @@ description: This is a test landing page for LeWrap
 robots: noindex, nofollow
 page_blocks:
   - _template: centered_text
-    text: <p>You can edit this text to be whatever you like. Pretty flash aye!</p>
+    text: >-
+      <h2>Get personalised deals, exclusively through the LeWrap
+      app</h2><p>Order wraps, plates, baguettes, Protein Packs &amp; salads
+      ahead with our app. Join our loyalty program to earn points for
+      rewards.</p>
     background_type: none
     background_colour:
     background_image: ''
@@ -15,8 +19,8 @@ page_blocks:
     button_download: false
   - _template: centered_text
     text: >-
-      <h2>Welcome to LeWrap landing page!</h2><p>You can edit this text to be
-      whatever you like. Pretty flash aye!</p>
+      <p>Download the app now, skip the Q, and treat yourself to the ultimate
+      healthy bliss!</p>
     background_type: none
     background_colour:
     background_image: ''
