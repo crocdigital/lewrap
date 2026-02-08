@@ -95,10 +95,25 @@ const popupsCollection = defineCollection({
     }),
 });
 
+{/* Landing Page (one for now) */ }
+const landingPagesCollection = defineCollection({
+    type: "content",
+    schema: z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        image: z.string().optional(),
+        keywords: z.string().optional(),
+        robots: z.string().optional(),
+        canonical: z.string().optional(),
+        page_blocks: z.array(z.any()).optional(),
+    }),
+});
+
 export const collections = {
     locations: locationsCollection,
     food: foodCollection,
     faq: faqCollection,
     newsroom: newsroomCollection,
     popups: popupsCollection,
+    "landing-pages": landingPagesCollection,
 };

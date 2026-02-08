@@ -336,6 +336,56 @@ collections_config:
     disable_add: true
     disable_add_folder: false
     disable_file_actions: true
+  # LANDING PAGE
+  landing-pages:
+    path: src/content/landing-pages
+    name: Landing Pages
+    icon: rocket_launch
+    description: Special promotional landing pages (contact developer to create new pages)
+    # Lock down creation - client can only EDIT, not ADD
+    disable_add: true
+    disable_add_folder: true
+    # Enable visual and content editors
+    _enabled_editors:
+      - visual
+      - content
+    # Output settings
+    output: true
+    url: /go/[slug]/
+    # Input configurations for the editor
+    _inputs:
+      title:
+        type: text
+        label: Page Title
+        comment: Main title for the landing page
+      description:
+        type: textarea
+        label: SEO Description
+        comment: Description for search engines (150-160 characters)
+      image:
+        type: image
+        label: SEO Image
+        comment: Image for social media sharing (optional)
+      keywords:
+        type: text
+        label: SEO Keywords
+        comment: Comma-separated keywords (optional)
+      robots:
+        type: select
+        label: Search Engine Indexing
+        comment: Control how search engines index this page
+        options:
+          values:
+            - "noindex, nofollow"
+            - "index, follow"
+      canonical:
+        type: url
+        label: Canonical URL
+        comment: Preferred URL for SEO (optional)
+      page_blocks:
+        type: array
+        label: Page Content Blocks
+        comment: Add and arrange content blocks for this page
 _inputs:
   seo_title:
     type: text
