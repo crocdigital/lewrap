@@ -14,18 +14,6 @@ page_blocks:
     button_target: false
     button_download: false
   - _template: centered_text
-    heading: Welcome to LeWrap
-    text: >-
-      <p>This is a test landing page. You can add more blocks and style them
-      later!</p>
-    background_color: '#760000'
-  - _template: feature
-    heading: Fresh, Healthy Wraps
-    text: <p>Made fresh daily with quality ingredients.</p>
-    image: /images/placeholder.jpg
-    reverse: false
-    background_color: '#f5f5f5'
-  - _template: centered_text
     text: >-
       <h2>Welcome to LeWrap landing page!</h2><p>You can edit this text to be
       whatever you like. Pretty flash aye!</p>
