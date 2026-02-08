@@ -1,6 +1,6 @@
 ---
-title: Test Landing Page
-description: This is a test landing page for LeWrap
+title: Exclusive Deals through the LeWrap App
+description: Get personalised deals exclusively through the LeWrap app. Order wraps, plates, baguettes, Protein Packs & salads ahead with our app. Join our loyalty program to earn points for rewards. Download the app now, skip the Q, and treat yourself to the ultimate healthy bliss!
 robots: noindex, nofollow
 page_blocks:
   - _template: centered_text

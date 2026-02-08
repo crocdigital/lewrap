@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import leWrapLogo from "../assets/brand/lewrap.svg";
+import AppApple from "../assets/download-applestore.png";
+import AppGoogle from "../assets/download-googleplay.png";
+import bgTexture from "../assets/bgrds/bg-texture.webp";
 
 import SEO from "../components/SEO.astro";
 import TwoCol from "../components/TwoCol.astro";
@@ -107,18 +110,28 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
         />
     </head>
     <body
-        class="antialiased overflow-x-hidden font-sans font-helvetica-condensed"
+        class="antialiased overflow-x-hidden font-sans font-helvetica-condensed px-6"
     >
         <CustomCursor client:media="(pointer: fine)" transition:persist />
 
-        <!-- Minimal header - just logo -->
+        <!-- Minimal header -->
         <header class="py-6 text-center">
             <a href="/">
-                <Image src={leWrapLogo} alt="LeWrap" class="h-12 mx-auto" />
+                <Image src={leWrapLogo} alt="LeWrap" class="w-36 mx-auto" />
             </a>
         </header>
 
-        <main class="max-w-screen-2xl w-full mx-auto">
+        <img
+            src="/images/elements/baguette-beef.webp"
+            class="w-40 md:w-48 -mb-12 mx-auto"
+        />
+
+        <main
+            class="max-w-screen-xl w-full mx-auto text-center pb-14 rounded-3xl"
+            style={{
+                backgroundImage: `radial-gradient(ellipse 93.38% 101.86% at 50% 50%, white 15%, rgba(255, 255, 255, 0) 100%), url(${bgTexture.src})`,
+            }}
+        >
             {/* Page Builder section */}
             <div class="flex flex-col gap-10">
                 {
@@ -147,6 +160,32 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
                     })
                 }
             </div>
+
+            <div
+                class="flex flex-col md:flex-row justify-center gap-y-4 md:gap-x-8 mt-13"
+            >
+                <a
+                    href="https://apps.apple.com/au/app/lewrap-au/id6751012450"
+                    target="_blank"
+                >
+                    <Image
+                        src={AppApple}
+                        alt="Download on the Apple App Store"
+                        class="mx-auto md:mx-0 w-[165px] h-[55px]"
+                    />
+                </a>
+
+                <a
+                    href="https://play.google.com/store/apps/details?id=au.com.redcat.lewrap&pcampaignid=web_share"
+                    target="_blank"
+                >
+                    <Image
+                        src={AppGoogle}
+                        alt="Download on the Google Play Store"
+                        class="mx-auto md:mx-0 w-[165px] h-[55px]"
+                    />
+                </a>
+            </div>
         </main>
 
         <!-- Minimal footer -->
@@ -171,5 +210,68 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
                     fill="#fff"></path>
             </svg>
         </BackToTop>
-    </body>
+    </body><!-- Logo Loading Animation -->
+    <div
+        id="page-loader"
+        class="fixed inset-0 z-[9999] bg-lewrap-green-dark flex items-center justify-center"
+    >
+        <div class="loader-logo">
+            <Image src={leWrapLogo} alt="LeWrap" class="w-48 md:w-64" />
+        </div>
+    </div>
+
+    <style>
+        #page-loader {
+            transition:
+                opacity 0.5s ease,
+                visibility 0.5s ease;
+        }
+
+        #page-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* Logo animation */
+        .loader-logo {
+            animation: logoFadeIn 2s ease-out;
+        }
+
+        @keyframes logoFadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes logoPulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+
+    <script>
+        // Hide loader after page loads
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                const loader = document.getElementById("page-loader");
+                if (loader) {
+                    loader.classList.add("hidden");
+                    // Remove from DOM after animation completes
+                    setTimeout(() => {
+                        loader.remove();
+                    }, 500);
+                }
+            }, 2000); // Show logo for 2 seconds
+        });
+    </script>
 </html>
