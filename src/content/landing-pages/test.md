@@ -15,6 +15,18 @@ page_blocks:
     image: /images/placeholder.jpg
     reverse: false
     background_color: '#f5f5f5'
+  - _template: centered_text
+    text: >-
+      <h2>Welcome to LeWrap landing page!</h2><p>You can edit this text to be
+      whatever you like. Pretty flash aye!</p>
+    background_type: none
+    background_colour:
+    background_image: ''
+    button_text: Loyalty login
+    button_link: https://lewrap.redcatcloud.com.au/app/menu/
+    button_variant: primary
+    button_target: true
+    button_download: false
   - _template: feature
     heading: New Section
     text: <p>Eegen bleegen largen logen</p>
