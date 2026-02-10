@@ -6,7 +6,6 @@ import vercel from '@astrojs/vercel/serverless';
 
 export default defineConfig({
   site: 'https://lewrap.com',
-  base: '/', // Added this line
 
   devToolbar: {
     enabled: false
@@ -44,7 +43,7 @@ export default defineConfig({
       },
 
       // CSS optimization
-      cssCodeSplit: false, // Changed this to false temporarily
+      cssCodeSplit: true,
     },
 
     // Optimize dependencies
