@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/InternalPageLayout.astro
 title: Contact Us
-seo_title:
+seo_title: Contact LeWrap
 seo_description:
 seo_image: ''
 seo_keywords:
@@ -33,4 +33,6 @@ page_blocks:
     button_text:
     button_link:
     button_variant: primary
+    button_target: false
+    button_download: false
 ---
