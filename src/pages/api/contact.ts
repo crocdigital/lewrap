@@ -1,58 +1,60 @@
+export const prerender = false;
+
 import type { APIRoute } from 'astro';
 import nodemailer from 'nodemailer';
 
 export const POST: APIRoute = async ({ request }) => {
-    try {
-        const formData = await request.json();
+  try {
+    const formData = await request.json();
 
-        // 1. Validate reCAPTCHA
-        const recaptchaResponse = formData['g-recaptcha-response'];
+    // 1. Validate reCAPTCHA
+    const recaptchaResponse = formData['g-recaptcha-response'];
 
-        if (!recaptchaResponse) {
-            return new Response(
-                JSON.stringify({
-                    success: false,
-                    message: 'Please complete the reCAPTCHA verification'
-                }),
-                { status: 400 }
-            );
-        }
+    if (!recaptchaResponse) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          message: 'Please complete the reCAPTCHA verification'
+        }),
+        { status: 400 }
+      );
+    }
 
-        // Verify reCAPTCHA with Google
-        const recaptchaVerify = await fetch(
-            'https://www.google.com/recaptcha/api/siteverify',
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: `secret=${import.meta.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaResponse}`
-            }
-        );
+    // Verify reCAPTCHA with Google
+    const recaptchaVerify = await fetch(
+      'https://www.google.com/recaptcha/api/siteverify',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `secret=${import.meta.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaResponse}`
+      }
+    );
 
-        const recaptchaResult = await recaptchaVerify.json();
+    const recaptchaResult = await recaptchaVerify.json();
 
-        if (!recaptchaResult.success) {
-            return new Response(
-                JSON.stringify({
-                    success: false,
-                    message: 'reCAPTCHA verification failed. Please try again.'
-                }),
-                { status: 400 }
-            );
-        }
+    if (!recaptchaResult.success) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          message: 'reCAPTCHA verification failed. Please try again.'
+        }),
+        { status: 400 }
+      );
+    }
 
-        // 2. Create email transporter
-        const transporter = nodemailer.createTransport({
-            host: import.meta.env.EMAIL_HOST,
-            port: parseInt(import.meta.env.EMAIL_PORT),
-            secure: true, // SSL
-            auth: {
-                user: import.meta.env.EMAIL_USER,
-                pass: import.meta.env.EMAIL_PASS,
-            },
-        });
+    // 2. Create email transporter
+    const transporter = nodemailer.createTransport({
+      host: import.meta.env.EMAIL_HOST,
+      port: parseInt(import.meta.env.EMAIL_PORT),
+      secure: true, // SSL
+      auth: {
+        user: import.meta.env.EMAIL_USER,
+        pass: import.meta.env.EMAIL_PASS,
+      },
+    });
 
-        // 3. Prepare email content
-        const emailHTML = `
+    // 3. Prepare email content
+    const emailHTML = `
       <!DOCTYPE html>
       <html>
       <head>
@@ -146,7 +148,7 @@ export const POST: APIRoute = async ({ request }) => {
       </html>
     `;
 
-        const emailText = `
+    const emailText = `
 New Contact Form Submission - LeWrap Website
 
 Name: ${formData.name}
@@ -161,32 +163,32 @@ ${formData.message}
 Submitted: ${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' })}
     `;
 
-        // 4. Send email to both recipients
-        await transporter.sendMail({
-            from: import.meta.env.EMAIL_FROM,
-            to: `${import.meta.env.EMAIL_TO_1}, ${import.meta.env.EMAIL_TO_2}`,
-            replyTo: formData.email, // Allows easy replies to the customer
-            subject: 'Contact Form Submission from LeWrap Website',
-            text: emailText,
-            html: emailHTML,
-        });
+    // 4. Send email to both recipients
+    await transporter.sendMail({
+      from: import.meta.env.EMAIL_FROM,
+      to: `${import.meta.env.EMAIL_TO_1}, ${import.meta.env.EMAIL_TO_2}`,
+      replyTo: formData.email, // Allows easy replies to the customer
+      subject: 'Contact Form Submission from LeWrap Website',
+      text: emailText,
+      html: emailHTML,
+    });
 
-        return new Response(
-            JSON.stringify({
-                success: true,
-                message: 'Thank you for your message! We\'ll be in touch soon.'
-            }),
-            { status: 200 }
-        );
+    return new Response(
+      JSON.stringify({
+        success: true,
+        message: 'Thank you for your message! We\'ll be in touch soon.'
+      }),
+      { status: 200 }
+    );
 
-    } catch (error) {
-        console.error('Contact form error:', error);
-        return new Response(
-            JSON.stringify({
-                success: false,
-                message: 'Something went wrong. Please try again or contact us directly.'
-            }),
-            { status: 500 }
-        );
-    }
+  } catch (error) {
+    console.error('Contact form error:', error);
+    return new Response(
+      JSON.stringify({
+        success: false,
+        message: 'Something went wrong. Please try again or contact us directly.'
+      }),
+      { status: 500 }
+    );
+  }
 };

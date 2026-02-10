@@ -6,7 +6,7 @@ import vercel from '@astrojs/vercel/serverless';
 
 export default defineConfig({
   site: 'https://lewrap.com',
-  output: 'server',
+  output: 'static',
 
   devToolbar: {
     enabled: false

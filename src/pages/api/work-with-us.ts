@@ -1,106 +1,108 @@
+export const prerender = false;
+
 import type { APIRoute } from 'astro';
 import nodemailer from 'nodemailer';
 
 export const POST: APIRoute = async ({ request }) => {
-    try {
-        // Parse multipart form data (for file uploads)
-        const formData = await request.formData();
+  try {
+    // Parse multipart form data (for file uploads)
+    const formData = await request.formData();
 
-        // 1. Validate reCAPTCHA
-        const recaptchaResponse = formData.get('g-recaptcha-response') as string;
+    // 1. Validate reCAPTCHA
+    const recaptchaResponse = formData.get('g-recaptcha-response') as string;
 
-        if (!recaptchaResponse) {
-            return new Response(
-                JSON.stringify({
-                    success: false,
-                    message: 'Please complete the reCAPTCHA verification'
-                }),
-                { status: 400 }
-            );
-        }
+    if (!recaptchaResponse) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          message: 'Please complete the reCAPTCHA verification'
+        }),
+        { status: 400 }
+      );
+    }
 
-        // Verify reCAPTCHA with Google
-        const recaptchaVerify = await fetch(
-            'https://www.google.com/recaptcha/api/siteverify',
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: `secret=${import.meta.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaResponse}`
-            }
-        );
+    // Verify reCAPTCHA with Google
+    const recaptchaVerify = await fetch(
+      'https://www.google.com/recaptcha/api/siteverify',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `secret=${import.meta.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaResponse}`
+      }
+    );
 
-        const recaptchaResult = await recaptchaVerify.json();
+    const recaptchaResult = await recaptchaVerify.json();
 
-        if (!recaptchaResult.success) {
-            return new Response(
-                JSON.stringify({
-                    success: false,
-                    message: 'reCAPTCHA verification failed. Please try again.'
-                }),
-                { status: 400 }
-            );
-        }
+    if (!recaptchaResult.success) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          message: 'reCAPTCHA verification failed. Please try again.'
+        }),
+        { status: 400 }
+      );
+    }
 
-        // 2. Extract form data
-        const name = formData.get('name') as string;
-        const email = formData.get('email') as string;
-        const phone = formData.get('phone') as string;
-        const position = formData.get('position') as string;
-        const locationPreference = formData.get('location_preference') as string;
-        const preferredStore = formData.get('preferred_store') as string;
-        const message = formData.get('message') as string || 'No additional information provided';
-        const resumeFile = formData.get('resume') as File;
+    // 2. Extract form data
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const phone = formData.get('phone') as string;
+    const position = formData.get('position') as string;
+    const locationPreference = formData.get('location_preference') as string;
+    const preferredStore = formData.get('preferred_store') as string;
+    const message = formData.get('message') as string || 'No additional information provided';
+    const resumeFile = formData.get('resume') as File;
 
-        // 3. Validate file upload
-        if (!resumeFile || resumeFile.size === 0) {
-            return new Response(
-                JSON.stringify({
-                    success: false,
-                    message: 'Please upload your resume'
-                }),
-                { status: 400 }
-            );
-        }
+    // 3. Validate file upload
+    if (!resumeFile || resumeFile.size === 0) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          message: 'Please upload your resume'
+        }),
+        { status: 400 }
+      );
+    }
 
-        // Check file size (10MB limit)
-        const maxSize = 10 * 1024 * 1024; // 10MB
-        if (resumeFile.size > maxSize) {
-            return new Response(
-                JSON.stringify({
-                    success: false,
-                    message: 'File size must be less than 10MB'
-                }),
-                { status: 400 }
-            );
-        }
+    // Check file size (10MB limit)
+    const maxSize = 10 * 1024 * 1024; // 10MB
+    if (resumeFile.size > maxSize) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          message: 'File size must be less than 10MB'
+        }),
+        { status: 400 }
+      );
+    }
 
-        // Convert file to buffer for attachment
-        const resumeBuffer = Buffer.from(await resumeFile.arrayBuffer());
-        const fileSizeKB = (resumeFile.size / 1024).toFixed(2);
+    // Convert file to buffer for attachment
+    const resumeBuffer = Buffer.from(await resumeFile.arrayBuffer());
+    const fileSizeKB = (resumeFile.size / 1024).toFixed(2);
 
-        // 4. Determine recipients
-        let recipients = `${import.meta.env.EMAIL_TO_1}, ${import.meta.env.EMAIL_TO_2}`;
-        let applyingTo = 'LeWrap Head Office';
+    // 4. Determine recipients
+    let recipients = `${import.meta.env.EMAIL_TO_1}, ${import.meta.env.EMAIL_TO_2}`;
+    let applyingTo = 'LeWrap Head Office';
 
-        if (locationPreference === 'store' && preferredStore) {
-            // Add store email to recipients
-            recipients += `, ${preferredStore}`;
-            applyingTo = preferredStore;
-        }
+    if (locationPreference === 'store' && preferredStore) {
+      // Add store email to recipients
+      recipients += `, ${preferredStore}`;
+      applyingTo = preferredStore;
+    }
 
-        // 5. Create email transporter
-        const transporter = nodemailer.createTransport({
-            host: import.meta.env.EMAIL_HOST,
-            port: parseInt(import.meta.env.EMAIL_PORT),
-            secure: true, // SSL
-            auth: {
-                user: import.meta.env.EMAIL_USER,
-                pass: import.meta.env.EMAIL_PASS,
-            },
-        });
+    // 5. Create email transporter
+    const transporter = nodemailer.createTransport({
+      host: import.meta.env.EMAIL_HOST,
+      port: parseInt(import.meta.env.EMAIL_PORT),
+      secure: true, // SSL
+      auth: {
+        user: import.meta.env.EMAIL_USER,
+        pass: import.meta.env.EMAIL_PASS,
+      },
+    });
 
-        // 6. Prepare email content
-        const emailHTML = `
+    // 6. Prepare email content
+    const emailHTML = `
       <!DOCTYPE html>
       <html>
       <head>
@@ -213,7 +215,7 @@ export const POST: APIRoute = async ({ request }) => {
       </html>
     `;
 
-        const emailText = `
+    const emailText = `
 New Job Application - LeWrap Website
 
 Applicant Name: ${name}
@@ -231,39 +233,39 @@ ${message}
 Submitted: ${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' })}
     `;
 
-        // 7. Send email with attachment
-        await transporter.sendMail({
-            from: import.meta.env.EMAIL_FROM,
-            to: recipients,
-            replyTo: email, // Allows easy replies to the applicant
-            subject: 'Job Application from LeWrap Website',
-            text: emailText,
-            html: emailHTML,
-            attachments: [
-                {
-                    filename: resumeFile.name,
-                    content: resumeBuffer,
-                    contentType: resumeFile.type,
-                }
-            ]
-        });
+    // 7. Send email with attachment
+    await transporter.sendMail({
+      from: import.meta.env.EMAIL_FROM,
+      to: recipients,
+      replyTo: email, // Allows easy replies to the applicant
+      subject: 'Job Application from LeWrap Website',
+      text: emailText,
+      html: emailHTML,
+      attachments: [
+        {
+          filename: resumeFile.name,
+          content: resumeBuffer,
+          contentType: resumeFile.type,
+        }
+      ]
+    });
 
-        return new Response(
-            JSON.stringify({
-                success: true,
-                message: 'Thank you for your application! We\'ll review your resume and be in touch soon.'
-            }),
-            { status: 200 }
-        );
+    return new Response(
+      JSON.stringify({
+        success: true,
+        message: 'Thank you for your application! We\'ll review your resume and be in touch soon.'
+      }),
+      { status: 200 }
+    );
 
-    } catch (error) {
-        console.error('Work with us form error:', error);
-        return new Response(
-            JSON.stringify({
-                success: false,
-                message: 'Something went wrong. Please try again or email us directly at info@lewrap.com'
-            }),
-            { status: 500 }
-        );
-    }
+  } catch (error) {
+    console.error('Work with us form error:', error);
+    return new Response(
+      JSON.stringify({
+        success: false,
+        message: 'Something went wrong. Please try again or email us directly at info@lewrap.com'
+      }),
+      { status: 500 }
+    );
+  }
 };
