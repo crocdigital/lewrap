@@ -2,10 +2,11 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
-import vercel from '@astrojs/vercel';
+import vercel from '@astrojs/vercel/serverless';
 
 export default defineConfig({
   site: 'https://lewrap.com',
+  output: 'server',
 
   devToolbar: {
     enabled: false
@@ -52,5 +53,9 @@ export default defineConfig({
     },
   },
 
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true
+    }
+  }),
 });

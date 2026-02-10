@@ -46,6 +46,14 @@ import Button from "../components/atoms/Button.astro";
                 />
 
                 <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                    required
+                    class="w-full px-4 py-3 bg-white text-lewrap-off-black rounded-lg focus:border-transparent focus:outline-none"
+                />
+
+                <input
                     type="tel"
                     name="phone"
                     placeholder="Phone Number"
@@ -215,12 +223,98 @@ import Button from "../components/atoms/Button.astro";
         });
 
         // Submit handler
-        form?.addEventListener("submit", (e) => {
+        form?.addEventListener("submit", async (e) => {
             e.preventDefault();
-            const formData = new FormData(form);
-            console.log("Form submitted:", Object.fromEntries(formData));
-            alert("Form submitted! (Configure submission endpoint)");
-            // Add your form submission logic here
+
+            // Create message container if it doesn't exist
+            let messageContainer = document.getElementById(
+                "franchise-form-message",
+            );
+            const submitButton = form.querySelector(
+                'button[type="submit"]',
+            ) as HTMLButtonElement;
+
+            if (!messageContainer) {
+                messageContainer = document.createElement("div");
+                messageContainer.id = "franchise-form-message";
+                messageContainer.className = "mt-4 p-4 rounded-lg hidden";
+                // Insert after the button container, not inside it
+                const buttonContainer = submitButton.parentElement;
+                buttonContainer?.parentElement?.insertBefore(
+                    messageContainer,
+                    buttonContainer.nextSibling,
+                );
+            }
+
+            function showMessage(message: string, type: "success" | "error") {
+                if (!messageContainer) return;
+
+                messageContainer.textContent = message;
+                messageContainer.className = `mt-4 p-4 rounded-lg ${
+                    type === "success"
+                        ? "bg-green-100 text-green-800 border border-green-300"
+                        : "bg-red-100 text-red-800 border border-red-300"
+                }`;
+
+                // Scroll message into view
+                messageContainer.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                });
+            }
+
+            function hideMessage() {
+                if (!messageContainer) return;
+                messageContainer.className = "mt-4 p-4 rounded-lg hidden";
+            }
+
+            hideMessage();
+
+            // Disable submit button
+            const originalButtonText = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+
+            try {
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData);
+
+                // Send to API
+                const response = await fetch("/api/franchise-enquiry", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Success! Show success message
+                    showMessage(
+                        "✅ Thank you! We've sent you an email with a link to download our franchise information pack. Our team will be in touch within 2-3 business days.",
+                        "success",
+                    );
+
+                    // Reset form and go back to step 1
+                    form.reset();
+                    setTimeout(() => {
+                        goToStep(1);
+                    }, 5000); // Give them time to read the message
+                } else {
+                    // Error from server
+                    showMessage(result.message, "error");
+                }
+            } catch (error) {
+                console.error("Form submission error:", error);
+                showMessage(
+                    "Something went wrong. Please try again or contact us directly at info@lewrap.com",
+                    "error",
+                );
+            } finally {
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+            }
         });
 
         function goToStep(step: number) {
@@ -258,6 +352,7 @@ import Button from "../components/atoms/Button.astro";
             const labels: Record<string, string> = {
                 first_name: "First Name",
                 last_name: "Last Name",
+                email: "Email",
                 phone: "Phone",
                 location: "Location",
                 timeline: "Investment Timeline",

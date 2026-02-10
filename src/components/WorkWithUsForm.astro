@@ -13,9 +13,6 @@ const sortedLocations = allLocations.sort((a, b) =>
 
 // reCAPTCHA site key
 const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
-
-// Secret Key: 6Lex21IsAAAAALOSSHWM9nMiqG-4LN-DfLw_kAI5
-// Will need that on the server-side when you implement form submission (CloudCannon Forms, Formspree, etc. will validate it). DELETE THIS AFTER USING!!!!
 ---
 
 {/* Add reCAPTCHA script */}
@@ -285,23 +282,102 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
     const form = document.getElementById(
         "work-with-us-form",
     ) as HTMLFormElement;
+    const submitButton = form?.querySelector(
+        'button[type="submit"]',
+    ) as HTMLButtonElement;
+
+    // Create message container if it doesn't exist
+    let messageContainer = document.getElementById("form-message");
+    if (!messageContainer) {
+        messageContainer = document.createElement("div");
+        messageContainer.id = "form-message";
+        messageContainer.className = "mt-4 p-4 rounded-lg hidden";
+        submitButton.parentElement?.appendChild(messageContainer);
+    }
+
+    function showMessage(message: string, type: "success" | "error") {
+        if (!messageContainer) return;
+
+        messageContainer.textContent = message;
+        messageContainer.className = `mt-4 p-4 rounded-lg ${
+            type === "success"
+                ? "bg-green-100 text-green-800 border border-green-300"
+                : "bg-red-100 text-red-800 border border-red-300"
+        }`;
+
+        // Scroll message into view
+        messageContainer.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+        });
+    }
+
+    function hideMessage() {
+        if (!messageContainer) return;
+        messageContainer.className = "mt-4 p-4 rounded-lg hidden";
+    }
+
     form?.addEventListener("submit", async (e) => {
         e.preventDefault();
+        hideMessage();
 
         // Check if reCAPTCHA is completed
         const recaptchaResponse = (window as any).grecaptcha.getResponse();
 
         if (!recaptchaResponse) {
-            alert("Please complete the reCAPTCHA verification");
+            showMessage("Please complete the reCAPTCHA verification", "error");
             return;
         }
 
-        // Add your form submission logic here
-        const formData = new FormData(form);
-        formData.append("g-recaptcha-response", recaptchaResponse);
+        // Validate file is selected
+        const fileInput = document.getElementById("resume") as HTMLInputElement;
+        if (!fileInput.files || fileInput.files.length === 0) {
+            showMessage("Please upload your resume", "error");
+            return;
+        }
 
-        console.log("Form data:", Object.fromEntries(formData));
+        // Disable submit button to prevent double submission
+        const originalButtonText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
 
-        alert("Form submitted! (You need to configure form handling)");
+        try {
+            // Collect form data (including file)
+            const formData = new FormData(form);
+            formData.append("g-recaptcha-response", recaptchaResponse);
+
+            // Send to API
+            const response = await fetch("/api/work-with-us", {
+                method: "POST",
+                body: formData, // Send as FormData (not JSON) for file uploads
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                // Success! Show success message
+                showMessage(result.message, "success");
+
+                // Reset form
+                form.reset();
+                (window as any).grecaptcha.reset();
+
+                // Hide store dropdown if it was visible
+                toggleStoreDropdown();
+            } else {
+                // Error from server
+                showMessage(result.message, "error");
+            }
+        } catch (error) {
+            console.error("Form submission error:", error);
+            showMessage(
+                "Something went wrong. Please try again or email us directly at info@lewrap.com",
+                "error",
+            );
+        } finally {
+            // Re-enable submit button
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+        }
     });
 </script>
