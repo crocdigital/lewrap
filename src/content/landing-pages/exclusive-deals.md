@@ -2,7 +2,7 @@
 title: Exclusive Deals through the LeWrap App
 description: >-
   Get personalised deals exclusively through the LeWrap app. Order wraps,
-  plates, baguettes, Protein Packs & salads ahead with our app.
+  plates, baguettes, Protein Packs & salads ahead of the queue with our app.
 robots: noindex, nofollow
 page_blocks:
   - _template: centered_text
