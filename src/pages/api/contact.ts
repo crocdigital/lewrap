@@ -163,10 +163,10 @@ ${formData.message}
 Submitted: ${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' })}
     `;
 
-    // 4. Send email to both recipients
+    // 4. Send email
     await transporter.sendMail({
       from: import.meta.env.EMAIL_FROM,
-      to: `${import.meta.env.EMAIL_TO_1}, ${import.meta.env.EMAIL_TO_2}`,
+      to: import.meta.env.EMAIL_TO,
       replyTo: formData.email, // Allows easy replies to the customer
       subject: 'Contact Form Submission from LeWrap Website',
       text: emailText,

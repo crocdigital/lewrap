@@ -81,13 +81,17 @@ export const POST: APIRoute = async ({ request }) => {
     const fileSizeKB = (resumeFile.size / 1024).toFixed(2);
 
     // 4. Determine recipients
-    let recipients = `${import.meta.env.EMAIL_TO_1}, ${import.meta.env.EMAIL_TO_2}`;
-    let applyingTo = 'LeWrap Head Office';
+    let recipients;
+    let applyingTo;
 
     if (locationPreference === 'store' && preferredStore) {
-      // Add store email to recipients
-      recipients += `, ${preferredStore}`;
+      // Store only - no head office
+      recipients = preferredStore;
       applyingTo = preferredStore;
+    } else {
+      // Head office only
+      recipients = import.meta.env.EMAIL_TO;
+      applyingTo = 'LeWrap Head Office';
     }
 
     // 5. Create email transporter
