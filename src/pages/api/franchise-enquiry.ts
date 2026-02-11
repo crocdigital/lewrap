@@ -4,31 +4,31 @@ import type { APIRoute } from 'astro';
 import nodemailer from 'nodemailer';
 
 export const POST: APIRoute = async ({ request }) => {
-    try {
-        const formData = await request.json();
+  try {
+    const formData = await request.json();
 
-        // Extract form data
-        const firstName = formData.first_name as string;
-        const lastName = formData.last_name as string;
-        const phone = formData.phone as string;
-        const email = formData.email as string; // Need to add email field to form!
-        const location = formData.location as string;
-        const timeline = formData.timeline as string;
-        const fundCapacity = formData.fund_capacity as string;
+    // Extract form data
+    const firstName = formData.first_name as string;
+    const lastName = formData.last_name as string;
+    const phone = formData.phone as string;
+    const email = formData.email as string; // Need to add email field to form!
+    const location = formData.location as string;
+    const timeline = formData.timeline as string;
+    const fundCapacity = formData.fund_capacity as string;
 
-        // Create email transporter
-        const transporter = nodemailer.createTransport({
-            host: import.meta.env.EMAIL_HOST,
-            port: parseInt(import.meta.env.EMAIL_PORT),
-            secure: true, // SSL
-            auth: {
-                user: import.meta.env.EMAIL_USER,
-                pass: import.meta.env.EMAIL_PASS,
-            },
-        });
+    // Create email transporter
+    const transporter = nodemailer.createTransport({
+      host: import.meta.env.EMAIL_HOST,
+      port: parseInt(import.meta.env.EMAIL_PORT),
+      secure: true, // SSL
+      auth: {
+        user: import.meta.env.EMAIL_USER,
+        pass: import.meta.env.EMAIL_PASS,
+      },
+    });
 
-        // Prepare email content for internal team
-        const internalEmailHTML = `
+    // Prepare email content for internal team
+    const internalEmailHTML = `
       <!DOCTYPE html>
       <html>
       <head>
@@ -159,8 +159,8 @@ export const POST: APIRoute = async ({ request }) => {
       </html>
     `;
 
-        // Prepare email content for the enquirer (customer-facing)
-        const customerEmailHTML = `
+    // Prepare email content for the enquirer (customer-facing)
+    const customerEmailHTML = `
       <!DOCTYPE html>
       <html>
       <head>
@@ -254,7 +254,7 @@ export const POST: APIRoute = async ({ request }) => {
 
           <div style="text-align: center; margin: 30px 0;">
             <p style="font-size: 16px; margin-bottom: 15px;"><strong>Download Your Franchise Information Pack</strong></p>
-            <a href="https://lewrap.com/downloads/franchise-info-pack.pdf" class="download-button">📄 Download Info Pack</a>
+            <a href="https://lewrap.com/downloads/LW-Franchising-Pack.pdf" class="download-button">📄 Download Info Pack</a>
             <p style="font-size: 13px; color: #666; margin-top: 10px;">This comprehensive guide contains everything you need to know about our franchise opportunity.</p>
           </div>
 
@@ -305,7 +305,7 @@ export const POST: APIRoute = async ({ request }) => {
       </html>
     `;
 
-        const emailText = `
+    const emailText = `
 New Franchise Enquiry - LeWrap Website
 
 PERSONAL INFORMATION
@@ -327,39 +327,39 @@ Fund Capacity: ${fundCapacity}
 Submitted: ${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' })}
     `;
 
-        // Send email to franchise team
-        await transporter.sendMail({
-            from: import.meta.env.EMAIL_FROM,
-            to: import.meta.env.EMAIL_FRANCHISE,
-            subject: 'Franchise Enquiry from LeWrap Website',
-            text: emailText,
-            html: internalEmailHTML,
-        });
+    // Send email to franchise team
+    await transporter.sendMail({
+      from: import.meta.env.EMAIL_FROM,
+      to: import.meta.env.EMAIL_FRANCHISE,
+      subject: 'Franchise Enquiry from LeWrap Website',
+      text: emailText,
+      html: internalEmailHTML,
+    });
 
-        // Send confirmation email to customer
-        await transporter.sendMail({
-            from: import.meta.env.EMAIL_FROM,
-            to: email,
-            subject: 'Thank You for Your LeWrap Franchise Enquiry',
-            html: customerEmailHTML,
-        });
+    // Send confirmation email to customer
+    await transporter.sendMail({
+      from: import.meta.env.EMAIL_FROM,
+      to: email,
+      subject: 'Thank You for Your LeWrap Franchise Enquiry',
+      html: customerEmailHTML,
+    });
 
-        return new Response(
-            JSON.stringify({
-                success: true,
-                message: 'Thank you for your interest! We\'ll be in touch soon to discuss franchise opportunities.'
-            }),
-            { status: 200 }
-        );
+    return new Response(
+      JSON.stringify({
+        success: true,
+        message: 'Thank you for your interest! We\'ll be in touch soon to discuss franchise opportunities.'
+      }),
+      { status: 200 }
+    );
 
-    } catch (error) {
-        console.error('Franchise enquiry form error:', error);
-        return new Response(
-            JSON.stringify({
-                success: false,
-                message: 'Something went wrong. Please try again or contact us directly at info@lewrap.com'
-            }),
-            { status: 500 }
-        );
-    }
+  } catch (error) {
+    console.error('Franchise enquiry form error:', error);
+    return new Response(
+      JSON.stringify({
+        success: false,
+        message: 'Something went wrong. Please try again or contact us directly at info@lewrap.com'
+      }),
+      { status: 500 }
+    );
+  }
 };
