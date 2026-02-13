@@ -10,7 +10,7 @@ seo_robots: index, follow
 seo_canonical: ''
 hero_image: /images/newsroom/freewrap-desktop.webp
 hero_image_mobile: /images/newsroom/freewrap-mobile.webp
-category: Promotion
+category: Updates
 date: 2026-02-16T09:00:00+11:00
 preview_text: Skip the queue and order ahead
 featured: true
@@ -21,6 +21,6 @@ Now you can enjoy LeWrap without the wait and access to exciting features:
 
 * Order ahead
 * Accumulate loyalty points to use towards freebies
-* Exclusive offers
+* Exclusive offers<br><br>
 
 [Download the app Now!](/go/exclusive-deals/)
