@@ -13,7 +13,7 @@ hero_image_mobile: ''
 category: Franchising
 date: 2026-02-20T00:00:00+11:00
 preview_text: ' LeWrap is Opening at Stanhope Village'
-featured: false
+featured: true
 ---
 ## Stanhope Gardens we’re coming for you!
 
