@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAFAFA;
+  --foreground: #ededed;
+  /* LeWrap Design Tokens */
+  --lewrap-green: #95BA32;
+  --lewrap-green-dark: #31411D;
+  --lewrap-red: #D3172B;
+  --lewrap-off-black: #2E2E2E;
+
+  /* Fonts */
+  --font-cocogoose: 'Cocogoose', sans-serif;
+  --font-helvetica-condensed: 'HelveticaNeueCondensed', sans-serif;
+}
+
+/* stylelint-disable-next-line at-rule-no-unknown */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-cocogoose: var(--font-cocogoose);
+  --font-helvetica-condensed: var(--font-helvetica-condensed);
+
+  /* LeWrap Colors */
+  --color-lewrap-green: var(--lewrap-green);
+  --color-lewrap-green-dark: var(--lewrap-green-dark);
+  --color-lewrap-red: var(--lewrap-red);
+  --color-lewrap-off-black: var(--lewrap-off-black);
+}
+
+/* Button variants */
+@utility btn-lewrap {
+  @apply px-5 py-3 md:px-8 md:py-4 bg-lewrap-green text-white rounded-full font-bold font-cocogoose text-xl md:text-2xl capitalize hover:bg-lewrap-green-dark hover:text-lewrap-green duration-200 hover:scale-105 w-fit inline-block text-center;
+}
+
+@utility btn-lewrap-secondary {
+  @apply px-5 py-3 md:px-8 md:py-4 bg-lewrap-green-dark border-4 border-lewrap-green text-white rounded-full font-bold font-cocogoose text-xl md:text-2xl hover:bg-lewrap-green hover:text-white uppercase duration-200 hover:scale-105 w-fit inline-block text-center;
+}
+
+/* WYSIWYG Content Styles */
+.prose h2 {
+  @apply text-4xl font-bold text-lewrap-green-dark tracking-tight mb-6 mt-8;
+}
+
+.prose h3 {
+  @apply text-3xl font-semibold text-lewrap-green-dark tracking-tight mb-4 mt-6;
+}
+
+.prose h4 {
+  @apply text-2xl font-semibold text-lewrap-green-dark tracking-tight mb-4 mt-6;
+}
+
+/* Maquee */
+.marquee-content {
+  @apply text-white text-xl font-helvetica-condensed capitalize;
+
+}
+
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  cursor: none;
+}
+
+a,
+button,
+[role="button"] {
+  cursor: none;
+}
+
+p>a {
+  color: var(--lewrap-green);
+  text-decoration: underline;
+}
+
+/* Restore default cursor on touch devices */
+@media (pointer: coarse) {
+
+  body,
+  a,
+  button,
+  [role="button"] {
+    cursor: auto !important;
+  }
+}
+
+/* Force hide cursor on desktop when custom cursor is active */
+@media (pointer: fine) {
+
+  a,
+  button,
+  [role="button"] {
+    cursor: none !important;
+  }
+}

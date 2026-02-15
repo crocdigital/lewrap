@@ -1,0 +1,311 @@
+---
+// Locations details
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { generateLocationSchema } from "../../utils/generateLocationSchema";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import Button from "../../components/atoms/Button.astro";
+
+export async function getStaticPaths() {
+    const locations = await getCollection("locations");
+    return locations.map((location) => ({
+        params: { slug: location.slug },
+        props: { location },
+    }));
+}
+
+interface Props {
+    location: CollectionEntry<"locations">;
+}
+
+const { location } = Astro.props;
+const { Content } = await location.render();
+
+// Generate schema
+const locationSchema = generateLocationSchema(
+    location,
+    Astro.site?.toString() || Astro.url.origin,
+);
+
+// Get SEO data from location frontmatter - handle empty strings
+const seoTitle =
+    (location.data.seo_title && location.data.seo_title.trim()) ||
+    `${location.data.name}`;
+const seoDescription =
+    (location.data.seo_description && location.data.seo_description.trim()) ||
+    `Visit LeWrap at ${location.data.address}, ${location.data.suburb}. Fresh wraps, salads and more.`;
+const seoImage = location.data.seo_image;
+const seoKeywords = location.data.seo_keywords;
+const seoRobots = location.data.seo_robots || "index, follow";
+
+// Format hours for display
+const daysOfWeek = [
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+    "sunday",
+];
+const dayLabels: Record<string, string> = {
+    monday: "Monday",
+    tuesday: "Tuesday",
+    wednesday: "Wednesday",
+    thursday: "Thursday",
+    friday: "Friday",
+    saturday: "Saturday",
+    sunday: "Sunday",
+};
+---
+
+<BaseLayout
+    title={seoTitle}
+    description={seoDescription}
+    image={seoImage || undefined}
+    keywords={seoKeywords || undefined}
+    robots={seoRobots || "index, follow"}
+    schema={locationSchema}
+>
+    <main
+        class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10"
+    >
+        <div class="relative">
+            <section
+                class="grid grid-cols-1 md:grid-cols-2 items-center justify-center mt-10 md:mt-15 w-[95%] mx-auto min-h-[62vh] md:min-h-[75vh] rounded-2xl overflow-hidden bg-white"
+            >
+                {
+                    /* Google Map NOTE: THIS MIGHT BREAK WITH LOCATIONS THAT AREN'T INDEXED YET. CHECK BEST WAY TO SOLVE THIS */
+                }
+                <iframe
+                    width="100%"
+                    height="100%"
+                    style="border:0"
+                    loading="lazy"
+                    class="min-h-[40vh]"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src={`https://maps.google.com/maps?q=${encodeURIComponent(location.data.name)}&tbm=map&output=embed`}
+                ></iframe>
+
+                {/* Location details */}
+                <div
+                    class="flex flex-col p-8 py-10 md:pt-20 items-center justify-center gap-y-6"
+                >
+                    <div class="flex flex-col items-center">
+                        <a
+                            href="/locations"
+                            class="text-lewrap-green hover:text-lewrap-green-dark font-semibold transition-colors"
+                        >
+                            ← View all locations
+                        </a>
+
+                        {/* Location name */}
+                        <h1
+                            class="text-5xl md:text-6xl font-black text-lewrap-green-dark text-center"
+                        >
+                            {location.data.name}
+                        </h1>
+                    </div>
+
+                    <div class="flex flex-col text-lg">
+                        {/* Address */}
+                        <p class="text-center md:px-31">
+                            {location.data.address}, {location.data.suburb}, {
+                                location.data.state
+                            }
+                            {location.data.postcode}
+                        </p>
+
+                        {/* Phone, email */}
+                        {
+                            location.data.phone && (
+                                <a
+                                    href={`tel:${location.data.phone}`}
+                                    class="hover:text-lewrap-green text-center duration-200"
+                                >
+                                    {location.data.phone}
+                                </a>
+                            )
+                        }
+                        {
+                            location.data.email && (
+                                <a
+                                    href={`mailto:${location.data.email}?subject=Enquiry%20from%20website`}
+                                    class="hover:text-lewrap-green text-center duration-200"
+                                >
+                                    {location.data.email}
+                                </a>
+                            )
+                        }
+                    </div>
+
+                    {/* View larger map */}
+                    <Button
+                        href={`https://www.google.com/maps/dir/?api=1&destination=${location.data.latitude},${location.data.longitude}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="px-5 py-3 text-sm"
+                    >
+                        Get Directions
+                    </Button>
+
+                    {/* Hours */}
+                    <div class="w-[90%] md:w-[50%]">
+                        <h2
+                            class="text-3xl font-black text-lewrap-green-dark text-center mb-4"
+                        >
+                            Hours
+                        </h2>
+                        <div class="space-y-1">
+                            {
+                                daysOfWeek.map((day) => (
+                                    <div class="flex justify-between items-center text-lg">
+                                        <span class="capitalize">
+                                            {dayLabels[day]}
+                                        </span>
+                                        <span
+                                            class={`font-bold ${
+                                                location.data.hours[
+                                                    day as keyof typeof location.data.hours
+                                                ] === "Closed"
+                                                    ? "text-red-600"
+                                                    : ""
+                                            }`}
+                                        >
+                                            {
+                                                location.data.hours[
+                                                    day as keyof typeof location.data.hours
+                                                ]
+                                            }
+                                        </span>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                {/* Arrow */}
+                <img
+                    src="/images/elements/arrow-green-fat.svg"
+                    alt="More about LeWrap locations"
+                    class="w-10 h-auto absolute left-1/2 md:left-3/4 -translate-x-1/2 -bottom-14"
+                />
+            </section>
+        </div>
+
+        {/* Location paragraph, image */}
+        <section
+            class="w-[95%] mx-auto bg-cover bg-center bg-no-repeat p-7 rounded-2xl grid md:grid-cols-2 relative overflow-hidden"
+        >
+            <div class="max-w-xl mx-auto flex flex-col gap-y-8 py-16">
+                <h2
+                    class="text-4xl/10 md:text-5xl/11 font-black text-lewrap-green-dark"
+                >
+                    {location.data.name}
+                </h2>
+
+                <div
+                    class="prose text-xl/7 text-lewrap-off-black [&_p]:mb-8 [&_p:last-child]:mb-0"
+                >
+                    <Content />
+                </div>
+            </div>
+
+            {/* Store Image */}
+            {
+                location.data.image && (
+                    <div class="rounded-xl overflow-hidden">
+                        <img
+                            src={location.data.image}
+                            alt={location.data.name}
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                )
+            }
+
+            <img
+                src="/images/bgrds/location-detail-bgrd.webp"
+                alt="LeWrap"
+                class="w-[190px] h-auto absolute -left-10 -z-1 bottom-0"
+            />
+        </section>
+
+        {/* Find us, contact, order now */}
+        <section
+            class="w-[95%] max-w-screen-2xl mx-auto bg-cover bg-center bg-no-repeat rounded-2xl overflow-hidden grid md:grid-cols-2"
+            style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
+        >
+            <div
+                class="w-full mx-auto flex flex-col p-7 py-16 bg-lewrap-green text-lg/6 text-lewrap-off-black"
+            >
+                <h2 class="text-4xl font-black text-white mb-4">Find us</h2>
+                {/* Address */}
+                <p class="w-[80%] mb-6">
+                    {location.data.address}, {location.data.suburb}, {
+                        location.data.state
+                    }
+                    {location.data.postcode}
+                </p>
+                {/* View larger map */}
+                <Button
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${location.data.latitude},${location.data.longitude}`}
+                    target="_blank"
+                    variant="secondary"
+                    rel="noopener noreferrer"
+                    class="px-5 py-3 text-sm border-none hover:bg-lewrap-green-dark hover:text-lewrap-green"
+                >
+                    Get Directions
+                </Button>
+
+                <h2 class="text-4xl font-black text-white mt-10 mb-4">
+                    Contact
+                </h2>
+                {/* Phone, email */}
+                {
+                    location.data.phone && (
+                        <a
+                            href={`tel:${location.data.phone}`}
+                            class="text-lewrap-green-dark hover:text-white duration-200"
+                        >
+                            {location.data.phone}
+                        </a>
+                    )
+                }
+                {
+                    location.data.email && (
+                        <a
+                            href={`mailto:${location.data.email}?subject=Enquiry%20from%20website`}
+                            class="text-lewrap-green-dark hover:text-white duration-200"
+                        >
+                            {location.data.email}
+                        </a>
+                    )
+                }
+            </div>
+
+            {/* Order Now */}
+            <div
+                class="w-full md:w-[85%] mx-auto flex flex-col gap-y-8 p-7 pt-40 py-16 text-2xl/8 items-center justify-end relative"
+            >
+                <Button
+                    href="https://lewrap.redcatcloud.com.au/app/menu"
+                    target="_blank"
+                    variant="secondary"
+                    class="absolute z-1"
+                >
+                    Order Now
+                </Button>
+
+                <img
+                    src="/images/pages/welcome-lewrap.webp"
+                    alt="LeWrap welcome"
+                    class="w-[200px] md:w-[380px] h-auto left-1/2 -translate-x-1/2 absolute mx-auto bottom-0"
+                />
+            </div>
+        </section>
+    </main>
+</BaseLayout>

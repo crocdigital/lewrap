@@ -1,0 +1,76 @@
+---
+interface Props {
+    /** Scroll threshold in pixels before button appears (default: 300) */
+    threshold?: number;
+    /** Custom class name for styling the button */
+    className?: string;
+    /** Scroll behavior (default: "smooth") */
+    behavior?: ScrollBehavior;
+}
+
+const { threshold = 300, className = "", behavior = "smooth" } = Astro.props;
+---
+
+<button
+    id="back-to-top"
+    class={className}
+    data-threshold={threshold}
+    data-behavior={behavior}
+    aria-label="Back to top"
+>
+    <slot>↑</slot>
+</button>
+
+<style>
+    #back-to-top {
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            opacity 0.3s ease-in-out,
+            visibility 0.3s ease-in-out;
+    }
+
+    #back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+</style>
+
+<script>
+    function initBackToTop() {
+        const button = document.getElementById("back-to-top");
+        if (!button) return;
+
+        const threshold = parseInt(button.dataset.threshold || "300");
+        const behavior = (button.dataset.behavior ||
+            "smooth") as ScrollBehavior;
+
+        const toggleVisibility = () => {
+            if (window.scrollY > threshold) {
+                button.classList.add("visible");
+            } else {
+                button.classList.remove("visible");
+            }
+        };
+
+        const scrollToTop = () => {
+            window.scrollTo({
+                top: 0,
+                behavior,
+            });
+        };
+
+        // Check on mount
+        toggleVisibility();
+
+        // Add scroll listener
+        window.addEventListener("scroll", toggleVisibility, { passive: true });
+
+        // Add click listener
+        button.addEventListener("click", scrollToTop);
+    }
+
+    // Run on load and after view transitions
+    initBackToTop();
+    document.addEventListener("astro:page-load", initBackToTop);
+</script>

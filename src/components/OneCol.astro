@@ -1,0 +1,60 @@
+---
+import Button from "../components/atoms/Button.astro";
+
+const {
+    text,
+    blockIndex,
+    background_type = "none",
+    background_colour,
+    background_image,
+    button_text,
+    button_link,
+    button_variant = "primary",
+    button_target,
+    button_download,
+} = Astro.props;
+
+// Convert switch values to proper attributes
+const targetAttr = button_target ? "_blank" : undefined;
+const downloadAttr = button_download ? true : undefined;
+
+// Determine inline style for backgrounds
+let backgroundStyle = "";
+if (background_type === "color" && background_colour) {
+    backgroundStyle = `background-color: ${background_colour};`;
+} else if (background_type === "image" && background_image) {
+    backgroundStyle = `background-image: url('${background_image}'); background-repeat: repeat;`;
+}
+
+// Determine if there's a background
+const hasBackground =
+    background_type !== "none" && (background_colour || background_image);
+---
+
+<section
+    class={`w-[95%] md:max-w-screen-2xl mx-auto rounded-xl ${hasBackground ? "p-7 md:p-21 md:px-90" : "py-0 px-7 md:px-90"}`}
+    style={backgroundStyle}
+    data-cms-bind={`page_blocks[${blockIndex}]`}
+>
+    <div
+        class="prose text-xl/7 text-lewrap-off-black p-7 [&_p]:mb-8 [&_p:last-of-type]:mb-0"
+        data-cms-edit={`page_blocks.${blockIndex}.text`}
+        set:html={text}
+    />
+
+    {/* Button */}
+    {
+        button_text && button_link && (
+            <div class="flex justify-center mt-8">
+                <Button
+                    href={button_link}
+                    variant={button_variant}
+                    target={targetAttr}
+                    download={downloadAttr}
+                >
+                    {button_text}
+                </Button>
+            </div>
+        )
+    }
+</section>

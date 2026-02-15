@@ -1,0 +1,180 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Button from "../components/atoms/Button.astro";
+
+const { frontmatter } = Astro.props;
+const {
+    title,
+    hero_image,
+    hero_image_mobile,
+    category,
+    date,
+    preview_text,
+    seo_title,
+    seo_description,
+    seo_image,
+    seo_keywords,
+    seo_robots,
+} = frontmatter;
+
+// Article Schema for newsroom posts
+const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: seo_title || title,
+    description: seo_description || preview_text,
+    image: new URL(seo_image || hero_image, Astro.site).href,
+    datePublished: new Date(date).toISOString(),
+    dateModified: new Date(date).toISOString(),
+    author: {
+        "@type": "Organization",
+        name: "LeWrap",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "LeWrap",
+        logo: {
+            "@type": "ImageObject",
+            url: new URL("/images/logo.png", Astro.site).href,
+        },
+    },
+    articleSection: category,
+};
+
+// Format date
+const formattedDate = new Intl.DateTimeFormat("en-AU", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+}).format(new Date(date));
+---
+
+<BaseLayout
+    title={seo_title || title}
+    description={seo_description || preview_text}
+    image={seo_image || hero_image}
+    type="article"
+    keywords={seo_keywords}
+    robots={seo_robots || "index, follow"}
+    schema={articleSchema}
+>
+    <article
+        class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10 relative"
+    >
+        <section
+            class="relative flex items-center justify-center mt-10 md:mt-15 w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden bg-lewrap-green"
+        >
+            <div
+                class="absolute inset-0 w-full h-full bg-gradient-to-b from-black/0 to-black/40 z-10"
+            >
+            </div>
+            <div
+                class="max-w-[930px] relative z-20 flex flex-col items-center justify-center h-full w-full px-6"
+            >
+                {/* Back Button */}
+                <Button
+                    href="/newsroom"
+                    variant="secondary"
+                    class="py-3 px-6 text-sm mb-6"
+                >
+                    ← Back to Newsroom
+                </Button>
+
+                {/* Category */}
+                <span
+                    class="font-helvetica-condensed font-semibold text-base text-white/75 uppercase"
+                >
+                    {category}
+                </span>
+
+                {/* Title */}
+                <h1
+                    class="md:w-auto mx-auto text-white text-4xl md:text-[90px] font-bold leading-[100%] tracking-tight text-center mb-6"
+                >
+                    {title}
+                </h1>
+
+                {/* Date */}
+                <time
+                    datetime={date.toISOString()}
+                    class="text-xl md:text-2xl leading-tight text-white text-center max-w-2xl px-8 mx-auto"
+                >
+                    {formattedDate}
+                </time>
+            </div>
+            {/* Hero Image - Responsive */}
+            <picture class="absolute inset-0 w-full h-full z-0">
+                <source
+                    media="(max-width: 768px)"
+                    srcset={hero_image_mobile || hero_image}
+                />
+                <img
+                    src={hero_image}
+                    alt={title}
+                    class="w-full h-full object-cover"
+                />
+            </picture>
+        </section>
+
+        <section
+            class="w-[95%] md:max-w-screen-lg mx-auto gap-8 p-7 md:p-21 items-center rounded-xl relative"
+        >
+            {/* Article Content */}
+            <div class="prose prose-lg max-w-none article-content">
+                <slot />
+            </div>
+        </section>
+    </article>
+</BaseLayout>
+
+<style>
+    .article-content :global(h2) {
+        color: #2d5016;
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .article-content :global(h3) {
+        color: #2d5016;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .article-content :global(p) {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .article-content :global(a) {
+        color: #95ba32;
+        font-weight: 600;
+    }
+
+    .article-content :global(a:hover) {
+        text-decoration: underline;
+    }
+
+    .article-content :global(strong) {
+        color: #2d5016;
+    }
+
+    .article-content :global(img) {
+        border-radius: 0.75rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .article-content :global(ul) {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+    }
+
+    .article-content :global(ol) {
+        list-style-type: decimal;
+        padding-left: 1.5rem;
+    }
+</style>

@@ -1,0 +1,70 @@
+---
+layout: ../layouts/OurFoodLayout.astro
+title: Our Food
+seo_title:
+seo_description:
+seo_image: ''
+seo_keywords:
+seo_robots: index, follow
+seo_canonical: ''
+hero_title: Our Food
+hero_subtitle: The average adult daily energy intake is 8700kj
+hero_bg_type: image
+hero_bg_colour:
+hero_bg_image: /images/hero/ourfood-desktop.webp
+hero_bg_image_mobile: /images/hero/ourfood-mobile.webp
+hero_button_text: ''
+hero_button_link: ''
+hero_button_variant: primary
+latest_deals:
+  - image: /images/deals/make-it-a-combo.webp
+    alt: Make it a combo
+  - image: /images/deals/swap-tortilla.webp
+    alt: Swap your tortilla
+category_descriptions:
+  wraps:
+    description:
+    subtitle:
+  plates:
+    description: >-
+      Choice of meat, grilled mushroom, onion & capsicum, white or brown rice &
+      salad.
+    subtitle: Chicken, beef, lamb kofta
+  baguettes:
+    description: ''
+    subtitle: ''
+  protein_packs:
+    description: Served with brown or white rice, caramelised onion & side sauce.
+    subtitle: Add extra beef, kofta, chicken or schnitzel for only $5.
+  salads:
+    description: ''
+    subtitle: Add extra beef, kofta, chicken or schnitzel for only $5.
+  kids_meals:
+    description: Something for the little LeWrappers.
+    subtitle: ''
+  sides:
+    description: ''
+    subtitle: ''
+  drinks:
+    description: ''
+    subtitle: ''
+wraps_subcategories:
+  chicken:
+    description: Served with 100% Chicken Breast.
+    subtitle: 
+  beef:
+    description: Served with Strip Loin Steak.
+    subtitle:
+  schnitzel:
+    description: Served with 100% Chicken Breast Schnitzel.
+    subtitle:
+  lamb:
+    description: Served with 100% Aussie Lamb.
+    subtitle: ''
+  vegetarian:
+    description:
+    subtitle:
+  kofta:
+    description: Served with authentic Lamb Kofta.
+    subtitle:
+---

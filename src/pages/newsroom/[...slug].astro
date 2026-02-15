@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import NewsroomLayout from "../../layouts/NewsroomLayout.astro";
+
+export async function getStaticPaths() {
+    const newsroomEntries = await getCollection("newsroom");
+    return newsroomEntries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// Explicitly create frontmatter object with all fields
+const frontmatter = {
+    title: entry.data.title,
+    hero_image: entry.data.hero_image,
+    hero_image_mobile: entry.data.hero_image_mobile,
+    category: entry.data.category,
+    date: entry.data.date,
+    preview_text: entry.data.preview_text,
+    // SEO fields
+    seo_title: entry.data.seo_title,
+    seo_description: entry.data.seo_description,
+    seo_image: entry.data.seo_image,
+    seo_keywords: entry.data.seo_keywords,
+    seo_robots: entry.data.seo_robots,
+};
+---
+
+<NewsroomLayout frontmatter={frontmatter}>
+    <Content />
+</NewsroomLayout>

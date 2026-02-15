@@ -1,0 +1,297 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+// Page Builder components
+import Hero from "../components/Hero.astro";
+import LocationCard from "../components/LocationCard.astro";
+
+// Marquee component
+import Marquee from "../components/molecules/Marquee.astro";
+import { marqueeSeparator } from "../data/marqueeSeparator";
+
+// Franchise Callout component
+import FranchiseCallout from "../components/FranchiseCallout.astro";
+
+// Import ALL Australian postcodes
+import postcodeData from "../data/postcodes.json";
+
+// Get all locations
+const allLocations = (await getCollection(
+    "locations",
+)) as CollectionEntry<"locations">[];
+const sortedLocations = allLocations.sort((a, b) =>
+    a.data.suburb.localeCompare(b.data.suburb),
+);
+
+// Serialize locations data for client-side JS
+const locationsData = sortedLocations.map((loc) => ({
+    name: loc.data.name,
+    address: loc.data.address,
+    suburb: loc.data.suburb,
+    state: loc.data.state,
+    postcode: loc.data.postcode,
+    order_now_link: loc.data.order_now_link,
+    slug: loc.slug,
+    latitude: loc.data.latitude,
+    longitude: loc.data.longitude,
+}));
+
+const { frontmatter } = Astro.props;
+const {
+    title,
+    hero_title,
+    hero_subtitle,
+    hero_bg_type,
+    hero_bg_colour,
+    hero_bg_image,
+    hero_bg_image_mobile,
+    hero_button_text,
+    hero_button_link,
+    hero_button_variant,
+    marquee_items = [],
+    franchise_callout = {},
+} = frontmatter || {};
+---
+
+<BaseLayout title={title}>
+    <main
+        class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10 relative"
+    >
+        {
+            hero_title && (
+                <Hero
+                    title={hero_title}
+                    subtitle={hero_subtitle}
+                    hero_bg_type={hero_bg_type}
+                    hero_bg_colour={hero_bg_colour}
+                    hero_bg_image={hero_bg_image}
+                    hero_bg_image_mobile={hero_bg_image_mobile}
+                    hero_button_text={hero_button_text}
+                    hero_button_link={hero_button_link}
+                    hero_button_variant={hero_button_variant}
+                    show_search={true}
+                />
+            )
+        }
+
+        {/* Only shows if marquee_items exist */}
+        {
+            marquee_items.length > 0 && (
+                <Marquee
+                    items={marquee_items}
+                    separator={marqueeSeparator}
+                    className="w-[95%] mx-auto bg-lewrap-green py-4 rounded-2xl"
+                    gradientColor="#95BA32"
+                    speed={50}
+                />
+            )
+        }
+
+        {/* Locations Grid */}
+        <div
+            id="locations"
+            class="w-[95%] md:max-w-screen-lg mx-auto scroll-mt-32 relative"
+        >
+            <h2
+                class="text-3xl font-bold text-lewrap-green-dark mb-6"
+                id="locations-heading"
+            >
+                Our locations ({sortedLocations.length})
+            </h2>
+
+            <div class="flex flex-col gap-6" id="locations-grid">
+                {
+                    sortedLocations.map((store) => (
+                        <LocationCard
+                            name={store.data.name}
+                            address={store.data.address}
+                            suburb={store.data.suburb}
+                            state={store.data.state}
+                            postcode={store.data.postcode}
+                            order_now_link={store.data.order_now_link}
+                            slug={store.slug}
+                        />
+                    ))
+                }
+            </div>
+
+            {/* Chillis element */}
+            <img
+                src="/images/elements/chillis.webp"
+                alt="More about LeWrap locations"
+                class="w-12 md:w-17 h-auto absolute -z-1 top-8 md:-left-13 md:top-2"
+            />
+        </div>
+
+        {/* Franchise Callout block */}
+        {
+            franchise_callout.show && (
+                <FranchiseCallout
+                    heading={franchise_callout.heading}
+                    text={franchise_callout.text}
+                    image={franchise_callout.image}
+                    buttonText={franchise_callout.button_text}
+                    buttonLink={franchise_callout.button_link}
+                />
+            )
+        }
+    </main>
+
+    <script define:vars={{ locationsData, postcodeData }}>
+        const postcodeCoords = postcodeData;
+
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371;
+            const dLat = ((lat2 - lat1) * Math.PI) / 180;
+            const dLon = ((lon2 - lon1) * Math.PI) / 180;
+            const a =
+                Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos((lat1 * Math.PI) / 180) *
+                    Math.cos((lat2 * Math.PI) / 180) *
+                    Math.sin(dLon / 2) *
+                    Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            return R * c;
+        }
+
+        function createLocationCardHTML(loc) {
+            return `
+            <div class="border border-[#CBCBCB] bg-white rounded-xl overflow-hidden">
+                <div class="p-6 flex grid md:grid-cols-[1fr_300px] justify-between gap-4">
+                    <div>
+                        <a href="/locations/${loc.slug}" class="text-2xl font-bold text-lewrap-green">
+                            ${loc.name}
+                        </a>
+                        <div class="text-lewrap-off-black mt-2">
+                            <p>${loc.address}</p>
+                            <p>${loc.suburb}, ${loc.state} ${loc.postcode}</p>
+                        </div>
+                        ${
+                            loc.distance !== undefined
+                                ? `
+                            <div class="text-slate-400 mt-2">
+                                📍 ${loc.distance.toFixed(1)} km away
+                            </div>
+                        `
+                                : ""
+                        }
+                    </div>
+                    <div class="flex md:flex-col md:items-end mt-2 md:mt-0 gap-3">
+                        <a href="/locations/${loc.slug}" class="btn-lewrap px-5 py-3 text-base leading-loose">
+                            More Info
+                        </a>
+                        <a href="#" class="btn-lewrap-secondary px-5 py-3 text-base">
+                            Order now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+        }
+
+        // Animated render with fade and slide
+        function renderLocations(locations) {
+            const grid = document.getElementById("locations-grid");
+            if (!grid) return;
+
+            // Fade out and slide up
+            grid.style.opacity = "0";
+            grid.style.transform = "translateY(-20px)";
+            grid.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+
+            // Wait for animation, then update content
+            setTimeout(() => {
+                grid.innerHTML = locations
+                    .map((loc) => createLocationCardHTML(loc))
+                    .join("");
+
+                // Fade in and slide back
+                requestAnimationFrame(() => {
+                    grid.style.opacity = "1";
+                    grid.style.transform = "translateY(0)";
+                });
+            }, 300);
+        }
+
+        function searchLocations() {
+            const input = document.getElementById("postcode-search");
+            const searchBtn = document.getElementById("search-btn");
+            const clearBtn = document.getElementById("clear-btn");
+            const message = document.getElementById("search-message");
+            const heading = document.getElementById("locations-heading");
+
+            if (!input || !searchBtn || !clearBtn || !message || !heading)
+                return;
+
+            searchBtn.addEventListener("click", () => {
+                const postcode = input.value.trim();
+
+                if (!postcode || postcode.length !== 4) {
+                    message.textContent =
+                        "⚠️ Please enter a valid 4-digit postcode";
+                    message.className =
+                        "text-sm md:text-lg text-center text-red-600 mt-4";
+                    return;
+                }
+
+                const userCoords = postcodeCoords[postcode];
+
+                if (!userCoords) {
+                    message.textContent = `⚠️ Postcode ${postcode} not found. Try another postcode.`;
+                    message.className =
+                        "text-sm md:text-lg text-center text-orange-600 mt-4";
+                    return;
+                }
+
+                const locationsWithDistance = locationsData
+                    .map((loc) => ({
+                        ...loc,
+                        distance: calculateDistance(
+                            userCoords.lat,
+                            userCoords.lng,
+                            loc.latitude,
+                            loc.longitude,
+                        ),
+                    }))
+                    .sort((a, b) => a.distance - b.distance);
+
+                renderLocations(locationsWithDistance);
+
+                message.textContent = `✅ Showing locations nearest to ${postcode}`;
+                message.className =
+                    "text-sm md:text-lg text-center text-white/90 font-semibold mt-4";
+
+                heading.textContent = `Locations near ${postcode} (${locationsData.length})`;
+
+                clearBtn.classList.remove("hidden");
+            });
+
+            clearBtn.addEventListener("click", () => {
+                input.value = "";
+                renderLocations(locationsData);
+                message.textContent =
+                    "We'll show you the closest LeWrap locations";
+                message.className =
+                    "text-sm md:text-lg text-white/90 mt-4 text-center";
+                heading.textContent = `Our locations (${locationsData.length})`;
+                clearBtn.classList.add("hidden");
+            });
+
+            input.addEventListener("keypress", (e) => {
+                if (e.key === "Enter") {
+                    searchBtn.click();
+                }
+            });
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", searchLocations);
+        } else {
+            searchLocations();
+        }
+
+        document.addEventListener("astro:page-load", searchLocations);
+    </script>
+</BaseLayout>

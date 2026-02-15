@@ -1,0 +1,130 @@
+---
+import { ClientRouter } from "astro:transitions";
+import SEO from "../components/SEO.astro";
+import Navigation from "../components/organisms/Navigation.astro";
+import Footer from "../components/organisms/Footer.astro";
+import CustomCursor from "../components/atoms/CustomCursor";
+import BackToTop from "../components/atoms/BackToTop.astro";
+import "../styles/globals.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+  robots?: string;
+  canonical?: string;
+  keywords?: string;
+  schema?: object;
+  preloadImages?: { src: string; media?: string }[];
+}
+
+const {
+  title,
+  description,
+  image,
+  type,
+  robots,
+  canonical,
+  keywords,
+  schema,
+  preloadImages = [],
+} = Astro.props;
+const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
+---
+
+<!doctype html>
+<html
+  lang="en"
+  class="scroll-smooth"
+  transition:name="root"
+  transition:animate="fade"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="LeWrap" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    {/* Preload hero images */}
+    {
+      preloadImages.map((img) => (
+        <link
+          rel="preload"
+          as="image"
+          href={img.src}
+          fetchpriority="high"
+          media={img.media}
+        />
+      ))
+    }
+
+    <!-- Inline critical font CSS BEFORE preloads -->
+    <style>
+      @font-face {
+        font-family: "Cocogoose";
+        src:
+          url("/fonts/Cocogoose.woff2") format("woff2"),
+          url("/fonts/Cocogoose.otf") format("opentype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "HelveticaNeueCondensed";
+        src:
+          url("/fonts/HelveticaNeueCondensedBold.woff2") format("woff2"),
+          url("/fonts/HelveticaNeueCondensedBold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "HelveticaNeueCondensed";
+        src:
+          url("/fonts/HelveticaNeueCondensedBlack.woff2") format("woff2"),
+          url("/fonts/HelveticaNeueCondensedBlack.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      type={type}
+      robots={robots}
+      canonical={canonical}
+      keywords={keywords}
+      schema={schema}
+    />
+    <ClientRouter />
+  </head>
+  <body
+    class="antialiased overflow-x-hidden font-sans font-helvetica-condensed"
+  >
+    <CustomCursor client:media="(pointer: fine)" transition:persist />
+    <Navigation />
+    <slot />
+    <Footer />
+    <BackToTop
+      threshold={300}
+      className="fixed bottom-12 right-8 z-50 w-12 h-12 rounded-full bg-lewrap-green-dark hover:bg-lewrap-green flex items-center justify-center shadow-lg transition-colors duration-300"
+    >
+      <svg
+        width="25"
+        height="13"
+        viewBox="0 0 25 13"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M23.9158 11.3526L12.6653 0.241279C12.6108 0.194123 12.5504 0.154426 12.4856 0.123218C12.4564 0.101043 12.4258 0.080761 12.394 0.062499C12.1923 -0.0207281 11.9662 -0.0207281 11.7644 0.062499C11.7327 0.080761 11.7021 0.101043 11.6729 0.123218C11.6081 0.154426 11.5477 0.194123 11.4932 0.241279L0.242627 11.3526C0.0877658 11.5099 0.000610095 11.7224 3.19083e-06 11.9439C-0.000603713 12.1655 0.085387 12.3784 0.239384 12.5366C0.393381 12.6948 0.60301 12.7857 0.822951 12.7894C1.04289 12.7932 1.25547 12.7096 1.41473 12.5568L12.0792 2.02457L22.7432 12.5568C22.9024 12.7096 23.115 12.7932 23.3349 12.7894C23.5549 12.7857 23.7645 12.6948 23.9185 12.5366C24.0725 12.3784 24.1585 12.1655 24.1579 11.9439C24.1573 11.7224 24.0707 11.5099 23.9158 11.3526Z"
+          fill="#fff"></path>
+      </svg>
+    </BackToTop>
+  </body>
+</html>

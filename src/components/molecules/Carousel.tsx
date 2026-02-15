@@ -1,5 +1,6 @@
 'use client';
 
+// import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, A11y } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
@@ -9,11 +10,12 @@ import type { SwiperOptions } from 'swiper/types';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import '../../styles/carousel.css';
 
 export type SlideContent =
-    | { type: 'image'; src: string; alt: string; objectFit?: 'cover' | 'contain' | 'fill' }
+    | { type: 'image'; src: string | any; alt: string; objectFit?: 'cover' | 'contain' | 'fill' }
     | { type: 'video'; src: string; controls?: boolean; autoPlay?: boolean; muted?: boolean; loop?: boolean }
-    | { type: 'html'; content: React.ReactNode };
+    | { type: 'html'; content: string };
 
 export interface CarouselProps {
     slides: SlideContent[];
@@ -39,6 +41,20 @@ export interface CarouselProps {
     grabCursor?: boolean;
     onSlideChange?: (index: number) => void;
     onSwiper?: (swiper: any) => void;
+    cta?: {
+        text: string;
+        href: string;
+        newTab?: boolean;
+        className?: string; // Additional classes for the button itself
+    };
+    cta2?: {
+        text: string;
+        href: string;
+        newTab?: boolean;
+        className?: string;
+    };
+    hasGradient?: boolean;
+    children?: React.ReactNode;
 }
 
 export default function Carousel({
@@ -58,9 +74,13 @@ export default function Carousel({
     navigationClassName = '',
     paginationClassName = '',
     centeredSlides = false,
-    grabCursor = true,
+    grabCursor = false,
+    hasGradient = false,
     onSlideChange,
     onSwiper,
+    cta,
+    cta2,
+    children,
 }: CarouselProps) {
     const modules = [A11y];
 
@@ -101,9 +121,10 @@ export default function Carousel({
     const renderSlide = (slide: SlideContent, index: number) => {
         switch (slide.type) {
             case 'image':
+                const imageSrc = typeof slide.src === 'string' ? slide.src : (slide.src.src || slide.src);
                 return (
                     <img
-                        src={slide.src}
+                        src={imageSrc}
                         alt={slide.alt}
                         style={{
                             width: '100%',
@@ -130,7 +151,12 @@ export default function Carousel({
                 );
 
             case 'html':
-                return <div className="w-full h-full">{slide.content}</div>;
+                return (
+                    <div
+                        className="w-full h-full"
+                        dangerouslySetInnerHTML={{ __html: slide.content }}
+                    />
+                );
 
             default:
                 return null;
@@ -148,7 +174,7 @@ export default function Carousel({
 
     return (
         <div
-            className={`carousel-container ${className}`}
+            className={`carousel-container relative ${className}`}
             style={inlineStyles}
         >
             <Swiper
@@ -158,83 +184,47 @@ export default function Carousel({
                 onSwiper={handleSwiper}
             >
                 {slides.map((slide, index) => (
-                    <SwiperSlide key={index} className={slideClassName}>
+                    <SwiperSlide key={index} className={`relative ${slideClassName}`}>
                         {renderSlide(slide, index)}
+                        {hasGradient && (
+                            <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/40 pointer-events-none z-[1]" />
+                        )}
                     </SwiperSlide>
                 ))}
             </Swiper>
 
-            <style jsx global>{`
-        .carousel-container {
-          position: relative;
-        }
+            {children && (
+                <div className="absolute inset-0 z-20 pointer-events-none flex items-center justify-center">
+                    {children}
+                </div>
+            )}
 
-        .carousel-container .swiper {
-          width: 100%;
-          height: 100%;
-        }
+            {(cta || cta2) && (
+                <div className="absolute inset-0 z-10 flex items-end pb-14 justify-center pointer-events-none">
+                    <div className="flex flex-row gap-4 items-center pointer-events-auto">
+                        {cta && (
+                            <a
+                                href={cta.href}
+                                target={cta.newTab ? '_blank' : undefined}
+                                className={`btn-lewrap md:text-2xl ${cta.className || ''}`}
+                            >
+                                {cta.text}
+                            </a>
 
-        .carousel-container .swiper-slide {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: #000;
-        }
+                        )}
+                        {cta2 && (
+                            <a
+                                href={cta2.href}
+                                target="_blank"
+                                className={`btn-lewrap-secondary ${cta2.className || ''}`}
+                            >
+                                {cta2.text}
+                            </a>
 
-        /* Navigation arrows styling */
-        .carousel-container .swiper-button-next,
-        .carousel-container .swiper-button-prev {
-          color: white;
-          background: rgba(0, 0, 0, 0.5);
-          width: 44px;
-          height: 44px;
-          padding: 12px;
-          border-radius: 50%;
-          transition: all 0.3s ease;
-        }
-
-        .carousel-container .swiper-button-next:hover,
-        .carousel-container .swiper-button-prev:hover {
-          background: rgba(0, 0, 0, 0.8);
-          transform: scale(1.1);
-        }
-
-        .carousel-container .swiper-button-next::after,
-        .carousel-container .swiper-button-prev::after {
-          font-size: 20px;
-        }
-
-        /* Pagination styling */
-        .carousel-container .swiper-pagination-bullet {
-          width: 10px;
-          height: 10px;
-          background: white;
-          opacity: 0.5;
-          border-radius: 5px;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .carousel-container .swiper-pagination-bullet-active {
-          opacity: 1;
-          background: white;
-          width: 32px;
-          border-radius: 5px;
-        }
-
-        /* Mobile optimizations */
-        @media (max-width: 768px) {
-          .carousel-container .swiper-button-next,
-          .carousel-container .swiper-button-prev {
-            width: 36px;
-            height: 36px;
-          }
-
-          .carousel-container .swiper-button-next::after,
-          .carousel-container .swiper-button-prev::after {
-            font-size: 16px;
-          }
-        }
-      `}</style>
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

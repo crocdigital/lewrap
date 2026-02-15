@@ -1,0 +1,266 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import Button from "./atoms/Button.astro";
+
+// Get all locations for the dropdown
+const allLocations = (await getCollection(
+    "locations",
+)) as CollectionEntry<"locations">[];
+const sortedLocations = allLocations.sort((a, b) =>
+    a.data.name.localeCompare(b.data.name),
+);
+
+// reCAPTCHA site key
+const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
+---
+
+{/* Add reCAPTCHA script */}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+    // Declare grecaptcha for TypeScript
+    declare const grecaptcha: any;
+
+    function renderRecaptcha() {
+        const recaptchaContainer = document.querySelector(".g-recaptcha");
+
+        if (!recaptchaContainer) return;
+
+        // Check if already rendered (has children)
+        if (recaptchaContainer.children.length > 0) return;
+
+        // Wait for grecaptcha to be available
+        const checkAndRender = () => {
+            if (typeof grecaptcha !== "undefined" && grecaptcha.render) {
+                try {
+                    grecaptcha.render(recaptchaContainer, {
+                        sitekey:
+                            recaptchaContainer.getAttribute("data-sitekey"),
+                    });
+                } catch (e) {
+                    // Already rendered or error
+                    console.log("reCAPTCHA already rendered or error:", e);
+                }
+            } else {
+                // Script not loaded yet, try again
+                setTimeout(checkAndRender, 100);
+            }
+        };
+
+        checkAndRender();
+    }
+
+    // Render on initial load
+    renderRecaptcha();
+
+    // Re-render after view transitions
+    document.addEventListener("astro:page-load", renderRecaptcha);
+</script>
+
+<form class="p-8 md:p-12" id="contact-form">
+    <h2
+        class="text-3xl/7 md:text-4xl font-bold text-lewrap-green-dark text-center mb-8"
+    >
+        We'd love to hear from you
+    </h2>
+
+    <div class="max-w-screen-md mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Your name - spans both columns */}
+        <div class="md:col-span-2">
+            <label
+                for="name"
+                class="block text-lg font-medium text-lewrap-off-black mb-2"
+            >
+                Your name <span class="text-red-500">*</span>
+            </label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="bg-white w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lewrap-green focus:border-transparent focus:outline-none"
+            />
+        </div>
+
+        {/* Your email - spans both columns */}
+        <div class="md:col-span-2">
+            <label
+                for="email"
+                class="block text-lg font-medium text-lewrap-off-black mb-2"
+            >
+                Your email <span class="text-red-500">*</span>
+            </label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="bg-white w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lewrap-green focus:border-transparent focus:outline-none"
+            />
+        </div>
+
+        {/* Best contact number - left column */}
+        <div>
+            <label
+                for="phone"
+                class="block text-lg font-medium text-lewrap-off-black mb-2"
+            >
+                Best contact number <span class="text-red-500">*</span>
+            </label>
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                class="bg-white w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lewrap-green focus:border-transparent focus:outline-none"
+            />
+        </div>
+
+        {/* Type of enquiry - right column */}
+        <div>
+            <label
+                for="enquiry_type"
+                class="block text-lg font-medium text-lewrap-off-black mb-2"
+            >
+                Type of enquiry <span class="text-red-500">*</span>
+            </label>
+            <select
+                id="enquiry_type"
+                name="enquiry_type"
+                required
+                class="bg-white w-full p-4.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lewrap-green focus:border-transparent focus:outline-none appearance-none focus:outline-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23CBCBCB%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:30px_30px] bg-[right_0.5rem_center] bg-no-repeat pr-12"
+            >
+                <option value="">Select enquiry type</option>
+                <option value="General">General</option>
+                <option value="Dietary">Dietary</option>
+                {/* <option value="Franchise">Franchise</option> */}
+                <option value="Feedback">Feedback</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        {/* Message - spans both columns */}
+        <div class="md:col-span-2">
+            <label
+                for="message"
+                class="block text-lg font-medium text-lewrap-off-black mb-2"
+            >
+                Your message <span class="text-red-500">*</span>
+            </label>
+            <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                class="bg-white w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lewrap-green focus:border-transparent focus:outline-none"
+            ></textarea>
+        </div>
+
+        {/* reCAPTCHA - spans both columns */}
+        <div class="md:col-span-2">
+            <div class="g-recaptcha" data-sitekey={RECAPTCHA_SITE_KEY}></div>
+        </div>
+
+        {/* Submit button - spans both columns */}
+        <div class="md:col-span-2 pt-4">
+            <Button type="submit" variant="secondary"> Send message </Button>
+        </div>
+    </div>
+</form>
+
+<script>
+    // Handle form submission with reCAPTCHA validation
+    const form = document.getElementById("contact-form") as HTMLFormElement;
+    const submitButton = form?.querySelector(
+        'button[type="submit"]',
+    ) as HTMLButtonElement;
+
+    // Create message container if it doesn't exist
+    let messageContainer = document.getElementById("form-message");
+    if (!messageContainer) {
+        messageContainer = document.createElement("div");
+        messageContainer.id = "form-message";
+        messageContainer.className = "mt-4 p-4 rounded-lg hidden";
+        submitButton.parentElement?.appendChild(messageContainer);
+    }
+
+    function showMessage(message: string, type: "success" | "error") {
+        if (!messageContainer) return;
+
+        messageContainer.textContent = message;
+        messageContainer.className = `mt-4 p-4 rounded-lg ${
+            type === "success"
+                ? "bg-green-100 text-green-800 border border-green-300"
+                : "bg-red-100 text-red-800 border border-red-300"
+        }`;
+
+        // Scroll message into view
+        messageContainer.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+        });
+    }
+
+    function hideMessage() {
+        if (!messageContainer) return;
+        messageContainer.className = "mt-4 p-4 rounded-lg hidden";
+    }
+
+    form?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        hideMessage();
+
+        // Check if reCAPTCHA is completed
+        const recaptchaResponse = (window as any).grecaptcha.getResponse();
+
+        if (!recaptchaResponse) {
+            showMessage("Please complete the reCAPTCHA verification", "error");
+            return;
+        }
+
+        // Disable submit button to prevent double submission
+        const originalButtonText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+
+        try {
+            // Collect form data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            data["g-recaptcha-response"] = recaptchaResponse;
+
+            // Send to API
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                // Success! Show success message
+                showMessage(result.message, "success");
+
+                // Reset form
+                form.reset();
+                (window as any).grecaptcha.reset();
+            } else {
+                // Error from server
+                showMessage(result.message, "error");
+            }
+        } catch (error) {
+            console.error("Form submission error:", error);
+            showMessage(
+                "Something went wrong. Please try again or contact us directly at info@lewrap.com",
+                "error",
+            );
+        } finally {
+            // Re-enable submit button
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+        }
+    });
+</script>

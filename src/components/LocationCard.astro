@@ -1,0 +1,63 @@
+---
+import Button from "./atoms/Button.astro";
+
+interface Props {
+    name: string;
+    address: string;
+    suburb: string;
+    state: string;
+    postcode: string;
+    order_now_link?: string;
+    slug: string;
+    distance?: number;
+}
+
+const {
+    name,
+    address,
+    suburb,
+    state,
+    postcode,
+    order_now_link,
+    slug,
+    distance,
+} = Astro.props;
+---
+
+<div class="border border-[#CBCBCB] bg-white rounded-xl overflow-hidden">
+    <div class="p-6 flex grid md:grid-cols-[1fr_300px] justify-between gap-4">
+        <div>
+            <a
+                href={`/locations/${slug}`}
+                class="text-2xl font-bold text-lewrap-green">{name}</a
+            >
+
+            <div class="text-lewrap-off-black mt-2">
+                <p>{address}</p>
+                <p>{suburb}, {state} {postcode}</p>
+            </div>
+
+            {
+                distance !== undefined && (
+                    <div class="text-lewrap-green font-semibold">
+                        {distance.toFixed(1)} km away
+                    </div>
+                )
+            }
+        </div>
+
+        <div class="flex md:flex-col md:items-end mt-2 md:mt-0 gap-3">
+            <Button
+                href={`/locations/${slug}`}
+                class="px-5 py-3 text-base leading-loose">More Info</Button
+            >
+
+            <Button
+                href={order_now_link}
+                class="px-5 py-3 text-base"
+                variant="secondary"
+                target="_blank">Order now</Button
+            >
+        </div>
+    </div>
+</div>

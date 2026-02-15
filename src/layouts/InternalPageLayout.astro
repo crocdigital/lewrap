@@ -1,0 +1,567 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+// Popup modal
+import Modal from "../components/Modal.astro";
+
+// Work With Us form
+import WorkWithUsForm from "../components/WorkWithUsForm.astro";
+
+// Contact Us form
+import ContactForm from "../components/ContactForm.astro";
+
+// Franchise Enquiry form
+import FranchiseEnquiryForm from "../components/FranchiseEnquiryForm.astro";
+import { getEntry } from "astro:content";
+
+import Button from "../components/atoms/Button.astro";
+
+// Page Builder components
+import Hero from "../components/Hero.astro";
+import TwoCol from "../components/TwoCol.astro";
+import OneCol from "../components/OneCol.astro";
+
+// Flexible 2 column component
+import FlexibleTwoCol from "../components/FlexibleTwoCol.astro";
+
+// Marquee component
+import Marquee from "../components/molecules/Marquee.astro";
+import { marqueeSeparator } from "../data/marqueeSeparator";
+
+// Franchise Callout component
+import FranchiseCallout from "../components/FranchiseCallout.astro";
+
+// Catering Callout component
+import CateringCallout from "../components/CateringCallout.astro";
+
+// Franchise Process component
+import FranchiseProcessCarousel from "../components/FranchiseProcessCarousel.astro";
+
+// Three column Franchise Promo component
+import ThreeColFranchisePromo from "../components/ThreeColFranchisePromo.astro";
+
+// FAQ component
+import FAQItem from "../components/FAQItem.astro";
+
+// Get franchise enquiry popup content
+const franchisePopup = await getEntry("popups", "franchise-enquiry");
+
+// Get FAQs
+const allFAQs = (await getCollection("faq")) as CollectionEntry<"faq">[];
+
+// Newsroom articles
+import NewsroomCard from "../components/NewsRoomCard.astro";
+
+const { frontmatter } = Astro.props;
+const {
+    title,
+    seo_title,
+    seo_description,
+    seo_image,
+    seo_keywords,
+    seo_robots,
+    seo_canonical,
+    hero_title,
+    hero_subtitle,
+    hero_bg_type,
+    hero_bg_colour,
+    hero_bg_image,
+    hero_bg_image_mobile,
+    hero_button_text,
+    hero_button_link,
+    hero_button_variant,
+    hero_button_target,
+    hero_button_download,
+    show_arrow_green_regular = false, // ← Add flags for design elements
+    show_arrow_green_fat = false, // Used in [slug].astro (Locations detail page)
+    marquee_items = [],
+    page_blocks = [],
+    catering_callouts = [],
+    three_col_franchise_promo_title,
+    three_col_franchise_promo = [],
+    franchise_callout = {},
+    show_faqs = false,
+    faq_category = "General",
+    faq_button_text = "",
+    faq_button_link = "",
+    faq_button_variant = "primary",
+    flexible_two_col = [],
+    show_newsroom_listing = false,
+    franchise_process_steps = [],
+} = frontmatter || {};
+
+// WebPage Schema for internal pages
+const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seo_title || title,
+    description: seo_description,
+    url: Astro.url.href,
+    publisher: {
+        "@type": "Organization",
+        name: "LeWrap",
+        url: Astro.site,
+    },
+};
+
+// Filter FAQs by category
+const categoryFAQs = allFAQs
+    .filter(
+        (faq) =>
+            faq.data.category === faq_category &&
+            faq.data.question.trim() !== "",
+    )
+    .sort((a, b) => a.data.order - b.data.order);
+
+// Get all newsroom articles
+const allNewsroom = (await getCollection(
+    "newsroom",
+)) as CollectionEntry<"newsroom">[];
+const sortedNewsroom = allNewsroom.sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+);
+const categories = [
+    "All",
+    ...new Set(allNewsroom.map((article: any) => article.data.category)),
+];
+---
+
+<BaseLayout
+    title={seo_title || title}
+    description={seo_description}
+    image={seo_image}
+    keywords={seo_keywords}
+    robots={seo_robots || "index, follow"}
+    canonical={seo_canonical}
+    schema={webPageSchema}
+    preloadImages={hero_bg_type === "image" &&
+    (hero_bg_image || hero_bg_image_mobile)
+        ? [
+              ...(hero_bg_image
+                  ? [{ src: hero_bg_image, media: "(min-width: 769px)" }]
+                  : []),
+              ...(hero_bg_image_mobile
+                  ? [{ src: hero_bg_image_mobile, media: "(max-width: 768px)" }]
+                  : []),
+          ]
+        : []}
+>
+    {/* Franchise Enquiry Modal - Own A Store page only */}
+    {
+        (Astro.url.pathname.includes("own-a-store") ||
+            Astro.url.pathname.includes("own-a-store/")) &&
+            franchisePopup && (
+                <Modal
+                    id={franchisePopup.data.popup_id}
+                    title={franchisePopup.data.title}
+                >
+                    <div
+                        class="text-lg/6 mb-6"
+                        set:html={franchisePopup.data.description}
+                    />
+                    <FranchiseEnquiryForm />
+                </Modal>
+            )
+    }
+
+    <main
+        class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10 relative"
+    >
+        {
+            hero_title && (
+                <Hero
+                    title={hero_title}
+                    subtitle={hero_subtitle}
+                    hero_bg_type={hero_bg_type}
+                    hero_bg_colour={hero_bg_colour}
+                    hero_bg_image={hero_bg_image}
+                    hero_bg_image_mobile={hero_bg_image_mobile}
+                    hero_button_text={hero_button_text}
+                    hero_button_link={hero_button_link}
+                    hero_button_variant={hero_button_variant}
+                    hero_button_target={hero_button_target}
+                    hero_button_download={hero_button_download}
+                />
+            )
+        }
+
+        {/* Conditionally render main green arrow */}
+        {
+            show_arrow_green_regular && (
+                <img
+                    src="/images/elements/arrow-green-regular.svg"
+                    alt="More about LeWrap"
+                    class="w-10 h-auto absolute left-1/2 -translate-x-1/2 top-[calc(65vh-2.5rem)] md:top-[calc(79vh-2.5rem)] z-20"
+                />
+            )
+        }
+
+        {/* Only shows if marquee_items exist */}
+        {
+            marquee_items.length > 0 && (
+                <Marquee
+                    items={marquee_items}
+                    separator={marqueeSeparator}
+                    className="w-[95%] mx-auto bg-lewrap-green py-4 rounded-2xl"
+                    gradientColor="#95BA32"
+                    speed={50}
+                />
+            )
+        }
+
+        {/* Page Builder section */}
+        <div class="flex flex-col gap-10">
+            {
+                page_blocks?.map((block: any, index: number) => {
+                    if (block._template === "feature") {
+                        return (
+                            <TwoCol
+                                {...block}
+                                blockIndex={index}
+                                index={index}
+                            />
+                        );
+                        {
+                            /* ← Add index={index} */
+                        }
+                    }
+                    if (block._template === "centered_text") {
+                        return <OneCol {...block} blockIndex={index} />;
+                    }
+                    return null;
+                })
+            }
+        </div>
+
+        {/* Catering Callouts section (on Catering page only) */}
+        {
+            catering_callouts.length > 0 && (
+                <section class="w-[95%] md:max-w-screen-xl mx-auto p-7 md:p-21">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {catering_callouts.map((callout: any) => (
+                            <CateringCallout
+                                image={callout.image}
+                                title={callout.title}
+                                description={callout.description}
+                            />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+
+        {/* Three column Franchise Promo block (on Own A Store page only) */}
+        {
+            three_col_franchise_promo.length > 0 && (
+                <section class="w-[95%] md:max-w-screen-2xl mx-auto p-9 md:p-21 bg-white rounded-xl">
+                    {three_col_franchise_promo_title && (
+                        <h2 class="text-4xl md:text-5xl font-black text-lewrap-green-dark text-center mb-10">
+                            {three_col_franchise_promo_title}
+                        </h2>
+                    )}
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {three_col_franchise_promo.map((promo: any) => (
+                            <ThreeColFranchisePromo
+                                image={promo.image}
+                                title={promo.title}
+                                description={promo.description}
+                            />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+
+        {/* Franchise Callout block */}
+        {
+            franchise_callout.show && (
+                <FranchiseCallout
+                    heading={franchise_callout.heading}
+                    text={franchise_callout.text}
+                    image={franchise_callout.image}
+                    buttonText={franchise_callout.button_text}
+                    buttonLink={franchise_callout.button_link}
+                />
+            )
+        }
+
+        {/* Franchise Process Carousel (only on Own A Store page) */}
+        {
+            franchise_process_steps.length > 0 && (
+                <section class="w-[95%] md:max-w-screen-2xl rounded-2xl mx-auto py-7 md:py-21">
+                    <h2 class="text-4xl/10 md:text-5xl/11 font-bold text-lewrap-green tracking-tight text-center capitalize mb-12">
+                        The 10-Step LeWrap franchising process
+                    </h2>
+                    <FranchiseProcessCarousel steps={franchise_process_steps} />
+                </section>
+            )
+        }
+
+        {/* FAQ section */}
+        {
+            show_faqs && categoryFAQs.length > 0 && (
+                <section class="w-[95%] md:max-w-screen-2xl mx-auto">
+                    <div
+                        class="rounded-xl p-8 md:p-12"
+                        style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
+                    >
+                        {faq_category !== "General" && (
+                            <h2 class="text-3xl md:text-5xl font-bold text-lewrap-green-dark text-center mb-8">
+                                {faq_category} FAQs
+                            </h2>
+                        )}
+
+                        <div class="max-w-screen-md mx-auto divide-y">
+                            {categoryFAQs.map((faq: any, index: number) => (
+                                <FAQItem
+                                    question={faq.data.question}
+                                    answer={faq.data.answer}
+                                    index={index}
+                                />
+                            ))}
+                        </div>
+
+                        {faq_button_text && faq_button_link && (
+                            <div class="mt-12 text-center">
+                                <Button
+                                    href={faq_button_link}
+                                    variant={faq_button_variant}
+                                >
+                                    {faq_button_text}
+                                </Button>
+                            </div>
+                        )}
+
+                        {/* Franchise disclaimer (only on Own A Store page) */}
+                        {Astro.url.pathname.includes("own-a-store") && (
+                            <p class="max-w-2xl mx-auto mt-10 text-xs text-center">
+                                <strong>
+                                    Disclaimer - Franchise Information
+                                </strong>
+                                <br />
+                                The information in this FAQ is for general
+                                guidance only and does not constitute an offer
+                                to sell or invest in a franchise. While we aim
+                                to keep it accurate, details may change and may
+                                not reflect your individual circumstances.
+                                Prospective franchisees should seek independent
+                                legal, financial, and business advice before
+                                entering a franchise agreement. Full details are
+                                provided in the{" "}
+                                <strong>
+                                    Franchise Disclosure Document (FDD)
+                                </strong>{" "}
+                                as required under the{" "}
+                                <strong>Franchise Code of Conduct</strong>.
+                            </p>
+                        )}
+                    </div>
+                </section>
+            )
+        }
+
+        {/* Flexible Two Column Section */}
+        {
+            flexible_two_col.map((block: any, index: number) => (
+                <section class="w-[95%] md:max-w-screen-2xl mx-auto gap-8 p-7 md:p-21 rounded-xl bg-white relative">
+                    <FlexibleTwoCol
+                        title={block.title}
+                        description={block.description}
+                        buttonText={block.buttonText}
+                        buttonLink={block.buttonLink}
+                        buttonVariant={block.buttonVariant}
+                        bgColor={block.bgColor}
+                        reverse={block.reverse}
+                        slides={block.slides}
+                        index={index}
+                    />
+
+                    {/* Conditional background images */}
+                    {Astro.url.pathname.includes("work-with-us") ? (
+                        <img
+                            src="/images/elements/baguette-on-board.webp"
+                            alt="Work With Us"
+                            class="w-28 md:w-36 h-auto absolute -bottom-8 right-4"
+                        />
+                    ) : (
+                        <img
+                            src="/images/elements/koftas.webp"
+                            alt="More about LeWrap"
+                            class="w-28 md:w-36 h-auto absolute -bottom-8 right-4"
+                        />
+                    )}
+                </section>
+            ))
+        }
+
+        {/* Work With Us Form */}
+        {
+            Astro.url.pathname.includes("work-with-us") && (
+                <section
+                    id="apply"
+                    class="w-[95%] md:max-w-screen-2xl mx-auto scroll-mt-24"
+                >
+                    <WorkWithUsForm />
+                </section>
+            )
+        }
+
+        {/* Contact Form */}
+        {
+            Astro.url.pathname.includes("contact") && (
+                <section class="w-[95%] md:max-w-screen-2xl mx-auto">
+                    <ContactForm />
+                </section>
+            )
+        }
+
+        {/* Newsroom Listing */}
+        {
+            show_newsroom_listing && (
+                <section class="w-[95%] md:max-w-screen-xl mx-auto p-7 md:p-21">
+                    {/* Category Filter */}
+                    <div class="flex flex-wrap gap-3 justify-center mb-12">
+                        {categories.map((category: string) => (
+                            <button
+                                class="filter-btn px-6 py-2 rounded-full border-2 border-lewrap-green font-cocogoose text-lewrap-green hover:bg-lewrap-green hover:text-white transition-colors"
+                                class:list={[
+                                    category === "All" &&
+                                        "active bg-lewrap-green text-white",
+                                ]}
+                                data-category={category}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Articles Grid */}
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                        id="newsroom-grid"
+                    >
+                        {sortedNewsroom.map((article: any) => (
+                            <div
+                                class="newsroom-article"
+                                data-category={article.data.category}
+                            >
+                                <NewsroomCard
+                                    title={article.data.title}
+                                    hero_image={article.data.hero_image}
+                                    category={article.data.category}
+                                    date={article.data.date}
+                                    preview_text={article.data.preview_text}
+                                    slug={article.slug}
+                                />
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Empty State */}
+                    {sortedNewsroom.length === 0 && (
+                        <div class="text-center py-16">
+                            <p class="text-xl text-gray-600">
+                                No articles yet. Check back soon!
+                            </p>
+                        </div>
+                    )}
+                </section>
+            )
+        }
+
+        <script>
+            document.addEventListener("astro:page-load", () => {
+                const filterButtons = document.querySelectorAll(".filter-btn");
+                const articles = document.querySelectorAll(".newsroom-article");
+
+                // Function to update counts
+                function updateCounts() {
+                    filterButtons.forEach((button) => {
+                        const category = button.getAttribute("data-category");
+                        let count = 0;
+
+                        if (category === "All") {
+                            count = articles.length;
+                        } else {
+                            articles.forEach((article) => {
+                                if (
+                                    article.getAttribute("data-category") ===
+                                    category
+                                ) {
+                                    count++;
+                                }
+                            });
+                        }
+
+                        // Update button text with count
+                        const buttonText =
+                            button.textContent
+                                ?.trim()
+                                .replace(/\s*\(\d+\)$/, "") || category;
+                        button.textContent = `${buttonText} (${count})`;
+                    });
+                }
+
+                // Update counts on load
+                updateCounts();
+
+                filterButtons.forEach((button) => {
+                    button.addEventListener("click", () => {
+                        const selectedCategory =
+                            button.getAttribute("data-category");
+
+                        // Update active button
+                        filterButtons.forEach((btn) => {
+                            btn.classList.remove(
+                                "active",
+                                "bg-lewrap-green",
+                                "text-white",
+                            );
+                        });
+                        button.classList.add(
+                            "active",
+                            "bg-lewrap-green",
+                            "text-white",
+                        );
+
+                        // Filter articles with fade effect
+                        articles.forEach((article) => {
+                            const articleCategory =
+                                article.getAttribute("data-category");
+                            const htmlArticle = article as HTMLElement;
+
+                            if (
+                                selectedCategory === "All" ||
+                                articleCategory === selectedCategory
+                            ) {
+                                htmlArticle.classList.remove("hidden-article");
+                            } else {
+                                htmlArticle.classList.add("hidden-article");
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+
+        <style>
+            .newsroom-article {
+                opacity: 1;
+                transform: scale(1);
+                transition:
+                    opacity 0.3s ease,
+                    transform 0.3s ease;
+            }
+
+            .newsroom-article.hidden-article {
+                opacity: 0;
+                transform: scale(0.95);
+                pointer-events: none;
+                position: absolute;
+                visibility: hidden;
+            }
+        </style>
+    </main>
+</BaseLayout>

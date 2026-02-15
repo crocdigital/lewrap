@@ -1,0 +1,55 @@
+---
+interface Props {
+    title: string;
+    hero_image: string;
+    category: string;
+    date: Date;
+    preview_text: string;
+    slug: string;
+}
+
+const { title, hero_image, category, date, preview_text, slug } = Astro.props;
+
+// Format date
+const formattedDate = new Intl.DateTimeFormat("en-AU", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+}).format(new Date(date));
+---
+
+<article
+    class="bg-white rounded-xl overflow-hidden shadow-[0px_11px_25px_0px_rgba(0,0,0,0.04)] hover:shadow-[0px_11px_25px_0px_rgba(0,0,0,0.09)] transition-shadow"
+>
+    <a href={`/newsroom/${slug}`} class="block">
+        <img
+            src={hero_image}
+            alt={title}
+            class="w-full aspect-video object-cover"
+        />
+
+        <div
+            class="p-6 py-8 gap-3 min-h-[15rem] flex flex-col justify-between h-full"
+        >
+            <div class="flex flex-col gap-2 text-sm text-gray-400">
+                <span
+                    class="font-helvetica-condensed font-semibold text-base uppercase"
+                >
+                    {category}
+                </span>
+
+                <h3
+                    class="text-2xl font-bold text-lewrap-green tracking-tight hover:text-lewrap-green-dark transition-colors"
+                >
+                    {title}
+                </h3>
+
+                <time datetime={date.toISOString()}>{formattedDate}</time>
+            </div>
+
+            <p class="text-xl/7">
+                {preview_text}
+            </p>
+        </div>
+    </a>
+</article>

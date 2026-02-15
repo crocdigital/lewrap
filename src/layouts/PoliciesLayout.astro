@@ -1,0 +1,137 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Button from "../components/atoms/Button.astro";
+
+const { frontmatter } = Astro.props;
+const { title, terms_content, privacy_content } = frontmatter;
+---
+
+<BaseLayout title={title}>
+    <main class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black">
+        {/* Static Hero Block */}
+        <section
+            class="mt-10 md:mt-15 w-[95%] mx-auto bg-lewrap-green rounded-2xl px-7 py-22 text-center"
+        >
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-8">
+                Policies
+            </h1>
+
+            {/* Tab Buttons */}
+            <div class="flex gap-4 justify-center">
+                <button
+                    id="terms-tab"
+                    class="tab-btn active px-4 py-3 bg-white font-cocogoose text-sm text-lewrap-green-dark rounded-full hover:bg-lewrap-green-dark hover:text-white transition-colors"
+                >
+                    Terms & Conditions
+                </button>
+                <button
+                    id="privacy-tab"
+                    class="tab-btn px-4 py-3 bg-white font-cocogoose text-sm text-lewrap-green-dark rounded-full hover:bg-lewrap-green-dark hover:text-white transition-colors"
+                >
+                    Privacy Policy
+                </button>
+            </div>
+        </section>
+    </main>
+
+    {/* Content Area */}
+    <section class="w-[95%] md:max-w-4xl mx-auto py-16 p-7 md:px-0">
+        {/* Terms & Conditions Content */}
+        <div
+            id="terms-content"
+            class="policy-content text-lewrap-off-black active"
+        >
+            <h2
+                class="text-4xl md:text-5xl font-bold text-lewrap-green-dark mb-8"
+            >
+                Terms & Conditions
+            </h2>
+            <div
+                class="prose text-xl/7 [&_p]:mb-6 [&_p:last-child]:mb-0"
+                set:html={terms_content}
+            />
+        </div>
+
+        {/* Privacy Policy Content */}
+        <div id="privacy-content" class="policy-content text-lewrap-off-black">
+            <h2
+                class="text-4xl md:text-5xl font-bold text-lewrap-green-dark mb-8"
+            >
+                Privacy Policy
+            </h2>
+            <div
+                class="prose text-xl/7 [&_p]:mb-6 [&_p:last-child]:mb-0"
+                set:html={privacy_content}
+            />
+        </div>
+    </section>
+</BaseLayout>
+
+<script>
+    document.addEventListener("astro:page-load", () => {
+        const termsTab = document.getElementById("terms-tab");
+        const privacyTab = document.getElementById("privacy-tab");
+        const termsContent = document.getElementById("terms-content");
+        const privacyContent = document.getElementById("privacy-content");
+
+        termsTab?.addEventListener("click", () => {
+            // Activate terms tab
+            termsTab.classList.add(
+                "active",
+                "bg-lewrap-green-dark",
+                "text-white",
+            );
+            termsTab.classList.remove("bg-white", "text-lewrap-green-dark");
+
+            privacyTab?.classList.remove(
+                "active",
+                "bg-lewrap-green-dark",
+                "text-white",
+            );
+            privacyTab?.classList.add("bg-white", "text-lewrap-green-dark");
+
+            // Show terms content
+            termsContent?.classList.add("active");
+            privacyContent?.classList.remove("active");
+        });
+
+        privacyTab?.addEventListener("click", () => {
+            // Activate privacy tab
+            privacyTab.classList.add(
+                "active",
+                "bg-lewrap-green-dark",
+                "text-white",
+            );
+            privacyTab.classList.remove("bg-white", "text-lewrap-green-dark");
+
+            termsTab?.classList.remove(
+                "active",
+                "bg-lewrap-green-dark",
+                "text-white",
+            );
+            termsTab?.classList.add("bg-white", "text-lewrap-green-dark");
+
+            // Show privacy content
+            privacyContent?.classList.add("active");
+            termsContent?.classList.remove("active");
+        });
+    });
+</script>
+
+<style>
+    .tab-btn.active {
+        background-color: #2d5016;
+        color: white;
+    }
+
+    .policy-content {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .policy-content.active {
+        display: block;
+        opacity: 1;
+    }
+</style>

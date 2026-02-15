@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import LandingPageLayout from "../../layouts/LandingPageLayout.astro";
+
+export async function getStaticPaths() {
+    const landingPages = await getCollection("landing-pages");
+
+    return landingPages.map((page) => ({
+        params: { slug: page.slug },
+        props: { page },
+    }));
+}
+
+const { page } = Astro.props;
+const { Content } = await page.render();
+---
+
+<LandingPageLayout
+    title={page.data.title}
+    description={page.data.description}
+    image={page.data.image}
+    keywords={page.data.keywords}
+    robots={page.data.robots}
+    canonical={page.data.canonical}
+    page_blocks={page.data.page_blocks}
+>
+    <Content />
+</LandingPageLayout>

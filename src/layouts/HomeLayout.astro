@@ -1,0 +1,571 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Carousel from "../components/molecules/Carousel";
+
+// Modal component
+import Modal from "../components/Modal.astro";
+import { getEntry } from "astro:content";
+
+// Flexible 2 column component
+import FlexibleTwoCol from "../components/FlexibleTwoCol.astro";
+
+// Marquee component
+import Marquee from "../components/molecules/Marquee.astro";
+import { marqueeSeparator } from "../data/marqueeSeparator";
+
+// Franchise Callout component
+import FranchiseCallout from "../components/FranchiseCallout.astro";
+
+// Newsroom component
+import NewsRoomCard from "../components/NewsRoomCard.astro";
+
+import { Image } from "astro:assets";
+import leWrapLogo from "../assets/brand/lewrap-white.svg";
+
+import FAQItem from "../components/FAQItem.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+import Button from "../components/atoms/Button.astro";
+import ScrollReveal from "../components/molecules/ScrollReveal.astro";
+import bgTexture from "../assets/bgrds/bg-texture.webp";
+import AppBanner from "../components/organisms/AppBanner.astro";
+
+// Get newsletter popup content
+const newsletterPopup = await getEntry("popups", "newsletter");
+
+// Get featured FAQs for homepage
+const allFAQs = (await getCollection("faq")) as CollectionEntry<"faq">[];
+const featuredFAQs = allFAQs
+    .filter(
+        (faq) => faq.data.featured === true && faq.data.question.trim() !== "",
+    )
+    .sort((a, b) => a.data.order - b.data.order)
+    .slice(0, 5); // First 5 featured FAQs
+
+const { frontmatter } = Astro.props;
+const {
+    title,
+    seo_title,
+    seo_description,
+    seo_image,
+    seo_keywords,
+    seo_robots,
+    seo_canonical,
+    hero_slides = [],
+    hero_heading = "We believe in all things good and fresh",
+    hero_cta1_text = "Our food",
+    hero_cta1_link = "/our-food",
+    hero_cta2_text = "Order now",
+    hero_cta2_link = "/order",
+    marquee_items = [],
+    welcome_heading = "Nobody makes a wrap like us",
+    welcome_text = "",
+    welcome_image = "",
+    welcome_button_text = "Our Food",
+    welcome_button_link = "/our-food",
+    flexible_two_col = [],
+    lewrapstory_heading = "The LeWrap Story",
+    lewrapstory_text = "",
+    lewrapstory_button_text = "Learn more",
+    lewrapstory_button_link = "/our-story",
+    lewrapstory_image = "/images/kaan-celik.webp",
+    catering_heading = "Let us cater your next event",
+    catering_text = "",
+    catering_button_text = "Learn more",
+    catering_button_link = "/catering",
+    catering_image = "",
+    franchise_callout = {},
+} = frontmatter || {};
+
+// Organization Schema for homepage
+const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    name: "LeWrap",
+    url: Astro.site,
+    logo: new URL("/images/logo.png", Astro.site).href,
+    description:
+        seo_description ||
+        "Fresh, healthy wraps and more. Made fresh daily with quality ingredients.",
+    address: {
+        "@type": "PostalAddress",
+        addressCountry: "AU",
+    },
+    servesCuisine: "Fast Food, Healthy Food",
+    priceRange: "$$",
+};
+
+// Transform hero slides with HTML content for responsive images
+const carouselSlides = hero_slides.map((slide: any) => {
+    const mobileSrc = slide.image_mobile || slide.image_desktop;
+    const desktopSrc = slide.image_desktop;
+    const alt = slide.alt || "LeWrap hero image";
+
+    return {
+        type: "html" as const,
+        content: `
+            <picture>
+                <source media="(max-width: 768px)" srcset="${mobileSrc}" />
+                <img
+                    src="${desktopSrc}"
+                    alt="${alt}"
+                    class="w-full h-full object-cover"
+                />
+            </picture>
+        `,
+    };
+});
+
+// Get featured newsroom articles
+const allNewsroom = (await getCollection(
+    "newsroom",
+)) as CollectionEntry<"newsroom">[];
+const featuredNews = allNewsroom
+    .filter((article) => article.data.featured === true)
+    .sort(
+        (a, b) =>
+            new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+    )
+    .slice(0, 3); // Latest 3 featured articles
+---
+
+<BaseLayout
+    title={seo_title || title || "LeWrap - Fresh, Healthy Wraps"}
+    description={seo_description}
+    image={seo_image}
+    keywords={seo_keywords}
+    robots={seo_robots || "index, follow"}
+    canonical={seo_canonical}
+    schema={organizationSchema}
+    preloadImages={hero_slides?.[0]
+        ? [
+              {
+                  src: hero_slides[0].image_desktop,
+                  media: "(min-width: 769px)",
+              },
+              ...(hero_slides[0].image_mobile
+                  ? [
+                        {
+                            src: hero_slides[0].image_mobile,
+                            media: "(max-width: 768px)",
+                        },
+                    ]
+                  : []),
+          ]
+        : []}
+>
+    {/* Newsletter Popup */}
+    {
+        newsletterPopup && (
+            <Modal
+                id={newsletterPopup.data.popup_id}
+                title={newsletterPopup.data.title}
+                showOnLoad={newsletterPopup.data.show_on_load}
+                rememberClose={newsletterPopup.data.remember_close}
+            >
+                {/* Newsletter Popup Image */}
+                {newsletterPopup.data.image && (
+                    <img
+                        src={newsletterPopup.data.image}
+                        alt="Decorative"
+                        class={newsletterPopup.data.image_position}
+                    />
+                )}
+                <div
+                    class="text-lg/6 mb-6"
+                    set:html={newsletterPopup.data.description}
+                />
+
+                <div class="flex flex-col">
+                    <Button
+                        onclick={`close_${newsletterPopup.data.popup_id}()`}
+                        href="https://lewrap.redcatcloud.com.au/app/menu"
+                        target="_blank"
+                        class="mx-auto hover:bg-lewrap-green-dark hover:text-lewrap-green"
+                        variant="secondary"
+                    >
+                        Sign me up!
+                    </Button>
+
+                    <button
+                        onclick={`close_${newsletterPopup.data.popup_id}()`}
+                        class="mt-4 text-lewrap-green-dark hover:underline font-bold text-sm"
+                    >
+                        No thanks, continue browsing
+                    </button>
+                </div>
+            </Modal>
+        )
+    }
+
+    <main class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black">
+        <div class="flex flex-col gap-5">
+            {/* Hero Carousel */}
+            <section class="mt-10 md:mt-15">
+                <Carousel
+                    client:idle
+                    slides={carouselSlides}
+                    showPagination={true}
+                    showNavigation={true}
+                    autoplay={{
+                        delay: 5000,
+                        disableOnInteraction: false,
+                    }}
+                    cta={{
+                        text: hero_cta1_text,
+                        href: hero_cta1_link,
+                    }}
+                    cta2={{
+                        text: hero_cta2_text,
+                        href: hero_cta2_link,
+                    }}
+                    loop={true}
+                    hasGradient={true}
+                    className="w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden"
+                >
+                    {/* Content overlay */}
+                    <div
+                        class="max-w-6xl flex flex-col items-center text-center z-30 pointer-events-none select-none"
+                    >
+                        <Image
+                            src={leWrapLogo}
+                            alt="LeWrap"
+                            class="w-[128px] h-[37px] md:w-[266px] md:h-[78px]"
+                        />
+                        <h1
+                            class="text-white text-4xl md:text-[90px] w-3/4 md:w-auto font-bold leading-[100%] tracking-tight"
+                            data-cms-bind="#hero_heading"
+                        >
+                            {hero_heading}
+                        </h1>
+                    </div>
+                </Carousel>
+            </section>
+
+            <style>
+                /* Show first slide background while Swiper loads */
+                .carousel-container::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background-image: url("{hero_slides?.[0]?.image_desktop}");
+                    background-size: cover;
+                    background-position: center;
+                    z-index: 0;
+                }
+
+                @media (max-width: 768px) {
+                    .carousel-container::before {
+                        background-image: url("{hero_slides?.[0]?.image_mobile || hero_slides?.[0]?.image_desktop}");
+                    }
+                }
+            </style>
+
+            <style>
+                .carousel-placeholder {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                }
+
+                .carousel-loaded {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                /* Hide placeholder once Swiper loads */
+                .carousel-loaded ~ .carousel-placeholder {
+                    display: none;
+                }
+            </style>
+
+            {/* Marquee */}
+            {
+                marquee_items.length > 0 && (
+                    <Marquee
+                        items={marquee_items}
+                        separator={marqueeSeparator}
+                        className="w-[95%] mx-auto bg-lewrap-green py-4 rounded-2xl"
+                        gradientColor="#95BA32"
+                        speed={50}
+                    />
+                )
+            }
+
+            {/* Welcome Section */}
+            <section
+                class="w-[95%] mx-auto bg-cover bg-center bg-no-repeat p-7 rounded-2xl grid md:grid-cols-2 relative"
+                style={{
+                    backgroundImage: `radial-gradient(ellipse 93.38% 101.86% at 50% 50%, white 15%, rgba(255, 255, 255, 0) 100%), url(${bgTexture.src})`,
+                }}
+            >
+                <div class="max-w-xl mx-auto flex flex-col gap-y-8 py-16">
+                    <h2
+                        class="text-lewrap-green-dark text-4xl/10 md:text-5xl/11 font-black tracking-tight"
+                        data-cms-bind="#welcome_heading"
+                    >
+                        {welcome_heading}
+                    </h2>
+
+                    <div
+                        class="text-xl/7 prose [&_p]:mb-6 [&_p:last-child]:mb-0"
+                        data-cms-bind="#welcome_text"
+                        set:html={welcome_text}
+                    />
+
+                    {
+                        welcome_button_text && welcome_button_link && (
+                            <ScrollReveal>
+                                <Button href={welcome_button_link}>
+                                    {welcome_button_text}
+                                </Button>
+                            </ScrollReveal>
+                        )
+                    }
+                </div>
+
+                {
+                    welcome_image && (
+                        <img
+                            src={welcome_image}
+                            alt="LeWrap welcome"
+                            class="w-[300px] md:w-[619px] h-auto block relative md:absolute mx-auto md:bottom-0 md:right-28 md:mx-0 mb-[-28px] md:mb-0"
+                            loading="eager"
+                        />
+                    )
+                }
+            </section>
+
+            {/* Find a LeWrap near you */}
+            {
+                flexible_two_col && flexible_two_col[0] && (
+                    <section class="w-[95%] md:max-w-screen-2xl mx-auto gap-8 p-7 md:p-21 rounded-xl bg-white relative">
+                        <FlexibleTwoCol
+                            title={flexible_two_col[0].title}
+                            description={flexible_two_col[0].description}
+                            buttonText={flexible_two_col[0].buttonText}
+                            buttonLink={flexible_two_col[0].buttonLink}
+                            buttonVariant={flexible_two_col[0].buttonVariant}
+                            bgColor={flexible_two_col[0].bgColor}
+                            reverse={flexible_two_col[0].reverse}
+                            slides={flexible_two_col[0].slides}
+                            index={0}
+                        />
+
+                        <img
+                            src="/images/elements/koftas.webp"
+                            alt="More about LeWrap"
+                            class="w-28 md:w-36 h-auto absolute -bottom-8 right-4"
+                        />
+                    </section>
+                )
+            }
+
+            {/* The LeWrap Story */}
+            <section
+                class="w-[95%] md:max-w-screen-2xl mx-auto grid md:grid-cols-2 gap-8 p-7 md:p-21 items-center rounded-xl overflow-hidden relative"
+            >
+                <div class="max-w-xl mx-auto flex flex-col gap-y-8 py-16">
+                    <h2
+                        class="text-lewrap-green-dark text-4xl/10 md:text-5xl/11 font-black tracking-tight"
+                        data-cms-bind="#lewrapstory_heading"
+                    >
+                        {lewrapstory_heading}
+                    </h2>
+
+                    <div
+                        class="text-xl/7 prose [&_p]:mb-6 [&_p:last-child]:mb-0"
+                        data-cms-bind="#lewrapstory_text"
+                        set:html={lewrapstory_text}
+                    />
+
+                    {
+                        lewrapstory_button_text && lewrapstory_button_link && (
+                            <ScrollReveal>
+                                <Button href={lewrapstory_button_link}>
+                                    {lewrapstory_button_text}
+                                </Button>
+                            </ScrollReveal>
+                        )
+                    }
+                </div>
+
+                {
+                    lewrapstory_image && (
+                        <img
+                            src={lewrapstory_image}
+                            alt="Kaan Celik, LeWrap's founder"
+                            class="w-full aspect-square object-cover rounded-xl"
+                        />
+                    )
+                }
+
+                {/* Background image */}
+                <img
+                    src="/images/bgrds/lewrap-bgrd.svg"
+                    alt="LeWrap"
+                    class="absolute left-0 bottom-0 -z-1"
+                />
+
+                {/* Green arrow l2r-lng */}
+                <img
+                    src="/images/elements/arrow-green-l2r-lng.svg"
+                    alt="LeWrap"
+                    class="absolute left-1/2 -translate-x-1/2 z-20
+                    /* Mobile */
+                    bottom-[48vh]
+                    w-[30%]
+                    rotate-90
+                    /* Desktop */
+                    md:top-[16vh]
+                    md:w-auto
+                    md:rotate-0"
+                />
+            </section>
+
+            {/* Featured FAQs */}
+            {
+                featuredFAQs.length > 0 && (
+                    <section class="w-[95%] md:max-w-screen-2xl mx-auto">
+                        <div
+                            class="rounded-xl p-8 md:p-12"
+                            style="background-image: url('/images/bg-tile-wood.webp'); background-repeat: repeat;"
+                        >
+                            <h2 class="text-4xl/10 md:text-5xl/11 font-bold text-lewrap-green-dark text-center mb-8">
+                                Frequently Asked Questions
+                            </h2>
+
+                            <div class="max-w-screen-md mx-auto divide-y">
+                                {featuredFAQs.map((faq: any, index: number) => (
+                                    <FAQItem
+                                        question={faq.data.question}
+                                        answer={faq.data.answer}
+                                        index={index}
+                                    />
+                                ))}
+                            </div>
+
+                            <div class="mt-12 text-center">
+                                <Button href="/faqs" variant="primary">
+                                    View all FAQs
+                                </Button>
+                            </div>
+                        </div>
+                    </section>
+                )
+            }
+
+            {/* Download App banner (specially for homepage) */}
+            <AppBanner />
+
+            {/* Let us Cater Section */}
+            <section
+                class="w-[95%] md:max-w-screen-2xl mx-auto grid md:grid-cols-2 gap-8 p-7 md:p-21 items-center rounded-xl overflow-hidden relative"
+            >
+                <div class="max-w-xl mx-auto flex flex-col gap-y-8 py-16">
+                    <h2
+                        class="text-lewrap-green-dark text-4xl/10 md:text-5xl/11 font-black tracking-tight"
+                        data-cms-bind="#catering_heading"
+                    >
+                        {catering_heading}
+                    </h2>
+
+                    <div
+                        class="text-xl/7 prose [&_p]:mb-6 [&_p:last-child]:mb-0"
+                        data-cms-bind="#catering_text"
+                        set:html={catering_text}
+                    />
+
+                    {
+                        catering_button_text && catering_button_link && (
+                            <ScrollReveal>
+                                <Button href={catering_button_link}>
+                                    {catering_button_text}
+                                </Button>
+                            </ScrollReveal>
+                        )
+                    }
+                </div>
+
+                {
+                    catering_image && (
+                        <img
+                            src={catering_image}
+                            alt="Catering services"
+                            class="w-full aspect-square object-cover rounded-xl"
+                        />
+                    )
+                }
+
+                {/* Tomatoes background */}
+                <img
+                    src="/images/bgrds/tomatoes.webp"
+                    alt="LeWrap"
+                    class="absolute left-0 top-7 md:top-16 w-30 md:w-40 h-auto -z-1"
+                />
+
+                {/* Green arrow l2r-under */}
+                <img
+                    src="/images/elements/arrow-green-l2r-under.svg"
+                    alt="LeWrap"
+                    class="absolute -translate-x-1/2 z-1
+                        /* Mobile */
+                        left-1/2
+                        bottom-[370px]
+                        w-[20%]
+                        rotate-90
+                        /* Desktop */
+                        md:top-[21vh]
+                        md:left-[46%]
+                        md:w-auto
+                        md:rotate-0"
+                />
+            </section>
+
+            {/* Franchise Callout block */}
+            {
+                franchise_callout.show && (
+                    <FranchiseCallout
+                        heading={franchise_callout.heading}
+                        text={franchise_callout.text}
+                        image={franchise_callout.image}
+                        buttonText={franchise_callout.button_text}
+                        buttonLink={franchise_callout.button_link}
+                    />
+                )
+            }
+
+            {/* Newsroom articles (latest 3) */}
+            {
+                featuredNews.length > 0 && (
+                    <section class="w-[95%] md:max-w-screen-2xl mx-auto p-7 md:p-21">
+                        <h2 class="text-3xl md:text-5xl font-bold text-lewrap-green-dark text-center mb-8">
+                            Latest News
+                        </h2>
+
+                        <div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {featuredNews.map((article) => (
+                                <NewsRoomCard
+                                    title={article.data.title}
+                                    hero_image={article.data.hero_image}
+                                    category={article.data.category}
+                                    date={article.data.date}
+                                    preview_text={article.data.preview_text}
+                                    slug={article.slug}
+                                />
+                            ))}
+                        </div>
+
+                        <div class="text-center mt-12">
+                            <Button href="/newsroom" variant="primary">
+                                View all articles
+                            </Button>
+                        </div>
+                    </section>
+                )
+            }
+        </div>
+    </main>
+</BaseLayout>

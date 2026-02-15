@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+    title: string;
+    image: ImageMetadata;
+    alt?: string;
+    ctaText?: string;
+    ctaHref?: string;
+}
+
+const { title, image, alt, ctaText, ctaHref } = Astro.props;
+
+const hasSlot = Astro.slots.has("default");
+---
+
+<section
+    class="relative flex items-center justify-center mt-10 md:mt-15 w-[95%] mx-auto h-[62vh] md:h-[75vh] rounded-2xl overflow-hidden"
+>
+    <Image
+        src={image}
+        alt={alt || title}
+        class="absolute inset-0 w-full h-full object-cover z-0"
+    />
+    <div
+        class="absolute inset-0 w-full h-full bg-gradient-to-b from-black/0 to-black/40 z-10"
+    >
+    </div>
+
+    <div
+        class="max-w-[930px] relative z-20 flex flex-col items-center justify-center h-full w-full gap-y-6"
+    >
+        <h1
+            class="text-white text-4xl md:text-[90px] w-3/4 md:w-auto font-bold leading-[100%] tracking-tight text-center"
+        >
+            {title}
+        </h1>
+
+        {/* Hero section button */}
+        {
+            ctaText && ctaHref && (
+                <a href={ctaHref} class="btn-lewrap md:text-2xl">
+                    {ctaText}
+                </a>
+            )
+        }
+        {
+            hasSlot && (
+                <div class="mt-6">
+                    <slot />
+                </div>
+            )
+        }
+    </div>
+</section>
