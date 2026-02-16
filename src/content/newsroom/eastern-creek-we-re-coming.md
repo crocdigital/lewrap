@@ -9,7 +9,7 @@ seo_keywords:
 seo_robots: index, follow
 seo_canonical: ''
 hero_image: /images/newsroom/eastern-creek-were-coming.webp
-hero_image_mobile: ''
+hero_image_mobile: /images/newsroom/eastern-creek-were-coming-mobile.webp
 category: Franchising
 date: 2026-03-12T00:00:00+11:00
 preview_text: LeWrap is Opening in the NEW ECQ Outlet
