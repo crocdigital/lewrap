@@ -40,20 +40,6 @@ page_blocks:
     button_variant:
     button_target: false
     button_download: false
-  - _template: feature
-    heading: Testing new page block
-    text: <p>Some content going in here :)</p>
-    image_path: /images/pages/lewrap-franchise-team.webp
-    video_url: ''
-    reverse: true
-    background_type: none
-    background_colour: '#abfc4e'
-    background_image: ''
-    button_text: My button
-    button_link: www.crocdigital.com.au
-    button_variant: secondary
-    button_target: true
-    button_download: false
 flexible_two_col:
   - title: We love getting involved in the local community
     description: >-
