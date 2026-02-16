@@ -1,0 +1,47 @@
+{
+  "$ref": "#/definitions/popups",
+  "definitions": {
+    "popups": {
+      "type": "object",
+      "properties": {
+        "popup_id": {
+          "type": "string",
+          "enum": [
+            "newsletter_modal",
+            "franchise_enquiry"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "image_position": {
+          "type": "string"
+        },
+        "show_on_load": {
+          "type": "boolean",
+          "default": false
+        },
+        "remember_close": {
+          "type": "boolean",
+          "default": false
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "popup_id",
+        "title",
+        "description"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
