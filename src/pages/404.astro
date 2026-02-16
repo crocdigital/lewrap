@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import Button from "../components/atoms/Button.astro";
+
+// Import a fun food element (use whatever you have available!)
+import bgTexture from "../assets/bgrds/bg-texture.webp";
+---
+
+<BaseLayout
+    title="Page Not Found | LeWrap"
+    description="Sorry, we couldn't find the page you were looking for."
+    robots="noindex, nofollow"
+>
+    <main class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black">
+        <section
+            class="w-[95%] mx-auto my-10 md:my-15 rounded-2xl overflow-hidden relative flex flex-col items-center justify-center min-h-[70vh] text-center px-4 py-16"
+            style={{
+                backgroundImage: `radial-gradient(ellipse 93.38% 101.86% at 50% 50%, white 15%, rgba(255, 255, 255, 0) 100%), url(${bgTexture.src})`,
+            }}
+        >
+            {/* Decorative food elements */}
+            <img
+                src="/images/elements/koftas.webp"
+                alt=""
+                class="absolute top-20 right-8 w-24 md:w-36 h-auto rotate-12 opacity-80"
+                aria-hidden="true"
+            />
+            <img
+                src="/images/bgrds/tomatoes.webp"
+                alt=""
+                class="absolute bottom-8 left-4 w-20 md:w-32 h-auto -rotate-12 opacity-80"
+                aria-hidden="true"
+            />
+
+            {/* 404 Content */}
+            <div
+                class="relative z-10 flex flex-col items-center gap-6 max-w-xl mx-auto"
+            >
+                {/* Big 404 */}
+                <div class="relative">
+                    <span
+                        class="text-[120px] md:text-[180px] font-black text-lewrap-green opacity-10 leading-none select-none"
+                    >
+                        404
+                    </span>
+                    <div
+                        class="absolute inset-0 flex items-center justify-center"
+                    >
+                        <span
+                            class="text-6xl md:text-8xl font-black text-lewrap-green-dark leading-none"
+                        >
+                            404
+                        </span>
+                    </div>
+                </div>
+
+                {/* Heading */}
+                <h1
+                    class="text-lewrap-green-dark text-3xl md:text-5xl font-black tracking-tight leading-tight"
+                >
+                    Looks Like This Wrap Got Lost! 🌯
+                </h1>
+
+                {/* Subtext */}
+                <p class="text-lg md:text-xl text-gray-600 max-w-md">
+                    Sorry, we couldn't find the page you were looking for. It
+                    might have moved, or maybe it was so fresh it disappeared!
+                </p>
+
+                {/* Helpful links */}
+                <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                    <Button href="/" variant="secondary">Back to Home</Button>
+                </div>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+```
