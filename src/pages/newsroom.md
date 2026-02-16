@@ -8,7 +8,7 @@ seo_keywords:
 seo_robots: index, follow
 seo_canonical: ''
 hero_title: What's Happening at LeWrap
-hero_subtitle:
+hero_subtitle: New stores opening soon
 hero_bg_type: image
 hero_bg_colour: '#95ba32'
 hero_bg_image: /images/hero/contact-desktop.webp
