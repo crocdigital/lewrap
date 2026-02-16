@@ -7,16 +7,17 @@ robots: noindex, nofollow
 page_blocks:
   - _template: centered_text
     text: >-
-      <h2>Get Personalised Deals Exclusively Through the LeWrap App</h2><p>Order
-      wraps, plates, baguettes, Protein Packs &amp; salads ahead with our app.
-      Join our loyalty program to earn points for rewards.</p><p>Download the
-      app now, skip the Q, and treat yourself to the ultimate healthy bliss!</p>
+      <h2>Enjoy all the perks of the LeWrap App!</h2><ul><li><p>LeWrap without
+      the wait, simply order ahead</p></li><li><p>Get exclusive app
+      deals</p></li><li><p>Accumulate loyalty points for
+      freebies</p></li><li><p>Birthday gift on us!</p></li></ul><p>Download the
+      app now and signup to enjoy all things good and fresh.</p>
     background_type: none
     background_colour:
     background_image: ''
-    button_text: Loyalty login
-    button_link: https://lewrap.redcatcloud.com.au/app/menu/
-    button_variant: primary
-    button_target: true
+    button_text:
+    button_link:
+    button_variant:
+    button_target: false
     button_download: false
 ---
