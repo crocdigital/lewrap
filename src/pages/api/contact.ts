@@ -1,5 +1,4 @@
 export const prerender = false;
-
 import type { APIRoute } from 'astro';
 import nodemailer from 'nodemailer';
 
@@ -20,33 +19,37 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    // Verify reCAPTCHA with Google
-    const recaptchaVerify = await fetch(
-      'https://www.google.com/recaptcha/api/siteverify',
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `secret=${import.meta.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaResponse}`
-      }
-    );
+    // Skip reCAPTCHA validation on localhost
+    const isDev = import.meta.env.DEV;
 
-    const recaptchaResult = await recaptchaVerify.json();
-
-    if (!recaptchaResult.success) {
-      return new Response(
-        JSON.stringify({
-          success: false,
-          message: 'reCAPTCHA verification failed. Please try again.'
-        }),
-        { status: 400 }
+    if (!isDev) {
+      const recaptchaVerify = await fetch(
+        'https://www.google.com/recaptcha/api/siteverify',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `secret=${import.meta.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaResponse}`
+        }
       );
+
+      const recaptchaResult = await recaptchaVerify.json();
+
+      if (!recaptchaResult.success) {
+        return new Response(
+          JSON.stringify({
+            success: false,
+            message: 'reCAPTCHA verification failed. Please try again.'
+          }),
+          { status: 400 }
+        );
+      }
     }
 
     // 2. Create email transporter
     const transporter = nodemailer.createTransport({
       host: import.meta.env.EMAIL_HOST,
       port: parseInt(import.meta.env.EMAIL_PORT),
-      secure: true, // SSL
+      secure: true,
       auth: {
         user: import.meta.env.EMAIL_USER,
         pass: import.meta.env.EMAIL_PASS,
@@ -70,9 +73,14 @@ export const POST: APIRoute = async ({ request }) => {
           .header {
             background-color: #2D5016;
             color: white;
-            padding: 20px;
+            padding: 30px 20px 20px 20px;
             border-radius: 8px 8px 0 0;
             text-align: center;
+          }
+          .header img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 15px;
           }
           .content {
             background-color: #f9f9f9;
@@ -112,6 +120,7 @@ export const POST: APIRoute = async ({ request }) => {
       </head>
       <body>
         <div class="header">
+          <img src="https://lewrap.com/lewrap-logo-email.png" alt="LeWrap Logo" />
           <h1 style="margin: 0; font-size: 24px;">New Contact Form Submission</h1>
           <p style="margin: 10px 0 0 0; opacity: 0.9;">LeWrap Website</p>
         </div>
@@ -120,22 +129,18 @@ export const POST: APIRoute = async ({ request }) => {
             <div class="label">Name</div>
             <div class="value">${formData.name}</div>
           </div>
-          
           <div class="field">
             <div class="label">Email</div>
             <div class="value"><a href="mailto:${formData.email}" style="color: #2D5016; text-decoration: none;">${formData.email}</a></div>
           </div>
-          
           <div class="field">
             <div class="label">Phone</div>
             <div class="value"><a href="tel:${formData.phone}" style="color: #2D5016; text-decoration: none;">${formData.phone}</a></div>
           </div>
-          
           <div class="field">
             <div class="label">Enquiry Type</div>
             <div class="value">${formData.enquiry_type}</div>
           </div>
-          
           <div class="field">
             <div class="label">Message</div>
             <div class="value">${formData.message.replace(/\n/g, '<br>')}</div>
@@ -167,7 +172,7 @@ Submitted: ${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' }
     await transporter.sendMail({
       from: import.meta.env.EMAIL_FROM,
       to: import.meta.env.EMAIL_TO,
-      replyTo: formData.email, // Allows easy replies to the customer
+      replyTo: formData.email,
       subject: 'Contact Form Submission from LeWrap Website',
       text: emailText,
       html: emailHTML,
@@ -176,7 +181,7 @@ Submitted: ${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' }
     return new Response(
       JSON.stringify({
         success: true,
-        message: 'Thank you for your message! We\'ll be in touch soon.'
+        message: "Thank you for your message! We'll be in touch soon."
       }),
       { status: 200 }
     );
