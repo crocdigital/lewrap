@@ -37,15 +37,15 @@ welcome_text: >-
   <p>Nobody makes a wrap like us because nobody does freshness like us. Our
   vegetables are locally sourced and cut fresh daily, then prepared to order so
   your meal is made exactly how it should be: fresh, fast and full of flavour.
-  From 100% Australian chicken breast and strip loin steak to chicken breast
-  schnitzel and authentic lamb kofta, our proteins are grilled fresh to order.
-  It’s simple food done right. We believe in all things good and fresh and it
-  shows in every wrap, salad, plate and baguette we make.</p>
+  </p><p>From 100% Australian chicken breast and strip loin steak to chicken
+  breast schnitzel and authentic lamb kofta, our proteins are grilled fresh to
+  order. It’s simple food done right. We believe in all things good and fresh
+  and it shows in every wrap, salad, plate and baguette we make.</p>
 welcome_image: /images/pages/welcome-lewrap.webp
 welcome_button_text: Our Food
 welcome_button_link: /our-food
 flexible_two_col:
-  - title: Find a LeWrap near you
+  - title: Find a Store Near You
     description: >-
       <p>There’s a LeWrap near you, ready to serve fresh, made-to-order wraps,
       salads, plates and baguettes. We make it easy to enjoy something good and
@@ -61,7 +61,7 @@ flexible_two_col:
       - image: /images/carousel/findalewrap-02.webp
         alt: Find a LeWrap near you
       - image: /images/carousel/findalewrap-03.webp
-        alt: Find a LeWrap near you
+        alt: Find a Store Near You
 lewrapstory_heading: The LeWrap Story
 lewrapstory_text: >-
   <p>From one store to a national brand. Kaan Celik founded LeWrap with a clear
@@ -77,7 +77,7 @@ lewrapstory_image: /images/kaan-celik.webp
 show_home_faqs: true
 home_faq_button_text: View all FAQs
 home_faq_button_link: /faqs
-catering_heading: Let us cater your next event
+catering_heading: Let us Cater Your Next Event
 catering_text: >-
   <p>No event is too big or too small. From office catering to family
   get-togethers and special celebrations, we’ve got fresh wraps, baguettes,
