@@ -11,12 +11,11 @@ hero_title: Whatever The Event, We've Got You Covered
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
-hero_bg_image: /images/hero/catering-desktop.webp
-hero_bg_image_mobile: /images/hero/catering-mobile.webp
+hero_bg_image: /images/hero/website-headingimages.png
+hero_bg_image_mobile: /images/hero/website-mobile-image.png
 hero_button_text: Order catering
 hero_button_link: https://lewrap.redcatcloud.com.au/universal/initiateOrder?saleType=107
 hero_button_variant: primary
-
 marquee_items:
   - 100% Australian
   - Chicken Wraps
@@ -38,7 +37,7 @@ page_blocks:
       your next event. Choose from wraps, baguettes, salads or chips.</p><p>When
       there’s a hungry crowd to feed, LeWrap offers fresh flavoursome catering.
       Whether you’re hosting friends, feeding the family, corporate catering, or
-      celebrating life’s special moments - birthdays, baby showers or
+      celebrating life’s special moments like birthdays, baby showers or
       anniversaries, we’ve got crowd pleasing option for every occasion.</p>
     image_path: /images/pages/catering.webp
     video_url: ''
@@ -49,6 +48,8 @@ page_blocks:
     button_text: Order catering
     button_link: https://lewrap.redcatcloud.com.au/app/menu
     button_variant: primary
+    button_target: false
+    button_download: false
 catering_callouts:
   - image: /images/icons/corporate-event-catering.svg
     title: Corporate & event catering
