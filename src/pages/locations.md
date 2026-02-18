@@ -11,7 +11,7 @@ hero_title: Find a LeWrap
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
-hero_bg_image: /images/hero/locations-desktop.webp
+hero_bg_image: /images/hero/9.png
 hero_bg_image_mobile: /images/hero/locations-mobile.webp
 hero_button_text: ''
 hero_button_link: ''
