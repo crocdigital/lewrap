@@ -77,7 +77,7 @@ lewrapstory_image: /images/kaan-celik.webp
 show_home_faqs: true
 home_faq_button_text: View all FAQs
 home_faq_button_link: /faqs
-catering_heading: Let us Cater Your Next Event
+catering_heading: Let Us Cater Your Next Event
 catering_text: >-
   <p>No event is too big or too small. From office catering to family
   get-togethers and special celebrations, we’ve got fresh wraps, baguettes,
