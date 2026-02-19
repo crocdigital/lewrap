@@ -15,17 +15,19 @@ longitude: 151.1009
 phone: ''
 email: miranda@lewrap.com
 hours:
-  monday: OPENING SOON
-  tuesday: OPENING SOON
-  wednesday: OPENING SOON
-  thursday: OPENING SOON
-  friday: OPENING SOON
-  saturday: OPENING SOON
-  sunday: OPENING SOON
+  monday: 9:00am - 5:30pm
+  tuesday: 9:00am - 5:30pm
+  wednesday: 9:00am - 5:30pm
+  thursday: 9:00am - 9:00pm
+  friday: 9:00am - 5:30pm
+  saturday: 9:00am - 5:30pm
+  sunday: 9:00am - 5:00pm
 image: /images/locations/website-storeimages-1.png
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: false
 ---
 &nbsp;
 
-LeWrap Miranda is coming back! We've had many requests to come back and we're making it happen. LeWrap Miranda will be serving fresh, flavour-packed wraps, flavour-packed wraps, plates, salads and baguettes. Located in Westfield Miranda, LeWrap is loved for its quick service, high-quality ingredients, and fully customisable menu.
+**LeWrap Miranda is coming back!** We've had many requests to come back and we're making it happen. LeWrap Miranda will be serving fresh, flavour-packed wraps, flavour-packed wraps, plates, salads and baguettes. Located in Westfield Miranda, LeWrap is loved for its quick service, high-quality ingredients, and fully customisable menu.
+
+Stay tuned for the opening date!
