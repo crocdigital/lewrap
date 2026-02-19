@@ -22,10 +22,10 @@ hours:
   friday:
   saturday:
   sunday:
-image: ''
-order_now_link: ''
+image: /images/locations/website-storeimages.png
+order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: false
 ---
 &nbsp;
 
-Write a description about this location here. What makes it special? What should customers know?
+LeWrap Miranda is coming back! We've had many requests to come back and we're making it happen. LeWrap Miranda will be serving fresh, flavour-packed wraps, flavour-packed wraps, plates, salads and baguettes. Located in Westfield Miranda, LeWrap is loved for its quick service, high-quality ingredients, and fully customisable menu.
