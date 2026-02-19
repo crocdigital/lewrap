@@ -6,7 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Stanhope Gardens
-address: Shop 18E, Stanhope Village Shopping Centre, 2 Sentry Drive
+address: Stanhope Village Shopping Centre, 2 Sentry Drive
 suburb: Stanhope Gardens
 state: NSW
 postcode: '2768'
