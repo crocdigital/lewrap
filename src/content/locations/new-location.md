@@ -22,7 +22,7 @@ hours:
   friday:
   saturday:
   sunday:
-image: /images/locations/website-storeimages.png
+image: /images/locations/website-storeimages-1.png
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: false
 ---
