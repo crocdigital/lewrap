@@ -16,12 +16,12 @@ phone: ''
 email: miranda@lewrap.com
 hours:
   monday: OPENING SOON
-  tuesday:
-  wednesday:
-  thursday:
-  friday:
-  saturday:
-  sunday:
+  tuesday: OPENING SOON
+  wednesday: OPENING SOON
+  thursday: OPENING SOON
+  friday: OPENING SOON
+  saturday: OPENING SOON
+  sunday: OPENING SOON
 image: /images/locations/website-storeimages-1.png
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: false
