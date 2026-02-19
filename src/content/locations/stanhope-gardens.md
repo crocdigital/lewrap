@@ -26,4 +26,4 @@ image: /images/locations/placement-bankstown.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
 ---
-Located in Stanhope Village food court, or can be found on street level access.  LeWrap Stanhope Gardens is serving freshly made, flavour-packed wraps, plates, salads and baguettes to the local community. Known for its quick service, high-quality ingredients, and fully customisable menu, LeWrap Stanhope Gardens is the go-to destination for a fresh, satisfying meal any time of day.
+Located in Stanhope Village food court or can be accessed via the street.  LeWrap Stanhope Gardens is serving freshly made, flavour-packed wraps, plates, salads and baguettes to the local community. Known for its quick service, high-quality ingredients, and fully customisable menu, LeWrap Stanhope Gardens is the go-to destination for a fresh, satisfying meal any time of day.
