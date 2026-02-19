@@ -26,6 +26,6 @@ image: /images/locations/bankstown.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: false
 ---
-**LeWrap Miranda is coming to Eastern Creek!** LeWrap ECQ will be serving fresh, flavour-packed wraps, flavour-packed wraps, plates, salads and baguettes. Located in Eastern Creek Quarter Outlet, LeWrap is loved for its quick service, high-quality ingredients, and fully customisable menu.
+**LeWrap is coming to Eastern Creek!** LeWrap ECQ will be serving fresh, flavour-packed wraps, flavour-packed wraps, plates, salads and baguettes. Located in Eastern Creek Quarter Outlet, LeWrap is loved for its quick service, high-quality ingredients, and fully customisable menu.
 
 Stay tuned for the opening date!
