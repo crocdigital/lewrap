@@ -17,7 +17,7 @@ page_blocks:
   - _template: feature
     heading: Proudly Supporting Mental Health
     text: >-
-      <p>1 in 7 Australians are affected by mental health issues. We've proud
+      <p>1 in 5 Australians are affected by mental health issues. We've proud
       partners of <a href="https://www.keithscloset.org/" title="Visit Keith's
       Closet" target="_blank" rel="noopener">Keith's Closet</a> over the last 5+
       years. Keith's Closet is a not-for-profit charity that provides people
