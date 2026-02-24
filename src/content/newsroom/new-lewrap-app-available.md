@@ -23,4 +23,4 @@ Now you can enjoy LeWrap without the wait and access to exciting features:
 * Accumulate loyalty points to use towards freebies
 * Exclusive offers<br><br>
 
-[Download the app Now!](/go/exclusive-deals/)
+[Download the app Now!](/go/lewrap-app/)
