@@ -1,7 +1,7 @@
 ---
 _schema: default
 layout: ../../layouts/NewsroomLayout.astro
-title: Stanhope Opening Soon
+title: Stanhope Now Open
 seo_title: ''
 seo_description: ''
 seo_image: ''
@@ -17,8 +17,6 @@ featured: true
 ---
 ## Stanhope Gardens we’re open!
 
-We’re open at Stanhope Village food court on Friday 20th of February from 9am.
+Enjoy your LeWrap favourites now at Stanhope Village.
 
-Join us on the opening day to welcome the new franchisees, Tatianna & Gani.<br><br>Enjoy your LeWrap favourites and pickup free merch giveaways including tote bags, water bottles, lollipops & balloons.
-
-See you there!
+Access our store via the food court or the street access.
