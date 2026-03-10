@@ -15,8 +15,6 @@ date: 2026-04-11T09:00:00+10:00
 preview_text: ''
 featured: false
 ---
-Write your article content here. You can use **bold**, *italic*, and add images.
-
 ## LeWrap Miranda is Coming Back!
 
 We heard you, Miranda! After so many requests from our amazing customers, we’re excited to announce that LeWrap is returning to Miranda.
