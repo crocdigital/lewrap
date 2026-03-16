@@ -13,9 +13,10 @@ terms_content: >-
   Conditions.</p><p>LeWrap may from time to time amend, update or change this
   website including these Terms and Conditions without prior
   notice.</p><h3><strong>App Offer T&amp;Cs</strong></h3><p>Free Wrap on the App
-  offer is available for a limited time only, for pickup only. Valid one per
-  phone number, per person. Not available with any other offers. Customisations
-  will cost extra. </p><h3><strong>Catering Cancellation
+  offer is available for a limited time only, for pickup only. Redeemable on the
+  app only. Valid for 30 days from the signup date. Valid one per phone number,
+  per person. Not available with any other offers. Customisable add-ons will be
+  charged.</p><h3><strong>Catering Cancellation
   Policy</strong></h3><p>Cancellations must be made 48 hours prior to pick-up.
   Please contact your local store. <a href="/locations/">Click here</a> to see
   all store contact details.</p><p>Orders must be collected from the selected
