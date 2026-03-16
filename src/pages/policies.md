@@ -14,8 +14,8 @@ terms_content: >-
   website including these Terms and Conditions without prior
   notice.</p><h3><strong>App Offer T&amp;Cs</strong></h3><p>Free Wrap on the App
   offer is available for a limited time only, for pickup only. Valid one per
-  phone number. Not available with any other offers. Customisations will cost
-  extra. </p><h3><strong>Catering Cancellation
+  phone number, per person. Not available with any other offers. Customisations
+  will cost extra. </p><h3><strong>Catering Cancellation
   Policy</strong></h3><p>Cancellations must be made 48 hours prior to pick-up.
   Please contact your local store. <a href="/locations/">Click here</a> to see
   all store contact details.</p><p>Orders must be collected from the selected
