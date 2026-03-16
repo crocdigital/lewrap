@@ -21,8 +21,9 @@ preview_text: >-
 
 
   T&Cs apply. Free Wrap on the App offer is available for a limited time only,
-  for pickup only. Valid one per phone number, per person. Not available with
-  any other offers. Customisations will cost extra. 
+  for pickup only. Redeemable on the app only. Valid for 30 days from signup.
+  Valid one per phone number, per person. Not available with any other offers.
+  Customisable add-ons will be charged.
 featured: false
 ---
 Write your article content here. You can use **bold**, *italic*, and add images.
