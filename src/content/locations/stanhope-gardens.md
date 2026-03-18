@@ -15,13 +15,13 @@ longitude: 150.92059
 phone: (02)
 email: stanhope@lewrap.com
 hours:
-  monday: 9:30am - 10:00pm
-  tuesday: 9:30am - 10:00pm
-  wednesday: 9:30am - 10:00pm
+  monday: 9:30am - 9:30pm
+  tuesday: 9:30am - 9:30pm
+  wednesday: 9:30am - 9:30pm
   thursday: 9:30am - 10:00pm
   friday: 9:30am - 10:00pm
   saturday: 9:30am - 10:00pm
-  sunday: 9:30am - 10:00pm
+  sunday: 9:30am - 9:30pm
 image: /images/locations/placement-bankstown.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
