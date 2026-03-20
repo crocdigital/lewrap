@@ -12,11 +12,9 @@ hero_image: /images/newsroom/freewrap.png
 hero_image_mobile: /images/newsroom/freewrap-1.png
 category: Promotion
 date: 2026-03-24T00:00:00+11:00
-preview_text:
+preview_text: 'Enjoy a free wrap on us! '
 featured: false
 ---
-Write your article content here. You can use **bold**, *italic*, and add images.
-
 ## Enjoy a Free Wrap on the App!
 
 Simply download the app from the app store to enjoy a free wrap on us! How good is that?
