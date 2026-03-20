@@ -253,7 +253,7 @@ export const POST: APIRoute = async ({ request }) => {
 
           <div style="text-align: center; margin: 30px 0;">
             <p style="font-size: 16px; margin-bottom: 15px;"><strong>Download Your Franchise Information Pack</strong></p>
-            <a href="https://lewrap.com/downloads/LW-Franchising-Pack.pdf" class="download-button">📄 Download Info Pack</a>
+            <a href="https://lewrap.com/downloads/LW-Franchising-Pack-2026.pdf" class="download-button">📄 Download Info Pack</a>
             <p style="font-size: 13px; color: #666; margin-top: 10px;">This comprehensive guide contains everything you need to know about our franchise opportunity.</p>
           </div>
 
