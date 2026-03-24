@@ -8,13 +8,16 @@ seo_keywords:
 seo_robots: index, follow
 seo_canonical: ''
 hero_slides:
-  - image_desktop: /images/hero/carousel-catering-desktop.webp
-    image_mobile: /images/hero/carousel-catering-mobile.webp
+  - image_desktop: /images/hero/website-catering1920x1080.png
+    image_mobile: /images/hero/website-webelieve1000x1000.png
     alt: Fresh wraps and healthy food
-  - image_desktop: /images/hero/carousel-catering2-desktop.webp
-    image_mobile: /images/hero/carousel-catering2-mobile.webp
+  - image_desktop: /images/hero/website-catering1920x1080-1.png
+    image_mobile: /images/hero/website-catering1000x1000.png
     alt: Fresh wraps and healthy food
-hero_heading: We believe in all things good and fresh
+  - image_desktop: /images/hero/website-app1920x1080.png
+    image_mobile: /images/hero/website-app1000x1000.png
+    alt: Free Wrap on the App
+hero_heading:
 hero_cta1_text: Our food
 hero_cta1_link: /our-food
 hero_cta2_text: Order now
