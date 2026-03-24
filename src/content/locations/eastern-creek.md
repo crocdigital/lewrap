@@ -15,13 +15,13 @@ longitude: 150.85504
 phone: ''
 email: ecq@lewrap.com
 hours:
-  monday: 9:00am - 5:00pm
-  tuesday: 9:00am - 5:00pm
-  wednesday: 9:00am - 5:00pm
-  thursday: 9:00am - 5:00pm
-  friday: 9:00am - 5:00pm
-  saturday: 9:00am - 5:00pm
-  sunday: 9:00am - 5:00pm
+  monday: 10:00am - 5:00pm
+  tuesday: 10:00am - 5:00pm
+  wednesday: 10:00am - 5:00pm
+  thursday: 10:00am - 7:00pm
+  friday: 10:00am - 7:00pm
+  saturday: 10:00am - 6:00pm
+  sunday: 10:00am - 5:00pm
 image: /images/locations/bankstown.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: false
