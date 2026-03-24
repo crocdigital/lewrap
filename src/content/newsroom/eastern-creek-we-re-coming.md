@@ -1,7 +1,7 @@
 ---
 _schema: default
 layout: ../../layouts/NewsroomLayout.astro
-title: Eastern Creek, We’re Coming!
+title: Eastern Creek Now Open!
 seo_title: ''
 seo_description: ''
 seo_image: ''
@@ -11,8 +11,10 @@ seo_canonical: ''
 hero_image: /images/newsroom/eastern-creek-were-coming.webp
 hero_image_mobile: /images/newsroom/eastern-creek-were-coming-mobile.webp
 category: Franchising
-date: 2026-03-12T00:00:00+11:00
-preview_text: LeWrap is Opening in the NEW ECQ Outlet
+date: 2026-03-25T00:00:00+11:00
+preview_text: >-
+  LeWrap is NOW OPEN at the New Eastern Creek Quarter Outlet! Find us near
+  Industire
 featured: true
 ---
 ## Eastern Creek, LeWrap is Opening Soon!
