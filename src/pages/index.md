@@ -9,13 +9,13 @@ seo_robots: index, follow
 seo_canonical: ''
 hero_slides:
   - image_desktop: /images/hero/website-webelieve1920x1080-1.png
-    image_mobile: /images/hero/website-webelieve1000x1000.png
+    image_mobile: /images/hero/website-webelieve1000x1000-1.png
     alt: Fresh wraps and healthy food
   - image_desktop: /images/hero/website-catering1920x1080-3.png
-    image_mobile: /images/hero/website-catering1000x1000.png
+    image_mobile: /images/hero/website-catering1000x1000-1.png
     alt: Fresh wraps and healthy food
   - image_desktop: /images/hero/website-app1920x1080-3.png
-    image_mobile: /images/hero/website-app1000x1000.png
+    image_mobile: /images/hero/website-app1000x1000-1.png
     alt: Free Wrap on the App
 hero_heading:
 hero_cta1_text: Our food
