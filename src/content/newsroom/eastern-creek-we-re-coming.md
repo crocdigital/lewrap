@@ -1,7 +1,7 @@
 ---
 _schema: default
 layout: ../../layouts/NewsroomLayout.astro
-title: Eastern Creek Now Open!!
+title: Eastern Creek Now Open!
 seo_title: ''
 seo_description: ''
 seo_image: ''
