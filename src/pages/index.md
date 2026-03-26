@@ -90,7 +90,7 @@ catering_button_link: /catering
 catering_image: /images/pages/catering.webp
 franchise_callout:
   show: true
-  heading: Own a LeWrap store
+  heading: Own a LeWrap Store
   text: >-
     <p>The only thing better than eating at LeWrap is owning one. Looking for a
     career change? Wrap up your success.</p>
