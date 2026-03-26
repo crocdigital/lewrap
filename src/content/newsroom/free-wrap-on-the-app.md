@@ -17,6 +17,10 @@ featured: false
 ---
 ## Enjoy a Free Wrap on the App!
 
-Simply download the app from the app store to enjoy a free wrap on us! How good is that?
+Simply download the app [here](https://lewrap.com/go/lewrap-app/) from the app store to enjoy a free wrap on us! How good is that?
 
 T&Cs apply. Free Wrap on the App offer is available for a limited time only, for pickup only. Redeemable on the app only. Valid for 30 days from the signup date. Valid one per phone number, per person. Not available with any other offers. Customisable add-ons will be charged.
+
+&nbsp;
+
+&nbsp;
