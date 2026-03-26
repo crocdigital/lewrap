@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/HomeLayout.astro
-title: LeWrap - Fresh, Healthy Wraps
+title: LeWrap - Fresh Wraps
 seo_title:
 seo_description:
 seo_image: ''
@@ -13,7 +13,7 @@ hero_slides:
     alt: We believe in all things good & fresh
   - image_desktop: /images/hero/website-catering1920x1080-3.png
     image_mobile: /images/hero/mobile1000x1000-catering.png
-    alt: Fresh wraps and healthy food
+    alt: Catering Made Easy
   - image_desktop: /images/hero/website-app1920x1080-3.png
     image_mobile: /images/hero/mobile1000x1000-freewrap.png
     alt: Free Wrap on the App
