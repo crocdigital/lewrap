@@ -23,6 +23,4 @@ Our previous store in the area built a loyal following, and the feedback we’ve
 
 LeWrap Miranda will be opening at Westfield Miranda this April, bringing back the fresh flavours, quality ingredients and wraps you love.
 
-St
-
-ay tuned for the official opening date and get ready to welcome LeWrap back to Miranda!
+Stay tuned for the official opening date and get ready to welcome LeWrap back to Miranda!
