@@ -29,4 +29,4 @@ Enjoy a FREE ticket on us by clicking the link below and use code **RSG** at che
 
 <img height="515" width="1076" src="/images/newsroom/fran-syd26-logo.jpg" />
 
-Learn More: [Own a store \| LeWrap](https://lewrap.com/own-a-store)
+<br>Learn More: [Own a store \| LeWrap](https://lewrap.com/own-a-store)
