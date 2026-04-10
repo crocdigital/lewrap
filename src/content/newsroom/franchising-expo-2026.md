@@ -11,8 +11,8 @@ seo_canonical: ''
 hero_image: /images/newsroom/newsroom-website-images-2.png
 hero_image_mobile: /images/newsroom/website-mobile-image-1000x1000.png
 category: Franchising
-date: 2026-01-26T00:00:00Z
-preview_text: ''
+date: 2026-04-10T11:00:00+10:00
+preview_text: 30-31 May 2026
 featured: false
 ---
 ## **Be Your Own Boss**
