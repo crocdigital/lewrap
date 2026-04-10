@@ -11,8 +11,8 @@ seo_canonical: ''
 hero_image: /images/newsroom/newsroom-website-images.png
 hero_image_mobile: /images/newsroom/website-mobile-image-1.png
 category: Franchising
-date: 2026-04-11T09:00:00+10:00
-preview_text: ''
+date: 2026-04-15T09:00:00+10:00
+preview_text: Opening Wednesday 15th of April
 featured: false
 ---
 ## LeWrap Miranda is Coming Back!
