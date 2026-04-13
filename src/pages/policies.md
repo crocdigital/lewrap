@@ -75,9 +75,9 @@ terms_content: >-
   so on your own responsibility and are responsible for ensuring compliance with
   all laws in the place where you are located.</p><h3><strong>Contact
   Us</strong></h3><p>If you have questions or comments about this Privacy
-  Policy, please contact us at:</p><p>Rhodes Corporate Park<br />Building C<br
-  />Suite 8, Level 1<br />1C Homebush Bay Drive<br />Rhodes NSW 2138<br />02
-  9743 2580<br />info@lewrap.com</p>
+  Policy, please contact us at:</p><p>Rhodes Quarter<br />Building C<br />Suite
+  8, Level 1<br />1C Homebush Bay Drive<br />Rhodes NSW 2138<br />02 9743
+  2580<br />info@lewrap.com</p>
 privacy_content: >-
   <h3><strong>Introduction</strong></h3><p>LeWrap (“we” or “us” or “our”)
   respects the privacy of our users (“user” or “you”). This Privacy Policy
