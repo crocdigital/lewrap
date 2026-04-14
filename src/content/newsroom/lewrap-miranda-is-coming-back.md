@@ -15,7 +15,7 @@ date: 2026-04-16T09:00:00+10:00
 preview_text: Opening Wed 15th of April
 featured: false
 ---
-## LeWrap Miranda is Coming Back!
+## LeWrap Miranda is Opening Tomorrow!
 
 We heard you, Miranda! After so many requests from our amazing customers, we’re excited to announce that LeWrap is returning to Miranda.
 
