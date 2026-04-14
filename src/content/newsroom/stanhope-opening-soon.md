@@ -12,10 +12,10 @@ hero_image: /images/newsroom/stanhope-gardens-were-coming.webp
 hero_image_mobile: /images/newsroom/stanhope-gardens-were-coming-mobile.webp
 category: Franchising
 date: 2026-02-21T00:00:00+11:00
-preview_text: ' LeWrap is Opening at Stanhope Village'
+preview_text: ' LeWrap is Open at Stanhope Village'
 featured: true
 ---
-## Stanhope Gardens we’re open!
+## Stanhope Gardens We’re Open!
 
 Enjoy your LeWrap favourites now at Stanhope Village.
 
