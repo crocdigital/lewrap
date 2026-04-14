@@ -15,12 +15,8 @@ date: 2026-03-25T00:00:00+11:00
 preview_text: LeWrap is NOW OPEN at the New ECQ Outlet
 featured: true
 ---
-## Eastern Creek, LeWrap is Opening Soon!
+## LeWrap ECQ is Now Open!
 
-We’re excited to be opening in the NEW Eastern Creek Quarter Outlet on Wednesday 25th of March.
+Find us at the New ECQ Outlet!
 
 Enjoy your LeWrap favourites in the new centre featuring an amphitheatre, half basketball court, outdoor eating areas, and ECQ’s large outdoor screen.
-
-Join us on the opening day to welcome the new franchisee. <br><br>Pickup free merch giveaways on opening day including tote bags, water bottles, lollipops & balloons.
-
-See you there!
