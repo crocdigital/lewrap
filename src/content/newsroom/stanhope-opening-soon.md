@@ -19,4 +19,8 @@ featured: true
 
 Enjoy your LeWrap favourites now at Stanhope Village.
 
-Access our store via the food court or the street access.
+Access our
+
+&nbsp;
+
+store via the food court or the street access.
