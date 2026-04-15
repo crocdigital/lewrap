@@ -15,13 +15,13 @@ longitude: 151.1009
 phone: ''
 email: miranda@lewrap.com
 hours:
-  monday: 9:30am - 5:30pm
-  tuesday: 9:30am - 5:30pm
-  wednesday: 9:30am - 5:30pm
+  monday: 9:30am - 6:00pm
+  tuesday: 9:30am - 6:00pm
+  wednesday: 9:30am - 6:00pm
   thursday: 9:30am - 9:00pm
-  friday: 9:30am - 5:30pm
-  saturday: 9:30am - 5:30pm
-  sunday: 9:30am - 5:00pm
+  friday: 9:30am - 6:00pm
+  saturday: 9:30am - 6:00pm
+  sunday: 9:30am - 6:00pm
 image: /images/locations/website-storeimages-1.png
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: false
