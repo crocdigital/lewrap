@@ -1,11 +1,11 @@
 ---
 _schema: default
 layout: ../../layouts/NewsroomLayout.astro
-title: LeWrap Miranda Opening Tomorrow
-seo_title: LeWrap Miranda Opening
+title: LeWrap Miranda Now Open
+seo_title: LeWrap Miranda Now Open
 seo_description: ''
 seo_image: ''
-seo_keywords: LeWrap Miranda Opening
+seo_keywords: LeWrap Miranda Now Open
 seo_robots: index, follow
 seo_canonical: ''
 hero_image: /images/newsroom/newsroom-website-images.png
@@ -15,7 +15,7 @@ date: 2026-04-16T00:00:00+10:00
 preview_text: Opening Wednesday 15th of April
 featured: false
 ---
-## LeWrap Miranda is Opening Tomorrow!
+## LeWrap Miranda is Now Open!
 
 We heard you, Miranda! After so many requests from our amazing customers, we’re excited to announce that LeWrap is returning to Miranda.
 
