@@ -6,9 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Miranda
-address: >-
-  OPENING SOON Level 2 Food Court, Westfield Miranda Shopping Centre, 600
-  Kingway
+address: Level 2 Food Court, Westfield Miranda Shopping Centre, 600 Kingway
 suburb: Miranda
 state: NSW
 postcode: '2228'
@@ -30,6 +28,4 @@ featured: false
 ---
 &nbsp;
 
-**LeWrap Miranda is coming back!** We've had many requests to come back and we're making it happen. LeWrap Miranda will be serving fresh, flavour-packed wraps, flavour-packed wraps, plates, salads and baguettes. Located in Westfield Miranda, LeWrap is loved for its quick service, high-quality ingredients, and fully customisable menu.
-
-Stay tuned for the opening date!
+**LeWrap Miranda is back!** We've had many requests to come back and we've made it happen. LeWrap Miranda is serving fresh, flavour-packed wraps, flavour-packed wraps, plates, salads and baguettes. Located in Westfield Miranda, LeWrap is loved for its quick service, high-quality ingredients, and fully customisable menu.
