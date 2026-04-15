@@ -19,8 +19,10 @@ featured: false
 
 ## LeWrap Miranda is Now Open!
 
-We heard you, Miranda! After so many requests from our amazing customers, we’re excited to announce that LeWrap is returning to Miranda.
+We heard you, Miranda. After so many requests from our customers, LeWrap is officially back in Miranda.
 
-Our previous store in the area built a loyal following, and the feedback we’ve received since closing has been incredible. Your messages, comments and requests didn’t go unnoticed, and now we’re thrilled to say we’re coming back.
+Our previous store in the area built a loyal following, and the support we’ve received since closing has meant a lot. Your messages, comments and requests didn’t go unnoticed, and now we’re so happy to welcome you back.
 
-**LeWrap Miranda is open at Westfield Miranda** Level 2, near Coles. We've bringing back the fresh flavours, quality ingredients and wraps you love.
+**LeWrap Miranda is now open at Westfield Miranda**, level 2 near Coles, bringing back the fresh flavours, quality ingredients and wraps you love.
+
+Come visit us and grab your favourites. We can’t wait to see you!
