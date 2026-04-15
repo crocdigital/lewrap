@@ -15,6 +15,8 @@ date: 2026-04-16T00:00:00+10:00
 preview_text: Now Open - near Coles
 featured: false
 ---
+&nbsp;
+
 ## LeWrap Miranda is Now Open!
 
 We heard you, Miranda! After so many requests from our amazing customers, we’re excited to announce that LeWrap is returning to Miranda.
