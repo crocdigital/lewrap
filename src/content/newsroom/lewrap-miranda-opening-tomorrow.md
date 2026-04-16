@@ -26,3 +26,7 @@ Our previous store in the area built a loyal following, and the support we’ve 
 **LeWrap Miranda is now open at Westfield Miranda**, level 2 near Coles, bringing back the fresh flavours, quality ingredients and wraps you love.
 
 Come visit us and grab your favourites. We can’t wait to see you!
+
+&nbsp;
+
+![](/images/newsroom/154a1198.jpg)![](/images/newsroom/154a1208.jpg)<img src="/images/newsroom/154a1201-1.jpg" height="1638" width="2048" /><img src="/images/newsroom/154a1171.jpg" height="1638" width="2048" />
