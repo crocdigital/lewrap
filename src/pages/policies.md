@@ -16,7 +16,11 @@ terms_content: >-
   offer is available for a limited time only, for pickup only. Redeemable on the
   app only. Valid for 30 days from the signup date. Valid one per phone number,
   per person. Not available with any other offers. Customisable add-ons will be
-  charged.</p><h3><strong>Catering Cancellation
+  charged.</p><p>The customer who places the order must be present to collect
+  it. One redemption per person, multiple wraps cannot be collected by a single
+  individual. ID or app verification may be required. Multiple orders cannot be
+  collected by the same individual under any
+  circumstances.</p><h3><strong>Catering Cancellation
   Policy</strong></h3><p>Cancellations must be made 48 hours prior to pick-up.
   Please contact your local store. <a href="/locations/">Click here</a> to see
   all store contact details.</p><p>Orders must be collected from the selected
