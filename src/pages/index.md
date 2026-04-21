@@ -63,8 +63,6 @@ flexible_two_col:
         alt: Find a LeWrap near you
       - image: /images/carousel/findalewrap-02.webp
         alt: Find a LeWrap near you
-      - image: /images/carousel/findalewrap-03.webp
-        alt: Find a Store Near You
 lewrapstory_heading: The LeWrap Story
 lewrapstory_text: >-
   <p>From one store to a national brand. Kaan Celik founded LeWrap with a clear
@@ -94,7 +92,7 @@ franchise_callout:
   text: >-
     <p>The only thing better than eating at LeWrap is owning one. Looking for a
     career change? Wrap up your success.</p>
-  image: /images/franchise/lewrap-location.webp
+  image: /images/franchise/shopfront-editted.png
   button_text: Learn more
   button_link: /own-a-store
 ---
