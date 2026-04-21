@@ -12,7 +12,7 @@ hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
 hero_bg_image: /images/hero/locations-2.png
-hero_bg_image_mobile: /images/hero/stanhope-storefront-1.png
+hero_bg_image_mobile: /images/hero/stanhope-storefront-2.png
 hero_button_text: ''
 hero_button_link: ''
 hero_button_variant: primary
