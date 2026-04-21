@@ -11,7 +11,7 @@ hero_title: Find a LeWrap
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
-hero_bg_image: /images/hero/locations-2.png
+hero_bg_image: /images/hero/locations-3-1.png
 hero_bg_image_mobile: /images/hero/stanhope-storefront-2.png
 hero_button_text: ''
 hero_button_link: ''
