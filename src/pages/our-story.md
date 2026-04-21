@@ -57,7 +57,7 @@ page_blocks:
       we are committed to supporting franchise partners on their success
       journey, bringing good food to local communities.</p><p>Want to be our
       next success story?</p>
-    image_path: /images/pages/lewrap-franchise-team.webp
+    image_path: /images/pages/ecq-team-1.png
     video_url: ''
     reverse: true
     background_type: none
