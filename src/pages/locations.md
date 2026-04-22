@@ -7,7 +7,7 @@ seo_image: ''
 seo_keywords:
 seo_robots: index, follow
 seo_canonical: ''
-hero_title: Find a LeWrap
+hero_title: Find a Store
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
