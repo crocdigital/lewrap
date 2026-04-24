@@ -13,7 +13,7 @@ hero_image_mobile: /images/newsroom/freewrap-mobile.webp
 category: Updates
 date: 2026-02-16T09:00:00+11:00
 preview_text: Skip the queue and order ahead
-featured: true
+featured: false
 ---
 ## The New LeWrap App is Here!
 

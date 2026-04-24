@@ -13,7 +13,7 @@ hero_image_mobile: /images/newsroom/freewrap-1.png
 category: Promotion
 date: 2026-03-24T00:00:00+11:00
 preview_text: 'Enjoy a free wrap on us! '
-featured: true
+featured: false
 ---
 ## Enjoy a Free Wrap on the App!
 
