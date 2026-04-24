@@ -13,7 +13,7 @@ hero_image_mobile: /images/newsroom/website-mobile-image-1000x1000.png
 category: Franchising
 date: 2026-05-31T09:00:00+10:00
 preview_text: Free Ticket on us!
-featured: false
+featured: true
 ---
 ## **Be Your Own Boss**
 
