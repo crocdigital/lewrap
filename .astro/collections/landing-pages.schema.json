@@ -1,0 +1,39 @@
+{
+  "$ref": "#/definitions/landing-pages",
+  "definitions": {
+    "landing-pages": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "keywords": {
+          "type": "string"
+        },
+        "robots": {
+          "type": "string"
+        },
+        "canonical": {
+          "type": "string"
+        },
+        "page_blocks": {
+          "type": "array"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

@@ -1,5 +1,4 @@
 export const prerender = false;
-
 import type { APIRoute } from 'astro';
 import nodemailer from 'nodemailer';
 
@@ -11,7 +10,7 @@ export const POST: APIRoute = async ({ request }) => {
     const firstName = formData.first_name as string;
     const lastName = formData.last_name as string;
     const phone = formData.phone as string;
-    const email = formData.email as string; // Need to add email field to form!
+    const email = formData.email as string;
     const location = formData.location as string;
     const timeline = formData.timeline as string;
     const fundCapacity = formData.fund_capacity as string;
@@ -20,14 +19,14 @@ export const POST: APIRoute = async ({ request }) => {
     const transporter = nodemailer.createTransport({
       host: import.meta.env.EMAIL_HOST,
       port: parseInt(import.meta.env.EMAIL_PORT),
-      secure: true, // SSL
+      secure: true,
       auth: {
         user: import.meta.env.EMAIL_USER,
         pass: import.meta.env.EMAIL_PASS,
       },
     });
 
-    // Prepare email content for internal team
+    // Internal email HTML
     const internalEmailHTML = `
       <!DOCTYPE html>
       <html>
@@ -44,9 +43,14 @@ export const POST: APIRoute = async ({ request }) => {
           .header {
             background-color: #2D5016;
             color: white;
-            padding: 20px;
+            padding: 30px 20px 20px 20px;
             border-radius: 8px 8px 0 0;
             text-align: center;
+          }
+          .header img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 15px;
           }
           .content {
             background-color: #f9f9f9;
@@ -104,62 +108,53 @@ export const POST: APIRoute = async ({ request }) => {
       </head>
       <body>
         <div class="header">
+          <img src="https://lewrap.com/lewrap-logo-email.png" alt="LeWrap Logo" />
           <h1 style="margin: 0; font-size: 24px;">New Franchise Enquiry</h1>
           <p style="margin: 10px 0 0 0; opacity: 0.9;">LeWrap Website</p>
         </div>
         <div class="content">
-          
           <div class="section">
             <div class="section-title">📋 Personal Information</div>
-            
             <div class="field">
               <div class="label">Name</div>
               <div class="value">${firstName} ${lastName}</div>
             </div>
-            
             <div class="field">
               <div class="label">Email</div>
               <div class="value"><a href="mailto:${email}" style="color: #2D5016; text-decoration: none;">${email}</a></div>
             </div>
-            
             <div class="field">
               <div class="label">Phone</div>
               <div class="value"><a href="tel:${phone}" style="color: #2D5016; text-decoration: none;">${phone}</a></div>
             </div>
           </div>
-
           <div class="section">
             <div class="section-title">📍 Location & Timeline</div>
-            
             <div class="field">
               <div class="label">Location of Interest</div>
               <div class="value">${location}</div>
             </div>
-            
             <div class="field">
               <div class="label">Investment Timeline</div>
               <div class="value">${timeline}</div>
             </div>
           </div>
-
           <div class="section">
             <div class="section-title">💰 Investment Capacity</div>
-            
             <div class="field">
               <div class="label">Fund Capacity</div>
               <div class="value">${fundCapacity}</div>
             </div>
           </div>
-
         </div>
         <div class="footer">
-          <p>This enquiry was submitted via the LeWrap franchise form at ${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' })}</p>
+          <p>This enquiry was submitted via the LeWrap website at ${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' })}</p>
         </div>
       </body>
       </html>
     `;
 
-    // Prepare email content for the enquirer (customer-facing)
+    // Customer confirmation email HTML
     const customerEmailHTML = `
       <!DOCTYPE html>
       <html>
@@ -176,9 +171,14 @@ export const POST: APIRoute = async ({ request }) => {
           .header {
             background-color: #2D5016;
             color: white;
-            padding: 20px;
+            padding: 30px 20px 20px 20px;
             border-radius: 8px 8px 0 0;
             text-align: center;
+          }
+          .header img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 15px;
           }
           .content {
             background-color: #f9f9f9;
@@ -197,15 +197,12 @@ export const POST: APIRoute = async ({ request }) => {
           .download-button {
             display: inline-block;
             background-color: #2D5016;
-            color: white;
+            color: white !important;
             padding: 12px 30px;
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
             margin: 20px 0;
-          }
-          .download-button:hover {
-            background-color: #1a3009;
           }
           .section {
             margin-bottom: 25px;
@@ -242,14 +239,16 @@ export const POST: APIRoute = async ({ request }) => {
       </head>
       <body>
         <div class="header">
+          <img src="https://lewrap.com/lewrap-logo-email.png" alt="LeWrap Logo" />
           <h1 style="margin: 0; font-size: 24px;">Thank You for Your Interest!</h1>
           <p style="margin: 10px 0 0 0; opacity: 0.9;">LeWrap Franchise Opportunities</p>
         </div>
         <div class="content">
-          
           <div class="message-box">
             <h2 style="margin-top: 0; color: #2D5016;">We've received your enquiry</h2>
-            <p style="margin: 10px 0;">Thank you for your interest in becoming a LeWrap franchisee! Our team will review your information and be in touch within 2-3 business days to discuss the next steps.</p>
+            <p style="margin: 10px 0 0;">Thank you for your interest in becoming a LeWrap franchisee! Our team will review your information and be in touch within 2-3 business days to discuss the next steps.</p>
+            <p style="margin: 15px 0 0;">If you have any immediate questions, or keen to chat now, please don't hesitate to contact us at <a href="mailto:franchising@lewrap.com" style="color: #2D5016; text-decoration: none; font-weight: 600;">franchising@lewrap.com</a> or call <a href="tel:+61451732267" style="color: #2D5016; text-decoration: none; font-weight: 600;">+61 451 732 267</a>.</p>
+            <p style="margin: 15px 0 0; font-weight: 600; color: #2D5016;">We'd love to hear from you!</p>
           </div>
 
           <div style="text-align: center; margin: 30px 0;">
@@ -260,43 +259,31 @@ export const POST: APIRoute = async ({ request }) => {
 
           <div class="section">
             <div class="section-title">Your Enquiry Details</div>
-            
             <div class="field">
               <div class="label">Name:</div>
               <div class="value">${firstName} ${lastName}</div>
             </div>
-            
             <div class="field">
               <div class="label">Email:</div>
               <div class="value">${email}</div>
             </div>
-            
             <div class="field">
               <div class="label">Phone:</div>
               <div class="value">${phone}</div>
             </div>
-            
             <div class="field">
               <div class="label">Location of Interest:</div>
               <div class="value">${location}</div>
             </div>
-            
             <div class="field">
               <div class="label">Investment Timeline:</div>
               <div class="value">${timeline}</div>
             </div>
-            
             <div class="field">
               <div class="label">Fund Capacity:</div>
               <div class="value">${fundCapacity}</div>
             </div>
           </div>
-
-          <div style="background-color: #fff; border: 1px solid #e0e0e0; padding: 20px; border-radius: 8px; margin-top: 30px;">
-            <h3 style="margin-top: 0; color: #2D5016;">Questions?</h3>
-            <p style="margin: 0;">If you have any immediate questions, please don't hesitate to contact us at <a href="mailto:info@lewrap.com" style="color: #2D5016;">info@lewrap.com</a></p>
-          </div>
-
         </div>
         <div class="footer">
           <p>© ${new Date().getFullYear()} LeWrap. All rights reserved.</p>
@@ -305,34 +292,12 @@ export const POST: APIRoute = async ({ request }) => {
       </html>
     `;
 
-    const emailText = `
-New Franchise Enquiry - LeWrap Website
-
-PERSONAL INFORMATION
---------------------
-Name: ${firstName} ${lastName}
-Phone: ${phone}
-Email: ${email}
-
-LOCATION & TIMELINE
--------------------
-Location of Interest: ${location}
-Investment Timeline: ${timeline}
-
-INVESTMENT CAPACITY
--------------------
-Fund Capacity: ${fundCapacity}
-
----
-Submitted: ${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' })}
-    `;
-
-    // Send email to franchise team
+    // Send internal email to franchise team
     await transporter.sendMail({
       from: import.meta.env.EMAIL_FROM,
       to: import.meta.env.EMAIL_FRANCHISE,
+      replyTo: email,
       subject: 'Franchise Enquiry from LeWrap Website',
-      text: emailText,
       html: internalEmailHTML,
     });
 
@@ -347,13 +312,13 @@ Submitted: ${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' }
     return new Response(
       JSON.stringify({
         success: true,
-        message: 'Thank you for your interest! We\'ll be in touch soon to discuss franchise opportunities.'
+        message: "Thank you for your enquiry! We'll be in touch within 2-3 business days."
       }),
       { status: 200 }
     );
 
   } catch (error) {
-    console.error('Franchise enquiry form error:', error);
+    console.error('Franchise enquiry error:', error);
     return new Response(
       JSON.stringify({
         success: false,

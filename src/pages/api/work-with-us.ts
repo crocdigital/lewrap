@@ -1,11 +1,9 @@
 export const prerender = false;
-
 import type { APIRoute } from 'astro';
 import nodemailer from 'nodemailer';
 
 export const POST: APIRoute = async ({ request }) => {
   try {
-    // Parse multipart form data (for file uploads)
     const formData = await request.formData();
 
     // 1. Validate reCAPTCHA
@@ -21,26 +19,30 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    // Verify reCAPTCHA with Google
-    const recaptchaVerify = await fetch(
-      'https://www.google.com/recaptcha/api/siteverify',
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `secret=${import.meta.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaResponse}`
-      }
-    );
+    // Skip reCAPTCHA validation on localhost
+    const isDev = import.meta.env.DEV;
 
-    const recaptchaResult = await recaptchaVerify.json();
-
-    if (!recaptchaResult.success) {
-      return new Response(
-        JSON.stringify({
-          success: false,
-          message: 'reCAPTCHA verification failed. Please try again.'
-        }),
-        { status: 400 }
+    if (!isDev) {
+      const recaptchaVerify = await fetch(
+        'https://www.google.com/recaptcha/api/siteverify',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `secret=${import.meta.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaResponse}`
+        }
       );
+
+      const recaptchaResult = await recaptchaVerify.json();
+
+      if (!recaptchaResult.success) {
+        return new Response(
+          JSON.stringify({
+            success: false,
+            message: 'reCAPTCHA verification failed. Please try again.'
+          }),
+          { status: 400 }
+        );
+      }
     }
 
     // 2. Extract form data
@@ -65,7 +67,7 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     // Check file size (10MB limit)
-    const maxSize = 10 * 1024 * 1024; // 10MB
+    const maxSize = 10 * 1024 * 1024;
     if (resumeFile.size > maxSize) {
       return new Response(
         JSON.stringify({
@@ -98,7 +100,7 @@ export const POST: APIRoute = async ({ request }) => {
     const transporter = nodemailer.createTransport({
       host: import.meta.env.EMAIL_HOST,
       port: parseInt(import.meta.env.EMAIL_PORT),
-      secure: true, // SSL
+      secure: true,
       auth: {
         user: import.meta.env.EMAIL_USER,
         pass: import.meta.env.EMAIL_PASS,
@@ -122,9 +124,14 @@ export const POST: APIRoute = async ({ request }) => {
           .header {
             background-color: #2D5016;
             color: white;
-            padding: 20px;
+            padding: 30px 20px 20px 20px;
             border-radius: 8px 8px 0 0;
             text-align: center;
+          }
+          .header img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 15px;
           }
           .content {
             background-color: #f9f9f9;
@@ -170,6 +177,7 @@ export const POST: APIRoute = async ({ request }) => {
       </head>
       <body>
         <div class="header">
+          <img src="https://lewrap.com/lewrap-logo-email.png" alt="LeWrap Logo" />
           <h1 style="margin: 0; font-size: 24px;">New Job Application</h1>
           <p style="margin: 10px 0 0 0; opacity: 0.9;">LeWrap Website</p>
         </div>
@@ -178,27 +186,22 @@ export const POST: APIRoute = async ({ request }) => {
             <div class="label">Applicant Name</div>
             <div class="value">${name}</div>
           </div>
-          
           <div class="field">
             <div class="label">Email</div>
             <div class="value"><a href="mailto:${email}" style="color: #2D5016; text-decoration: none;">${email}</a></div>
           </div>
-          
           <div class="field">
             <div class="label">Phone</div>
             <div class="value"><a href="tel:${phone}" style="color: #2D5016; text-decoration: none;">${phone}</a></div>
           </div>
-          
           <div class="field">
             <div class="label">Position Interested In</div>
             <div class="value">${position}</div>
           </div>
-          
           <div class="field">
             <div class="label">Applying To</div>
             <div class="value">${applyingTo}</div>
           </div>
-          
           <div class="field">
             <div class="label">Resume</div>
             <div class="file-info">
@@ -206,7 +209,6 @@ export const POST: APIRoute = async ({ request }) => {
               <span style="color: #666; font-size: 14px;">File size: ${fileSizeKB} KB</span>
             </div>
           </div>
-          
           <div class="field">
             <div class="label">Additional Information</div>
             <div class="value">${message.replace(/\n/g, '<br>')}</div>
@@ -241,7 +243,7 @@ Submitted: ${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' }
     await transporter.sendMail({
       from: import.meta.env.EMAIL_FROM,
       to: recipients,
-      replyTo: email, // Allows easy replies to the applicant
+      replyTo: email,
       subject: 'Job Application from LeWrap Website',
       text: emailText,
       html: emailHTML,
@@ -257,7 +259,7 @@ Submitted: ${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' }
     return new Response(
       JSON.stringify({
         success: true,
-        message: 'Thank you for your application! We\'ll review your resume and be in touch soon.'
+        message: "Thank you for your application! We'll review your resume and be in touch soon."
       }),
       { status: 200 }
     );

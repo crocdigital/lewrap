@@ -12,17 +12,26 @@ terms_content: >-
   use of this website indicates your acceptance of these Terms and
   Conditions.</p><p>LeWrap may from time to time amend, update or change this
   website including these Terms and Conditions without prior
-  notice.</p><h3>Catering Cancellation Policy</h3><p>Cancellations must be made
-  48 hours prior to pick-up. Please contact your local store. <a
-  href="/locations/">Click here</a> to see all store contact
-  details.</p><p>Orders must be collected from the selected LeWrap location at
-  the agreed date and time. LeWrap is not responsible for orders that are not
-  collected on time or from the nominated location.</p><h3><strong>Public
-  Holidays</strong></h3><p>15% Public Holiday surcharge applies on all Public
-  Holidays. This helps cover the extra costs of operating on these days,
-  including staffing and other expenses, when running the business is typically
-  more costly.</p><h3><strong>Privacy</strong></h3><p>Refer to the Privacy
-  Policy, which form part of these Terms and Conditions of
+  notice.</p><h3><strong>App Offer T&amp;Cs</strong></h3><p>Free Wrap on the App
+  offer is available for a limited time only, for pickup only. Redeemable on the
+  app only. Valid for 30 days from the signup date. Valid one per phone number,
+  per person. Not available with any other offers. Customisable add-ons will be
+  charged.</p><p>The customer who places the order must be present to collect
+  it. One redemption per person, multiple wraps cannot be collected by a single
+  individual. ID or app verification may be required. Multiple orders cannot be
+  collected by the same individual under any
+  circumstances.</p><h3><strong>Catering Cancellation
+  Policy</strong></h3><p>Cancellations must be made 48 hours prior to pick-up.
+  Please contact your local store. <a href="/locations/">Click here</a> to see
+  all store contact details.</p><p>Orders must be collected from the selected
+  LeWrap location at the agreed date and time. LeWrap is not responsible for
+  orders that are not collected on time or from the nominated
+  location.</p><h3><strong>Public Holidays</strong></h3><p>15% Public Holiday
+  surcharge applies on all Public Holidays. This helps cover the extra costs of
+  operating on these days, including staffing and other expenses, when running
+  the business is typically more
+  costly.</p><h3><strong>Privacy</strong></h3><p>Refer to the Privacy Policy,
+  which form part of these Terms and Conditions of
   Use.</p><h3><strong>Information on Website</strong></h3><p>LeWrap does not
   undertake to keep this website updated. LeWrap is not liable to you or anyone
   else if errors occur in the information on this website or if that information
@@ -70,9 +79,9 @@ terms_content: >-
   so on your own responsibility and are responsible for ensuring compliance with
   all laws in the place where you are located.</p><h3><strong>Contact
   Us</strong></h3><p>If you have questions or comments about this Privacy
-  Policy, please contact us at:</p><p>Rhodes Corporate Park<br />Building C<br
-  />Suite 8, Level 1<br />1C Homebush Bay Drive<br />Rhodes NSW 2138<br />02
-  9743 2580<br />info@lewrap.com</p>
+  Policy, please contact us at:</p><p>Rhodes Quarter<br />Building C<br />Suite
+  8, Level 1<br />1C Homebush Bay Drive<br />Rhodes NSW 2138<br />02 9743
+  2580<br />info@lewrap.com</p>
 privacy_content: >-
   <h3><strong>Introduction</strong></h3><p>LeWrap (“we” or “us” or “our”)
   respects the privacy of our users (“user” or “you”). This Privacy Policy

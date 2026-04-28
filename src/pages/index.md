@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/HomeLayout.astro
-title: LeWrap - Fresh, Healthy Wraps
+title: LeWrap - Fresh Wraps
 seo_title:
 seo_description:
 seo_image: ''
@@ -8,13 +8,16 @@ seo_keywords:
 seo_robots: index, follow
 seo_canonical: ''
 hero_slides:
-  - image_desktop: /images/hero/carousel-catering-desktop.webp
-    image_mobile: /images/hero/carousel-catering-mobile.webp
-    alt: Fresh wraps and healthy food
-  - image_desktop: /images/hero/carousel-catering2-desktop.webp
-    image_mobile: /images/hero/carousel-catering2-mobile.webp
-    alt: Fresh wraps and healthy food
-hero_heading: We believe in all things good and fresh
+  - image_desktop: /images/hero/website-webelieve1920x1080-1.png
+    image_mobile: /images/hero/mobile1000x1000-webelieve-1.png
+    alt: We believe in all things good & fresh
+  - image_desktop: /images/hero/website-catering1920x1080-3.png
+    image_mobile: /images/hero/mobile1000x1000-catering.png
+    alt: Catering Made Easy
+  - image_desktop: /images/hero/website-app1920x1080-3.png
+    image_mobile: /images/hero/mobile1000x1000-freewrap.png
+    alt: Free Wrap on the App
+hero_heading:
 hero_cta1_text: Our food
 hero_cta1_link: /our-food
 hero_cta2_text: Order now
@@ -32,20 +35,20 @@ marquee_items:
   - Kids Meals
   - Sides
   - Drinks
-welcome_heading: Nobody makes a wrap like us
+welcome_heading: Nobody Makes a Wrap Like Us
 welcome_text: >-
   <p>Nobody makes a wrap like us because nobody does freshness like us. Our
   vegetables are locally sourced and cut fresh daily, then prepared to order so
-  your meal is made exactly how it should be: fresh, fast and full of flavour.
-  From 100% Australian chicken breast and strip loin steak to chicken breast
-  schnitzel and authentic lamb kofta, our proteins are grilled fresh to order.
-  It’s simple food done right. We believe in all things good and fresh and it
-  shows in every wrap, salad, plate and baguette we make.</p>
+  your meal is made exactly how it should be: fresh, fast and full of flavour. 
+  </p><p>From 100% Australian chicken breast and strip loin steak to chicken
+  breast schnitzel and authentic lamb kofta, our proteins are grilled fresh to
+  order. It’s simple food done right. We believe in all things good and fresh
+  and it shows in every wrap, salad, plate and baguette we make.</p>
 welcome_image: /images/pages/welcome-lewrap.webp
 welcome_button_text: Our Food
 welcome_button_link: /our-food
 flexible_two_col:
-  - title: Find a LeWrap near you
+  - title: Find a Store Near You
     description: >-
       <p>There’s a LeWrap near you, ready to serve fresh, made-to-order wraps,
       salads, plates and baguettes. We make it easy to enjoy something good and
@@ -59,8 +62,6 @@ flexible_two_col:
       - image: /images/carousel/findalewrap-01.webp
         alt: Find a LeWrap near you
       - image: /images/carousel/findalewrap-02.webp
-        alt: Find a LeWrap near you
-      - image: /images/carousel/findalewrap-03.webp
         alt: Find a LeWrap near you
 lewrapstory_heading: The LeWrap Story
 lewrapstory_text: >-
@@ -77,7 +78,7 @@ lewrapstory_image: /images/kaan-celik.webp
 show_home_faqs: true
 home_faq_button_text: View all FAQs
 home_faq_button_link: /faqs
-catering_heading: Let us cater your next event
+catering_heading: Let Us Cater Your Next Event
 catering_text: >-
   <p>No event is too big or too small. From office catering to family
   get-togethers and special celebrations, we’ve got fresh wraps, baguettes,
@@ -87,11 +88,11 @@ catering_button_link: /catering
 catering_image: /images/pages/catering.webp
 franchise_callout:
   show: true
-  heading: Own a LeWrap store
+  heading: Own a LeWrap Store
   text: >-
     <p>The only thing better than eating at LeWrap is owning one. Looking for a
     career change? Wrap up your success.</p>
-  image: /images/franchise/lewrap-location.webp
+  image: /images/franchise/stanhope-storefront.png
   button_text: Learn more
   button_link: /own-a-store
 ---

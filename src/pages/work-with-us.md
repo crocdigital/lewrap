@@ -49,5 +49,7 @@ page_blocks:
     button_text: Apply now
     button_link: '#apply'
     button_variant: primary
+    button_target: false
+    button_download: false
 flexible_two_col: []
 ---
