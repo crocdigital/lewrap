@@ -320,8 +320,8 @@ privacy_content: >-
   information provided below</strong></p><p>If you no longer wish to receive
   correspondence, emails, or other communications from third parties, you are
   responsible for contacting the third party directly.</p><p><strong>Contact
-  Us</strong><br />If you have questions or comments about this Privacy Policy,
-  please contact us at:</p><p>Rhodes Quarter<br />Building C<br />Suite 8, Level
-  1<br />1C Homebush Bay Drive<br />Rhodes NSW 2138<br />02 9743 2580<br
-  />info@lewrap.com</p>
+  Us</strong><br />If you have questions or comments about these Terms and
+  Conditions, please contact us at:</p><p>Rhodes Quarter<br />Building C<br
+  />Suite 8, Level 1<br />1C Homebush Bay Drive<br />Rhodes NSW 2138<br />02
+  9743 2580<br />info@lewrap.com</p>
 ---
