@@ -146,22 +146,22 @@ privacy_content: >-
   entering contests or giveaways and/or responding to
   surveys.</p><p><strong>Mobile Application Information</strong><br />If you
   connect using our mobile application:</p><p><strong>Geo-Location
-  Information.</strong><br />We may request access or permission to and track
+  Information</strong><br />We may request access or permission to and track
   location-based information from your mobile device, either continuously or
   while you are using our mobile application, to provide location-based
   services. If you wish to change our access or permissions, you may do so in
-  your device’s settings.</p><p><strong>Mobile Device Access.</strong><br />We
+  your device’s settings.</p><p><strong>Mobile Device Access</strong><br />We
   may request access or permission to certain features from your mobile device,
   including your mobile device’s bluetooth, calendar, camera, contacts,
   microphone, reminders, sensors, SMS messages, social media accounts, storage,
   and other features. If you wish to change our access or permissions, you may
-  do so in your device’s settings.</p><p><strong>Mobile Device Data.</strong><br
+  do so in your device’s settings.</p><p><strong>Mobile Device Data</strong><br
   />We may collect device information (such as your mobile device ID, model and
   manufacturer), operating system, version information and IP
-  address.</p><p><strong>Push Notifications.</strong><br />We may request to
-  send you push notifications regarding your account or the Application. If you
-  wish to opt-out from receiving these types of communications, you may turn
-  them off in your device’s settings.</p><p><strong>Disclosure Of Your
+  address.</p><p><strong>Push Notifications</strong><br />We may request to send
+  you push notifications regarding your account or the Application. If you wish
+  to opt-out from receiving these types of communications, you may turn them off
+  in your device’s settings.</p><p><strong>Disclosure Of Your
   Information</strong><br />We may share information we have collected about you
   in certain situations. Your information may be disclosed as
   follows:</p><p><strong>By Law or to Protect Rights</strong><br />If we believe
