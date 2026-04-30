@@ -24,7 +24,7 @@ hours:
   friday: 9:30am - 5:00pm
   saturday: 9:30am - 4:00pm
   sunday: 9:30am - 4:00pm
-image: /images/locations/holdingwrap.webp
+image: /images/locations/website-storeimages-1.png
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
 ---
