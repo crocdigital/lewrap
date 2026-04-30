@@ -22,7 +22,7 @@ hours:
   friday: 10:00am - 7:00pm
   saturday: 10:00am - 6:00pm
   sunday: 10:00am - 5:00pm
-image: /images/locations/lw-ecq-pic.webp
+image: /images/locations/ecq-pic.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: false
 ---

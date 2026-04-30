@@ -22,7 +22,7 @@ hours:
   friday: 9:30am - 6:00pm
   saturday: 9:30am - 6:00pm
   sunday: 9:30am - 6:00pm
-image: /images/locations/mirandapic.webp
+image: /images/locations/miranda-pic.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: false
 ---
