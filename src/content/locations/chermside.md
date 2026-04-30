@@ -22,7 +22,7 @@ hours:
   friday: 9:00am - 5:30pm
   saturday: 9:00am - 5:00pm
   sunday: 10:00am - 4:00pm
-image: /images/locations/saladbench-2.webp
+image: /images/locations/website-storeimages.png
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
 ---
