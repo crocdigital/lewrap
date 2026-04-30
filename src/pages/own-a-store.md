@@ -21,7 +21,7 @@ page_blocks:
     heading: Supporting You Every Step of the Way
     text: >-
       <p><strong>“The support is real. From my first store to my fifth, I’ve
-      never felt alone.”</strong></p><p><em>-Renae Hammoud, Multi-Site Franchise
+      never felt alone.”</strong></p><p><em>-Ranae Hammoud, Multi-Site Franchise
       Owner</em></p>
     image_path:
     video_url: https://vimeo.com/922247437
