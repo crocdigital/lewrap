@@ -41,7 +41,7 @@ page_blocks:
       shared passion and purpose, we build strong partnerships that elevate
       customer experiences and strengthen our connection to the communities we
       serve.</p><p>Interested in bringing LeWrap to your local community?</p>
-    image_path: /images/pages/about-the-brand.webp
+    image_path: /images/pages/website-mobile-image-1000x1000-1.webp
     video_url: ''
     reverse: true
     background_type: none
