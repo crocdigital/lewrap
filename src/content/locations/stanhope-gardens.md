@@ -22,7 +22,7 @@ hours:
   friday: 9:30am - 10:00pm
   saturday: 9:30am - 10:00pm
   sunday: 9:30am - 9:30pm
-image: /images/locations/stanhope-pic.webp
+image: /images/locations/stanhope-pic.png
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
 ---

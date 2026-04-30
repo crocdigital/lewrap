@@ -22,7 +22,7 @@ hours:
   friday: 9:00am - 5:30pm
   saturday: 9:00am - 5:30pm
   sunday: 10:00am - 5:30pm
-image: /images/locations/placement-bankstown.webp
+image: /images/locations/tuggerah-pic.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
 ---
