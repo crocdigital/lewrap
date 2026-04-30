@@ -22,8 +22,8 @@ hours:
   friday: 10:00am - 7:00pm
   saturday: 10:00am - 6:00pm
   sunday: 10:00am - 5:00pm
-image: /images/locations/bankstown.webp
+image: /images/locations/lw-ecq-pic.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: false
 ---
-**LeWrap is Now Open in Eastern Creek!** Located in Eastern Creek Quarter Outlet, LeWrap ECQ will be serving fresh, flavour-packed wraps, flavour-packed wraps, plates, salads and baguettes. LeWrap is loved for its quick service, high-quality ingredients, and fully customisable menu.
+**LeWrap is Now Open in Eastern Creek!** Located in Eastern Creek Quarter Outlet, LeWrap ECQ is serving fresh, flavour-packed wraps, flavour-packed wraps, plates, salads and baguettes. LeWrap is loved for its quick service, high-quality ingredients, and fully customisable menu.
