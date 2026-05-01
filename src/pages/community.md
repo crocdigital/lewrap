@@ -53,10 +53,14 @@ flexible_two_col:
     bgColor: '#95ba32'
     reverse: false
     slides:
-      - image: /images/carousel/community-01.webp
+      - image: /images/carousel/16.webp
         alt: At LeWrap we're all about community
-      - image: /images/carousel/community-01.webp
+      - image: /images/carousel/12.webp
         alt: 2nd slide image
-      - image: /images/carousel/community-01.webp
+      - image: /images/carousel/13.webp
         alt: 3rd slide image
+      - image: /images/carousel/14.webp
+        alt: ''
+      - image: /images/carousel/15.webp
+        alt: ''
 ---
