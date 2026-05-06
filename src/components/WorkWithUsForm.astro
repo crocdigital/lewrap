@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import Button from "./atoms/Button.astro";
 
-// Get all locations for the dropdown
 const allLocations = (await getCollection(
     "locations",
 )) as CollectionEntry<"locations">[];
@@ -11,26 +10,19 @@ const sortedLocations = allLocations.sort((a, b) =>
     a.data.name.localeCompare(b.data.name),
 );
 
-// reCAPTCHA site key
 const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
 ---
 
-{/* Add reCAPTCHA script */}
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script>
-    // Declare grecaptcha for TypeScript
     declare const grecaptcha: any;
 
     function renderRecaptcha() {
         const recaptchaContainer = document.querySelector(".g-recaptcha");
-
         if (!recaptchaContainer) return;
-
-        // Check if already rendered (has children)
         if (recaptchaContainer.children.length > 0) return;
 
-        // Wait for grecaptcha to be available
         const checkAndRender = () => {
             if (typeof grecaptcha !== "undefined" && grecaptcha.render) {
                 try {
@@ -39,11 +31,9 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
                             recaptchaContainer.getAttribute("data-sitekey"),
                     });
                 } catch (e) {
-                    // Already rendered or error
                     console.log("reCAPTCHA already rendered or error:", e);
                 }
             } else {
-                // Script not loaded yet, try again
                 setTimeout(checkAndRender, 100);
             }
         };
@@ -51,12 +41,38 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
         checkAndRender();
     }
 
-    // Render on initial load
     renderRecaptcha();
-
-    // Re-render after view transitions
     document.addEventListener("astro:page-load", renderRecaptcha);
 </script>
+
+<style>
+    .field-reveal {
+        display: grid;
+        grid-template-rows: 0fr;
+        opacity: 0;
+        transform: translateY(-6px);
+        transition:
+            grid-template-rows 0.3s ease,
+            opacity 0.3s ease,
+            transform 0.3s ease;
+        pointer-events: none;
+    }
+
+    .field-reveal > div {
+        overflow: hidden;
+    }
+
+    .field-reveal.visible > div {
+        overflow: visible;
+    }
+
+    .field-reveal.visible {
+        grid-template-rows: 1fr;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+</style>
 
 <form class="p-8 md:p-12" id="work-with-us-form">
     <h2
@@ -66,7 +82,7 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
     </h2>
 
     <div class="max-w-screen-md mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Your name - spans both columns */}
+        {/* Your name */}
         <div class="md:col-span-2">
             <label
                 for="name"
@@ -83,7 +99,7 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
             />
         </div>
 
-        {/* Your email - spans both columns */}
+        {/* Your email */}
         <div class="md:col-span-2">
             <label
                 for="email"
@@ -100,7 +116,7 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
             />
         </div>
 
-        {/* Best contact number - left column */}
+        {/* Best contact number */}
         <div>
             <label
                 for="phone"
@@ -117,29 +133,7 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
             />
         </div>
 
-        {/* I'm interested in - right column */}
-        <div>
-            <label
-                for="position"
-                class="block text-lg font-medium text-lewrap-off-black mb-2"
-            >
-                I'm interested in <span class="text-red-500">*</span>
-            </label>
-            <select
-                id="position"
-                name="position"
-                required
-                class="bg-white w-full p-4.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lewrap-green focus:border-transparent focus:outline-none appearance-none focus:outline-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23CBCBCB%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:30px_30px] bg-[right_0.5rem_center] bg-no-repeat pr-12"
-            >
-                <option value="">Select a position</option>
-                <option value="Front of house">Front of house</option>
-                <option value="Back of house">Back of house</option>
-                <option value="Management">Management</option>
-                <option value="Other">Other</option>
-            </select>
-        </div>
-
-        {/* Location preference - Radio buttons - left column */}
+        {/* Apply to work at - radio buttons */}
         <div>
             <label class="block text-lg font-medium text-lewrap-off-black mb-2">
                 Apply to work at <span class="text-red-500">*</span>
@@ -172,35 +166,63 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
             </div>
         </div>
 
-        {/* Conditional store dropdown - right column */}
-        <div id="store-dropdown" class="hidden">
-            <label
-                for="preferred_store"
-                class="block text-lg font-medium text-lewrap-off-black mb-2"
-            >
-                Choose the store closest to you <span class="text-red-500"
-                    >*</span
+        {/* Conditional store dropdown - fades in */}
+        <div class="md:col-span-2 field-reveal" id="store-dropdown">
+            <div>
+                <label
+                    for="preferred_store"
+                    class="block text-lg font-medium text-lewrap-off-black mb-2"
                 >
-            </label>
-            <select
-                id="preferred_store"
-                name="preferred_store"
-                class="bg-white w-full p-4.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lewrap-green focus:border-transparent appearance-none focus:outline-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23CBCBCB%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:30px_30px] bg-[right_0.5rem_center] bg-no-repeat pr-12"
-            >
-                <option value="">Select a store</option>
-                {
-                    sortedLocations.map((location) => (
-                        <option
-                            value={location.data.email || location.data.name}
-                        >
-                            {location.data.name}
-                        </option>
-                    ))
-                }
-            </select>
+                    Choose the store closest to you <span class="text-red-500"
+                        >*</span
+                    >
+                </label>
+                <select
+                    id="preferred_store"
+                    name="preferred_store"
+                    class="bg-white w-full p-4.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lewrap-green focus:border-transparent appearance-none focus:outline-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23CBCBCB%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:30px_30px] bg-[right_0.5rem_center] bg-no-repeat pr-12"
+                >
+                    <option value="">Select a store</option>
+                    {
+                        sortedLocations.map((location) => (
+                            <option
+                                value={
+                                    location.data.email || location.data.name
+                                }
+                            >
+                                {location.data.name}
+                            </option>
+                        ))
+                    }
+                </select>
+            </div>
         </div>
 
-        {/* File upload - spans both columns */}
+        {/* I'm interested in - hidden until radio selected, then fades in */}
+        <div class="md:col-span-2 field-reveal" id="position-field">
+            <div>
+                <label
+                    for="position"
+                    class="block text-lg font-medium text-lewrap-off-black mb-2"
+                >
+                    I'm interested in <span class="text-red-500">*</span>
+                </label>
+                <select
+                    id="position"
+                    name="position"
+                    required
+                    class="bg-white w-full p-4.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lewrap-green focus:border-transparent focus:outline-none appearance-none focus:outline-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23CBCBCB%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:30px_30px] bg-[right_0.5rem_center] bg-no-repeat pr-12"
+                >
+                    <option value="">Select a position</option>
+                    <option value="Front of house">Front of house</option>
+                    <option value="Back of house">Back of house</option>
+                    <option value="Management">Management</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+        </div>
+
+        {/* File upload */}
         <div class="md:col-span-2">
             <label
                 for="resume"
@@ -221,7 +243,7 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
             </p>
         </div>
 
-        {/* Additional info - spans both columns */}
+        {/* Additional info */}
         <div class="md:col-span-2">
             <label
                 for="message"
@@ -237,20 +259,19 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
             ></textarea>
         </div>
 
-        {/* reCAPTCHA - spans both columns */}
+        {/* reCAPTCHA */}
         <div>
             <div class="g-recaptcha" data-sitekey={RECAPTCHA_SITE_KEY}></div>
         </div>
 
-        {/* Submit button - spans both columns */}
+        {/* Submit button */}
         <div class="md:col-span-2 pt-4">
-            <Button type="submit" variant="secondary"> Apply now </Button>
+            <Button type="submit" variant="secondary">Apply now</Button>
         </div>
     </div>
 </form>
 
 <script>
-    // Show/hide store dropdown based on radio selection
     const storeRadio = document.getElementById(
         "store-radio",
     ) as HTMLInputElement;
@@ -263,22 +284,67 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
     const storeSelect = document.getElementById(
         "preferred_store",
     ) as HTMLSelectElement;
+    const positionField = document.getElementById(
+        "position-field",
+    ) as HTMLElement;
+    const positionSelect = document.getElementById(
+        "position",
+    ) as HTMLSelectElement;
 
-    function toggleStoreDropdown() {
-        if (storeRadio?.checked) {
-            storeDropdown.classList.remove("hidden");
+    const storeOptions = [
+        { value: "Front of house", label: "Front of house" },
+        { value: "Back of house", label: "Back of house" },
+        { value: "Management", label: "Management" },
+        { value: "Other", label: "Other" },
+    ];
+
+    const hqOptions = [
+        { value: "Admin", label: "Admin" },
+        { value: "Management", label: "Management" },
+        { value: "Operations", label: "Operations" },
+        { value: "Other", label: "Other" },
+    ];
+
+    function updatePositionOptions() {
+        const isHQ = headquartersRadio?.checked;
+        const options = isHQ ? hqOptions : storeOptions;
+
+        positionSelect.value = "";
+        while (positionSelect.options.length > 1) {
+            positionSelect.remove(1);
+        }
+        options.forEach(({ value, label }) => {
+            const opt = document.createElement("option");
+            opt.value = value;
+            opt.textContent = label;
+            positionSelect.appendChild(opt);
+        });
+    }
+
+    function handleLocationChange() {
+        const isStore = storeRadio?.checked;
+
+        // Store dropdown: fade in only for "Closest store"
+        if (isStore) {
+            storeDropdown.classList.add("visible");
             storeSelect.required = true;
         } else {
-            storeDropdown.classList.add("hidden");
+            storeDropdown.classList.remove("visible");
             storeSelect.required = false;
             storeSelect.value = "";
         }
+
+        // Position field: always reveal once any radio is selected
+        positionField.classList.add("visible");
+
+        // Update the options to match the selection
+        updatePositionOptions();
     }
 
-    storeRadio?.addEventListener("change", toggleStoreDropdown);
-    headquartersRadio?.addEventListener("change", toggleStoreDropdown);
+    storeRadio?.addEventListener("change", handleLocationChange);
+    headquartersRadio?.addEventListener("change", handleLocationChange);
 
-    // Handle form submission with reCAPTCHA validation
+    // Form submission
     const form = document.getElementById(
         "work-with-us-form",
     ) as HTMLFormElement;
@@ -286,7 +352,6 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
         'button[type="submit"]',
     ) as HTMLButtonElement;
 
-    // Create message container if it doesn't exist
     let messageContainer = document.getElementById("form-message");
     if (!messageContainer) {
         messageContainer = document.createElement("div");
@@ -297,15 +362,12 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
 
     function showMessage(message: string, type: "success" | "error") {
         if (!messageContainer) return;
-
         messageContainer.textContent = message;
         messageContainer.className = `mt-4 p-4 rounded-lg ${
             type === "success"
                 ? "bg-green-100 text-green-800 border border-green-300"
                 : "bg-red-100 text-red-800 border border-red-300"
         }`;
-
-        // Scroll message into view
         messageContainer.scrollIntoView({
             behavior: "smooth",
             block: "nearest",
@@ -321,51 +383,42 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
         e.preventDefault();
         hideMessage();
 
-        // Check if reCAPTCHA is completed
         const recaptchaResponse = (window as any).grecaptcha.getResponse();
-
         if (!recaptchaResponse) {
             showMessage("Please complete the reCAPTCHA verification", "error");
             return;
         }
 
-        // Validate file is selected
         const fileInput = document.getElementById("resume") as HTMLInputElement;
         if (!fileInput.files || fileInput.files.length === 0) {
             showMessage("Please upload your resume", "error");
             return;
         }
 
-        // Disable submit button to prevent double submission
         const originalButtonText = submitButton.textContent;
         submitButton.disabled = true;
         submitButton.textContent = "Sending...";
 
         try {
-            // Collect form data (including file)
             const formData = new FormData(form);
             formData.append("g-recaptcha-response", recaptchaResponse);
 
-            // Send to API
             const response = await fetch("/api/work-with-us", {
                 method: "POST",
-                body: formData, // Send as FormData (not JSON) for file uploads
+                body: formData,
             });
 
             const result = await response.json();
 
             if (result.success) {
-                // Success! Show success message
                 showMessage(result.message, "success");
-
-                // Reset form
                 form.reset();
                 (window as any).grecaptcha.reset();
-
-                // Hide store dropdown if it was visible
-                toggleStoreDropdown();
+                // Hide conditional fields again after reset
+                storeDropdown.classList.remove("visible");
+                positionField.classList.remove("visible");
+                storeSelect.required = false;
             } else {
-                // Error from server
                 showMessage(result.message, "error");
             }
         } catch (error) {
@@ -375,7 +428,6 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
                 "error",
             );
         } finally {
-            // Re-enable submit button
             submitButton.disabled = false;
             submitButton.textContent = originalButtonText;
         }
