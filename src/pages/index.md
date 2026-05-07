@@ -92,7 +92,7 @@ franchise_callout:
   text: >-
     <p>The only thing better than eating at LeWrap is owning one. Looking for a
     career change? Wrap up your success.</p>
-  image: /images/franchise/stanhope-storefront.png
+  image: /images/franchise/chatgpt-image-may-7-2026-04-15-21-pm.png
   button_text: Learn more
   button_link: /own-a-store
 ---
