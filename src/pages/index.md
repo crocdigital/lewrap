@@ -17,6 +17,9 @@ hero_slides:
   - image_desktop: /images/hero/website-app1920x1080-3.png
     image_mobile: /images/hero/mobile1000x1000-freewrap.png
     alt: Free Wrap on the App
+  - image_desktop: /images/hero/5-classic-day.webp
+    image_mobile: ''
+    alt: ''
 hero_heading:
 hero_cta1_text: Our food
 hero_cta1_link: /our-food
