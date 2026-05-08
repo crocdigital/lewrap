@@ -8,8 +8,8 @@ seo_image: ''
 seo_keywords:
 seo_robots: index, follow
 seo_canonical: ''
-hero_image: /images/newsroom/newsroom-website-images-3.png
-hero_image_mobile: /images/newsroom/website-mobile-image-1000x1000-4.png
+hero_image: /images/newsroom/newsroom-website-images-3.webp
+hero_image_mobile: /images/newsroom/website-mobile-image-1000x1000-4.webp
 category: Promotion
 date: 2026-05-23T00:00:00+10:00
 preview_text: $1 from every wrap sold will go to supporting Mental Health.
@@ -27,9 +27,9 @@ $5 Classic Wrap options include:
 
 **Classic Chicken Wrap**<br>Our bestseller! 100% Grilled Chicken Breast, Lettuce, Tomato, Onion, Crispy Cabbage, Carrot & Choice of Sauce.
 
-**Classic Beef Wrap<br>**Grilled Strip Loin Steak, Lettuce, Tomato, Onion, Crispy Cabbage, Carrot & Choice of Sauce.
+\*\*Classic Beef Wrap<br>\*\*Grilled Strip Loin Steak, Lettuce, Tomato, Onion, Crispy Cabbage, Carrot & Choice of Sauce.
 
-**Classic Veggie Wrap**<br>Grilled Mushroom, Onion & Capsicum, Fresh Lettuce, Tomato, Crispy Cabbage, Carrot, Mozzarella Cheese & Choice of Sauce.<br><br>**Classic Schnitzel Wrap<br>**100% Chicken Breast Schnitzel, Lettuce, Tomato, Mozzarella Cheese & Signature Mayo.
+**Classic Veggie Wrap**<br>Grilled Mushroom, Onion & Capsicum, Fresh Lettuce, Tomato, Crispy Cabbage, Carrot, Mozzarella Cheese & Choice of Sauce.<br><br>\*\*Classic Schnitzel Wrap<br>\*\*100% Chicken Breast Schnitzel, Lettuce, Tomato, Mozzarella Cheese & Signature Mayo.
 
 <br>
 
