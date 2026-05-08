@@ -17,9 +17,9 @@ featured: true
 ---
 ## $5 Classic Wrap Day
 
-<br>Supporting mental health has never tasted better!
+Supporting mental health has never tasted better!
 
-For one day only, enjoy our Classic Wraps for just **$5 each**, and help support an important cause at the same time.
+For one day only, **Friday 22nd May**, enjoy our Classic Wraps for just **$5 each**, and help support an important cause at the same time.
 
 **$1 from every wrap sold will be donated to Keith’s Closet**, supporting people experiencing homelessness and hardship, while helping raise awareness around mental health and community connection.
 
