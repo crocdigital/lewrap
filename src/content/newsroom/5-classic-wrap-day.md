@@ -35,4 +35,4 @@ Keith’s Closet is a not-for-profit supporting people experiencing homelessness
 
 Learn more about Keith's Closet: [Click here](https://www.keithscloset.org/ "Keith's Closet").
 
-Terms & Conditions: Maximum 2 wraps per person. Not available with any other offers or promotions. No add-ons available. Not redeemable on the app or on 3rd party aggregators. No free wraps are redeemable on the day.
+<br><br>Terms & Conditions: Maximum 2 wraps per person. Not available with any other offers or promotions. No add-ons available. Not redeemable on the app or on 3rd party aggregators. No free wraps are redeemable on the day.
