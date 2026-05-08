@@ -25,7 +25,7 @@ For one day only, **Friday 22nd May**, enjoy our Classic Wraps for just **$5 eac
 
 $5 Classic Wrap options include:
 
-**Classic Chicken Wrap**<br>Our bestseller! 100% Grilled Chicken Breast, Lettuce, Tomato, Onion, Crispy Cabbage, Carrot & Choice of Sauce.<br><br>**Classic Beef Wrap**<br>\*\*Grilled Strip Loin Steak, Lettuce, Tomato, Onion, Crispy Cabbage, Carrot & Choice of Sauce.
+**Classic Chicken Wrap**<br>Our bestseller! 100% Grilled Chicken Breast, Lettuce, Tomato, Onion, Crispy Cabbage, Carrot & Choice of Sauce.<br><br>**Classic Beef Wrap**<br>Grilled Strip Loin Steak, Lettuce, Tomato, Onion, Crispy Cabbage, Carrot & Choice of Sauce.
 
 **Classic Veggie Wrap**<br>Grilled Mushroom, Onion & Capsicum, Fresh Lettuce, Tomato, Crispy Cabbage, Carrot, Mozzarella Cheese & Choice of Sauce.<br><br>**Classic Schnitzel Wrap**<br>100% Chicken Breast Schnitzel, Lettuce, Tomato, Mozzarella Cheese & Signature Mayo.
 
