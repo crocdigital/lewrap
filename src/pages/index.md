@@ -17,6 +17,9 @@ hero_slides:
   - image_desktop: /images/hero/website-app1920x1080-3.png
     image_mobile: /images/hero/mobile1000x1000-freewrap.png
     alt: Free Wrap on the App
+  - image_desktop: /images/hero/5-classic-day.webp
+    image_mobile: /images/hero/website-mobile-image-1000x1000-3.png
+    alt: ''
 hero_heading:
 hero_cta1_text: Our food
 hero_cta1_link: /our-food
@@ -92,7 +95,7 @@ franchise_callout:
   text: >-
     <p>The only thing better than eating at LeWrap is owning one. Looking for a
     career change? Wrap up your success.</p>
-  image: /images/franchise/stanhope-storefront.png
+  image: /images/franchise/chatgpt-image-may-7-2026-04-15-21-pm.png
   button_text: Learn more
   button_link: /own-a-store
 ---

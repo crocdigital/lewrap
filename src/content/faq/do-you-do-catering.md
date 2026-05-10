@@ -2,11 +2,10 @@
 _schema: default
 question: Do you do catering?
 answer: >-
-  <p>Thank you for enquiring. <a href="/contact/" title="Contact LeWrap">Please
-  provide us your contact details</a> and we will send through a catering
-  enquiry to your nominated store. Alternatively, you can <a href="/locations/"
-  title="LeWrap stores">contact your nominated store</a> regarding our catering
-  services.</p>
+  <p>Yes, learn more about catering <a
+  href="https://lewrap.com/catering/">here</a>. </p><p>You can order catering
+  online with a minimum of 24 hours’ notice. <br /><br /><a
+  href="https://lewrap.redcatcloud.com.au/app/">Order Catering Here</a>. </p>
 category: General
 featured: false
 order: 7
