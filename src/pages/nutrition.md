@@ -13,7 +13,7 @@ hero_bg_type: image
 hero_bg_colour:
 hero_bg_image: /images/hero/nutrition-desktop-1.webp
 hero_bg_image_mobile: /images/hero/nutrition-mobile-1.webp
-hero_button_text: Download Nutrition Guide
+hero_button_text: Download Allergens Guide
 hero_button_link: /downloads/LeWrap-Allergens-Feb26.pdf
 hero_button_variant: primary
 hero_button_target: true
