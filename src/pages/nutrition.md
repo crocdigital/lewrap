@@ -46,7 +46,7 @@ page_blocks:
     background_type: none
     background_colour:
     background_image: ''
-    button_text: Download Allergens Guide (PDF)
+    button_text: Download Allergens Guide
     button_link: /downloads/LeWrap-Allergens-Feb26.pdf
     button_variant: primary
     button_target: true
