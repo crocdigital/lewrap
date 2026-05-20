@@ -10,8 +10,8 @@ address: 177 King Street
 suburb: Newtown
 state: NSW
 postcode: '2042'
-latitude: -33.89397
-longitude: 151.18262
+latitude: -33.89419
+longitude: 151.18257
 phone: ''
 email: newtown@lewrap.com
 hours:
