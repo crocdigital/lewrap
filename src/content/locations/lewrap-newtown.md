@@ -5,9 +5,9 @@ seo_description: ''
 seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
-name: LeWrap Newtown
+name: LeWrap Newtown OPENING SOON
 address: 177 King Street
-suburb: ''
+suburb: Newtown
 state: NSW
 postcode: '2042'
 latitude: -33.89397
