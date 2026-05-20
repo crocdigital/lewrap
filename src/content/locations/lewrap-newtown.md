@@ -1,6 +1,6 @@
 ---
 _schema: default
-seo_title: ''
+seo_title: LeWrap Newtown Opening 10th of June
 seo_description: ''
 seo_image: ''
 seo_keywords: ''
