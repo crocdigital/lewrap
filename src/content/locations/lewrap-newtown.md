@@ -12,7 +12,7 @@ state: NSW
 postcode: '2042'
 latitude: -33.89419
 longitude: 151.18257
-phone: ''
+phone: 02 7234 9098
 email: newtown@lewrap.com
 hours:
   monday: 9:00am - 10:00pm
@@ -26,4 +26,4 @@ image: /images/locations/groupshot-hands.webp
 order_now_link: ''
 featured: true
 ---
-**LeWrap Newtown is Opening Soon on 10th of June!** <br><br>Located in the heart of Newtown at 177 King Street. LeWrap serves fresh, flavour-packed wraps, plates, salads and baguettes to a vibrant, multicultural community. Known for its quick service, quality ingredients, and fully customisable menu. It’s the perfect destination for lunch, dinner, or a satisfying late-night meal in a lively street front precinct.
+**LeWrap Newtown is Opening Soon on 10th of June!** <br /><br />Located in the heart of Newtown at 177 King Street. LeWrap serves fresh, flavour-packed wraps, plates, salads and baguettes to a vibrant, multicultural community. Known for its quick service, quality ingredients, and fully customisable menu. It’s the perfect destination for lunch, dinner, or a satisfying late-night meal in a lively street front precinct.
