@@ -3,10 +3,10 @@ layout: ../layouts/InternalPageLayout.astro
 title: Own a store
 seo_title:
 seo_description:
-seo_image: ''
+seo_image: ""
 seo_keywords:
 seo_robots: index, follow
-seo_canonical: ''
+seo_canonical: ""
 hero_title: Be Your Own Boss
 hero_subtitle:
 hero_bg_type: image
@@ -24,10 +24,10 @@ page_blocks:
       never felt alone.”</strong></p><p><em>-Ranae Hammoud, Multi-Site Franchise
       Owner</em></p>
     image_path:
-    video_url: https://vimeo.com/922247437
+    video_url: https://www.youtube.com/watch?v=50xUMBq2doE
     reverse: false
     background_type: color
-    background_colour: '#ffffff'
+    background_colour: "#ffffff"
     background_image:
     button_text:
     button_link:
@@ -42,10 +42,10 @@ page_blocks:
       customer experiences and strengthen our connection to the communities we
       serve.</p><p>Interested in bringing LeWrap to your local community?</p>
     image_path: /images/pages/website-mobile-image-1000x1000-1.webp
-    video_url: ''
+    video_url: ""
     reverse: true
     background_type: none
-    background_colour: '#ffffff'
+    background_colour: "#ffffff"
     background_image:
     button_text: Download franchise pack
     button_link: javascript:open_franchise_enquiry()
@@ -60,7 +60,7 @@ three_col_franchise_promo:
       Good Food that Sells Itself. At LeWrap, excellence in food and service is
       more than a standard, it’s our commitment. From day one, we’ve been
       passionate about creating fresh, high-quality food, focused on delivering
-      an exceptional experience, always. 
+      an exceptional experience, always.
   - image: /images/franchise/our-brand.webp
     title: Our Brand
     description: >-
@@ -74,7 +74,7 @@ three_col_franchise_promo:
       At LeWrap, we’re all about supporting our people and partners to succeed.
       With a proven support model and a focus on growth, we empower our team and
       partners to build exceptional businesses. Together, our shared purpose
-      drives everything we do. 
+      drives everything we do.
 franchise_callout:
   show: true
   heading: Site Opportunities
@@ -92,7 +92,7 @@ franchise_process_steps:
     description: >-
       Ready to take the first step? Give it a go, enquire now! A Franchise
       Information Pack will be sent to you. Let this next big, exciting chapter
-      begin. 
+      begin.
   - title: Let’s Chat!
     description: >-
       Our team will be in contact to discuss your interest. You will have the
@@ -102,7 +102,7 @@ franchise_process_steps:
     description: >-
       Keen to progress? Take a moment to complete our Franchise Application
       Form. This is the first step in our approval process. We will be in touch
-      shortly after. 
+      shortly after.
   - title: In-Person Meeting
     description: >-
       Time to chat all things you and LeWrap. When we meet, we’ll share more
@@ -112,7 +112,7 @@ franchise_process_steps:
     description: >-
       Time to see it all in action! This is an opportunity for you to see the
       operations firsthand in-store and ask any questions. If your keen enough,
-      you can also jump right in and give wrap making a go! 
+      you can also jump right in and give wrap making a go!
   - title: Pre-Approval, Site Selection & Business Planning
     description: >-
       Aligned on values, vision, and commitment? Great let’s move forward to
@@ -136,7 +136,7 @@ franchise_process_steps:
       We've got you covered! Our project and design team will manage the entire
       build from start to finish. We will keep you in the loop along the way.
       Once complete, we’ll assist in training staff and hand you the keys for
-      your official opening day. 
+      your official opening day.
   - title: Grand Opening & Ongoing Support
     description: >-
       The day is officially here! Time to cut that ribbon. You’ll be supported

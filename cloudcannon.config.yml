@@ -223,7 +223,7 @@ collections_config:
           paths:
             uploads: public/images/newsroom
         label: Hero Image
-        comment: 'Main image for article (recommended: 1920px x 1080px)'
+        comment: "Main image for article (recommended: 1920px x 1080px)"
         cascade: true
       hero_image_mobile:
         type: image
@@ -443,9 +443,9 @@ _inputs:
         values:
           - label: Hero Slide
             value:
-              image_desktop: ''
-              image_mobile: ''
-              alt: ''
+              image_desktop: ""
+              image_mobile: ""
+              alt: ""
             _inputs:
               image_desktop:
                 type: image
@@ -518,8 +518,8 @@ _inputs:
         values:
           - label: Slide
             value:
-              image: ''
-              alt: ''
+              image: ""
+              alt: ""
             _inputs:
               image:
                 type: image
@@ -527,7 +527,7 @@ _inputs:
                   paths:
                     uploads: public/images/carousel
                 label: Slide Image
-                comment: 'Upload image. Required size: 1200px x 800px'
+                comment: "Upload image. Required size: 1200px x 800px"
                 cascade: true
               alt:
                 type: text
@@ -560,7 +560,7 @@ _inputs:
       paths:
         uploads: public/images/homepage
     label: Welcome Image
-    comment: 'Image shown on right side (recommended: 629px wide, transparent PNG)'
+    comment: "Image shown on right side (recommended: 629px wide, transparent PNG)"
     cascade: true
   welcome_button_text:
     type: text
@@ -594,7 +594,7 @@ _inputs:
       paths:
         uploads: public/images/homepage
     label: LeWrap Story Image
-    comment: 'Image shown on right side (recommended: 1000px × 1000px square)'
+    comment: "Image shown on right side (recommended: 1000px × 1000px square)"
     cascade: true
   lewrapstory_button_text:
     type: text
@@ -628,7 +628,7 @@ _inputs:
       paths:
         uploads: public/images/homepage
     label: Catering Image
-    comment: 'Image shown on right side (recommended: 1000px × 1000px square)'
+    comment: "Image shown on right side (recommended: 1000px × 1000px square)"
     cascade: true
   catering_button_text:
     type: text
@@ -646,8 +646,8 @@ _inputs:
         values:
           - label: Process Step
             value:
-              title: ''
-              description: ''
+              title: ""
+              description: ""
             _inputs:
               title:
                 type: text
@@ -777,8 +777,8 @@ _inputs:
         values:
           - label: Deal Image
             value:
-              image: ''
-              alt: ''
+              image: ""
+              alt: ""
             _inputs:
               image:
                 type: image
@@ -786,7 +786,7 @@ _inputs:
                   paths:
                     uploads: public/images/deals
                 label: Deal Image
-                comment: 'Upload deal graphic. Recommended size: 1200px x 800px'
+                comment: "Upload deal graphic. Recommended size: 1200px x 800px"
                 cascade: true
               alt:
                 type: text
@@ -804,9 +804,9 @@ _inputs:
         values:
           - label: Callout Item
             value:
-              image: ''
-              title: ''
-              description: ''
+              image: ""
+              title: ""
+              description: ""
             _inputs:
               image:
                 type: image
@@ -1084,14 +1084,14 @@ _inputs:
               _template: feature
               heading: New Section
               text: <p>Write content here...</p>
-              image_path: ''
-              video_url: ''
+              image_path: ""
+              video_url: ""
               reverse: false
               background_type: none
-              background_colour: ''
-              background_image: ''
-              button_text: ''
-              button_link: ''
+              background_colour: ""
+              background_image: ""
+              button_text: ""
+              button_link: ""
               button_variant: primary
               button_target: false
               button_download: false
@@ -1123,15 +1123,15 @@ _inputs:
                 cascade: true
               video_url:
                 type: text
-                label: Video URL (Vimeo)
+                label: Video URL (YouTube)
                 comment: >-
-                  Paste full Vimeo URL (e.g., https://vimeo.com/123456789).
+                  Paste full YouTube URL (e.g., https://www.youtube.com/watch?v=xxxxxxxxxx).
                   Leave blank if using image.
                 cascade: true
               reverse:
                 type: switch
                 label: Reverse layout
-                comment: 'Default: Text left, Image right. Toggle ON to swap columns.'
+                comment: "Default: Text left, Image right. Toggle ON to swap columns."
                 cascade: true
               button_text:
                 type: text
@@ -1170,10 +1170,10 @@ _inputs:
               _template: centered_text
               text: <p>Write your content here...</p>
               background_type: none
-              background_colour: ''
-              background_image: ''
-              button_text: ''
-              button_link: ''
+              background_colour: ""
+              background_image: ""
+              button_text: ""
+              button_link: ""
               button_variant: primary
               button_target: false
               button_download: false
@@ -1254,9 +1254,9 @@ _inputs:
         values:
           - label: Promo Item
             value:
-              image: ''
-              title: ''
-              description: ''
+              image: ""
+              title: ""
+              description: ""
             _inputs:
               image:
                 type: image
@@ -1360,12 +1360,12 @@ _inputs:
         values:
           - label: Two Column Block
             value:
-              title: ''
+              title: ""
               description: <p>Your content here...</p>
-              buttonText: ''
-              buttonLink: ''
+              buttonText: ""
+              buttonLink: ""
               buttonVariant: primary
-              bgColor: '#95BA32'
+              bgColor: "#95BA32"
               reverse: false
               slides: []
     label: Flexible Two Column Sections
