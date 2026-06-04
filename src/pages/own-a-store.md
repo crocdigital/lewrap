@@ -24,7 +24,7 @@ page_blocks:
       never felt alone.”</strong></p><p><em>-Ranae Hammoud, Multi-Site Franchise
       Owner</em></p>
     image_path:
-    video_url: https://vimeo.com/922247437
+    video_url: https://www.youtube.com/watch?v=50xUMBq2doE
     reverse: false
     background_type: color
     background_colour: '#ffffff'
