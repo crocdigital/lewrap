@@ -10,7 +10,7 @@ seo_robots: index, follow
 seo_canonical: ''
 hero_image: /images/newsroom/newsroom-website-images-4.webp
 hero_image_mobile: /images/newsroom/website-mobile-image-1000x1000-5.webp
-category: Promotion
+category: Updates
 date: 2026-05-23T00:00:00+10:00
 preview_text: 'Raised $14,200 in for Mental Health. '
 featured: true
