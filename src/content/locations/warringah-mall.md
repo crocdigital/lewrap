@@ -7,7 +7,7 @@ seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Warringah Mall
 address: 145 Condamine St
-suburb: Brookvale
+suburb: Warringah Mall, Brookvale
 state: NSW
 postcode: '2100'
 latitude: -33.76868
