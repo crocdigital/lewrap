@@ -15,7 +15,7 @@ date: 2026-06-11T09:00:00+10:00
 preview_text: ''
 featured: true
 ---
-# LeWrap Newtown Opens Doors on 10th June
+# LeWrap Newtown Now Open
 
 We're excited to announce that LeWrap Newtown is opening on 10th June, bringing fresh, flavour-packed meals to one of Sydney's most vibrant and diverse neighbourhoods.
 
@@ -37,6 +37,4 @@ Newtown is known for its creativity, culture, diversity, and incredible food sce
 
 We can't wait to welcome you through our doors.
 
-**LeWrap Newtown**<br />📍 177 King Street, Newtown<br />📅 Opening 10th June
-
-See you tomorrow!
+**LeWrap Newtown**<br />📍 177 King Street, Newtown<br />📅 Open 10th June
