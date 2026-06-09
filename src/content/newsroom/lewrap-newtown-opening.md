@@ -13,7 +13,7 @@ hero_image_mobile: /images/newsroom/website-mobile-image-1000x1000-6.png
 category: ''
 date: 2026-06-11T09:00:00+10:00
 preview_text: ''
-featured: false
+featured: true
 ---
 # LeWrap Newtown Opens Doors on 10th June
 
