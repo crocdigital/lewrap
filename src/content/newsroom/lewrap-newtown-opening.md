@@ -10,7 +10,7 @@ seo_robots: index, follow
 seo_canonical: ''
 hero_image: /images/newsroom/website-headingimages-1920x1080.png
 hero_image_mobile: /images/newsroom/website-mobile-image-1000x1000-6.png
-category: ''
+category: Franchising
 date: 2026-06-11T09:00:00+10:00
 preview_text: ''
 featured: true
