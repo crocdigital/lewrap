@@ -1,6 +1,6 @@
 ---
 _schema: default
-seo_title: LeWrap Newtown Opening 10th of June
+seo_title: LeWrap Newtown NOW OPEN
 seo_description: ''
 seo_image: ''
 seo_keywords: ''
@@ -26,4 +26,4 @@ image: /images/locations/groupshot-hands.webp
 order_now_link: ''
 featured: true
 ---
-**LeWrap Newtown is on 10th of June!** <br /><br />Located in the heart of Newtown at 177 King Street. LeWrap serves fresh, flavour-packed wraps, plates, salads and baguettes to a vibrant, multicultural community. Known for its quick service, quality ingredients, and fully customisable menu. It’s the perfect destination for lunch, dinner, or a satisfying late-night meal in a lively street front precinct.
+**LeWrap Newtown is Now Open!** <br /><br />Located in the heart of Newtown at 177 King Street. LeWrap serves fresh, flavour-packed wraps, plates, salads and baguettes to a vibrant, multicultural community. Known for its quick service, quality ingredients, and fully customisable menu. It’s the perfect destination for lunch, dinner, or a satisfying late-night meal in a lively street front precinct.
