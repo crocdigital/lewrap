@@ -1,11 +1,11 @@
 ---
 _schema: default
-seo_title: LeWrap Newtown NOW OPEN
+seo_title: LeWrap Newtown
 seo_description: ''
 seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
-name: LeWrap Newtown OPEN 10 JUNE
+name: LeWrap Newtown
 address: 177 King Street
 suburb: Newtown
 state: NSW
@@ -15,13 +15,13 @@ longitude: 151.18257
 phone: 02 7234 9098
 email: newtown@lewrap.com
 hours:
-  monday: 9:00am - 10:00pm
-  tuesday: 9:00am - 10:00pm
-  wednesday: 9:00am - 10:00pm
-  thursday: 9:00am - 10:00pm
-  friday: 9:00am - 10:00pm
-  saturday: 9:00am - 10:00pm
-  sunday: 9:00am - 10:00pm
+  monday: 9:30am - 10:30pm
+  tuesday: 9:30am - 10:30pm
+  wednesday: 9:30am - 10:30pm
+  thursday: 9:30am - 10:30pm
+  friday: 9:30am - 11:59pm
+  saturday: 9:30am - 11:59pm
+  sunday: 9:30am - 10:30pm
 image: /images/locations/groupshot-hands.webp
 order_now_link: ''
 featured: true
