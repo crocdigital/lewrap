@@ -13,7 +13,7 @@ hero_image_mobile: /images/newsroom/website-mobile-image-1000x1000-7.png
 category: Franchising
 date: 2026-01-26T11:00:00+11:00
 preview_text: Opening Wed 24 June
-featured: false
+featured: true
 ---
 ## LeWrap Narellan Opening Soon
 
