@@ -8,8 +8,8 @@ seo_image: ''
 seo_keywords:
 seo_robots: index, follow
 seo_canonical: ''
-hero_image: /images/newsroom/website-headingimages-1920x1080-2.png
-hero_image_mobile: /images/newsroom/website-mobile-image-1000x1000-7.png
+hero_image: /images/newsroom/lwnarellan-1920x1080.webp
+hero_image_mobile: /images/newsroom/lwnarellan-1000x1000.webp
 category: Franchising
 date: 2026-06-25T11:00:00+10:00
 preview_text: Opening Wed 24 June
