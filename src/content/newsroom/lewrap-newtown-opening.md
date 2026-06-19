@@ -15,7 +15,7 @@ date: 2026-06-11T09:00:00+10:00
 preview_text: ''
 featured: true
 ---
-# LeWrap Newtown Now Open
+# **LeWrap Newtown Now Open**
 
 We're excited to announce that LeWrap Newtown is opening on 10th June, bringing fresh, flavour-packed meals to one of Sydney's most vibrant and diverse neighbourhoods.
 
