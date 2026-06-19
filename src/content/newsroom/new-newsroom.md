@@ -11,7 +11,7 @@ seo_canonical: ''
 hero_image: /images/newsroom/website-headingimages-1920x1080-1.png
 hero_image_mobile: /images/newsroom/website-mobile-image-1000x1000-7.png
 category: Franchising
-date: 2026-01-26T11:00:00+11:00
+date: 2026-06-25T11:00:00+10:00
 preview_text: Opening Wed 24 June
 featured: true
 ---
