@@ -29,7 +29,7 @@ page_blocks:
       about Keith's Closet and how you can help support, <a
       href="https://www.keithscloset.org/" target="_blank" rel="noopener"
       title="Visit Keith's Closet">click here</a>.</p>
-    image_path: /images/pages/keiths-closet.webp
+    image_path: /images/pages/website-mobile-image-1000x1000-8.png
     video_url: ''
     reverse: false
     background_type: none
