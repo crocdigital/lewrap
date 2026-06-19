@@ -1,7 +1,7 @@
 ---
 _schema: default
 layout: ../../layouts/NewsroomLayout.astro
-title: ''
+title: LeWrap Narellan Opening Soon
 seo_title: ''
 seo_description: ''
 seo_image: ''
@@ -10,11 +10,22 @@ seo_robots: index, follow
 seo_canonical: ''
 hero_image: ''
 hero_image_mobile: ''
-category: ''
-date: 2026-01-26T00:00:00Z
+category: Franchising
+date: 2026-01-26T11:00:00+11:00
 preview_text: ''
 featured: false
 ---
-## Add headings
+## LeWrap Narellan Opening Soon
 
-And create structured content!
+Join us on Wednesday 24th of June for the Opening of LeWrap Narellan.
+
+LeWrap Narellan is opening in the Narellan Town Centre food court.
+
+Our menu features a range of freshly prepared wraps, plates, salads, and baguettes, all fully customisable to suit your taste. From our signature 100% grilled chicken and beef strip lion steak wraps to fresh vegetarian options, there's something for everyone.
+
+To celebrate our opening, we'll be giving away a limited selection of exclusive LeWrap merch to early customers, including:
+
+* LeWrap Tote Bags
+* LeWrap Water Bottles
+
+Be sure to arrive early, as stock is limited and available while supplies last.
