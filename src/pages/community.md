@@ -21,14 +21,14 @@ page_blocks:
       partners of <a href="https://www.keithscloset.org/" title="Visit Keith's
       Closet" target="_blank" rel="noopener">Keith's Closet</a> over the last 2+
       years. Keith's Closet is a not-for-profit charity that provides people
-      accessing mental health services, essential items including wardrobes,
-      toiletries and accessories, whether in hospital or in the
-      community.</p><p>LeWrap hosts an annual $5 Wrap Day with $1 from every
-      wrap going back to Keith's Closet. To date, we've raised over $25,000 and
-      we’re just getting started.</p><p>To learn more about Keith's Closet and
-      how you can help support, <a href="https://www.keithscloset.org/"
-      target="_blank" rel="noopener" title="Visit Keith's Closet">click
-      here</a>.</p>
+      accessing mental health services essential items including clothing,
+      toiletries and accessories, haircuts and much more, whether in hospital or
+      in the community.</p><p>LeWrap hosts an annual $5 Wrap Day with $1 from
+      every wrap going back to Keith's Closet. To date, we've raised over
+      $25,000 and we’re just getting started.</p><p>To learn more about Keith's
+      Closet and how you can help support, <a
+      href="https://www.keithscloset.org/" target="_blank" rel="noopener"
+      title="Visit Keith's Closet">click here</a>.</p>
     image_path: /images/pages/website-mobile-image-1000x1000-8.png
     video_url: ''
     reverse: false
