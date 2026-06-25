@@ -5,7 +5,7 @@ seo_description: ''
 seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
-name: LeWrap Narellan COMING SOON
+name: LeWrap Narellan
 address: Narellan Town Centre, 326 Camden Valley Wy
 suburb: Narellan
 state: NSW
