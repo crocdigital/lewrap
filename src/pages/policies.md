@@ -54,12 +54,14 @@ terms_content: >-
   affiliates, the material may not be otherwise used, copied, reproduced,
   published, stored in a retrieval system, altered, transmitted in any form or
   by any means in whole or in part.</p><h3><strong>Loyalty</strong></h3><p>All
-  prices are in AUD. Refunds are handled on a case-by-case
-  basis.</p><h3><strong>Reviews and Comments</strong></h3><p>LeWrap enables
-  visitors to its website to post reviews and comments on this website. If you
-  post reviews or comments on this website, you grant LeWrap and its affiliates
-  a right to use, reproduce, modify, distribute and display such reviews and
-  comments throughout the world in any
+  prices are in AUD. Refunds are handled on a case-by-case basis.</p><p>The
+  birthday offer is available to customers who have made a purchase in the last
+  6 months. Redeemable during their birthday month. Offer is sent on the first
+  day of the month. </p><h3><strong>Reviews and Comments</strong></h3><p>LeWrap
+  enables visitors to its website to post reviews and comments on this website.
+  If you post reviews or comments on this website, you grant LeWrap and its
+  affiliates a right to use, reproduce, modify, distribute and display such
+  reviews and comments throughout the world in any
   media.</p><h3><strong>Disclaimer</strong></h3><p><strong>Limitation of
   Liability</strong></p><p>To the extent permitted by law LeWrap will not be
   liable for any direct, incidental, consequential or indirect damages, loss or
