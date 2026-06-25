@@ -26,4 +26,4 @@ image: /images/locations/groupshot-hands.webp
 order_now_link: ''
 featured: false
 ---
-LeWrap Narellan is opening soon in Narellan Town Centre food court. LeWrap serves fresh, flavour-packed wraps, plates, salads and baguettes to a vibrant, multicultural community. Known for its quick service, quality ingredients, and fully customisable menu.
+LeWrap Narellan is now open in Narellan Town Centre food court. LeWrap serves fresh, flavour-packed wraps, plates, salads and baguettes to a vibrant, multicultural community. Known for its quick service, quality ingredients, and fully customisable menu.
