@@ -17,7 +17,7 @@ featured: false
 ---
 ## Enjoy a Free Wrap on the App!
 
-Simply download the app [here](https://lewrap.com/go/lewrap-app/) from the app store to enjoy a free wrap on us! How good is that?
+You simply had to download the app [here](https://lewrap.com/go/lewrap-app/) from early June.
 
 ### How do I redeem my Free Wrap on the LeWrap App?
 
