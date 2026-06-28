@@ -13,13 +13,13 @@ terms_content: >-
   Conditions.</p><p>LeWrap may from time to time amend, update or change this
   website including these Terms and Conditions without prior
   notice.</p><h3><strong>App Offer T&amp;Cs</strong></h3><p>Free Wrap on the App
-  offer is available for a limited time only, for pickup only. Redeemable on the
-  app only. Valid for 30 days from the signup date. Valid one per phone number,
-  per person. Not available with any other offers. Customisable add-ons will be
-  charged.</p><p>The customer who places the order must be present to collect
-  it. One redemption per person, multiple wraps cannot be collected by a single
-  individual. ID or app verification may be required. Multiple orders cannot be
-  collected by the same individual under any
+  offer expires 21 June 2026. </p><p>Free Wrap on the App offer is available for
+  a limited time only, for pickup only. Redeemable on the app only. Valid one
+  per phone number, per person. Not available with any other offers.
+  Customisable add-ons will be charged.</p><p>The customer who places the order
+  must be present to collect it. One redemption per person, multiple wraps
+  cannot be collected by a single individual. ID or app verification may be
+  required. Multiple orders cannot be collected by the same individual under any
   circumstances.</p><h3><strong>Catering Cancellation
   Policy</strong></h3><p>Cancellations must be made 48 hours prior to pick-up.
   Please contact your local store. <a href="/locations/">Click here</a> to see
@@ -54,12 +54,14 @@ terms_content: >-
   affiliates, the material may not be otherwise used, copied, reproduced,
   published, stored in a retrieval system, altered, transmitted in any form or
   by any means in whole or in part.</p><h3><strong>Loyalty</strong></h3><p>All
-  prices are in AUD. Refunds are handled on a case-by-case
-  basis.</p><h3><strong>Reviews and Comments</strong></h3><p>LeWrap enables
-  visitors to its website to post reviews and comments on this website. If you
-  post reviews or comments on this website, you grant LeWrap and its affiliates
-  a right to use, reproduce, modify, distribute and display such reviews and
-  comments throughout the world in any
+  prices are in AUD. Refunds are handled on a case-by-case basis.</p><p>The
+  birthday offer is available to customers who have made a purchase in the last
+  6 months. Redeemable during their birthday month. Offer is sent on the first
+  day of the month. </p><h3><strong>Reviews and Comments</strong></h3><p>LeWrap
+  enables visitors to its website to post reviews and comments on this website.
+  If you post reviews or comments on this website, you grant LeWrap and its
+  affiliates a right to use, reproduce, modify, distribute and display such
+  reviews and comments throughout the world in any
   media.</p><h3><strong>Disclaimer</strong></h3><p><strong>Limitation of
   Liability</strong></p><p>To the extent permitted by law LeWrap will not be
   liable for any direct, incidental, consequential or indirect damages, loss or
