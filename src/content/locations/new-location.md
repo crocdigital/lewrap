@@ -20,7 +20,7 @@ hours:
   wednesday: 8:00am - 6:00pm
   thursday: 8:00am - 9:00pm
   friday: 8:00am - 6:00pm
-  saturday: 8:00am - 7:00pm
+  saturday: 8:00am - 6:00pm
   sunday: 9:30am - 4:30pm
 image: /images/locations/groupshot-hands.webp
 order_now_link: ''
