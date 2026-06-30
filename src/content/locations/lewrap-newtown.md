@@ -22,7 +22,7 @@ hours:
   friday: 9:30am - 11:59pm
   saturday: 9:30am - 11:59pm
   sunday: 9:30am - 10:30pm
-image: /images/locations/groupshot-hands.webp
+image: /images/locations/newtown.webp
 order_now_link: ''
 featured: true
 ---

@@ -22,7 +22,7 @@ hours:
   friday: 8:00am - 6:00pm
   saturday: 8:00am - 6:00pm
   sunday: 9:30am - 4:30pm
-image: /images/locations/groupshot-hands.webp
+image: /images/locations/narellan-website.webp
 order_now_link: ''
 featured: false
 ---
