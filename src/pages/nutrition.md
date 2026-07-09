@@ -3,10 +3,10 @@ layout: ../layouts/InternalPageLayout.astro
 title: Nutrition
 seo_title:
 seo_description:
-seo_image: ''
+seo_image: ""
 seo_keywords:
 seo_robots: index, follow
-seo_canonical: ''
+seo_canonical: ""
 hero_title: Nutrition & Allergens Information
 hero_subtitle:
 hero_bg_type: image
@@ -14,7 +14,7 @@ hero_bg_colour:
 hero_bg_image: /images/hero/nutrition-desktop-1.webp
 hero_bg_image_mobile: /images/hero/nutrition-mobile-1.webp
 hero_button_text: Download Allergens Guide
-hero_button_link: /downloads/LeWrap-Allergens-Feb26.pdf
+hero_button_link: /downloads/LeWrap-Allergens-Jul26.pdf
 hero_button_variant: primary
 hero_button_target: true
 hero_button_download: false
@@ -31,10 +31,10 @@ page_blocks:
       just real food, prepared fresh.</p><p>We believe good food should be
       amazing, high quality, and something everyone can enjoy.</p>
     image_path: /images/pages/ourfood-baguette.webp
-    video_url: ''
+    video_url: ""
     reverse: false
     background_type: color
-    background_colour: '#ffffff'
+    background_colour: "#ffffff"
     background_image:
     button_text:
     button_link:
@@ -45,9 +45,9 @@ page_blocks:
     text:
     background_type: none
     background_colour:
-    background_image: ''
+    background_image: ""
     button_text: Download Allergens Guide
-    button_link: /downloads/LeWrap-Allergens-Feb26.pdf
+    button_link: /downloads/LeWrap-Allergens-Jul26.pdf
     button_variant: primary
     button_target: true
     button_download: false
