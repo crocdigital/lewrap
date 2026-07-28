@@ -11,7 +11,7 @@ seo_canonical: ''
 hero_image: /images/newsroom/garlicgoodness-newsroom-webp-1.webp
 hero_image_mobile: /images/newsroom/website-mobile-image-1000x1000-10.webp
 category: Promotion
-date: 2026-08-02T11:00:00+10:00
+date: 2026-08-03T09:00:00+10:00
 preview_text: ''
 featured: true
 ---
