@@ -2,7 +2,7 @@
 _schema: default
 layout: ../../layouts/NewsroomLayout.astro
 title: Garlic Goodness
-seo_title: ''
+seo_title: Garlic Goodness
 seo_description: ''
 seo_image: ''
 seo_keywords:
@@ -10,7 +10,7 @@ seo_robots: index, follow
 seo_canonical: ''
 hero_image: /images/newsroom/garlicgoodness-newsroom-webp-1.webp
 hero_image_mobile: /images/newsroom/website-mobile-image-1000x1000-10.webp
-category: ''
+category: Promotion
 date: 2026-08-02T11:00:00+10:00
 preview_text: ''
 featured: true
