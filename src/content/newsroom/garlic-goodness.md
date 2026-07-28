@@ -8,14 +8,14 @@ seo_image: ''
 seo_keywords:
 seo_robots: index, follow
 seo_canonical: ''
-hero_image: /images/newsroom/garlicgoodness-newsroom-webp.webp
-hero_image_mobile: ''
+hero_image: /images/newsroom/garlicgoodness-newsroom-webp-1.webp
+hero_image_mobile: /images/newsroom/website-mobile-image-1000x1000-10.webp
 category: ''
 date: 2026-08-02T11:00:00+10:00
 preview_text: ''
-featured: false
+featured: true
 ---
-# Meet Garlic Goodness 👋
+# Meet Garlic Goodness 👋🧄
 
 Say hello to **Garlic Goodness** – our newest wrap, inspired by the authentic Lebanese flavours that helped shape who we are.
 
