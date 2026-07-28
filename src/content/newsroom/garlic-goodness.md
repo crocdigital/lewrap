@@ -3,7 +3,7 @@ _schema: default
 layout: ../../layouts/NewsroomLayout.astro
 title: NEW Garlic Goodness Wrap
 seo_title: Garlic Goodness
-seo_description: New authentic wrap is here to try!
+seo_description: Your next favourite wrap has arrived!
 seo_image: ''
 seo_keywords:
 seo_robots: index, follow
