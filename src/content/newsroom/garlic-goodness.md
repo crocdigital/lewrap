@@ -3,7 +3,7 @@ _schema: default
 layout: ../../layouts/NewsroomLayout.astro
 title: NEW Garlic Goodness Wrap
 seo_title: Garlic Goodness
-seo_description: Your next favourite wrap has arrived!
+seo_description: New authentic garlic toum wrap is now available at LeWrap.
 seo_image: ''
 seo_keywords:
 seo_robots: index, follow
@@ -12,7 +12,7 @@ hero_image: /images/newsroom/garlicgoodness-newsroom-webp-1.webp
 hero_image_mobile: /images/newsroom/website-mobile-image-1000x1000-10.webp
 category: Promotion
 date: 2026-08-03T09:00:00+10:00
-preview_text: ''
+preview_text: Your next favourite wrap has arrived!
 featured: true
 ---
 # Meet Garlic Goodness 👋🧄
