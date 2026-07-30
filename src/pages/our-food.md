@@ -51,7 +51,7 @@ category_descriptions:
 wraps_subcategories:
   chicken:
     description: Served with 100% Chicken Breast.
-    subtitle: 
+    subtitle:
   beef:
     description: Served with Strip Loin Steak.
     subtitle:
@@ -59,7 +59,7 @@ wraps_subcategories:
     description: Served with 100% Chicken Breast Schnitzel.
     subtitle:
   lamb:
-    description: Served with 100% Aussie Lamb.
+    description: Served with Authentic Kofta.
     subtitle: ''
   vegetarian:
     description:
