@@ -1,6 +1,6 @@
 ---
 _schema: default
-name: Lamb Kofta
+name: Kofta
 price: $19.90
 description: >-
   <p>Authentic Kofta, Grilled Mushroom, Onion &amp; Capsicum, White or Brown
