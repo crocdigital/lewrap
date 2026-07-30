@@ -1,9 +1,9 @@
 ---
 _schema: default
-name: Lamb Kofta
+name: Kofta
 price: $15.90
 description: >-
-  <p>Grilled Lamb Kofta, Grilled Onion, Capsicum &amp; Mushroom, Fresh Lettuce,
+  <p>Grilled Kofta, Grilled Onion, Capsicum &amp; Mushroom, Fresh Lettuce,
   Cucumber &amp; Lime Tahini Sauce.</p>
 kj: 2296
 image: /images/food/baguette-kofta.webp
