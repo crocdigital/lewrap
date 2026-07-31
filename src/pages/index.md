@@ -15,8 +15,8 @@ hero_slides:
     image_mobile: /images/hero/mobile1000x1000-catering.png
     alt: Catering Made Easy
   - image_desktop: /images/hero/website-gg-1920x1080-v2.webp
-    image_mobile: /images/hero/gg-web-mobile.webp
-    alt: ''
+    image_mobile: /images/hero/gg-web-mobile-v2.webp
+    alt: Garlic Goodness
 hero_heading:
 hero_cta1_text: Our food
 hero_cta1_link: /our-food
