@@ -14,6 +14,9 @@ hero_slides:
   - image_desktop: /images/hero/website-catering1920x1080-3.png
     image_mobile: /images/hero/mobile1000x1000-catering.png
     alt: Catering Made Easy
+  - image_desktop: /images/hero/website-gg-1920x1080-v2.webp
+    image_mobile: /images/hero/gg-web-mobile.webp
+    alt: ''
 hero_heading:
 hero_cta1_text: Our food
 hero_cta1_link: /our-food
@@ -24,7 +27,7 @@ marquee_items:
   - Chicken Wraps
   - Schnitzel Wraps
   - Beef Wraps
-  - Lamb Wraps
+  - Kofta Wraps
   - Vegetarian Wraps
   - Plates
   - Baguettes
@@ -38,9 +41,9 @@ welcome_text: >-
   vegetables are locally sourced and cut fresh daily, then prepared to order so
   your meal is made exactly how it should be: fresh, fast and full of flavour. 
   </p><p>From 100% Australian chicken breast and strip loin steak to chicken
-  breast schnitzel and authentic lamb kofta, our proteins are grilled fresh to
-  order. It’s simple food done right. We believe in all things good and fresh
-  and it shows in every wrap, salad, plate and baguette we make.</p>
+  breast schnitzel and authentic kofta, our proteins are grilled fresh to order.
+  It’s simple food done right. We believe in all things good and fresh and it
+  shows in every wrap, salad, plate and baguette we make.</p>
 welcome_image: /images/pages/welcome-lewrap.webp
 welcome_button_text: Our Food
 welcome_button_link: /our-food

@@ -29,7 +29,7 @@ category_descriptions:
     description: >-
       Choice of meat, grilled mushroom, onion & capsicum, white or brown rice &
       salad.
-    subtitle: Chicken, beef, lamb kofta
+    subtitle: Chicken, beef, kofta
   baguettes:
     description: ''
     subtitle: ''
