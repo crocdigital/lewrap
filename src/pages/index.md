@@ -14,7 +14,7 @@ hero_slides:
   - image_desktop: /images/hero/website-catering1920x1080-3.png
     image_mobile: /images/hero/mobile1000x1000-catering.png
     alt: Catering
-  - image_desktop:
+  - image_desktop: /images/hero/garlicgoodness-web.webp
     image_mobile: /images/hero/gg-web-mobile-v2.webp
     alt: Garlic Goodness
 hero_heading:
