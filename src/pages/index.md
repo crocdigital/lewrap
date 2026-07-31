@@ -13,8 +13,8 @@ hero_slides:
     alt: We believe in all things good & fresh
   - image_desktop: /images/hero/website-catering1920x1080-3.png
     image_mobile: /images/hero/mobile1000x1000-catering.png
-    alt: Catering Made Easy
-  - image_desktop: /images/hero/website-gg-1920x1080-v2.webp
+    alt: Catering
+  - image_desktop:
     image_mobile: /images/hero/gg-web-mobile-v2.webp
     alt: Garlic Goodness
 hero_heading:
