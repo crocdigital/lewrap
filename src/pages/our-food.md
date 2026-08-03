@@ -59,7 +59,7 @@ wraps_subcategories:
     description: Served with 100% Chicken Breast Schnitzel.
     subtitle:
   lamb:
-    description: Served with Authentic Kofta
+    description: Served with Authentic Kofta.
     subtitle: ''
   vegetarian:
     description:
