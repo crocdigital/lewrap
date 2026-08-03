@@ -65,6 +65,6 @@ wraps_subcategories:
     description:
     subtitle:
   kofta:
-    description: Served with authentic Lamb Kofta.
+    description: Served with Authentic Kofta.
     subtitle:
 ---
