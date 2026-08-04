@@ -11,7 +11,7 @@ seo_canonical: ''
 hero_image: /images/newsroom/franchising-opp-landscape.png
 hero_image_mobile: /images/newsroom/franchising-opp-square.png
 category: Franchising
-date: 2026-01-26T11:00:00+11:00
+date: 2026-08-04T11:00:00+10:00
 preview_text: ''
 featured: true
 ---
