@@ -25,6 +25,6 @@ LeWrap was named **Franchisor of the Year by the Franchise Council of Australia*
 
 **EXPRESS YOUR INTEREST - NOW SELLING:**
 
-**Sydney CBD, NSW<br />Rozelle, NSW<br />Chullora, NSW<br />Marrickville, NSW<br />Coogee, NSW<br />Cronulla, NSW<br />Erina, NSW<br />Belconnen, ACT<br />Phillip, ACT<br /><br />**Have another location in mind? Contact us.
+Sydney CBD, NSW<br />Rozelle, NSW<br />Chullora, NSW<br />Marrickville, NSW<br />Coogee, NSW<br />Cronulla, NSW<br />Erina, NSW<br />Belconnen, ACT<br />Phillip, ACT<br /><br />Have another location in mind? Contact us.
 
 Keen to learn more? Simply click [here](https://lewrap.com/own-a-store "Own a Store") to Enquire Now.
