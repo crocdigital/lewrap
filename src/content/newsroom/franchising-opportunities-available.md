@@ -11,7 +11,7 @@ seo_canonical: ''
 hero_image: /images/newsroom/franchising-opp-landscape.png
 hero_image_mobile: /images/newsroom/franchising-opp-square.png
 category: Franchising
-date: 2026-08-04T11:00:00+10:00
+date: 2026-08-20T11:00:00+10:00
 preview_text: ''
 featured: true
 ---
@@ -23,4 +23,8 @@ Join Australia's Fastest Growing Fresh Quick Service Restaurant (QSR) with Award
 
 LeWrap was named **Franchisor of the Year by the Franchise Council of Australia**.<br /><br />Be in business for yourself, not by yourself. We'll be with you every step of the way.
 
-The current areas available include: <br />**World Square – CBD<br />Bass Hill<br />Marrickville<br />Norwest<br />Cronulla<br />Gymea<br />Kareela<br />Dee Why<br />Mona Vale<br />Coogee<br />Belconnen, ACT<br />Erina**<br /><br />Keen to learn more? Simply click [here](https://lewrap.com/own-a-store "Own a Store") to Enquire Now.
+**EXPRESS YOUR INTEREST - NOW SELLING:**
+
+**Sydney CBD, NSW<br />Rozelle, NSW<br />Chullora, NSW<br />Marrickville, NSW<br />Coogee, NSW<br />Cronulla, NSW<br />Erina, NSW<br />Belconnen, ACT<br />Phillip, ACT<br /><br />**Have another location in mind? Contact us.
+
+Keen to learn more? Simply click [here](https://lewrap.com/own-a-store "Own a Store") to Enquire Now.
