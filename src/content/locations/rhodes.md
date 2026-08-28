@@ -19,7 +19,7 @@ hours:
   tuesday: 9:00am - 5:00pm
   wednesday: 9:00am - 5:00pm
   thursday: 9:00am - 7:00pm
-  friday: 9:00am - 5:00pm
+  friday: 9:00am - 7:00pm
   saturday: 10:00am - 5:00pm
   sunday: 10:00am - 5:00pm
 image: /images/locations/website-storeimages-1.png
