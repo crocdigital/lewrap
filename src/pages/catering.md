@@ -71,7 +71,7 @@ catering_callouts:
       less time in the kitchen. 
 show_faqs: true
 faq_category: Catering
-faq_button_text: Order catering
+faq_button_text: View Catering Menu
 faq_button_link: https://lewrap.redcatcloud.com.au/app/menu
-faq_button_variant: primary
+faq_button_variant: secondary
 ---
