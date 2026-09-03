@@ -28,4 +28,4 @@ featured: false
 ---
 &nbsp;
 
-**LeWrap Miranda is back!** We've had many requests to come back and we've made it happen. LeWrap Miranda is serving fresh, flavour-packed wraps, flavour-packed wraps, plates, salads and baguettes. Located in Westfield Miranda, LeWrap is loved for its quick service, high-quality ingredients, and fully customisable menu.
+LeWrap Miranda is serving fresh, flavour-packed wraps, flavour-packed wraps, plates, salads and baguettes. Located in Westfield Miranda, LeWrap is loved for its quick service, high-quality ingredients, and fully customisable menu.
