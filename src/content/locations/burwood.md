@@ -18,7 +18,7 @@ hours:
   monday: 9:00am - 5:30pm
   tuesday: 9:00am - 5:30pm
   wednesday: 9:00am - 5:30pm
-  thursday: 9:00am - 8:30pm
+  thursday: 9:00am - 9:00pm
   friday: 9:00am - 5:30pm
   saturday: 9:00am - 5:30pm
   sunday: 9:00am - 5:30pm
