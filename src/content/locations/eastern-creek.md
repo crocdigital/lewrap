@@ -5,7 +5,7 @@ seo_description: ''
 seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
-name: LeWrap ECQ
+name: LeWrap Eastern Creek
 address: Eastern Creek Quarter Outlet, 159 Rooty Hill Rd S
 suburb: Eastern Creek
 state: NSW
@@ -26,4 +26,4 @@ image: /images/locations/ecq-pic.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: false
 ---
-**LeWrap is Now Open in Eastern Creek!** Located in Eastern Creek Quarter Outlet, LeWrap ECQ is serving fresh, flavour-packed wraps, flavour-packed wraps, plates, salads and baguettes. LeWrap is loved for its quick service, high-quality ingredients, and fully customisable menu.
+Located in Eastern Creek Quarter Outlet, LeWrap ECQ is serving fresh, flavour-packed wraps, flavour-packed wraps, plates, salads and baguettes. LeWrap is loved for its quick service, high-quality ingredients, and fully customisable menu.
