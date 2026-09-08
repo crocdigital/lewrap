@@ -69,5 +69,5 @@ show_faqs: true
 faq_category: Catering
 faq_button_text: View Catering Menu
 faq_button_link: https://i.imgur.com/2efxNHt.jpeg
-faq_button_variant: primary
+faq_button_variant: secondary
 ---
