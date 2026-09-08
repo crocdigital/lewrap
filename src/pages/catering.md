@@ -14,8 +14,8 @@ hero_bg_colour:
 hero_bg_image: /images/hero/website-headingimages.png
 hero_bg_image_mobile: /images/hero/website-mobile-image.png
 hero_button_text: Order catering
-hero_button_link: https://lewrap.redcatcloud.com.au/universal/initiateOrder?saleType=107
-hero_button_variant: primary
+hero_button_link: https://i.imgur.com/2efxNHt.jpeg
+hero_button_variant: secondary
 marquee_items:
   - 100% Australian
   - Chicken Wraps
@@ -32,8 +32,7 @@ marquee_items:
 page_blocks:
   - _template: feature
     heading:
-    text: >-
-      <p>No event is too big or too small. Our menu has been designed to elevate
+    text: <p>No event is too big or too small. Our menu has been designed to elevate
       your next event. Choose from wraps, baguettes, salads or chips.</p><p>When
       there’s a hungry crowd to feed, LeWrap offers fresh flavoursome catering.
       Whether you’re hosting friends, feeding the family, corporate catering, or
@@ -53,22 +52,19 @@ page_blocks:
 catering_callouts:
   - image: /images/icons/corporate-event-catering.svg
     title: Corporate & event catering
-    description: >-
-      LeWrap provides fresh corporate and event catering with made-to-order
-      wraps, salads and chips to pickup for meetings, office lunches, and
-      functions. 
+    description: 'LeWrap provides fresh corporate and event catering with
+      made-to-order wraps, salads and chips to pickup for meetings, office
+      lunches, and functions. '
   - image: /images/icons/hosting-friends-family.svg
     title: Hosting friends & family
-    description: >-
-      LeWrap makes hosting friends and family easy with made-to-order wraps,
-      salads and chips to pickup for effortless entertaining, casual catch-ups,
-      and celebrations. 
+    description: 'LeWrap makes hosting friends and family easy with made-to-order
+      wraps, salads and chips to pickup for effortless entertaining, casual
+      catch-ups, and celebrations. '
   - image: /images/icons/birthday-celebrations.svg
     title: Birthday celebrations
-    description: >-
-      LeWrap makes birthday celebrations simple with made-to-order wraps, salads
-      and chips to pickup for easy party catering, sharing with friends, and
-      less time in the kitchen. 
+    description: 'LeWrap makes birthday celebrations simple with made-to-order
+      wraps, salads and chips to pickup for easy party catering, sharing with
+      friends, and less time in the kitchen. '
 show_faqs: true
 faq_category: Catering
 faq_button_text: View Catering Menu
