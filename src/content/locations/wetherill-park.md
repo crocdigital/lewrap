@@ -6,9 +6,8 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Wetherill Park
-address: >-
-  Ground Floor Food Court, Stockland Wetherill Park Shopping Centre, 561-583
-  Polding St
+address: Ground Floor Food Court, Stockland Wetherill Park Shopping Centre,
+  561-583 Polding St
 suburb: Wetherill Park
 state: NSW
 postcode: '2200'
@@ -17,13 +16,13 @@ longitude: 150.89776
 phone: 0410 990 781
 email: wetherillpark@lewrap.com
 hours:
-  monday: 9:00am - 5:30pm
-  tuesday: 9:00am - 5:30pm
+  monday: TEMPORARILY CLOSED
+  tuesday: TEMPORARILY CLOSED
   wednesday: 9:00am - 5:30pm
   thursday: 9:00am - 9:00pm
-  friday: 9:00am - 5:30pm
-  saturday: 9:00am - 5:30pm
-  sunday: 9:00am - 5:00pm
+  friday: TEMPORARILY CLOSED
+  saturday: TEMPORARILY CLOSED
+  sunday: TEMPORARILY CLOSED
 image: /images/locations/bankstown.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
