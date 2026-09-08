@@ -18,10 +18,10 @@ hours:
   monday: 9:00am - 9:30pm
   tuesday: 9:00am - 9:30pm
   wednesday: 9:00am - 9:30pm
-  thursday: 9:00am - 9:30pm
-  friday: 9:00am - 9:30pm
-  saturday: 9:00am - 9:30pm
-  sunday: 9:00am - 9:30pm
+  thursday: CLOSED
+  friday: CLOSED
+  saturday: CLOSED
+  sunday: CLOSED
 image: /images/locations/belmore.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
