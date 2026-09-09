@@ -14,7 +14,7 @@ hero_bg_colour:
 hero_bg_image: /images/hero/website-headingimages.png
 hero_bg_image_mobile: /images/hero/website-mobile-image.png
 hero_button_text: Order catering
-hero_button_link: https://i.imgur.com/2efxNHt.jpeg
+hero_button_link: https://lewrap.redcatcloud.com.au/app/menu/
 hero_button_variant: secondary
 marquee_items:
   - 100% Australian
