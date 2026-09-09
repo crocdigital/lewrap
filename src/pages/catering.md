@@ -15,7 +15,7 @@ hero_bg_image: /images/hero/website-headingimages.png
 hero_bg_image_mobile: /images/hero/website-mobile-image.png
 hero_button_text: Order catering
 hero_button_link: https://lewrap.redcatcloud.com.au/app/menu/
-hero_button_variant: secondary
+hero_button_variant: primary
 marquee_items:
   - 100% Australian
   - Chicken Wraps
