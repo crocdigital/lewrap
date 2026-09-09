@@ -21,7 +21,7 @@ marquee_items:
   - Chicken Wraps
   - Schnitzel Wraps
   - Beef Wraps
-  - Lamb Wraps
+  - Kofta Wraps
   - Vegetarian Wraps
   - Plates
   - Baguettes
