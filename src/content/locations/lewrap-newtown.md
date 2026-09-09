@@ -15,13 +15,13 @@ longitude: 151.18257
 phone: 02 7234 9098
 email: newtown@lewrap.com
 hours:
-  monday: 9:30am - 10:30pm
-  tuesday: 9:30am - 10:30pm
-  wednesday: 9:30am - 10:30pm
-  thursday: 9:30am - 10:30pm
-  friday: 9:30am - 11:59pm
-  saturday: 9:30am - 11:59pm
-  sunday: 9:30am - 10:30pm
+  monday: 10:30am - 10:30pm
+  tuesday: 10:30am - 10:30pm
+  wednesday: 10:30am - 10:30pm
+  thursday: 10:30am - 10:30pm
+  friday: 10:30am - 11:59pm
+  saturday: 10:30am - 11:59pm
+  sunday: 10:30am - 10:30pm
 image: /images/locations/newtown.webp
 order_now_link: ''
 featured: true
