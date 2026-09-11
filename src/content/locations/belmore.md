@@ -18,7 +18,7 @@ hours:
   monday: 9:00am - 9:30pm
   tuesday: 9:00am - 9:30pm
   wednesday: 9:00am - 9:30pm
-  thursday: TEMPORARILY CLOSED
+  thursday: 9:00am - 9:30pm
   friday: TEMPORARILY CLOSED
   saturday: TEMPORARILY CLOSED
   sunday: TEMPORARILY CLOSED
