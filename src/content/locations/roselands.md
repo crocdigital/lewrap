@@ -15,13 +15,13 @@ longitude: 151.06896
 phone: (02) 9758 5584
 email: roselands@lewrap.com
 hours:
-  monday: 10:00am - 5:00pm
-  tuesday: 10:00am - 5:00pm
-  wednesday: 10:00am - 5:00pm
-  thursday: 10:00am - 8:30pm
-  friday: 10:00am - 5:00pm
-  saturday: 10:00am - 5:00pm
-  sunday: 10:30am - 4:00pm
+  monday: 9:30am - 5:00pm
+  tuesday: 9:30am - 5:00pm
+  wednesday: 9:30am - 5:00pm
+  thursday: 9:30am - 8:30pm
+  friday: 9:30am - 5:00pm
+  saturday: 9:30am - 5:00pm
+  sunday: 10:00am - 4:30pm
 image: /images/locations/website-storeimages-1.png
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: false
