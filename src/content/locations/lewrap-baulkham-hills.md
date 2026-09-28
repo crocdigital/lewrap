@@ -15,13 +15,13 @@ longitude: 150.991998
 phone: ''
 email: baulkhamhills@lewrap.com
 hours:
-  monday: 9:00am - 5:00pm
-  tuesday: 9:00am - 5:00pm
-  wednesday: 9:00am - 5:00pm
-  thursday: 9:00am - 5:00pm
-  friday: 9:00am - 5:00pm
-  saturday: 9:00am - 5:00pm
-  sunday: 9:00am - 5:00pm
+  monday: 9:30am - 9:30pm
+  tuesday: 9:30am - 9:30pm
+  wednesday: 9:30am - 9:30pm
+  thursday: 9:30am - 9:30pm
+  friday: 9:30am - 9:30pm
+  saturday: 9:30am - 9:30pm
+  sunday: 9:30am - 9:30pm
 image: /images/locations/groupshot-hands.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
