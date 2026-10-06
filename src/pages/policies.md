@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/PoliciesLayout.astro
-title: Policies - LeWrap
+title: Terms & Conditions - LeWrap
 seo_title:
 seo_description:
 seo_image: ''
