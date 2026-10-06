@@ -7,25 +7,17 @@ seo_image: ''
 seo_keywords:
 seo_robots: index, follow
 seo_canonical: ''
-terms_content: >-
-  <p>These Terms and Conditions of Use govern your use of this website and your
-  use of this website indicates your acceptance of these Terms and
-  Conditions.</p><p>LeWrap may from time to time amend, update or change this
-  website including these Terms and Conditions without prior
-  notice.</p><h3><strong>App Offer T&amp;Cs</strong></h3><p>Free Wrap on the App
-  offer expires 21 June 2026. </p><p>Free Wrap on the App offer is available for
-  a limited time only, for pickup only. Redeemable on the app only. Valid one
-  per phone number, per person. Not available with any other offers.
-  Customisable add-ons will be charged.</p><p>The customer who places the order
-  must be present to collect it. One redemption per person, multiple wraps
-  cannot be collected by a single individual. ID or app verification may be
-  required. Multiple orders cannot be collected by the same individual under any
-  circumstances.</p><h3><strong>Catering Cancellation
-  Policy</strong></h3><p>Cancellations must be made 48 hours prior to pick-up.
-  Please contact your local store. <a href="/locations/">Click here</a> to see
-  all store contact details.</p><p>Orders must be collected from the selected
-  LeWrap location at the agreed date and time. LeWrap is not responsible for
-  orders that are not collected on time or from the nominated
+terms_content: <p>These Terms and Conditions of Use govern your use of this
+  website and your use of this website indicates your acceptance of these Terms
+  and Conditions.</p><p>LeWrap may from time to time amend, update or change
+  this website including these Terms and Conditions without prior
+  notice.</p><h3><strong>App Stamp Card</strong></h3><p>Minimum $15 spend
+  required per transaction to earn a stamp. </p><h3><strong>Catering
+  Cancellation Policy</strong></h3><p>Cancellations must be made 48 hours prior
+  to pick-up. Please contact your local store. <a href="/locations/">Click
+  here</a> to see all store contact details.</p><p>Orders must be collected from
+  the selected LeWrap location at the agreed date and time. LeWrap is not
+  responsible for orders that are not collected on time or from the nominated
   location.</p><h3><strong>Public Holidays</strong></h3><p>15% Public Holiday
   surcharge applies on all Public Holidays. This helps cover the extra costs of
   operating on these days, including staffing and other expenses, when running
@@ -84,26 +76,25 @@ terms_content: >-
   Policy, please contact us at:</p><p>Rhodes Quarter<br />Building C<br />Suite
   8, Level 1<br />1C Homebush Bay Drive<br />Rhodes NSW 2138<br />02 9743
   2580<br />info@lewrap.com</p>
-privacy_content: >-
-  <h3><strong>Introduction</strong></h3><p>LeWrap (“we” or “us” or “our”)
-  respects the privacy of our users (“user” or “you”). This Privacy Policy
-  explains how we collect, use, disclose, and safeguard your information when
-  you visit our website lewrap.com and Le Wrap on the app store including any
-  other media form, media channel, mobile website, or mobile application related
-  or connected thereto (collectively, the “Site”). Please read this privacy
-  policy carefully. If you do not agree with the terms of this privacy policy,
-  please do not access the site.</p><p>We reserve the right to make changes to
-  this Privacy Policy at any time and for any reason. We will alert you about
-  any changes by updating the “Last Updated” date of this Privacy Policy. Any
-  changes or modifications will be effective immediately upon posting the
-  updated Privacy Policy on the Site, and you waive the right to receive
-  specific notice of each such change or modification.</p><p>You are encouraged
-  to periodically review this Privacy Policy to stay informed of updates. You
-  will be deemed to have been made aware of, will be subject to, and will be
-  deemed to have accepted the changes in any revised Privacy Policy by your
-  continued use of the Site after the date such revised Privacy Policy is
-  posted.</p><h3><strong>Collection Of Your Information</strong></h3><p>We may
-  collect information about you in a variety of ways. The information we may
+privacy_content: <h3><strong>Introduction</strong></h3><p>LeWrap (“we” or “us”
+  or “our”) respects the privacy of our users (“user” or “you”). This Privacy
+  Policy explains how we collect, use, disclose, and safeguard your information
+  when you visit our website lewrap.com and Le Wrap on the app store including
+  any other media form, media channel, mobile website, or mobile application
+  related or connected thereto (collectively, the “Site”). Please read this
+  privacy policy carefully. If you do not agree with the terms of this privacy
+  policy, please do not access the site.</p><p>We reserve the right to make
+  changes to this Privacy Policy at any time and for any reason. We will alert
+  you about any changes by updating the “Last Updated” date of this Privacy
+  Policy. Any changes or modifications will be effective immediately upon
+  posting the updated Privacy Policy on the Site, and you waive the right to
+  receive specific notice of each such change or modification.</p><p>You are
+  encouraged to periodically review this Privacy Policy to stay informed of
+  updates. You will be deemed to have been made aware of, will be subject to,
+  and will be deemed to have accepted the changes in any revised Privacy Policy
+  by your continued use of the Site after the date such revised Privacy Policy
+  is posted.</p><h3><strong>Collection Of Your Information</strong></h3><p>We
+  may collect information about you in a variety of ways. The information we may
   collect on the Site includes:</p><p><strong>Personal Data</strong><br
   />Personally identifiable information, such as your name, shipping address,
   email address, and telephone number, and demographic information, such as your
