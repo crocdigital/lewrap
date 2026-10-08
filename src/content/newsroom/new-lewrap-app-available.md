@@ -1,7 +1,7 @@
 ---
 _schema: default
 layout: ../../layouts/NewsroomLayout.astro
-title: New LeWrap App Available
+title: Exclusive App Offers
 seo_title: ''
 seo_description: ''
 seo_image: ''
@@ -11,16 +11,23 @@ seo_canonical: ''
 hero_image: /images/newsroom/freewrap-desktop.webp
 hero_image_mobile: /images/newsroom/freewrap-mobile.webp
 category: Updates
-date: 2026-02-16T09:00:00+11:00
+date: 2026-10-09T09:00:00+11:00
 preview_text: Skip the queue and order ahead
 featured: false
 ---
-## The New LeWrap App is Here!
+## Exclusive App Offers
 
-Now you can enjoy LeWrap without the wait and access to exciting features:
+**More perks. More rewards. More reasons to order!**
 
-* Order ahead
-* Accumulate loyalty points to use towards freebies
-* Exclusive offers<br /><br />
+Enjoy exclusive offers and rewards every time you order through the LeWrap app.
 
-[Download the app Now!](/go/lewrap-app/)
+* **10% OFF** your first app order
+* **Earn Points** with every order and redeem for discounts
+* **FREE Chips** on the stamp card (Every 6th visit with a $15 minimum spend)
+* **FREE Birthday Wrap** to celebrate your special day\*
+
+**Order ahead. Earn rewards. Enjoy the perks!**
+
+[Download the app Now!](/go/lewrap-app/)<br />
+
+<br />[T&Cs apply.](https://lewrap.com/policies)<br />
