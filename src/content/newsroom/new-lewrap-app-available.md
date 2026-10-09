@@ -12,7 +12,7 @@ hero_image: /images/newsroom/freewrap-desktop.webp
 hero_image_mobile: /images/newsroom/freewrap-mobile.webp
 category: Updates
 date: 2026-10-09T09:00:00+11:00
-preview_text: Skip the queue and order ahead
+preview_text: Enjoy 10% off + Freebies
 featured: false
 ---
 ## Exclusive App Offers
