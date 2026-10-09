@@ -7,7 +7,7 @@ seo_image: ''
 seo_keywords:
 seo_robots: index, follow
 seo_canonical: ''
-hero_title: Work With Us!
+hero_title: Work With Us
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
@@ -32,8 +32,7 @@ marquee_items:
 page_blocks:
   - _template: feature
     heading:
-    text: >-
-      <p>LeWrap is always on the lookout for friendly, motivated people to join
+    text: <p>LeWrap is always on the lookout for friendly, motivated people to join
       the crew — whether you’re keen to work in one of our local stores or at
       Head Office. In-store roles include front of house serving customers,
       prepping fresh food, or firing up the grill in a fun, fast-paced,
