@@ -11,8 +11,8 @@ hero_title: Be Your Own Boss
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
-hero_bg_image: /images/hero/beyourownboss-award-1.webp
-hero_bg_image_mobile: /images/hero/ownastore-mobile.webp
+hero_bg_image: /images/hero/ownastore.webp
+hero_bg_image_mobile: /images/hero/ownastore-1.webp
 hero_button_text: Enquire now
 hero_button_link: javascript:open_franchise_enquiry()
 hero_button_variant: primary
