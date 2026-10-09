@@ -10,7 +10,7 @@ seo_robots: index, follow
 seo_canonical: ''
 hero_image: /images/newsroom/20catering.webp
 hero_image_mobile: /images/newsroom/catering.webp
-category: ''
+category: Promotion
 date: 2026-10-12T00:00:00+11:00
 preview_text: ''
 featured: true
