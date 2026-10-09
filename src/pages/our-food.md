@@ -8,11 +8,11 @@ seo_keywords:
 seo_robots: index, follow
 seo_canonical: ''
 hero_title: Our Food
-hero_subtitle: The average adult daily energy intake is 8700kj
+hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
-hero_bg_image: /images/hero/ourfood-desktop.webp
-hero_bg_image_mobile: /images/hero/ourfood-mobile.webp
+hero_bg_image: /images/hero/ourfood.webp
+hero_bg_image_mobile: /images/hero/ourfood-1.webp
 hero_button_text: ''
 hero_button_link: ''
 hero_button_variant: primary
@@ -26,9 +26,8 @@ category_descriptions:
     description:
     subtitle:
   plates:
-    description: >-
-      Choice of meat, grilled mushroom, onion & capsicum, white or brown rice &
-      salad.
+    description: Choice of meat, grilled mushroom, onion & capsicum, white or brown
+      rice & salad.
     subtitle: Chicken, beef, kofta
   baguettes:
     description: ''

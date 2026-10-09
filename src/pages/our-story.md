@@ -11,8 +11,8 @@ hero_title: Our Story
 hero_subtitle:
 hero_bg_type: image
 hero_bg_colour:
-hero_bg_image: /images/hero/ourstory-desktop.webp
-hero_bg_image_mobile: /images/hero/ourstory-mobile.webp
+hero_bg_image: /images/hero/ourstory.webp
+hero_bg_image_mobile: /images/hero/ourstory-1.webp
 hero_button_text:
 hero_button_link:
 hero_button_variant:
@@ -20,8 +20,7 @@ show_arrow_green_regular: true
 page_blocks:
   - _template: feature
     heading:
-    text: >-
-      <p>We believe in all things good and fresh. Our made-to-order philosophy
+    text: <p>We believe in all things good and fresh. Our made-to-order philosophy
       means nothing sits pre-made. Every dish is made fresh, right in front of
       the customer, ensuring a superior product that’s as enjoyable to watch
       being made as it is to eat.</p><p>At LeWrap, we believe that food should
@@ -45,8 +44,7 @@ page_blocks:
     button_download: false
   - _template: feature
     heading:
-    text: >-
-      <p>We’ve incorporated fresh local ingredients to offer great foodie
+    text: <p>We’ve incorporated fresh local ingredients to offer great foodie
       experience to everyone who dines with us. All our produce is locally
       sourced from trusted Australian farmers.</p><p>LeWrap isn’t just a brand.
       It’s a movement toward healthier, high-quality fast-casual dining that
