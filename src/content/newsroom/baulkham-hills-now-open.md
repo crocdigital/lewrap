@@ -11,7 +11,7 @@ seo_canonical: ''
 hero_image: /images/newsroom/bhills-1.webp
 hero_image_mobile: /images/newsroom/bhills.webp
 category: Franchising
-date: 2026-10-08T09:00:00+11:00
+date: 2026-10-09T09:00:00+11:00
 preview_text: Find us at Grove Square – The Hills
 featured: false
 ---
