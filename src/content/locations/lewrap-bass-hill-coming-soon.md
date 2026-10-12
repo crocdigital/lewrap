@@ -5,7 +5,7 @@ seo_description: ''
 seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
-name: LeWrap Bass Hill OPENING SOON
+name: LeWrap Bass Hill COMING SOON
 address: 753 Hume Hwy
 suburb: Bass Hill
 state: NSW
