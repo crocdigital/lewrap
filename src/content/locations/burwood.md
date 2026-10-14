@@ -6,7 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Burwood
-address: Westfield Burwood Shopping Centre, Level 1 Food Court
+address: Westfield Burwood, Level 1 Food Court
 suburb: Burwood
 state: NSW
 postcode: '2134'

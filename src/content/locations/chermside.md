@@ -6,7 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Chermside
-address: Westfield Chermside Shopping Centre, Shop FC10
+address: Westfield Chermside, Shop FC10
 suburb: Chermside
 state: QLD
 postcode: '4032'

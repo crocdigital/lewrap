@@ -6,7 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Penrith
-address: Westfield Penrith Shopping Centre, Level 2 Food Court, 585 High St
+address: Westfield Penrith, Level 2 Food Court, 585 High St
 suburb: Penrith
 state: NSW
 postcode: '2750'

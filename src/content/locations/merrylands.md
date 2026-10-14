@@ -6,7 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Merrylands
-address: Stockland Merrylands Shopping Centre, Level 1, McFarlane Street
+address: Stockland Merrylands, Level 1, McFarlane Street
 suburb: Merrylands
 state: NSW
 postcode: '2160'
