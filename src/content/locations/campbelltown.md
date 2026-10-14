@@ -6,7 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Campbelltown
-address: Macarthur Square Shopping Centre, Level 3
+address: Macarthur Square, Level 3
 suburb: Campbelltown
 state: NSW
 postcode: '2560'

@@ -6,8 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Shellharbour
-address: Stockland Shellharbour Shopping Centre, Ground Floor Food Court, 211
-  Lake Entrance Rd
+address: Stockland Shellharbour, Ground Floor Food Court, 211 Lake Entrance Rd
 suburb: Shellharbour City Centre
 state: NSW
 postcode: '2529'

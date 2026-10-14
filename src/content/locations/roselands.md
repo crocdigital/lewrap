@@ -6,7 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Roselands
-address: HomeCo. Roselands Shopping Centre, Level 2 Food Court, 24 Roselands Dr
+address: HomeCo. Roselands, Level 2 Food Court, 24 Roselands Dr
 suburb: Roselands
 state: NSW
 postcode: '2196'

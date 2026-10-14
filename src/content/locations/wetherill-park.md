@@ -6,8 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Wetherill Park
-address: Stockland Wetherill Park Shopping Centre, Ground Floor Food Court,
-  561-583 Polding St
+address: Stockland Wetherill Park, Ground Floor Food Court, 561-583 Polding St
 suburb: Wetherill Park
 state: NSW
 postcode: '2200'
