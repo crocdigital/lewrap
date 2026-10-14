@@ -15,10 +15,10 @@ longitude: 150.89776
 phone: 0410 990 781
 email: wetherillpark@lewrap.com
 hours:
-  monday: TEMPORARILY CLOSED
-  tuesday: TEMPORARILY CLOSED
-  wednesday: TEMPORARILY CLOSED
-  thursday: TEMPORARILY CLOSED
+  monday: 9:00am - 5:30pm
+  tuesday: 9:00am - 5:30pm
+  wednesday: 9:00am - 5:30pm
+  thursday: 9:00am - 5:30pm
   friday: 9:00am - 5:30pm
   saturday: 9:00am - 5:30pm
   sunday: 9:00am - 5:00pm
