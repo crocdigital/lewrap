@@ -6,7 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Bass Hill COMING SOON
-address: 753 Hume Hwy
+address: Bass Hill Plaza Shopping Centre, 753 Hume Hwy
 suburb: Bass Hill
 state: NSW
 postcode: '2197'

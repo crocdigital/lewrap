@@ -6,7 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Liverpool
-address: Level 2 Food Court, Westfield Liverpool Shopping Centre
+address: Westfield Liverpool Shopping Centre, Level 2 Food Court
 suburb: Liverpool
 state: NSW
 postcode: '2170'

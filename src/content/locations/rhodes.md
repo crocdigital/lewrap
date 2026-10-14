@@ -6,7 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Rhodes
-address: Level 4 Food Court, Rhodes Waterside Shopping Centre, 1 Rider Blvd
+address: Rhodes Waterside Shopping Centre, Level 4 Food Court, 1 Rider Blvd
 suburb: Rhodes
 state: NSW
 postcode: '2138'

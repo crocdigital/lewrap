@@ -6,7 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Miranda
-address: Level 2 Food Court, Westfield Miranda Shopping Centre, 600 Kingway
+address: Westfield Miranda Shopping Centre, Level 2 Food Court, 600 Kingsway
 suburb: Miranda
 state: NSW
 postcode: '2228'

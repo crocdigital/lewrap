@@ -6,7 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Roselands
-address: Level 2 Food Court, Roselands Shopping Centre, 24 Roselands Dr
+address: HomeCo. Roselands Shopping Centre, Level 2 Food Court, 24 Roselands Dr
 suburb: Roselands
 state: NSW
 postcode: '2196'
@@ -26,4 +26,4 @@ image: /images/locations/website-storeimages-1.png
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: false
 ---
-Located in HomeCo.Shopping Centre food court, LeWrap Roselands has been serving freshly made, flavour-packed wraps, plates, salads and baguettes to the local community since 2011. Known for its quick service, high-quality ingredients, and fully customisable menu, LeWrap Roselands is the go-to destination for a fresh, satisfying meal any time of day.
+Located in HomeCo. Shopping Centre food court, LeWrap Roselands has been serving freshly made, flavour-packed wraps, plates, salads and baguettes to the local community since 2011. Known for its quick service, high-quality ingredients, and fully customisable menu, LeWrap Roselands is the go-to destination for a fresh, satisfying meal any time of day.

@@ -6,7 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Eastern Creek
-address: 159 Rooty Hill Rd S, Eastern Creek Quarter Outlet
+address: ECQ Outlet, 159 Rooty Hill Rd S
 suburb: Eastern Creek
 state: NSW
 postcode: '2766'

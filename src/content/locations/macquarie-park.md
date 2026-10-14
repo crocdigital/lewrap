@@ -6,7 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Macquarie Park
-address: Level 2, Macquarie Centre, Herring Road & Waterloo Rd
+address: Macquarie Centre, Level 2, Herring Road & Waterloo Rd
 suburb: Macquarie Park
 state: NSW
 postcode: '2113'
