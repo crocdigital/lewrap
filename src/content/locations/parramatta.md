@@ -6,7 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Parramatta
-address: Level 5 Food Court, Westfield Parramatta Shopping Centre, 159-175 Church St
+address: Westfield Parramatta Shopping Centre, Level 5 Food Court, 159-175 Church St
 suburb: Parramatta
 state: NSW
 postcode: '2150'

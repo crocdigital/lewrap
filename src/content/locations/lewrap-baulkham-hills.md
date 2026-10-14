@@ -6,7 +6,7 @@ seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
 name: LeWrap Baulkham Hills
-address: 375-383 Windsor Road, Grove Square - The Hills
+address: Grove Square - The Hills, 375-383 Windsor Road
 suburb: Baulkham Hills
 state: NSW
 postcode: '2153'
