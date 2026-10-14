@@ -22,7 +22,7 @@ hours:
   friday: 9:00am - 9:30pm
   saturday: 9:00am - 9:30pm
   sunday: 9:00am - 9:30pm
-image: /images/locations/belmore.webp
+image: /images/locations/belmore-1.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
 ---
