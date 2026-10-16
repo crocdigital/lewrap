@@ -10,7 +10,7 @@ seo_robots: index, follow
 seo_canonical: ''
 hero_image: ''
 hero_image_mobile: ''
-category: ''
+category: Community
 date: 2026-01-26T00:00:00Z
 preview_text: ''
 featured: false
