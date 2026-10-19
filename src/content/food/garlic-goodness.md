@@ -5,7 +5,7 @@ price: $14.90
 description: <p>Grilled Chicken Breast, Garlic Toum, Lettuce, Red &amp; Green Pickles</p>
 kj: 2870
 image: /images/food/wrap-lto-gg-1.webp
-orderLink: ''
+orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Chicken Wraps
 available: true
