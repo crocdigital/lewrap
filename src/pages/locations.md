@@ -34,7 +34,7 @@ franchise_callout:
   heading: Where Should We Open Next?
   text: <p>Interested in opening your own store? Be your own boss. In business for
     yourself, not by yourself.</p>
-  image: /images/elements/store-sign.webp
+  image: /images/franchise/website-mobile-image-1000x1000-12.webp
   button_text: Learn more
   button_link: /own-a-store
 ---
