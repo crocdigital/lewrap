@@ -8,12 +8,12 @@ seo_image: ''
 seo_keywords:
 seo_robots: index, follow
 seo_canonical: ''
-hero_image: ''
-hero_image_mobile: ''
+hero_image: /images/newsroom/newsroom-website-images-5.webp
+hero_image_mobile: /images/newsroom/website-mobile-image-1000x1000-11.webp
 category: Community
-date: 2026-01-26T00:00:00Z
+date: 2026-10-13T00:00:00+11:00
 preview_text: ''
-featured: false
+featured: true
 ---
 # Brand Transformation of the Year 2026!
 
