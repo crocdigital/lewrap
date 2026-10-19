@@ -2,11 +2,10 @@
 _schema: default
 name: Kofta
 price: $12.90
-description: >-
-  <p>Grilled Kofta, Caramelised Onion, White or Brown Rice &amp; Choice of
-  Sauce.</p>
+description: <p>Grilled Kofta, Caramelised Onion, White or Brown Rice &amp;
+  Choice of Sauce.</p>
 kj: 2614
-image: /images/food/proteinpack-kofta.webp
+image: /images/food/pp-kofta.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Protein Packs
 subcategory: ''
