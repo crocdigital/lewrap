@@ -21,9 +21,11 @@ latest_deals:
     alt: Make it a combo
   - image: /images/deals/swap-tortilla.webp
     alt: Swap your tortilla
+  - image: ''
+    alt: ''
 category_descriptions:
   wraps:
-    description:
+    description: The average adult daily energy intake is 8,700 kJ.
     subtitle:
   plates:
     description: Choice of meat, grilled mushroom, onion & capsicum, white or brown
