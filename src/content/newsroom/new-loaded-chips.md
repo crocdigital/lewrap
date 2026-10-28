@@ -24,4 +24,4 @@ Loaded with your choice of Chicken, Beef, Schnitzel or Kofta, finished with your
 
 The perfect lunch, after-school feed or something to share with your mates (or keep all to yourself — we won't judge!).
 
-**Loaded with flavour.<br /><br />Choose your level of loaded!<br />Regular – $12.90<br />Large – $16.90**
+**Loaded with flavour.<br /><br />Choose your level of loaded!<br />**Regular – $12.90<br />Large – $16.90
