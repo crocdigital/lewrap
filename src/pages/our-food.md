@@ -8,7 +8,7 @@ seo_keywords:
 seo_robots: index, follow
 seo_canonical: ''
 hero_title: Our Food
-hero_subtitle:
+hero_subtitle: 'The average adult daily energy intake is 8,700 kJ '
 hero_bg_type: image
 hero_bg_colour:
 hero_bg_image: /images/hero/ourfood.webp
