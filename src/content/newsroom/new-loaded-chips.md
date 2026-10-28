@@ -11,10 +11,10 @@ seo_robots: index, follow
 seo_canonical: ''
 hero_image: /images/newsroom/loadedchips.webp
 hero_image_mobile: /images/newsroom/loaded-chips-1200-x-1200.webp
-category: ''
-date: 2026-01-26T00:00:00Z
-preview_text: ''
-featured: false
+category: Promotion
+date: 2026-11-03T00:00:00+11:00
+preview_text: Your favourite chips just got LOADED!
+featured: true
 ---
 ## Your favourite chips just got LOADED!
 
