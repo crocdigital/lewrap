@@ -21,8 +21,6 @@ latest_deals:
     alt: Make it a combo
   - image: /images/deals/swap-tortilla.webp
     alt: Swap your tortilla
-  - image: ''
-    alt: ''
 category_descriptions:
   wraps:
     description: The average adult daily energy intake is 8,700 kJ.
