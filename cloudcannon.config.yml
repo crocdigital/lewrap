@@ -85,6 +85,7 @@ collections_config:
             - Protein Packs
             - Salads
             - Kids Meals
+            - Loaded Chips
             - Sides
             - Drinks
         label: Category
@@ -875,6 +876,14 @@ _inputs:
   category_descriptions.kids_meals.subtitle:
     type: text
     label: Kids Meals - Subtitle
+    cascade: true
+  category_descriptions.loaded_chips.description:
+    type: textarea
+    label: Loaded Chips - Description
+    cascade: true
+  category_descriptions.loaded_chips.subtitle:
+    type: text
+    label: Loaded Chips - Subtitle
     cascade: true
   category_descriptions.sides.description:
     type: textarea
