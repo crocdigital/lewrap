@@ -41,6 +41,9 @@ category_descriptions:
   kids_meals:
     description: Something for the little LeWrappers.
     subtitle: ''
+  loaded_chips:
+    description: ''
+    subtitle: ''
   sides:
     description: ''
     subtitle: ''
