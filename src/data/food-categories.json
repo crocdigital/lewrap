@@ -7,14 +7,14 @@
       "heading_image": "",
       "subcategories": [
         {
-          "name": "Chicken Wraps",
-          "subtitle": "",
-          "description": "Served with 100% Chicken Breast."
-        },
-        {
           "name": "Beef Wraps",
           "subtitle": "",
           "description": "Served with Strip Loin Steak."
+        },
+        {
+          "name": "Chicken Wraps",
+          "subtitle": "",
+          "description": "Served with 100% Chicken Breast."
         },
         {
           "name": "Schnitzel Wraps",
