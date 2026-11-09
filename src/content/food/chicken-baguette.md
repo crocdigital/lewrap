@@ -10,5 +10,6 @@ image: /images/food/baguette-chicken.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Baguettes
 subcategory: ''
+order: 20
 available: true
 ---

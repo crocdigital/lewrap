@@ -8,5 +8,6 @@ image: /images/food/drinks-mt-franklin.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Drinks
 subcategory: ''
+order: 50
 available: true
 ---

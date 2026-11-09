@@ -9,5 +9,6 @@ image: /images/food/pp-kofta-1.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Protein Packs
 subcategory: ''
+order: 30
 available: true
 ---

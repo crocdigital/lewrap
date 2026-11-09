@@ -8,5 +8,6 @@ image: /images/food/drinks-monster-energy.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Drinks
 subcategory: ''
+order: 140
 available: true
 ---

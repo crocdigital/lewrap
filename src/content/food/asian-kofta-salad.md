@@ -9,5 +9,6 @@ image: /images/food/salad-asian-kofta-1.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Salads
 subcategory: ''
+order: 30
 available: true
 ---

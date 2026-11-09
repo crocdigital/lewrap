@@ -8,5 +8,6 @@ image: /images/food/sides-falafel.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Sides
 subcategory: ''
+order: 10
 available: true
 ---

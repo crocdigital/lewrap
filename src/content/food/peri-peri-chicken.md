@@ -10,5 +10,6 @@ image: /images/food/periperi-chicken.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Chicken Wraps
+order: 40
 available: true
 ---

@@ -8,5 +8,6 @@ image: /images/food/drinks-powerade.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Drinks
 subcategory: ''
+order: 110
 available: true
 ---

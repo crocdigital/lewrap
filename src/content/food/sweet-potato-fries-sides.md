@@ -8,5 +8,6 @@ image: /images/food/sides-sweet-potato-fries.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Sides
 subcategory: ''
+order: 40
 available: true
 ---

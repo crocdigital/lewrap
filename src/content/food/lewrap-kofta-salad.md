@@ -10,5 +10,6 @@ image: /images/food/lwsalad-kofta.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Salads
 subcategory: ''
+order: 80
 available: true
 ---

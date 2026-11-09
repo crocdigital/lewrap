@@ -8,5 +8,6 @@ image: /images/food/baguette-schnitzel.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/
 category: Baguettes
 subcategory: ''
+order: 50
 available: false
 ---

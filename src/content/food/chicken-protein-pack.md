@@ -9,5 +9,6 @@ image: /images/food/pp-ckn.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Protein Packs
 subcategory: ''
+order: 20
 available: true
 ---

@@ -8,5 +8,6 @@ image: /images/food/sides-grilled-haloumi.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Sides
 subcategory: ''
+order: 20
 available: true
 ---

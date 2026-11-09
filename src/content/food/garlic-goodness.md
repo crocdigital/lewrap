@@ -8,5 +8,6 @@ image: /images/food/wrap-lto-gg-1.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Chicken Wraps
+order: 30
 available: true
 ---

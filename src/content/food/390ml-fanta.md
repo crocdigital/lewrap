@@ -8,5 +8,6 @@ image: /images/food/drinks-fanta.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Drinks
 subcategory: ''
+order: 80
 available: true
 ---

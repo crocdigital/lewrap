@@ -5,7 +5,8 @@ description: ""
 kj: 0
 image: ""
 orderLink: ""
-category: "Wraps"
+category: ""
 subcategory: ""
+order: ""
 available: true
 ---

@@ -10,5 +10,6 @@ image: /images/food/baguette-beef.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Baguettes
 subcategory: ''
+order: 10
 available: true
 ---

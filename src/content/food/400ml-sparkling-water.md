@@ -8,5 +8,6 @@ image: /images/food/drinks-sparkling-water.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Drinks
 subcategory: ''
+order: 40
 available: true
 ---

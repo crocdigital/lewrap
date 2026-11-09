@@ -43,8 +43,15 @@ const foodCollection = defineCollection({
         kj: z.number(),
         image: z.string(),
         orderLink: z.string().optional(),
-        category: z.enum(['Wraps', 'Plates', 'Baguettes', 'Protein Packs', 'Salads', 'Kids Meals', 'Loaded Chips', 'Sides', 'Drinks']),
-        subcategory: z.string().optional(),  // ← Added
+        // Category/subcategory names are free text, matched (trim +
+        // case-insensitive) against src/data/food-categories.json at build time.
+        // A blank or unrecognised value never fails the build - the item is
+        // skipped and logged as a single build warning instead.
+        category: z.string().optional().nullable(),
+        subcategory: z.string().optional().nullable(),
+        // Lower numbers show first within the category. Anything non-numeric
+        // (blank, text, null, missing) sorts last.
+        order: z.union([z.number(), z.string(), z.null()]).optional(),
         available: z.boolean().default(true),
     }),
 });

@@ -10,5 +10,6 @@ image: /images/food/mediterranean.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Vegetarian Wraps
+order: 30
 available: true
 ---

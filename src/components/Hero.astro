@@ -13,6 +13,7 @@ const {
     hero_button_target,
     hero_button_download,
     show_food_cat_links = false,
+    food_cat_links = [],
     show_search = false,
 } = Astro.props;
 
@@ -102,62 +103,14 @@ const heroImageToPreload = hero_bg_image_mobile || hero_bg_image;
                     >
                         Latest deals
                     </Button>
-                    <Button
-                        href="#wraps"
-                        class="btn-lewrap px-4 py-1 text-base leading-loose"
-                    >
-                        Wraps
-                    </Button>
-                    <Button
-                        href="#plates"
-                        class="btn-lewrap px-4 py-1 text-base leading-loose"
-                    >
-                        Plates
-                    </Button>
-                    <Button
-                        href="#baguettes"
-                        class="btn-lewrap px-4 py-1 text-base leading-loose"
-                    >
-                        Baguettes
-                    </Button>
-                    <Button
-                        href="#protein-packs"
-                        class="btn-lewrap px-4 py-1 text-base leading-loose"
-                    >
-                        Protein Packs
-                    </Button>
-                    <Button
-                        href="#salads"
-                        class="btn-lewrap px-4 py-1 text-base leading-loose"
-                    >
-                        Salads
-                    </Button>
-                    {/*
-                    NOTE: hidden kids meals for now. reinstate once menu item is available
-                    <Button
-                        href="#kids-meals"
-                        class="btn-lewrap px-4 py-1 text-base leading-loose"
-                    >
-                        Kids Meals
-                    </Button> */}
-                    <Button
-                        href="#loaded-chips"
-                        class="btn-lewrap px-4 py-1 text-base leading-loose"
-                    >
-                        Loaded Chips
-                    </Button>
-                    <Button
-                        href="#sides"
-                        class="btn-lewrap px-4 py-1 text-base leading-loose"
-                    >
-                        Sides
-                    </Button>
-                    <Button
-                        href="#drinks"
-                        class="btn-lewrap px-4 py-1 text-base leading-loose"
-                    >
-                        Drinks
-                    </Button>
+                    {food_cat_links.map((category: { id: string; name: string }) => (
+                        <Button
+                            href={`#${category.id}`}
+                            class="btn-lewrap px-4 py-1 text-base leading-loose"
+                        >
+                            {` ${category.name} `}
+                        </Button>
+                    ))}
                 </div>
             )
         }

@@ -8,5 +8,6 @@ image: /images/food/drinks-coke.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Drinks
 subcategory: ''
+order: 90
 available: true
 ---

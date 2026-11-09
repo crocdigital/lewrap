@@ -9,5 +9,6 @@ image: /images/food/salad-asian-1.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Salads
 subcategory: ''
+order: 40
 available: true
 ---

@@ -9,5 +9,6 @@ image: /images/food/lw-salad.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Salads
 subcategory: ''
+order: 90
 available: true
 ---

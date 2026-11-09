@@ -1,0 +1,98 @@
+{
+  "categories": [
+    {
+      "name": "Wraps",
+      "subtitle": "",
+      "description": "The average adult daily energy intake is 8,700 kJ.",
+      "heading_image": "",
+      "subcategories": [
+        {
+          "name": "Chicken Wraps",
+          "subtitle": "",
+          "description": "Served with 100% Chicken Breast."
+        },
+        {
+          "name": "Beef Wraps",
+          "subtitle": "",
+          "description": "Served with Strip Loin Steak."
+        },
+        {
+          "name": "Schnitzel Wraps",
+          "subtitle": "",
+          "description": "Served with 100% Chicken Breast Schnitzel."
+        },
+        {
+          "name": "Lamb Wraps",
+          "subtitle": "",
+          "description": "Served with Authentic Kofta."
+        },
+        {
+          "name": "Kofta Wraps",
+          "subtitle": "",
+          "description": "Served with Authentic Kofta."
+        },
+        {
+          "name": "Vegetarian Wraps",
+          "subtitle": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "Plates",
+      "subtitle": "Chicken, beef, kofta",
+      "description": "Choice of meat, grilled mushroom, onion & capsicum, white or brown rice & salad.",
+      "heading_image": "",
+      "subcategories": []
+    },
+    {
+      "name": "Baguettes",
+      "subtitle": "",
+      "description": "",
+      "heading_image": "",
+      "subcategories": []
+    },
+    {
+      "name": "Protein Packs",
+      "subtitle": "Add extra beef, kofta, chicken or schnitzel for only $5.",
+      "description": "Served with brown or white rice, caramelised onion & side sauce.",
+      "heading_image": "",
+      "subcategories": []
+    },
+    {
+      "name": "Salads",
+      "subtitle": "Add extra beef, kofta, chicken or schnitzel for only $5.",
+      "description": "",
+      "heading_image": "",
+      "subcategories": []
+    },
+    {
+      "name": "Kids Meals",
+      "subtitle": "",
+      "description": "Something for the little LeWrappers.",
+      "heading_image": "/images/elements/kidsmeals-title.svg",
+      "subcategories": []
+    },
+    {
+      "name": "Loaded Chips",
+      "subtitle": "",
+      "description": "",
+      "heading_image": "",
+      "subcategories": []
+    },
+    {
+      "name": "Sides",
+      "subtitle": "",
+      "description": "",
+      "heading_image": "",
+      "subcategories": []
+    },
+    {
+      "name": "Drinks",
+      "subtitle": "",
+      "description": "",
+      "heading_image": "",
+      "subcategories": []
+    }
+  ]
+}
