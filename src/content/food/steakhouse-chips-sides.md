@@ -8,5 +8,6 @@ image: /images/food/sides-steakhouse-chips.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Sides
 subcategory: ''
+order: 30
 available: true
 ---

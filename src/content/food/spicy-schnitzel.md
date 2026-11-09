@@ -10,5 +10,6 @@ image: /images/food/spicy-schnitzel.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Schnitzel Wraps
+order: 20
 available: true
 ---

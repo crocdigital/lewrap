@@ -10,5 +10,6 @@ image: /images/food/classic-beef.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Beef Wraps
+order: 10
 available: true
 ---

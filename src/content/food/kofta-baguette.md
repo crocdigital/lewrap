@@ -10,5 +10,6 @@ image: /images/food/baguette-kofta.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Baguettes
 subcategory: ''
+order: 30
 available: true
 ---

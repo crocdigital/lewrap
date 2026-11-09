@@ -10,5 +10,6 @@ image: /images/food/loaded-chips-large.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Loaded Chips
 subcategory: ''
+order: 20
 available: true
 ---

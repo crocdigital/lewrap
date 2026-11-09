@@ -9,5 +9,6 @@ image: /images/food/pp-schnitzel.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Protein Packs
 subcategory: ''
+order: 40
 available: true
 ---

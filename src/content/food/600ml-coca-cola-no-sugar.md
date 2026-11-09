@@ -8,5 +8,6 @@ image: /images/food/drinks-coke-zero.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Drinks
 subcategory: ''
+order: 70
 available: true
 ---

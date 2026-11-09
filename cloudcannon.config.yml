@@ -76,34 +76,27 @@ collections_config:
       category:
         type: select
         options:
-          allow_create: true
+          allow_create: false
           allow_empty: true
-          values:
-            - Wraps
-            - Plates
-            - Baguettes
-            - Protein Packs
-            - Salads
-            - Kids Meals
-            - Loaded Chips
-            - Sides
-            - Drinks
+          values: data.food_categories.categories[*].name
         label: Category
+        comment: Managed in Food Categories. Add a category there to see it here.
         cascade: true
       subcategory:
         type: select
         options:
-          allow_create: true
+          allow_create: false
           allow_empty: true
-          values:
-            - Chicken Wraps
-            - Beef Wraps
-            - Schnitzel Wraps
-            - Lamb Wraps
-            - Vegetarian Wraps
-            - Kofta Wraps
+          values: data.food_categories.categories[*].subcategories[*].name
         label: Subcategory
-        comment: Only applies to Wraps category
+        comment: Only applies when a category has subcategories (e.g. Wraps)
+        cascade: true
+      order:
+        type: number
+        label: Order
+        comment: >-
+          Lower numbers show first within the category. Use steps of 10 (10, 20,
+          30) so new items can slot in between.
         cascade: true
       price:
         type: text
@@ -151,6 +144,87 @@ collections_config:
         hide_extra_inputs: false
         remove_empty_inputs: false
         remove_extra_inputs: true
+  food_categories:
+    path: src/data
+    glob:
+      - food-categories.json
+    name: Food Categories
+    icon: category
+    disable_url: true
+    description: >-
+      Add, rename and reorder the categories on the Our Food page. Drag to
+      change the order.
+    _enabled_editors:
+      - data
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+    _inputs:
+      categories:
+        type: array
+        options:
+          structures:
+            style: select
+            values:
+              - label: Food Category
+                value:
+                  name: ""
+                  subtitle: ""
+                  description: ""
+                  heading_image: ""
+                  subcategories: []
+                _inputs:
+                  name:
+                    type: text
+                    label: Name
+                    comment: "Renaming? Re-pick this category on its food items too."
+                  subtitle:
+                    type: text
+                    label: Subtitle
+                    comment: Optional italic line under the heading
+                  description:
+                    type: textarea
+                    label: Description
+                    comment: Optional paragraph under the heading
+                  heading_image:
+                    type: image
+                    options:
+                      paths:
+                        uploads: public/images/elements
+                    label: Heading image
+                    comment: Optional. Replaces the text heading.
+                  subcategories:
+                    type: array
+                    options:
+                      structures:
+                        style: select
+                        values:
+                          - label: Subcategory
+                            value:
+                              name: ""
+                              subtitle: ""
+                              description: ""
+                            _inputs:
+                              name:
+                                type: text
+                                label: Name
+                                comment: >-
+                                  Renaming? Re-pick this subcategory on its food
+                                  items too.
+                              subtitle:
+                                type: text
+                                label: Subtitle
+                              description:
+                                type: textarea
+                                label: Description
+                    label: Subcategories
+                    comment: >-
+                      Optional. Only for categories that need sub-headings, like
+                      Wraps. Leave empty for a flat list of items.
+        label: Food Categories
+        comment: >-
+          Drag to reorder. The order here is the order the sections appear on the
+          Our Food page. A category with no items is hidden automatically.
   faq:
     path: src/content/faq
     icon: help_outline
@@ -387,6 +461,10 @@ collections_config:
         type: array
         label: Page Content Blocks
         comment: Add and arrange content blocks for this page
+data_config:
+  food_categories:
+    path: src/data/food-categories.json
+
 _inputs:
   seo_title:
     type: text
@@ -827,137 +905,6 @@ _inputs:
                 cascade: true
     label: Catering Callouts
     comment: Add benefits or features for catering
-    cascade: true
-  category_descriptions.wraps.description:
-    type: textarea
-    label: Wraps - Description
-    cascade: true
-  category_descriptions.wraps.subtitle:
-    type: text
-    label: Wraps - Subtitle
-    comment: Optional italic subtitle (e.g., 'Chicken, beef, schnitzel, lamb kofta')
-    cascade: true
-  category_descriptions.plates.description:
-    type: textarea
-    label: Plates - Description
-    cascade: true
-  category_descriptions.plates.subtitle:
-    type: text
-    label: Plates - Subtitle
-    cascade: true
-  category_descriptions.baguettes.description:
-    type: textarea
-    label: Baguettes - Description
-    cascade: true
-  category_descriptions.baguettes.subtitle:
-    type: text
-    label: Baguettes - Subtitle
-    cascade: true
-  category_descriptions.protein_packs.description:
-    type: textarea
-    label: Protein Packs - Description
-    cascade: true
-  category_descriptions.protein_packs.subtitle:
-    type: text
-    label: Protein Packs - Subtitle
-    cascade: true
-  category_descriptions.salads.description:
-    type: textarea
-    label: Salads - Description
-    cascade: true
-  category_descriptions.salads.subtitle:
-    type: text
-    label: Salads - Subtitle
-    cascade: true
-  category_descriptions.kids_meals.description:
-    type: textarea
-    label: Kids Meals - Description
-    cascade: true
-  category_descriptions.kids_meals.subtitle:
-    type: text
-    label: Kids Meals - Subtitle
-    cascade: true
-  category_descriptions.loaded_chips.description:
-    type: textarea
-    label: Loaded Chips - Description
-    cascade: true
-  category_descriptions.loaded_chips.subtitle:
-    type: text
-    label: Loaded Chips - Subtitle
-    cascade: true
-  category_descriptions.sides.description:
-    type: textarea
-    label: Sides - Description
-    cascade: true
-  category_descriptions.sides.subtitle:
-    type: text
-    label: Sides - Subtitle
-    cascade: true
-  category_descriptions.drinks.description:
-    type: textarea
-    label: Drinks - Description
-    cascade: true
-  category_descriptions.drinks.subtitle:
-    type: text
-    label: Drinks - Subtitle
-    cascade: true
-  category_descriptions:
-    type: object
-    label: Category Descriptions
-    comment: Descriptions shown for each food category section
-    cascade: true
-  wraps_subcategories.chicken.description:
-    type: textarea
-    label: Chicken Wraps - Description
-    cascade: true
-  wraps_subcategories.chicken.subtitle:
-    type: text
-    label: Chicken Wraps - Subtitle
-    cascade: true
-  wraps_subcategories.beef.description:
-    type: textarea
-    label: Beef Wraps - Description
-    cascade: true
-  wraps_subcategories.beef.subtitle:
-    type: text
-    label: Beef Wraps - Subtitle
-    cascade: true
-  wraps_subcategories.schnitzel.description:
-    type: textarea
-    label: Schnitzel Wraps - Description
-    cascade: true
-  wraps_subcategories.schnitzel.subtitle:
-    type: text
-    label: Schnitzel Wraps - Subtitle
-    cascade: true
-  wraps_subcategories.lamb.description:
-    type: textarea
-    label: Lamb Wraps - Description
-    cascade: true
-  wraps_subcategories.lamb.subtitle:
-    type: text
-    label: Lamb Wraps - Subtitle
-    cascade: true
-  wraps_subcategories.vegetarian.description:
-    type: textarea
-    label: Vegetarian Wraps - Description
-    cascade: true
-  wraps_subcategories.vegetarian.subtitle:
-    type: text
-    label: Vegetarian Wraps - Subtitle
-    cascade: true
-  wraps_subcategories.kofta.description:
-    type: textarea
-    label: Kofta Wraps - Description
-    cascade: true
-  wraps_subcategories.kofta.subtitle:
-    type: text
-    label: Kofta Wraps - Subtitle
-    cascade: true
-  wraps_subcategories:
-    type: object
-    label: Wraps Subcategories
-    comment: Descriptions for wrap subcategories
     cascade: true
   hero_title:
     type: text

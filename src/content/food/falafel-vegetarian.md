@@ -8,5 +8,6 @@ image: /images/food/falafel.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Vegetarian Wraps
+order: 20
 available: true
 ---

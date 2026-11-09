@@ -9,5 +9,6 @@ image: /images/food/salad-asian-schnitzel-1.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Salads
 subcategory: ''
+order: 50
 available: true
 ---

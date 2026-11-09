@@ -10,5 +10,6 @@ image: /images/food/sweet-chilli-chicken.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Chicken Wraps
+order: 50
 available: true
 ---

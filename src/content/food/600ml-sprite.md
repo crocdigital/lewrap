@@ -8,5 +8,6 @@ image: /images/food/drinks-sprite.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Drinks
 subcategory: ''
+order: 120
 available: true
 ---

@@ -10,5 +10,6 @@ image: /images/food/classic-vege.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Vegetarian Wraps
+order: 10
 available: true
 ---

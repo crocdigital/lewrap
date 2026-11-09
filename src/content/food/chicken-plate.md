@@ -10,5 +10,6 @@ image: /images/food/plate-chicken.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Plates
 subcategory: ''
+order: 20
 available: true
 ---

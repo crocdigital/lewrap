@@ -10,5 +10,6 @@ image: /images/food/plate-kofta.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Plates
 subcategory: ''
+order: 30
 available: true
 ---

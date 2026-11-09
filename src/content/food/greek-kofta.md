@@ -10,5 +10,6 @@ image: /images/food/kofta-greek.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Kofta Wraps
+order: 10
 available: true
 ---

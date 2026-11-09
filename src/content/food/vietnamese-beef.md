@@ -10,5 +10,6 @@ image: /images/food/vietnamese-beef.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Wraps
 subcategory: Beef Wraps
+order: 30
 available: true
 ---

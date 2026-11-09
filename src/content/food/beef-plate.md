@@ -10,5 +10,6 @@ image: /images/food/plate-beef.webp
 orderLink: https://lewrap.redcatcloud.com.au/app/menu/
 category: Plates
 subcategory: ''
+order: 10
 available: true
 ---
