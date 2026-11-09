@@ -7,6 +7,6 @@ image: ""
 orderLink: ""
 category: ""
 subcategory: ""
-order: ""
+order:
 available: true
 ---
