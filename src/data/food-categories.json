@@ -61,7 +61,7 @@
     },
     {
       "name": "Salads",
-      "subtitle": "Add extra beef, kofta, chicken or schnitzel for only $5.",
+      "subtitle": null,
       "description": "",
       "heading_image": "",
       "subcategories": []
