@@ -39,13 +39,6 @@
       ]
     },
     {
-      "name": "Plates",
-      "subtitle": "Chicken, beef, kofta",
-      "description": "Choice of meat, grilled mushroom, onion & capsicum, white or brown rice & salad.",
-      "heading_image": "",
-      "subcategories": []
-    },
-    {
       "name": "Baguettes",
       "subtitle": "",
       "description": "",
@@ -67,10 +60,10 @@
       "subcategories": []
     },
     {
-      "name": "Kids Meals",
-      "subtitle": "",
-      "description": "Something for the little LeWrappers.",
-      "heading_image": "/images/elements/kidsmeals-title.svg",
+      "name": "Plates",
+      "subtitle": "Chicken, beef, kofta",
+      "description": "Choice of protein, grilled mushroom, onion & capsicum, white or brown rice & salad.",
+      "heading_image": "",
       "subcategories": []
     },
     {
@@ -78,6 +71,13 @@
       "subtitle": "",
       "description": "",
       "heading_image": "",
+      "subcategories": []
+    },
+    {
+      "name": "Kids Meals",
+      "subtitle": "",
+      "description": null,
+      "heading_image": "/images/elements/kidsmeals-title.svg",
       "subcategories": []
     },
     {
