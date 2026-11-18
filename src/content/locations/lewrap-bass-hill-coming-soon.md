@@ -15,13 +15,13 @@ longitude: 150.99346
 phone: ''
 email: basshill@lewrap.com
 hours:
-  monday: 9:00am - 5:00pm
-  tuesday: 9:00am - 5:00pm
-  wednesday: 9:00am - 5:00pm
-  thursday: 9:00am - 5:00pm
-  friday: 9:00am - 5:00pm
-  saturday: 9:00am - 5:00pm
-  sunday: Closed
+  monday: 9:00am - 9:30pm
+  tuesday: 9:00am - 9:30pm
+  wednesday: 9:00am - 9:30pm
+  thursday: 9:00am - 10:00pm
+  friday: 9:00am - 10:00pm
+  saturday: 9:00am - 10:00pm
+  sunday: 9:00am - 9:30pm
 image: /images/locations/groupshot-hands.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/Situated on bustling
   Burwood Road in Belmore, LeWrap Belmore is the brand’s first shopfront
