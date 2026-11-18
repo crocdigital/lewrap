@@ -12,7 +12,7 @@ hero_image: /images/newsroom/freewrap-desktop.webp
 hero_image_mobile: /images/newsroom/freewrap-mobile.webp
 category: Updates
 date: 2026-11-01T09:00:00+11:00
-preview_text:
+preview_text: Skip the queue, earn points and enjoy freebies.
 featured: true
 ---
 ## Enjoy all the perks of the LeWrap App!
