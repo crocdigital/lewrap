@@ -26,6 +26,6 @@ Whether you're looking for a quick lunch, a satisfying dinner or something betwe
 
 Come say hello, grab your LeWrap favourites and celebrate our newest opening with us!
 
-**Plus, we'll be giving away FREE merch and goodies on opening day, so make sure you stop by!**
+**Plus, we'll be giving away merch and freebies on opening day, so make sure you stop by!**
 
 **See you soon, Bass Hill!**
