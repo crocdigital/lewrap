@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/NewsroomLayout.astro
 title: ""
 seo_title: ''
 seo_description: ''
@@ -9,7 +8,7 @@ seo_robots: index, follow
 seo_canonical: ''
 hero_image: ""
 hero_image_mobile: ""
-category: ""
+category: Updates
 date: 2026-01-26
 preview_text: ""
 featured: false

@@ -1,6 +1,5 @@
 ---
 _schema: default
-layout: ../../layouts/NewsroomLayout.astro
 title: Classic Wrap Day
 seo_title: ''
 seo_description: ''

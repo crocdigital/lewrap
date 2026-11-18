@@ -1,6 +1,5 @@
 ---
 _schema: default
-layout: ../../layouts/NewsroomLayout.astro
 title: Franchising Opportunities Available
 seo_title: ''
 seo_description: ''

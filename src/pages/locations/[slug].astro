@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { generateLocationSchema } from "../../utils/generateLocationSchema";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { clean, joinParts } from "../../utils/content";
 
 import Button from "../../components/atoms/Button.astro";
 
@@ -28,16 +29,38 @@ const locationSchema = generateLocationSchema(
     Astro.site?.toString() || Astro.url.origin,
 );
 
-// Get SEO data from location frontmatter - handle empty strings
-const seoTitle =
-    (location.data.seo_title && location.data.seo_title.trim()) ||
-    `${location.data.name}`;
+// Every string field may arrive as null (cleared in CloudCannon), "" or
+// missing. clean() turns all three into undefined so elements can be omitted
+// and the site-wide SEO defaults in SEO.astro can take over.
+const name = clean(location.data.name);
+const address = clean(location.data.address);
+const suburb = clean(location.data.suburb);
+const state = clean(location.data.state);
+const postcode = clean(location.data.postcode);
+const phone = clean(location.data.phone);
+const email = clean(location.data.email);
+const storeImage = clean(location.data.image);
+
+// "Address, Suburb, STATE 2000" built from whichever parts exist, so a cleared
+// field does not leave a stray comma behind.
+const addressLine = joinParts([
+    address,
+    suburb,
+    joinParts([state, postcode], " "),
+]);
+
+// Get SEO data from location frontmatter - blank falls back to the store name,
+// then (in SEO.astro) to the site defaults.
+const seoTitle = clean(location.data.seo_title) ?? name;
+const descriptionPlace = joinParts([address, suburb]);
 const seoDescription =
-    (location.data.seo_description && location.data.seo_description.trim()) ||
-    `Visit LeWrap at ${location.data.address}, ${location.data.suburb}. Fresh wraps, salads and more.`;
-const seoImage = location.data.seo_image;
-const seoKeywords = location.data.seo_keywords;
-const seoRobots = location.data.seo_robots || "index, follow";
+    clean(location.data.seo_description) ??
+    (descriptionPlace
+        ? `Visit LeWrap at ${descriptionPlace}. Fresh wraps, salads and more.`
+        : undefined);
+const seoImage = clean(location.data.seo_image);
+const seoKeywords = clean(location.data.seo_keywords);
+const seoRobots = clean(location.data.seo_robots) ?? "index, follow";
 
 // Format hours for display
 const daysOfWeek = [
@@ -63,9 +86,9 @@ const dayLabels: Record<string, string> = {
 <BaseLayout
     title={seoTitle}
     description={seoDescription}
-    image={seoImage || undefined}
-    keywords={seoKeywords || undefined}
-    robots={seoRobots || "index, follow"}
+    image={seoImage}
+    keywords={seoKeywords}
+    robots={seoRobots}
     schema={locationSchema}
 >
     <main
@@ -78,16 +101,24 @@ const dayLabels: Record<string, string> = {
                 {
                     /* Google Map NOTE: THIS MIGHT BREAK WITH LOCATIONS THAT AREN'T INDEXED YET. CHECK BEST WAY TO SOLVE THIS */
                 }
-                <iframe
-                    width="100%"
-                    height="100%"
-                    style="border:0"
-                    loading="lazy"
-                    class="min-h-[40vh]"
-                    allowfullscreen
-                    referrerpolicy="no-referrer-when-downgrade"
-                    src={`https://maps.google.com/maps?q=${encodeURIComponent(location.data.name)}&tbm=map&output=embed`}
-                ></iframe>
+                {
+                    /* Omitted when there is no name to search for, rather than
+                       embedding a map of the literal word "null". */
+                }
+                {
+                    name && (
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            style="border:0"
+                            loading="lazy"
+                            class="min-h-[40vh]"
+                            allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src={`https://maps.google.com/maps?q=${encodeURIComponent(name)}&tbm=map&output=embed`}
+                        />
+                    )
+                }
 
                 {/* Location details */}
                 <div
@@ -101,45 +132,52 @@ const dayLabels: Record<string, string> = {
                             ← View all locations
                         </a>
 
-                        {/* Location name */}
-                        <h1
-                            class="text-5xl md:text-6xl font-black text-lewrap-green-dark text-center"
-                        >
-                            {location.data.name}
-                        </h1>
+                        {/* Location name - omitted entirely when blank */}
+                        {
+                            name && (
+                                <h1 class="text-5xl md:text-6xl font-black text-lewrap-green-dark text-center">
+                                    {name}
+                                </h1>
+                            )
+                        }
                     </div>
 
+                    {
+                        /* Wrapper dropped entirely when there is no address,
+                           phone or email to put in it. */
+                    }
+                    {(addressLine || phone || email) && (
                     <div class="flex flex-col text-lg">
                         {/* Address */}
-                        <p class="text-center md:px-31">
-                            {location.data.address}, {location.data.suburb}, {
-                                location.data.state
-                            }
-                            {location.data.postcode}
-                        </p>
+                        {
+                            addressLine && (
+                                <p class="text-center md:px-31">{addressLine}</p>
+                            )
+                        }
 
                         {/* Phone, email */}
                         {
-                            location.data.phone && (
+                            phone && (
                                 <a
-                                    href={`tel:${location.data.phone}`}
+                                    href={`tel:${phone}`}
                                     class="hover:text-lewrap-green text-center duration-200"
                                 >
-                                    {location.data.phone}
+                                    {phone}
                                 </a>
                             )
                         }
                         {
-                            location.data.email && (
+                            email && (
                                 <a
-                                    href={`mailto:${location.data.email}?subject=Enquiry%20from%20website`}
+                                    href={`mailto:${email}?subject=Enquiry%20from%20website`}
                                     class="hover:text-lewrap-green text-center duration-200"
                                 >
-                                    {location.data.email}
+                                    {email}
                                 </a>
                             )
                         }
                     </div>
+                    )}
 
                     {/* View larger map */}
                     <Button
@@ -201,11 +239,13 @@ const dayLabels: Record<string, string> = {
             class="w-[95%] mx-auto bg-cover bg-center bg-no-repeat p-7 rounded-2xl grid md:grid-cols-2 relative overflow-hidden"
         >
             <div class="max-w-xl mx-auto flex flex-col gap-y-8 py-16">
-                <h2
-                    class="text-4xl/10 md:text-5xl/11 font-black text-lewrap-green-dark"
-                >
-                    {location.data.name}
-                </h2>
+                {
+                    name && (
+                        <h2 class="text-4xl/10 md:text-5xl/11 font-black text-lewrap-green-dark">
+                            {name}
+                        </h2>
+                    )
+                }
 
                 <div
                     class="prose text-xl/7 text-lewrap-off-black [&_p]:mb-8 [&_p:last-child]:mb-0"
@@ -216,11 +256,11 @@ const dayLabels: Record<string, string> = {
 
             {/* Store Image */}
             {
-                location.data.image && (
+                storeImage && (
                     <div class="rounded-xl overflow-hidden">
                         <img
-                            src={location.data.image}
-                            alt={location.data.name}
+                            src={storeImage}
+                            alt={name ?? ""}
                             class="w-full h-full object-cover"
                         />
                     </div>
@@ -244,12 +284,7 @@ const dayLabels: Record<string, string> = {
             >
                 <h2 class="text-4xl font-black text-white mb-4">Find us</h2>
                 {/* Address */}
-                <p class="w-[80%] mb-6">
-                    {location.data.address}, {location.data.suburb}, {
-                        location.data.state
-                    }
-                    {location.data.postcode}
-                </p>
+                {addressLine && <p class="w-[80%] mb-6">{addressLine}</p>}
                 {/* View larger map */}
                 <Button
                     href={`https://www.google.com/maps/dir/?api=1&destination=${location.data.latitude},${location.data.longitude}`}
@@ -261,27 +296,32 @@ const dayLabels: Record<string, string> = {
                     Get Directions
                 </Button>
 
-                <h2 class="text-4xl font-black text-white mt-10 mb-4">
-                    Contact
-                </h2>
+                {/* Heading omitted when there is no phone or email below it */}
+                {
+                    (phone || email) && (
+                        <h2 class="text-4xl font-black text-white mt-10 mb-4">
+                            Contact
+                        </h2>
+                    )
+                }
                 {/* Phone, email */}
                 {
-                    location.data.phone && (
+                    phone && (
                         <a
-                            href={`tel:${location.data.phone}`}
+                            href={`tel:${phone}`}
                             class="text-lewrap-green-dark hover:text-white duration-200"
                         >
-                            {location.data.phone}
+                            {phone}
                         </a>
                     )
                 }
                 {
-                    location.data.email && (
+                    email && (
                         <a
-                            href={`mailto:${location.data.email}?subject=Enquiry%20from%20website`}
+                            href={`mailto:${email}?subject=Enquiry%20from%20website`}
                             class="text-lewrap-green-dark hover:text-white duration-200"
                         >
-                            {location.data.email}
+                            {email}
                         </a>
                     )
                 }

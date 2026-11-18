@@ -16,23 +16,29 @@ import FranchiseCallout from "../components/FranchiseCallout.astro";
 
 // Import ALL Australian postcodes
 import postcodeData from "../data/postcodes.json";
+import { clean, text } from "../utils/content";
 
 // Get all locations
 const allLocations = (await getCollection(
     "locations",
 )) as CollectionEntry<"locations">[];
+// text() is used here rather than the raw value: suburb may arrive as null (a
+// field the client cleared in CloudCannon), and null.localeCompare() would
+// throw and take the whole build down.
 const sortedLocations = allLocations.sort((a, b) =>
-    a.data.suburb.localeCompare(b.data.suburb),
+    text(a.data.suburb).localeCompare(text(b.data.suburb)),
 );
 
-// Serialize locations data for client-side JS
+// Serialize locations data for client-side JS. Blank values are normalised to
+// "" here so the client-side card template cannot interpolate "null" into the
+// page; createLocationCardHTML() then omits the blank parts.
 const locationsData = sortedLocations.map((loc) => ({
-    name: loc.data.name,
-    address: loc.data.address,
-    suburb: loc.data.suburb,
-    state: loc.data.state,
-    postcode: loc.data.postcode,
-    order_now_link: loc.data.order_now_link,
+    name: text(loc.data.name),
+    address: text(loc.data.address),
+    suburb: text(loc.data.suburb),
+    state: text(loc.data.state),
+    postcode: text(loc.data.postcode),
+    order_now_link: clean(loc.data.order_now_link) ?? "",
     slug: loc.slug,
     latitude: loc.data.latitude,
     longitude: loc.data.longitude,
@@ -55,7 +61,7 @@ const {
 } = frontmatter || {};
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={clean(title)}>
     <main
         class="max-w-screen-2xl w-full mx-auto text-lewrap-off-black flex flex-col gap-10 relative"
     >
@@ -156,18 +162,48 @@ const {
             return R * c;
         }
 
+        // Mirrors LocationCard.astro: a blank field drops its element rather
+        // than printing an empty line or a stray comma.
         function createLocationCardHTML(loc) {
+            // Mirrors joinParts() in src/utils/content.ts: join only the parts
+            // that have content, so a cleared field leaves no stray comma.
+            // Written as a loop for the same reason as its counterpart:
+            // Tailwind's scanner would read an array-method name used here as a
+            // bare word as a utility class.
+            function joinParts(parts, separator) {
+                const kept = [];
+                for (const part of parts) {
+                    const value = (part || "").trim();
+                    if (value !== "") kept.push(value);
+                }
+                return kept.join(separator);
+            }
+
+            const cityLine = joinParts(
+                [loc.suburb, joinParts([loc.state, loc.postcode], " ")],
+                ", ",
+            );
+
+            const nameHTML = loc.name
+                ? `<a href="/locations/${loc.slug}" class="text-2xl font-bold text-lewrap-green">
+                            ${loc.name}
+                        </a>`
+                : "";
+
+            const addressHTML =
+                loc.address || cityLine
+                    ? `<div class="text-lewrap-off-black mt-2">
+                            ${loc.address ? `<p>${loc.address}</p>` : ""}
+                            ${cityLine ? `<p>${cityLine}</p>` : ""}
+                        </div>`
+                    : "";
+
             return `
             <div class="border border-[#CBCBCB] bg-white rounded-xl overflow-hidden">
                 <div class="p-6 flex grid md:grid-cols-[1fr_300px] justify-between gap-4">
                     <div>
-                        <a href="/locations/${loc.slug}" class="text-2xl font-bold text-lewrap-green">
-                            ${loc.name}
-                        </a>
-                        <div class="text-lewrap-off-black mt-2">
-                            <p>${loc.address}</p>
-                            <p>${loc.suburb}, ${loc.state} ${loc.postcode}</p>
-                        </div>
+                        ${nameHTML}
+                        ${addressHTML}
                         ${
                             loc.distance !== undefined
                                 ? `

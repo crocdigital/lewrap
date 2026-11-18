@@ -6,6 +6,7 @@ import AppGoogle from "../assets/download-googleplay.png";
 import bgTexture from "../assets/bgrds/bg-texture.webp";
 
 import SEO from "../components/SEO.astro";
+import { clean } from "../utils/content";
 import TwoCol from "../components/TwoCol.astro";
 import OneCol from "../components/OneCol.astro";
 import Hero from "../components/Hero.astro";
@@ -14,16 +15,16 @@ import BackToTop from "../components/atoms/BackToTop.astro";
 import "../styles/globals.css";
 
 interface Props {
-    title?: string;
-    description?: string;
-    image?: string;
-    type?: string;
-    robots?: string;
-    canonical?: string;
-    keywords?: string;
-    schema?: object;
+    title?: string | null;
+    description?: string | null;
+    image?: string | null;
+    type?: string | null;
+    robots?: string | null;
+    canonical?: string | null;
+    keywords?: string | null;
+    schema?: object | null;
     preloadImages?: { src: string; media?: string }[];
-    page_blocks?: any[]; // ← Added
+    page_blocks?: any[] | null;
 }
 
 const {
@@ -31,15 +32,28 @@ const {
     description,
     image,
     type,
-    robots = "noindex, nofollow", // ← Default for landing pages
+    robots, // defaulted below - see pageRobots
     canonical,
     keywords,
     schema,
-    page_blocks = [],
+    page_blocks,
     preloadImages = [],
 } = Astro.props;
 
-const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
+// A blank title must not render as " | LeWrap" or "null | LeWrap": pass
+// undefined through instead, so the SEO.astro fallback title takes over. A real
+// title keeps the suffix it has always had here.
+const pageTitle = clean(title);
+// Landing pages are noindex by default. This cannot be a destructuring default:
+// a robots field the client cleared in CloudCannon arrives as null, not
+// undefined, so the default would be skipped and the page would become
+// indexable. clean() covers null, "" and missing alike.
+const pageRobots = clean(robots) ?? "noindex, nofollow";
+const displayTitle =
+    pageTitle === undefined || pageTitle === "LeWrap"
+        ? pageTitle
+        : `${pageTitle} | LeWrap`;
+const blocks = Array.isArray(page_blocks) ? page_blocks : [];
 ---
 
 <!doctype html>
@@ -103,7 +117,7 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
             description={description}
             image={image}
             type={type}
-            robots={robots}
+            robots={pageRobots}
             canonical={canonical}
             keywords={keywords}
             schema={schema}
@@ -151,7 +165,7 @@ const displayTitle = title === "LeWrap" ? title : `${title} | LeWrap`;
             {/* Page Builder section */}
             <div class="flex flex-col gap-10">
                 {
-                    page_blocks?.map((block: any, index: number) => {
+                    blocks.map((block: any, index: number) => {
                         // Support both _template (CloudCannon) and type (manual)
                         const blockType = block._template || block.type;
 

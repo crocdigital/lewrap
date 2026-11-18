@@ -1,6 +1,5 @@
 ---
 _schema: default
-layout: ../../layouts/NewsroomLayout.astro
 title: New Loaded Chips
 seo_title: ''
 seo_description: New Loaded Chips have arrived at LeWrap. Signature seasoned

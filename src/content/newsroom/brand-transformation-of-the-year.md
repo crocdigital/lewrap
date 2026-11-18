@@ -1,6 +1,5 @@
 ---
 _schema: default
-layout: ../../layouts/NewsroomLayout.astro
 title: Brand Transformation of the Year
 seo_title: ''
 seo_description: ''

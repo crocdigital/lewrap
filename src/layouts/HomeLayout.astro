@@ -30,15 +30,20 @@ import Button from "../components/atoms/Button.astro";
 import ScrollReveal from "../components/molecules/ScrollReveal.astro";
 import bgTexture from "../assets/bgrds/bg-texture.webp";
 import AppBanner from "../components/organisms/AppBanner.astro";
+import { clean } from "../utils/content";
 
 // Get newsletter popup content
 const newsletterPopup = await getEntry("popups", "newsletter");
 
 // Get featured FAQs for homepage
 const allFAQs = (await getCollection("faq")) as CollectionEntry<"faq">[];
+// question may arrive as null (a field the client cleared in CloudCannon), so
+// it is cleaned before the blank check - null.trim() would throw and fail the
+// build.
 const featuredFAQs = allFAQs
   .filter(
-    (faq) => faq.data.featured === true && faq.data.question.trim() !== "",
+    (faq) =>
+      faq.data.featured === true && clean(faq.data.question) !== undefined,
   )
   .sort((a, b) => a.data.order - b.data.order)
   .slice(0, 5); // First 5 featured FAQs
@@ -156,29 +161,33 @@ const featuredNews = allNewsroom
 >
   {/* Newsletter Popup */}
   {
-    newsletterPopup && (
+    /* popup_id is the DOM id the open/close handlers bind to, so a blank one
+       means there is no modal to render at all. */
+    newsletterPopup && clean(newsletterPopup.data.popup_id) && (
       <Modal
-        id={newsletterPopup.data.popup_id}
-        title={newsletterPopup.data.title}
+        id={clean(newsletterPopup.data.popup_id)!}
+        title={clean(newsletterPopup.data.title)}
         showOnLoad={newsletterPopup.data.show_on_load}
         rememberClose={newsletterPopup.data.remember_close}
       >
         {/* Newsletter Popup Image */}
-        {newsletterPopup.data.image && (
+        {clean(newsletterPopup.data.image) && (
           <img
-            src={newsletterPopup.data.image}
+            src={clean(newsletterPopup.data.image)}
             alt="Decorative"
-            class={newsletterPopup.data.image_position}
+            class={clean(newsletterPopup.data.image_position)}
           />
         )}
-        <div
-          class="text-lg/6 mb-6"
-          set:html={newsletterPopup.data.description}
-        />
+        {clean(newsletterPopup.data.description) && (
+          <div
+            class="text-lg/6 mb-6"
+            set:html={clean(newsletterPopup.data.description)}
+          />
+        )}
 
         <div class="flex flex-col">
           <Button
-            onclick={`close_${newsletterPopup.data.popup_id}()`}
+            onclick={`close_${clean(newsletterPopup.data.popup_id)}()`}
             href="https://lewrap.redcatcloud.com.au/app/menu"
             target="_blank"
             class="mx-auto hover:bg-lewrap-green-dark hover:text-lewrap-green"
@@ -188,7 +197,7 @@ const featuredNews = allNewsroom
           </Button>
 
           <button
-            onclick={`close_${newsletterPopup.data.popup_id}()`}
+            onclick={`close_${clean(newsletterPopup.data.popup_id)}()`}
             class="mt-4 text-lewrap-green-dark hover:underline font-bold text-sm"
           >
             No thanks, continue browsing

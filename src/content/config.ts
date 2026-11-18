@@ -1,18 +1,30 @@
 import { defineCollection, z } from 'astro:content';
 
+// CloudCannon writes a cleared field as `null`, not as a missing key and not as
+// an empty string. Zod's .optional() only accepts `undefined`, so every string
+// field below is .optional().nullable() - that covers null, missing and "".
+// Templates are responsible for treating null / "" as "no value" and omitting
+// the element rather than printing it.
+//
+// Select fields are typed as plain strings rather than z.enum() for the same
+// reason: a cleared select arrives as null and an enum would fail the build.
+// The allowed values stay documented in cloudcannon.config.yml, and the
+// templates fall back to the documented default for a blank or unrecognised
+// value.
+
 {/* Locations */ }
 const locationsCollection = defineCollection({
     type: 'content',
     schema: z.object({
-        name: z.string(),
-        address: z.string(),
-        suburb: z.string(),
-        state: z.string(),
-        postcode: z.string(),
+        name: z.string().optional().nullable(),
+        address: z.string().optional().nullable(),
+        suburb: z.string().optional().nullable(),
+        state: z.string().optional().nullable(),
+        postcode: z.string().optional().nullable(),
         latitude: z.number(),
         longitude: z.number(),
-        phone: z.string().optional(),
-        email: z.string().email().optional().or(z.literal('')),
+        phone: z.string().optional().nullable(),
+        email: z.string().email().or(z.literal('')).optional().nullable(),
         hours: z.object({
             monday: z.string(),
             tuesday: z.string(),
@@ -22,8 +34,8 @@ const locationsCollection = defineCollection({
             saturday: z.string(),
             sunday: z.string(),
         }),
-        image: z.string(),
-        order_now_link: z.string().optional(),
+        image: z.string().optional().nullable(),
+        order_now_link: z.string().optional().nullable(),
         featured: z.boolean().default(false),
         seo_title: z.string().optional().nullable(),
         seo_description: z.string().optional().nullable(),
@@ -37,12 +49,12 @@ const locationsCollection = defineCollection({
 const foodCollection = defineCollection({
     type: 'content',
     schema: z.object({
-        name: z.string(),
-        price: z.string(),
-        description: z.string().optional(),
+        name: z.string().optional().nullable(),
+        price: z.string().optional().nullable(),
+        description: z.string().optional().nullable(),
         kj: z.number(),
-        image: z.string(),
-        orderLink: z.string().optional(),
+        image: z.string().optional().nullable(),
+        orderLink: z.string().optional().nullable(),
         // Category/subcategory names are free text, matched (trim +
         // case-insensitive) against src/data/food-categories.json at build time.
         // A blank or unrecognised value never fails the build - the item is
@@ -60,9 +72,12 @@ const foodCollection = defineCollection({
 const faqCollection = defineCollection({
     type: 'content',
     schema: z.object({
-        question: z.string(),
-        answer: z.string(),
-        category: z.enum(['General', 'Catering', 'Franchising']),
+        question: z.string().optional().nullable(),
+        answer: z.string().optional().nullable(),
+        // Select in CloudCannon: General | Catering | Franchising. Free text
+        // here so a cleared or renamed value cannot fail the build; an FAQ
+        // whose category matches no section simply is not rendered.
+        category: z.string().optional().nullable(),
         featured: z.boolean().default(false),
         order: z.number().default(0),
     }),
@@ -72,12 +87,16 @@ const faqCollection = defineCollection({
 const newsroomCollection = defineCollection({
     type: 'content',
     schema: z.object({
-        title: z.string(),
-        hero_image: z.string(),
-        hero_image_mobile: z.string().optional(),
-        category: z.enum(['Promotion', 'Community', 'Updates', 'Franchising']).default('Updates'),
+        title: z.string().optional().nullable(),
+        hero_image: z.string().optional().nullable(),
+        hero_image_mobile: z.string().optional().nullable(),
+        // Select in CloudCannon: Promotion | Community | Updates | Franchising.
+        // Free text here so a cleared value cannot fail the build; the
+        // templates fall back to NEWSROOM_DEFAULT_CATEGORY ("Updates") for a
+        // blank or unrecognised value.
+        category: z.string().optional().nullable(),
         date: z.date(),
-        preview_text: z.string(),
+        preview_text: z.string().optional().nullable(),
         featured: z.boolean().default(false),
         seo_title: z.string().optional().nullable(),
         seo_description: z.string().optional().nullable(),
@@ -92,11 +111,15 @@ const newsroomCollection = defineCollection({
 const popupsCollection = defineCollection({
     type: 'data',
     schema: z.object({
-        popup_id: z.enum(['newsletter_modal', 'franchise_enquiry']),
-        title: z.string(),
-        description: z.string(),
-        image: z.string().optional(),
-        image_position: z.string().optional(), // CSS classes for positioning
+        // Select in CloudCannon: newsletter_modal | franchise_enquiry. Free
+        // text here so a cleared value cannot fail the build; the popup is not
+        // rendered at all when this is blank, because it is the DOM id the
+        // open/close handlers are bound to.
+        popup_id: z.string().optional().nullable(),
+        title: z.string().optional().nullable(),
+        description: z.string().optional().nullable(),
+        image: z.string().optional().nullable(),
+        image_position: z.string().optional().nullable(), // CSS classes for positioning
         show_on_load: z.boolean().default(false),
         remember_close: z.boolean().default(false),
     }),
@@ -106,13 +129,13 @@ const popupsCollection = defineCollection({
 const landingPagesCollection = defineCollection({
     type: "content",
     schema: z.object({
-        title: z.string(),
-        description: z.string().optional(),
-        image: z.string().optional(),
-        keywords: z.string().optional(),
-        robots: z.string().optional(),
-        canonical: z.string().optional(),
-        page_blocks: z.array(z.any()).optional(),
+        title: z.string().optional().nullable(),
+        description: z.string().optional().nullable(),
+        image: z.string().optional().nullable(),
+        keywords: z.string().optional().nullable(),
+        robots: z.string().optional().nullable(),
+        canonical: z.string().optional().nullable(),
+        page_blocks: z.array(z.any()).optional().nullable(),
     }),
 });
 

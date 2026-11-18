@@ -17,6 +17,7 @@ import FranchiseEnquiryForm from "../components/FranchiseEnquiryForm.astro";
 import { getEntry } from "astro:content";
 
 import Button from "../components/atoms/Button.astro";
+import { clean, newsroomCategory } from "../utils/content";
 
 // Page Builder components
 import Hero from "../components/Hero.astro";
@@ -106,12 +107,15 @@ const webPageSchema = {
     },
 };
 
-// Filter FAQs by category
+// Filter FAQs by category. question may arrive as null (a field the client
+// cleared in CloudCannon), so it is cleaned before the blank check rather than
+// calling .trim() on it - null.trim() would throw and fail the build.
 const categoryFAQs = allFAQs
     .filter(
         (faq) =>
-            faq.data.category === faq_category &&
-            faq.data.question.trim() !== "",
+            clean(faq_category) !== undefined &&
+            clean(faq.data.category) === clean(faq_category) &&
+            clean(faq.data.question) !== undefined,
     )
     .sort((a, b) => a.data.order - b.data.order);
 
@@ -122,9 +126,13 @@ const allNewsroom = (await getCollection(
 const sortedNewsroom = allNewsroom.sort(
     (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
 );
+// newsroomCategory() resolves blank / null / unrecognised to "Updates", so the
+// button list never grows a blank entry and every article matches a real one.
 const categories = [
     "All",
-    ...new Set(allNewsroom.map((article: any) => article.data.category)),
+    ...new Set(
+        allNewsroom.map((article: any) => newsroomCategory(article.data.category)),
+    ),
 ];
 ---
 
@@ -150,17 +158,22 @@ const categories = [
 >
     {/* Franchise Enquiry Modal - Own A Store page only */}
     {
+        /* popup_id is the DOM id the open/close handlers bind to, so a blank
+           one means there is no modal to render at all. */
         (Astro.url.pathname.includes("own-a-store") ||
             Astro.url.pathname.includes("own-a-store/")) &&
-            franchisePopup && (
+            franchisePopup &&
+            clean(franchisePopup.data.popup_id) && (
                 <Modal
-                    id={franchisePopup.data.popup_id}
-                    title={franchisePopup.data.title}
+                    id={clean(franchisePopup.data.popup_id)!}
+                    title={clean(franchisePopup.data.title)}
                 >
-                    <div
-                        class="text-lg/6 mb-6"
-                        set:html={franchisePopup.data.description}
-                    />
+                    {clean(franchisePopup.data.description) && (
+                        <div
+                            class="text-lg/6 mb-6"
+                            set:html={clean(franchisePopup.data.description)}
+                        />
+                    )}
                     <FranchiseEnquiryForm />
                 </Modal>
             )
@@ -445,7 +458,9 @@ const categories = [
                         {sortedNewsroom.map((article: any) => (
                             <div
                                 class="newsroom-article"
-                                data-category={article.data.category}
+                                data-category={newsroomCategory(
+                                    article.data.category,
+                                )}
                             >
                                 <NewsroomCard
                                     title={article.data.title}
