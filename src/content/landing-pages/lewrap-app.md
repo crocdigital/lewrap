@@ -12,8 +12,8 @@ page_blocks:
       </p></li><li><p><strong>FREE Chips</strong> on your 6th
       order*</p></li><li><p><strong>FREE Birthday
       Wrap</strong>*</p></li><li><p><strong>$20 OFF</strong> your first catering
-      order*</p></li></ul><p><strong>Order ahead. Earn rewards. Enjoy the
-      perks!</strong></p><p>Download the LeWrap App today and start enjoying all
+      order*</p></li></ul><p><strong>Order ahead. Earn rewards. Enjoy the perks!
+      </strong></p><p>Download the LeWrap App today and start enjoying all
       things good and fresh.</p><p>*T&amp;Cs apply.</p>
     background_type: none
     background_colour:
