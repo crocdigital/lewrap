@@ -1,6 +1,7 @@
 ---
 title: Download the LeWrap App
-description:
+description: Enjoy all the perks of the LeWrap app - more perks, more rewards,
+  more reasons to order!
 robots: noindex, nofollow
 page_blocks:
   - _template: centered_text
