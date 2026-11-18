@@ -1,7 +1,7 @@
 {
     "popup_id": "newsletter_modal",
     "title": "Enjoy the perks of the LeWrap App!",
-    "description": "<p>Skip the Queue. Earn Points. Enjoy Freebies. <br /><br />Order ahead, earn points and unlock exclusive offers and rewards with the LeWrap App.</p><ul><li><p><strong>10% OFF</strong> your first app order</p></li><li><p><strong>Earn Points</strong> with every order</p></li><li><p><strong>FREE Chips</strong> on your 6th order*</p></li><li><p><strong>FREE Birthday Wrap</strong>*</p></li><li><p><strong>$20 OFF</strong> your first catering order*</p></li></ul><p>Download the LeWrap App today and start enjoying all things good and fresh. *T&amp;Cs apply.</p>",
+    "description": "<p>Skip the Queue. Earn Points. Enjoy Freebies. <br /><br />Order ahead, earn points and unlock exclusive offers and rewards with the LeWrap App.</p><ul><li><p><strong>10% OFF</strong> your first app order</p></li><li><p><strong>Earn Points</strong> with every order</p></li><li><p><strong>FREE Chips</strong> on your 6th order*</p></li><li><p><strong>FREE Birthday Wrap</strong>*</p></li><li><p><strong>$20 OFF</strong> your first catering order*</p></li></ul><p>Download the LeWrap App today and start enjoying all things good and fresh. *T&amp;Cs apply. </p>",
     "image": "/images/elements/baguette-beef.webp",
     "image_position": "w-28 md:w-39 h-auto absolute left-1/2 -translate-x-1/2 -top-9 md:-top-18",
     "show_on_load": true,
