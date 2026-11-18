@@ -1,15 +1,26 @@
+import { clean } from "./content";
+
 export function generateLocationSchema(location: any, siteUrl: string) {
+    // Every string field may arrive as null (cleared in CloudCannon), "" or
+    // missing. clean() turns all three into undefined, and JSON.stringify drops
+    // undefined keys, so a blank field leaves the property out of the schema
+    // rather than emitting null or "".
+    const name = clean(location?.data?.name);
+    const image = clean(location?.data?.image);
+
     return {
         "@context": "https://schema.org",
         "@type": "Restaurant",
-        "name": location.data.name,
-        "image": new URL(location.data.image, siteUrl).href,
+        "name": name,
+        // new URL(null, siteUrl) would resolve to "<site>/null", so only a real
+        // image gets an absolute URL.
+        "image": image ? new URL(image, siteUrl).href : undefined,
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": location.data.address,
-            "addressLocality": location.data.suburb,
-            "addressRegion": location.data.state,
-            "postalCode": location.data.postcode,
+            "streetAddress": clean(location?.data?.address),
+            "addressLocality": clean(location?.data?.suburb),
+            "addressRegion": clean(location?.data?.state),
+            "postalCode": clean(location?.data?.postcode),
             "addressCountry": "AU"
         },
         "geo": {
@@ -17,8 +28,8 @@ export function generateLocationSchema(location: any, siteUrl: string) {
             "latitude": location.data.latitude,
             "longitude": location.data.longitude
         },
-        "telephone": location.data.phone || undefined,
-        "email": location.data.email || undefined,
+        "telephone": clean(location?.data?.phone),
+        "email": clean(location?.data?.email),
         "url": new URL(`/locations/${location.slug}`, siteUrl).href,
         "priceRange": "$$",
         "servesCuisine": "Fast Food, Healthy Food",

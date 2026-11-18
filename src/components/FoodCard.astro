@@ -1,43 +1,71 @@
 ---
 import Button from "../components/atoms/Button.astro";
+import { clean } from "../utils/content";
 
 interface Props {
-    name: string;
-    price: string;
-    description?: string;
+    name?: string | null;
+    price?: string | null;
+    description?: string | null;
     kj: number;
-    image: string;
-    orderLink?: string;
+    image?: string | null;
+    orderLink?: string | null;
     slug?: string;
 }
 
 const { name, price, description, kj, image, orderLink, slug } = Astro.props;
+
+// Any of these may arrive as null (cleared in CloudCannon), "" or missing.
+const cleanName = clean(name);
+const cleanPrice = clean(price);
+const cleanDescription = clean(description);
+const cleanImage = clean(image);
+const cleanOrderLink = clean(orderLink);
+
+// With every field blank there is nothing to put in the card, so the card
+// itself is not rendered - an empty bordered box is worse than no box.
+const hasContent = Boolean(
+    cleanName || cleanPrice || cleanDescription || cleanImage || kj > 0,
+);
 ---
 
+{hasContent && (
 <div
     class="bg-white border border-[#CBCBCB] grid grid-cols-[1fr_100px] md:grid-cols-[1fr_180px] rounded-xl overflow-hidden"
 >
     <div class="p-6 flex flex-col gap-2">
         <div class="flex flex-col">
-            <h3
-                class="text-lg/5 font-medium"
-                data-cms-bind={slug ? `#${slug}.name` : undefined}
-            >
-                {name}
-            </h3>
-            <span
-                class="text-base whitespace-nowrap"
-                data-cms-bind={slug ? `#${slug}.price` : undefined}
-            >
-                {price}
-            </span>
+            {
+                cleanName && (
+                    <h3
+                        class="text-lg/5 font-medium"
+                        data-cms-bind={slug ? `#${slug}.name` : undefined}
+                    >
+                        {cleanName}
+                    </h3>
+                )
+            }
+            {
+                cleanPrice && (
+                    <span
+                        class="text-base whitespace-nowrap"
+                        data-cms-bind={slug ? `#${slug}.price` : undefined}
+                    >
+                        {cleanPrice}
+                    </span>
+                )
+            }
         </div>
 
-        <div
-            class="prose text-gray-500 leading-tight [&_p]:mb-2 [&_p:last-child]:mb-0"
-            data-cms-bind={slug ? `#${slug}.description` : undefined}
-            set:html={description}
-        />
+        {/* Description wrapper omitted entirely when blank */}
+        {
+            cleanDescription && (
+                <div
+                    class="prose text-gray-500 leading-tight [&_p]:mb-2 [&_p:last-child]:mb-0"
+                    data-cms-bind={slug ? `#${slug}.description` : undefined}
+                    set:html={cleanDescription}
+                />
+            )
+        }
 
         {/* Hides 'kj' entry if nothing has been entered */}
         {
@@ -52,27 +80,33 @@ const { name, price, description, kj, image, orderLink, slug } = Astro.props;
         }
     </div>
 
-    <div class="relative">
-        <img
-            src={image}
-            alt={name}
-            class="w-full md:h-full object-cover rounded-bl-xl md:rounded-none"
-            data-cms-bind={slug ? `#${slug}.image` : undefined}
-        />
+    {/* Image column omitted when there is neither an image nor an order link */}
+    {
+        (cleanImage || cleanOrderLink) && (
+            <div class="relative">
+                {cleanImage && (
+                    <img
+                        src={cleanImage}
+                        alt={cleanName ?? ""}
+                        class="w-full md:h-full object-cover rounded-bl-xl md:rounded-none"
+                        data-cms-bind={slug ? `#${slug}.image` : undefined}
+                    />
+                )}
 
-        {/* Order Now button */}
-        {
-            orderLink && (
-                <Button
-                    href={orderLink}
-                    variant="secondary"
-                    class="p-2 px-4 text-sm border-2 absolute bottom-3 right-3"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Order
-                </Button>
-            )
-        }
-    </div>
+                {/* Order Now button */}
+                {cleanOrderLink && (
+                    <Button
+                        href={cleanOrderLink}
+                        variant="secondary"
+                        class="p-2 px-4 text-sm border-2 absolute bottom-3 right-3"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Order
+                    </Button>
+                )}
+            </div>
+        )
+    }
 </div>
+)}

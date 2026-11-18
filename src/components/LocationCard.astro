@@ -1,13 +1,14 @@
 ---
 import Button from "./atoms/Button.astro";
+import { clean, joinParts } from "../utils/content";
 
 interface Props {
-    name: string;
-    address: string;
-    suburb: string;
-    state: string;
-    postcode: string;
-    order_now_link?: string;
+    name?: string | null;
+    address?: string | null;
+    suburb?: string | null;
+    state?: string | null;
+    postcode?: string | null;
+    order_now_link?: string | null;
     slug: string;
     distance?: number;
 }
@@ -22,20 +23,39 @@ const {
     slug,
     distance,
 } = Astro.props;
+
+// Any of these may arrive as null (cleared in CloudCannon), "" or missing.
+const cleanName = clean(name);
+const cleanAddress = clean(address);
+const cleanOrderNowLink = clean(order_now_link);
+
+// "Suburb, STATE 2000" built from whichever parts exist, so a cleared field
+// does not leave a stray comma or a line of punctuation on its own.
+const cityLine = joinParts([suburb, joinParts([state, postcode], " ")]);
 ---
 
 <div class="border border-[#CBCBCB] bg-white rounded-xl overflow-hidden">
     <div class="p-6 flex grid md:grid-cols-[1fr_300px] justify-between gap-4">
         <div>
-            <a
-                href={`/locations/${slug}`}
-                class="text-2xl font-bold text-lewrap-green">{name}</a
-            >
+            {
+                cleanName && (
+                    <a
+                        href={`/locations/${slug}`}
+                        class="text-2xl font-bold text-lewrap-green"
+                    >
+                        {cleanName}
+                    </a>
+                )
+            }
 
-            <div class="text-lewrap-off-black mt-2">
-                <p>{address}</p>
-                <p>{suburb}, {state} {postcode}</p>
-            </div>
+            {
+                (cleanAddress || cityLine) && (
+                    <div class="text-lewrap-off-black mt-2">
+                        {cleanAddress && <p>{cleanAddress}</p>}
+                        {cityLine && <p>{cityLine}</p>}
+                    </div>
+                )
+            }
 
             {
                 distance !== undefined && (
@@ -52,12 +72,19 @@ const {
                 class="px-5 py-3 text-base leading-loose">More Info</Button
             >
 
-            <Button
-                href={order_now_link}
-                class="px-5 py-3 text-base"
-                variant="secondary"
-                target="_blank">Order now</Button
-            >
+            {/* Order now omitted when there is no link to send people to */}
+            {
+                cleanOrderNowLink && (
+                    <Button
+                        href={cleanOrderNowLink}
+                        class="px-5 py-3 text-base"
+                        variant="secondary"
+                        target="_blank"
+                    >
+                        Order now
+                    </Button>
+                )
+            }
         </div>
     </div>
 </div>

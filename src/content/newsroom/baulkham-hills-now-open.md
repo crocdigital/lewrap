@@ -1,6 +1,5 @@
 ---
 _schema: default
-layout: ../../layouts/NewsroomLayout.astro
 title: Baulkham Hills Now Open
 seo_title: ''
 seo_description: ''

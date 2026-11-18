@@ -1,12 +1,18 @@
 ---
+import { clean } from "../utils/content";
+
 interface Props {
-    question: string;
-    answer: string;
+    question?: string | null;
+    answer?: string | null;
     index: number;
 }
 
 const { question, answer, index } = Astro.props;
 const id = `faq-${index}`;
+
+// Either may arrive as null (cleared in CloudCannon), "" or missing.
+const cleanQuestion = clean(question);
+const cleanAnswer = clean(answer);
 ---
 
 <div class="border-b border-lewrap-green">
@@ -16,9 +22,13 @@ const id = `faq-${index}`;
         aria-expanded="false"
         aria-controls={id}
     >
-        <h3 class="text-xl font-bold text-lewrap-green-dark pr-4">
-            {question}
-        </h3>
+        {
+            cleanQuestion && (
+                <h3 class="text-xl font-bold text-lewrap-green-dark pr-4">
+                    {cleanQuestion}
+                </h3>
+            )
+        }
         <svg
             class="w-10 h-10 flex-shrink-0 transition-transform duration-300"
             data-faq-icon={id}
@@ -45,10 +55,14 @@ const id = `faq-${index}`;
         style="max-height: 0;"
         data-faq-content={id}
     >
-        <div
-            class="pb-6 prose text-lg text-lewrap-off-black [&_p]:mb-2 [&_ul]:list-disc [&_ul]:pl-10"
-            set:html={answer}
-        />
+        {
+            cleanAnswer && (
+                <div
+                    class="pb-6 prose text-lg text-lewrap-off-black [&_p]:mb-2 [&_ul]:list-disc [&_ul]:pl-10"
+                    set:html={cleanAnswer}
+                />
+            )
+        }
     </div>
 </div>
 

@@ -1,12 +1,19 @@
 ---
+import { clean } from "../utils/content";
+
 interface Props {
     id: string;
-    title?: string;
+    title?: string | null;
     showOnLoad?: boolean;
     rememberClose?: boolean; // If true, won't show again after close
 }
 
 const { id, title, showOnLoad = false, rememberClose = false } = Astro.props;
+
+// title may arrive as null (a field the client cleared in CloudCannon); the
+// heading below is omitted rather than rendered empty. `id` is required: the
+// callers skip the modal entirely when the popup has no id.
+const cleanTitle = clean(title);
 ---
 
 <div
@@ -38,7 +45,9 @@ const { id, title, showOnLoad = false, rememberClose = false } = Astro.props;
 
         {/* Scrollable content wrapper */}
         <div class="overflow-y-auto p-8">
-            {title && <h2 class="text-3xl font-bold mt-4 mb-2">{title}</h2>}
+            {cleanTitle && (
+                <h2 class="text-3xl font-bold mt-4 mb-2">{cleanTitle}</h2>
+            )}
 
             {/* Content slot */}
             <slot />

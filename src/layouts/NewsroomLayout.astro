@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import Button from "../components/atoms/Button.astro";
+import { clean, newsroomCategory } from "../utils/content";
 
 const { frontmatter } = Astro.props;
 const {
@@ -15,17 +16,40 @@ const {
     seo_image,
     seo_keywords,
     seo_robots,
-} = frontmatter;
+} = frontmatter ?? {};
 
-// Article Schema for newsroom posts
+// Every field below may arrive as null (a field the client cleared in
+// CloudCannon), "" or missing. clean() turns all three into undefined so the
+// elements can be omitted and the SEO defaults can take over.
+const cleanTitle = clean(title);
+const cleanPreviewText = clean(preview_text);
+const cleanHeroImage = clean(hero_image);
+const cleanHeroImageMobile = clean(hero_image_mobile);
+const cleanSeoTitle = clean(seo_title);
+const cleanSeoDescription = clean(seo_description);
+const cleanSeoImage = clean(seo_image);
+
+// A blank or unrecognised category falls back to "Updates", the default the
+// select used to carry in the schema.
+const cleanCategory = newsroomCategory(category);
+
+// Only the images that actually exist get an absolute URL - new URL(null, site)
+// would otherwise resolve to "<site>/null".
+const schemaImage = cleanSeoImage ?? cleanHeroImage;
+const schemaImageUrl = schemaImage
+    ? new URL(schemaImage, Astro.site).href
+    : undefined;
+
+// Article Schema for newsroom posts. JSON.stringify drops undefined keys, so a
+// blank field leaves the property out rather than emitting null or "".
 const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: seo_title || title,
-    description: seo_description || preview_text,
-    image: new URL(seo_image || hero_image, Astro.site).href,
-    datePublished: new Date(date).toISOString(),
-    dateModified: new Date(date).toISOString(),
+    headline: cleanSeoTitle ?? cleanTitle,
+    description: cleanSeoDescription ?? cleanPreviewText,
+    image: schemaImageUrl,
+    datePublished: date ? new Date(date).toISOString() : undefined,
+    dateModified: date ? new Date(date).toISOString() : undefined,
     author: {
         "@type": "Organization",
         name: "LeWrap",
@@ -38,24 +62,27 @@ const articleSchema = {
             url: new URL("/images/logo.png", Astro.site).href,
         },
     },
-    articleSection: category,
+    articleSection: cleanCategory,
 };
 
 // Format date
-const formattedDate = new Intl.DateTimeFormat("en-AU", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-}).format(new Date(date));
+const articleDate = date ? new Date(date) : undefined;
+const formattedDate = articleDate
+    ? new Intl.DateTimeFormat("en-AU", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+      }).format(articleDate)
+    : undefined;
 ---
 
 <BaseLayout
-    title={seo_title || title}
-    description={seo_description || preview_text}
-    image={seo_image || hero_image}
+    title={cleanSeoTitle ?? cleanTitle}
+    description={cleanSeoDescription ?? cleanPreviewText}
+    image={cleanSeoImage ?? cleanHeroImage}
     type="article"
-    keywords={seo_keywords}
-    robots={seo_robots || "index, follow"}
+    keywords={clean(seo_keywords)}
+    robots={clean(seo_robots) ?? "index, follow"}
     schema={articleSchema}
 >
     <article
@@ -81,39 +108,54 @@ const formattedDate = new Intl.DateTimeFormat("en-AU", {
                 </Button>
 
                 {/* Category */}
-                <span
-                    class="font-helvetica-condensed font-semibold text-base text-white/75 uppercase"
-                >
-                    {category}
-                </span>
+                {
+                    cleanCategory && (
+                        <span class="font-helvetica-condensed font-semibold text-base text-white/75 uppercase">
+                            {cleanCategory}
+                        </span>
+                    )
+                }
 
-                {/* Title */}
-                <h1
-                    class="md:w-auto mx-auto text-white text-4xl md:text-[90px] font-bold leading-[100%] tracking-tight text-center mb-6"
-                >
-                    {title}
-                </h1>
+                {/* Title - omitted entirely when blank */}
+                {
+                    cleanTitle && (
+                        <h1 class="md:w-auto mx-auto text-white text-4xl md:text-[90px] font-bold leading-[100%] tracking-tight text-center mb-6">
+                            {cleanTitle}
+                        </h1>
+                    )
+                }
 
                 {/* Date */}
-                <time
-                    datetime={date.toISOString()}
-                    class="text-xl md:text-2xl leading-tight text-white text-center max-w-2xl px-8 mx-auto"
-                >
-                    {formattedDate}
-                </time>
+                {
+                    articleDate && (
+                        <time
+                            datetime={articleDate.toISOString()}
+                            class="text-xl md:text-2xl leading-tight text-white text-center max-w-2xl px-8 mx-auto"
+                        >
+                            {formattedDate}
+                        </time>
+                    )
+                }
             </div>
-            {/* Hero Image - Responsive */}
-            <picture class="absolute inset-0 w-full h-full z-0">
-                <source
-                    media="(max-width: 768px)"
-                    srcset={hero_image_mobile || hero_image}
-                />
-                <img
-                    src={hero_image}
-                    alt={title}
-                    class="w-full h-full object-cover"
-                />
-            </picture>
+            {
+                /* Hero Image - Responsive. Omitted when blank, which leaves the
+                   section's bg-lewrap-green showing as the fallback. */
+            }
+            {
+                cleanHeroImage && (
+                    <picture class="absolute inset-0 w-full h-full z-0">
+                        <source
+                            media="(max-width: 768px)"
+                            srcset={cleanHeroImageMobile ?? cleanHeroImage}
+                        />
+                        <img
+                            src={cleanHeroImage}
+                            alt={cleanTitle ?? ""}
+                            class="w-full h-full object-cover"
+                        />
+                    </picture>
+                )
+            }
         </section>
 
         <section

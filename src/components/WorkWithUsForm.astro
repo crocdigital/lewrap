@@ -2,13 +2,22 @@
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import Button from "./atoms/Button.astro";
+import { clean, text } from "../utils/content";
 
 const allLocations = (await getCollection(
     "locations",
 )) as CollectionEntry<"locations">[];
-const sortedLocations = allLocations.sort((a, b) =>
-    a.data.name.localeCompare(b.data.name),
-);
+// text() is used here rather than the raw value: name may arrive as null (a
+// field the client cleared in CloudCannon), and null.localeCompare() would
+// throw and take the whole build down. A store with no name is left out of the
+// dropdown entirely - a blank <option> would submit an empty store.
+const sortedLocations = allLocations
+    .sort((a, b) => text(a.data.name).localeCompare(text(b.data.name)))
+    .map((location) => ({
+        name: clean(location.data.name),
+        email: clean(location.data.email),
+    }))
+    .filter((location) => location.name !== undefined);
 
 const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
 ---
@@ -185,12 +194,8 @@ const RECAPTCHA_SITE_KEY = "6Lex21IsAAAAAOsum82vt4qkrGeLYRSD6EDX4aqy";
                     <option value="">Select a store</option>
                     {
                         sortedLocations.map((location) => (
-                            <option
-                                value={
-                                    location.data.email || location.data.name
-                                }
-                            >
-                                {location.data.name}
+                            <option value={location.email ?? location.name}>
+                                {location.name}
                             </option>
                         ))
                     }

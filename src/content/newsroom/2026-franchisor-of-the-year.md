@@ -1,6 +1,5 @@
 ---
 _schema: default
-layout: ../../layouts/NewsroomLayout.astro
 title: 2026 Franchisor of the Year
 seo_title: LeWrap wins 2026 franchisor of the year
 seo_description: ''

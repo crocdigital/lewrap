@@ -1,6 +1,5 @@
 ---
 _schema: default
-layout: ../../layouts/NewsroomLayout.astro
 title: Exclusive App Offers
 seo_title: ''
 seo_description: ''

@@ -1,55 +1,79 @@
 ---
+import { clean, newsroomCategory } from "../utils/content";
+
 interface Props {
-    title: string;
-    hero_image: string;
-    category: string;
+    title?: string | null;
+    hero_image?: string | null;
+    category?: string | null;
     date: Date;
-    preview_text: string;
+    preview_text?: string | null;
     slug: string;
 }
 
 const { title, hero_image, category, date, preview_text, slug } = Astro.props;
 
+// Any of these may arrive as null (cleared in CloudCannon), "" or missing.
+const cleanTitle = clean(title);
+const cleanHeroImage = clean(hero_image);
+const cleanPreviewText = clean(preview_text);
+const cleanCategory = newsroomCategory(category);
+
 // Format date
-const formattedDate = new Intl.DateTimeFormat("en-AU", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-}).format(new Date(date));
+const articleDate = date ? new Date(date) : undefined;
+const formattedDate = articleDate
+    ? new Intl.DateTimeFormat("en-AU", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+      }).format(articleDate)
+    : undefined;
 ---
 
 <article
     class="bg-white rounded-xl overflow-hidden shadow-[0px_11px_25px_0px_rgba(0,0,0,0.04)] hover:shadow-[0px_11px_25px_0px_rgba(0,0,0,0.09)] transition-shadow"
 >
     <a href={`/newsroom/${slug}`} class="block">
-        <img
-            src={hero_image}
-            alt={title}
-            class="w-full aspect-video object-cover"
-        />
+        {/* Image omitted entirely when blank, rather than a broken <img> */}
+        {
+            cleanHeroImage && (
+                <img
+                    src={cleanHeroImage}
+                    alt={cleanTitle ?? ""}
+                    class="w-full aspect-video object-cover"
+                />
+            )
+        }
 
         <div
             class="p-6 py-8 gap-3 min-h-[15rem] flex flex-col justify-between h-full"
         >
             <div class="flex flex-col gap-2 text-sm text-gray-400">
-                <span
-                    class="font-helvetica-condensed font-semibold text-base uppercase"
-                >
-                    {category}
-                </span>
+                {
+                    cleanCategory && (
+                        <span class="font-helvetica-condensed font-semibold text-base uppercase">
+                            {cleanCategory}
+                        </span>
+                    )
+                }
 
-                <h3
-                    class="text-2xl font-bold text-lewrap-green tracking-tight hover:text-lewrap-green-dark transition-colors"
-                >
-                    {title}
-                </h3>
+                {
+                    cleanTitle && (
+                        <h3 class="text-2xl font-bold text-lewrap-green tracking-tight hover:text-lewrap-green-dark transition-colors">
+                            {cleanTitle}
+                        </h3>
+                    )
+                }
 
-                <time datetime={date.toISOString()}>{formattedDate}</time>
+                {
+                    articleDate && (
+                        <time datetime={articleDate.toISOString()}>
+                            {formattedDate}
+                        </time>
+                    )
+                }
             </div>
 
-            <p class="text-xl/7">
-                {preview_text}
-            </p>
+            {cleanPreviewText && <p class="text-xl/7">{cleanPreviewText}</p>}
         </div>
     </a>
 </article>
