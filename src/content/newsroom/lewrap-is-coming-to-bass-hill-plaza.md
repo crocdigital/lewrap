@@ -22,7 +22,7 @@ Whether you're looking for a quick lunch, a satisfying dinner or something betwe
 
 **Opening Wednesday, 25 November 2026**
 
-📍 **LeWrap Bass Hill Plaza**<br />753 Hume Highway, Bass Hill NSW 2197<br />Find us across Four Seasons produce. <br />Open 9am - late!
+📍 **LeWrap Bass Hill Plaza**<br />753 Hume Highway, Bass Hill NSW 2197<br />Find us across from Four Seasons. <br />Open 9am - late!
 
 Come say hello, grab your LeWrap favourites and celebrate our newest opening with us!
 
