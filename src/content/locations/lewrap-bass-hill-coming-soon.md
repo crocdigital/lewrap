@@ -5,14 +5,14 @@ seo_description: ''
 seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
-name: LeWrap Bass Hill COMING SOON
+name: LeWrap Bass Hill OPENING WED 25 NOV
 address: Bass Hill Plaza, 753 Hume Hwy
 suburb: Bass Hill
 state: NSW
 postcode: '2197'
 latitude: -33.899516
 longitude: 150.99346
-phone: OPENING WED 25 NOV
+phone:
 email: basshill@lewrap.com
 hours:
   monday: 9:00am - 9:30pm
