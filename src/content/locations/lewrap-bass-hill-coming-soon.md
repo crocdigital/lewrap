@@ -30,6 +30,6 @@ order_now_link: https://lewrap.redcatcloud.com.au/app/menu/Situated on bustling
   and fully customisable menu. Open late, seven days a week, LeWrap Belmore is
   the perfect destination for lunch, dinner, or a satisfying late-night meal in
   a lively precinct.
-featured: false
+featured: true
 ---
 LeWrap is COMING SOON to Bass Hill Plaza Shopping Centre, serving fresh, flavour-packed wraps, plates, salads and baguettes to the local community. Known for its quick service, high-quality ingredients, and fully customisable menu. LeWrap Bass is the go-to destination for a fresh, satisfying meal any time of day.
