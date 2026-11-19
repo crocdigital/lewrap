@@ -22,7 +22,7 @@ hours:
   friday: 9:30am - 9:30pm
   saturday: 9:30am - 9:30pm
   sunday: 9:30am - 9:30pm
-image: /images/locations/bhills.webp
+image: /images/locations/le-wrap-selects-23-1.webp
 order_now_link: https://lewrap.redcatcloud.com.au/app/menu/
 featured: true
 ---
