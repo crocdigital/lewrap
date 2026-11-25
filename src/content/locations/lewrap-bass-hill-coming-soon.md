@@ -5,7 +5,7 @@ seo_description: ''
 seo_image: ''
 seo_keywords: ''
 seo_robots: index, follow
-name: LeWrap Bass Hill OPENING WED 25 NOV
+name: LeWrap Bass Hill NOW OPEN
 address: Bass Hill Plaza, 753 Hume Hwy
 suburb: Bass Hill
 state: NSW
@@ -32,4 +32,4 @@ order_now_link: https://lewrap.redcatcloud.com.au/app/menu/Situated on bustling
   a lively precinct.
 featured: true
 ---
-LeWrap is COMING SOON to Bass Hill Plaza Shopping Centre, serving fresh, flavour-packed wraps, plates, salads and baguettes to the local community. Known for its quick service, high-quality ingredients, and fully customisable menu. LeWrap Bass is the go-to destination for a fresh, satisfying meal any time of day.
+LeWrap is NOW OPEN to Bass Hill Plaza Shopping Centre, serving fresh, flavour-packed wraps, plates, salads and baguettes to the local community. Known for its quick service, high-quality ingredients, and fully customisable menu. LeWrap Bass is the go-to destination for a fresh, satisfying meal any time of day.
